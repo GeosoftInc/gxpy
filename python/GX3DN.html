@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GX3DN class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GX3DN class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,22 +28,53 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GX3DN class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GX3DN class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN"><code class="docutils literal notranslate"><span class="pre">GX3DN</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.__init__"><code class="docutils literal notranslate"><span class="pre">GX3DN.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.copy"><code class="docutils literal notranslate"><span class="pre">GX3DN.copy()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.create"><code class="docutils literal notranslate"><span class="pre">GX3DN.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.get_axis_color"><code class="docutils literal notranslate"><span class="pre">GX3DN.get_axis_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.get_axis_font"><code class="docutils literal notranslate"><span class="pre">GX3DN.get_axis_font()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.get_background_color"><code class="docutils literal notranslate"><span class="pre">GX3DN.get_background_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.get_point_of_view"><code class="docutils literal notranslate"><span class="pre">GX3DN.get_point_of_view()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.get_render_controls"><code class="docutils literal notranslate"><span class="pre">GX3DN.get_render_controls()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.get_scale"><code class="docutils literal notranslate"><span class="pre">GX3DN.get_scale()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.get_shading"><code class="docutils literal notranslate"><span class="pre">GX3DN.get_shading()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.is_null"><code class="docutils literal notranslate"><span class="pre">GX3DN.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.null"><code class="docutils literal notranslate"><span class="pre">GX3DN.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.set_axis_color"><code class="docutils literal notranslate"><span class="pre">GX3DN.set_axis_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.set_axis_font"><code class="docutils literal notranslate"><span class="pre">GX3DN.set_axis_font()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.set_background_color"><code class="docutils literal notranslate"><span class="pre">GX3DN.set_background_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.set_point_of_view"><code class="docutils literal notranslate"><span class="pre">GX3DN.set_point_of_view()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.set_render_controls"><code class="docutils literal notranslate"><span class="pre">GX3DN.set_render_controls()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.set_scale"><code class="docutils literal notranslate"><span class="pre">GX3DN.set_scale()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DN.set_shading"><code class="docutils literal notranslate"><span class="pre">GX3DN.set_shading()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -61,29 +90,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gx3dn-class">
-<span id="gx3dn"></span><h1>GX3DN class<a class="headerlink" href="#gx3dn-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gx3dn-class">
+<span id="gx3dn"></span><h1>GX3DN class<a class="headerlink" href="#gx3dn-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GX3DN">
-<em class="property">class </em><code class="sig-name descname">GX3DN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GX3DN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN" title="Link to this definition">¶</a></dt>
 <dd><p>GX3DN class.</p>
 <p>This class manages the rendering of a 3D view. It allows
 the positioning of the camera, specification of the zoom
 as well as some rendering controls for the axis. It is
 directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> class.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.copy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.copy" title="Link to this definition">¶</a></dt>
 <dd><p>Copy one <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a> object to another.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>source</strong> (<a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><em>GX3DN</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a> to Copy from</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> (<a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN.GX3DN"><em>GX3DN</em></a>) – Source <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a> to Copy from</p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -93,15 +121,15 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a> Object</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN">GX3DN</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN.GX3DN">GX3DN</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -111,14 +139,14 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.get_axis_color">
-<code class="sig-name descname">get_axis_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_axis_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_axis_color" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.get_axis_color">
+<span class="sig-name descname"><span class="pre">get_axis_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_axis_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_axis_color" title="Link to this definition">¶</a></dt>
 <dd><p>Get the Axis draw color</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Axis Color</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -129,11 +157,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.get_axis_font">
-<code class="sig-name descname">get_axis_font</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_axis_font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_axis_font" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.get_axis_font">
+<span class="sig-name descname"><span class="pre">get_axis_font</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">font</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_axis_font"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_axis_font" title="Link to this definition">¶</a></dt>
 <dd><p>Get the Axis font</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>font</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Font name</p>
 </dd>
 </dl>
@@ -144,14 +172,14 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.get_background_color">
-<code class="sig-name descname">get_background_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_background_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_background_color" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.get_background_color">
+<span class="sig-name descname"><span class="pre">get_background_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_background_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_background_color" title="Link to this definition">¶</a></dt>
 <dd><p>Get the window background color</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Background Color value</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -162,11 +190,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.get_point_of_view">
-<code class="sig-name descname">get_point_of_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em>, <em class="sig-param"><span class="n">declination</span></em>, <em class="sig-param"><span class="n">inclination</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_point_of_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_point_of_view" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.get_point_of_view">
+<span class="sig-name descname"><span class="pre">get_point_of_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inclination</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_point_of_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_point_of_view" title="Link to this definition">¶</a></dt>
 <dd><p>Get location of the point we are looking from</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>distance</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Distance from center relative to longest grid dimension (which is 1.0)</p></li>
 <li><p><strong>declination</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Declination, 0 to 360 CW from Y</p></li>
@@ -181,11 +209,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.get_render_controls">
-<code class="sig-name descname">get_render_controls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span></em>, <em class="sig-param"><span class="n">axis</span></em>, <em class="sig-param"><span class="n">label_x</span></em>, <em class="sig-param"><span class="n">label_y</span></em>, <em class="sig-param"><span class="n">label_z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_render_controls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_render_controls" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.get_render_controls">
+<span class="sig-name descname"><span class="pre">get_render_controls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_render_controls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_render_controls" title="Link to this definition">¶</a></dt>
 <dd><p>Get the rendering controls</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>box</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Render Bounding Box (0 or 1)</p></li>
 <li><p><strong>axis</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Render Axis (0 or 1)</p></li>
@@ -202,11 +230,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.get_scale">
-<code class="sig-name descname">get_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_scale" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.get_scale">
+<span class="sig-name descname"><span class="pre">get_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_scale" title="Link to this definition">¶</a></dt>
 <dd><p>Get the axis relative scales.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X Scale</p></li>
 <li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y Scale</p></li>
@@ -221,14 +249,14 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.get_shading">
-<code class="sig-name descname">get_shading</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_shading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_shading" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.get_shading">
+<span class="sig-name descname"><span class="pre">get_shading</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.get_shading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.get_shading" title="Link to this definition">¶</a></dt>
 <dd><p>Set the shading control on or off</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Shading On/Off</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -239,39 +267,39 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DN</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN">GX3DN</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DN" title="geosoft.gxapi.GX3DN.GX3DN">GX3DN</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.set_axis_color">
-<code class="sig-name descname">set_axis_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_axis_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_axis_color" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.set_axis_color">
+<span class="sig-name descname"><span class="pre">set_axis_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_axis_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_axis_color" title="Link to this definition">¶</a></dt>
 <dd><p>Set the Axis draw color</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>int</em>) – Axis Color</p>
 </dd>
 </dl>
@@ -282,11 +310,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.set_axis_font">
-<code class="sig-name descname">set_axis_font</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_axis_font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_axis_font" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.set_axis_font">
+<span class="sig-name descname"><span class="pre">set_axis_font</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">font</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_axis_font"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_axis_font" title="Link to this definition">¶</a></dt>
 <dd><p>Set the Axis font</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>font</strong> (<em>str</em>) – Font name</p>
 </dd>
 </dl>
@@ -297,11 +325,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.set_background_color">
-<code class="sig-name descname">set_background_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_background_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_background_color" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.set_background_color">
+<span class="sig-name descname"><span class="pre">set_background_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_background_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_background_color" title="Link to this definition">¶</a></dt>
 <dd><p>Set the window background color</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>color</strong> (<em>int</em>) – Background Color</p>
 </dd>
 </dl>
@@ -312,11 +340,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.set_point_of_view">
-<code class="sig-name descname">set_point_of_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em>, <em class="sig-param"><span class="n">declination</span></em>, <em class="sig-param"><span class="n">inclination</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_point_of_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_point_of_view" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.set_point_of_view">
+<span class="sig-name descname"><span class="pre">set_point_of_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inclination</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_point_of_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_point_of_view" title="Link to this definition">¶</a></dt>
 <dd><p>Set location of the point we are looking from</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>distance</strong> (<em>float</em>) – Distance from center relative to longest grid dimension (which is 1.0)</p></li>
 <li><p><strong>declination</strong> (<em>float</em>) – Declination, 0 to 360 CW from Y</p></li>
@@ -331,11 +359,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.set_render_controls">
-<code class="sig-name descname">set_render_controls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span></em>, <em class="sig-param"><span class="n">axis</span></em>, <em class="sig-param"><span class="n">label_x</span></em>, <em class="sig-param"><span class="n">label_y</span></em>, <em class="sig-param"><span class="n">label_z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_render_controls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_render_controls" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.set_render_controls">
+<span class="sig-name descname"><span class="pre">set_render_controls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_render_controls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_render_controls" title="Link to this definition">¶</a></dt>
 <dd><p>Set the rendering controls</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>box</strong> (<em>int</em>) – Render Bounding Box (0 or 1)</p></li>
 <li><p><strong>axis</strong> (<em>int</em>) – Render Axis (0 or 1)</p></li>
@@ -352,11 +380,11 @@ directly related to the <a class="reference internal" href="GXMVIEW.html#geosoft
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.set_scale">
-<code class="sig-name descname">set_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_scale" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.set_scale">
+<span class="sig-name descname"><span class="pre">set_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_scale" title="Link to this definition">¶</a></dt>
 <dd><p>Set the axis relative scales.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>float</em>) – X Scale (default 1.0)</p></li>
 <li><p><strong>y</strong> (<em>float</em>) – Y Scale (default 1.0)</p></li>
@@ -377,11 +405,11 @@ to exaggerate one scale such as Z (1,1,5).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DN.set_shading">
-<code class="sig-name descname">set_shading</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shading</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_shading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_shading" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DN.set_shading">
+<span class="sig-name descname"><span class="pre">set_shading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shading</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DN.html#GX3DN.set_shading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DN.set_shading" title="Link to this definition">¶</a></dt>
 <dd><p>Set the shading control on or off</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>shading</strong> (<em>int</em>) – 0: Off, 1:  On.</p>
 </dd>
 </dl>
@@ -393,7 +421,7 @@ to exaggerate one scale such as Z (1,1,5).</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -408,14 +436,14 @@ to exaggerate one scale such as Z (1,1,5).</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GX3DN class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

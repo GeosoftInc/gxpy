@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXGUI &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXGUI &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGUI</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXGUI"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI">[docs]</a><span class="k">class</span> <span class="nc">GXGUI</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGUI">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI">[docs]</a>
+<span class="k">class</span> <span class="nc">GXGUI</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXGUI class.</span>
 
 <span class="sd">    These are graphical functions that typically create a</span>
@@ -87,12 +86,17 @@
 <span class="sd">    file import wizards, and the Histogram and Scatter tools.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXGUI.__init__"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXGUI.__init__">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXGUI</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXGUI.null"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.null">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXGUI &lt;geosoft.gxapi.GXGUI&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXGUI &lt;geosoft.gxapi.GXGUI&gt;`</span>
@@ -100,8 +104,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXGUI</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXGUI.is_null"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGUI.is_null">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -111,12 +118,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXGUI.create_wnd_from_hwnd"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.create_wnd_from_hwnd">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.create_wnd_from_hwnd">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.create_wnd_from_hwnd">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_wnd_from_hwnd</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a standard WND object from an HWND.</span>
 <span class="sd">        </span>
 <span class="sd">        :param p1:  HWND Handle</span>
@@ -139,9 +149,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.get_parent_wnd"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_parent_wnd">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.get_parent_wnd">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_parent_wnd">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_parent_wnd</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current parent window</span>
 <span class="sd">        </span>
 
@@ -159,9 +172,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.get_printer_lst"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_printer_lst">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.get_printer_lst">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_printer_lst">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_printer_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets a list of all printers.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  List to place into</span>
@@ -174,13 +190,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_get_printer_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.get_window_state"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_window_state">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.get_window_state">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_window_state">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve the current state of the Oasis montaj window</span>
 <span class="sd">        </span>
 
@@ -198,9 +217,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.set_window_state"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_window_state">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.set_window_state">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_window_state">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Changes the state of the Oasis montaj window</span>
 <span class="sd">        </span>
 <span class="sd">        :param state:  :ref:`WINDOW_STATE`</span>
@@ -213,13 +235,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_set_window_state</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">state</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.get_window_position"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_window_position">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.get_window_position">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_window_position">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the Oasis montaj window&#39;s position state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:    Window left position</span>
@@ -240,13 +265,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_get_window_position</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.set_window_position"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_window_position">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.set_window_position">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_window_position">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the Oasis montaj window&#39;s position and state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:    Window left position</span>
@@ -267,13 +295,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_set_window_position</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.get_client_window_area"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_client_window_area">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.get_client_window_area">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_client_window_area">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_client_window_area</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the location of the Oasis montaj client window.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min returned (0)</span>
@@ -296,13 +327,16 @@
 <span class="sd">        width and height for the maximum X and Y.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_get_client_window_area</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.grid_stat_hist"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.grid_stat_hist">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.grid_stat_hist">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.grid_stat_hist">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stat_hist</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Display Histogram of grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid_name:  Name of the grid to get stats from</span>
@@ -315,13 +349,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_grid_stat_hist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.grid_stat_hist5"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.grid_stat_hist5">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.grid_stat_hist5">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.grid_stat_hist5">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stat_hist5</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid_name_1</span><span class="p">,</span> <span class="n">grid_name_2</span><span class="p">,</span> <span class="n">grid_name_3</span><span class="p">,</span> <span class="n">grid_name_4</span><span class="p">,</span> <span class="n">grid_name_5</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Display Histogram of up to 5 different grids</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid_name_1:  Name of the first grid to get stats from (required)</span>
@@ -342,13 +379,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_grid_stat_hist5</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid_name_1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_3</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_4</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid_name_5</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.voxel_stat_hist"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.voxel_stat_hist">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.voxel_stat_hist">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.voxel_stat_hist">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">voxel_stat_hist</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vox_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Display Histogram of Voxel</span>
 <span class="sd">        </span>
 <span class="sd">        :param vox_name:  Name of the Voxel to get stats from</span>
@@ -361,13 +401,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_voxel_stat_hist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vox_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.color_form"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.color_form">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.color_form">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.color_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">color_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">no_col</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Select a color.</span>
 <span class="sd">        </span>
 <span class="sd">        :param col:     Color (modified)</span>
@@ -401,9 +444,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.color_transform"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.color_transform">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.color_transform">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.color_transform">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">color_transform</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Define an `GXITR &lt;geosoft.gxapi.GXITR&gt;` of up to 8 zones.</span>
 <span class="sd">        </span>
 <span class="sd">        :param itr:  `GXITR &lt;geosoft.gxapi.GXITR&gt;` object (modified)</span>
@@ -430,9 +476,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.coord_sys_wizard"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.coord_sys_wizard">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.coord_sys_wizard">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.coord_sys_wizard">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">coord_sys_wizard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">editable</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">source_label</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch the coordinate system definition/display `GXGUI &lt;geosoft.gxapi.GXGUI&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:           `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object</span>
@@ -467,9 +516,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.coord_sys_wizard_licensed"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.coord_sys_wizard_licensed">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.coord_sys_wizard_licensed">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.coord_sys_wizard_licensed">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">coord_sys_wizard_licensed</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">editable</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">source_label</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch the coordinate system definition/display `GXGUI &lt;geosoft.gxapi.GXGUI&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:           `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object</span>
@@ -501,9 +553,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.coord_sys_wizard_grid"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.coord_sys_wizard_grid">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.coord_sys_wizard_grid">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.coord_sys_wizard_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">coord_sys_wizard_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">target_ipj</span><span class="p">,</span> <span class="n">editable</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">source_label</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch the coordinate system definition/display `GXGUI &lt;geosoft.gxapi.GXGUI&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:           Original grid `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object</span>
@@ -553,9 +608,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.database_type"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.database_type">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.database_type">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.database_type">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">database_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the type string of an external DAO database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File Name</span>
@@ -584,9 +642,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.datamine_type"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.datamine_type">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.datamine_type">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.datamine_type">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">datamine_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the type of a Datamine file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File Name (for display purposes only)</span>
@@ -622,9 +683,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.export_xyz_template_editor"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.export_xyz_template_editor">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.export_xyz_template_editor">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.export_xyz_template_editor">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_xyz_template_editor</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Allows the user to edit XYZ export template</span>
 <span class="sd">        using a complex dialog. The Template name</span>
 <span class="sd">        may change during editing.</span>
@@ -657,9 +721,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.export_xyz_template_editor_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.export_xyz_template_editor_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.export_xyz_template_editor_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.export_xyz_template_editor_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_xyz_template_editor_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">edb</span><span class="p">,</span> <span class="n">templ</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Allows the user to edit an XYZ export template</span>
 <span class="sd">        using a complex dialog. The template name</span>
 <span class="sd">        may change during editing.</span>
@@ -684,9 +751,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.file_filter_index"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.file_filter_index">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.file_filter_index">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.file_filter_index">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">file_filter_index</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">filter</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the FILE_FILTER_XXX value for a file filter string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param filter:  Input filter string</span>
@@ -707,9 +777,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.gcs_datum_warning_shp"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gcs_datum_warning_shp">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.gcs_datum_warning_shp">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gcs_datum_warning_shp">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">gcs_datum_warning_shp</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data_source</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch the GCS Datum Warning dialog for `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` files.</span>
 <span class="sd">        </span>
 <span class="sd">        :param data_source:  Data source</span>
@@ -732,9 +805,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.gcs_datum_warning_shpdb_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gcs_datum_warning_shpdb_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.gcs_datum_warning_shpdb_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gcs_datum_warning_shpdb_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">gcs_datum_warning_shpdb_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">source_lst</span><span class="p">,</span> <span class="n">datum_from_lst</span><span class="p">,</span> <span class="n">ldtlst</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch the GCS Datum Warning dialog for `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` files (Database).</span>
 <span class="sd">        </span>
 <span class="sd">        :param source_lst:      Data source names</span>
@@ -760,9 +836,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.gcs_datum_warning_shp_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gcs_datum_warning_shp_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.gcs_datum_warning_shp_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gcs_datum_warning_shp_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">gcs_datum_warning_shp_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">source_lst</span><span class="p">,</span> <span class="n">datum_from_lst</span><span class="p">,</span> <span class="n">ldtlst</span><span class="p">,</span> <span class="n">mview</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch the GCS Datum Warning dialog for `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` files.</span>
 <span class="sd">        </span>
 <span class="sd">        :param source_lst:      Data source names</span>
@@ -788,9 +867,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.get_area_of_interest"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_area_of_interest">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.get_area_of_interest">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_area_of_interest">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_area_of_interest</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current area of interest from the application.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  AOI Area Min X</span>
@@ -824,9 +906,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.get_area_of_interest_3d"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_area_of_interest_3d">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.get_area_of_interest_3d">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_area_of_interest_3d">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_area_of_interest_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current area of interest from the application in 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  AOI Area Min X</span>
@@ -864,9 +949,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.get_dat_defaults"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_dat_defaults">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.get_dat_defaults">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_dat_defaults">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_dat_defaults</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">open</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">qual</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the user default extension and qualifier for grids/images.</span>
 <span class="sd">        </span>
 <span class="sd">        :param flags:  :ref:`DAT_TYPE`</span>
@@ -890,13 +978,16 @@
 <span class="sd">        and qualifier.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ext</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">qual</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_get_dat_defaults</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">open</span><span class="p">,</span> <span class="n">ext</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">qual</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.get_file_filter"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_file_filter">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.get_file_filter">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_file_filter">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_file_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_filter</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the defined filter, mask, extension and directory for an input filter.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file_filter:  :ref:`FILE_FILTER`</span>
@@ -926,13 +1017,16 @@
 <span class="sd">        file filters, especially in GX.Net functions.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">filter</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ext</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_get_file_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file_filter</span><span class="p">,</span> <span class="nb">filter</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mask</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ext</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.get_gs_directory"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_gs_directory">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.get_gs_directory">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.get_gs_directory">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_gs_directory</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the directory path for value of :ref:`GS_DIRECTORY`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param path:  :ref:`GS_DIRECTORY` Returned directory.</span>
@@ -952,13 +1046,16 @@
 <span class="sd">        file filters, especially in GX.Net functions.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">dir</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_get_gs_directory</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="p">,</span> <span class="nb">dir</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.browse_dir"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.browse_dir">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.browse_dir">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.browse_dir">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">browse_dir</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Browses for a specific directory.</span>
 <span class="sd">        </span>
 <span class="sd">        :param title:     Title of the Form</span>
@@ -983,9 +1080,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.color_transform_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.color_transform_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.color_transform_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.color_transform_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">color_transform_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">zones</span><span class="p">,</span> <span class="n">load_save</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Define an `GXITR &lt;geosoft.gxapi.GXITR&gt;` of up to 12 zones, with file load/save buttons.</span>
 <span class="sd">        </span>
 <span class="sd">        :param itr:        `GXITR &lt;geosoft.gxapi.GXITR&gt;` object (modified)</span>
@@ -1021,9 +1121,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.cumulative_percent"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.cumulative_percent">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.cumulative_percent">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.cumulative_percent">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">cumulative_percent</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Define a percent-based `GXITR &lt;geosoft.gxapi.GXITR&gt;` of up to 12 zones.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Default color transform file name</span>
@@ -1061,9 +1164,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.dat_file_form"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.dat_file_form">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.dat_file_form">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.dat_file_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dat_file_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">psz_file_path</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">validation_type</span><span class="p">,</span> <span class="n">multi</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Grid and Image file Open/Save Form for Multiple/Single file selections</span>
 <span class="sd">        </span>
 <span class="sd">        :param title:            Title of the Form</span>
@@ -1103,9 +1209,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.dat_file_form_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.dat_file_form_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.dat_file_form_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.dat_file_form_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dat_file_form_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">psz_file_path</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">validation_type</span><span class="p">,</span> <span class="n">multi</span><span class="p">,</span> <span class="n">sort</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.</span>
 <span class="sd">        </span>
 <span class="sd">        :param title:            Title of the Form</span>
@@ -1147,9 +1256,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.gen_file_form"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gen_file_form">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.gen_file_form">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.gen_file_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">gen_file_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">filt_vv</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">multi</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        General file Open/Save Form for Multiple/Single file selections and multiple filter capability</span>
 <span class="sd">        </span>
 <span class="sd">        :param title:      Title of the Form</span>
@@ -1194,9 +1306,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.custom_file_form"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.custom_file_form">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.custom_file_form">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.custom_file_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">custom_file_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">multi</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        General file Open/Save Form for Multiple/Single file selections and custom filter capability</span>
 <span class="sd">        </span>
 <span class="sd">        :param title:      Title of the Form</span>
@@ -1231,9 +1346,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_drill_database_ado2"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_ado2">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_drill_database_ado2">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_ado2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_drill_database_ado2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `import_drill_database_ado &lt;geosoft.gxapi.GXGUI.import_drill_database_ado&gt;`, but template name is returned.</span>
 <span class="sd">        </span>
 <span class="sd">        :param connect:  External database connection string (Blank for OLEDB Wizard)</span>
@@ -1266,9 +1384,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_drill_database_esri"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_esri">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_drill_database_esri">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_esri">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_drill_database_esri</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">geochem</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as iImportDrillDatabaseADO2_GUI, but from an ArcGIS Geodatabase</span>
 <span class="sd">        </span>
 <span class="sd">        :param connect:  External database connection string  (e.g. &quot;d:\\Personal\\test.mdb|Table&quot; or &quot;d:\\File\\test.gdb|TableX|FeatureClassY)&quot;</span>
@@ -1303,9 +1424,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_drill_database_odbc"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_odbc">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_drill_database_odbc">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_odbc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_drill_database_odbc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a template file for importing drill holes</span>
 <span class="sd">        from ODBC database data.</span>
 <span class="sd">        </span>
@@ -1343,9 +1467,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.configure_connection"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.configure_connection">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.configure_connection">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.configure_connection">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">configure_connection</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Configures connection string from ODBC database data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param connect:  Connection string</span>
@@ -1372,9 +1499,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_drill_database_odbc_maxwell"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_odbc_maxwell">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_drill_database_odbc_maxwell">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_odbc_maxwell">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_drill_database_odbc_maxwell</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `import_drill_database_odbc &lt;geosoft.gxapi.GXGUI.import_drill_database_odbc&gt;` but customized for Maxwell.</span>
 <span class="sd">        </span>
 <span class="sd">        :param connect:  Connection string</span>
@@ -1404,9 +1534,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_ascii_wizard"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_ascii_wizard">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_ascii_wizard">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_ascii_wizard">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_ascii_wizard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a template file from a gui.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Data file name</span>
@@ -1429,9 +1562,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_chem_database"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_chem_database">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_chem_database">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_chem_database">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_chem_database</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a template file for importing Geochems Database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:   Data file name</span>
@@ -1458,9 +1594,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_chem_database_ado"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_chem_database_ado">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_chem_database_ado">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_chem_database_ado">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_chem_database_ado</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Improved template creation for importing geochem database (ADO).</span>
 <span class="sd">        </span>
 <span class="sd">        :param connect:  External database connection string (Blank for OLEDB Wizard)</span>
@@ -1491,9 +1630,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_database"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_database">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_database</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create template to import an external database table.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:   External database file name</span>
@@ -1526,9 +1668,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_database_ado"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database_ado">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_database_ado">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database_ado">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_database_ado</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create template to import an external database table (ADO Version).</span>
 <span class="sd">        </span>
 <span class="sd">        :param connect:  External database connection string (Blank for OLEDB Wizard)</span>
@@ -1563,9 +1708,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_database_sql"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database_sql">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_database_sql">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database_sql">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_database_sql</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create template to import an external database table,</span>
 <span class="sd">        created using SQL.</span>
 <span class="sd">        </span>
@@ -1623,9 +1771,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_database_sqlado"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database_sqlado">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_database_sqlado">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_database_sqlado">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_database_sqlado</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create template to import an external database table,</span>
 <span class="sd">        created using SQL (New ADO Version).</span>
 <span class="sd">        </span>
@@ -1680,9 +1831,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_drill_database_ado"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_ado">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_drill_database_ado">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_database_ado">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_drill_database_ado</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a template file for importing drill holes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param connect:  External database connection string (Blank for OLEDB Wizard)</span>
@@ -1715,9 +1869,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_template_sql"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_template_sql">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_template_sql">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_template_sql">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_template_sql</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create template to import an external database table; provide query.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  External database file name</span>
@@ -1753,9 +1910,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_template_sqlado"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_template_sqlado">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_template_sqlado">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_template_sqlado">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_template_sqlado</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create template to import an external database table; provide query.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  External database connection string (Blank for OLEDB Wizard)</span>
@@ -1791,9 +1951,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_xyz_template_editor"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_xyz_template_editor">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_xyz_template_editor">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_xyz_template_editor">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_xyz_template_editor</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Allows the user to edit XYZ import templates</span>
 <span class="sd">        using a complex dialog. The Template name</span>
 <span class="sd">        may change during editing.</span>
@@ -1820,9 +1983,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.odbc_file_connect"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.odbc_file_connect">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.odbc_file_connect">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.odbc_file_connect">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">odbc_file_connect</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">connect</span><span class="p">,</span> <span class="n">usage</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the connection string for a file database as well as optional table name and FileUsage attribute</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:     File Name</span>
@@ -1857,9 +2023,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.symbol_form"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.symbol_form">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.symbol_form">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.symbol_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">symbol_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">symb_font</span><span class="p">,</span> <span class="n">geo_font</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">symb_num</span><span class="p">,</span> <span class="n">symb_size</span><span class="p">,</span> <span class="n">symb_ang</span><span class="p">,</span> <span class="n">edge_col</span><span class="p">,</span> <span class="n">fill_col</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        - Select a symbol.</span>
 <span class="sd">        </span>
 <span class="sd">        :param symb_font:  Symbol font file name</span>
@@ -1896,9 +2065,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.meta_data_tool"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.meta_data_tool">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.meta_data_tool">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.meta_data_tool">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">meta_data_tool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">root_token</span><span class="p">,</span> <span class="n">schema</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Edit a `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:        Meta object</span>
@@ -1923,9 +2095,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.import_chem_wizard"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_chem_wizard">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.import_chem_wizard">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_chem_wizard">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_chem_wizard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a template file for importing geochems.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Data file name</span>
@@ -1942,13 +2117,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_import_chem_wizard</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.import_drill_wizard"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_wizard">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.import_drill_wizard">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_wizard">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_drill_wizard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a template file for importing drill holes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:   Data file name</span>
@@ -1969,13 +2147,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_import_drill_wizard</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.import_drill_wizard_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_wizard_ex">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.import_drill_wizard_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.import_drill_wizard_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_drill_wizard_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a template file for importing drill holes where type is known</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:   Data file name</span>
@@ -1996,13 +2177,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">table</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_import_drill_wizard_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">table</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.internet_trust"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.internet_trust">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.internet_trust">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.internet_trust">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">internet_trust</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Change the Internet Trust Relationships</span>
 <span class="sd">        </span>
 
@@ -2013,13 +2197,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_internet_trust</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.pattern_form"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.pattern_form">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.pattern_form">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.pattern_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pattern_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">dense</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">back_col</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        - Select a pattern.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pat:       Current Pattern</span>
@@ -2068,9 +2255,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.line_pattern_form"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.line_pattern_form">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.line_pattern_form">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.line_pattern_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">line_pattern_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">colour</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Select a line pattern.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pattern:    Current Pattern</span>
@@ -2099,9 +2289,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.two_panel_selection"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.two_panel_selection">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">two_panel_selection</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ls_tf</span><span class="p">,</span> <span class="n">ls_ts</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        General purpose two-panel selection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ls_tf:  All available items for selection.</span>
@@ -2144,9 +2337,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.two_panel_selection2"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection2">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.two_panel_selection2">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">two_panel_selection2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ls_tf</span><span class="p">,</span> <span class="n">ls_ts</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Two-panel selection, items not sorted alphabetically.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ls_tf:  All available items for selection.</span>
@@ -2176,9 +2372,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.two_panel_selection_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.two_panel_selection_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">two_panel_selection_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ls_tf</span><span class="p">,</span> <span class="n">ls_ts</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">,</span> <span class="n">allow_no_select</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Two-panel selection; options for sort and ability to select no items.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ls_tf:            All available items for selection.</span>
@@ -2212,9 +2411,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.two_panel_selection_ex2"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection_ex2">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.two_panel_selection_ex2">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.two_panel_selection_ex2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">two_panel_selection_ex2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ls_tf</span><span class="p">,</span> <span class="n">ls_ts</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">,</span> <span class="n">allow_no_select</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">help</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Two-panel selection; extended options including a help link.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ls_tf:            All available items for selection.</span>
@@ -2248,9 +2450,12 @@
 
 
 
-<div class="viewcode-block" id="GXGUI.launch_single_geo_dotnetx_tool"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_single_geo_dotnetx_tool">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGUI.launch_single_geo_dotnetx_tool">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_single_geo_dotnetx_tool">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_single_geo_dotnetx_tool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dll</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch a user created .Net GEOXTOOL ensuring a single instance.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dll:   Assembly name</span>
@@ -2267,13 +2472,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_launch_single_geo_dotnetx_tool</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dll</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">func</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.launch_geo_dotnetx_tool"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_dotnetx_tool">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.launch_geo_dotnetx_tool">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_dotnetx_tool">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_geo_dotnetx_tool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dll</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch a user created .Net GEOXTOOL.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dll:   Assembly name</span>
@@ -2290,13 +2498,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_launch_geo_dotnetx_tool</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dll</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">func</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.launch_geo_x_tool"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_x_tool">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.launch_geo_x_tool">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_x_tool">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_geo_x_tool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dll</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch a user created GEOXTOOL.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dll:   DLL name</span>
@@ -2313,13 +2524,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_launch_geo_x_tool</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dll</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">func</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.launch_single_geo_dotnetx_tool_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_single_geo_dotnetx_tool_ex">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.launch_single_geo_dotnetx_tool_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_single_geo_dotnetx_tool_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_single_geo_dotnetx_tool_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dll</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">dock</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch a user created .Net GEOXTOOL ensuring a single instance.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dll:     Assembly name</span>
@@ -2344,13 +2558,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_launch_single_geo_dotnetx_tool_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dll</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">func</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">dock</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.launch_geo_dotnetx_tool_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_dotnetx_tool_ex">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.launch_geo_dotnetx_tool_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_dotnetx_tool_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_geo_dotnetx_tool_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dll</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">dock</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch a user created .Net GEOXTOOL.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dll:     Assembly name</span>
@@ -2375,13 +2592,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_launch_geo_dotnetx_tool_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dll</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">func</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">dock</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.launch_geo_x_tool_ex"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_x_tool_ex">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.launch_geo_x_tool_ex">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.launch_geo_x_tool_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_geo_x_tool_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dll</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">dock</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Launch a user created GEOXTOOL.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dll:     DLL name</span>
@@ -2406,13 +2626,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_launch_geo_x_tool_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dll</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">func</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">dock</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.meta_data_viewer"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.meta_data_viewer">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.meta_data_viewer">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.meta_data_viewer">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">meta_data_viewer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">root_token</span><span class="p">,</span> <span class="n">schema</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        View a `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:        Meta object</span>
@@ -2429,13 +2652,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_meta_data_viewer</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">meta</span><span class="p">,</span> <span class="n">root_token</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.print_file"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.print_file">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.print_file">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.print_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">print_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Prints a file to current printer</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Filename string</span>
@@ -2448,13 +2674,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_print_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.render_pattern"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.render_pattern">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.render_pattern">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.render_pattern">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">render_pattern</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">dense</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">back_col</span><span class="p">,</span> <span class="n">is_enabled</span><span class="p">,</span> <span class="n">is_button</span><span class="p">,</span> <span class="n">is_selected</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        - Render a pattern.</span>
 <span class="sd">        </span>
 <span class="sd">        :param hdc:          DC handle</span>
@@ -2495,13 +2724,16 @@
 <span class="sd">        **Note:** Renders a Geosoft pattern to a Windows DC.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_render_pattern</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">dense</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">back_col</span><span class="p">,</span> <span class="n">is_enabled</span><span class="p">,</span> <span class="n">is_button</span><span class="p">,</span> <span class="n">is_selected</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.render_line_pattern"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.render_line_pattern">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.render_line_pattern">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.render_line_pattern">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">render_line_pattern</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">is_enabled</span><span class="p">,</span> <span class="n">is_button</span><span class="p">,</span> <span class="n">is_selected</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Render a line pattern.</span>
 <span class="sd">        </span>
 <span class="sd">        :param hdc:          DC Handle</span>
@@ -2538,13 +2770,16 @@
 <span class="sd">        **Note:** Same as `render_pattern &lt;geosoft.gxapi.GXGUI.render_pattern&gt;` but for line patterns.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_render_line_pattern</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">is_enabled</span><span class="p">,</span> <span class="n">is_button</span><span class="p">,</span> <span class="n">is_selected</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.set_parent_wnd"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_parent_wnd">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.set_parent_wnd">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_parent_wnd">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_parent_wnd</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">wnd</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the current parent WND</span>
 <span class="sd">        </span>
 <span class="sd">        :param wnd:  New Parent Window</span>
@@ -2560,13 +2795,16 @@
 <span class="sd">        parent to ensure the dialog is correctly modal.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_set_parent_wnd</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">wnd</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.set_printer"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_printer">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.set_printer">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_printer">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_printer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">printer</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the Printer.</span>
 <span class="sd">        </span>
 <span class="sd">        :param printer:  Printer Name</span>
@@ -2579,13 +2817,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_set_printer</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">printer</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.set_prog_always_on"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_prog_always_on">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.set_prog_always_on">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.set_prog_always_on">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_prog_always_on</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">on</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Ability to set the progress bar to stay visible even</span>
 <span class="sd">        if main application is processing messages</span>
 <span class="sd">        </span>
@@ -2603,13 +2844,16 @@
 <span class="sd">        in some 3rd party apps, hence this function.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_set_prog_always_on</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">on</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.show_direct_hist"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.show_direct_hist">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.show_direct_hist">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.show_direct_hist">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">show_direct_hist</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Display histogram of data directly</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:      Min    Value to display</span>
@@ -2634,13 +2878,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_show_direct_hist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.show_hist"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.show_hist">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.show_hist">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.show_hist">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">show_hist</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Display Histogram of data from `GXST &lt;geosoft.gxapi.GXST&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:  Statistics obj</span>
@@ -2653,13 +2900,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_show_hist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">st</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.simple_map_dialog"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.simple_map_dialog">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.simple_map_dialog">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.simple_map_dialog">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">simple_map_dialog</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">help_id</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        General purpose map display `GXGUI &lt;geosoft.gxapi.GXGUI&gt;` with no interaction.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:      `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` object</span>
@@ -2679,13 +2929,16 @@
 <span class="sd">        It is generally useful to display temporary maps as graphs (e.g. variograms).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_simple_map_dialog</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">help_id</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.thematic_voxel_info"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.thematic_voxel_info">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.thematic_voxel_info">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.thematic_voxel_info">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">thematic_voxel_info</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vox</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Display GX.Net thematic voxel info `GXGUI &lt;geosoft.gxapi.GXGUI&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vox:  `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object</span>
@@ -2703,13 +2956,16 @@
 <span class="sd">        numerical voxel grids.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_thematic_voxel_info</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vox</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGUI.show_3d_viewer_dialog"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.show_3d_viewer_dialog">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.show_3d_viewer_dialog">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.show_3d_viewer_dialog">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">show_3d_viewer_dialog</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">o3dv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Display a standalone 3D viewer</span>
 <span class="sd">        </span>
 <span class="sd">        :param title:  Title</span>
@@ -2726,6 +2982,7 @@
 <span class="sd">        **Note:** Any changes made to the 3D View will be persisted.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_show_3d_viewer_dialog</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">o3dv</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
@@ -2734,9 +2991,11 @@
 <span class="c1"># Obsolete</span>
 
 
-<div class="viewcode-block" id="GXGUI.fft2_spec_filter"><a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.fft2_spec_filter">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGUI.fft2_spec_filter">
+<a class="viewcode-back" href="../../../GXGUI.html#geosoft.gxapi.GXGUI.fft2_spec_filter">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">fft2_spec_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">spec_file_name</span><span class="p">,</span> <span class="n">con_file_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Interactive `GXFFT2 &lt;geosoft.gxapi.GXFFT2&gt;` radially averaged power spectrum filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param spec_file_name:  Name of the input spectrum file</span>
@@ -2750,7 +3009,9 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_fft2_spec_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">spec_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">con_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGUI</span><span class="o">.</span><span class="n">_fft2_spec_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">spec_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">con_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
         
 
 
@@ -2780,7 +3041,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGUI</a></li> 
@@ -2788,8 +3049,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

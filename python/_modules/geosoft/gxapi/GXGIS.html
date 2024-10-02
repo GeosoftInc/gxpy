@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXGIS &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXGIS &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGIS</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -79,8 +76,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXGIS"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS">[docs]</a><span class="k">class</span> <span class="nc">GXGIS</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGIS</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS">[docs]</a>
+<span class="k">class</span> <span class="nc">GXGIS</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGIS</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXGIS class.</span>
 
 <span class="sd">    The `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` class is used for the import, export,</span>
@@ -88,12 +87,17 @@
 <span class="sd">    such as MapInfo® TAB files.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXGIS.__init__"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXGIS.__init__">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXGIS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXGIS.null"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGIS.null">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXGIS &lt;geosoft.gxapi.GXGIS&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXGIS &lt;geosoft.gxapi.GXGIS&gt;`</span>
@@ -101,8 +105,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXGIS</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXGIS.is_null"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.is_null">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -112,12 +119,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXGIS.create"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGIS.create">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` Object</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Data source (file)</span>
@@ -140,8 +150,11 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.create_map_2d"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.create_map_2d">[docs]</a>    <span class="k">def</span> <span class="nf">create_map_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">map_scale</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">map2_d</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.create_map_2d">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.create_map_2d">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_map_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">map_scale</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">map2_d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        `create_map_2d &lt;geosoft.gxapi.GXGIS.create_map_2d&gt;`   Create a new 2D map for `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` imports.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:        Map name</span>
@@ -161,6 +174,7 @@
 <span class="sd">        creation of new maps with 2D views.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_create_map_2d</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">map_scale</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">map2_d</span><span class="p">)</span></div>
+
         
 
 
@@ -168,8 +182,10 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.get_bpr_models_lst"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_bpr_models_lst">[docs]</a>    <span class="k">def</span> <span class="nf">get_bpr_models_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.get_bpr_models_lst">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_bpr_models_lst">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_bpr_models_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a `GXLST &lt;geosoft.gxapi.GXLST&gt;` of block models contained in a Gemcom BPR or BRP2 file</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  BPR or BPR2 file</span>
@@ -194,13 +210,16 @@
 <span class="sd">        beside the input BPR or BPR2.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_bpr_models_lst</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.get_ipj"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.get_ipj">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 
@@ -222,8 +241,11 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.get_meta"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.get_meta">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  Meta object to store `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` meta information</span>
@@ -234,13 +256,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.get_range"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_range">[docs]</a>    <span class="k">def</span> <span class="nf">get_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">z_min</span><span class="p">,</span> <span class="n">z_max</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.get_range">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_range">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">z_min</span><span class="p">,</span> <span class="n">z_max</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the range of data in the `GXGIS &lt;geosoft.gxapi.GXGIS&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_min:  X min</span>
@@ -261,13 +286,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z_max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_range</span><span class="p">(</span><span class="n">x_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z_max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGIS.datamine_type"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.datamine_type">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGIS.datamine_type">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.datamine_type">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">datamine_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the type of a Datamine file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Name of input datamine file</span>
@@ -291,8 +319,11 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.get_file_name"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_file_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.get_file_name">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.get_file_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the file name</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Returned file name</span>
@@ -303,13 +334,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXGIS.is_mi_map_file"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_mi_map_file">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXGIS.is_mi_map_file">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_mi_map_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">is_mi_map_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns TRUE if file is a MapInfo MAP file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:  Name of input map file</span>
@@ -332,9 +366,12 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.is_mi_raster_tab_file"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_mi_raster_tab_file">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGIS.is_mi_raster_tab_file">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_mi_raster_tab_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">is_mi_raster_tab_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">tab</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns TRUE if file is a MapInfo Raster TAB file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tab:  Name of input tab file</span>
@@ -353,9 +390,12 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.is_mi_rotated_raster_tab_file"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_mi_rotated_raster_tab_file">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGIS.is_mi_rotated_raster_tab_file">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_mi_rotated_raster_tab_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">is_mi_rotated_raster_tab_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">tab</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns TRUE if file is a rotated MapInfo Raster TAB file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tab:  Name of input tab file</span>
@@ -386,8 +426,11 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.is_shp_file_3d"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_shp_file_3d">[docs]</a>    <span class="k">def</span> <span class="nf">is_shp_file_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.is_shp_file_3d">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_shp_file_3d">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_shp_file_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns TRUE if an ArcView `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` file is type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ</span>
 <span class="sd">        </span>
 
@@ -408,8 +451,11 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.is_shp_file_point"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_shp_file_point">[docs]</a>    <span class="k">def</span> <span class="nf">is_shp_file_point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.is_shp_file_point">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.is_shp_file_point">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_shp_file_point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns TRUE if an ArcView `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` file is type POINT or POINTZ</span>
 <span class="sd">        </span>
 
@@ -429,8 +475,11 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.num_attribs"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.num_attribs">[docs]</a>    <span class="k">def</span> <span class="nf">num_attribs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.num_attribs">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.num_attribs">[docs]</a>
+    <span class="k">def</span> <span class="nf">num_attribs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The number of attribute fields in the `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` dataset</span>
 <span class="sd">        </span>
 
@@ -447,8 +496,11 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.num_shapes"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.num_shapes">[docs]</a>    <span class="k">def</span> <span class="nf">num_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGIS.num_shapes">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.num_shapes">[docs]</a>
+    <span class="k">def</span> <span class="nf">num_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The number of shape entities in the `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` dataset</span>
 <span class="sd">        </span>
 
@@ -464,9 +516,12 @@
 
 
 
-<div class="viewcode-block" id="GXGIS.scan_mi_raster_tab_file"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.scan_mi_raster_tab_file">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXGIS.scan_mi_raster_tab_file">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.scan_mi_raster_tab_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">scan_mi_raster_tab_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Scan and set up a MapInf RASTER.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tab:   Name of input file</span>
@@ -483,13 +538,16 @@
 <span class="sd">        **Note:** This will create a GI file for the raster image.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">file</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGIS</span><span class="o">.</span><span class="n">_scan_mi_raster_tab_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">tab</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.load_ascii"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_ascii">[docs]</a>    <span class="k">def</span> <span class="nf">load_ascii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.load_ascii">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_ascii">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_ascii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` attribute table information (string fields) into a `GXWA &lt;geosoft.gxapi.GXWA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param wa:   `GXWA &lt;geosoft.gxapi.GXWA&gt;` object</span>
@@ -505,13 +563,16 @@
 <span class="sd">        e field columns are separated by a tab (delimited character).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_ascii</span><span class="p">(</span><span class="n">wa</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.load_gdb"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_gdb">[docs]</a>    <span class="k">def</span> <span class="nf">load_gdb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.load_gdb">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_gdb">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_gdb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` table information into a GDB.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database</span>
@@ -532,13 +593,16 @@
 <span class="sd">        If a channel exists, it will be used as-is.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_gdb</span><span class="p">(</span><span class="n">db</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.load_map"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_map">[docs]</a>    <span class="k">def</span> <span class="nf">load_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mview</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.load_map">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_map">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mview</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` table drawing into a `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:  View in which to place `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` drawing.</span>
@@ -551,13 +615,16 @@
 <span class="sd">        **Note:** The `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` drawing will be drawin in the current group.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_map</span><span class="p">(</span><span class="n">mview</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.load_map_ex"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_map_ex">[docs]</a>    <span class="k">def</span> <span class="nf">load_map_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.load_map_ex">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_map_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_map_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` table drawing into a `GXMAP &lt;geosoft.gxapi.GXMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:        Map handle</span>
@@ -572,13 +639,16 @@
 <span class="sd">        **Note:** The `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` drawing will be drawin in the current group.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_map_ex</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">view_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.load_meta_groups_map"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_meta_groups_map">[docs]</a>    <span class="k">def</span> <span class="nf">load_meta_groups_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">name_field</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.load_meta_groups_map">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_meta_groups_map">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_meta_groups_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">name_field</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` table drawing into a `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:       View in which to place `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` drawing.</span>
@@ -602,13 +672,16 @@
 <span class="sd">        Note that the map may grow very large for big datasets.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_meta_groups_map</span><span class="p">(</span><span class="n">mview</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">ph_object</span><span class="p">,</span> <span class="n">prefix</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name_field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.load_ply"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_ply">[docs]</a>    <span class="k">def</span> <span class="nf">load_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ply</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.load_ply">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_ply">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ply</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` table drawing into a Multi-Polygon object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ply:  Polygon object in which to place `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` shapes.</span>
@@ -619,13 +692,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_ply</span><span class="p">(</span><span class="n">ply</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.load_shapes_gdb"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_shapes_gdb">[docs]</a>    <span class="k">def</span> <span class="nf">load_shapes_gdb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.load_shapes_gdb">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.load_shapes_gdb">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_shapes_gdb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` shapes table information into separate lines in a GDB.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database</span>
@@ -648,13 +724,16 @@
 <span class="sd">        The shape ID will be used as the line numbers.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_shapes_gdb</span><span class="p">(</span><span class="n">db</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.set_dm_wireframe_pt_file"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_dm_wireframe_pt_file">[docs]</a>    <span class="k">def</span> <span class="nf">set_dm_wireframe_pt_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.set_dm_wireframe_pt_file">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_dm_wireframe_pt_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_dm_wireframe_pt_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify the wireframe point file corresponding to the input file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Name of the wireframe point file</span>
@@ -671,13 +750,16 @@
 <span class="sd">        first, so that the full model can be decoded.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_dm_wireframe_pt_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.set_ipj"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.set_ipj">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` back to `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` file</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to save</span>
@@ -688,13 +770,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.set_lst"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_lst">[docs]</a>    <span class="k">def</span> <span class="nf">set_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.set_lst">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_lst">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save a `GXLST &lt;geosoft.gxapi.GXLST&gt;` of items inside the `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` object for special use.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  `GXLST &lt;geosoft.gxapi.GXLST&gt;` object to save to `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
@@ -709,13 +794,16 @@
 <span class="sd">        input `GXLST &lt;geosoft.gxapi.GXLST&gt;` is copied to it.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.set_meta"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.set_meta">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save the `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` back to `GXGIS &lt;geosoft.gxapi.GXGIS&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object to save to `GXGIS &lt;geosoft.gxapi.GXGIS&gt;` meta</span>
@@ -726,13 +814,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXGIS.set_triangulation_object_index"><a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_triangulation_object_index">[docs]</a>    <span class="k">def</span> <span class="nf">set_triangulation_object_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i_toi</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXGIS.set_triangulation_object_index">
+<a class="viewcode-back" href="../../../GXGIS.html#geosoft.gxapi.GXGIS.set_triangulation_object_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_triangulation_object_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i_toi</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the triangulation object index (Micromine)</span>
 <span class="sd">        </span>
 <span class="sd">        :param i_toi:  Triangulation object index</span>
@@ -742,7 +833,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_triangulation_object_index</span><span class="p">(</span><span class="n">i_toi</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_triangulation_object_index</span><span class="p">(</span><span class="n">i_toi</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -772,7 +865,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGIS</a></li> 
@@ -780,8 +873,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

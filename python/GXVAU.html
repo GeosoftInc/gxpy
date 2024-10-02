@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXVAU class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXVAU class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,30 +28,46 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVAU class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXVAU class</a><ul>
-<li><a class="reference internal" href="#vau-prune-constants">VAU_PRUNE constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU"><code class="docutils literal notranslate"><span class="pre">GXVAU</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU.__init__"><code class="docutils literal notranslate"><span class="pre">GXVAU.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU.is_null"><code class="docutils literal notranslate"><span class="pre">GXVAU.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU.null"><code class="docutils literal notranslate"><span class="pre">GXVAU.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU.prune"><code class="docutils literal notranslate"><span class="pre">GXVAU.prune()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU.total_vector"><code class="docutils literal notranslate"><span class="pre">GXVAU.total_vector()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vau-prune-constants">VAU_PRUNE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.VAU_PRUNE_DUMMY"><code class="docutils literal notranslate"><span class="pre">VAU_PRUNE_DUMMY</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.VAU_PRUNE_DUMMY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VAU_PRUNE_VALID"><code class="docutils literal notranslate"><span class="pre">VAU_PRUNE_VALID</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">gxapi.VAU_PRUNE_VALID</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,54 +83,53 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxvau-class">
-<span id="gxvau"></span><h1>GXVAU class<a class="headerlink" href="#gxvau-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxvau-class">
+<span id="gxvau"></span><h1>GXVAU class<a class="headerlink" href="#gxvau-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXVAU">
-<em class="property">class </em><code class="sig-name descname">GXVAU</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXVAU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU" title="Link to this definition">¶</a></dt>
 <dd><p>GXVAU class.</p>
 <p>This is not a class. These are methods that work on
 data stored in <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> objects</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXVAU.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXVAU.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXVAU.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVAU" title="geosoft.gxapi.GXVAU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVAU</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXVAU" title="geosoft.gxapi.GXVAU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVAU</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVAU" title="geosoft.gxapi.GXVAU">GXVAU</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVAU" title="geosoft.gxapi.GXVAU.GXVAU">GXVAU</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXVAU.prune">
-<em class="property">classmethod </em><code class="sig-name descname">prune</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v_ap</span></em>, <em class="sig-param"><span class="n">vv_r</span></em>, <em class="sig-param"><span class="n">o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.prune"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.prune" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.prune">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prune</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v_ap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.prune"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.prune" title="Link to this definition">¶</a></dt>
 <dd><p>Prune values from a <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> based on reference <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>v_ap</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> to prune</p></li>
 <li><p><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Reference <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
@@ -134,11 +147,11 @@ that are either dummy or non-dummy in the reference
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXVAU.total_vector">
-<em class="property">classmethod </em><code class="sig-name descname">total_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xva</span></em>, <em class="sig-param"><span class="n">yva</span></em>, <em class="sig-param"><span class="n">zva</span></em>, <em class="sig-param"><span class="n">tva</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.total_vector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.total_vector" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.total_vector">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">total_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xva</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yva</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zva</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tva</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.total_vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.total_vector" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate total vector for X,Y and Z components</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>xva</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – X Component object</p></li>
 <li><p><strong>yva</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Y Component object</p></li>
@@ -155,33 +168,33 @@ that are either dummy or non-dummy in the reference
 
 </dd></dl>
 
-<div class="section" id="vau-prune-constants">
-<span id="vau-prune"></span><h2>VAU_PRUNE constants<a class="headerlink" href="#vau-prune-constants" title="Permalink to this headline">¶</a></h2>
+<section id="vau-prune-constants">
+<span id="vau-prune"></span><h2>VAU_PRUNE constants<a class="headerlink" href="#vau-prune-constants" title="Link to this heading">¶</a></h2>
 <p>Prune Options</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.VAU_PRUNE_DUMMY">
-<code class="sig-name descname">VAU_PRUNE_DUMMY</code><a class="headerlink" href="#geosoft.gxapi.VAU_PRUNE_DUMMY" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.VAU_PRUNE_DUMMY">
+<span class="sig-name descname"><span class="pre">VAU_PRUNE_DUMMY</span></span><a class="headerlink" href="#geosoft.gxapi.VAU_PRUNE_DUMMY" title="Link to this definition">¶</a></dt>
 <dd><p>Dummy</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VAU_PRUNE_DUMMY</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VAU_PRUNE_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.VAU_PRUNE_VALID">
-<code class="sig-name descname">VAU_PRUNE_VALID</code><a class="headerlink" href="#geosoft.gxapi.VAU_PRUNE_VALID" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.VAU_PRUNE_VALID">
+<span class="sig-name descname"><span class="pre">VAU_PRUNE_VALID</span></span><a class="headerlink" href="#geosoft.gxapi.VAU_PRUNE_VALID" title="Link to this definition">¶</a></dt>
 <dd><p>Valid</p>
 <dl class="py attribute">
-<dt id="id2">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VAU_PRUNE_VALID</code><em class="property"> = 1</em><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VAU_PRUNE_VALID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -196,14 +209,14 @@ that are either dummy or non-dummy in the reference
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVAU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

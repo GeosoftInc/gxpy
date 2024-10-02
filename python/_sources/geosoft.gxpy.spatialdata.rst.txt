@@ -1,7 +1,47 @@
-geosoft.gxpy.spatialdata submodule
-=============================================
+﻿geosoft.gxpy.spatialdata
+========================
 
 .. automodule:: geosoft.gxpy.spatialdata
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      coordinate_system_from_metadata
+      coordinate_system_from_metadata_file
+      delete_files
+      extent_from_metadata
+      extent_from_metadata_file
+      find_meta_branch
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SpatialData
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      SpatialException
+   
+   
+
+
+

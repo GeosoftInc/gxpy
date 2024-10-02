@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXPGU class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXPGU class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,35 +28,139 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPGU class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXPGU class</a><ul>
-<li><a class="reference internal" href="#blakey-test-constants">BLAKEY_TEST constants</a></li>
-<li><a class="reference internal" href="#pgu-corr-constants">PGU_CORR constants</a></li>
-<li><a class="reference internal" href="#pgu-directgrid-constants">PGU_DIRECTGRID constants</a></li>
-<li><a class="reference internal" href="#pgu-direction-constants">PGU_DIRECTION constants</a></li>
-<li><a class="reference internal" href="#pgu-trans-constants">PGU_TRANS constants</a></li>
-<li><a class="reference internal" href="#pgu-interp-order-constants">PGU_INTERP_ORDER constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU"><code class="docutils literal notranslate"><span class="pre">GXPGU</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.__init__"><code class="docutils literal notranslate"><span class="pre">GXPGU.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.add_scalar"><code class="docutils literal notranslate"><span class="pre">GXPGU.add_scalar()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.bool_mask"><code class="docutils literal notranslate"><span class="pre">GXPGU.bool_mask()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.correlation_matrix"><code class="docutils literal notranslate"><span class="pre">GXPGU.correlation_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.correlation_matrix2"><code class="docutils literal notranslate"><span class="pre">GXPGU.correlation_matrix2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_gridding_db"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_gridding_db()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_gridding_db2"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_gridding_db2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_gridding_db_3d"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_gridding_db_3d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_gridding_vv"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_gridding_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_dat"><code class="docutils literal notranslate"><span class="pre">GXPGU.dw_gridding_dat()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_dat_3d"><code class="docutils literal notranslate"><span class="pre">GXPGU.dw_gridding_dat_3d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_db"><code class="docutils literal notranslate"><span class="pre">GXPGU.dw_gridding_db()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_db_3d"><code class="docutils literal notranslate"><span class="pre">GXPGU.dw_gridding_db_3d()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_vv"><code class="docutils literal notranslate"><span class="pre">GXPGU.dw_gridding_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.expand"><code class="docutils literal notranslate"><span class="pre">GXPGU.expand()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.fill"><code class="docutils literal notranslate"><span class="pre">GXPGU.fill()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.fill_value"><code class="docutils literal notranslate"><span class="pre">GXPGU.fill_value()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.filt_sym"><code class="docutils literal notranslate"><span class="pre">GXPGU.filt_sym()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.filt_sym5"><code class="docutils literal notranslate"><span class="pre">GXPGU.filt_sym5()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.grid_peak"><code class="docutils literal notranslate"><span class="pre">GXPGU.grid_peak()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.invert_matrix"><code class="docutils literal notranslate"><span class="pre">GXPGU.invert_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.is_null"><code class="docutils literal notranslate"><span class="pre">GXPGU.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.jacobi"><code class="docutils literal notranslate"><span class="pre">GXPGU.jacobi()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.lu_back_sub"><code class="docutils literal notranslate"><span class="pre">GXPGU.lu_back_sub()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.lu_decomp"><code class="docutils literal notranslate"><span class="pre">GXPGU.lu_decomp()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.matrix_mult"><code class="docutils literal notranslate"><span class="pre">GXPGU.matrix_mult()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.matrix_vector_mult"><code class="docutils literal notranslate"><span class="pre">GXPGU.matrix_vector_mult()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.maximum_terrain_steepness"><code class="docutils literal notranslate"><span class="pre">GXPGU.maximum_terrain_steepness()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.multiply_scalar"><code class="docutils literal notranslate"><span class="pre">GXPGU.multiply_scalar()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.null"><code class="docutils literal notranslate"><span class="pre">GXPGU.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.numeric_to_thematic"><code class="docutils literal notranslate"><span class="pre">GXPGU.numeric_to_thematic()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_communality"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_communality()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_loadings"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_loadings()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_loadings2"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_loadings2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_scores"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_scores()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_standardize"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_standardize()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_standardize2"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_standardize2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_transform"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_transform()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_varimax"><code class="docutils literal notranslate"><span class="pre">GXPGU.pc_varimax()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.peakedness"><code class="docutils literal notranslate"><span class="pre">GXPGU.peakedness()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.peakedness_grid"><code class="docutils literal notranslate"><span class="pre">GXPGU.peakedness_grid()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.ref_file"><code class="docutils literal notranslate"><span class="pre">GXPGU.ref_file()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.save_file"><code class="docutils literal notranslate"><span class="pre">GXPGU.save_file()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.sv_decompose"><code class="docutils literal notranslate"><span class="pre">GXPGU.sv_decompose()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.sv_recompose"><code class="docutils literal notranslate"><span class="pre">GXPGU.sv_recompose()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.thematic_to_numeric"><code class="docutils literal notranslate"><span class="pre">GXPGU.thematic_to_numeric()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.trend"><code class="docutils literal notranslate"><span class="pre">GXPGU.trend()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#blakey-test-constants">BLAKEY_TEST constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_ONESIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_ONESIDE</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_ONESIDE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_TWOSIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_TWOSIDE</span></code></a></li>
+<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_TWOSIDE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_THREESIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_THREESIDE</span></code></a></li>
+<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_THREESIDE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_FOURSIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_FOURSIDE</span></code></a></li>
+<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_FOURSIDE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pgu-corr-constants">PGU_CORR constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_CORR_SIMPLE"><code class="docutils literal notranslate"><span class="pre">PGU_CORR_SIMPLE</span></code></a></li>
+<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_CORR_SIMPLE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_CORR_PEARSON"><code class="docutils literal notranslate"><span class="pre">PGU_CORR_PEARSON</span></code></a></li>
+<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_CORR_PEARSON</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pgu-directgrid-constants">PGU_DIRECTGRID constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_MINIMUM"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_MINIMUM</span></code></a></li>
+<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MINIMUM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_MAXIMUM</span></code></a></li>
+<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MAXIMUM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_MEAN"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_MEAN</span></code></a></li>
+<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MEAN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_ITEMS"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_ITEMS</span></code></a></li>
+<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_ITEMS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pgu-direction-constants">PGU_DIRECTION constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_FORWARD"><code class="docutils literal notranslate"><span class="pre">PGU_FORWARD</span></code></a></li>
+<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_FORWARD</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_BACKWARD"><code class="docutils literal notranslate"><span class="pre">PGU_BACKWARD</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_BACKWARD</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pgu-trans-constants">PGU_TRANS constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_TRANS_NONE"><code class="docutils literal notranslate"><span class="pre">PGU_TRANS_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_TRANS_NONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_TRANS_LOG"><code class="docutils literal notranslate"><span class="pre">PGU_TRANS_LOG</span></code></a></li>
+<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_TRANS_LOG</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pgu-interp-order-constants">PGU_INTERP_ORDER constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_XYZ"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_XYZ</span></code></a></li>
+<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_XYZ</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_XZY"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_XZY</span></code></a></li>
+<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_XZY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_YXZ"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_YXZ</span></code></a></li>
+<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_YXZ</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_YZX"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_YZX</span></code></a></li>
+<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_YZX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZXY"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_ZXY</span></code></a></li>
+<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_ZXY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZYX"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_ZYX</span></code></a></li>
+<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_ZYX</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -74,26 +176,25 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxpgu-class">
-<span id="gxpgu"></span><h1>GXPGU class<a class="headerlink" href="#gxpgu-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxpgu-class">
+<span id="gxpgu"></span><h1>GXPGU class<a class="headerlink" href="#gxpgu-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXPGU">
-<em class="property">class </em><code class="sig-name descname">GXPGU</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXPGU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU" title="Link to this definition">¶</a></dt>
 <dd><p>GXPGU class.</p>
 <p>A collection of methods applied to <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> objects, including
 fills, trending and 2-D <a class="reference internal" href="GXFFT.html#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> operations.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.add_scalar">
-<em class="property">classmethod </em><code class="sig-name descname">add_scalar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">scalar</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.add_scalar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.add_scalar" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.add_scalar">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.add_scalar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.add_scalar" title="Link to this definition">¶</a></dt>
 <dd><p>Add a scalar value to a pager</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager</p></li>
 <li><p><strong>scalar</strong> (<em>float</em>) – Scalar Value</p></li>
@@ -108,11 +209,11 @@ fills, trending and 2-D <a class="reference internal" href="GXFFT.html#geosoft.g
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.bool_mask">
-<em class="property">classmethod </em><code class="sig-name descname">bool_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">ref_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.bool_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.bool_mask" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.bool_mask">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bool_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_fil</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.bool_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.bool_mask" title="Link to this definition">¶</a></dt>
 <dd><p>Apply reference file boolean mask to pager</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
 <li><p><strong>ref_fil</strong> (<em>str</em>) – sRefFil - reference file for boolean mask flag.</p></li>
@@ -126,11 +227,11 @@ fills, trending and 2-D <a class="reference internal" href="GXFFT.html#geosoft.g
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.correlation_matrix">
-<em class="property">classmethod </em><code class="sig-name descname">correlation_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_u</span></em>, <em class="sig-param"><span class="n">pg_o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.correlation_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.correlation_matrix" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.correlation_matrix">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlation_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.correlation_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.correlation_matrix" title="Link to this definition">¶</a></dt>
 <dd><p>Find the correlations between columns in a matrix</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_u</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input matrix</p></li>
 <li><p><strong>pg_o</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Returned correlation matrix</p></li>
@@ -148,11 +249,11 @@ The elements take on values from 0 (orthogonal) to 1 (parallel).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.correlation_matrix2">
-<em class="property">classmethod </em><code class="sig-name descname">correlation_matrix2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_u</span></em>, <em class="sig-param"><span class="n">corr</span></em>, <em class="sig-param"><span class="n">pg_o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.correlation_matrix2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.correlation_matrix2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.correlation_matrix2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlation_matrix2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.correlation_matrix2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.correlation_matrix2" title="Link to this definition">¶</a></dt>
 <dd><p>Same as <a class="reference internal" href="#geosoft.gxapi.GXPGU.correlation_matrix" title="geosoft.gxapi.GXPGU.correlation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">correlation_matrix</span></code></a>, but select correlation type.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_u</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input matrix</p></li>
 <li><p><strong>corr</strong> (<em>int</em>) – <a class="reference internal" href="#pgu-corr"><span class="std std-ref">PGU_CORR constants</span></a></p></li>
@@ -167,11 +268,11 @@ The elements take on values from 0 (orthogonal) to 1 (parallel).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.direct_gridding_db">
-<em class="property">classmethod </em><code class="sig-name descname">direct_gridding_db</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">xo</span></em>, <em class="sig-param"><span class="n">yo</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em>, <em class="sig-param"><span class="n">rot</span></em>, <em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_db" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.direct_gridding_db">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct_gridding_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_db" title="Link to this definition">¶</a></dt>
 <dd><p>Direct-gridding method, <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> version.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input grid</p></li>
 <li><p><strong>xo</strong> (<em>float</em>) – X origin of grid</p></li>
@@ -196,11 +297,11 @@ cell area. Grid cells containing no data values are set to dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.direct_gridding_db2">
-<em class="property">classmethod </em><code class="sig-name descname">direct_gridding_db2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">xo</span></em>, <em class="sig-param"><span class="n">yo</span></em>, <em class="sig-param"><span class="n">xMax</span></em>, <em class="sig-param"><span class="n">yMax</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em>, <em class="sig-param"><span class="n">rot</span></em>, <em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_db2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_db2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.direct_gridding_db2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct_gridding_db2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xMax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yMax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_db2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_db2" title="Link to this definition">¶</a></dt>
 <dd><p>Direct-gridding method, <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> version.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input grid</p></li>
 <li><p><strong>xo</strong> (<em>float</em>) – X origin of grid</p></li>
@@ -227,11 +328,11 @@ cell area. Grid cells containing no data values are set to dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.direct_gridding_db_3d">
-<em class="property">classmethod </em><code class="sig-name descname">direct_gridding_db_3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">xo</span></em>, <em class="sig-param"><span class="n">yo</span></em>, <em class="sig-param"><span class="n">zo</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em>, <em class="sig-param"><span class="n">dz</span></em>, <em class="sig-param"><span class="n">rot</span></em>, <em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_db_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_db_3d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.direct_gridding_db_3d">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct_gridding_db_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_db_3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_db_3d" title="Link to this definition">¶</a></dt>
 <dd><p>Direct-gridding method, <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> version, 3D.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input 3D <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p></li>
 <li><p><strong>xo</strong> (<em>float</em>) – X origin of 3D grid</p></li>
@@ -259,11 +360,11 @@ cell area. Grid cells containing no data values are set to dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.direct_gridding_vv">
-<em class="property">classmethod </em><code class="sig-name descname">direct_gridding_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">xo</span></em>, <em class="sig-param"><span class="n">yo</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em>, <em class="sig-param"><span class="n">rot</span></em>, <em class="sig-param"><span class="n">v_vx</span></em>, <em class="sig-param"><span class="n">v_vy</span></em>, <em class="sig-param"><span class="n">v_vz</span></em>, <em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_vv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.direct_gridding_vv">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct_gridding_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_vx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_vy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_vz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_gridding_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_gridding_vv" title="Link to this definition">¶</a></dt>
 <dd><p>Direct-gridding method, <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> version.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input grid</p></li>
 <li><p><strong>xo</strong> (<em>float</em>) – X origin of grid</p></li>
@@ -287,11 +388,11 @@ cell area. Grid cells containing no data values are set to dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.dw_gridding_dat">
-<em class="property">classmethod </em><code class="sig-name descname">dw_gridding_dat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">dat</span></em>, <em class="sig-param"><span class="n">reg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_dat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_dat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.dw_gridding_dat">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dw_gridding_dat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_dat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_dat" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_dat" title="geosoft.gxapi.GXPGU.dw_gridding_dat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dw_gridding_dat</span></code></a>     Inverse-distance weighting gridding method, <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a> version.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input grid</p></li>
 <li><p><strong>dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a> source</p></li>
@@ -307,11 +408,11 @@ cell area. Grid cells containing no data values are set to dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.dw_gridding_dat_3d">
-<em class="property">classmethod </em><code class="sig-name descname">dw_gridding_dat_3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">dat</span></em>, <em class="sig-param"><span class="n">reg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_dat_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_dat_3d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.dw_gridding_dat_3d">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dw_gridding_dat_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_dat_3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_dat_3d" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_dat_3d" title="geosoft.gxapi.GXPGU.dw_gridding_dat_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dw_gridding_dat_3d</span></code></a>     Inverse-distance weighting gridding method, <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a> version, 3D.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input 3D <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p></li>
 <li><p><strong>dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a> source</p></li>
@@ -327,11 +428,11 @@ cell area. Grid cells containing no data values are set to dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.dw_gridding_db">
-<em class="property">classmethod </em><code class="sig-name descname">dw_gridding_db</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">reg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_db" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.dw_gridding_db">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dw_gridding_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_db" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_db" title="geosoft.gxapi.GXPGU.dw_gridding_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dw_gridding_db</span></code></a>     Inverse-distance weighting gridding method, <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> version.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input grid</p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
@@ -363,11 +464,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.dw_gridding_db_3d">
-<em class="property">classmethod </em><code class="sig-name descname">dw_gridding_db_3d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">reg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_db_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_db_3d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.dw_gridding_db_3d">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dw_gridding_db_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_db_3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_db_3d" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_db_3d" title="geosoft.gxapi.GXPGU.dw_gridding_db_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dw_gridding_db_3d</span></code></a>     Inverse-distance weighting gridding method, <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> version, 3D.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input 3D <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
@@ -400,11 +501,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.dw_gridding_vv">
-<em class="property">classmethod </em><code class="sig-name descname">dw_gridding_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">vv_x</span></em>, <em class="sig-param"><span class="n">vv_y</span></em>, <em class="sig-param"><span class="n">vv_z</span></em>, <em class="sig-param"><span class="n">reg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_vv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.dw_gridding_vv">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dw_gridding_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.dw_gridding_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.dw_gridding_vv" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_vv" title="geosoft.gxapi.GXPGU.dw_gridding_vv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dw_gridding_vv</span></code></a>     Inverse-distance weighting gridding method, <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> version.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input grid</p></li>
 <li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations</p></li>
@@ -422,11 +523,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.expand">
-<em class="property">classmethod </em><code class="sig-name descname">expand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">pg_o</span></em>, <em class="sig-param"><span class="n">ex_pcnt</span></em>, <em class="sig-param"><span class="n">ex_shp</span></em>, <em class="sig-param"><span class="n">ex_x</span></em>, <em class="sig-param"><span class="n">ex_y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.expand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.expand" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.expand">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex_pcnt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex_shp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.expand" title="Link to this definition">¶</a></dt>
 <dd><p>Expand a pager by filling the dummies for expanded edges</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Original pager obj</p></li>
 <li><p><strong>pg_o</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Expanded pager obj</p></li>
@@ -445,11 +546,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.fill">
-<em class="property">classmethod </em><code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">fl_roll_wt</span></em>, <em class="sig-param"><span class="n">fl_roll_base</span></em>, <em class="sig-param"><span class="n">fl_roll_dist</span></em>, <em class="sig-param"><span class="n">fl_mxf</span></em>, <em class="sig-param"><span class="n">fl_mxp</span></em>, <em class="sig-param"><span class="n">fl_amp_lmt</span></em>, <em class="sig-param"><span class="n">fl_edge_lmt</span></em>, <em class="sig-param"><span class="n">fl_edge_wid</span></em>, <em class="sig-param"><span class="n">fl_npass</span></em>, <em class="sig-param"><span class="n">ref_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.fill"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.fill" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.fill">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_roll_wt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_roll_base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_roll_dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_mxf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_mxp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_amp_lmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_edge_lmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_edge_wid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fl_npass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_fil</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.fill"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.fill" title="Link to this definition">¶</a></dt>
 <dd><p>Replace all dummies in a pager by predict values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
 <li><p><strong>fl_roll_wt</strong> (<em>int</em>) – Roll off weighting option: 1 - linear, 2 - square</p></li>
@@ -472,11 +573,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.fill_value">
-<em class="property">classmethod </em><code class="sig-name descname">fill_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.fill_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.fill_value" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.fill_value">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.fill_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.fill_value" title="Link to this definition">¶</a></dt>
 <dd><p>Set all values in a pager to a single value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
 <li><p><strong>value</strong> (<em>float</em>) – Value to set in pager</p></li>
@@ -490,11 +591,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.filt_sym">
-<em class="property">classmethod </em><code class="sig-name descname">filt_sym</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">npass</span></em>, <em class="sig-param"><span class="n">usefile</span></em>, <em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.filt_sym"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.filt_sym" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.filt_sym">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filt_sym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usefile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.filt_sym"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.filt_sym" title="Link to this definition">¶</a></dt>
 <dd><p>Apply 5x5, 7x7 or 9X9 symmetric convolution filter to a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
 <li><p><strong>npass</strong> (<em>int</em>) – Number of time to pass smooth filter</p></li>
@@ -512,11 +613,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.filt_sym5">
-<em class="property">classmethod </em><code class="sig-name descname">filt_sym5</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">npass</span></em>, <em class="sig-param"><span class="n">usefile</span></em>, <em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.filt_sym5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.filt_sym5" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.filt_sym5">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filt_sym5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usefile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.filt_sym5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.filt_sym5" title="Link to this definition">¶</a></dt>
 <dd><p>Apply 5x5 symmetric convolution filter to a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
 <li><p><strong>npass</strong> (<em>int</em>) – Number of time to pass smooth filter</p></li>
@@ -533,11 +634,11 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.grid_peak">
-<em class="property">classmethod </em><code class="sig-name descname">grid_peak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span></em>, <em class="sig-param"><span class="n">nlmt</span></em>, <em class="sig-param"><span class="n">vv_x</span></em>, <em class="sig-param"><span class="n">vv_y</span></em>, <em class="sig-param"><span class="n">vv_z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.grid_peak"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.grid_peak" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.grid_peak">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grid_peak</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.grid_peak"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.grid_peak" title="Link to this definition">¶</a></dt>
 <dd><p>Pick grid peaks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<em>str</em>) – Grid file name</p></li>
 <li><p><strong>nlmt</strong> (<em>int</em>) – <a class="reference internal" href="#blakey-test"><span class="std std-ref">BLAKEY_TEST constants</span></a></p></li>
@@ -558,11 +659,11 @@ the value of one or more of its four neighouring points.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.invert_matrix">
-<em class="property">classmethod </em><code class="sig-name descname">invert_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">pg_o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.invert_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.invert_matrix" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.invert_matrix">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">invert_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.invert_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.invert_matrix" title="Link to this definition">¶</a></dt>
 <dd><p>Inverts a square matrix using LU decomp. and back-substitution</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input matrix</p></li>
 <li><p><strong>pg_o</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Output inverted matrix (can be same as input).</p></li>
@@ -580,25 +681,25 @@ Pagers and VVs must be type <a class="reference internal" href="GXGEOSOFT.html#i
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.jacobi">
-<em class="property">classmethod </em><code class="sig-name descname">jacobi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">vv_d</span></em>, <em class="sig-param"><span class="n">pg_eigen</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.jacobi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.jacobi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.jacobi">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jacobi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_eigen</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.jacobi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.jacobi" title="Link to this definition">¶</a></dt>
 <dd><p>Find eigenvalues, eigenvectors of a real symmetric matrix.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input Pager</p></li>
 <li><p><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Eigenvalues (returned)</p></li>
@@ -615,11 +716,11 @@ Eienvalues, vectors are sorted in descending order.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.lu_back_sub">
-<em class="property">classmethod </em><code class="sig-name descname">lu_back_sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_a</span></em>, <em class="sig-param"><span class="n">vv_i</span></em>, <em class="sig-param"><span class="n">vv_b</span></em>, <em class="sig-param"><span class="n">vv_sol</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.lu_back_sub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.lu_back_sub" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.lu_back_sub">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lu_back_sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_sol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.lu_back_sub"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.lu_back_sub" title="Link to this definition">¶</a></dt>
 <dd><p>Solve a linear system using LU decomposition and back-substitution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_a</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – LU decomposition of A</p></li>
 <li><p><strong>vv_i</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Permutation vector (type INT)</p></li>
@@ -641,11 +742,11 @@ which should be INT</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.lu_decomp">
-<em class="property">classmethod </em><code class="sig-name descname">lu_decomp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">pg_o</span></em>, <em class="sig-param"><span class="n">vv_perm</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.lu_decomp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.lu_decomp" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.lu_decomp">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lu_decomp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_perm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.lu_decomp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.lu_decomp" title="Link to this definition">¶</a></dt>
 <dd><p>Perform an LU decomposition on a square pager.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input</p></li>
 <li><p><strong>pg_o</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – LU decomposition (may be same pager as input)</p></li>
@@ -670,11 +771,11 @@ Pagers must be type <a class="reference internal" href="GXGEOSOFT.html#id78" tit
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.matrix_mult">
-<em class="property">classmethod </em><code class="sig-name descname">matrix_mult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_u</span></em>, <em class="sig-param"><span class="n">transpose_u</span></em>, <em class="sig-param"><span class="n">pg_v</span></em>, <em class="sig-param"><span class="n">transpose</span></em>, <em class="sig-param"><span class="n">pg_uv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.matrix_mult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.matrix_mult" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.matrix_mult">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">matrix_mult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_uv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.matrix_mult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.matrix_mult" title="Link to this definition">¶</a></dt>
 <dd><p>Multiply two pagers as if they were matrices.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_u</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Matrix U</p></li>
 <li><p><strong>transpose_u</strong> (<em>int</em>) – TRUE (1) if U should be transposed before multiplication</p></li>
@@ -697,11 +798,11 @@ Dummies are treated as 0 values.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.matrix_vector_mult">
-<em class="property">classmethod </em><code class="sig-name descname">matrix_vector_mult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_u</span></em>, <em class="sig-param"><span class="n">vv_x</span></em>, <em class="sig-param"><span class="n">vv_o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.matrix_vector_mult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.matrix_vector_mult" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.matrix_vector_mult">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">matrix_vector_mult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.matrix_vector_mult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.matrix_vector_mult" title="Link to this definition">¶</a></dt>
 <dd><p>Multiply a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> by a pager like a matrix*vector multiply.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_u</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Matrix U</p></li>
 <li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vector x</p></li>
@@ -725,20 +826,20 @@ PGs are not <a class="reference internal" href="GXGEOSOFT.html#id78" title="geos
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.maximum_terrain_steepness">
-<em class="property">classmethod </em><code class="sig-name descname">maximum_terrain_steepness</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">annular_size</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.maximum_terrain_steepness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.maximum_terrain_steepness" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.maximum_terrain_steepness">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maximum_terrain_steepness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annular_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.maximum_terrain_steepness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.maximum_terrain_steepness" title="Link to this definition">¶</a></dt>
 <dd><p>Compute the Maximum Steepness of a topography Pager</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Topography Pager</p></li>
 <li><p><strong>annular_size</strong> (<em>int</em>) – Annular Size</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Maximum Terrain Steepness Computation.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -755,11 +856,11 @@ The wrapper was created for testing and development purposes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.multiply_scalar">
-<em class="property">classmethod </em><code class="sig-name descname">multiply_scalar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">scalar</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.multiply_scalar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.multiply_scalar" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.multiply_scalar">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">multiply_scalar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.multiply_scalar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.multiply_scalar" title="Link to this definition">¶</a></dt>
 <dd><p>Multiply a scalar value and a pager</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager</p></li>
 <li><p><strong>scalar</strong> (<em>float</em>) – Scalar Value</p></li>
@@ -774,26 +875,26 @@ The wrapper was created for testing and development purposes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPGU" title="geosoft.gxapi.GXPGU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPGU</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXPGU" title="geosoft.gxapi.GXPGU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPGU</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXPGU" title="geosoft.gxapi.GXPGU">GXPGU</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXPGU" title="geosoft.gxapi.GXPGU.GXPGU">GXPGU</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.numeric_to_thematic">
-<em class="property">classmethod </em><code class="sig-name descname">numeric_to_thematic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">vv</span></em>, <em class="sig-param"><span class="n">pg_o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.numeric_to_thematic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.numeric_to_thematic" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.numeric_to_thematic">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numeric_to_thematic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.numeric_to_thematic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.numeric_to_thematic" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#geosoft.gxapi.GXPGU.numeric_to_thematic" title="geosoft.gxapi.GXPGU.numeric_to_thematic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numeric_to_thematic</span></code></a>    Set index values in a pager based on a numeric pager with translation <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
 <p>Returns                   Nothing</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input numeric <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p></li>
 <li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Translation <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (see notes above)</p></li>
@@ -818,11 +919,11 @@ it can be used in a thematic voxel (for instance).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_communality">
-<em class="property">classmethod </em><code class="sig-name descname">pc_communality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">vv_c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_communality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_communality" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_communality">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_communality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_c</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_communality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_communality" title="Link to this definition">¶</a></dt>
 <dd><p>Determines principal component communalities.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input pager of the principal components</p></li>
 <li><p><strong>vv_c</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned communality values</p></li>
@@ -839,11 +940,11 @@ Pagers and VVs must be type <a class="reference internal" href="GXGEOSOFT.html#i
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_loadings">
-<em class="property">classmethod </em><code class="sig-name descname">pc_loadings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_x</span></em>, <em class="sig-param"><span class="n">pg_loadings</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_loadings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_loadings" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_loadings">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_loadings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_loadings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_loadings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_loadings" title="Link to this definition">¶</a></dt>
 <dd><p>Compute the principal component loadings from the standardized data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_x</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Standardized data matrix (M by N)</p></li>
 <li><p><strong>pg_loadings</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Principal component loadings (N by N)</p></li>
@@ -867,11 +968,11 @@ use <a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_loadings2" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_loadings2">
-<em class="property">classmethod </em><code class="sig-name descname">pc_loadings2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_c</span></em>, <em class="sig-param"><span class="n">pg_loadings</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_loadings2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_loadings2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_loadings2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_loadings2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_loadings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_loadings2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_loadings2" title="Link to this definition">¶</a></dt>
 <dd><p>Same as PCLoading_PGU, but input correlation matrix.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_c</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Correllation matrix (N by N)</p></li>
 <li><p><strong>pg_loadings</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Principal component loadings (N by N)</p></li>
@@ -886,11 +987,11 @@ use <a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_loadings2" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_scores">
-<em class="property">classmethod </em><code class="sig-name descname">pc_scores</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_x</span></em>, <em class="sig-param"><span class="n">pg_loadings</span></em>, <em class="sig-param"><span class="n">pg_scores</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_scores"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_scores" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_scores">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_loadings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_scores</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_scores" title="Link to this definition">¶</a></dt>
 <dd><p>Compute the principal component scores from the standardized data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_x</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Standardized data matrix  (M by N)</p></li>
 <li><p><strong>pg_loadings</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Principal component loadings (input) (N by L, L&lt;=N)</p></li>
@@ -912,11 +1013,11 @@ Pagers and VVs must be type <a class="reference internal" href="GXGEOSOFT.html#i
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_standardize">
-<em class="property">classmethod </em><code class="sig-name descname">pc_standardize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">vv_m</span></em>, <em class="sig-param"><span class="n">vv_s</span></em>, <em class="sig-param"><span class="n">dir</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_standardize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_standardize" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_standardize">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_standardize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_standardize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_standardize" title="Link to this definition">¶</a></dt>
 <dd><p>Remove/Replace mean and standard deviation</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Matrix to standardize</p></li>
 <li><p><strong>vv_m</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Means</p></li>
@@ -933,11 +1034,11 @@ Pagers and VVs must be type <a class="reference internal" href="GXGEOSOFT.html#i
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_standardize2">
-<em class="property">classmethod </em><code class="sig-name descname">pc_standardize2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">vv_mask</span></em>, <em class="sig-param"><span class="n">vv_m</span></em>, <em class="sig-param"><span class="n">vv_s</span></em>, <em class="sig-param"><span class="n">dir</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_standardize2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_standardize2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_standardize2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_standardize2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_standardize2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_standardize2" title="Link to this definition">¶</a></dt>
 <dd><p>Remove/Replace mean and standard deviation, subset values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Matrix to standardize</p></li>
 <li><p><strong>vv_mask</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for data selection (forward only)</p></li>
@@ -959,11 +1060,11 @@ in the calculation, but ALL the values are standardized.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_transform">
-<em class="property">classmethod </em><code class="sig-name descname">pc_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">vv_d</span></em>, <em class="sig-param"><span class="n">vv_f</span></em>, <em class="sig-param"><span class="n">vv_t</span></em>, <em class="sig-param"><span class="n">dir</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_transform" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_transform">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_transform" title="Link to this definition">¶</a></dt>
 <dd><p>Transform/De-transform data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Matrix to transform</p></li>
 <li><p><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Detection limits for the columns</p></li>
@@ -989,11 +1090,11 @@ to the maximum.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.pc_varimax">
-<em class="property">classmethod </em><code class="sig-name descname">pc_varimax</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">pg_o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_varimax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_varimax" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.pc_varimax">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pc_varimax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.pc_varimax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.pc_varimax" title="Link to this definition">¶</a></dt>
 <dd><p>Perform the Kaiser Varimax transformation on pr. comp. loadings</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Principal component loadings (input) (N by M, M&lt;=N)</p></li>
 <li><p><strong>pg_o</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Rotated principal component loadings (returned) (N by L, L&lt;=M)</p></li>
@@ -1012,11 +1113,11 @@ Pagers must be type <a class="reference internal" href="GXGEOSOFT.html#id78" tit
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.peakedness">
-<em class="property">classmethod </em><code class="sig-name descname">peakedness</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span></em>, <em class="sig-param"><span class="n">pkness</span></em>, <em class="sig-param"><span class="n">vv_x</span></em>, <em class="sig-param"><span class="n">vv_y</span></em>, <em class="sig-param"><span class="n">vv_z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.peakedness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.peakedness" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.peakedness">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">peakedness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.peakedness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.peakedness" title="Link to this definition">¶</a></dt>
 <dd><p>Find all peaks in peakedneess grid pager</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<em>str</em>) – Grid file name</p></li>
 <li><p><strong>pkness</strong> (<em>int</em>) – Cutoff limit for finding peaks</p></li>
@@ -1033,11 +1134,11 @@ Pagers must be type <a class="reference internal" href="GXGEOSOFT.html#id78" tit
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.peakedness_grid">
-<em class="property">classmethod </em><code class="sig-name descname">peakedness_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grdi</span></em>, <em class="sig-param"><span class="n">grdo</span></em>, <em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">percent_lesser</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.peakedness_grid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.peakedness_grid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.peakedness_grid">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">peakedness_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grdi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grdo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_lesser</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.peakedness_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.peakedness_grid" title="Link to this definition">¶</a></dt>
 <dd><p>Create peakedneess grid from input grid.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grdi</strong> (<em>str</em>) – Input grid file name</p></li>
 <li><p><strong>grdo</strong> (<em>str</em>) – Output grid (peakedness) file name</p></li>
@@ -1068,11 +1169,11 @@ the same representation as the 100 mV anomaly using this function.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.ref_file">
-<em class="property">classmethod </em><code class="sig-name descname">ref_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">ref_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.ref_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.ref_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.ref_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ref_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_fil</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.ref_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.ref_file" title="Link to this definition">¶</a></dt>
 <dd><p>Create a reference file (boolean mask flag) from pager.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> object</p></li>
 <li><p><strong>ref_fil</strong> (<em>str</em>) – Reference file name</p></li>
@@ -1092,11 +1193,11 @@ necessary to mask some output to the original defined cells.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.save_file">
-<em class="property">classmethod </em><code class="sig-name descname">save_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg</span></em>, <em class="sig-param"><span class="n">xo</span></em>, <em class="sig-param"><span class="n">yo</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em>, <em class="sig-param"><span class="n">rot</span></em>, <em class="sig-param"><span class="n">tr</span></em>, <em class="sig-param"><span class="n">ipj</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.save_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.save_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.save_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.save_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.save_file" title="Link to this definition">¶</a></dt>
 <dd><p>Writes a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> to an image file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> object</p></li>
 <li><p><strong>xo</strong> (<em>float</em>) – X origin</p></li>
@@ -1118,11 +1219,11 @@ necessary to mask some output to the original defined cells.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.sv_decompose">
-<em class="property">classmethod </em><code class="sig-name descname">sv_decompose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_a</span></em>, <em class="sig-param"><span class="n">pg_u</span></em>, <em class="sig-param"><span class="n">vv_w</span></em>, <em class="sig-param"><span class="n">pg_v</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.sv_decompose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.sv_decompose" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.sv_decompose">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sv_decompose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.sv_decompose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.sv_decompose" title="Link to this definition">¶</a></dt>
 <dd><p>Do a singular value decomposition on a matrix stored as a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_a</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input A matrix, M data (rows), N variables (columns)</p></li>
 <li><p><strong>pg_u</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – The returned U Matrix</p></li>
@@ -1150,11 +1251,11 @@ PGs, VV are not <a class="reference internal" href="GXGEOSOFT.html#id78" title="
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.sv_recompose">
-<em class="property">classmethod </em><code class="sig-name descname">sv_recompose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_u</span></em>, <em class="sig-param"><span class="n">vv_w</span></em>, <em class="sig-param"><span class="n">pg_v</span></em>, <em class="sig-param"><span class="n">min_w</span></em>, <em class="sig-param"><span class="n">pg_a</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.sv_recompose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.sv_recompose" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.sv_recompose">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sv_recompose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.sv_recompose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.sv_recompose" title="Link to this definition">¶</a></dt>
 <dd><p>Reconstitute the original matrix from an SVD.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_u</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – U matrix</p></li>
 <li><p><strong>vv_w</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Weights (W)</p></li>
@@ -1185,12 +1286,12 @@ PGs, VV are not <a class="reference internal" href="GXGEOSOFT.html#id78" title="
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.thematic_to_numeric">
-<em class="property">classmethod </em><code class="sig-name descname">thematic_to_numeric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">vv</span></em>, <em class="sig-param"><span class="n">pg_o</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.thematic_to_numeric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.thematic_to_numeric" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.thematic_to_numeric">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">thematic_to_numeric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.thematic_to_numeric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.thematic_to_numeric" title="Link to this definition">¶</a></dt>
 <dd><p>Set numeric values in a pager based on an index pager with translation <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
 <p>Returns                   Nothing</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input Index <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a></p></li>
 <li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Translation <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
@@ -1211,11 +1312,11 @@ SetupTranslateToNumericVV_TPAT.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXPGU.trend">
-<em class="property">classmethod </em><code class="sig-name descname">trend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pg_i</span></em>, <em class="sig-param"><span class="n">pg_o</span></em>, <em class="sig-param"><span class="n">tr</span></em>, <em class="sig-param"><span class="n">tr_opt</span></em>, <em class="sig-param"><span class="n">tr_pt_bs</span></em>, <em class="sig-param"><span class="n">xo</span></em>, <em class="sig-param"><span class="n">yo</span></em>, <em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.trend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.trend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.trend">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pg_o</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr_opt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr_pt_bs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.trend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.trend" title="Link to this definition">¶</a></dt>
 <dd><p>Trend remove or replace back in pager</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pg_i</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Original pager obj</p></li>
 <li><p><strong>pg_o</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Trended pager obj</p></li>
@@ -1237,253 +1338,253 @@ SetupTranslateToNumericVV_TPAT.</p>
 
 </dd></dl>
 
-<div class="section" id="blakey-test-constants">
-<span id="blakey-test"></span><h2>BLAKEY_TEST constants<a class="headerlink" href="#blakey-test-constants" title="Permalink to this headline">¶</a></h2>
+<section id="blakey-test-constants">
+<span id="blakey-test"></span><h2>BLAKEY_TEST constants<a class="headerlink" href="#blakey-test-constants" title="Link to this heading">¶</a></h2>
 <p>Types of BLAKEY tests</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.BLAKEY_TEST_ONESIDE">
-<code class="sig-name descname">BLAKEY_TEST_ONESIDE</code><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_ONESIDE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.BLAKEY_TEST_ONESIDE">
+<span class="sig-name descname"><span class="pre">BLAKEY_TEST_ONESIDE</span></span><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_ONESIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Oneside</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BLAKEY_TEST_ONESIDE</code><em class="property"> = 1</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_ONESIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.BLAKEY_TEST_TWOSIDE">
-<code class="sig-name descname">BLAKEY_TEST_TWOSIDE</code><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_TWOSIDE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.BLAKEY_TEST_TWOSIDE">
+<span class="sig-name descname"><span class="pre">BLAKEY_TEST_TWOSIDE</span></span><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_TWOSIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Twoside</p>
 <dl class="py attribute">
-<dt id="id44">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BLAKEY_TEST_TWOSIDE</code><em class="property"> = 2</em><a class="headerlink" href="#id44" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id44">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_TWOSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.BLAKEY_TEST_THREESIDE">
-<code class="sig-name descname">BLAKEY_TEST_THREESIDE</code><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_THREESIDE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.BLAKEY_TEST_THREESIDE">
+<span class="sig-name descname"><span class="pre">BLAKEY_TEST_THREESIDE</span></span><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_THREESIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Threeside</p>
 <dl class="py attribute">
-<dt id="id45">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BLAKEY_TEST_THREESIDE</code><em class="property"> = 3</em><a class="headerlink" href="#id45" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id45">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_THREESIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.BLAKEY_TEST_FOURSIDE">
-<code class="sig-name descname">BLAKEY_TEST_FOURSIDE</code><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_FOURSIDE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.BLAKEY_TEST_FOURSIDE">
+<span class="sig-name descname"><span class="pre">BLAKEY_TEST_FOURSIDE</span></span><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_FOURSIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Fourside</p>
 <dl class="py attribute">
-<dt id="id46">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">BLAKEY_TEST_FOURSIDE</code><em class="property"> = 4</em><a class="headerlink" href="#id46" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id46">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_FOURSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="pgu-corr-constants">
-<span id="pgu-corr"></span><h2>PGU_CORR constants<a class="headerlink" href="#pgu-corr-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pgu-corr-constants">
+<span id="pgu-corr"></span><h2>PGU_CORR constants<a class="headerlink" href="#pgu-corr-constants" title="Link to this heading">¶</a></h2>
 <p>Correlation (must be synchronized with <a class="reference internal" href="GXST2.html#st2-correlation"><span class="std std-ref">ST2_CORRELATION constants</span></a>)</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_CORR_SIMPLE">
-<code class="sig-name descname">PGU_CORR_SIMPLE</code><a class="headerlink" href="#geosoft.gxapi.PGU_CORR_SIMPLE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_CORR_SIMPLE">
+<span class="sig-name descname"><span class="pre">PGU_CORR_SIMPLE</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_CORR_SIMPLE" title="Link to this definition">¶</a></dt>
 <dd><p>Simple correlation</p>
 <dl class="py attribute">
-<dt id="id47">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_CORR_SIMPLE</code><em class="property"> = 0</em><a class="headerlink" href="#id47" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id47">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_CORR_SIMPLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_CORR_PEARSON">
-<code class="sig-name descname">PGU_CORR_PEARSON</code><a class="headerlink" href="#geosoft.gxapi.PGU_CORR_PEARSON" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_CORR_PEARSON">
+<span class="sig-name descname"><span class="pre">PGU_CORR_PEARSON</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_CORR_PEARSON" title="Link to this definition">¶</a></dt>
 <dd><p>Pearson’s correlation (normalized to standard deviations)</p>
 <dl class="py attribute">
-<dt id="id48">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_CORR_PEARSON</code><em class="property"> = 1</em><a class="headerlink" href="#id48" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id48">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_CORR_PEARSON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="pgu-directgrid-constants">
-<span id="pgu-directgrid"></span><h2>PGU_DIRECTGRID constants<a class="headerlink" href="#pgu-directgrid-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pgu-directgrid-constants">
+<span id="pgu-directgrid"></span><h2>PGU_DIRECTGRID constants<a class="headerlink" href="#pgu-directgrid-constants" title="Link to this heading">¶</a></h2>
 <p>Type of statistic to use on the data points in each cell.</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_DIRECTGRID_MINIMUM">
-<code class="sig-name descname">PGU_DIRECTGRID_MINIMUM</code><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MINIMUM" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_DIRECTGRID_MINIMUM">
+<span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MINIMUM</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MINIMUM" title="Link to this definition">¶</a></dt>
 <dd><p>Select the minimum value found in each cell</p>
 <dl class="py attribute">
-<dt id="id49">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_DIRECTGRID_MINIMUM</code><em class="property"> = 0</em><a class="headerlink" href="#id49" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id49">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM">
-<code class="sig-name descname">PGU_DIRECTGRID_MAXIMUM</code><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM">
+<span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MAXIMUM</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM" title="Link to this definition">¶</a></dt>
 <dd><p>Select the maximum value found in each cell</p>
 <dl class="py attribute">
-<dt id="id50">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_DIRECTGRID_MAXIMUM</code><em class="property"> = 1</em><a class="headerlink" href="#id50" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id50">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MAXIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_DIRECTGRID_MEAN">
-<code class="sig-name descname">PGU_DIRECTGRID_MEAN</code><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MEAN" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_DIRECTGRID_MEAN">
+<span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MEAN</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MEAN" title="Link to this definition">¶</a></dt>
 <dd><p>Select the mean of all values found in each cell</p>
 <dl class="py attribute">
-<dt id="id51">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_DIRECTGRID_MEAN</code><em class="property"> = 2</em><a class="headerlink" href="#id51" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id51">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_DIRECTGRID_ITEMS">
-<code class="sig-name descname">PGU_DIRECTGRID_ITEMS</code><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_ITEMS" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_DIRECTGRID_ITEMS">
+<span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_ITEMS</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_ITEMS" title="Link to this definition">¶</a></dt>
 <dd><p>The number of valid (non-dummy) items found in each cell</p>
 <dl class="py attribute">
-<dt id="id52">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_DIRECTGRID_ITEMS</code><em class="property"> = 3</em><a class="headerlink" href="#id52" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id52">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_ITEMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="pgu-direction-constants">
-<span id="pgu-direction"></span><h2>PGU_DIRECTION constants<a class="headerlink" href="#pgu-direction-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pgu-direction-constants">
+<span id="pgu-direction"></span><h2>PGU_DIRECTION constants<a class="headerlink" href="#pgu-direction-constants" title="Link to this heading">¶</a></h2>
 <p>Direction</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_FORWARD">
-<code class="sig-name descname">PGU_FORWARD</code><a class="headerlink" href="#geosoft.gxapi.PGU_FORWARD" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_FORWARD">
+<span class="sig-name descname"><span class="pre">PGU_FORWARD</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_FORWARD" title="Link to this definition">¶</a></dt>
 <dd><p>Forward direction: Removes mean and standard deviation,
 storing the values in the VVs.</p>
 <dl class="py attribute">
-<dt id="id53">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_FORWARD</code><em class="property"> = 0</em><a class="headerlink" href="#id53" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id53">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_FORWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_BACKWARD">
-<code class="sig-name descname">PGU_BACKWARD</code><a class="headerlink" href="#geosoft.gxapi.PGU_BACKWARD" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_BACKWARD">
+<span class="sig-name descname"><span class="pre">PGU_BACKWARD</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_BACKWARD" title="Link to this definition">¶</a></dt>
 <dd><p>Backward direction: Applies mean and standard deviation
 values in the VVs to the data.</p>
 <dl class="py attribute">
-<dt id="id54">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_BACKWARD</code><em class="property"> = 1</em><a class="headerlink" href="#id54" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id54">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_BACKWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="pgu-trans-constants">
-<span id="pgu-trans"></span><h2>PGU_TRANS constants<a class="headerlink" href="#pgu-trans-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pgu-trans-constants">
+<span id="pgu-trans"></span><h2>PGU_TRANS constants<a class="headerlink" href="#pgu-trans-constants" title="Link to this heading">¶</a></h2>
 <p>Transform methods for the columns</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_TRANS_NONE">
-<code class="sig-name descname">PGU_TRANS_NONE</code><a class="headerlink" href="#geosoft.gxapi.PGU_TRANS_NONE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_TRANS_NONE">
+<span class="sig-name descname"><span class="pre">PGU_TRANS_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_TRANS_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt id="id55">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_TRANS_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id55" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id55">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_TRANS_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_TRANS_LOG">
-<code class="sig-name descname">PGU_TRANS_LOG</code><a class="headerlink" href="#geosoft.gxapi.PGU_TRANS_LOG" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_TRANS_LOG">
+<span class="sig-name descname"><span class="pre">PGU_TRANS_LOG</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_TRANS_LOG" title="Link to this definition">¶</a></dt>
 <dd><p>Log</p>
 <dl class="py attribute">
-<dt id="id56">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_TRANS_LOG</code><em class="property"> = 1</em><a class="headerlink" href="#id56" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id56">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_TRANS_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="pgu-interp-order-constants">
-<span id="pgu-interp-order"></span><h2>PGU_INTERP_ORDER constants<a class="headerlink" href="#pgu-interp-order-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pgu-interp-order-constants">
+<span id="pgu-interp-order"></span><h2>PGU_INTERP_ORDER constants<a class="headerlink" href="#pgu-interp-order-constants" title="Link to this heading">¶</a></h2>
 <p>Interpolation direction order</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_INTERP_ORDER_XYZ">
-<code class="sig-name descname">PGU_INTERP_ORDER_XYZ</code><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_XYZ" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_INTERP_ORDER_XYZ">
+<span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XYZ</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_XYZ" title="Link to this definition">¶</a></dt>
 <dd><p>Xyz</p>
 <dl class="py attribute">
-<dt id="id57">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_INTERP_ORDER_XYZ</code><em class="property"> = 0</em><a class="headerlink" href="#id57" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id57">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_INTERP_ORDER_XZY">
-<code class="sig-name descname">PGU_INTERP_ORDER_XZY</code><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_XZY" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_INTERP_ORDER_XZY">
+<span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XZY</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_XZY" title="Link to this definition">¶</a></dt>
 <dd><p>Xzy</p>
 <dl class="py attribute">
-<dt id="id58">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_INTERP_ORDER_XZY</code><em class="property"> = 1</em><a class="headerlink" href="#id58" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id58">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XZY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_INTERP_ORDER_YXZ">
-<code class="sig-name descname">PGU_INTERP_ORDER_YXZ</code><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_YXZ" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_INTERP_ORDER_YXZ">
+<span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YXZ</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_YXZ" title="Link to this definition">¶</a></dt>
 <dd><p>Yxz</p>
 <dl class="py attribute">
-<dt id="id59">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_INTERP_ORDER_YXZ</code><em class="property"> = 2</em><a class="headerlink" href="#id59" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id59">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YXZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_INTERP_ORDER_YZX">
-<code class="sig-name descname">PGU_INTERP_ORDER_YZX</code><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_YZX" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_INTERP_ORDER_YZX">
+<span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YZX</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_YZX" title="Link to this definition">¶</a></dt>
 <dd><p>Yzx</p>
 <dl class="py attribute">
-<dt id="id60">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_INTERP_ORDER_YZX</code><em class="property"> = 3</em><a class="headerlink" href="#id60" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id60">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YZX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_INTERP_ORDER_ZXY">
-<code class="sig-name descname">PGU_INTERP_ORDER_ZXY</code><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZXY" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_INTERP_ORDER_ZXY">
+<span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZXY</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZXY" title="Link to this definition">¶</a></dt>
 <dd><p>Zxy</p>
 <dl class="py attribute">
-<dt id="id61">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_INTERP_ORDER_ZXY</code><em class="property"> = 4</em><a class="headerlink" href="#id61" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id61">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZXY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.PGU_INTERP_ORDER_ZYX">
-<code class="sig-name descname">PGU_INTERP_ORDER_ZYX</code><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZYX" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.PGU_INTERP_ORDER_ZYX">
+<span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZYX</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZYX" title="Link to this definition">¶</a></dt>
 <dd><p>Zyx</p>
 <dl class="py attribute">
-<dt id="id62">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">PGU_INTERP_ORDER_ZYX</code><em class="property"> = 5</em><a class="headerlink" href="#id62" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id62">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZYX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -1498,14 +1599,14 @@ values in the VVs to the data.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPGU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

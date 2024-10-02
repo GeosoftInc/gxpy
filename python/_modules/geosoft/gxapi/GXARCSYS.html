@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXARCSYS &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXARCSYS &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCSYS</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,20 +75,27 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXARCSYS"><a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS">[docs]</a><span class="k">class</span> <span class="nc">GXARCSYS</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCSYS</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXARCSYS">
+<a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS">[docs]</a>
+<span class="k">class</span> <span class="nc">GXARCSYS</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCSYS</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXARCSYS class.</span>
 
 <span class="sd">    This library is not a class. It contains various general</span>
 <span class="sd">    system utilities used by the Geosoft extensions for ArcGIS.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXARCSYS.__init__"><a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXARCSYS.__init__">
+<a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXARCSYS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXARCSYS.null"><a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXARCSYS.null">
+<a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXARCSYS &lt;geosoft.gxapi.GXARCSYS&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXARCSYS &lt;geosoft.gxapi.GXARCSYS&gt;`</span>
@@ -99,8 +103,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXARCSYS</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXARCSYS.is_null"><a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXARCSYS.is_null">
+<a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -110,12 +117,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXARCSYS.get_browse_loc"><a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.get_browse_loc">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXARCSYS.get_browse_loc">
+<a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.get_browse_loc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_browse_loc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current catalog browser location in ArcGIS</span>
 <span class="sd">        </span>
 <span class="sd">        :param path:  Path String</span>
@@ -130,13 +140,16 @@
 <span class="sd">        relative/absolute paths depends on it.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">path</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCSYS</span><span class="o">.</span><span class="n">_get_browse_loc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXARCSYS.get_current_doc"><a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.get_current_doc">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXARCSYS.get_current_doc">
+<a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.get_current_doc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_current_doc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current Mx Document file name</span>
 <span class="sd">        </span>
 <span class="sd">        :param path:  Path String</span>
@@ -149,13 +162,16 @@
 <span class="sd">        **Note:** If the current document is not yet saved, this will return an empty string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">path</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCSYS</span><span class="o">.</span><span class="n">_get_current_doc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXARCSYS.set_browse_loc"><a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.set_browse_loc">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXARCSYS.set_browse_loc">
+<a class="viewcode-back" href="../../../GXARCSYS.html#geosoft.gxapi.GXARCSYS.set_browse_loc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_browse_loc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the current catalog browser location in ArcGIS</span>
 <span class="sd">        </span>
 <span class="sd">        :param path:  Path String</span>
@@ -168,7 +184,9 @@
 <span class="sd">        **Note:** Will also set the current working directory (CWD) if the MxD has not been saved.</span>
 <span class="sd">        We cannot mess with the CWD in ArcGIS because their MxD settings for relative/absolute paths depends on it.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCSYS</span><span class="o">.</span><span class="n">_set_browse_loc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCSYS</span><span class="o">.</span><span class="n">_set_browse_loc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
         
 
 
@@ -198,7 +216,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCSYS</a></li> 
@@ -206,8 +224,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIMU &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXIMU &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMU</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -79,8 +76,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXIMU"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU">[docs]</a><span class="k">class</span> <span class="nc">GXIMU</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIMU">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU">[docs]</a>
+<span class="k">class</span> <span class="nc">GXIMU</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXIMU class.</span>
 
 <span class="sd">    Not a class. This is a catch-all group of functions working</span>
@@ -88,12 +87,17 @@
 <span class="sd">    trending, windowing, expanding and grid stitching.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXIMU.__init__"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXIMU.__init__">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXIMU</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXIMU.null"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.null">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXIMU &lt;geosoft.gxapi.GXIMU&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXIMU &lt;geosoft.gxapi.GXIMU&gt;`</span>
@@ -101,8 +105,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXIMU</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXIMU.is_null"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIMU.is_null">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -112,12 +119,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXIMU.agg_to_geo_color"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.agg_to_geo_color">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.agg_to_geo_color">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.agg_to_geo_color">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">agg_to_geo_color</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">agg</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a Geosoft color grid from an aggregate.</span>
 <span class="sd">        </span>
 <span class="sd">        :param agg:   Input Aggregate</span>
@@ -136,13 +146,16 @@
 <span class="sd">        **Note:** This consumes a very small amount of memory</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_agg_to_geo_color</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">agg</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.crc"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.crc">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">crc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes a CRC Checksum on an image.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:      Input image</span>
@@ -162,9 +175,12 @@
 
 
 
-<div class="viewcode-block" id="GXIMU.crc_grid"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc_grid">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.crc_grid">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">crc_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes a CRC Checksum on a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:     Grid</span>
@@ -184,9 +200,12 @@
 
 
 
-<div class="viewcode-block" id="GXIMU.crc_grid_inexact"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc_grid_inexact">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.crc_grid_inexact">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc_grid_inexact">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">crc_grid_inexact</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">,</span> <span class="n">float_bits</span><span class="p">,</span> <span class="n">double_bits</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes a CRC Checksum on a grid and allows you to specify</span>
 <span class="sd">        number of bits of floats/doubles to drop so that the CRC</span>
 <span class="sd">        will be same even of this are changed.</span>
@@ -215,9 +234,12 @@
 
 
 
-<div class="viewcode-block" id="GXIMU.crc_inexact"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc_inexact">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.crc_inexact">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.crc_inexact">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">crc_inexact</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">,</span> <span class="n">float_bits</span><span class="p">,</span> <span class="n">double_bits</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes a CRC Checksum on an image and allows you to specify</span>
 <span class="sd">        number of bits of floats/doubles to drop so that the CRC</span>
 <span class="sd">        will be same even of this are changed.</span>
@@ -246,9 +268,12 @@
 
 
 
-<div class="viewcode-block" id="GXIMU.decimate_crooked_section_grid"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.decimate_crooked_section_grid">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.decimate_crooked_section_grid">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.decimate_crooked_section_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">decimate_crooked_section_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">dec_X</span><span class="p">,</span> <span class="n">dec_y</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Decimate a crooked section grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:    Input grid IMG</span>
@@ -270,13 +295,16 @@
 <span class="sd">        points because it will almost certainly be smaller.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_decimate_crooked_section_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">dec_X</span><span class="p">,</span> <span class="n">dec_y</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.export_grid_without_data_section_xml"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_grid_without_data_section_xml">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.export_grid_without_data_section_xml">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_grid_without_data_section_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_grid_without_data_section_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">crc</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a Grid minus the data section as an XML file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid</span>
@@ -291,13 +319,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">crc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_export_grid_without_data_section_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.export_grid_xml"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_grid_xml">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.export_grid_xml">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_grid_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_grid_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">crc</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a Grid as an XML file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid</span>
@@ -312,13 +343,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">crc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_export_grid_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.export_raw_xml"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_raw_xml">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.export_raw_xml">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_raw_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_raw_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">crc</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a Grid as an XML file using a fast raw output.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:   Image</span>
@@ -333,13 +367,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">crc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_export_raw_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">crc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.export_xml"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_xml">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.export_xml">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.export_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">crc</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a Grid as an XML file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:   Image</span>
@@ -354,13 +391,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">crc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_export_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">crc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.get_zvv"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.get_zvv">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.get_zvv">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.get_zvv">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_zvv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract an interpolated image value for given XY `GXVV &lt;geosoft.gxapi.GXVV&gt;` locations</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:   Input grid</span>
@@ -377,13 +417,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_get_zvv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.get_z_peaks_vv"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.get_z_peaks_vv">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.get_z_peaks_vv">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.get_z_peaks_vv">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_z_peaks_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `get_zvv &lt;geosoft.gxapi.GXIMU.get_zvv&gt;`, but find the closest peak value to the input locations, and return</span>
 <span class="sd">        				             the peak value and peak value location.</span>
 <span class="sd">        </span>
@@ -404,13 +447,16 @@
 <span class="sd">        				done of all neighbouring points from the starting point, and once no neighbours can be located with a higher value, the search stops.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_get_z_peaks_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_add"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_add">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_add">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_add">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_add</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img1</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">imgo</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds two Grid images together point-by-point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img1:  Image of first grid</span>
@@ -432,13 +478,16 @@
 <span class="sd">        If not, the method will terminate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_add</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img1</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">imgo</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_agc"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_agc">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_agc">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_agc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_agc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">i_img</span><span class="p">,</span> <span class="n">o_img</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">max_gain</span><span class="p">,</span> <span class="n">remove_background</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Automatic Gain Compensation of a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param i_img:              Image of input grid</span>
@@ -460,13 +509,16 @@
 <span class="sd">        If not, the method will terminate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_agc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">i_img</span><span class="p">,</span> <span class="n">o_img</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">max_gain</span><span class="p">,</span> <span class="n">remove_background</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_bool"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_bool">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_bool">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_bool">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_bool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img1</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">boolean_op</span><span class="p">,</span> <span class="n">sizing</span><span class="p">,</span> <span class="n">olap</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Mask one grid against another using boolean logic</span>
 <span class="sd">        operations.</span>
 <span class="sd">        </span>
@@ -491,13 +543,16 @@
 <span class="sd">        If not, the method will terminate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_bool</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img1</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">boolean_op</span><span class="p">,</span> <span class="n">sizing</span><span class="p">,</span> <span class="n">olap</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_edge"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_edge">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_edge">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_edge">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_edge</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get grid edge points</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid file name</span>
@@ -512,13 +567,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_edge</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_edge_ply"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_edge_ply">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_edge_ply">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_edge_ply">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_edge_ply</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">min_points</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get grid edge points</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:         The Grid</span>
@@ -536,13 +594,16 @@
 <span class="sd">        altered. It just gives the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_edge_ply</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">min_points</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_expand"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_expand">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_expand">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_expand">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_expand</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Expand a grid and place dummies in the area</span>
 <span class="sd">        beyond the original edges.</span>
 <span class="sd">        </span>
@@ -567,13 +628,16 @@
 <span class="sd">        If not, the method will terminate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_expand</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">per</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_exp_fill"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_exp_fill">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_exp_fill">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_exp_fill">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_exp_fill</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">in_grd</span><span class="p">,</span> <span class="n">out_grd</span><span class="p">,</span> <span class="n">p_ex</span><span class="p">,</span> <span class="n">t_ex</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extends and fills a grid for `GXFFT2 &lt;geosoft.gxapi.GXFFT2&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param in_grd:   Name of the input grid</span>
@@ -590,13 +654,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_exp_fill</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">in_grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p_ex</span><span class="p">,</span> <span class="n">t_ex</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_fill"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_fill">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_fill">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_fill">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_fill</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">,</span> <span class="n">rollopt</span><span class="p">,</span> <span class="n">rolldist</span><span class="p">,</span> <span class="n">mxf</span><span class="p">,</span> <span class="n">mxp</span><span class="p">,</span> <span class="n">rollbase</span><span class="p">,</span> <span class="n">alimit</span><span class="p">,</span> <span class="n">elimit</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">npass</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Interpolates to fill dummies, generates an output grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param im_gi:     Image of input grid</span>
@@ -630,13 +697,16 @@
 <span class="sd">        If not, the method will terminate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_fill</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">,</span> <span class="n">rollopt</span><span class="p">,</span> <span class="n">rolldist</span><span class="p">,</span> <span class="n">mxf</span><span class="p">,</span> <span class="n">mxp</span><span class="p">,</span> <span class="n">rollbase</span><span class="p">,</span> <span class="n">alimit</span><span class="p">,</span> <span class="n">elimit</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">npass</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_filt"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_filt">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_filt">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_filt">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_filt</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">imgo</span><span class="p">,</span> <span class="n">passes</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">dum</span><span class="p">,</span> <span class="n">hz</span><span class="p">,</span> <span class="n">usefile</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies a filter to a grid any number</span>
 <span class="sd">        of passes.</span>
 <span class="sd">        </span>
@@ -667,13 +737,16 @@
 <span class="sd">        If not, the method will terminate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_filt</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">imgo</span><span class="p">,</span> <span class="n">passes</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">dum</span><span class="p">,</span> <span class="n">hz</span><span class="p">,</span> <span class="n">usefile</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_head"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_head">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_head">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_head">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_head</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">esep</span><span class="p">,</span> <span class="n">vsep</span><span class="p">,</span> <span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Modifies Statistics contained in a grid header.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:    Name of the grid whose header is to be modified.</span>
@@ -694,13 +767,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_head</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">esep</span><span class="p">,</span> <span class="n">vsep</span><span class="p">,</span> <span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">rot</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_mask"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_mask">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_mask">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_mask">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">in_grid</span><span class="p">,</span> <span class="n">m_grid</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a mask grid using a set of polygon</span>
 <span class="sd">        coordinates defined in a separate file, then</span>
 <span class="sd">        masking the polygon over an input grid.</span>
@@ -726,13 +802,16 @@
 <span class="sd">        coordinates of more than one polygon.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_mask</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">in_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">m_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_peak"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_peak">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_peak">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_peak">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_peak</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">nlmt</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pick grid peaks.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid file name</span>
@@ -756,13 +835,16 @@
 <span class="sd">        direction.  Up to 4 directions can be tested.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_peak</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">nlmt</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_ply"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_ply">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_ply">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_ply">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_ply</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">refresh</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the grid edge in a `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:      The `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
@@ -785,13 +867,16 @@
 <span class="sd">        The grid `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` will be added to existing ploygons in the passed `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_ply</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">refresh</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_ply_ex"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_ply_ex">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_ply_ex">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_ply_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_ply_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">refresh</span><span class="p">,</span> <span class="n">min_points</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the grid edge in a `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` (with min points)</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:         The `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
@@ -816,13 +901,16 @@
 <span class="sd">        The grid `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` will be added to existing ploygons in the passed `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_ply_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">,</span> <span class="n">refresh</span><span class="p">,</span> <span class="n">min_points</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_reproject_and_window"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_reproject_and_window">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_reproject_and_window">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_reproject_and_window">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_reproject_and_window</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_grid_filename</span><span class="p">,</span> <span class="n">output_grid_filename</span><span class="p">,</span> <span class="n">new_projection</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new grid by reprojecting an existing grid and windowing its contents</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_grid_filename:   Input grid filename</span>
@@ -845,13 +933,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_reproject_and_window</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_grid_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_grid_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_projection</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_resample"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_resample">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_resample">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_resample">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_resample</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_grid_filename</span><span class="p">,</span> <span class="n">output_grid_filename</span><span class="p">,</span> <span class="n">o_x</span><span class="p">,</span> <span class="n">o_y</span><span class="p">,</span> <span class="n">d_x</span><span class="p">,</span> <span class="n">d_y</span><span class="p">,</span> <span class="n">n_x</span><span class="p">,</span> <span class="n">n_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new grid by resampling an existing grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_grid_filename:   Input grid filename</span>
@@ -878,13 +969,16 @@
 <span class="sd">        **Note:** Works only for un rotated grids.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_resample</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_grid_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_grid_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">o_x</span><span class="p">,</span> <span class="n">o_y</span><span class="p">,</span> <span class="n">d_x</span><span class="p">,</span> <span class="n">d_y</span><span class="p">,</span> <span class="n">n_x</span><span class="p">,</span> <span class="n">n_y</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_resize"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_resize">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_resize">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_resize">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_resize</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">in_grd</span><span class="p">,</span> <span class="n">out_grd</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Resize a grid to reduce the size not cover the outside dummies.</span>
 <span class="sd">        </span>
 <span class="sd">        :param in_grd:   File name of input grid</span>
@@ -897,13 +991,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_resize</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">in_grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_grd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_shad"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_shad">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_shad">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_shad">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_shad</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">in_grid</span><span class="p">,</span> <span class="n">sh_grid</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">scl</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a shaded relief image.</span>
 <span class="sd">        </span>
 <span class="sd">        :param in_grid:  Input image name</span>
@@ -925,13 +1022,16 @@
 <span class="sd">        The default values are returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">inc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dec</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">scl</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_shad</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">in_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">sh_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dec</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">scl</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.refresh_shad"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.refresh_shad">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.refresh_shad">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.refresh_shad">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">refresh_shad</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">in_img</span><span class="p">,</span> <span class="n">sh_img</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">scl</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Refresh a shaded relief image</span>
 <span class="sd">        </span>
 <span class="sd">        :param in_img:  Input grid object</span>
@@ -953,13 +1053,16 @@
 <span class="sd">        The default values are returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">inc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dec</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">scl</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_refresh_shad</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">in_img</span><span class="p">,</span> <span class="n">sh_img</span><span class="p">,</span> <span class="n">inc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dec</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">scl</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_st"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_st">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_st">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_st">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_st</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update an `GXST &lt;geosoft.gxapi.GXST&gt;` object using a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid name</span>
@@ -977,13 +1080,16 @@
 <span class="sd">        See `GXST &lt;geosoft.gxapi.GXST&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_st</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">st</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_stat"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_stat">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stat</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">xelem</span><span class="p">,</span> <span class="n">yelem</span><span class="p">,</span> <span class="n">xsep</span><span class="p">,</span> <span class="n">ysep</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reports statistics contained in a grid header.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:    Name of the grid to get stats from</span>
@@ -1018,13 +1124,16 @@
 <span class="sd">        **Note:** Statistics are returned in the parameter set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xsep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ysep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">kx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mult</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_stat</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xsep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ysep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">kx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mult</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_stat_comp"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_comp">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_stat_comp">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_comp">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stat_comp</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">xelem</span><span class="p">,</span> <span class="n">yelem</span><span class="p">,</span> <span class="n">xsep</span><span class="p">,</span> <span class="n">ysep</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">comp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reports statistics contained in a grid header.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:    Name of the grid to get stats from</span>
@@ -1061,13 +1170,16 @@
 <span class="sd">        **Note:** Statistics are returned in the parameter set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xsep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ysep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">kx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mult</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">comp</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_stat_comp</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yelem</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xsep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ysep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">kx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_orig</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mult</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">comp</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_stat_ext"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_ext">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_stat_ext">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_ext">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stat_ext</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">dums</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">stddev</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reports statistics of a grid&#39;s elements.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:    Name of the grid to get stats from</span>
@@ -1096,13 +1208,16 @@
 <span class="sd">        Statistics are returned in the parameter set.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">items</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dums</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_stat_ext</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">force</span><span class="p">,</span> <span class="n">items</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dums</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_stat_trend"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_trend">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_stat_trend">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_trend">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stat_trend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">trend_valid</span><span class="p">,</span> <span class="n">co</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reports Trend Info of a grid (for first order coefficients only).</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:         Name of the grid to get stats from</span>
@@ -1123,13 +1238,16 @@
 <span class="sd">        **Note:** Trend Info are returned in the parameter set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">trend_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">co</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cy</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_stat_trend</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">trend_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">co</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cy</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_stat_trend_ext"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_trend_ext">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_stat_trend_ext">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stat_trend_ext">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stat_trend_ext</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">num_coef</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">vm</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reports Extended Trend Info of a grid (for up to third order coefficients).</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:      Grid name</span>
@@ -1152,13 +1270,16 @@
 <span class="sd">        **Note:** Trend Info are returned in the parameter set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">order</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_coef</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xo</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yo</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_stat_trend_ext</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">order</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_coef</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xo</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yo</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vm</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.slope_standard_deviation"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.slope_standard_deviation">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.slope_standard_deviation">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.slope_standard_deviation">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">slope_standard_deviation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the standard deviation of the slopes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:  Grid object</span>
@@ -1185,9 +1306,12 @@
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_stitch"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stitch">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.grid_stitch">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stitch">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stitch</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid1</span><span class="p">,</span> <span class="n">grid2</span><span class="p">,</span> <span class="n">grid3</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">tr_order1</span><span class="p">,</span> <span class="n">tr_order2</span><span class="p">,</span> <span class="n">tr_calc</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">spline</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">weighting</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Stitches together too grids</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid1:      Input Grid1 name</span>
@@ -1222,13 +1346,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_stitch</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid3</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">method</span><span class="p">,</span> <span class="n">tr_order1</span><span class="p">,</span> <span class="n">tr_order2</span><span class="p">,</span> <span class="n">tr_calc</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">spline</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">weighting</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_stitch_ctl"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stitch_ctl">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_stitch_ctl">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_stitch_ctl">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_stitch_ctl</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ctl</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Stitches together two grids - control file for options.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ctl:  Control file containing all &quot;GRIDSTCH&quot; parameters</span>
@@ -1243,13 +1370,16 @@
 <span class="sd">        every time an option is added.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_stitch_ctl</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_tiff"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_tiff">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_tiff">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_tiff">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_tiff</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grds</span><span class="p">,</span> <span class="n">tiff</span><span class="p">,</span> <span class="n">bcol</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">csize</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a Tiff (Tagged-Image file format) file with up to 16 grids.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grds:   Comma-delimited string containing names of all grids to use in Tiff generation Up to 16 grids allowed.</span>
@@ -1280,13 +1410,16 @@
 <span class="sd">        as a combination of Reg,Green, and Blue values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_tiff</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grds</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tiff</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bcol</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">csize</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_trnd"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_trnd">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_trnd">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_trnd">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_trnd</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">imgi</span><span class="p">,</span> <span class="n">imgo</span><span class="p">,</span> <span class="n">tr_option</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vm</span><span class="p">,</span> <span class="n">num_coefs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove a trend surface from a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param imgi:       Handle to input image</span>
@@ -1328,13 +1461,16 @@
 <span class="sd">        ===== ======================</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_trnd</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">imgi</span><span class="p">,</span> <span class="n">imgo</span><span class="p">,</span> <span class="n">tr_option</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vm</span><span class="p">,</span> <span class="n">num_coefs</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_trns"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_trns">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_trns">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_trns">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_trns</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tcon</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Transpose a grid by swapping the grid rows with</span>
 <span class="sd">        the grid columns.</span>
 <span class="sd">        </span>
@@ -1352,13 +1488,16 @@
 <span class="sd">        not succeed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_trns</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tcon</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_vc"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vc">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_vc">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_vc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">,</span> <span class="n">updown</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply vertical continuation convolution filter to a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param im_gi:     Input image</span>
@@ -1375,13 +1514,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_vc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">,</span> <span class="n">updown</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_vd"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vd">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_vd">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vd">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_vd</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply vertical derivative convolution filter to a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param im_gi:  Input image</span>
@@ -1394,13 +1536,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_vd</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_vol"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vol">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_vol">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_vol">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_vol</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">rbase</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">vol_a</span><span class="p">,</span> <span class="n">vol_b</span><span class="p">,</span> <span class="n">diff</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the grid volumes above and below a</span>
 <span class="sd">        reference base.</span>
 <span class="sd">        </span>
@@ -1430,13 +1575,16 @@
 <span class="sd">        If not, the method will terminate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">vol_a</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vol_b</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">diff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_vol</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">rbase</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">vol_a</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vol_b</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">diff</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_wind"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_wind">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_wind">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_wind">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_wind</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">zmin</span><span class="p">,</span> <span class="n">zmax</span><span class="p">,</span> <span class="n">csize</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">mdf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a grid using a defined area window</span>
 <span class="sd">        within a larger grid.</span>
 <span class="sd">        </span>
@@ -1472,13 +1620,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_wind</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">coord</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">zmin</span><span class="p">,</span> <span class="n">zmax</span><span class="p">,</span> <span class="n">csize</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">mdf</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_wind2"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_wind2">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_wind2">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_wind2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_wind2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">zmin</span><span class="p">,</span> <span class="n">zmax</span><span class="p">,</span> <span class="n">clip</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Window a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:   Image of input grid</span>
@@ -1511,13 +1662,16 @@
 <span class="sd">        defined area and line up on an even grid cell.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_wind2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">zmin</span><span class="p">,</span> <span class="n">zmax</span><span class="p">,</span> <span class="n">clip</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_xyz"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_xyz">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_xyz">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_xyz">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">dec_x</span><span class="p">,</span> <span class="n">dec_y</span><span class="p">,</span> <span class="n">lab</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a Grid image to an XYZ file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:    Image of the grid to export</span>
@@ -1542,13 +1696,16 @@
 <span class="sd">        terminate with an error.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_grid_xyz</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">xyz</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">index</span><span class="p">,</span> <span class="n">dec_x</span><span class="p">,</span> <span class="n">dec_y</span><span class="p">,</span> <span class="n">lab</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.grid_type"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_type">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.grid_type">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.grid_type">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reports the true data the of a grid (geosoft types)</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Name of the Grid</span>
@@ -1566,9 +1723,12 @@
 
 
 
-<div class="viewcode-block" id="GXIMU.make_mi_tab_file"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.make_mi_tab_file">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.make_mi_tab_file">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.make_mi_tab_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">make_mi_tab_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make a MapInfo tab file for this grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Grid file name</span>
@@ -1579,13 +1739,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_make_mi_tab_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.make_mi_tabfrom_grid"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.make_mi_tabfrom_grid">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.make_mi_tabfrom_grid">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.make_mi_tabfrom_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">make_mi_tabfrom_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make a MapInfo tab file for this grid as rendered in a map</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Grid file name</span>
@@ -1596,13 +1759,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_make_mi_tabfrom_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.make_mi_tabfrom_map"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.make_mi_tabfrom_map">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.make_mi_tabfrom_map">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.make_mi_tabfrom_map">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">make_mi_tabfrom_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make a MapInfo tab file from this map</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:  Map file name</span>
@@ -1613,13 +1779,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_make_mi_tabfrom_map</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.mosaic"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.mosaic">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.mosaic">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.mosaic">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">mosaic</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a mosaic image of an image list.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grids:  Image names (&#39;|&#39; separated)</span>
@@ -1647,9 +1816,12 @@
 
 
 
-<div class="viewcode-block" id="GXIMU.peak_size"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.peak_size">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIMU.peak_size">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.peak_size">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">peak_size</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">prec</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Define the sizes of all the peaks in an image.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid file name</span>
@@ -1682,13 +1854,16 @@
 <span class="sd">        Note: `peak_size2 &lt;geosoft.gxapi.GXIMU.peak_size2&gt;` is probably a better routine...</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_peak_size</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">prec</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.peak_size2"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.peak_size2">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.peak_size2">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.peak_size2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">peak_size2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Define the sizes of all the peaks in an image - new algorithm</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid file name</span>
@@ -1720,13 +1895,16 @@
 <span class="sd">        results than `peak_size &lt;geosoft.gxapi.GXIMU.peak_size&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_peak_size2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.pigeon_hole"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.pigeon_hole">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.pigeon_hole">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.pigeon_hole">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pigeon_hole</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">put</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pigeon-hole and count points by location into a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:   Input grid</span>
@@ -1755,13 +1933,16 @@
 <span class="sd">        sample locations in a survey area.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">put</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_pigeon_hole</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">put</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.pigeon_hole_color"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.pigeon_hole_color">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.pigeon_hole_color">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.pigeon_hole_color">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pigeon_hole_color</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">color_img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">put</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pigeon-hole and count points by location and color locations in another grid based on ITR information.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:        Input grid</span>
@@ -1798,13 +1979,16 @@
 <span class="sd">                       sample locations in a survey area.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">put</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_pigeon_hole_color</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">color_img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">put</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.profile"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.profile">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.profile">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.profile">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">profile</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">samsep</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract a profile from a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:     Input image</span>
@@ -1830,13 +2014,16 @@
 <span class="sd">        up to X2,Y2 at the specified separation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_profile</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">samsep</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.profile_vv"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.profile_vv">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.profile_vv">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.profile_vv">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">profile_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract a `GXVV &lt;geosoft.gxapi.GXVV&gt;` profile from a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:   Input image</span>
@@ -1857,13 +2044,16 @@
 <span class="sd">            iGetPolyLine_DBE</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_profile_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.range_grids"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.range_grids">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.range_grids">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.range_grids">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">range_grids</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determine bounding rectangle for a set of grids</span>
 <span class="sd">        </span>
 <span class="sd">        :param grids:  List of grid files, &quot;|&quot; delimited</span>
@@ -1890,13 +2080,16 @@
 <span class="sd">        determined.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_range_grids</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grids</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.range_ll"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.range_ll">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.range_ll">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.range_ll">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">range_ll</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">min_lat</span><span class="p">,</span> <span class="n">min_lon</span><span class="p">,</span> <span class="n">max_lat</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determine the range in lat. and long. of a projected grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:      Input image</span>
@@ -1924,13 +2117,16 @@
 <span class="sd">        returned values are dummies (`GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;`).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_lat</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_lon</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_lat</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_lon</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_range_ll</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">min_lat</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_lon</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_lat</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_lon</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.stat_window"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.stat_window">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.stat_window">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.stat_window">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">stat_window</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate grid statistics in a window</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:    Name of the grid to get stats from</span>
@@ -1959,13 +2155,16 @@
 <span class="sd">        required.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_stat_window</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIMU.update_ply"><a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.update_ply">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIMU.update_ply">
+<a class="viewcode-back" href="../../../GXIMU.html#geosoft.gxapi.GXIMU.update_ply">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">update_ply</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update the grid boundary in the grid metadata</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:  The Grid</span>
@@ -1984,7 +2183,9 @@
 <span class="sd">        GridPLYEx function except that you get to alter the</span>
 <span class="sd">        `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` before it is placed back in the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_update_ply</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">)</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIMU</span><span class="o">.</span><span class="n">_update_ply</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">img</span><span class="p">,</span> <span class="n">ply</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -2014,7 +2215,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIMU</a></li> 
@@ -2022,8 +2223,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

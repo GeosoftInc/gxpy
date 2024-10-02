@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXGD class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXGD class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,30 +28,47 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGD class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXGD class</a><ul>
-<li><a class="reference internal" href="#gd-status-constants">GD_STATUS constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGD"><code class="docutils literal notranslate"><span class="pre">GXGD</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGD.__init__"><code class="docutils literal notranslate"><span class="pre">GXGD.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGD.create"><code class="docutils literal notranslate"><span class="pre">GXGD.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGD.is_null"><code class="docutils literal notranslate"><span class="pre">GXGD.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXGD.null"><code class="docutils literal notranslate"><span class="pre">GXGD.null()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gd-status-constants">GD_STATUS constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GD_STATUS_READONLY"><code class="docutils literal notranslate"><span class="pre">GD_STATUS_READONLY</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.GD_STATUS_READONLY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GD_STATUS_NEW"><code class="docutils literal notranslate"><span class="pre">GD_STATUS_NEW</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">gxapi.GD_STATUS_NEW</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GD_STATUS_OLD"><code class="docutils literal notranslate"><span class="pre">GD_STATUS_OLD</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">gxapi.GD_STATUS_OLD</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,37 +84,36 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxgd-class">
-<span id="gxgd"></span><h1>GXGD class<a class="headerlink" href="#gxgd-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxgd-class">
+<span id="gxgd"></span><h1>GXGD class<a class="headerlink" href="#gxgd-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXGD">
-<em class="property">class </em><code class="sig-name descname">GXGD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGD" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGD">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXGD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGD" title="Link to this definition">¶</a></dt>
 <dd><p>GXGD class.</p>
 <p>This class provides access to Geosoft grid files using an old interface.
 Only the <a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.sample_gd" title="geosoft.gxapi.GXDU.sample_gd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDU.sample_gd</span></code></a> function uses this class.  Use the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> class
 instead.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXGD.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGD.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXGD.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGD.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.create" title="Link to this definition">¶</a></dt>
 <dd><p>This method creates a <a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGD</span></code></a> object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the Grid File</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#gd-status"><span class="std std-ref">GD_STATUS constants</span></a></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Handle to the <a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGD</span></code></a> object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD">GXGD</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD.GXGD">GXGD</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -109,73 +123,73 @@ instead.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXGD.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGD.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXGD.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXGD.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGD.html#GXGD.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGD.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGD</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGD</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD">GXGD</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXGD" title="geosoft.gxapi.GXGD.GXGD">GXGD</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-<div class="section" id="gd-status-constants">
-<span id="gd-status"></span><h2>GD_STATUS constants<a class="headerlink" href="#gd-status-constants" title="Permalink to this headline">¶</a></h2>
+<section id="gd-status-constants">
+<span id="gd-status"></span><h2>GD_STATUS constants<a class="headerlink" href="#gd-status-constants" title="Link to this heading">¶</a></h2>
 <p>Grid open mode</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.GD_STATUS_READONLY">
-<code class="sig-name descname">GD_STATUS_READONLY</code><a class="headerlink" href="#geosoft.gxapi.GD_STATUS_READONLY" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GD_STATUS_READONLY">
+<span class="sig-name descname"><span class="pre">GD_STATUS_READONLY</span></span><a class="headerlink" href="#geosoft.gxapi.GD_STATUS_READONLY" title="Link to this definition">¶</a></dt>
 <dd><p>Readonly</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">GD_STATUS_READONLY</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GD_STATUS_READONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.GD_STATUS_NEW">
-<code class="sig-name descname">GD_STATUS_NEW</code><a class="headerlink" href="#geosoft.gxapi.GD_STATUS_NEW" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GD_STATUS_NEW">
+<span class="sig-name descname"><span class="pre">GD_STATUS_NEW</span></span><a class="headerlink" href="#geosoft.gxapi.GD_STATUS_NEW" title="Link to this definition">¶</a></dt>
 <dd><p>New</p>
 <dl class="py attribute">
-<dt id="id1">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">GD_STATUS_NEW</code><em class="property"> = 1</em><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id1">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GD_STATUS_NEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.GD_STATUS_OLD">
-<code class="sig-name descname">GD_STATUS_OLD</code><a class="headerlink" href="#geosoft.gxapi.GD_STATUS_OLD" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GD_STATUS_OLD">
+<span class="sig-name descname"><span class="pre">GD_STATUS_OLD</span></span><a class="headerlink" href="#geosoft.gxapi.GD_STATUS_OLD" title="Link to this definition">¶</a></dt>
 <dd><p>Old</p>
 <dl class="py attribute">
-<dt id="id2">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">GD_STATUS_OLD</code><em class="property"> = 2</em><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GD_STATUS_OLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -190,14 +204,14 @@ instead.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGD class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

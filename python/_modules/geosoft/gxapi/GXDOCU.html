@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDOCU &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXDOCU &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDOCU</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,19 +75,26 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXDOCU"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU">[docs]</a><span class="k">class</span> <span class="nc">GXDOCU</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDOCU</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU">[docs]</a>
+<span class="k">class</span> <span class="nc">GXDOCU</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDOCU</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXDOCU class.</span>
 
 <span class="sd">    Class to work with documents</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXDOCU.__init__"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXDOCU.__init__">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXDOCU</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXDOCU.null"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXDOCU.null">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXDOCU &lt;geosoft.gxapi.GXDOCU&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXDOCU &lt;geosoft.gxapi.GXDOCU&gt;`</span>
@@ -98,8 +102,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXDOCU</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXDOCU.is_null"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDOCU.is_null">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -109,12 +116,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXDOCU.copy"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc_us</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.copy">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc_us</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy `GXDOCU &lt;geosoft.gxapi.GXDOCU&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param doc_us:  Source `GXDOCU &lt;geosoft.gxapi.GXDOCU&gt;`</span>
@@ -125,13 +135,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">doc_us</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXDOCU.create"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXDOCU.create">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a document onject</span>
 <span class="sd">        </span>
 
@@ -147,9 +160,12 @@
 
 
 
-<div class="viewcode-block" id="GXDOCU.create_s"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXDOCU.create_s">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.create_s">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create from a serialized source</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:  `GXBF &lt;geosoft.gxapi.GXBF&gt;` from which to read `GXDOCU &lt;geosoft.gxapi.GXDOCU&gt;`</span>
@@ -170,8 +186,11 @@
 
 
 
-<div class="viewcode-block" id="GXDOCU.get_file"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.get_file">[docs]</a>    <span class="k">def</span> <span class="nf">get_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDOCU.get_file">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.get_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the document and place in a file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File to which to write document</span>
@@ -182,13 +201,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.get_file_meta"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.get_file_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_file_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.get_file_meta">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.get_file_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_file_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the document and place in a file with metadata.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File to which to write document</span>
@@ -207,13 +229,16 @@
 <span class="sd">        file &quot;filename.extension.GeosoftMeta&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_meta</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.get_meta"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.get_meta">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.get_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the document&#39;s meta</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object to fill in with the document&#39;s meta</span>
@@ -224,13 +249,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.doc_name"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.doc_name">[docs]</a>    <span class="k">def</span> <span class="nf">doc_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.doc_name">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.doc_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">doc_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The document name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Buffer to fill with document name</span>
@@ -241,13 +269,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_doc_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.file_name"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.file_name">[docs]</a>    <span class="k">def</span> <span class="nf">file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.file_name">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.file_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The original document file name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Buffer to fill with document file name</span>
@@ -258,13 +289,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.have_meta"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.have_meta">[docs]</a>    <span class="k">def</span> <span class="nf">have_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.have_meta">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.have_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">have_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if a document has metadata.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -279,8 +313,11 @@
 
 
 
-<div class="viewcode-block" id="GXDOCU.is_reference"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.is_reference">[docs]</a>    <span class="k">def</span> <span class="nf">is_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDOCU.is_reference">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.is_reference">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_reference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Is the document only a reference (a URL) ?</span>
 <span class="sd">        </span>
 
@@ -297,8 +334,11 @@
 
 
 
-<div class="viewcode-block" id="GXDOCU.open"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDOCU.open">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.open">[docs]</a>
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Open a document in the document viewer</span>
 <span class="sd">        </span>
 <span class="sd">        :param mode:  :ref:`DOCU_OPEN`</span>
@@ -312,13 +352,16 @@
 <span class="sd">        used to open the file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.serial"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.serial">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.serial">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Serialize `GXDOCU &lt;geosoft.gxapi.GXDOCU&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:    `GXBF &lt;geosoft.gxapi.GXBF&gt;` in which to write object</span>
@@ -329,13 +372,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.set_file"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.set_file">[docs]</a>    <span class="k">def</span> <span class="nf">set_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.set_file">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.set_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the document from a file source.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  Document type</span>
@@ -383,13 +429,16 @@
 <span class="sd">        method.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_file</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.set_file_meta"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.set_file_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_file_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.set_file_meta">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.set_file_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_file_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the document from a file source with metadata.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  Document type extension</span>
@@ -420,13 +469,16 @@
 <span class="sd">           &quot;grd&quot;       Geosoft grid file</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_file_meta</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDOCU.set_meta"><a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDOCU.set_meta">
+<a class="viewcode-back" href="../../../GXDOCU.html#geosoft.gxapi.GXDOCU.set_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the document&#39;s meta</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to add to the document&#39;s meta</span>
@@ -436,7 +488,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -466,7 +520,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDOCU</a></li> 
@@ -474,8 +528,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

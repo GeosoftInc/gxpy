@@ -1,7 +1,41 @@
-geosoft.gxpy.vox_display submodule
-=============================================
+﻿geosoft.gxpy.vox\_display
+=========================
 
 .. automodule:: geosoft.gxpy.vox_display
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      VoxDisplay
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      VoxDisplayException
+   
+   
+
+
+

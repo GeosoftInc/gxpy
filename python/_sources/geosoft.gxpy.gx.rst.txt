@@ -1,7 +1,51 @@
-geosoft.gxpy.gx submodule
-=============================================
+﻿geosoft.gxpy.gx
+===============
 
 .. automodule:: geosoft.gxpy.gx
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      GXpy
+      _get_gx_instance
+      _get_tls_globals
+      _have_gx
+      _log_file_error
+      _reset_tls_globals
+      _t
+      gx
+      pop_resource
+      track_resource
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      GXpyContext
+      TLSGlobals
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GXException
+   
+   
+
+
+

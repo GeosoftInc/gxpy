@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXSEMPLOT class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXSEMPLOT class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,33 +28,118 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSEMPLOT class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXSEMPLOT class</a><ul>
-<li><a class="reference internal" href="#semplot-group-class-constants">SEMPLOT_GROUP_CLASS constants</a></li>
-<li><a class="reference internal" href="#semplot-export-constants">SEMPLOT_EXPORT constants</a></li>
-<li><a class="reference internal" href="#semplot-ext-constants">SEMPLOT_EXT constants</a></li>
-<li><a class="reference internal" href="#semplot-plot-constants">SEMPLOT_PLOT constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.__init__"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.apply_filter_to_mask"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.apply_filter_to_mask()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.convert_dummies"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.convert_dummies()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.create_ascii_template"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.create_ascii_template()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.create_database_template"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.create_database_template()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.create_groups"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.create_groups()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.default_groups"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.default_groups()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.edit_filter"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.edit_filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.edit_map_plot_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_components"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.edit_plot_components()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_parameters"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.edit_plot_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.export_overlay"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.export_overlay()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.export_view"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.export_view()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.export_view2"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.export_view2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.filter_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.filter_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.filter_mineral_pos_data"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.filter_mineral_pos_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.get_associated_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.get_associated_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.get_current_mineral_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.get_current_position_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.get_current_position_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.get_full_mineral_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.get_full_position_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.get_full_position_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.get_grouping_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.get_grouping_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.get_mineral_channel_name()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.import_ascii_wizard"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.import_ascii_wizard()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.import_bin"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.import_bin()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.import_database_ado"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.import_database_ado()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.import_database_odbc"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.import_database_odbc()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.init_group_symbols_used()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.is_null"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.mineral_id"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.mineral_id()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.new_filter"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.new_filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.new_template"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.new_template()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.null"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.overlay_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.overlay_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.plot"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.plot()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.plot_symbol_legend"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.plot_symbol_legend()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.prop_symb"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.prop_symb()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.re_plot_symbol_legend()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.replot"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.replot()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.reset_groups"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.reset_groups()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.reset_used_channel()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.select_poly"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.select_poly()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.set_channel_order"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.set_channel_order()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.set_channel_units"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.set_channel_units()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.set_itr"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.set_itr()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.set_mask"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.set_mask()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.sort_data"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.sort_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.template_lst"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.template_lst()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.template_type"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.template_type()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.tile_windows"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.tile_windows()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.total_oxides"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.total_oxides()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT.view_type"><code class="docutils literal notranslate"><span class="pre">GXSEMPLOT.view_type()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#semplot-group-class-constants">SEMPLOT_GROUP_CLASS constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_GROUP_CLASS"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_GROUP_CLASS</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_GROUP_CLASS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#semplot-export-constants">SEMPLOT_EXPORT constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_EXPORT_NORMAL"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_EXPORT_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_EXPORT_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_EXPORT_NOEXTRA</span></code></a></li>
+<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_EXPORT_NOEXTRA</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#semplot-ext-constants">SEMPLOT_EXT constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_EXT_ALL"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_EXT_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_EXT_ALL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_EXT_SEMPLOT"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_EXT_SEMPLOT</span></code></a></li>
+<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_EXT_SEMPLOT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_EXT_CHIMERA"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_EXT_CHIMERA</span></code></a></li>
+<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_EXT_CHIMERA</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#semplot-plot-constants">SEMPLOT_PLOT constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_PLOT_ALL"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_PLOT_ALL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_PLOT_XYPLOT"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_XYPLOT</span></code></a></li>
+<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_PLOT_XYPLOT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_TRIPLOT</span></code></a></li>
+<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_PLOT_TRIPLOT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN"><code class="docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_UNKNOWN</span></code></a></li>
+<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.SEMPLOT_PLOT_UNKNOWN</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -72,25 +155,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxsemplot-class">
-<span id="gxsemplot"></span><h1>GXSEMPLOT class<a class="headerlink" href="#gxsemplot-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxsemplot-class">
+<span id="gxsemplot"></span><h1>GXSEMPLOT class<a class="headerlink" href="#gxsemplot-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXSEMPLOT">
-<em class="property">class </em><code class="sig-name descname">GXSEMPLOT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXSEMPLOT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT" title="Link to this definition">¶</a></dt>
 <dd><p>GXSEMPLOT class.</p>
 <p>Oasis montaj implementation of RTE <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a></p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.apply_filter_to_mask">
-<em class="property">classmethod </em><code class="sig-name descname">apply_filter_to_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">filter</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">mineral</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.apply_filter_to_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.apply_filter_to_mask" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.apply_filter_to_mask">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply_filter_to_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.apply_filter_to_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.apply_filter_to_mask" title="Link to this definition">¶</a></dt>
 <dd><p>Apply the filter to the mask channel</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>filter</strong> (<em>str</em>) – Filter name</p></li>
@@ -111,11 +193,11 @@ failing get 0.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.convert_dummies">
-<em class="property">classmethod </em><code class="sig-name descname">convert_dummies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">line</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.convert_dummies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.convert_dummies" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.convert_dummies">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_dummies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.convert_dummies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.convert_dummies" title="Link to this definition">¶</a></dt>
 <dd><p>Convert dummies to zero values for assay channels.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>line</strong> (<em>int</em>) – Input line to convert</p></li>
@@ -134,21 +216,21 @@ converted to 0.0.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.create_ascii_template">
-<em class="property">classmethod </em><code class="sig-name descname">create_ascii_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">temp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.create_ascii_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_ascii_template" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.create_ascii_template">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ascii_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.create_ascii_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_ascii_template" title="Link to this definition">¶</a></dt>
 <dd><p>: Generate ASCII import template automatically</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Data file name</p></li>
 <li><p><strong>temp</strong> (<em>str</em>) – Template to make</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>1 if it succeeds in creating a Template.
 0 if it fails.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -159,21 +241,21 @@ converted to 0.0.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.create_database_template">
-<em class="property">classmethod </em><code class="sig-name descname">create_database_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">temp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.create_database_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_database_template" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.create_database_template">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_database_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.create_database_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_database_template" title="Link to this definition">¶</a></dt>
 <dd><p>Generate database import template automatically</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Data file name</p></li>
 <li><p><strong>temp</strong> (<em>str</em>) – Template to make</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>1 if it succeeds in creating a Template.
 0 if it fails.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -184,11 +266,11 @@ converted to 0.0.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.create_groups">
-<em class="property">classmethod </em><code class="sig-name descname">create_groups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.create_groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_groups" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.create_groups">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.create_groups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.create_groups" title="Link to this definition">¶</a></dt>
 <dd><p>Group data by anomaly or string channel - Interactive.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel</p></li>
@@ -202,11 +284,11 @@ converted to 0.0.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.default_groups">
-<em class="property">classmethod </em><code class="sig-name descname">default_groups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.default_groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.default_groups" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.default_groups">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.default_groups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.default_groups" title="Link to this definition">¶</a></dt>
 <dd><p>Group data by selected anomalies.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p>
 </dd>
 </dl>
@@ -217,11 +299,11 @@ converted to 0.0.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.edit_filter">
-<em class="property">classmethod </em><code class="sig-name descname">edit_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">filter</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">mineral</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_filter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.edit_filter">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edit_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_filter" title="Link to this definition">¶</a></dt>
 <dd><p>Edit and create filter on channel values</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>filter</strong> (<em>str</em>) – Name of filter</p></li>
@@ -230,7 +312,7 @@ converted to 0.0.</p>
 <li><p><strong>mineral</strong> (<em>str</em>) – Mineral to restrict filter to.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>-1 - Cancel - Edits to filter discarded.</p>
 <blockquote>
 <div><p>0 - Normal Return. Edits saved to filter file.</p>
@@ -255,7 +337,7 @@ new filter by that name will be created.</p>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -266,11 +348,11 @@ new filter by that name will be created.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters">
-<em class="property">classmethod </em><code class="sig-name descname">edit_map_plot_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_map_plot_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edit_map_plot_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_map_plot_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_map_plot_parameters" title="Link to this definition">¶</a></dt>
 <dd><p>Alter parameters in an XYplot Triplot map.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel (can be “”)</p></li>
@@ -291,11 +373,11 @@ in the current <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB"
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.edit_plot_components">
-<em class="property">classmethod </em><code class="sig-name descname">edit_plot_components</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">templ</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_plot_components"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_components" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.edit_plot_components">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edit_plot_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">templ</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_plot_components"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_components" title="Link to this definition">¶</a></dt>
 <dd><p>Set group names and channels to plot in a template.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>templ</strong> (<em>str</em>) – Template name</p></li>
@@ -314,11 +396,11 @@ the file extension “semtemplate”.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.edit_plot_parameters">
-<em class="property">classmethod </em><code class="sig-name descname">edit_plot_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">templ</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_plot_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_parameters" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.edit_plot_parameters">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edit_plot_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">templ</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.edit_plot_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.edit_plot_parameters" title="Link to this definition">¶</a></dt>
 <dd><p>Set TriPlot parameters in a template.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>templ</strong> (<em>str</em>) – Template name</p></li>
@@ -337,11 +419,11 @@ the file extension “semtemplate”.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.export_overlay">
-<em class="property">classmethod </em><code class="sig-name descname">export_overlay</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">overlay</span></em>, <em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">mview</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">plot_type</span></em>, <em class="sig-param"><span class="n">x_stage</span></em>, <em class="sig-param"><span class="n">x_oxide</span></em>, <em class="sig-param"><span class="n">y_stage</span></em>, <em class="sig-param"><span class="n">y_oxide</span></em>, <em class="sig-param"><span class="n">z_stage</span></em>, <em class="sig-param"><span class="n">z_oxide</span></em>, <em class="sig-param"><span class="n">extension</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.export_overlay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_overlay" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.export_overlay">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">export_overlay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overlay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_stage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_oxide</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_stage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_oxide</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_stage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_oxide</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.export_overlay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_overlay" title="Link to this definition">¶</a></dt>
 <dd><p>Create overlay map and file from a group.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>overlay</strong> (<em>str</em>) – Overlay file name</p></li>
 <li><p><strong>map</strong> (<em>str</em>) – Associated map</p></li>
@@ -367,19 +449,19 @@ is created which points to this map.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.export_view">
-<em class="property">classmethod </em><code class="sig-name descname">export_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">new_db</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">mineral</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.export_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.export_view">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">export_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.export_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view" title="Link to this definition">¶</a></dt>
 <dd><p>Create a “View” database</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Original raw data database</p></li>
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of lines (anomlies) to export</p></li>
 <li><p><strong>new_db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Destination database</p></li>
 <li><p><strong>view</strong> (<em>int</em>) – View to export - One of SEMPLOT_XXX_STAGE</p></li>
-<li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel (“” for None)</p></li>
+<li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel (”” for None)</p></li>
 <li><p><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</p></li>
-<li><p><strong>mineral</strong> (<em>str</em>) – Mineral to export (“” for all)</p></li>
+<li><p><strong>mineral</strong> (<em>str</em>) – Mineral to export (”” for all)</p></li>
 </ul>
 </dd>
 </dl>
@@ -390,19 +472,19 @@ is created which points to this map.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.export_view2">
-<em class="property">classmethod </em><code class="sig-name descname">export_view2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">new_db</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">mineral</span></em>, <em class="sig-param"><span class="n">export_extra</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.export_view2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.export_view2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">export_view2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_extra</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.export_view2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.export_view2" title="Link to this definition">¶</a></dt>
 <dd><p>Create a “View” database, with channel selection</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Original raw data database</p></li>
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List of lines (anomlies) to export</p></li>
 <li><p><strong>new_db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Destination database</p></li>
 <li><p><strong>view</strong> (<em>int</em>) – View to export - One of SEMPLOT_XXX_STAGE</p></li>
-<li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel (“” for None)</p></li>
+<li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel (”” for None)</p></li>
 <li><p><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</p></li>
-<li><p><strong>mineral</strong> (<em>str</em>) – Mineral to export (“” for all)</p></li>
+<li><p><strong>mineral</strong> (<em>str</em>) – Mineral to export (”” for all)</p></li>
 <li><p><strong>export_extra</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-export"><span class="std std-ref">SEMPLOT_EXPORT constants</span></a> Channel selection</p></li>
 </ul>
 </dd>
@@ -414,11 +496,11 @@ is created which points to this map.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.filter_lst">
-<em class="property">classmethod </em><code class="sig-name descname">filter_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.filter_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.filter_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.filter_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filter_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.filter_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.filter_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Fill a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> with existing <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> filters</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill.</p>
 </dd>
 </dl>
@@ -435,11 +517,11 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.filter_mineral_pos_data">
-<em class="property">classmethod </em><code class="sig-name descname">filter_mineral_pos_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">mineral</span></em>, <em class="sig-param"><span class="n">pos</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.filter_mineral_pos_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.filter_mineral_pos_data" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.filter_mineral_pos_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filter_mineral_pos_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.filter_mineral_pos_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.filter_mineral_pos_data" title="Link to this definition">¶</a></dt>
 <dd><p>Filter raw data by position and mineral values</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel</p></li>
@@ -460,11 +542,11 @@ Works on all selected lines of data.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.get_associated_lst">
-<em class="property">classmethod </em><code class="sig-name descname">get_associated_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_associated_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_associated_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.get_associated_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_associated_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_associated_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_associated_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Get the associated channels for this group in a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>group</strong> (<em>int</em>) – Data Group handle</p></li>
@@ -479,11 +561,11 @@ Works on all selected lines of data.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst">
-<em class="property">classmethod </em><code class="sig-name descname">get_current_mineral_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_current_mineral_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_current_mineral_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_current_mineral_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_mineral_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of minerals in selected lines.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel name</p></li>
@@ -500,11 +582,11 @@ just the “X” (Unknown) item.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.get_current_position_lst">
-<em class="property">classmethod </em><code class="sig-name descname">get_current_position_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_current_position_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_position_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.get_current_position_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_current_position_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_current_position_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_current_position_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of positions in selected lines.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object</p></li>
@@ -518,11 +600,11 @@ just the “X” (Unknown) item.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst">
-<em class="property">classmethod </em><code class="sig-name descname">get_full_mineral_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_full_mineral_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_full_mineral_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_full_mineral_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_mineral_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of all minerals in Semplot_Minerals.csv</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object</p>
 </dd>
 </dl>
@@ -533,11 +615,11 @@ just the “X” (Unknown) item.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.get_full_position_lst">
-<em class="property">classmethod </em><code class="sig-name descname">get_full_position_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_full_position_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_position_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.get_full_position_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_full_position_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_full_position_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_full_position_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieve <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> of all possible mineral positions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object</p>
 </dd>
 </dl>
@@ -548,11 +630,11 @@ just the “X” (Unknown) item.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.get_grouping_lst">
-<em class="property">classmethod </em><code class="sig-name descname">get_grouping_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_grouping_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_grouping_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.get_grouping_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_grouping_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_grouping_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_grouping_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Get list of items to group symbols by.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – List to hold items</p></li>
@@ -571,11 +653,11 @@ Channel symbol is the <a class="reference internal" href="GXLST.html#geosoft.gxa
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name">
-<em class="property">classmethod </em><code class="sig-name descname">get_mineral_channel_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_mineral_channel_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mineral_channel_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.get_mineral_channel_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.get_mineral_channel_name" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieve the mineral channel name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mineral_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Mineral channel name</p></li>
@@ -593,11 +675,11 @@ blank string.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.import_ascii_wizard">
-<em class="property">classmethod </em><code class="sig-name descname">import_ascii_wizard</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">temp</span></em>, <em class="sig-param"><span class="n">anomaly</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_ascii_wizard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_ascii_wizard" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.import_ascii_wizard">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_ascii_wizard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anomaly</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_ascii_wizard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_ascii_wizard" title="Link to this definition">¶</a></dt>
 <dd><p>Generate a <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> ASCII import template.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Data file name</p></li>
 <li><p><strong>temp</strong> (<em>str</em>) – Template to make</p></li>
@@ -614,11 +696,11 @@ the input data must have an “Anom_Name” field.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.import_bin">
-<em class="property">classmethod </em><code class="sig-name descname">import_bin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">templ</span></em>, <em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">flight</span></em>, <em class="sig-param"><span class="n">date</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_bin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_bin" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.import_bin">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">templ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_bin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_bin" title="Link to this definition">¶</a></dt>
 <dd><p>Import blocked binary or archive ASCII data</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
 <li><p><strong>data</strong> (<em>str</em>) – Import data file name</p></li>
@@ -654,11 +736,11 @@ destroyed.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.import_database_ado">
-<em class="property">classmethod </em><code class="sig-name descname">import_database_ado</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">temp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_database_ado"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_ado" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.import_database_ado">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_database_ado</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_database_ado"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_ado" title="Link to this definition">¶</a></dt>
 <dd><p>Generate a template file for importing semplot databases.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Data file name</p></li>
 <li><p><strong>temp</strong> (<em>str</em>) – Template to make</p></li>
@@ -672,11 +754,11 @@ destroyed.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.import_database_odbc">
-<em class="property">classmethod </em><code class="sig-name descname">import_database_odbc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection</span></em>, <em class="sig-param"><span class="n">temp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_database_odbc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_odbc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.import_database_odbc">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_database_odbc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.import_database_odbc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.import_database_odbc" title="Link to this definition">¶</a></dt>
 <dd><p>Generate a template file for importing ODBC databases.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>connection</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Connection string (input and returned)</p></li>
 <li><p><strong>temp</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Template file (returned)</p></li>
@@ -690,11 +772,11 @@ destroyed.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used">
-<em class="property">classmethod </em><code class="sig-name descname">init_group_symbols_used</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.init_group_symbols_used"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.init_group_symbols_used">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_group_symbols_used</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.init_group_symbols_used"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.init_group_symbols_used" title="Link to this definition">¶</a></dt>
 <dd><p>Initializes memory of symbols used in plotting.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p>
 </dd>
 </dl>
@@ -708,25 +790,25 @@ Plotting one or more legends - symbols are accumulated.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.mineral_id">
-<em class="property">classmethod </em><code class="sig-name descname">mineral_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">resid</span></em>, <em class="sig-param"><span class="n">min_ch</span></em>, <em class="sig-param"><span class="n">res_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.mineral_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.mineral_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.mineral_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mineral_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.mineral_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.mineral_id" title="Link to this definition">¶</a></dt>
 <dd><p>Identify minerals from the oxide channels.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
 <li><p><strong>resid</strong> (<em>float</em>) – Maximum residual value (in % of the total oxide)</p></li>
@@ -749,11 +831,11 @@ input value.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.new_filter">
-<em class="property">classmethod </em><code class="sig-name descname">new_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filter</span></em>, <em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.new_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_filter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.new_filter">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.new_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_filter" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new selection filter.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filter</strong> (<em>str</em>) – New filter name</p></li>
 <li><p><strong>model</strong> (<em>str</em>) – Filter to use as a model (can be “”)</p></li>
@@ -768,11 +850,11 @@ input value.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.new_template">
-<em class="property">classmethod </em><code class="sig-name descname">new_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">templ</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.new_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_template" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.new_template">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">templ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.new_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.new_template" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new XYPlot or TriPlot template.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>templ</strong> (<em>str</em>) – New template name</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – Unknown</p></li>
@@ -795,25 +877,25 @@ few complications.  (e.g. needing to define a “Z” component)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT">GXSEMPLOT</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT.GXSEMPLOT">GXSEMPLOT</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.overlay_lst">
-<em class="property">classmethod </em><code class="sig-name descname">overlay_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">extension</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.overlay_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.overlay_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.overlay_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">overlay_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.overlay_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.overlay_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Fill a list with the available plot overlay names</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>.</p></li>
 <li><p><strong>extension</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-ext"><span class="std std-ref">SEMPLOT_EXT constants</span></a></p></li>
@@ -830,11 +912,11 @@ See <a class="reference internal" href="#semplot-ext"><span class="std std-ref">
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.plot">
-<em class="property">classmethod </em><code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">templ</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">map_mode</span></em>, <em class="sig-param"><span class="n">plot_symb</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.plot">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">templ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_symb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot" title="Link to this definition">¶</a></dt>
 <dd><p>Plot an XYPlot or TriPlot based on the template.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>templ</strong> (<em>str</em>) – Template file name</p></li>
@@ -861,11 +943,11 @@ to reset recording of the symbols used in plotting (for legends etc).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.plot_symbol_legend">
-<em class="property">classmethod </em><code class="sig-name descname">plot_symbol_legend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mview</span></em>, <em class="sig-param"><span class="n">x_min</span></em>, <em class="sig-param"><span class="n">y_min</span></em>, <em class="sig-param"><span class="n">y_max</span></em>, <em class="sig-param"><span class="n">symb_size</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.plot_symbol_legend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot_symbol_legend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.plot_symbol_legend">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plot_symbol_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symb_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.plot_symbol_legend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.plot_symbol_legend" title="Link to this definition">¶</a></dt>
 <dd><p>Plot a symbol legend in a view.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View to plot into</p></li>
@@ -889,11 +971,11 @@ specified location.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.prop_symb">
-<em class="property">classmethod </em><code class="sig-name descname">prop_symb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">chan</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">log</span></em>, <em class="sig-param"><span class="n">area</span></em>, <em class="sig-param"><span class="n">base</span></em>, <em class="sig-param"><span class="n">scale</span></em>, <em class="sig-param"><span class="n">symb</span></em>, <em class="sig-param"><span class="n">wt</span></em>, <em class="sig-param"><span class="n">line_col</span></em>, <em class="sig-param"><span class="n">fill_col</span></em>, <em class="sig-param"><span class="n">legend</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.prop_symb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.prop_symb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.prop_symb">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prop_symb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.prop_symb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.prop_symb" title="Link to this definition">¶</a></dt>
 <dd><p>Plot a proportional symbol plot.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map to plot to</p></li>
@@ -921,11 +1003,11 @@ specified location.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend">
-<em class="property">classmethod </em><code class="sig-name descname">re_plot_symbol_legend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mview</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.re_plot_symbol_legend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">re_plot_symbol_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mview</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.re_plot_symbol_legend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.re_plot_symbol_legend" title="Link to this definition">¶</a></dt>
 <dd><p>Replot a symbol legend in a view.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View to plot into</p></li>
@@ -942,11 +1024,11 @@ using the current data, group key etc.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.replot">
-<em class="property">classmethod </em><code class="sig-name descname">replot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.replot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.replot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.replot">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">replot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.replot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.replot" title="Link to this definition">¶</a></dt>
 <dd><p>Replot an existing <a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> plot based on current data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel (can be “”)</p></li>
@@ -969,11 +1051,11 @@ to reset recording of the symbols used in plotting (for legends etc).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.reset_groups">
-<em class="property">classmethod </em><code class="sig-name descname">reset_groups</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.reset_groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_groups" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.reset_groups">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reset_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.reset_groups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_groups" title="Link to this definition">¶</a></dt>
 <dd><p>Re-group data using current settings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel</p></li>
@@ -987,11 +1069,11 @@ to reset recording of the symbols used in plotting (for legends etc).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.reset_used_channel">
-<em class="property">classmethod </em><code class="sig-name descname">reset_used_channel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.reset_used_channel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.reset_used_channel">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reset_used_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.reset_used_channel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.reset_used_channel" title="Link to this definition">¶</a></dt>
 <dd><p>Set the “Plotted” channel to dummies</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p>
 </dd>
 </dl>
@@ -1009,11 +1091,11 @@ loaded, and filled with dummies.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.select_poly">
-<em class="property">classmethod </em><code class="sig-name descname">select_poly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mview</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">pply</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.select_poly"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.select_poly" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.select_poly">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.select_poly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.select_poly" title="Link to this definition">¶</a></dt>
 <dd><p>Select data from a polygonal area on a map.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View Handle</p></li>
@@ -1031,11 +1113,11 @@ loaded, and filled with dummies.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.set_channel_order">
-<em class="property">classmethod </em><code class="sig-name descname">set_channel_order</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">lst</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_channel_order"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_order" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.set_channel_order">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_channel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_channel_order"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_order" title="Link to this definition">¶</a></dt>
 <dd><p>Sets preset channel order.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Channel names, handles</p></li>
@@ -1063,11 +1145,11 @@ Other channels</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.set_channel_units">
-<em class="property">classmethod </em><code class="sig-name descname">set_channel_units</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_channel_units"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_units" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.set_channel_units">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_channel_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_channel_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_channel_units" title="Link to this definition">¶</a></dt>
 <dd><p>Set units for oxides (%) and elements (ppm)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p>
 </dd>
 </dl>
@@ -1082,11 +1164,11 @@ elements, except for “Y”, if it is the current Y channel.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.set_itr">
-<em class="property">classmethod </em><code class="sig-name descname">set_itr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">ch</span></em>, <em class="sig-param"><span class="n">itr</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_itr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_itr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.set_itr">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_itr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_itr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_itr" title="Link to this definition">¶</a></dt>
 <dd><p>Put <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> into a channel.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>ch</strong> (<em>int</em>) – Data channel handle</p></li>
@@ -1100,11 +1182,11 @@ elements, except for “Y”, if it is the current Y channel.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.set_mask">
-<em class="property">classmethod </em><code class="sig-name descname">set_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mask_ch</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em>, <em class="sig-param"><span class="n">mineral</span></em>, <em class="sig-param"><span class="n">selected</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_mask" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.set_mask">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.set_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.set_mask" title="Link to this definition">¶</a></dt>
 <dd><p>Set the mask channel ON or OFF.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mask_ch</strong> (<em>str</em>) – Mask channel</p></li>
@@ -1122,11 +1204,11 @@ elements, except for “Y”, if it is the current Y channel.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.sort_data">
-<em class="property">classmethod </em><code class="sig-name descname">sort_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">anomaly</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.sort_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.sort_data" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.sort_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sort_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anomaly</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.sort_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.sort_data" title="Link to this definition">¶</a></dt>
 <dd><p>Sort data by Sample No, Grain and Position</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>group</strong> (<em>int</em>) – Data Group handle</p></li>
@@ -1141,11 +1223,11 @@ elements, except for “Y”, if it is the current Y channel.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.template_lst">
-<em class="property">classmethod </em><code class="sig-name descname">template_lst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lst</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.template_lst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.template_lst" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.template_lst">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">template_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.template_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.template_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Fill a list with the available plot template names</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Input <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a>.</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></p></li>
@@ -1163,19 +1245,19 @@ plot type “triplot” or “xyplot” inside them.)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.template_type">
-<em class="property">classmethod </em><code class="sig-name descname">template_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">templ</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.template_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.template_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.template_type">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">template_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">templ</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.template_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.template_type" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new XYPlot or TriPlot template.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>templ</strong> (<em>str</em>) – Template name</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#id55" title="geosoft.gxapi.SEMPLOT_PLOT_XYPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_XYPLOT</span></code></a> or
 <a class="reference internal" href="#id56" title="geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SEMPLOT_PLOT_TRIPLOT</span></code></a>
 Terminates if error.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1186,8 +1268,8 @@ Terminates if error.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.tile_windows">
-<em class="property">classmethod </em><code class="sig-name descname">tile_windows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.tile_windows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.tile_windows" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.tile_windows">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tile_windows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.tile_windows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.tile_windows" title="Link to this definition">¶</a></dt>
 <dd><p>Tile currently maximimized windows.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 6.2.</span></p>
@@ -1196,11 +1278,11 @@ Terminates if error.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.total_oxides">
-<em class="property">classmethod </em><code class="sig-name descname">total_oxides</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">mineral_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.total_oxides"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.total_oxides" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.total_oxides">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">total_oxides</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mineral_ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.total_oxides"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.total_oxides" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the total oxides channel.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
 <li><p><strong>mineral_ch</strong> (<em>str</em>) – Mineral channel</p></li>
@@ -1218,20 +1300,20 @@ mineral “X” (unknown) is assumed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXSEMPLOT.view_type">
-<em class="property">classmethod </em><code class="sig-name descname">view_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map</span></em>, <em class="sig-param"><span class="n">view</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.view_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.view_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSEMPLOT.view_type">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSEMPLOT.html#GXSEMPLOT.view_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSEMPLOT.view_type" title="Link to this definition">¶</a></dt>
 <dd><p>Test to see if a view is an XYPlot or Triplot view.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Input map object</p></li>
 <li><p><strong>view</strong> (<em>str</em>) – Input view name</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#semplot-plot"><span class="std std-ref">SEMPLOT_PLOT constants</span></a></p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1249,137 +1331,137 @@ the function returns <a class="reference internal" href="#id57" title="geosoft.g
 
 </dd></dl>
 
-<div class="section" id="semplot-group-class-constants">
-<span id="semplot-group-class"></span><h2>SEMPLOT_GROUP_CLASS constants<a class="headerlink" href="#semplot-group-class-constants" title="Permalink to this headline">¶</a></h2>
+<section id="semplot-group-class-constants">
+<span id="semplot-group-class"></span><h2>SEMPLOT_GROUP_CLASS constants<a class="headerlink" href="#semplot-group-class-constants" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> group class.</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_GROUP_CLASS">
-<code class="sig-name descname">SEMPLOT_GROUP_CLASS</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_GROUP_CLASS" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_GROUP_CLASS">
+<span class="sig-name descname"><span class="pre">SEMPLOT_GROUP_CLASS</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_GROUP_CLASS" title="Link to this definition">¶</a></dt>
 <dd><p>Semplot group class</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_GROUP_CLASS</code><em class="property"> = 'Semplot'</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_GROUP_CLASS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Semplot'</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="semplot-export-constants">
-<span id="semplot-export"></span><h2>SEMPLOT_EXPORT constants<a class="headerlink" href="#semplot-export-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="semplot-export-constants">
+<span id="semplot-export"></span><h2>SEMPLOT_EXPORT constants<a class="headerlink" href="#semplot-export-constants" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> export type selection.</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_EXPORT_NORMAL">
-<code class="sig-name descname">SEMPLOT_EXPORT_NORMAL</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXPORT_NORMAL" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_EXPORT_NORMAL">
+<span class="sig-name descname"><span class="pre">SEMPLOT_EXPORT_NORMAL</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXPORT_NORMAL" title="Link to this definition">¶</a></dt>
 <dd><p>Exports Sample info channels, oxides/ratios, totals, extra channels.</p>
 <dl class="py attribute">
-<dt id="id49">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_EXPORT_NORMAL</code><em class="property"> = 0</em><a class="headerlink" href="#id49" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id49">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_EXPORT_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA">
-<code class="sig-name descname">SEMPLOT_EXPORT_NOEXTRA</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA">
+<span class="sig-name descname"><span class="pre">SEMPLOT_EXPORT_NOEXTRA</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXPORT_NOEXTRA" title="Link to this definition">¶</a></dt>
 <dd><p>Exports Sample info, oxides/ratios, totals.</p>
 <dl class="py attribute">
-<dt id="id50">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_EXPORT_NOEXTRA</code><em class="property"> = 1</em><a class="headerlink" href="#id50" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id50">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_EXPORT_NOEXTRA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="semplot-ext-constants">
-<span id="semplot-ext"></span><h2>SEMPLOT_EXT constants<a class="headerlink" href="#semplot-ext-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="semplot-ext-constants">
+<span id="semplot-ext"></span><h2>SEMPLOT_EXT constants<a class="headerlink" href="#semplot-ext-constants" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> file extension selection</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_EXT_ALL">
-<code class="sig-name descname">SEMPLOT_EXT_ALL</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_ALL" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_EXT_ALL">
+<span class="sig-name descname"><span class="pre">SEMPLOT_EXT_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>Use for selection only. Selects both “Semplot” and “<a class="reference internal" href="GXCHIMERA.html#geosoft.gxapi.GXCHIMERA" title="geosoft.gxapi.GXCHIMERA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCHIMERA</span></code></a>” type
 files when creating LSTs etc.</p>
 <dl class="py attribute">
-<dt id="id51">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_EXT_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#id51" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id51">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_EXT_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_EXT_SEMPLOT">
-<code class="sig-name descname">SEMPLOT_EXT_SEMPLOT</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_SEMPLOT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_EXT_SEMPLOT">
+<span class="sig-name descname"><span class="pre">SEMPLOT_EXT_SEMPLOT</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_SEMPLOT" title="Link to this definition">¶</a></dt>
 <dd><p>Read/write templates with extensions “.xyt”, “.tri” and “.semtemplate”
 Read/write overlays with extensions “.oly” and “.semoverlay”</p>
 <dl class="py attribute">
-<dt id="id52">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_EXT_SEMPLOT</code><em class="property"> = 1</em><a class="headerlink" href="#id52" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id52">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_EXT_SEMPLOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_EXT_CHIMERA">
-<code class="sig-name descname">SEMPLOT_EXT_CHIMERA</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_CHIMERA" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_EXT_CHIMERA">
+<span class="sig-name descname"><span class="pre">SEMPLOT_EXT_CHIMERA</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_EXT_CHIMERA" title="Link to this definition">¶</a></dt>
 <dd><p>Read/write templates with extensions “.geosoft_template”
 Read/write overlays with extensions “.geosoft_overlay”</p>
 <dl class="py attribute">
-<dt id="id53">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_EXT_CHIMERA</code><em class="property"> = 2</em><a class="headerlink" href="#id53" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id53">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_EXT_CHIMERA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="semplot-plot-constants">
-<span id="semplot-plot"></span><h2>SEMPLOT_PLOT constants<a class="headerlink" href="#semplot-plot-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="semplot-plot-constants">
+<span id="semplot-plot"></span><h2>SEMPLOT_PLOT constants<a class="headerlink" href="#semplot-plot-constants" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> plot type selection.</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_PLOT_ALL">
-<code class="sig-name descname">SEMPLOT_PLOT_ALL</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_ALL" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_PLOT_ALL">
+<span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>Use for selection only. Selects both “XYPlot” and “TriPlot”
 plots when creating LSTs etc.</p>
 <dl class="py attribute">
-<dt id="id54">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_PLOT_ALL</code><em class="property"> = 0</em><a class="headerlink" href="#id54" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id54">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_PLOT_XYPLOT">
-<code class="sig-name descname">SEMPLOT_PLOT_XYPLOT</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_XYPLOT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_PLOT_XYPLOT">
+<span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_XYPLOT</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_XYPLOT" title="Link to this definition">¶</a></dt>
 <dd><p>Select XY (Scatter) plot.</p>
 <dl class="py attribute">
-<dt id="id55">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_PLOT_XYPLOT</code><em class="property"> = 1</em><a class="headerlink" href="#id55" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id55">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_XYPLOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT">
-<code class="sig-name descname">SEMPLOT_PLOT_TRIPLOT</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT">
+<span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_TRIPLOT</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_TRIPLOT" title="Link to this definition">¶</a></dt>
 <dd><p>Select Tri (Triangular) plot.</p>
 <dl class="py attribute">
-<dt id="id56">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_PLOT_TRIPLOT</code><em class="property"> = 2</em><a class="headerlink" href="#id56" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id56">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_TRIPLOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN">
-<code class="sig-name descname">SEMPLOT_PLOT_UNKNOWN</code><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN">
+<span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_UNKNOWN</span></span><a class="headerlink" href="#geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN" title="Link to this definition">¶</a></dt>
 <dd><p>Returned as an error status from some functions.</p>
 <dl class="py attribute">
-<dt id="id57">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SEMPLOT_PLOT_UNKNOWN</code><em class="property"> = 3</em><a class="headerlink" href="#id57" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id57">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SEMPLOT_PLOT_UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -1394,14 +1476,14 @@ plots when creating LSTs etc.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSEMPLOT class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

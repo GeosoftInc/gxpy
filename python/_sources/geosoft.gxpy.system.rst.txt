@@ -1,7 +1,46 @@
-geosoft.gxpy.system submodule
-=============================================
+﻿geosoft.gxpy.system
+===================
 
 .. automodule:: geosoft.gxpy.system
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _logit
+      _parallel_foreach
+      _t
+      _unzip
+      app_name
+      call_location
+      func_name
+      parallel_map
+      remove_dir
+      translate
+      unzip
+      wait_on_file
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GXSysException
+   
+   
+
+
+

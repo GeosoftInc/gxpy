@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXSTR &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXSTR &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSTR</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXSTR"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR">[docs]</a><span class="k">class</span> <span class="nc">GXSTR</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTR">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR">[docs]</a>
+<span class="k">class</span> <span class="nc">GXSTR</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXSTR class.</span>
 
 <span class="sd">    This library is not a class. Use the `GXSTR &lt;geosoft.gxapi.GXSTR&gt;` library functions</span>
@@ -89,12 +88,17 @@
 <span class="sd">    you want to perform.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXSTR.__init__"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXSTR.__init__">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXSTR</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXSTR.null"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.null">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXSTR &lt;geosoft.gxapi.GXSTR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXSTR &lt;geosoft.gxapi.GXSTR&gt;`</span>
@@ -102,8 +106,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXSTR</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXSTR.is_null"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSTR.is_null">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -113,12 +120,15 @@
 
 
 
+
 <span class="c1"># Data Input</span>
 
 
-<div class="viewcode-block" id="GXSTR.scan_i"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_i">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.scan_i">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_i">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">scan_i</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a string to a GX int.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to convert to an integer</span>
@@ -136,9 +146,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.scan_date"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_date">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.scan_date">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_date">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">scan_date</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a date string to a GX real.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Date string</span>
@@ -160,9 +173,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.scan_form"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_form">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.scan_form">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_form">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">scan_form</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a formated string to a real.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Date string</span>
@@ -182,9 +198,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.scan_r"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_r">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.scan_r">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_r">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">scan_r</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a string to a GX real.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to convert to a real</span>
@@ -202,9 +221,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.scan_time"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_time">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.scan_time">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.scan_time">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">scan_time</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a time string to a GX real.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Date string</span>
@@ -227,12 +249,15 @@
 
 
 
+
 <span class="c1"># File Name</span>
 
 
-<div class="viewcode-block" id="GXSTR.file_combine_parts"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.file_combine_parts">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.file_combine_parts">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.file_combine_parts">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">file_combine_parts</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">drive</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">qual</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Combine file parts to build a file name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param drive:      Drive</span>
@@ -253,13 +278,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">file_name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_file_combine_parts</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">drive</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ext</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">qual</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file_name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.file_ext"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.file_ext">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.file_ext">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.file_ext">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">file_ext</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ifile</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">ofile</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a file extension onto a file name string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ifile:  File name to extend</span>
@@ -276,13 +304,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ofile</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_file_ext</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ifile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ext</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ofile</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">opt</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.file_name_part"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.file_name_part">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.file_name_part">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.file_name_part">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">file_name_part</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">file_part</span><span class="p">,</span> <span class="n">part</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get part of a file name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:       File name</span>
@@ -297,13 +328,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">file_part</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_file_name_part</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file_part</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">part</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.get_m_file"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.get_m_file">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.get_m_file">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.get_m_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_m_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">in_str</span><span class="p">,</span> <span class="n">out_str</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the indexed filepath from a multiple filepath string</span>
 <span class="sd">        </span>
 <span class="sd">        :param in_str:   Input multifile string</span>
@@ -321,13 +355,16 @@
 <span class="sd">        Do not pass a string after calling `tokenize &lt;geosoft.gxapi.GXSTR.tokenize&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">out_str</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_get_m_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">in_str</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_str</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">index</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.remove_qualifiers"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.remove_qualifiers">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.remove_qualifiers">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.remove_qualifiers">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_qualifiers</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ifile</span><span class="p">,</span> <span class="n">ofile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove file qualifiers from a file name</span>
 <span class="sd">        </span>
 <span class="sd">        :param ifile:  Input file name</span>
@@ -340,6 +377,7 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ofile</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_remove_qualifiers</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ifile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ofile</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
@@ -348,9 +386,11 @@
 <span class="c1"># Formating</span>
 
 
-<div class="viewcode-block" id="GXSTR.format_crc"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_crc">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.format_crc">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_crc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">format_crc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a GX CRC value to a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pul_crc:  CRC value to format</span>
@@ -365,13 +405,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_format_crc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pul_crc</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.format_date"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_date">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.format_date">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_date">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">format_date</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a GX real to a date string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param real:   Date value in decimal years to format</span>
@@ -388,13 +431,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_format_date</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.format_i"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_i">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.format_i">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_i">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">format_i</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a GX int to a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param value:  Value to format</span>
@@ -409,13 +455,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_format_i</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">value</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.format_r"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_r">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.format_r">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_r">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">format_r</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">sig</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a GX real to a string with significant digits.</span>
 <span class="sd">        </span>
 <span class="sd">        :param real:   Value to format</span>
@@ -432,13 +481,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_format_r</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.format_r2"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_r2">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.format_r2">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_r2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">format_r2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">sig</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a GX real to a string with given decimals.</span>
 <span class="sd">        </span>
 <span class="sd">        :param real:   Value to format</span>
@@ -455,13 +507,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_format_r2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.format_double"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_double">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.format_double">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_double">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">format_double</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a GX real to a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param real:   Value to format</span>
@@ -480,13 +535,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_format_double</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.format_time"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_time">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.format_time">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.format_time">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">format_time</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">deci</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a GX real to a time string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param real:   Time value in decimal hours to format</span>
@@ -505,6 +563,7 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_format_time</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">real</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">,</span> <span class="n">deci</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
@@ -513,9 +572,11 @@
 <span class="c1"># General</span>
 
 
-<div class="viewcode-block" id="GXSTR.escape"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.escape">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.escape">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.escape">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">escape</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert/replace escape sequences in strings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to modify</span>
@@ -547,13 +608,16 @@
 <span class="sd">        string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_escape</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">opt</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.char_"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.char_">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.char_">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.char_">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">char_</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the ASCII value of a character.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to return ascii value of first character</span>
@@ -571,9 +635,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.char_n"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.char_n">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.char_n">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.char_n">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">char_n</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the ASCII value of the n&#39;th character.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String</span>
@@ -596,9 +663,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.justify"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.justify">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.justify">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.justify">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">justify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">in_str</span><span class="p">,</span> <span class="n">out_str</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">just</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Justify a string</span>
 <span class="sd">        </span>
 <span class="sd">        :param in_str:   String to justify</span>
@@ -618,13 +688,16 @@
 <span class="sd">        the output string will be &quot;**&quot; justified as specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">out_str</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_justify</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">in_str</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out_str</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">,</span> <span class="n">just</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.replacei_match_string"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replacei_match_string">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.replacei_match_string">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replacei_match_string">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">replacei_match_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">istr</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new_str</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Replaces all occurances of match string by replacement string with case insensitive.</span>
 <span class="sd">        </span>
 <span class="sd">        :param istr:     Destination String</span>
@@ -643,13 +716,16 @@
 <span class="sd">        input string, and the string is shortened.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">istr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_replacei_match_string</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">istr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">old</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.replace_match_string"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_match_string">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.replace_match_string">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_match_string">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">replace_match_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">istr</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new_str</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Replaces all occurances of match string by replacement string with case sensitive.</span>
 <span class="sd">        </span>
 <span class="sd">        :param istr:     Destination String</span>
@@ -668,13 +744,16 @@
 <span class="sd">        input string, and the string is shortened.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">istr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_replace_match_string</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">istr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">old</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_str</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.set_char_n"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.set_char_n">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.set_char_n">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.set_char_n">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_char_n</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">ascii</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the n&#39;th character of a string using an ASCII value</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String</span>
@@ -689,13 +768,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_set_char_n</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">c</span><span class="p">,</span> <span class="n">ascii</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.split_string"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.split_string">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.split_string">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.split_string">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">split_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">origstr</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">split</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Splits a string in two on a character.</span>
 <span class="sd">        </span>
 <span class="sd">        :param origstr:  Original string</span>
@@ -721,13 +803,16 @@
 <span class="sd">        from control file strings.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">origstr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">split</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_split_string</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">origstr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">split</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.strcat"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strcat">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.strcat">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strcat">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">strcat</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">orig</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method contatinates a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest:  Destination String</span>
@@ -740,13 +825,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dest</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_strcat</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dest</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">orig</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.strcmp"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strcmp">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.strcmp">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strcmp">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">strcmp</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method compares two strings and returns these values</span>
 <span class="sd">        </span>
 <span class="sd">        :param first:           String A</span>
@@ -770,9 +858,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.strcpy"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strcpy">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.strcpy">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strcpy">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">strcpy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">orig</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method copies a string into another string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest:  Destination string</span>
@@ -785,13 +876,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dest</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_strcpy</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dest</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">orig</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.stri_mask"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.stri_mask">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.stri_mask">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.stri_mask">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">stri_mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Case insensitive comparison of two strings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mask:  Mask</span>
@@ -818,9 +912,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.strins"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strins">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.strins">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strins">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">strins</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">ins</span><span class="p">,</span> <span class="n">orig</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method inserts a string at a specified position.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest:  Destination String</span>
@@ -838,13 +935,16 @@
 <span class="sd">        the source string will simply be Concatenated.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dest</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_strins</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dest</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ins</span><span class="p">,</span> <span class="n">orig</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.strlen"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strlen">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.strlen">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strlen">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">strlen</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the length of a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to find the length of</span>
@@ -862,9 +962,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.str_mask"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_mask">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.str_mask">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_mask">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">str_mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Case sensitive comparison of two strings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mask:  Mask</span>
@@ -891,9 +994,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.str_min"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_min">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.str_min">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_min">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">str_min</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove spaces and tabs and return length</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to find the min length of</span>
@@ -917,9 +1023,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.str_min2"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_min2">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.str_min2">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_min2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">str_min2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Length less spaces and tabs, string unchanged.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to find the min length of</span>
@@ -937,9 +1046,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.strncmp"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strncmp">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.strncmp">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.strncmp">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">strncmp</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">n_char</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compares two strings to a given number of characters.</span>
 <span class="sd">        </span>
 <span class="sd">        :param first:           String A</span>
@@ -965,9 +1077,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.str_str"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_str">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.str_str">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.str_str">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">str_str</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Scan a string for the occurrence of a given substring.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:         String to scan</span>
@@ -990,9 +1105,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.substr"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.substr">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.substr">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.substr">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">substr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract part of a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest:    Destination string</span>
@@ -1013,13 +1131,16 @@
 <span class="sd">        in the origin string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dest</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_substr</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dest</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">orig</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">start</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.to_lower"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.to_lower">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.to_lower">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.to_lower">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">to_lower</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a string to lower case.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String</span>
@@ -1030,13 +1151,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_to_lower</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.to_upper"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.to_upper">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.to_upper">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.to_upper">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">to_upper</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a string to upper case.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String</span>
@@ -1047,13 +1171,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_to_upper</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.xyz_line"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.xyz_line">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.xyz_line">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.xyz_line">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">xyz_line</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">xyz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make a valid XYZ line name from a valid `GXDB &lt;geosoft.gxapi.GXDB&gt;` line name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param line:  Line name to convert</span>
@@ -1066,13 +1193,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">xyz</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_xyz_line</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xyz</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.make_alpha"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.make_alpha">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.make_alpha">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.make_alpha">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">make_alpha</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Turns all non alpha-numeric characters into an _.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to trim</span>
@@ -1085,13 +1215,16 @@
 <span class="sd">        **Note:** THE STRING IS MODIFIED.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_make_alpha</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.printf"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.printf">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.printf">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.printf">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">printf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Variable Argument PrintF function</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest:  Destination string</span>
@@ -1104,13 +1237,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dest</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_printf</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dest</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mask</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.replace_char"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_char">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.replace_char">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_char">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">replace_char</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">istr</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new_char</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Replaces characters in a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param istr:      String to modify</span>
@@ -1128,13 +1264,16 @@
 <span class="sd">        string will be truncated at the first character to replace.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">istr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_replace_char</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">istr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">old</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_char</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.replace_char2"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_char2">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.replace_char2">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_char2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">replace_char2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">istr</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new_char</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Replaces characters in a string, supports simple removal.</span>
 <span class="sd">        </span>
 <span class="sd">        :param istr:      String to modify</span>
@@ -1153,13 +1292,16 @@
 <span class="sd">        input string, and the string is shortened.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">istr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_replace_char2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">istr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">old</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_char</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.replace_multi_char"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_multi_char">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.replace_multi_char">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_multi_char">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">replace_multi_char</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">istr</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new_char</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Replaces multiple characters in a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param istr:      String to modify</span>
@@ -1177,13 +1319,16 @@
 <span class="sd">        the number of replacement characters.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">istr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_replace_multi_char</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">istr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">old</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_char</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.replace_non_ascii"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_non_ascii">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.replace_non_ascii">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.replace_non_ascii">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">replace_non_ascii</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">rpl</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Replace non-ASCII characters in a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to modify</span>
@@ -1199,13 +1344,16 @@
 <span class="sd">        of the replacement string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_replace_non_ascii</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rpl</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.set_char"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.set_char">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.set_char">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.set_char">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_char</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">ascii</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a string&#39;s first character using an ASCII value of a character.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String</span>
@@ -1218,13 +1366,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_set_char</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ascii</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.trim_quotes"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.trim_quotes">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.trim_quotes">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.trim_quotes">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">trim_quotes</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove double quotes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to trim</span>
@@ -1244,13 +1395,16 @@
 <span class="sd">        delimiters.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_trim_quotes</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.trim_space"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.trim_space">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.trim_space">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.trim_space">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">trim_space</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">trim</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove leading and/or trailing whitespace.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to trim</span>
@@ -1267,13 +1421,16 @@
 <span class="sd">        new line, vertical tab or formfeed (0x09 to 0x0D, 0x20)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_trim_space</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">trim</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.un_quote"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.un_quote">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.un_quote">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.un_quote">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_quote</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove double quotes from string</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to unquote</span>
@@ -1290,6 +1447,7 @@
 <span class="sd">        triming to take place.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_un_quote</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
@@ -1298,9 +1456,11 @@
 <span class="c1"># Misc</span>
 
 
-<div class="viewcode-block" id="GXSTR.gen_group_name"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.gen_group_name">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.gen_group_name">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.gen_group_name">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">gen_group_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">istr1</span><span class="p">,</span> <span class="n">istr2</span><span class="p">,</span> <span class="n">istr3</span><span class="p">,</span> <span class="n">ostr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a group name string</span>
 <span class="sd">        from type string, database and channel(optional) strings..</span>
 <span class="sd">        </span>
@@ -1329,6 +1489,7 @@
 <span class="sd">            GenNewGroupName_MVIEW</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ostr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_gen_group_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">istr1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">istr2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">istr3</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ostr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
@@ -1337,9 +1498,11 @@
 <span class="c1"># Tokenizing</span>
 
 
-<div class="viewcode-block" id="GXSTR.count_tokens"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.count_tokens">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.count_tokens">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.count_tokens">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">count_tokens</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">delims</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Counts number of tokens.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to tokenize</span>
@@ -1366,9 +1529,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.get_token"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.get_token">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.get_token">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.get_token">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_token</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">tok</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a token from a tokenized string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest:  Destination string</span>
@@ -1396,13 +1562,16 @@
 <span class="sd">            `tokens &lt;geosoft.gxapi.GXSTR.tokens&gt;`, GetToken_STR</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dest</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_get_token</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dest</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">orig</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tok</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXSTR.tokenize"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.tokenize">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSTR.tokenize">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.tokenize">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">soft</span><span class="p">,</span> <span class="n">hard</span><span class="p">,</span> <span class="n">esc</span><span class="p">,</span> <span class="n">quote</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Tokenize a string based on any characters.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  `GXSTR &lt;geosoft.gxapi.GXSTR&gt;` - String containing token(s)</span>
@@ -1462,9 +1631,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.tokens"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.tokens">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.tokens">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.tokens">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tokens</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">delims</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Tokenize a string</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to tokenize</span>
@@ -1495,9 +1667,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.tokens2"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.tokens2">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.tokens2">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.tokens2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tokens2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">soft</span><span class="p">,</span> <span class="n">hard</span><span class="p">,</span> <span class="n">esc</span><span class="p">,</span> <span class="n">quote</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        General tokenize a string</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to tokenize</span>
@@ -1529,9 +1704,12 @@
 
 
 
-<div class="viewcode-block" id="GXSTR.parse_list"><a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.parse_list">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTR.parse_list">
+<a class="viewcode-back" href="../../../GXSTR.html#geosoft.gxapi.GXSTR.parse_list">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">parse_list</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">gvv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parse a tokenized list to get a selection list.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to be parsed</span>
@@ -1551,7 +1729,9 @@
 <span class="sd">        Only values from 0 to one less than the buffer length</span>
 <span class="sd">        are used.  Out-of-range values are ignored.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_parse_list</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">)</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTR</span><span class="o">.</span><span class="n">_parse_list</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -1581,7 +1761,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSTR</a></li> 
@@ -1589,8 +1769,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

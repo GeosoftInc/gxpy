@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/maki.css?v=ea9b3600" />
+    <script src="../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
@@ -46,12 +43,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -80,25 +77,39 @@
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
 
-<div class="viewcode-block" id="bool_ref"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.bool_ref">[docs]</a><span class="k">class</span> <span class="nc">bool_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+<div class="viewcode-block" id="bool_ref">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.bool_ref">[docs]</a>
+<span class="k">class</span> <span class="nc">bool_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
 
-<div class="viewcode-block" id="int_ref"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.int_ref">[docs]</a><span class="k">class</span> <span class="nc">int_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+
+<div class="viewcode-block" id="int_ref">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.int_ref">[docs]</a>
+<span class="k">class</span> <span class="nc">int_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
+
     
-<div class="viewcode-block" id="float_ref"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.float_ref">[docs]</a><span class="k">class</span> <span class="nc">float_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+<div class="viewcode-block" id="float_ref">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.float_ref">[docs]</a>
+<span class="k">class</span> <span class="nc">float_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
 
-<div class="viewcode-block" id="str_ref"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.str_ref">[docs]</a><span class="k">class</span> <span class="nc">str_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+
+<div class="viewcode-block" id="str_ref">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.str_ref">[docs]</a>
+<span class="k">class</span> <span class="nc">str_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
 
 
-<div class="viewcode-block" id="GXCancel"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXCancel">[docs]</a><span class="k">class</span> <span class="nc">GXCancel</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXCancel">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXCancel">[docs]</a>
+<span class="k">class</span> <span class="nc">GXCancel</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `SystemExit &lt;https://docs.python.org/3/library/exceptions.html#SystemExit&gt;`_ which is raised when a </span>
 <span class="sd">    script should cleanly exit due to a cancellation condition. Generally not caught since it will have the same effect </span>
 <span class="sd">    as :exc:`SystemExit` for both standalone and Oasis montaj extension scripts. Raised from within API by </span>
@@ -108,8 +119,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="GXExit"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXExit">[docs]</a><span class="k">class</span> <span class="nc">GXExit</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXExit">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXExit">[docs]</a>
+<span class="k">class</span> <span class="nc">GXExit</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `SystemExit &lt;https://docs.python.org/3/library/exceptions.html#SystemExit&gt;`_ which is raised when a </span>
 <span class="sd">    script should cleanly exit due to a completion condition. Generally not caught since it will have the same effect as </span>
 <span class="sd">    :exc:`SystemExit` for both standalone and Oasis montaj extension scripts. Raised from within API by </span>
@@ -119,8 +133,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="GXAPIError"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXAPIError">[docs]</a><span class="k">class</span> <span class="nc">GXAPIError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXAPIError">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXAPIError">[docs]</a>
+<span class="k">class</span> <span class="nc">GXAPIError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `RuntimeError &lt;https://docs.python.org/3/library/exceptions.html#RuntimeError&gt;`_ which is raised whenever </span>
 <span class="sd">    the GX Python API encounters initialization issues or other API violations. It generally indicates a bug in Python code.</span>
 
@@ -129,8 +146,11 @@
     <span class="k">pass</span></div>
 
 
-<div class="viewcode-block" id="GXError"><a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXError">[docs]</a><span class="k">class</span> <span class="nc">GXError</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXError">
+<a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXError">[docs]</a>
+<span class="k">class</span> <span class="nc">GXError</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `RuntimeError &lt;https://docs.python.org/3/library/exceptions.html#RuntimeError&gt;`_ which is raised whenever </span>
 <span class="sd">    a GX Python API call encounters an error. Often the message string of these errors are informative to the user (e.g. File </span>
 <span class="sd">    &#39;x&#39; is locked in another application) but there could be cases where this is not the case. In most cases an attribute, </span>
@@ -145,6 +165,7 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="o">=</span> <span class="n">module</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">error_number</span> <span class="o">=</span> <span class="n">error_number</span></div>
+
 
 
 <span class="c1">### endblock Header</span>
@@ -327,6 +348,28 @@
 <span class="n">CSYMB_COLOR_EDGE</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="c1">#: Fill Symbols</span>
 <span class="n">CSYMB_COLOR_FILL</span> <span class="o">=</span> <span class="mi">1</span>	
+
+<span class="c1">#</span>
+<span class="c1"># GXCSYMB3D Constants</span>
+<span class="c1"># </span>
+
+
+
+<span class="c1">#</span>
+<span class="c1"># CSYMB3D_SYMBOL constants</span>
+<span class="c1">#</span>
+<span class="c1"># Color Symbol Type defines</span>
+
+<span class="c1">#: Csymb symbol sphere</span>
+<span class="n">CSYMB_SYMBOL_SPHERE</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="c1">#: Csymb symbol cube</span>
+<span class="n">CSYMB_SYMBOL_CUBE</span> <span class="o">=</span> <span class="mi">31</span>
+<span class="c1">#: Csymb symbol cylinder</span>
+<span class="n">CSYMB_SYMBOL_CYLINDER</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="c1">#: Csymb symbol cone</span>
+<span class="n">CSYMB_SYMBOL_CONE</span> <span class="o">=</span> <span class="mi">33</span>
+<span class="c1">#: Csymb symbol dot</span>
+<span class="n">CSYMB_SYMBOL_DOT</span> <span class="o">=</span> <span class="mi">34</span>	
 
 <span class="c1">#</span>
 <span class="c1"># GXDAT Constants</span>
@@ -2673,6 +2716,8 @@
 <span class="n">MVIEW_IS_GENSURF</span> <span class="o">=</span> <span class="mi">13</span>
 <span class="c1">#: Voxsurf</span>
 <span class="n">MVIEW_IS_VOXSURF</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="c1">#: Csymb3d</span>
+<span class="n">MVIEW_IS_CSYMB3D</span> <span class="o">=</span> <span class="mi">15</span>
 
 <span class="c1">#</span>
 <span class="c1"># MVIEW_LABEL_BOUND constants</span>
@@ -3558,6 +3603,8 @@
 <span class="n">GEO_DIRECTORY_USER_PYGX</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="c1">#: Geosoft\\user\\gx</span>
 <span class="n">GEO_DIRECTORY_USER_GX</span> <span class="o">=</span> <span class="mi">26</span>
+<span class="c1">#: Geosoft\\user\\tbl\\favourites</span>
+<span class="n">GEO_DIRECTORY_USER_TBL_FAVOURITES</span> <span class="o">=</span> <span class="mi">27</span>
 
 <span class="c1">#</span>
 <span class="c1"># REG_DOMAIN constants</span>
@@ -3705,6 +3752,26 @@
 <span class="n">SYS_FONT_GFN</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1">#: Available TrueType fonts</span>
 <span class="n">SYS_FONT_TT</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">#</span>
+<span class="c1"># SYS_FILE_FORM constants</span>
+<span class="c1">#</span>
+<span class="c1"># File Open Mode</span>
+
+<span class="c1">#: Open File Mode</span>
+<span class="n">SYS_FILE_FORM_OPEN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Save File Mode</span>
+<span class="n">SYS_FILE_FORM_SAVE</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#</span>
+<span class="c1"># SYS_DAT_FILE constants</span>
+<span class="c1">#</span>
+<span class="c1"># DAT File Type</span>
+
+<span class="c1">#: Grid Files</span>
+<span class="n">SYS_DAT_FILE_GRID</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Image Files</span>
+<span class="n">SYS_DAT_FILE_IMAG</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="c1">#</span>
 <span class="c1"># SYS_INFO constants</span>
@@ -7459,6 +7526,7 @@
     <span class="s1">&#39;GXAGG&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXBF&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXCSYMB&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GXCSYMB3D&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXDAT&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXDATALINKD&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXDATAMINE&#39;</span><span class="p">,</span>
@@ -7597,6 +7665,7 @@
 <span class="kn">from</span> <span class="nn">.GXAGG</span> <span class="kn">import</span> <span class="n">GXAGG</span>
 <span class="kn">from</span> <span class="nn">.GXBF</span> <span class="kn">import</span> <span class="n">GXBF</span>
 <span class="kn">from</span> <span class="nn">.GXCSYMB</span> <span class="kn">import</span> <span class="n">GXCSYMB</span>
+<span class="kn">from</span> <span class="nn">.GXCSYMB3D</span> <span class="kn">import</span> <span class="n">GXCSYMB3D</span>
 <span class="kn">from</span> <span class="nn">.GXDAT</span> <span class="kn">import</span> <span class="n">GXDAT</span>
 <span class="kn">from</span> <span class="nn">.GXDATALINKD</span> <span class="kn">import</span> <span class="n">GXDATALINKD</span>
 <span class="kn">from</span> <span class="nn">.GXDATAMINE</span> <span class="kn">import</span> <span class="n">GXDATAMINE</span>
@@ -7746,15 +7815,15 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

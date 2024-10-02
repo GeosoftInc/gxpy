@@ -1,7 +1,46 @@
-geosoft.gxpy.map submodule
-=============================================
+﻿geosoft.gxpy.map
+================
 
 .. automodule:: geosoft.gxpy.map
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      crc_map
+      delete_files
+      map_file_name
+      save_as_image
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Map
+      _Mapplot
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      MapException
+   
+   
+
+
+

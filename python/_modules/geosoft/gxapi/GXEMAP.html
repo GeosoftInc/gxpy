@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXEMAP &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXEMAP &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEMAP</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -80,8 +77,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXEMAP"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP">[docs]</a><span class="k">class</span> <span class="nc">GXEMAP</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP">[docs]</a>
+<span class="k">class</span> <span class="nc">GXEMAP</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXEMAP class.</span>
 
 <span class="sd">    The `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` class provides access to a map as displayed within</span>
@@ -140,12 +139,17 @@
 <span class="sd">        | `create_virtual &lt;geosoft.gxapi.GXEMAP.create_virtual&gt;`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXEMAP.__init__"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXEMAP.__init__">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXEMAP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXEMAP.null"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.null">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`</span>
@@ -153,8 +157,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXEMAP.is_null"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.is_null">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -164,12 +171,15 @@
 
 
 
+
 <span class="c1"># Drag-and-drop methods</span>
 
 
 
-<div class="viewcode-block" id="GXEMAP.drop_map_clip_data"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.drop_map_clip_data">[docs]</a>    <span class="k">def</span> <span class="nf">drop_map_clip_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hglobal</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.drop_map_clip_data">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.drop_map_clip_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">drop_map_clip_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hglobal</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Drop Map clipboard data on this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param hglobal:  Handle to Global Clipboard data</span>
@@ -182,13 +192,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_drop_map_clip_data</span><span class="p">(</span><span class="n">hglobal</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.drag_drop_enabled"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.drag_drop_enabled">[docs]</a>    <span class="k">def</span> <span class="nf">drag_drop_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.drag_drop_enabled">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.drag_drop_enabled">[docs]</a>
+    <span class="k">def</span> <span class="nf">drag_drop_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if drag-and-drop enabled for the map</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -205,8 +218,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_drag_drop_enabled"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_drag_drop_enabled">[docs]</a>    <span class="k">def</span> <span class="nf">set_drag_drop_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.set_drag_drop_enabled">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_drag_drop_enabled">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_drag_drop_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set whether drag-and-drop is enabled for the map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param enable:  Enables/disables drag-and-drop</span>
@@ -219,6 +235,7 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_drag_drop_enabled</span><span class="p">(</span><span class="n">enable</span><span class="p">)</span></div>
+
         
 
 
@@ -228,8 +245,10 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.copy_to_clip"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.copy_to_clip">[docs]</a>    <span class="k">def</span> <span class="nf">copy_to_clip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.copy_to_clip">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.copy_to_clip">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy_to_clip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy entire map to clipboard.</span>
 <span class="sd">        </span>
 
@@ -248,13 +267,16 @@
 <span class="sd">               in the current view coordinates.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy_to_clip</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.draw_line"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_line">[docs]</a>    <span class="k">def</span> <span class="nf">draw_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.draw_line">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Draws a line on the current map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X1</span>
@@ -279,13 +301,16 @@
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_line</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.draw_rect"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_rect">[docs]</a>    <span class="k">def</span> <span class="nf">draw_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.draw_rect">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_rect">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Draws a rect on the current map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X1</span>
@@ -310,13 +335,16 @@
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_rect</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.draw_rect_3d"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_rect_3d">[docs]</a>    <span class="k">def</span> <span class="nf">draw_rect_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">pix</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.draw_rect_3d">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_rect_3d">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw_rect_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">pix</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Plot a square symbol on a section view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X - True X location</span>
@@ -341,13 +369,16 @@
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_rect_3d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">pix</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.draw_ply"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_ply">[docs]</a>    <span class="k">def</span> <span class="nf">draw_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polygon</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.draw_ply">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_ply">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polygon</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Draws a polygon on the current map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param polygon:  `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` Object</span>
@@ -366,13 +397,16 @@
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_ply</span><span class="p">(</span><span class="n">polygon</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_display_area"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_display_area">[docs]</a>    <span class="k">def</span> <span class="nf">get_display_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_display_area">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_display_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_display_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the area you are currently looking at.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min returned</span>
@@ -394,13 +428,16 @@
 <span class="sd">        For 3D views this will return the full map extents.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_display_area</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_display_area_raw"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_display_area_raw">[docs]</a>    <span class="k">def</span> <span class="nf">get_display_area_raw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_display_area_raw">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_display_area_raw">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_display_area_raw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the area you are currently looking at in raw map units</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min returned</span>
@@ -422,13 +459,16 @@
 <span class="sd">        For 3D views this will return the full map extents.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_display_area_raw</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_map_layout_props"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_map_layout_props">[docs]</a>    <span class="k">def</span> <span class="nf">get_map_layout_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_map_layout_props">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_map_layout_props">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_map_layout_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the base layout view properties.</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap_to_grid:  Snap to grid</span>
@@ -458,13 +498,16 @@
 <span class="sd">        view of a map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">snap_to_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">snap_dist</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_rulers</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_units</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_red</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_green</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_blue</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_map_layout_props</span><span class="p">(</span><span class="n">snap_to_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">snap_dist</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_rulers</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_units</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_red</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_green</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_blue</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_map_snap"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_map_snap">[docs]</a>    <span class="k">def</span> <span class="nf">get_map_snap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_map_snap">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_map_snap">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_map_snap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get current snapping distance in MM</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap:  Snap value in MM (returned)</span>
@@ -477,13 +520,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">snap</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_map_snap</span><span class="p">(</span><span class="n">snap</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_window_state"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_window_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_window_state">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_window_state">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve the current state of the map window</span>
 <span class="sd">        </span>
 
@@ -502,8 +548,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_display_area"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_display_area">[docs]</a>    <span class="k">def</span> <span class="nf">set_display_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.set_display_area">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_display_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_display_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the area you wish to see.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min</span>
@@ -525,13 +574,16 @@
 <span class="sd">        The map is immediatly redrawn.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_display_area</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_map_layout_props"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_map_layout_props">[docs]</a>    <span class="k">def</span> <span class="nf">set_map_layout_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.set_map_layout_props">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_map_layout_props">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_map_layout_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the base layout view properties.</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap_to_grid:  Snap to grid</span>
@@ -561,13 +613,16 @@
 <span class="sd">        view of a map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_map_layout_props</span><span class="p">(</span><span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_map_snap"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_map_snap">[docs]</a>    <span class="k">def</span> <span class="nf">set_map_snap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.set_map_snap">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_map_snap">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_map_snap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set current snapping distance in MM</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap:  Snap value in MM</span>
@@ -580,13 +635,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_map_snap</span><span class="p">(</span><span class="n">snap</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_window_state"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_window_state">[docs]</a>    <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.set_window_state">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_window_state">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Changes the state of the map window</span>
 <span class="sd">        </span>
 <span class="sd">        :param state:  :ref:`EMAP_WINDOW_STATE`</span>
@@ -599,6 +657,7 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span></div>
+
         
 
 
@@ -608,8 +667,10 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.packed_files"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.packed_files">[docs]</a>    <span class="k">def</span> <span class="nf">packed_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.packed_files">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.packed_files">[docs]</a>
+    <span class="k">def</span> <span class="nf">packed_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The number of packed files in the map.</span>
 <span class="sd">        </span>
 
@@ -628,8 +689,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.activate_group"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.activate_group">[docs]</a>    <span class="k">def</span> <span class="nf">activate_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_group</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.activate_group">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.activate_group">[docs]</a>
+    <span class="k">def</span> <span class="nf">activate_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_group</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Activates a group and associated tools.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view_group:  &quot;View/Group&quot;</span>
@@ -648,13 +712,16 @@
 <span class="sd">        both the view name and the group separated by a &quot;/&quot; or &quot;\\&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_activate_group</span><span class="p">(</span><span class="n">view_group</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.activate_view"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.activate_view">[docs]</a>    <span class="k">def</span> <span class="nf">activate_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.activate_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.activate_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">activate_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Activates a view and associated tools.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  &quot;View&quot;</span>
@@ -667,13 +734,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_activate_view</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.current"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.current">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.current">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.current">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method returns the Current Edited map.</span>
 <span class="sd">        </span>
 
@@ -691,9 +761,12 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.current_no_activate"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.current_no_activate">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.current_no_activate">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.current_no_activate">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method returns the Current Edited map.</span>
 <span class="sd">        </span>
 
@@ -714,9 +787,12 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.current_if_exists"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.current_if_exists">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.current_if_exists">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.current_if_exists">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_if_exists</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method returns the Current Edited map.</span>
 <span class="sd">        </span>
 
@@ -738,8 +814,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.destroy_view"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.destroy_view">[docs]</a>    <span class="k">def</span> <span class="nf">destroy_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unload_flag</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.destroy_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.destroy_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">destroy_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unload_flag</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Removes the view from the workspace.</span>
 <span class="sd">        </span>
 <span class="sd">        :param unload_flag:  :ref:`EMAP_REMOVE`</span>
@@ -758,13 +837,16 @@
 <span class="sd">        parameter.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_destroy_view</span><span class="p">(</span><span class="n">unload_flag</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.font_lst"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.font_lst">[docs]</a>    <span class="k">def</span> <span class="nf">font_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">which</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.font_lst">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.font_lst">[docs]</a>
+    <span class="k">def</span> <span class="nf">font_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">which</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        List all Windows and geosoft fonts.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:    List Object</span>
@@ -783,13 +865,16 @@
 <span class="sd">        change order of listing.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_font_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">which</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.change_current_view"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.change_current_view">[docs]</a>    <span class="k">def</span> <span class="nf">change_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.change_current_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.change_current_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Change the current working view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  View name</span>
@@ -814,8 +899,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.create_group_snapshot"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.create_group_snapshot">[docs]</a>    <span class="k">def</span> <span class="nf">create_group_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.create_group_snapshot">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.create_group_snapshot">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_group_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads an `GXLST &lt;geosoft.gxapi.GXLST&gt;` with the current view/group names</span>
 <span class="sd">        existing in a map. Typically used to track group</span>
 <span class="sd">        changes that are about to occur.</span>
@@ -839,8 +927,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_3d_view_name"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_3d_view_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_3d_view_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_3d_view_name">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_3d_view_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_3d_view_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the name of a 3D view if the current view is 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name returned</span>
@@ -853,13 +944,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_3d_view_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_current_group"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_current_group">[docs]</a>    <span class="k">def</span> <span class="nf">get_current_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_current_group">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_current_group">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_current_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current group name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param group:  Returned group name</span>
@@ -874,13 +968,16 @@
 <span class="sd">        **Note:** This function operates on the current map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">group</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_current_group</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_current_view"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_current_view">[docs]</a>    <span class="k">def</span> <span class="nf">get_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_current_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_current_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current view name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  Returned view name</span>
@@ -895,13 +992,16 @@
 <span class="sd">        **Note:** This function operates on the current map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">view</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_current_view</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_maps_lst"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_maps_lst">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.get_maps_lst">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_maps_lst">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_maps_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load the file names of open maps into a `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   `GXLST &lt;geosoft.gxapi.GXLST&gt;` to load</span>
@@ -925,8 +1025,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_name"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_name">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the name of the map object of this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name returned</span>
@@ -939,13 +1042,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.have_current"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.have_current">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.have_current">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.have_current">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">have_current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method returns whether a current map is loaded</span>
 <span class="sd">        </span>
 
@@ -964,9 +1070,12 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.i_get_specified_map_name"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.i_get_specified_map_name">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.i_get_specified_map_name">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.i_get_specified_map_name">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">i_get_specified_map_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find a loaded map that has a setting in its reg.</span>
 <span class="sd">        </span>
 <span class="sd">        :param field:  `GXREG &lt;geosoft.gxapi.GXREG&gt;` field name</span>
@@ -992,8 +1101,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.is_grid"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_grid">[docs]</a>    <span class="k">def</span> <span class="nf">is_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.is_grid">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Is the map a grid map?</span>
 <span class="sd">        </span>
 
@@ -1011,9 +1123,12 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.reload_grid"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.reload_grid">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.reload_grid">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.reload_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">reload_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reloads a grid document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Source file name</span>
@@ -1028,13 +1143,16 @@
 <span class="sd">        **Note:** Use this method to reload (if loaded) a grid document if the file on disk changed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_reload_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.is_3d_view"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_3d_view">[docs]</a>    <span class="k">def</span> <span class="nf">is_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.is_3d_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_3d_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Is the current view a 3D view.</span>
 <span class="sd">        </span>
 
@@ -1053,8 +1171,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_e_3dv"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_e_3dv">[docs]</a>    <span class="k">def</span> <span class="nf">get_e_3dv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_e_3dv">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_e_3dv">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_e_3dv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get an `GXE3DV &lt;geosoft.gxapi.GXE3DV&gt;` from the `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`</span>
 <span class="sd">        </span>
 
@@ -1073,8 +1194,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.is_locked"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_locked">[docs]</a>    <span class="k">def</span> <span class="nf">is_locked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.is_locked">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_locked">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_locked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if map is locked</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -1090,9 +1214,12 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.loaded"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.loaded">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.loaded">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.loaded">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">loaded</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns 1 if a map is loaded .</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Map name</span>
@@ -1113,8 +1240,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.read_only"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.read_only">[docs]</a>    <span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.read_only">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.read_only">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if a map is currently opened in a read-only mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -1131,8 +1261,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_window_position"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_window_position">[docs]</a>    <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_window_position">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_window_position">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -1155,13 +1288,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_position</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_window_position"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_window_position">[docs]</a>    <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.set_window_position">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_window_position">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -1184,13 +1320,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_position</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.doubleize_group_snapshot"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.doubleize_group_snapshot">[docs]</a>    <span class="k">def</span> <span class="nf">doubleize_group_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.doubleize_group_snapshot">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.doubleize_group_snapshot">[docs]</a>
+    <span class="k">def</span> <span class="nf">doubleize_group_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The `GXLST &lt;geosoft.gxapi.GXLST&gt;` passed in must contain View\\Group strings in</span>
 <span class="sd">        the Name field only. The function will compare with</span>
 <span class="sd">        a more current `GXLST &lt;geosoft.gxapi.GXLST&gt;` and zoom the map to the new entry.</span>
@@ -1217,8 +1356,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_current_view"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_current_view">[docs]</a>    <span class="k">def</span> <span class="nf">set_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.set_current_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_current_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the current working view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  View name</span>
@@ -1244,8 +1386,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_view_ipj"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_view_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">get_view_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_view_ipj">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_view_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_view_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a view&#39;s `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  View name</span>
@@ -1264,13 +1409,16 @@
 <span class="sd">        that cause undesirable UX.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_view_ipj</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.load"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.load">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads maps into the editor.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  List of maps (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -1298,9 +1446,12 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.load_no_activate"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_no_activate">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.load_no_activate">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_no_activate">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads documents into the workspace</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  List of documents (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -1324,9 +1475,12 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.load_with_view"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_with_view">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEMAP.load_with_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_with_view">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_with_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load an `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` with the view from a current `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Source Map name</span>
@@ -1353,8 +1507,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.lock"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.lock">[docs]</a>    <span class="k">def</span> <span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.lock">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.lock">[docs]</a>
+    <span class="k">def</span> <span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method locks the Edited map.</span>
 <span class="sd">        </span>
 
@@ -1375,8 +1532,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.make_current"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.make_current">[docs]</a>    <span class="k">def</span> <span class="nf">make_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.make_current">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.make_current">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Makes this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` object the current active object to the user.</span>
 <span class="sd">        </span>
 
@@ -1387,13 +1547,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_current</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.print_"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.print_">[docs]</a>    <span class="k">def</span> <span class="nf">print_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entire_map</span><span class="p">,</span> <span class="n">scale_to_fit</span><span class="p">,</span> <span class="n">print_to_file</span><span class="p">,</span> <span class="n">all_pages</span><span class="p">,</span> <span class="n">centre</span><span class="p">,</span> <span class="n">copies</span><span class="p">,</span> <span class="n">first_page</span><span class="p">,</span> <span class="n">last_page</span><span class="p">,</span> <span class="n">scale_factor</span><span class="p">,</span> <span class="n">overlap_size</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.print_">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.print_">[docs]</a>
+    <span class="k">def</span> <span class="nf">print_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entire_map</span><span class="p">,</span> <span class="n">scale_to_fit</span><span class="p">,</span> <span class="n">print_to_file</span><span class="p">,</span> <span class="n">all_pages</span><span class="p">,</span> <span class="n">centre</span><span class="p">,</span> <span class="n">copies</span><span class="p">,</span> <span class="n">first_page</span><span class="p">,</span> <span class="n">last_page</span><span class="p">,</span> <span class="n">scale_factor</span><span class="p">,</span> <span class="n">overlap_size</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print the current map to current printer.</span>
 <span class="sd">        </span>
 <span class="sd">        :param entire_map:     lEntireMap  (0 or 1)</span>
@@ -1430,13 +1593,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_print_</span><span class="p">(</span><span class="n">entire_map</span><span class="p">,</span> <span class="n">scale_to_fit</span><span class="p">,</span> <span class="n">print_to_file</span><span class="p">,</span> <span class="n">all_pages</span><span class="p">,</span> <span class="n">centre</span><span class="p">,</span> <span class="n">copies</span><span class="p">,</span> <span class="n">first_page</span><span class="p">,</span> <span class="n">last_page</span><span class="p">,</span> <span class="n">scale_factor</span><span class="p">,</span> <span class="n">overlap_size</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.redraw"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.redraw">[docs]</a>    <span class="k">def</span> <span class="nf">redraw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.redraw">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.redraw">[docs]</a>
+    <span class="k">def</span> <span class="nf">redraw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Redraw the map immediately.</span>
 <span class="sd">        </span>
 
@@ -1449,13 +1615,16 @@
 <span class="sd">        **Note:** Redraws the map immediately. Map must not be locked.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_redraw</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.select_group"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.select_group">[docs]</a>    <span class="k">def</span> <span class="nf">select_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_group</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.select_group">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.select_group">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_group</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Select a group.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view_group:  &quot;View/Group&quot;</span>
@@ -1468,13 +1637,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_select_group</span><span class="p">(</span><span class="n">view_group</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_redraw_flag"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_redraw_flag">[docs]</a>    <span class="k">def</span> <span class="nf">set_redraw_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">redraw</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.set_redraw_flag">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_redraw_flag">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_redraw_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">redraw</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the redraw flag.</span>
 <span class="sd">        </span>
 <span class="sd">        :param redraw:  :ref:`EMAP_REDRAW`</span>
@@ -1497,13 +1669,16 @@
 <span class="sd">        `un_lock &lt;geosoft.gxapi.GXEMAP.un_lock&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_redraw_flag</span><span class="p">(</span><span class="n">redraw</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.un_load"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_load">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.un_load">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_load">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unloads a `GXMAP &lt;geosoft.gxapi.GXMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of the map to unload</span>
@@ -1519,13 +1694,16 @@
 <span class="sd">        Same as `un_load_verify &lt;geosoft.gxapi.GXEMAP.un_load_verify&gt;` with FALSE to prompt save.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_un_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.un_load_all"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_load_all">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.un_load_all">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_load_all">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_all</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unloads all opened maps</span>
 <span class="sd">        </span>
 
@@ -1536,13 +1714,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_un_load_all</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.un_load_verify"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_load_verify">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.un_load_verify">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_load_verify">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_verify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unloads an edited map, optional prompt to save.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:    Name of map to unload</span>
@@ -1560,13 +1741,16 @@
 <span class="sd">        If &quot;FALSE&quot;, map is saved without a prompt.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_un_load_verify</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prompt</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.un_lock"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_lock">[docs]</a>    <span class="k">def</span> <span class="nf">un_lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.un_lock">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_lock">[docs]</a>
+    <span class="k">def</span> <span class="nf">un_lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method unlocks the Edited map.</span>
 <span class="sd">        </span>
 
@@ -1577,6 +1761,7 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_un_lock</span><span class="p">()</span></div>
+
         
 
 
@@ -1586,8 +1771,10 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_cur_point"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cur_point">[docs]</a>    <span class="k">def</span> <span class="nf">get_cur_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_cur_point">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cur_point">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_cur_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of the currently selected point in view coordinates</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in current user units.</span>
@@ -1602,13 +1789,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_point</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_cur_point_mm"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cur_point_mm">[docs]</a>    <span class="k">def</span> <span class="nf">get_cur_point_mm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_cur_point_mm">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cur_point_mm">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_cur_point_mm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of the currently selected point in mm on map</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in map mm</span>
@@ -1623,13 +1813,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_point_mm</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_cursor"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cursor">[docs]</a>    <span class="k">def</span> <span class="nf">get_cursor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_cursor">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cursor">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_cursor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of the last known cursor location</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in current view user units</span>
@@ -1644,13 +1837,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cursor</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_cursor_mm"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cursor_mm">[docs]</a>    <span class="k">def</span> <span class="nf">get_cursor_mm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_cursor_mm">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cursor_mm">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_cursor_mm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of the last known cursor location in mm on map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in map mm</span>
@@ -1665,13 +1861,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cursor_mm</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.digitize"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize">[docs]</a>    <span class="k">def</span> <span class="nf">digitize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">digits</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.digitize">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize">[docs]</a>
+    <span class="k">def</span> <span class="nf">digitize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">digits</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Digitise points from the current map and place in a `GXWA &lt;geosoft.gxapi.GXWA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param wa:       `GXWA &lt;geosoft.gxapi.GXWA&gt;` in which to write digitized points</span>
@@ -1716,8 +1915,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.digitize2"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize2">[docs]</a>    <span class="k">def</span> <span class="nf">digitize2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.digitize2">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize2">[docs]</a>
+    <span class="k">def</span> <span class="nf">digitize2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Digitise points from the current map and place in VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:      Real X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1760,8 +1962,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.digitize_peaks"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize_peaks">[docs]</a>    <span class="k">def</span> <span class="nf">digitize_peaks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.digitize_peaks">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize_peaks">[docs]</a>
+    <span class="k">def</span> <span class="nf">digitize_peaks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Digitise points from the current map and place in VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:      Real X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1800,8 +2005,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.digitize_polygon"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize_polygon">[docs]</a>    <span class="k">def</span> <span class="nf">digitize_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pixel_radius</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.digitize_polygon">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize_polygon">[docs]</a>
+    <span class="k">def</span> <span class="nf">digitize_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pixel_radius</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as iDigitze2_EMAP, but automatically close polygons.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:           Real X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1841,8 +2049,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_box"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_box">[docs]</a>    <span class="k">def</span> <span class="nf">get_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_box">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_box">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of a user selected box.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -1872,8 +2083,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_box2"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_box2">[docs]</a>    <span class="k">def</span> <span class="nf">get_box2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">y4</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_box2">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_box2">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_box2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">y4</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of a user selected box in a warped view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -1917,8 +2131,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_grid"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_grid">[docs]</a>    <span class="k">def</span> <span class="nf">get_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x_len</span><span class="p">,</span> <span class="n">y_len</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_grid">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x_len</span><span class="p">,</span> <span class="n">y_len</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Position and size a grid on a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -1965,8 +2182,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_line"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line">[docs]</a>    <span class="k">def</span> <span class="nf">get_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_line">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the end points of a line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -1999,8 +2219,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_line_ex"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line_ex">[docs]</a>    <span class="k">def</span> <span class="nf">get_line_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_line_ex">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_line_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the end points of a line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2034,8 +2257,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_line_xyz"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">get_line_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_line_xyz">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line_xyz">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_line_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the end points of a line in X,Y and Z</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2075,8 +2301,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_point"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point">[docs]</a>    <span class="k">def</span> <span class="nf">get_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_point">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of a user selected point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2108,8 +2337,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_point_ex"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point_ex">[docs]</a>    <span class="k">def</span> <span class="nf">get_point_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_point_ex">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_point_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of a user selected point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2143,8 +2375,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_point_3d"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point_3d">[docs]</a>    <span class="k">def</span> <span class="nf">get_point_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_point_3d">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point_3d">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_point_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of a user selected point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2180,8 +2415,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_poly_line"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_poly_line">[docs]</a>    <span class="k">def</span> <span class="nf">get_poly_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_poly_line">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_poly_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_poly_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a polyline.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2210,8 +2448,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_poly_line_xyz"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_poly_line_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">get_poly_line_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_poly_line_xyz">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_poly_line_xyz">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_poly_line_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a polyline.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2244,8 +2485,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_rect"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_rect">[docs]</a>    <span class="k">def</span> <span class="nf">get_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.get_rect">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_rect">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinates of a user selected box starting at a corner.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2292,8 +2536,11 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.track_point"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.track_point">[docs]</a>    <span class="k">def</span> <span class="nf">track_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEMAP.track_point">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.track_point">[docs]</a>
+    <span class="k">def</span> <span class="nf">track_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get point without prompt or cursor change with tracking</span>
 <span class="sd">        </span>
 <span class="sd">        :param flags:  :ref:`EMAP_TRACK`</span>
@@ -2319,12 +2566,15 @@
 
 
 
+
 <span class="c1"># Map Viewport Mode Methods</span>
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_aoi_area"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_aoi_area">[docs]</a>    <span class="k">def</span> <span class="nf">get_aoi_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_aoi_area">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_aoi_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_aoi_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the area of interest.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min returned</span>
@@ -2345,13 +2595,16 @@
 <span class="sd">        **Note:** Coordinates are based on the current view units.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_aoi_area</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_aoi_area"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_aoi_area">[docs]</a>    <span class="k">def</span> <span class="nf">set_aoi_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.set_aoi_area">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_aoi_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_aoi_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the area of interest.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min</span>
@@ -2373,13 +2626,16 @@
 <span class="sd">        The map is immediatly redrawn.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_aoi_area</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEMAP.set_viewport_mode"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_viewport_mode">[docs]</a>    <span class="k">def</span> <span class="nf">set_viewport_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.set_viewport_mode">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_viewport_mode">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_viewport_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the viewport mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mode:  :ref:`EMAP_VIEWPORT`</span>
@@ -2396,6 +2652,7 @@
 <span class="sd">        for a method to set the map mode back to normal as this is not exposed in the interface.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_viewport_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span></div>
+
         
 
 
@@ -2405,8 +2662,10 @@
 
 
 
-<div class="viewcode-block" id="GXEMAP.get_selected_vertices"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_selected_vertices">[docs]</a>    <span class="k">def</span> <span class="nf">get_selected_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEMAP.get_selected_vertices">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_selected_vertices">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_selected_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the verticies of selected object</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;` Handle</span>
@@ -2423,6 +2682,7 @@
 <span class="sd">        **Note:** Works only in Vertex Edit Mode</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_selected_vertices</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
+
         
 
 
@@ -2431,9 +2691,11 @@
 <span class="c1"># Virtual</span>
 
 
-<div class="viewcode-block" id="GXEMAP.create_virtual"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.create_virtual">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.create_virtual">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.create_virtual">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_virtual</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Makes this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` object the current active object to the user.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of map to create a virtual `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` from</span>
@@ -2454,12 +2716,15 @@
 
 
 
+
 <span class="c1"># External Window</span>
 
 
-<div class="viewcode-block" id="GXEMAP.load_control"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_control">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.load_control">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_control">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">map_file</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Version of `load &lt;geosoft.gxapi.GXEMAP.load&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map_file:  Map filename</span>
@@ -2474,13 +2739,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">map_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">window</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEMAP.load_with_view_control"><a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_with_view_control">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEMAP.load_with_view_control">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.load_with_view_control">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_with_view_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">map_file</span><span class="p">,</span> <span class="n">emap</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Version of `GXEDB.load_with_view &lt;geosoft.gxapi.GXEDB.load_with_view&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map_file:  Map filename</span>
@@ -2496,7 +2764,9 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load_with_view_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">map_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">emap</span><span class="p">,</span> <span class="n">window</span><span class="p">)</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load_with_view_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">map_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">emap</span><span class="p">,</span> <span class="n">window</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -2526,7 +2796,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEMAP</a></li> 
@@ -2534,8 +2804,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

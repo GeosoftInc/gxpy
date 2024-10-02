@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXST2 class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXST2 class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,30 +28,49 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXST2 class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXST2 class</a><ul>
-<li><a class="reference internal" href="#st2-correlation-constants">ST2_CORRELATION constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2"><code class="docutils literal notranslate"><span class="pre">GXST2</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.__init__"><code class="docutils literal notranslate"><span class="pre">GXST2.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.create"><code class="docutils literal notranslate"><span class="pre">GXST2.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.data_vv"><code class="docutils literal notranslate"><span class="pre">GXST2.data_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.get"><code class="docutils literal notranslate"><span class="pre">GXST2.get()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.is_null"><code class="docutils literal notranslate"><span class="pre">GXST2.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.items"><code class="docutils literal notranslate"><span class="pre">GXST2.items()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.null"><code class="docutils literal notranslate"><span class="pre">GXST2.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXST2.reset"><code class="docutils literal notranslate"><span class="pre">GXST2.reset()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#st2-correlation-constants">ST2_CORRELATION constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.ST2_CORR"><code class="docutils literal notranslate"><span class="pre">ST2_CORR</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.ST2_CORR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ST2_PCORR"><code class="docutils literal notranslate"><span class="pre">ST2_PCORR</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">gxapi.ST2_PCORR</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,32 +86,31 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxst2-class">
-<span id="gxst2"></span><h1>GXST2 class<a class="headerlink" href="#gxst2-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxst2-class">
+<span id="gxst2"></span><h1>GXST2 class<a class="headerlink" href="#gxst2-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXST2">
-<em class="property">class </em><code class="sig-name descname">GXST2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXST2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2" title="Link to this definition">¶</a></dt>
 <dd><p>GXST2 class.</p>
 <p>Bi-variate statistics. The <a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a> class accumulates statistics
 on two data vectors simultaneously in order to compute correlation
 information. Statistics are accumulated using the <a class="reference internal" href="#geosoft.gxapi.GXST2.data_vv" title="geosoft.gxapi.GXST2.data_vv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_vv</span></code></a> function.
 See also <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> (mono-variate statistics).</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a statistics object which is used to accumulate statistics.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a> Object</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2">GXST2</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2.GXST2">GXST2</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -104,11 +120,11 @@ See also <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.data_vv">
-<code class="sig-name descname">data_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv_x</span></em>, <em class="sig-param"><span class="n">vv_y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.data_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.data_vv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.data_vv">
+<span class="sig-name descname"><span class="pre">data_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.data_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.data_vv" title="Link to this definition">¶</a></dt>
 <dd><p>Add all the values in VVx and VVy to <a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a> object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VVx handle</p></li>
 <li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – VVy handle</p></li>
@@ -122,18 +138,18 @@ See also <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.get" title="Link to this definition">¶</a></dt>
 <dd><p>Gets correlation coeff. from the <a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a> object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>id</strong> (<em>int</em>) – <a class="reference internal" href="#st2-correlation"><span class="std std-ref">ST2_CORRELATION constants</span></a></p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Data you asked for
 <a class="reference internal" href="GXGEOSOFT.html#id35" title="geosoft.gxapi.GS_R8DM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_R8DM</span></code></a> for none</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -144,28 +160,28 @@ See also <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.items">
-<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.items" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.items" title="Link to this definition">¶</a></dt>
 <dd><p>Gets Number of items</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Number of items in <a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -176,22 +192,22 @@ See also <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST2</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2">GXST2</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXST2" title="geosoft.gxapi.GXST2.GXST2">GXST2</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXST2.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.reset" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXST2.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXST2.html#GXST2.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXST2.reset" title="Link to this definition">¶</a></dt>
 <dd><p>Resets the Statistics.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.0.</span></p>
@@ -201,33 +217,33 @@ See also <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title
 
 </dd></dl>
 
-<div class="section" id="st2-correlation-constants">
-<span id="st2-correlation"></span><h2>ST2_CORRELATION constants<a class="headerlink" href="#st2-correlation-constants" title="Permalink to this headline">¶</a></h2>
+<section id="st2-correlation-constants">
+<span id="st2-correlation"></span><h2>ST2_CORRELATION constants<a class="headerlink" href="#st2-correlation-constants" title="Link to this heading">¶</a></h2>
 <p>Correlation style</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.ST2_CORR">
-<code class="sig-name descname">ST2_CORR</code><a class="headerlink" href="#geosoft.gxapi.ST2_CORR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.ST2_CORR">
+<span class="sig-name descname"><span class="pre">ST2_CORR</span></span><a class="headerlink" href="#geosoft.gxapi.ST2_CORR" title="Link to this definition">¶</a></dt>
 <dd><p>Simple correlation</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST2_CORR</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST2_CORR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.ST2_PCORR">
-<code class="sig-name descname">ST2_PCORR</code><a class="headerlink" href="#geosoft.gxapi.ST2_PCORR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.ST2_PCORR">
+<span class="sig-name descname"><span class="pre">ST2_PCORR</span></span><a class="headerlink" href="#geosoft.gxapi.ST2_PCORR" title="Link to this definition">¶</a></dt>
 <dd><p>Pearson’s correlation (normalized to standard deviations)</p>
 <dl class="py attribute">
-<dt id="id5">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">ST2_PCORR</code><em class="property"> = 1</em><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id5">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ST2_PCORR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -242,14 +258,14 @@ See also <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXST2 class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

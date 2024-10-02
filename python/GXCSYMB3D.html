@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXCSYMB3D class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXCSYMB3D class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXCSYMB3D class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.__init__"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.add_color_data"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.add_color_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.add_locations"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.add_locations()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.add_size_data"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.add_size_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.create"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.fixed_color"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.fixed_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.get_color_data"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.get_color_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.get_fixed_color"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.get_fixed_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.get_itr"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.get_itr()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.get_locations"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.get_locations()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.get_size_data"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.get_size_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.get_st"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.get_st()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.is_null"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.null"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.set_fixed_color"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.set_fixed_color()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.set_fixed_size"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.set_fixed_size()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.set_itr"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.set_itr()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.set_size_min_max"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.set_size_min_max()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.set_size_scale"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.set_size_scale()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.set_symbol"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.set_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D.statistics"><code class="docutils literal notranslate"><span class="pre">GXCSYMB3D.statistics()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#csymb3d-symbol-constants">CSYMB3D_SYMBOL constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.CSYMB_SYMBOL_SPHERE"><code class="docutils literal notranslate"><span class="pre">CSYMB_SYMBOL_SPHERE</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.CSYMB_SYMBOL_SPHERE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.CSYMB_SYMBOL_CUBE"><code class="docutils literal notranslate"><span class="pre">CSYMB_SYMBOL_CUBE</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.CSYMB_SYMBOL_CUBE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.CSYMB_SYMBOL_CYLINDER"><code class="docutils literal notranslate"><span class="pre">CSYMB_SYMBOL_CYLINDER</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.CSYMB_SYMBOL_CYLINDER</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.CSYMB_SYMBOL_CONE"><code class="docutils literal notranslate"><span class="pre">CSYMB_SYMBOL_CONE</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.CSYMB_SYMBOL_CONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.CSYMB_SYMBOL_DOT"><code class="docutils literal notranslate"><span class="pre">CSYMB_SYMBOL_DOT</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.CSYMB_SYMBOL_DOT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXCSYMB3D.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxcsymb3d-class">
+<span id="gxcsymb3d"></span><h1>GXCSYMB3D class<a class="headerlink" href="#gxcsymb3d-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXCSYMB3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D" title="Link to this definition">¶</a></dt>
+<dd><p>GXCSYMB3D class.</p>
+<p>This class is used for generating and modifying 3D colored symbol objects.
+Symbols are assigned colors based on their Z values and a zone, Aggregate
+or <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> file which defines what colors are associated with different ranges
+of Z values. The position of a symbol is defined by its X,Y,Z coordinates.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.add_color_data">
+<span class="sig-name descname"><span class="pre">add_color_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.add_color_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.add_color_data" title="Link to this definition">¶</a></dt>
+<dd><p>Add data for colors to a CSYMB3D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vv_data</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for colour data values.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> To use these values, add a colour transform using the SetITR function.
+Ensure you add an equal number of locations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.add_locations">
+<span class="sig-name descname"><span class="pre">add_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.add_locations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.add_locations" title="Link to this definition">¶</a></dt>
+<dd><p>Add x,y,z locations to a CSYMB3D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for X locations</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for Y locations</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for Z locations</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.add_size_data">
+<span class="sig-name descname"><span class="pre">add_size_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.add_size_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.add_size_data" title="Link to this definition">¶</a></dt>
+<dd><p>Add data for sizes to a CSYMB3D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vv_data</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for size data values.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> To use these values, call the SetSizeScale or SetSizeMinMax functions.
+Ensure you add an equal number of locations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colour</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCSYMB3D</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>float</em>) – Symbol size (&gt; 0.0)</p></li>
+<li><p><strong>colour</strong> (<em>int</em>) – colour to use for the fixed colour</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCSYMB3D</span></code></a> handle</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D.GXCSYMB3D">GXCSYMB3D</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The default object uses fixed size and colour.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.fixed_color">
+<span class="sig-name descname"><span class="pre">fixed_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.fixed_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.fixed_color" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether colours are fixed (1) or use a transform (0)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.get_color_data">
+<span class="sig-name descname"><span class="pre">get_color_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.get_color_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.get_color_data" title="Link to this definition">¶</a></dt>
+<dd><p>Get data for colors from a CSYMB3D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vv_data</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for colour data values.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.get_fixed_color">
+<span class="sig-name descname"><span class="pre">get_fixed_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.get_fixed_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.get_fixed_color" title="Link to this definition">¶</a></dt>
+<dd><p>Get the fixed colour. There is always one even if we are using an ITR</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.get_itr">
+<span class="sig-name descname"><span class="pre">get_itr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.get_itr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.get_itr" title="Link to this definition">¶</a></dt>
+<dd><p>Get the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> of the <a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCSYMB3D</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> object</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns an empty ITR if fixed colours are being used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.get_locations">
+<span class="sig-name descname"><span class="pre">get_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.get_locations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.get_locations" title="Link to this definition">¶</a></dt>
+<dd><p>Get x,y,z locations from a color symbol object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for X locations</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for Y locations</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for Z locations</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.get_size_data">
+<span class="sig-name descname"><span class="pre">get_size_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.get_size_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.get_size_data" title="Link to this definition">¶</a></dt>
+<dd><p>Get data for sizes from a CSYMB3D object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vv_data</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for size data values.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.get_st">
+<span class="sig-name descname"><span class="pre">get_st</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">st</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.get_st"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.get_st" title="Link to this definition">¶</a></dt>
+<dd><p>Get a copy of the CSYMB3D statistics object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> Handle</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns all dummies if no values are input with the locations.
+If both colour and size data are present, returns the colour ST.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCSYMB3D</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCSYMB3D</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D.GXCSYMB3D">GXCSYMB3D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.set_fixed_color">
+<span class="sig-name descname"><span class="pre">set_fixed_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colour</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.set_fixed_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.set_fixed_color" title="Link to this definition">¶</a></dt>
+<dd><p>Set symbols to a fixed colour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>colour</strong> (<em>int</em>) – colour to use for the fixed colour</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.set_fixed_size">
+<span class="sig-name descname"><span class="pre">set_fixed_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.set_fixed_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.set_fixed_size" title="Link to this definition">¶</a></dt>
+<dd><p>Fix the symbol size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>float</em>) – Symbol size (&gt; 0.0)</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.set_itr">
+<span class="sig-name descname"><span class="pre">set_itr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.set_itr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.set_itr" title="Link to this definition">¶</a></dt>
+<dd><p>Set the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> of the <a class="reference internal" href="#geosoft.gxapi.GXCSYMB3D" title="geosoft.gxapi.GXCSYMB3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCSYMB3D</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> object</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Setting the ITR puts the symbols in colour-transform mode.
+Data for colours must be added using the AddSizeData function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.set_size_min_max">
+<span class="sig-name descname"><span class="pre">set_size_min_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_scaling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_minimum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.set_size_min_max"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.set_size_min_max" title="Link to this definition">¶</a></dt>
+<dd><p>Scale the symbol size based on value. By default symbols are fixed size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_size</strong> (<em>float</em>) – If defined, make smallest symbol this size (&gt;=0)</p></li>
+<li><p><strong>max_size</strong> (<em>float</em>) – If defined, make largest symbol this size</p></li>
+<li><p><strong>log_scaling</strong> (<em>int</em>) – If 1, use log scaling, 0 - linear between min and max</p></li>
+<li><p><strong>log_minimum</strong> (<em>float</em>) – divide by this value before taking the log (default = 1.0, must be &gt; 0.0)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Data for sizes must be added using the AddSizeData function.
+For log scaling, take the log then apply the scaling method to get the symbol size
+(negative logs do not plot).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.set_size_scale">
+<span class="sig-name descname"><span class="pre">set_size_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_scaling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_minimum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.set_size_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.set_size_scale" title="Link to this definition">¶</a></dt>
+<dd><p>Set the symbol size based on a scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scale</strong> (<em>float</em>) – Symbol scale (&gt; 0.0)</p></li>
+<li><p><strong>log_scaling</strong> (<em>int</em>) – 1 - Use log scaling, 0 - linear scaling</p></li>
+<li><p><strong>log_minimum</strong> (<em>float</em>) – divide by this value before taking the log (default = 1.0, must be &gt; 0.0</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Data for sizes must be added using the AddSizeData function.
+For log scaling, take the log then apply the scale factor to get the symbol size
+(negative logs do not plot).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.set_symbol">
+<span class="sig-name descname"><span class="pre">set_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.set_symbol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.set_symbol" title="Link to this definition">¶</a></dt>
+<dd><p>Set the symbol type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> (<em>int</em>) – <a class="reference internal" href="#csymb3d-symbol"><span class="std std-ref">CSYMB3D_SYMBOL constants</span></a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCSYMB3D.statistics">
+<span class="sig-name descname"><span class="pre">statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">st</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCSYMB3D.html#GXCSYMB3D.statistics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCSYMB3D.statistics" title="Link to this definition">¶</a></dt>
+<dd><p>Add the CSYMB values to a statistics object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>st</strong> (<a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><em>GXST</em></a>) – <a class="reference internal" href="GXST.html#geosoft.gxapi.GXST" title="geosoft.gxapi.GXST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXST</span></code></a> Handle</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns all dummies if no values are input with the locations.
+If both colour and size data are present, uses the colour data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="csymb3d-symbol-constants">
+<span id="csymb3d-symbol"></span><h2>CSYMB3D_SYMBOL constants<a class="headerlink" href="#csymb3d-symbol-constants" title="Link to this heading">¶</a></h2>
+<p>Color Symbol Type defines</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.CSYMB_SYMBOL_SPHERE">
+<span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_SPHERE</span></span><a class="headerlink" href="#geosoft.gxapi.CSYMB_SYMBOL_SPHERE" title="Link to this definition">¶</a></dt>
+<dd><p>Csymb symbol sphere</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_SPHERE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.CSYMB_SYMBOL_CUBE">
+<span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_CUBE</span></span><a class="headerlink" href="#geosoft.gxapi.CSYMB_SYMBOL_CUBE" title="Link to this definition">¶</a></dt>
+<dd><p>Csymb symbol cube</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_CUBE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">31</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.CSYMB_SYMBOL_CYLINDER">
+<span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_CYLINDER</span></span><a class="headerlink" href="#geosoft.gxapi.CSYMB_SYMBOL_CYLINDER" title="Link to this definition">¶</a></dt>
+<dd><p>Csymb symbol cylinder</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_CYLINDER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.CSYMB_SYMBOL_CONE">
+<span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_CONE</span></span><a class="headerlink" href="#geosoft.gxapi.CSYMB_SYMBOL_CONE" title="Link to this definition">¶</a></dt>
+<dd><p>Csymb symbol cone</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_CONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">33</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.CSYMB_SYMBOL_DOT">
+<span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_DOT</span></span><a class="headerlink" href="#geosoft.gxapi.CSYMB_SYMBOL_DOT" title="Link to this definition">¶</a></dt>
+<dd><p>Csymb symbol dot</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CSYMB_SYMBOL_DOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">34</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXCSYMB3D class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

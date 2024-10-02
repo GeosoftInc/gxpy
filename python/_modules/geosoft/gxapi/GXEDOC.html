@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXEDOC &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXEDOC &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDOC</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,20 +75,27 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXEDOC"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC">[docs]</a><span class="k">class</span> <span class="nc">GXEDOC</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEDOC">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC">[docs]</a>
+<span class="k">class</span> <span class="nc">GXEDOC</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXEDOC class.</span>
 
 <span class="sd">    The `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;` class provides access to a generic documents views as loaded within</span>
 <span class="sd">    Oasis montaj.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXEDOC.__init__"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXEDOC.__init__">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXEDOC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXEDOC.null"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.null">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;`</span>
@@ -99,8 +103,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXEDOC</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXEDOC.is_null"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEDOC.is_null">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -110,12 +117,15 @@
 
 
 
+
 <span class="c1"># GMSYS 3D Models</span>
 
 
-<div class="viewcode-block" id="GXEDOC.create_new_gms_3d"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.create_new_gms_3d">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEDOC.create_new_gms_3d">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.create_new_gms_3d">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_new_gms_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a new `GXGMSYS &lt;geosoft.gxapi.GXGMSYS&gt;` 3D Model into the workspace, flags as new.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Document to load.</span>
@@ -147,12 +157,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXEDOC.current"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEDOC.current">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method returns the Current Edited Document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
@@ -172,9 +185,12 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.current_no_activate"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current_no_activate">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.current_no_activate">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current_no_activate">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method returns the Current Edited Document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
@@ -197,9 +213,12 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.current_if_exists"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current_if_exists">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.current_if_exists">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.current_if_exists">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_if_exists</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method returns the Current Edited Document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
@@ -222,9 +241,12 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.get_documents_lst"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_documents_lst">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.get_documents_lst">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_documents_lst">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_documents_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load the file names of open documents into a `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   `GXLST &lt;geosoft.gxapi.GXLST&gt;` to load</span>
@@ -250,8 +272,11 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.get_name"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEDOC.get_name">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the name of the document object of this `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name returned</span>
@@ -264,13 +289,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEDOC.get_window_state"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_window_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEDOC.get_window_state">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_window_state">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve the current state of the document window</span>
 <span class="sd">        </span>
 
@@ -288,9 +316,12 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.have_current"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.have_current">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.have_current">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.have_current">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">have_current</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns true if a document is loaded</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
@@ -308,9 +339,12 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.loaded"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.loaded">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.loaded">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.loaded">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">loaded</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns 1 if a document is loaded .</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  document name</span>
@@ -333,8 +367,11 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.get_window_position"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_window_position">[docs]</a>    <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEDOC.get_window_position">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.get_window_position">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -357,13 +394,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_position</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEDOC.set_window_position"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.set_window_position">[docs]</a>    <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEDOC.set_window_position">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.set_window_position">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -386,13 +426,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_position</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEDOC.read_only"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.read_only">[docs]</a>    <span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEDOC.read_only">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.read_only">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if a document is currently opened in a read-only mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -408,9 +451,12 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.load"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.load">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.load">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.load">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads a list of documents into the workspace</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  list of documents (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -439,9 +485,12 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.load_no_activate"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.load_no_activate">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXEDOC.load_no_activate">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.load_no_activate">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads a list of documents into the workspace</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  list of documents (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -468,8 +517,11 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.make_current"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.make_current">[docs]</a>    <span class="k">def</span> <span class="nf">make_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEDOC.make_current">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.make_current">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Makes this `GXEDOC &lt;geosoft.gxapi.GXEDOC&gt;` object the current active object to the user.</span>
 <span class="sd">        </span>
 
@@ -480,13 +532,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_current</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEDOC.set_window_state"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.set_window_state">[docs]</a>    <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEDOC.set_window_state">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.set_window_state">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Changes the state of the document window</span>
 <span class="sd">        </span>
 <span class="sd">        :param state:  :ref:`EDOC_WINDOW_STATE`</span>
@@ -499,13 +554,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEDOC.sync"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.sync">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEDOC.sync">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.sync">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sync</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Syncronize the Metadata of a document that is not currently open</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Document file name</span>
@@ -520,13 +578,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_sync</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXEDOC.sync_open"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.sync_open">[docs]</a>    <span class="k">def</span> <span class="nf">sync_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEDOC.sync_open">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.sync_open">[docs]</a>
+    <span class="k">def</span> <span class="nf">sync_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Syncronize the Metadata of a document</span>
 <span class="sd">        </span>
 
@@ -537,13 +598,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sync_open</span><span class="p">()</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEDOC.un_load"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEDOC.un_load">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unloads an edited document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of document to unload</span>
@@ -561,13 +625,16 @@
 <span class="sd">        Same as `un_load_verify &lt;geosoft.gxapi.GXEDOC.un_load_verify&gt;` with FALSE to prompt save.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEDOC.un_load_all"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_all">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEDOC.un_load_all">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_all">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_all</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unloads all opened documents</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`EDOC_TYPE`</span>
@@ -580,13 +647,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load_all</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEDOC.un_load_discard"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_discard">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEDOC.un_load_discard">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_discard">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_discard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unloads a document in the workspace, discards changes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of document to unload</span>
@@ -603,13 +673,16 @@
 <span class="sd">        **Note:** If the document is not loaded, nothing happens.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load_discard</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXEDOC.un_load_verify"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_verify">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXEDOC.un_load_verify">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.un_load_verify">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_verify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">verify</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Unloads an edited document, optional prompt to save.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:    Name of document to unload</span>
@@ -630,6 +703,7 @@
 <span class="sd">        If `EDOC_UNLOAD_NO_PROMPT &lt;geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT&gt;`, data is always saved.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDOC</span><span class="o">.</span><span class="n">_un_load_verify</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">verify</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
@@ -639,8 +713,10 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.copy"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXEDOC.copy">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copies a managed document to another document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param output:  Name of output document</span>
@@ -661,8 +737,11 @@
 
 
 
-<div class="viewcode-block" id="GXEDOC.save"><a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEDOC.save">
+<a class="viewcode-back" href="../../../GXEDOC.html#geosoft.gxapi.GXEDOC.save">[docs]</a>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save the managed document.</span>
 <span class="sd">        </span>
 
@@ -674,7 +753,9 @@
 
 <span class="sd">        **Note:** Save the managed document</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">()</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">()</span></div>
+</div>
+
         
 
 
@@ -704,7 +785,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDOC</a></li> 
@@ -712,8 +793,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

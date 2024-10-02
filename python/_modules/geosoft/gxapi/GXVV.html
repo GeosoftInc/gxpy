@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVV &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXVV &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVV</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -80,8 +77,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXVV"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV">[docs]</a><span class="k">class</span> <span class="nc">GXVV</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVV</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV">[docs]</a>
+<span class="k">class</span> <span class="nc">GXVV</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVV</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXVV class.</span>
 
 <span class="sd">    The `GXVV &lt;geosoft.gxapi.GXVV&gt;` class stores very long vector (array) data (such</span>
@@ -100,12 +99,17 @@
 <span class="sd">    See `GXVVU &lt;geosoft.gxapi.GXVVU&gt;` for more utility methods.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXVV.__init__"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXVV.__init__">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXVV</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXVV.null"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVV.null">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -113,8 +117,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXVV</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXVV.is_null"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.is_null">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -124,12 +131,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXVV.get_data"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.get_data">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy data from user memory to a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:     Start Location</span>
@@ -146,13 +156,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_data</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_data"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_data">[docs]</a>    <span class="k">def</span> <span class="nf">set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_data">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy data from user memory to a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:     Start Location</span>
@@ -169,13 +182,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_data</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.copy"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.copy">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy one `GXVV &lt;geosoft.gxapi.GXVV&gt;` to another.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_s:  Source</span>
@@ -186,13 +202,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">vv_s</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.copy2"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.copy2">[docs]</a>    <span class="k">def</span> <span class="nf">copy2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.copy2">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.copy2">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy part of a vector into part of another vector.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest:    Destination start element</span>
@@ -215,13 +234,16 @@
 <span class="sd">        Convert_GS if necessary.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy2</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.log"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_base</span><span class="p">,</span> <span class="n">log_mode</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.log">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.log">[docs]</a>
+    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_base</span><span class="p">,</span> <span class="n">log_mode</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply log to the vv.</span>
 <span class="sd">        </span>
 <span class="sd">        :param log_base:  :ref:`VV_LOG_BASE`</span>
@@ -239,13 +261,16 @@
 <span class="sd">        less than 0.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="p">(</span><span class="n">log_base</span><span class="p">,</span> <span class="n">log_mode</span><span class="p">,</span> <span class="n">log_min</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.log_linear"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.log_linear">[docs]</a>    <span class="k">def</span> <span class="nf">log_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.log_linear">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.log_linear">[docs]</a>
+    <span class="k">def</span> <span class="nf">log_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Take the log10 or original value of a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param log_min:  Minimum value</span>
@@ -268,13 +293,16 @@
 <span class="sd">        or 0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log_linear</span><span class="p">(</span><span class="n">log_min</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.mask"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask">[docs]</a>    <span class="k">def</span> <span class="nf">mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.mask">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask">[docs]</a>
+    <span class="k">def</span> <span class="nf">mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Mask one `GXVV &lt;geosoft.gxapi.GXVV&gt;` against another.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_m:  Mask `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -292,13 +320,16 @@
 <span class="sd">        the target will be lengthenned with dummies.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">vv_m</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.reverse"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.reverse">[docs]</a>    <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.reverse">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.reverse">[docs]</a>
+    <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reverses the order of the data in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 
@@ -307,13 +338,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_reverse</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.serial"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.serial">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.serial">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Serialize</span>
 <span class="sd">        </span>
 <span class="sd">        :type  bf:   GXBF</span>
@@ -323,13 +357,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.trans"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.trans">[docs]</a>    <span class="k">def</span> <span class="nf">trans</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.trans">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.trans">[docs]</a>
+    <span class="k">def</span> <span class="nf">trans</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Translate (`GXVV &lt;geosoft.gxapi.GXVV&gt;` + base ) * mult</span>
 <span class="sd">        </span>
 <span class="sd">        :param base:  Base value</span>
@@ -344,13 +381,16 @@
 <span class="sd">        **Note:** All `GXVV &lt;geosoft.gxapi.GXVV&gt;` types now supported.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_trans</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.abs"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.abs">[docs]</a>    <span class="k">def</span> <span class="nf">abs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.abs">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.abs">[docs]</a>
+    <span class="k">def</span> <span class="nf">abs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Take the absolute value of values in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 
@@ -359,13 +399,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_abs</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.add"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.add">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.add">[docs]</a>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add two VVs: VV_A + VV_B = VV_C</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_b:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` B</span>
@@ -378,13 +421,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.add2"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.add2">[docs]</a>    <span class="k">def</span> <span class="nf">add2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.add2">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.add2">[docs]</a>
+    <span class="k">def</span> <span class="nf">add2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add two VVs with linear factors: VV_A*f1 + VV_B*f2 = VV_C</span>
 <span class="sd">        </span>
 <span class="sd">        :param f1:    Multiplier f1 for A</span>
@@ -403,13 +449,16 @@
 <span class="sd">        **Note:** The multipliers must be defined and within the `GS_R8MN &lt;geosoft.gxapi.GS_R8MN&gt;` `GS_R8MX &lt;geosoft.gxapi.GS_R8MX&gt;` range.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add2</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.append"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_a</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.append">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.append">[docs]</a>
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_a</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Appends `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_a:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` to append</span>
@@ -420,13 +469,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_append</span><span class="p">(</span><span class="n">vv_a</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.crc"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.crc">[docs]</a>    <span class="k">def</span> <span class="nf">crc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.crc">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.crc">[docs]</a>
+    <span class="k">def</span> <span class="nf">crc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the CRC value of a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pul_crc:  Previous CRC `CRC_INIT_VALUE &lt;geosoft.gxapi.CRC_INIT_VALUE&gt;`</span>
@@ -445,8 +497,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.crc_inexact"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.crc_inexact">[docs]</a>    <span class="k">def</span> <span class="nf">crc_inexact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">,</span> <span class="n">float_bits</span><span class="p">,</span> <span class="n">double_bits</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.crc_inexact">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.crc_inexact">[docs]</a>
+    <span class="k">def</span> <span class="nf">crc_inexact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pul_crc</span><span class="p">,</span> <span class="n">float_bits</span><span class="p">,</span> <span class="n">double_bits</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the CRC value of a `GXVV &lt;geosoft.gxapi.GXVV&gt;` and allows you to specify</span>
 <span class="sd">        number of bits of floats/doubles to drop so that the CRC</span>
 <span class="sd">        will be same even of this are changed.</span>
@@ -473,9 +528,12 @@
 
 
 
-<div class="viewcode-block" id="GXVV.create"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.create">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVV.create">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:      :ref:`GEO_VAR`</span>
@@ -508,9 +566,12 @@
 
 
 
-<div class="viewcode-block" id="GXVV.create_ext"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.create_ext">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVV.create_ext">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.create_ext">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ext</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a `GXVV &lt;geosoft.gxapi.GXVV&gt;`, using one of the :ref:`GS_TYPES` special data types.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:      :ref:`GS_TYPES`</span>
@@ -536,9 +597,12 @@
 
 
 
-<div class="viewcode-block" id="GXVV.create_s"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVV.create_s">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.create_s">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a `GXVV &lt;geosoft.gxapi.GXVV&gt;`  from serialized source.</span>
 <span class="sd">        </span>
 <span class="sd">        :type  bf:  GXBF</span>
@@ -558,8 +622,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.diff"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.diff">[docs]</a>    <span class="k">def</span> <span class="nf">diff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.diff">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.diff">[docs]</a>
+    <span class="k">def</span> <span class="nf">diff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate differences.</span>
 <span class="sd">        </span>
 <span class="sd">        :param n:   Number of differences</span>
@@ -575,13 +642,16 @@
 <span class="sd">        in the `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_diff</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.divide"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.divide">[docs]</a>    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.divide">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.divide">[docs]</a>
+    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Divide one `GXVV &lt;geosoft.gxapi.GXVV&gt;` by another: VV_A / VV_B = VV_C</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_y:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` B</span>
@@ -594,13 +664,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_divide</span><span class="p">(</span><span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.fid_norm"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fid_norm">[docs]</a>    <span class="k">def</span> <span class="nf">fid_norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.fid_norm">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fid_norm">[docs]</a>
+    <span class="k">def</span> <span class="nf">fid_norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Re-sample a pair of `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s to match each other.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv2:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` to resample</span>
@@ -615,13 +688,16 @@
 <span class="sd">        and fid increment will be used.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fid_norm</span><span class="p">(</span><span class="n">vv2</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.fill_int"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fill_int">[docs]</a>    <span class="k">def</span> <span class="nf">fill_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.fill_int">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fill_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">fill_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Fill a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with an int value.</span>
 <span class="sd">        </span>
 <span class="sd">        :param value:  Value to fill with</span>
@@ -632,13 +708,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fill_int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.fill_double"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fill_double">[docs]</a>    <span class="k">def</span> <span class="nf">fill_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.fill_double">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fill_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">fill_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Fill a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with a real value.</span>
 <span class="sd">        </span>
 <span class="sd">        :param val:  Value to fill with</span>
@@ -649,13 +728,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fill_double</span><span class="p">(</span><span class="n">val</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.fill_string"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fill_string">[docs]</a>    <span class="k">def</span> <span class="nf">fill_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.fill_string">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.fill_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">fill_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Fill a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with a string value.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String</span>
@@ -666,13 +748,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fill_string</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.count_dummies"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.count_dummies">[docs]</a>    <span class="k">def</span> <span class="nf">count_dummies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.count_dummies">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.count_dummies">[docs]</a>
+    <span class="k">def</span> <span class="nf">count_dummies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Count the number of dummies in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Starting point in `GXVV &lt;geosoft.gxapi.GXVV&gt;` (0 for all)</span>
@@ -693,8 +778,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.find_dum"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.find_dum">[docs]</a>    <span class="k">def</span> <span class="nf">find_dum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">yn</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.find_dum">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.find_dum">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_dum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">yn</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Finds the first dummy or non-dummy value in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Lowest element in `GXVV &lt;geosoft.gxapi.GXVV&gt;` element to search</span>
@@ -724,8 +812,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.get_fid_expansion"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_fid_expansion">[docs]</a>    <span class="k">def</span> <span class="nf">get_fid_expansion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.get_fid_expansion">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_fid_expansion">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_fid_expansion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the Fiducial expansion from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 
@@ -742,8 +833,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.get_int"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_int">[docs]</a>    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.get_int">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get an integer element from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element wanted</span>
@@ -763,8 +857,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.get_string"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_string">[docs]</a>    <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.get_string">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a string element from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element wanted</span>
@@ -783,13 +880,16 @@
 <span class="sd">        are converted to &quot;*&quot; string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.get_ext_type"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_ext_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_ext_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.get_ext_type">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_ext_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_ext_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the internal data type of this VV</span>
 <span class="sd">        </span>
 
@@ -806,8 +906,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.index_max"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.index_max">[docs]</a>    <span class="k">def</span> <span class="nf">index_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.index_max">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.index_max">[docs]</a>
+    <span class="k">def</span> <span class="nf">index_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the index where the maximum value occurs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param max:  Maximum value (`rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` if all dummies or no data)</span>
@@ -829,8 +932,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.length"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.length">[docs]</a>    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.length">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.length">[docs]</a>
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns current `GXVV &lt;geosoft.gxapi.GXVV&gt;` length.</span>
 <span class="sd">        </span>
 
@@ -847,8 +953,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.index_insert"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.index_insert">[docs]</a>    <span class="k">def</span> <span class="nf">index_insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.index_insert">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.index_insert">[docs]</a>
+    <span class="k">def</span> <span class="nf">index_insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Insert items into a `GXVV &lt;geosoft.gxapi.GXVV&gt;` using an index `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_d:  Data items to insert (must be same type as output data `GXVV &lt;geosoft.gxapi.GXVV&gt;`)</span>
@@ -878,13 +987,16 @@
 <span class="sd">        before you write it back to the channel.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_index_insert</span><span class="p">(</span><span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.index_order"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.index_order">[docs]</a>    <span class="k">def</span> <span class="nf">index_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.index_order">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.index_order">[docs]</a>
+    <span class="k">def</span> <span class="nf">index_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reorder a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_d:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` to order</span>
@@ -898,13 +1010,16 @@
 <span class="sd">        `GXVV &lt;geosoft.gxapi.GXVV&gt;`. Please make sure that the index holds valid information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_index_order</span><span class="p">(</span><span class="n">vv_d</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.init_index"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.init_index">[docs]</a>    <span class="k">def</span> <span class="nf">init_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.init_index">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.init_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">init_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize an index `GXVV &lt;geosoft.gxapi.GXVV&gt;` to values 0, 1, 2, etc...</span>
 <span class="sd">        </span>
 <span class="sd">        :param n:   Final length of `GXVV &lt;geosoft.gxapi.GXVV&gt;` (-1 to use current length).</span>
@@ -919,13 +1034,16 @@
 <span class="sd">        `index_order &lt;geosoft.gxapi.GXVV.index_order&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_init_index</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.inv_log"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.inv_log">[docs]</a>    <span class="k">def</span> <span class="nf">inv_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_base</span><span class="p">,</span> <span class="n">log_mode</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.inv_log">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.inv_log">[docs]</a>
+    <span class="k">def</span> <span class="nf">inv_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_base</span><span class="p">,</span> <span class="n">log_mode</span><span class="p">,</span> <span class="n">log_min</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Inverse of the `log &lt;geosoft.gxapi.GXVV.log&gt;` function.</span>
 <span class="sd">        </span>
 <span class="sd">        :param log_base:  :ref:`VV_LOG_BASE`</span>
@@ -942,13 +1060,16 @@
 <span class="sd">        **Note:** This is the inverse function for `log &lt;geosoft.gxapi.GXVV.log&gt;`, with the same inputs.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_inv_log</span><span class="p">(</span><span class="n">log_base</span><span class="p">,</span> <span class="n">log_mode</span><span class="p">,</span> <span class="n">log_min</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.order"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.order">[docs]</a>    <span class="k">def</span> <span class="nf">order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rep</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.order">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.order">[docs]</a>
+    <span class="k">def</span> <span class="nf">order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rep</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Identifies the data size order of the elements.</span>
 <span class="sd">        </span>
 <span class="sd">        :param rep:  Returned: Do any values repeat (0: No, 1: Yes)?</span>
@@ -967,8 +1088,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.lines_to_xy"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.lines_to_xy">[docs]</a>    <span class="k">def</span> <span class="nf">lines_to_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.lines_to_xy">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.lines_to_xy">[docs]</a>
+    <span class="k">def</span> <span class="nf">lines_to_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a 2D Line segment `GXVV &lt;geosoft.gxapi.GXVV&gt;` into X and Y VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  Output `GXVV &lt;geosoft.gxapi.GXVV&gt;` with X locations (`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`)</span>
@@ -988,13 +1112,16 @@
 <span class="sd">        X and Y values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_lines_to_xy</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.lookup_index"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.lookup_index">[docs]</a>    <span class="k">def</span> <span class="nf">lookup_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvi</span><span class="p">,</span> <span class="n">vvr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.lookup_index">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.lookup_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">lookup_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvi</span><span class="p">,</span> <span class="n">vvr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Lookup a `GXVV &lt;geosoft.gxapi.GXVV&gt;` from another `GXVV &lt;geosoft.gxapi.GXVV&gt;` using an index `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvi:  Index `GXVV &lt;geosoft.gxapi.GXVV&gt;` of REAL</span>
@@ -1016,13 +1143,16 @@
 <span class="sd">        See also `setup_index &lt;geosoft.gxapi.GXVV.setup_index&gt;` for an example of how this can be implemented.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_lookup_index</span><span class="p">(</span><span class="n">vvi</span><span class="p">,</span> <span class="n">vvr</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.make_mem_based"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.make_mem_based">[docs]</a>    <span class="k">def</span> <span class="nf">make_mem_based</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.make_mem_based">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.make_mem_based">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_mem_based</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make this `GXVV &lt;geosoft.gxapi.GXVV&gt;` use regular instead of virtual memory.</span>
 <span class="sd">        </span>
 
@@ -1051,13 +1181,16 @@
 <span class="sd">            `GXGEO.get_ptr_vv &lt;geosoft.gxapi.GXGEO.get_ptr_vv&gt;` in gx_extern.h</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_mem_based</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.mask_and"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask_and">[docs]</a>    <span class="k">def</span> <span class="nf">mask_and</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.mask_and">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask_and">[docs]</a>
+    <span class="k">def</span> <span class="nf">mask_and</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create mask from logical AND of two VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_y:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` B</span>
@@ -1072,13 +1205,16 @@
 <span class="sd">        **Note:** If both values are non-dummies, then result is 1, else dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_mask_and</span><span class="p">(</span><span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.mask_or"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask_or">[docs]</a>    <span class="k">def</span> <span class="nf">mask_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.mask_or">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask_or">[docs]</a>
+    <span class="k">def</span> <span class="nf">mask_or</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create mask from logical OR of two VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_y:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` B</span>
@@ -1093,13 +1229,16 @@
 <span class="sd">        **Note:** If either values is non-dummy, then result is 1, else dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_mask_or</span><span class="p">(</span><span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.mask_str"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask_str">[docs]</a>    <span class="k">def</span> <span class="nf">mask_str</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.mask_str">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.mask_str">[docs]</a>
+    <span class="k">def</span> <span class="nf">mask_str</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Mask one `GXVV &lt;geosoft.gxapi.GXVV&gt;` against another using a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_m:     Mask `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1119,13 +1258,16 @@
 <span class="sd">        the target will be lengthenned with dummies before applying the mask.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_mask_str</span><span class="p">(</span><span class="n">vv_m</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.multiply"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.multiply">[docs]</a>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.multiply">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.multiply">[docs]</a>
+    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Multiply two VVs: VV_A * VV_B = VV_C</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_y:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` B</span>
@@ -1138,13 +1280,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_multiply</span><span class="p">(</span><span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.amplitude_3d"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.amplitude_3d">[docs]</a>    <span class="k">def</span> <span class="nf">amplitude_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.amplitude_3d">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.amplitude_3d">[docs]</a>
+    <span class="k">def</span> <span class="nf">amplitude_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the 3D length for XYZ component VVs</span>
 <span class="sd">        </span>
 <span class="sd">        :param v_vx:  X component `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1159,13 +1304,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_amplitude_3d</span><span class="p">(</span><span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.polygon_mask"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.polygon_mask">[docs]</a>    <span class="k">def</span> <span class="nf">polygon_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">rvv</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">dummy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.polygon_mask">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.polygon_mask">[docs]</a>
+    <span class="k">def</span> <span class="nf">polygon_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">rvv</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">dummy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Mask a `GXVV &lt;geosoft.gxapi.GXVV&gt;` using XY data and a polygon</span>
 <span class="sd">        </span>
 <span class="sd">        :param yvv:    Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1184,13 +1332,16 @@
 <span class="sd">        **Note:** The VVs has to be the same length</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_polygon_mask</span><span class="p">(</span><span class="n">yvv</span><span class="p">,</span> <span class="n">rvv</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">dummy</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVV.project"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.project">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVV.project">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.project">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">project</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pj</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method projects an X and Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X</span>
@@ -1206,13 +1357,16 @@
 <span class="sd">        **Note:** This function is equivalent to `GXPJ.convert_vv &lt;geosoft.gxapi.GXPJ.convert_vv&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVV</span><span class="o">.</span><span class="n">_project</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pj</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVV.project_3d"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.project_3d">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVV.project_3d">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.project_3d">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">project_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pj</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method projects an X,Y,Z `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X</span>
@@ -1230,13 +1384,16 @@
 <span class="sd">        **Note:** This function is equivalent to `GXPJ.convert_vv3 &lt;geosoft.gxapi.GXPJ.convert_vv3&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVV</span><span class="o">.</span><span class="n">_project_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pj</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.range_double"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.range_double">[docs]</a>    <span class="k">def</span> <span class="nf">range_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.range_double">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.range_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">range_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the min. and max. values of a `GXVV &lt;geosoft.gxapi.GXVV&gt;` while ignoring dummies.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:  Minimum value - returned</span>
@@ -1251,13 +1408,16 @@
 <span class="sd">        **Note:** Minimum and maximum become `GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;` if entire `GXVV &lt;geosoft.gxapi.GXVV&gt;` is dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_range_double</span><span class="p">(</span><span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.re_fid"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.re_fid">[docs]</a>    <span class="k">def</span> <span class="nf">re_fid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.re_fid">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.re_fid">[docs]</a>
+    <span class="k">def</span> <span class="nf">re_fid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Re-sample a `GXVV &lt;geosoft.gxapi.GXVV&gt;` to a new fid start/icrement</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:   New fid start</span>
@@ -1272,13 +1432,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_re_fid</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.re_fid_vv"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.re_fid_vv">[docs]</a>    <span class="k">def</span> <span class="nf">re_fid_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.re_fid_vv">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.re_fid_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">re_fid_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Re-sample a `GXVV &lt;geosoft.gxapi.GXVV&gt;` to match another `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_m:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` model (fid increment and start)</span>
@@ -1292,13 +1455,16 @@
 <span class="sd">        `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s based on this flag if it is used.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_re_fid_vv</span><span class="p">(</span><span class="n">vv_m</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.re_sample"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.re_sample">[docs]</a>    <span class="k">def</span> <span class="nf">re_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c_start</span><span class="p">,</span> <span class="n">c_incr</span><span class="p">,</span> <span class="n">n_start</span><span class="p">,</span> <span class="n">n_incr</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">unused</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.re_sample">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.re_sample">[docs]</a>
+    <span class="k">def</span> <span class="nf">re_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c_start</span><span class="p">,</span> <span class="n">c_incr</span><span class="p">,</span> <span class="n">n_start</span><span class="p">,</span> <span class="n">n_incr</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">unused</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Resamples a `GXVV &lt;geosoft.gxapi.GXVV&gt;` from one fid/incr to another fid/incr.</span>
 <span class="sd">        </span>
 <span class="sd">        :param c_start:  Current start fid</span>
@@ -1319,13 +1485,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_re_sample</span><span class="p">(</span><span class="n">c_start</span><span class="p">,</span> <span class="n">c_incr</span><span class="p">,</span> <span class="n">n_start</span><span class="p">,</span> <span class="n">n_incr</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">unused</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.get_fid_incr"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_fid_incr">[docs]</a>    <span class="k">def</span> <span class="nf">get_fid_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.get_fid_incr">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_fid_incr">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_fid_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the Fiducial increment from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 
@@ -1342,8 +1511,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.get_fid_start"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_fid_start">[docs]</a>    <span class="k">def</span> <span class="nf">get_fid_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.get_fid_start">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_fid_start">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_fid_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the Fiducial start from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 
@@ -1360,8 +1532,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.get_double"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_double">[docs]</a>    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.get_double">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.get_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a real element from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element wanted</span>
@@ -1384,8 +1559,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.sum"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sum">[docs]</a>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.sum">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sum">[docs]</a>
+    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the sum of the values in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 
@@ -1404,8 +1582,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.weighted_mean"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.weighted_mean">[docs]</a>    <span class="k">def</span> <span class="nf">weighted_mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_weights</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.weighted_mean">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.weighted_mean">[docs]</a>
+    <span class="k">def</span> <span class="nf">weighted_mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_weights</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the weighted average of the values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_weights:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` of weights</span>
@@ -1426,8 +1607,11 @@
 
 
 
-<div class="viewcode-block" id="GXVV.set_fid_expansion"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_fid_expansion">[docs]</a>    <span class="k">def</span> <span class="nf">set_fid_expansion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expand</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVV.set_fid_expansion">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_fid_expansion">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fid_expansion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expand</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the Fiducial expansion from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param expand:  Expansion setting (1 or greater)</span>
@@ -1438,13 +1622,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_fid_expansion</span><span class="p">(</span><span class="n">expand</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_fid_incr"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_fid_incr">[docs]</a>    <span class="k">def</span> <span class="nf">set_fid_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_fid_incr">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_fid_incr">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fid_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the Fiducial increment of a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param incr:  New increment</span>
@@ -1455,13 +1642,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_fid_incr</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_fid_start"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_fid_start">[docs]</a>    <span class="k">def</span> <span class="nf">set_fid_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_fid_start">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_fid_start">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fid_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the Fiducial start of a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  New start</span>
@@ -1472,13 +1662,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_fid_start</span><span class="p">(</span><span class="n">start</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_int"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_int">[docs]</a>    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_int">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set an integer element in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element to set</span>
@@ -1501,13 +1694,16 @@
 <span class="sd">        an earlier time.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_int_n"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_int_n">[docs]</a>    <span class="k">def</span> <span class="nf">set_int_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_int_n">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_int_n">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_int_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set N integer elements in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Start element (&gt;= 0)</span>
@@ -1526,13 +1722,16 @@
 <span class="sd">        increased.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int_n</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_len"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_len">[docs]</a>    <span class="k">def</span> <span class="nf">set_len</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_len">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_len">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_len</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the length of a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param size:  New length (number of elements)</span>
@@ -1552,13 +1751,16 @@
 <span class="sd">        an earlier time.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_len</span><span class="p">(</span><span class="n">size</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_double"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_double">[docs]</a>    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_double">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a real element in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element to set</span>
@@ -1581,13 +1783,16 @@
 <span class="sd">        an earlier time.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_double_n"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_double_n">[docs]</a>    <span class="k">def</span> <span class="nf">set_double_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_double_n">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_double_n">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_double_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set N real elements in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Start element (&gt;= 0)</span>
@@ -1606,13 +1811,16 @@
 <span class="sd">        increased.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_double_n</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_string"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_string">[docs]</a>    <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_string">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a string element in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element to set</span>
@@ -1635,13 +1843,16 @@
 <span class="sd">        an earlier time.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.set_string_n"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_string_n">[docs]</a>    <span class="k">def</span> <span class="nf">set_string_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.set_string_n">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.set_string_n">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_string_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set N string elements in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Start element (&gt;= 0)</span>
@@ -1660,13 +1871,16 @@
 <span class="sd">        increased.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_string_n</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.setup_index"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.setup_index">[docs]</a>    <span class="k">def</span> <span class="nf">setup_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvq</span><span class="p">,</span> <span class="n">vvi</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.setup_index">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.setup_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">setup_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvq</span><span class="p">,</span> <span class="n">vvi</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Setup an index `GXVV &lt;geosoft.gxapi.GXVV&gt;` from VV1 to VV2.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvq:    Query `GXVV &lt;geosoft.gxapi.GXVV&gt;` (same type as Data `GXVV &lt;geosoft.gxapi.GXVV&gt;`)</span>
@@ -1707,13 +1921,16 @@
 <span class="sd">        ``hVVy2`` at the input indices contained in ``hVVi``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup_index</span><span class="p">(</span><span class="n">vvq</span><span class="p">,</span> <span class="n">vvi</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">space</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.sort"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.sort">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort">[docs]</a>
+    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sort a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param order:  :ref:`VV_SORT`</span>
@@ -1724,13 +1941,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sort</span><span class="p">(</span><span class="n">order</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.sort_index"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index">[docs]</a>    <span class="k">def</span> <span class="nf">sort_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ivv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.sort_index">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">sort_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ivv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sort index `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on a data `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ivv:  Index `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type INT</span>
@@ -1745,13 +1965,16 @@
 <span class="sd">        to order a group of `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sort_index</span><span class="p">(</span><span class="n">ivv</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.sort_index1"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index1">[docs]</a>    <span class="k">def</span> <span class="nf">sort_index1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.sort_index1">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index1">[docs]</a>
+    <span class="k">def</span> <span class="nf">sort_index1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sort index `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on 1 data `GXVV &lt;geosoft.gxapi.GXVV&gt;` - set orders.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ivv:   Index `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type INT</span>
@@ -1772,13 +1995,16 @@
 <span class="sd">        are the same, the ternary values are compared, etc.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sort_index1</span><span class="p">(</span><span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.sort_index2"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index2">[docs]</a>    <span class="k">def</span> <span class="nf">sort_index2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d2_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.sort_index2">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index2">[docs]</a>
+    <span class="k">def</span> <span class="nf">sort_index2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d2_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sort index `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on 2 data VVs - set orders.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d2_vv:  Secondary Data `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1803,13 +2029,16 @@
 <span class="sd">        are the same, the ternary values are compared, etc</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sort_index2</span><span class="p">(</span><span class="n">d2_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.sort_index3"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index3">[docs]</a>    <span class="k">def</span> <span class="nf">sort_index3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d2_vv</span><span class="p">,</span> <span class="n">d3_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">,</span> <span class="n">ord3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.sort_index3">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index3">[docs]</a>
+    <span class="k">def</span> <span class="nf">sort_index3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d2_vv</span><span class="p">,</span> <span class="n">d3_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">,</span> <span class="n">ord3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sort index `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on 3 data VVs - set orders.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d2_vv:  Secondary Data `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1838,13 +2067,16 @@
 <span class="sd">        are the same, the third values are compared, etc</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sort_index3</span><span class="p">(</span><span class="n">d2_vv</span><span class="p">,</span> <span class="n">d3_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">,</span> <span class="n">ord3</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.sort_index4"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index4">[docs]</a>    <span class="k">def</span> <span class="nf">sort_index4</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d2_vv</span><span class="p">,</span> <span class="n">d3_vv</span><span class="p">,</span> <span class="n">d4_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">,</span> <span class="n">ord3</span><span class="p">,</span> <span class="n">ord4</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.sort_index4">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.sort_index4">[docs]</a>
+    <span class="k">def</span> <span class="nf">sort_index4</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d2_vv</span><span class="p">,</span> <span class="n">d3_vv</span><span class="p">,</span> <span class="n">d4_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">,</span> <span class="n">ord3</span><span class="p">,</span> <span class="n">ord4</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sort index `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on 4 data VVs - set orders.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d2_vv:  Secondary Data `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1877,13 +2109,16 @@
 <span class="sd">        are the same, the third values are compared, etc</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sort_index4</span><span class="p">(</span><span class="n">d2_vv</span><span class="p">,</span> <span class="n">d3_vv</span><span class="p">,</span> <span class="n">d4_vv</span><span class="p">,</span> <span class="n">ivv</span><span class="p">,</span> <span class="n">ord1</span><span class="p">,</span> <span class="n">ord2</span><span class="p">,</span> <span class="n">ord3</span><span class="p">,</span> <span class="n">ord4</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVV.statistics"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.statistics">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVV.statistics">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.statistics">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">statistics</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a `GXVV &lt;geosoft.gxapi.GXVV&gt;` to a `GXST &lt;geosoft.gxapi.GXST&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:  `GXST &lt;geosoft.gxapi.GXST&gt;` Handle</span>
@@ -1896,13 +2131,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVV</span><span class="o">.</span><span class="n">_statistics</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">st</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.subtract"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.subtract">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.subtract">[docs]</a>
+    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Subtract one `GXVV &lt;geosoft.gxapi.GXVV&gt;` from another: VV_A - VV_B = VV_C</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_y:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` B</span>
@@ -1915,13 +2153,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_subtract</span><span class="p">(</span><span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.swap"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.swap">[docs]</a>    <span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.swap">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.swap">[docs]</a>
+    <span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Swaps the bytes of the SHORT, USHORT, LONG, FLOAT and DOUBLE vv&#39;s.</span>
 <span class="sd">        Other vv&#39;s are not affected by this method. This is used</span>
 <span class="sd">        primarily with changing the order of bytes for other machine</span>
@@ -1933,13 +2174,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_swap</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.window"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.window">[docs]</a>    <span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.window">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.window">[docs]</a>
+    <span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Limit the elements of a vv to a range.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:   Min Val</span>
@@ -1954,13 +2198,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_window</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVV.write_xml"><a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.write_xml">[docs]</a>    <span class="k">def</span> <span class="nf">write_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">decimal</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVV.write_xml">
+<a class="viewcode-back" href="../../../GXVV.html#geosoft.gxapi.GXVV.write_xml">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">decimal</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write the `GXVV &lt;geosoft.gxapi.GXVV&gt;` data as an XML object with bytes and formating.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:     XML file to create</span>
@@ -1975,6 +2222,7 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_xml</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">format</span><span class="p">,</span> <span class="n">decimal</span><span class="p">)</span></div>
+
         
 
 
@@ -1999,6 +2247,7 @@
     
     <span class="k">def</span> <span class="nf">get_data_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_elements</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">gxapi_cy_extend</span><span class="o">.</span><span class="n">GXMemMethods</span><span class="o">.</span><span class="n">get_data_array_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_internal_p</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">(),</span> <span class="n">start</span><span class="p">,</span> <span class="n">num_elements</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">)</span></div>
+
 <span class="c1">### endblock ClassExtend</span>
 
 
@@ -2019,7 +2268,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVV</a></li> 
@@ -2027,8 +2276,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

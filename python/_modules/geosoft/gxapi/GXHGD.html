@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXHGD &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXHGD &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXHGD</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXHGD"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD">[docs]</a><span class="k">class</span> <span class="nc">GXHGD</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapHGD</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXHGD">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD">[docs]</a>
+<span class="k">class</span> <span class="nc">GXHGD</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapHGD</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXHGD class.</span>
 
 <span class="sd">    High Performance Grid. Designed to place grid data</span>
@@ -89,12 +88,17 @@
 <span class="sd">    resolution.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXHGD.__init__"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXHGD.__init__">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXHGD</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXHGD.null"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXHGD.null">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXHGD &lt;geosoft.gxapi.GXHGD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXHGD &lt;geosoft.gxapi.GXHGD&gt;`</span>
@@ -102,8 +106,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXHGD</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXHGD.is_null"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXHGD.is_null">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -113,12 +120,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXHGD.create"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXHGD.create">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a handle to an `GXHGD &lt;geosoft.gxapi.GXHGD&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File Name</span>
@@ -139,8 +149,11 @@
 
 
 
-<div class="viewcode-block" id="GXHGD.export_img"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.export_img">[docs]</a>    <span class="k">def</span> <span class="nf">export_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXHGD.export_img">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.export_img">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export all layers of this `GXHGD &lt;geosoft.gxapi.GXHGD&gt;` into grid files.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of grids (each layers adds _Number to the name)</span>
@@ -151,13 +164,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_img</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXHGD.get_meta"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXHGD.get_meta">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.get_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the metadata of a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object to save `GXHGD &lt;geosoft.gxapi.GXHGD&gt;`&#39;s meta to</span>
@@ -168,13 +184,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXHGD.h_create_img"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.h_create_img">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXHGD.h_create_img">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.h_create_img">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">h_create_img</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make an `GXHGD &lt;geosoft.gxapi.GXHGD&gt;` from an `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:   Image Handle</span>
@@ -195,8 +214,11 @@
 
 
 
-<div class="viewcode-block" id="GXHGD.set_meta"><a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXHGD.set_meta">
+<a class="viewcode-back" href="../../../GXHGD.html#geosoft.gxapi.GXHGD.set_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the metadata of a grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object to add to `GXHGD &lt;geosoft.gxapi.GXHGD&gt;`&#39;s meta</span>
@@ -206,7 +228,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -236,7 +260,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXHGD</a></li> 
@@ -244,8 +268,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

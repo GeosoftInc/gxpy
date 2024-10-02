@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GX3DC class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GX3DC class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,22 +28,40 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GX3DC class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GX3DC class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DC"><code class="docutils literal notranslate"><span class="pre">GX3DC</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DC.__init__"><code class="docutils literal notranslate"><span class="pre">GX3DC.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DC.create"><code class="docutils literal notranslate"><span class="pre">GX3DC.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DC.destroy_internal"><code class="docutils literal notranslate"><span class="pre">GX3DC.destroy_internal()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DC.get_geo_view"><code class="docutils literal notranslate"><span class="pre">GX3DC.get_geo_view()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DC.is_null"><code class="docutils literal notranslate"><span class="pre">GX3DC.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GX3DC.null"><code class="docutils literal notranslate"><span class="pre">GX3DC.null()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -61,11 +77,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gx3dc-class">
-<span id="gx3dc"></span><h1>GX3DC class<a class="headerlink" href="#gx3dc-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gx3dc-class">
+<span id="gx3dc"></span><h1>GX3DC class<a class="headerlink" href="#gx3dc-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GX3DC">
-<em class="property">class </em><code class="sig-name descname">GX3DC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GX3DC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC" title="Link to this definition">¶</a></dt>
 <dd><p>GX3DC class.</p>
 <p>This is a 3D container class which facilitates rendering a 3D viewport
 to controls. To be used in tandem with the Geosoft.View3D.View class
@@ -73,24 +89,23 @@ present in geoengine.3dv.csharp. Creation of the 3D container is
 facilitated through Create_3DC, and disposal through the instance
 method Destroy_3DC.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DC.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DC.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DC.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DC.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create a 3D view container which can be used to instantiate a full 3D View.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>handle</strong> (<em>int</em>) – Window handle for the OpenGL context.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DC" title="geosoft.gxapi.GX3DC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DC</span></code></a> object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GX3DC" title="geosoft.gxapi.GX3DC">GX3DC</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GX3DC" title="geosoft.gxapi.GX3DC.GX3DC">GX3DC</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -104,8 +119,8 @@ method Destroy_3DC.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DC.destroy_internal">
-<code class="sig-name descname">destroy_internal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.destroy_internal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.destroy_internal" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DC.destroy_internal">
+<span class="sig-name descname"><span class="pre">destroy_internal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.destroy_internal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.destroy_internal" title="Link to this definition">¶</a></dt>
 <dd><p>Destroys a 3D container object and cleans up any unmanaged resources.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 2022.2.</span></p>
@@ -114,12 +129,12 @@ method Destroy_3DC.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DC.get_geo_view">
-<code class="sig-name descname">get_geo_view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.get_geo_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.get_geo_view" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DC.get_geo_view">
+<span class="sig-name descname"><span class="pre">get_geo_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.get_geo_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.get_geo_view" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves the GeoView associated with the 3D container.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Type.INT64_T</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>9</p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -129,36 +144,36 @@ method Destroy_3DC.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DC.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DC.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GX3DC.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GX3DC.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GX3DC.html#GX3DC.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GX3DC.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GX3DC" title="geosoft.gxapi.GX3DC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DC</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GX3DC" title="geosoft.gxapi.GX3DC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DC</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DC" title="geosoft.gxapi.GX3DC">GX3DC</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GX3DC" title="geosoft.gxapi.GX3DC.GX3DC">GX3DC</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -173,14 +188,14 @@ method Destroy_3DC.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GX3DC class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXLTB &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXLTB &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXLTB</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXLTB"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB">[docs]</a><span class="k">class</span> <span class="nc">GXLTB</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLTB</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB">[docs]</a>
+<span class="k">class</span> <span class="nc">GXLTB</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapLTB</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXLTB class.</span>
 
 <span class="sd">    An `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` object is typically created from a CSV (comma-separated values)</span>
@@ -107,12 +106,17 @@
 <span class="sd">    Comment and empty lines are ignored.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXLTB.__init__"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXLTB.__init__">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXLTB</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXLTB.null"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXLTB.null">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
@@ -120,8 +124,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXLTB</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXLTB.is_null"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.is_null">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -131,12 +138,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXLTB.add_record"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.add_record">[docs]</a>    <span class="k">def</span> <span class="nf">add_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.add_record">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.add_record">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a new record.</span>
 <span class="sd">        </span>
 <span class="sd">        :param key:  Key name</span>
@@ -152,13 +162,16 @@
 <span class="sd">        and the record number is returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">rec</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_record</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rec</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.contract"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.contract">[docs]</a>    <span class="k">def</span> <span class="nf">contract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lt_bc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.contract">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.contract">[docs]</a>
+    <span class="k">def</span> <span class="nf">contract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lt_bc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Contract the contents of two same-key and same-fields tables.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lt_bc:  Contract `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
@@ -186,9 +199,12 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.create"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.create">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXLTB.create">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` object from a file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:   File name, .csv assumed, searched locally then in GEOSOFT.</span>
@@ -215,9 +231,12 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.create_crypt"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.create_crypt">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXLTB.create_crypt">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.create_crypt">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_crypt</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">crypt</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` object from an encrypted file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:            File name, .csv assumed, searched locally then in GEOSOFT.</span>
@@ -248,9 +267,12 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.create_ex"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.create_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXLTB.create_ex">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.create_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` object from a file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:            File name, .csv assumed, searched locally then in GEOSOFT.</span>
@@ -280,8 +302,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.delete_record"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.delete_record">[docs]</a>    <span class="k">def</span> <span class="nf">delete_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.delete_record">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.delete_record">[docs]</a>
+    <span class="k">def</span> <span class="nf">delete_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Delete a record.</span>
 <span class="sd">        </span>
 <span class="sd">        :param rec:  Record number to delete</span>
@@ -295,6 +320,7 @@
 <span class="sd">        by 1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_delete_record</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span></div>
+
         
 
 
@@ -302,8 +328,10 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.get_con_lst"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_con_lst">[docs]</a>    <span class="k">def</span> <span class="nf">get_con_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">match_type</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.get_con_lst">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_con_lst">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_con_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">match_type</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Populate a `GXLST &lt;geosoft.gxapi.GXLST&gt;` with `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` names from matching fields.</span>
 <span class="sd">        </span>
 <span class="sd">        :param fld:         Field</span>
@@ -324,13 +352,16 @@
 <span class="sd">        `GXLST &lt;geosoft.gxapi.GXLST&gt;` values will be the `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` record numbers.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_con_lst</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">match_type</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.get_lst"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_lst">[docs]</a>    <span class="k">def</span> <span class="nf">get_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.get_lst">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_lst">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Populate an `GXLST &lt;geosoft.gxapi.GXLST&gt;` with `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` names</span>
 <span class="sd">        </span>
 <span class="sd">        :param fld:  Field to get, 0 for key field</span>
@@ -347,13 +378,16 @@
 <span class="sd">        `GXLST &lt;geosoft.gxapi.GXLST&gt;` values will be the `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` record numbers.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_lst</span><span class="p">(</span><span class="n">fld</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.get_lst2"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_lst2">[docs]</a>    <span class="k">def</span> <span class="nf">get_lst2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld_n</span><span class="p">,</span> <span class="n">fld_v</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.get_lst2">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_lst2">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_lst2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fld_n</span><span class="p">,</span> <span class="n">fld_v</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Populate an `GXLST &lt;geosoft.gxapi.GXLST&gt;` with `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` names and values</span>
 <span class="sd">        </span>
 <span class="sd">        :param fld_n:  Field for names, 0 for key field</span>
@@ -372,13 +406,16 @@
 <span class="sd">        `GXLST &lt;geosoft.gxapi.GXLST&gt;` values will come from value field specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_lst2</span><span class="p">(</span><span class="n">fld_n</span><span class="p">,</span> <span class="n">fld_v</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.fields"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.fields">[docs]</a>    <span class="k">def</span> <span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.fields">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.fields">[docs]</a>
+    <span class="k">def</span> <span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get number of fields.</span>
 <span class="sd">        </span>
 
@@ -395,8 +432,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.find_field"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.find_field">[docs]</a>    <span class="k">def</span> <span class="nf">find_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.find_field">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.find_field">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the field number for the specified field.</span>
 <span class="sd">        </span>
 <span class="sd">        :param field:  Field name</span>
@@ -416,8 +456,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.find_key"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.find_key">[docs]</a>    <span class="k">def</span> <span class="nf">find_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.find_key">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.find_key">[docs]</a>
+    <span class="k">def</span> <span class="nf">find_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the key index of a record.</span>
 <span class="sd">        </span>
 <span class="sd">        :param key:  Key name</span>
@@ -437,8 +480,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.get_field"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_field">[docs]</a>    <span class="k">def</span> <span class="nf">get_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_num</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.get_field">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_field">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_num</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a field name by index.</span>
 <span class="sd">        </span>
 <span class="sd">        :param field_num:  Field number</span>
@@ -453,13 +499,16 @@
 <span class="sd">        **Note:** If the record or field are out of range, an empty string is returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">field</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_field</span><span class="p">(</span><span class="n">field_num</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.get_int"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_int">[docs]</a>    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.get_int">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a int entry from the `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param record:  Record number</span>
@@ -481,8 +530,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.get_string"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_string">[docs]</a>    <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.get_string">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get an entry from the `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param record:  Record number</span>
@@ -500,13 +552,16 @@
 <span class="sd">        an empty string or dummy value is returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">token</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.get_english_string"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_english_string">[docs]</a>    <span class="k">def</span> <span class="nf">get_english_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.get_english_string">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_english_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_english_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the English entry from the `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param record:  Record number</span>
@@ -524,13 +579,16 @@
 <span class="sd">        an empty string or dummy value is returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">token</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_english_string</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.records"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.records">[docs]</a>    <span class="k">def</span> <span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.records">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.records">[docs]</a>
+    <span class="k">def</span> <span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get number of records in `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`.</span>
 <span class="sd">        </span>
 
@@ -547,8 +605,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.search"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.search">[docs]</a>    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.search">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.search">[docs]</a>
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">fld</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Search for a record containing field value</span>
 <span class="sd">        </span>
 <span class="sd">        :param rec:    Search start record</span>
@@ -572,8 +633,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.merge"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.merge">[docs]</a>    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lt_bc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.merge">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.merge">[docs]</a>
+    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lt_bc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge the contents of two same-key tables.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lt_bc:  Child `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
@@ -609,8 +673,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.get_double"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_double">[docs]</a>    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.get_double">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.get_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a real entry from the `GXLTB &lt;geosoft.gxapi.GXLTB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param record:  Record number</span>
@@ -632,8 +699,11 @@
 
 
 
-<div class="viewcode-block" id="GXLTB.save"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXLTB.save">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.save">[docs]</a>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` changes to existing or new file</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File name, .csv assumed.  If &quot;&quot;, save to original file.</span>
@@ -644,13 +714,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.save_crypt"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.save_crypt">[docs]</a>    <span class="k">def</span> <span class="nf">save_crypt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">crypt</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.save_crypt">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.save_crypt">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_crypt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">crypt</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` to a new file using encryption</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:   File name, .csv assumed.  If &quot;&quot;, save to original file.</span>
@@ -663,13 +736,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_crypt</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crypt</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.set_int"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.set_int">[docs]</a>    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.set_int">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.set_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a long entry</span>
 <span class="sd">        </span>
 <span class="sd">        :param record:  Record number</span>
@@ -684,13 +760,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.set_double"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.set_double">[docs]</a>    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.set_double">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.set_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a double entry</span>
 <span class="sd">        </span>
 <span class="sd">        :param record:  Record number</span>
@@ -705,13 +784,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXLTB.set_string"><a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.set_string">[docs]</a>    <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXLTB.set_string">
+<a class="viewcode-back" href="../../../GXLTB.html#geosoft.gxapi.GXLTB.set_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set an entry</span>
 <span class="sd">        </span>
 <span class="sd">        :param record:  Record number</span>
@@ -725,7 +807,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
         
 
 
@@ -755,7 +839,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXLTB</a></li> 
@@ -763,8 +847,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

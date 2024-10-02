@@ -1,7 +1,47 @@
-geosoft.gxpy.view submodule
-=============================================
+﻿geosoft.gxpy.view
+=================
 
 .. automodule:: geosoft.gxpy.view
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _crooked_path_from_ipj
+      _plane_err
+      _t
+      delete_files
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CrookedPath
+      PlaneReliefSurfaceInfo
+      View
+      View_3d
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      ViewException
+   
+   
+
+
+

@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXTC &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXTC &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTC</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXTC"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC">[docs]</a><span class="k">class</span> <span class="nc">GXTC</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTC</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTC">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC">[docs]</a>
+<span class="k">class</span> <span class="nc">GXTC</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXTC class.</span>
 
 <span class="sd">    The `GXTC &lt;geosoft.gxapi.GXTC&gt;` object is used in gravitational modelling to create</span>
@@ -90,12 +89,17 @@
 <span class="sd">    the input positions.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXTC.__init__"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXTC.__init__">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXTC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXTC.null"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXTC.null">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXTC &lt;geosoft.gxapi.GXTC&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXTC &lt;geosoft.gxapi.GXTC&gt;`</span>
@@ -103,8 +107,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXTC</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXTC.is_null"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTC.is_null">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -114,12 +121,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXTC.create"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXTC.create">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">elev_unit</span><span class="p">,</span> <span class="n">dinner</span><span class="p">,</span> <span class="n">douter</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">,</span> <span class="n">dens_w</span><span class="p">,</span> <span class="n">elev_w</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">edge_elev</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a Terrain Correction object</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:        Topo (DEM) grid</span>
@@ -155,9 +165,12 @@
 
 
 
-<div class="viewcode-block" id="GXTC.create_ex"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.create_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXTC.create_ex">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.create_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">elev_unit</span><span class="p">,</span> <span class="n">dinner</span><span class="p">,</span> <span class="n">douter</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">,</span> <span class="n">dens_w</span><span class="p">,</span> <span class="n">elev_w</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">edge_elev</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">survey_type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a Terrain Correction object	with surveytype</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:          Topo (DEM) grid</span>
@@ -195,9 +208,12 @@
 
 
 
-<div class="viewcode-block" id="GXTC.create_ex2"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.create_ex2">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXTC.create_ex2">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.create_ex2">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ex2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">elev_unit</span><span class="p">,</span> <span class="n">dinner</span><span class="p">,</span> <span class="n">douter</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">,</span> <span class="n">dens_w</span><span class="p">,</span> <span class="n">elev_w</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">edge_elev</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">survey_type</span><span class="p">,</span> <span class="n">img2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a Terrain Correction object with surveytype and topo surface elevation grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param img:          Topo (Rock Surface DEM) grid</span>
@@ -240,8 +256,11 @@
 
 
 
-<div class="viewcode-block" id="GXTC.grregter"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.grregter">[docs]</a>    <span class="k">def</span> <span class="nf">grregter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTC.grregter">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.grregter">[docs]</a>
+    <span class="k">def</span> <span class="nf">grregter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a terrain correction grid for a topo grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param im_gi:  Input `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` (local DEM topo grid used for station elevation)</span>
@@ -254,13 +273,16 @@
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_grregter</span><span class="p">(</span><span class="n">im_gi</span><span class="p">,</span> <span class="n">im_go</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTC.grterain"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.grterain">[docs]</a>    <span class="k">def</span> <span class="nf">grterain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vx</span><span class="p">,</span> <span class="n">gv_vy</span><span class="p">,</span> <span class="n">gv_velev</span><span class="p">,</span> <span class="n">gv_vslop</span><span class="p">,</span> <span class="n">gv_vtcor</span><span class="p">,</span> <span class="n">im_gcor</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTC.grterain">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.grterain">[docs]</a>
+    <span class="k">def</span> <span class="nf">grterain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vx</span><span class="p">,</span> <span class="n">gv_vy</span><span class="p">,</span> <span class="n">gv_velev</span><span class="p">,</span> <span class="n">gv_vslop</span><span class="p">,</span> <span class="n">gv_vtcor</span><span class="p">,</span> <span class="n">im_gcor</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate terrain corrections.</span>
 <span class="sd">        </span>
 <span class="sd">        :param gv_vx:     Input X channel data (in topo grid projection units, default in metres)</span>
@@ -283,13 +305,16 @@
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_grterain</span><span class="p">(</span><span class="n">gv_vx</span><span class="p">,</span> <span class="n">gv_vy</span><span class="p">,</span> <span class="n">gv_velev</span><span class="p">,</span> <span class="n">gv_vslop</span><span class="p">,</span> <span class="n">gv_vtcor</span><span class="p">,</span> <span class="n">im_gcor</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTC.grterain2"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.grterain2">[docs]</a>    <span class="k">def</span> <span class="nf">grterain2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vx</span><span class="p">,</span> <span class="n">gv_vy</span><span class="p">,</span> <span class="n">gv_velev</span><span class="p">,</span> <span class="n">gv_vslop</span><span class="p">,</span> <span class="n">gv_vwater</span><span class="p">,</span> <span class="n">gv_vtcor</span><span class="p">,</span> <span class="n">im_gcor</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTC.grterain2">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.grterain2">[docs]</a>
+    <span class="k">def</span> <span class="nf">grterain2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vx</span><span class="p">,</span> <span class="n">gv_vy</span><span class="p">,</span> <span class="n">gv_velev</span><span class="p">,</span> <span class="n">gv_vslop</span><span class="p">,</span> <span class="n">gv_vwater</span><span class="p">,</span> <span class="n">gv_vtcor</span><span class="p">,</span> <span class="n">im_gcor</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate terrain corrections (work for marine gravity too).</span>
 <span class="sd">        </span>
 <span class="sd">        :param gv_vx:      Input X channel data (in topo grid projection units, default in metres)</span>
@@ -314,13 +339,16 @@
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_grterain2</span><span class="p">(</span><span class="n">gv_vx</span><span class="p">,</span> <span class="n">gv_vy</span><span class="p">,</span> <span class="n">gv_velev</span><span class="p">,</span> <span class="n">gv_vslop</span><span class="p">,</span> <span class="n">gv_vwater</span><span class="p">,</span> <span class="n">gv_vtcor</span><span class="p">,</span> <span class="n">im_gcor</span><span class="p">,</span> <span class="n">dens_t</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTC.g_gterain"><a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.g_gterain">[docs]</a>    <span class="k">def</span> <span class="nf">g_gterain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vx</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTC.g_gterain">
+<a class="viewcode-back" href="../../../GXTC.html#geosoft.gxapi.GXTC.g_gterain">[docs]</a>
+    <span class="k">def</span> <span class="nf">g_gterain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vx</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate GG terrain corrections</span>
 <span class="sd">        </span>
 <span class="sd">        :param gv_vx:  Input X channel data (in topo grid projection units, default in metres)</span>
@@ -342,7 +370,9 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_g_gterain</span><span class="p">(</span><span class="n">gv_vx</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_g_gterain</span><span class="p">(</span><span class="n">gv_vx</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -372,7 +402,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTC</a></li> 
@@ -380,8 +410,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

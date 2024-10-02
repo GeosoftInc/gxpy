@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXREG &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXREG &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXREG</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXREG"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG">[docs]</a><span class="k">class</span> <span class="nc">GXREG</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapREG</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG">[docs]</a>
+<span class="k">class</span> <span class="nc">GXREG</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapREG</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXREG class.</span>
 
 <span class="sd">    The `GXREG &lt;geosoft.gxapi.GXREG&gt;` class is used for storing and retrieving named</span>
@@ -89,12 +88,17 @@
 <span class="sd">    `GXREG &lt;geosoft.gxapi.GXREG&gt;` class in newer applications.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXREG.__init__"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXREG.__init__">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXREG</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXREG.null"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXREG.null">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXREG &lt;geosoft.gxapi.GXREG&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXREG &lt;geosoft.gxapi.GXREG&gt;`</span>
@@ -102,8 +106,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXREG</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXREG.is_null"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXREG.is_null">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -113,12 +120,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXREG.clear"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.clear">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.clear">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clears all the parameters in a `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 
@@ -127,13 +137,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.copy"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.copy">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy</span>
 <span class="sd">        </span>
 <span class="sd">        :param srce:  Source</span>
@@ -144,13 +157,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">srce</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXREG.create"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXREG.create">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">l_parm_length</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a handle to a `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param l_parm_length:  Maximum size of &quot;parameter=setting&quot; string.</span>
@@ -168,9 +184,12 @@
 
 
 
-<div class="viewcode-block" id="GXREG.create_s"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXREG.create_s">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.create_s">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a handle to a `GXREG &lt;geosoft.gxapi.GXREG&gt;` object from a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:  `GXBF &lt;geosoft.gxapi.GXBF&gt;` handle for file containing serialized `GXREG &lt;geosoft.gxapi.GXREG&gt;`</span>
@@ -191,8 +210,11 @@
 
 
 
-<div class="viewcode-block" id="GXREG.get"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXREG.get">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get">[docs]</a>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets a string for a specified parameter in the `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  Name of the parameter</span>
@@ -205,13 +227,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.get_int"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get_int">[docs]</a>    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.get_int">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets an int for a specified parameter in the `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  Name of the parameter</span>
@@ -226,13 +251,16 @@
 <span class="sd">        **Note:** If parameter is not present in `GXREG &lt;geosoft.gxapi.GXREG&gt;`, `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;` is returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_int</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.get_one"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get_one">[docs]</a>    <span class="k">def</span> <span class="nf">get_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.get_one">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get_one">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets n-th entry of the `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param loc:   Sequential number of `GXREG &lt;geosoft.gxapi.GXREG&gt;` entry</span>
@@ -247,13 +275,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">parm</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_one</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">parm</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.get_double"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get_double">[docs]</a>    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.get_double">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.get_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets an real for a specified parameter in the `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  Name of the parameter</span>
@@ -268,13 +299,16 @@
 <span class="sd">        **Note:** If parameter is not present in `GXREG &lt;geosoft.gxapi.GXREG&gt;`, `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` is returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.entries"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.entries">[docs]</a>    <span class="k">def</span> <span class="nf">entries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.entries">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.entries">[docs]</a>
+    <span class="k">def</span> <span class="nf">entries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the number of parms in a `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 
@@ -291,8 +325,11 @@
 
 
 
-<div class="viewcode-block" id="GXREG.load_ini"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.load_ini">[docs]</a>    <span class="k">def</span> <span class="nf">load_ini</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ini</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXREG.load_ini">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.load_ini">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_ini</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ini</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load a registry from an INI file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ini:  INI file name</span>
@@ -305,13 +342,16 @@
 <span class="sd">        **Note:** Items are loaded into the `GXREG &lt;geosoft.gxapi.GXREG&gt;` in the format &quot;GROUP.ITEM&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_ini</span><span class="p">(</span><span class="n">ini</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.match_string"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.match_string">[docs]</a>    <span class="k">def</span> <span class="nf">match_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.match_string">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.match_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">match_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Replace a string with reg settings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  String to Replace</span>
@@ -324,13 +364,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match_string</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.merge"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.merge">[docs]</a>    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.merge">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.merge">[docs]</a>
+    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge</span>
 <span class="sd">        </span>
 <span class="sd">        :param srce:  Source</span>
@@ -343,13 +386,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">srce</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.save_ini"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.save_ini">[docs]</a>    <span class="k">def</span> <span class="nf">save_ini</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ini</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.save_ini">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.save_ini">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_ini</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ini</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save a `GXREG &lt;geosoft.gxapi.GXREG&gt;` to an INI file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ini:  INI file name</span>
@@ -365,13 +411,16 @@
 <span class="sd">        Single-word items (without a separating period) are skipped.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_ini</span><span class="p">(</span><span class="n">ini</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.serial"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.serial">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.serial">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Serialize a `GXREG &lt;geosoft.gxapi.GXREG&gt;` object into a file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:   `GXBF &lt;geosoft.gxapi.GXBF&gt;` to serialize `GXREG &lt;geosoft.gxapi.GXREG&gt;` into</span>
@@ -382,13 +431,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.set"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.set">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.set">[docs]</a>
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets a string parameter in the `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  Name of the parameter</span>
@@ -408,13 +460,16 @@
 <span class="sd">        `set_double &lt;geosoft.gxapi.GXREG.set_double&gt;`(Reg, sParam, `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`);</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.set_int"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.set_int">[docs]</a>    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.set_int">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.set_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets an int for a specified parameter in the `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  Name of the parameter</span>
@@ -427,13 +482,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXREG.set_double"><a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.set_double">[docs]</a>    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">p3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXREG.set_double">
+<a class="viewcode-back" href="../../../GXREG.html#geosoft.gxapi.GXREG.set_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">p3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets an real for a specified parameter in the `GXREG &lt;geosoft.gxapi.GXREG&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  Name of the parameter</span>
@@ -445,7 +503,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p3</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">parm</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p3</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -475,7 +535,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXREG</a></li> 
@@ -483,8 +543,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

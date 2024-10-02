@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVOX &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXVOX &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVOX</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -80,8 +77,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXVOX"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX">[docs]</a><span class="k">class</span> <span class="nc">GXVOX</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX">[docs]</a>
+<span class="k">class</span> <span class="nc">GXVOX</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXVOX class.</span>
 
 <span class="sd">    High Performance 3D Grid. Designed for accessing</span>
@@ -90,12 +89,17 @@
 <span class="sd">    To sample a voxel at specific locations, use `GXVOXE &lt;geosoft.gxapi.GXVOXE&gt;`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXVOX.__init__"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXVOX.__init__">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXVOX</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXVOX.null"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.null">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -103,8 +107,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXVOX</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXVOX.is_null"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.is_null">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -114,12 +121,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXVOX.calc_stats"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.calc_stats">[docs]</a>    <span class="k">def</span> <span class="nf">calc_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.calc_stats">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.calc_stats">[docs]</a>
+    <span class="k">def</span> <span class="nf">calc_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate Statistics</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:   `GXST &lt;geosoft.gxapi.GXST&gt;` Object</span>
@@ -130,13 +140,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_calc_stats</span><span class="p">(</span><span class="n">st</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.create"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.create">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a handle to an `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File Name</span>
@@ -155,8 +168,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.create_pg"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.create_pg">[docs]</a>    <span class="k">def</span> <span class="nf">create_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.create_pg">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.create_pg">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a 3D `GXPG &lt;geosoft.gxapi.GXPG&gt;` from a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object</span>
 <span class="sd">        </span>
 
@@ -173,8 +189,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.create_type_pg"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.create_type_pg">[docs]</a>    <span class="k">def</span> <span class="nf">create_type_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.create_type_pg">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.create_type_pg">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_type_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a 3D `GXPG &lt;geosoft.gxapi.GXPG&gt;` from a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object with a specific Type</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES`</span>
@@ -195,8 +214,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.dump"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.dump">[docs]</a>    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.dump">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.dump">[docs]</a>
+    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export all layers of this `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` in all directions.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of grids (each layers adds _Dir_Z to the name)</span>
@@ -207,13 +229,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dump</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.export_img"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_img">[docs]</a>    <span class="k">def</span> <span class="nf">export_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.export_img">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_img">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export all layers of this `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` into grid files.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of grids (each layers adds _Number to the name)</span>
@@ -226,13 +251,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_img</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.export_to_grids"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_to_grids">[docs]</a>    <span class="k">def</span> <span class="nf">export_to_grids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">interp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.export_to_grids">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_to_grids">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_to_grids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">interp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export all layers of this `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` into grid files, with optional cell size.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:       Name of grids (each layers adds _Number to the name)</span>
@@ -259,13 +287,16 @@
 <span class="sd">        2. If the cell sizes are variable in a given direction, then the smallest size is used</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_grids</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">interp</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.export_xml"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_xml">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.export_xml">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">crc</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` to a compressed XML file</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel:  Voxel file name</span>
@@ -280,13 +311,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">crc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_export_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.export_seg_y"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_seg_y">[docs]</a>    <span class="k">def</span> <span class="nf">export_seg_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_segy_filename</span><span class="p">,</span> <span class="n">sample_interval</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.export_seg_y">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_seg_y">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_seg_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_segy_filename</span><span class="p">,</span> <span class="n">sample_interval</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a voxel to a depth SEG-Y file</span>
 <span class="sd">        </span>
 <span class="sd">        :param output_segy_filename:  SEG-Y filename to create</span>
@@ -299,13 +333,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_seg_y</span><span class="p">(</span><span class="n">output_segy_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">sample_interval</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.export_ji_gs_xml"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_ji_gs_xml">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.export_ji_gs_xml">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_ji_gs_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_ji_gs_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` to a compressed XML file. Verbose version.</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel:  Voxel file name</span>
@@ -318,13 +355,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_export_ji_gs_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.export_xyz"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">export_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.export_xyz">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_xyz">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a Voxel to an XYZ File</span>
 <span class="sd">        </span>
 <span class="sd">        :param xyz:      File Name</span>
@@ -345,13 +385,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_xyz</span><span class="p">(</span><span class="n">xyz</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.filter"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">filter_file</span><span class="p">,</span> <span class="n">n_passes</span><span class="p">,</span> <span class="n">interpolate_dummies</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.filter">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">filter_file</span><span class="p">,</span> <span class="n">n_passes</span><span class="p">,</span> <span class="n">interpolate_dummies</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply a 3D filter to a voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param filter:               :ref:`VOX_FILTER3D`</span>
@@ -370,13 +413,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_filter</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">filter_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">n_passes</span><span class="p">,</span> <span class="n">interpolate_dummies</span><span class="p">,</span> <span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_db"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_db">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.generate_db">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_db">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxel_file</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">symb</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a Database</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel_file:  Voxel Name</span>
@@ -391,13 +437,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_generate_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxel_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">symb</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_vector_voxel_from_db"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_vector_voxel_from_db">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.generate_vector_voxel_from_db">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_vector_voxel_from_db">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_vector_voxel_from_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxel_file</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">symb_x</span><span class="p">,</span> <span class="n">symb_y</span><span class="p">,</span> <span class="n">symb_z</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a vector voxel `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a Database</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel_file:  Voxel Name</span>
@@ -422,13 +471,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_generate_vector_voxel_from_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxel_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">symb_x</span><span class="p">,</span> <span class="n">symb_y</span><span class="p">,</span> <span class="n">symb_z</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_pg"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_pg">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.generate_pg">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_pg">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_pg</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a 3D Pager</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -464,9 +516,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_pgvv"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_pgvv">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.generate_pgvv">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_pgvv">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_pgvv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a 3D Pager, cells sizes passed in VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -504,9 +559,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.init_generate_by_subset_pg"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.init_generate_by_subset_pg">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.init_generate_by_subset_pg">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.init_generate_by_subset_pg">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">init_generate_by_subset_pg</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize the generate of a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a series of 3D subset pagers</span>
 <span class="sd">        </span>
 <span class="sd">        :param data_type:  :ref:`GS_TYPES`</span>
@@ -534,8 +592,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.add_generate_by_subset_pg"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.add_generate_by_subset_pg">[docs]</a>    <span class="k">def</span> <span class="nf">add_generate_by_subset_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.add_generate_by_subset_pg">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.add_generate_by_subset_pg">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_generate_by_subset_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a subset 3D  pagers. These should be &quot;slabs&quot;, 16 wide in the input direction, and the size of the</span>
 <span class="sd">        full voxel in the other two directions.</span>
 <span class="sd">        </span>
@@ -553,13 +614,16 @@
 <span class="sd">        **Note:** See `init_generate_by_subset_pg &lt;geosoft.gxapi.GXVOX.init_generate_by_subset_pg&gt;` and `end_generate_by_subset_pg &lt;geosoft.gxapi.GXVOX.end_generate_by_subset_pg&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_generate_by_subset_pg</span><span class="p">(</span><span class="n">pg</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.end_generate_by_subset_pg"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.end_generate_by_subset_pg">[docs]</a>    <span class="k">def</span> <span class="nf">end_generate_by_subset_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.end_generate_by_subset_pg">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.end_generate_by_subset_pg">[docs]</a>
+    <span class="k">def</span> <span class="nf">end_generate_by_subset_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output the voxel, after adding all the subset PGs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -588,13 +652,16 @@
 <span class="sd">        **Note:** You must begin by calling `init_generate_by_subset_pg &lt;geosoft.gxapi.GXVOX.init_generate_by_subset_pg&gt;` and add data using `add_generate_by_subset_pg &lt;geosoft.gxapi.GXVOX.add_generate_by_subset_pg&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_end_generate_by_subset_pg</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">oz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_area"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_area">[docs]</a>    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_area">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the area of the voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Min X</span>
@@ -615,13 +682,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_area</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_gocad_location"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_gocad_location">[docs]</a>    <span class="k">def</span> <span class="nf">get_gocad_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vect_xx</span><span class="p">,</span> <span class="n">vect_xy</span><span class="p">,</span> <span class="n">vect_xz</span><span class="p">,</span> <span class="n">vect_yx</span><span class="p">,</span> <span class="n">vect_yy</span><span class="p">,</span> <span class="n">vect_yz</span><span class="p">,</span> <span class="n">vect_zx</span><span class="p">,</span> <span class="n">vect_zy</span><span class="p">,</span> <span class="n">vect_zz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_gocad_location">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_gocad_location">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_gocad_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vect_xx</span><span class="p">,</span> <span class="n">vect_xy</span><span class="p">,</span> <span class="n">vect_xz</span><span class="p">,</span> <span class="n">vect_yx</span><span class="p">,</span> <span class="n">vect_yy</span><span class="p">,</span> <span class="n">vect_yz</span><span class="p">,</span> <span class="n">vect_zx</span><span class="p">,</span> <span class="n">vect_zy</span><span class="p">,</span> <span class="n">vect_zz</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the location of a voxel with origin and scaled xyz vectors for use with GOCAD.</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:  Origin X</span>
@@ -657,13 +727,16 @@
 <span class="sd">        origin at (0,0,0), not the actual location of the corner point.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zz</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_gocad_location</span><span class="p">(</span><span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zz</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_grid_section_cell_sizes"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_grid_section_cell_sizes">[docs]</a>    <span class="k">def</span> <span class="nf">get_grid_section_cell_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_grid_section_cell_sizes">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_grid_section_cell_sizes">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_grid_section_cell_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get default cell sizes in X and Y for a section grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param az:           Input section azimuth (degrees CCW from North)</span>
@@ -695,13 +768,16 @@
 <span class="sd">        The grid&#39;s &quot;Y&quot; cell size is set to the voxel&#39;s minimum &quot;Z&quot; cell size.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">cell_size_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_grid_section_cell_sizes</span><span class="p">(</span><span class="n">az</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_info"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_info">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get information about a voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:   Data Type</span>
@@ -720,13 +796,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">array</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">array</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_ipj"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_ipj">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the projection of the voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object to save `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`&#39;s meta to</span>
@@ -737,13 +816,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_limits"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_limits">[docs]</a>    <span class="k">def</span> <span class="nf">get_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_limits">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_limits">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the range of indices with non-dummy data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Index of minimum valid data in X.</span>
@@ -767,13 +849,16 @@
 <span class="sd">        returns `iMAX &lt;geosoft.gxapi.iMAX&gt;` for the minima, and `iMIN &lt;geosoft.gxapi.iMIN&gt;` for the maxima.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_limits</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_limits_xyz"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_limits_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">get_limits_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_limits_xyz">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_limits_xyz">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_limits_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the range in true XYZ of non-dummy data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Minimum valid data in X.</span>
@@ -801,13 +886,16 @@
 <span class="sd">        returns `rMAX &lt;geosoft.gxapi.rMAX&gt;` for the minima, and `rMIN &lt;geosoft.gxapi.rMIN&gt;` for the maxima.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_limits_xyz</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_location"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_location">[docs]</a>    <span class="k">def</span> <span class="nf">get_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_location">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_location">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get Location information</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:  Origin X</span>
@@ -828,13 +916,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_location</span><span class="p">(</span><span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_location_points"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_location_points">[docs]</a>    <span class="k">def</span> <span class="nf">get_location_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_location_points">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_location_points">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_location_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the computed location points.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  Locations in X</span>
@@ -849,13 +940,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_location_points</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_meta"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_meta">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the metadata of a voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object to save `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`&#39;s meta to</span>
@@ -866,13 +960,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_double_location"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_double_location">[docs]</a>    <span class="k">def</span> <span class="nf">get_double_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vect_xx</span><span class="p">,</span> <span class="n">vect_xy</span><span class="p">,</span> <span class="n">vect_xz</span><span class="p">,</span> <span class="n">vect_yx</span><span class="p">,</span> <span class="n">vect_yy</span><span class="p">,</span> <span class="n">vect_yz</span><span class="p">,</span> <span class="n">vect_zx</span><span class="p">,</span> <span class="n">vect_zy</span><span class="p">,</span> <span class="n">vect_zz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_double_location">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_double_location">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_double_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vect_xx</span><span class="p">,</span> <span class="n">vect_xy</span><span class="p">,</span> <span class="n">vect_xz</span><span class="p">,</span> <span class="n">vect_yx</span><span class="p">,</span> <span class="n">vect_yy</span><span class="p">,</span> <span class="n">vect_yz</span><span class="p">,</span> <span class="n">vect_zx</span><span class="p">,</span> <span class="n">vect_zy</span><span class="p">,</span> <span class="n">vect_zz</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the location of a voxel with origin and scaled xyz vectors</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:  Origin X</span>
@@ -905,13 +1002,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zz</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double_location</span><span class="p">(</span><span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_xz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_yz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vect_zz</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_simple_location"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_simple_location">[docs]</a>    <span class="k">def</span> <span class="nf">get_simple_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_simple_location">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_simple_location">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_simple_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get Simple Location information</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:  Origin X</span>
@@ -932,13 +1032,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_simple_location</span><span class="p">(</span><span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.get_stats"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.get_stats">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_stats">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get precomputed statistics on this object.</span>
 <span class="sd">        </span>
 
@@ -955,8 +1058,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.get_tpat"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_tpat">[docs]</a>    <span class="k">def</span> <span class="nf">get_tpat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tpat</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.get_tpat">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_tpat">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_tpat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tpat</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a copy of a thematic voxel&#39;s `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tpat:  `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object to get</span>
@@ -974,13 +1080,16 @@
 <span class="sd">        The `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object is stored inside the `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_tpat</span><span class="p">(</span><span class="n">tpat</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.grid_points"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.grid_points">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.grid_points">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.grid_points">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_points</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Grid a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from point `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:        Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -1035,9 +1144,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.grid_points_z"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.grid_points_z">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.grid_points_z">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.grid_points_z">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_points_z</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Grid a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from point `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s (using variable Z&#39;s)</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:         Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -1094,9 +1206,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.grid_points_z_ex"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.grid_points_z_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.grid_points_z_ex">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.grid_points_z_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_points_z_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">along_strike_weight</span><span class="p">,</span> <span class="n">down_dip_weight</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Grid a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from point `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s (using variable Z&#39;s)</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:                 Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -1164,8 +1279,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.can_append_to"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.can_append_to">[docs]</a>    <span class="k">def</span> <span class="nf">can_append_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface_file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.can_append_to">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.can_append_to">[docs]</a>
+    <span class="k">def</span> <span class="nf">can_append_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface_file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this voxel can append to a surface file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param surface_file:  Surface file</span>
@@ -1184,8 +1302,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.get_cell_size_strings"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_cell_size_strings">[docs]</a>    <span class="k">def</span> <span class="nf">get_cell_size_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc_x</span><span class="p">,</span> <span class="n">loc_y</span><span class="p">,</span> <span class="n">loc_z</span><span class="p">,</span> <span class="n">scale_x</span><span class="p">,</span> <span class="n">scale_y</span><span class="p">,</span> <span class="n">scale_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.get_cell_size_strings">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_cell_size_strings">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_cell_size_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc_x</span><span class="p">,</span> <span class="n">loc_y</span><span class="p">,</span> <span class="n">loc_z</span><span class="p">,</span> <span class="n">scale_x</span><span class="p">,</span> <span class="n">scale_y</span><span class="p">,</span> <span class="n">scale_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the Location Strings</span>
 <span class="sd">        </span>
 <span class="sd">        :param loc_x:    X String</span>
@@ -1206,13 +1327,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">loc_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">loc_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">loc_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cell_size_strings</span><span class="p">(</span><span class="n">loc_x</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">loc_y</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">loc_z</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">scale_x</span><span class="p">,</span> <span class="n">scale_y</span><span class="p">,</span> <span class="n">scale_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.is_thematic"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.is_thematic">[docs]</a>    <span class="k">def</span> <span class="nf">is_thematic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.is_thematic">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.is_thematic">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_thematic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Is this a thematic voxel?</span>
 <span class="sd">        </span>
 
@@ -1235,8 +1359,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.is_vector_voxel"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.is_vector_voxel">[docs]</a>    <span class="k">def</span> <span class="nf">is_vector_voxel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.is_vector_voxel">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.is_vector_voxel">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_vector_voxel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Is this a vector voxel?</span>
 <span class="sd">        </span>
 
@@ -1256,8 +1383,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.set_cell_size_strings"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_cell_size_strings">[docs]</a>    <span class="k">def</span> <span class="nf">set_cell_size_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc_x</span><span class="p">,</span> <span class="n">loc_y</span><span class="p">,</span> <span class="n">loc_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.set_cell_size_strings">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_cell_size_strings">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_cell_size_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc_x</span><span class="p">,</span> <span class="n">loc_y</span><span class="p">,</span> <span class="n">loc_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the Location Strings</span>
 <span class="sd">        </span>
 <span class="sd">        :param loc_x:  X String</span>
@@ -1280,9 +1410,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.log_grid_points_z_ex"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.log_grid_points_z_ex">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.log_grid_points_z_ex">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.log_grid_points_z_ex">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">log_grid_points_z_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">cell_size_z</span><span class="p">,</span> <span class="n">var_only</span><span class="p">,</span> <span class="n">min_radius</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="n">min_points</span><span class="p">,</span> <span class="n">max_points</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">nugget</span><span class="p">,</span> <span class="n">sill</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">dip</span><span class="p">,</span> <span class="n">plunge</span><span class="p">,</span> <span class="n">along_strike_weight</span><span class="p">,</span> <span class="n">down_dip_weight</span><span class="p">,</span> <span class="n">log_opt</span><span class="p">,</span> <span class="n">min_log</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Log grid a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from point `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s (using variable Z&#39;s)</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:                 Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -1353,9 +1486,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.krig"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.krig">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.krig">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.krig">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">krig</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A more compact and extensible form of `log_grid_points_z_ex &lt;geosoft.gxapi.GXVOX.log_grid_points_z_ex&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:       Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -1418,9 +1554,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.math"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.math">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.math">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.math">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">math</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">master</span><span class="p">,</span> <span class="n">mastervar</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="n">formula</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Produces a new voxes using a formula on existing voxels/Grids</span>
 <span class="sd">        </span>
 <span class="sd">        :param master:     Master `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` Name</span>
@@ -1451,8 +1590,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.merge"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.merge">[docs]</a>    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vox2</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.merge">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.merge">[docs]</a>
+    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vox2</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge two Voxels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vox2:        `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object</span>
@@ -1467,13 +1609,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">vox2</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.nearest_neighbour_grid"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.nearest_neighbour_grid">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.nearest_neighbour_grid">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.nearest_neighbour_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">nearest_neighbour_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">max_radius</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Grid a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from point `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s using the Nearest Neighbours method.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:        Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -1506,9 +1651,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.compute_cell_size"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.compute_cell_size">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.compute_cell_size">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.compute_cell_size">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">compute_cell_size</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the Cell size based on specific Area</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  MinX</span>
@@ -1537,8 +1685,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.re_grid"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.re_grid">[docs]</a>    <span class="k">def</span> <span class="nf">re_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vox_to_regrid</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.re_grid">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.re_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">re_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vox_to_regrid</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Regrid a Voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vox_to_regrid:  `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object to regrid</span>
@@ -1553,13 +1704,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_re_grid</span><span class="p">(</span><span class="n">vox_to_regrid</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.resample_pg"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.resample_pg">[docs]</a>    <span class="k">def</span> <span class="nf">resample_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">orig_z</span><span class="p">,</span> <span class="n">spacing_x</span><span class="p">,</span> <span class="n">spacing_y</span><span class="p">,</span> <span class="n">spacing_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">interp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.resample_pg">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.resample_pg">[docs]</a>
+    <span class="k">def</span> <span class="nf">resample_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">orig_z</span><span class="p">,</span> <span class="n">spacing_x</span><span class="p">,</span> <span class="n">spacing_y</span><span class="p">,</span> <span class="n">spacing_z</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">interp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Resample a voxel over an input volume to a `GXPG &lt;geosoft.gxapi.GXPG&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:        Projection to use for Origin, Spacing values</span>
@@ -1606,8 +1760,11 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.rescale_cell_sizes"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.rescale_cell_sizes">[docs]</a>    <span class="k">def</span> <span class="nf">rescale_cell_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVOX.rescale_cell_sizes">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.rescale_cell_sizes">[docs]</a>
+    <span class="k">def</span> <span class="nf">rescale_cell_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Multiply all cell sizes by a fixed factor.</span>
 <span class="sd">        </span>
 <span class="sd">        :param scale:  Scaling factor (&gt;0)</span>
@@ -1623,13 +1780,16 @@
 <span class="sd">        its projection&#39;s units.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_rescale_cell_sizes</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.sample_cdi"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sample_cdi">[docs]</a>    <span class="k">def</span> <span class="nf">sample_cdi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">elev_ch</span><span class="p">,</span> <span class="n">negative_depths_down</span><span class="p">,</span> <span class="n">topo_ch</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">out_ch</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.sample_cdi">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sample_cdi">[docs]</a>
+    <span class="k">def</span> <span class="nf">sample_cdi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">elev_ch</span><span class="p">,</span> <span class="n">negative_depths_down</span><span class="p">,</span> <span class="n">topo_ch</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">out_ch</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sample a voxel at locations/elevations in a CDI database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:                    CDI Database handle</span>
@@ -1665,13 +1825,16 @@
 <span class="sd">        become more negative as you go deeper.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sample_cdi</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">elev_ch</span><span class="p">,</span> <span class="n">negative_depths_down</span><span class="p">,</span> <span class="n">topo_ch</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">out_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.sample_cdi_to_topography"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sample_cdi_to_topography">[docs]</a>    <span class="k">def</span> <span class="nf">sample_cdi_to_topography</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">out_ch</span><span class="p">,</span> <span class="n">topo_ch</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.sample_cdi_to_topography">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sample_cdi_to_topography">[docs]</a>
+    <span class="k">def</span> <span class="nf">sample_cdi_to_topography</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">out_ch</span><span class="p">,</span> <span class="n">topo_ch</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sample a voxel at fixed elevations along a path in a CDI database, and output them to an array channel, deleting leading dummy values, and</span>
 <span class="sd">        writing the elevation of the first non-dummy item to a topography channel.</span>
 <span class="sd">        </span>
@@ -1697,13 +1860,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sample_cdi_to_topography</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">out_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.sample_vv"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sample_vv">[docs]</a>    <span class="k">def</span> <span class="nf">sample_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">interp</span><span class="p">,</span> <span class="n">dvv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.sample_vv">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sample_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">sample_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">interp</span><span class="p">,</span> <span class="n">dvv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sample a voxel at multiple locations.</span>
 <span class="sd">        </span>
 <span class="sd">        :param xvv:     X locations (input)</span>
@@ -1724,13 +1890,16 @@
 <span class="sd">        **Note:** Sample at voxel at XYZ locations input in VVs. Values returned in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sample_vv</span><span class="p">(</span><span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">interp</span><span class="p">,</span> <span class="n">dvv</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.set_ipj"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.set_ipj">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the projection of the voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object to save `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`&#39;s meta to</span>
@@ -1741,13 +1910,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.set_location"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_location">[docs]</a>    <span class="k">def</span> <span class="nf">set_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.set_location">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_location">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set Location information</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:  Origin X</span>
@@ -1768,13 +1940,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_location</span><span class="p">(</span><span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.set_meta"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.set_meta">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the metadata of a voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object to add to `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`&#39;s meta</span>
@@ -1785,13 +1960,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.set_origin"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_origin">[docs]</a>    <span class="k">def</span> <span class="nf">set_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.set_origin">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_origin">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the Voxel Origin</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin:    Type of origin being set :ref:`VOX_ORIGIN`</span>
@@ -1808,13 +1986,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_origin</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.set_simple_location"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_simple_location">[docs]</a>    <span class="k">def</span> <span class="nf">set_simple_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.set_simple_location">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_simple_location">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_simple_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set Simple Location information</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:  Origin X</span>
@@ -1835,13 +2016,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_simple_location</span><span class="p">(</span><span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_x</span><span class="p">,</span> <span class="n">cell_y</span><span class="p">,</span> <span class="n">cell_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.set_tpat"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_tpat">[docs]</a>    <span class="k">def</span> <span class="nf">set_tpat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tpat</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.set_tpat">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.set_tpat">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_tpat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tpat</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a thematic voxel&#39;s `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tpat:  `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object to store</span>
@@ -1859,13 +2043,16 @@
 <span class="sd">        The `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object is stored inside the `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_tpat</span><span class="p">(</span><span class="n">tpat</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.slice_ipj"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.slice_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">slice_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.slice_ipj">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.slice_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">slice_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract a slice of a voxel based on an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:         Grid Name</span>
@@ -1892,13 +2079,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_slice_ipj</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.slice_multi_layer_ipj"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.slice_multi_layer_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">slice_multi_layer_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">start_elev</span><span class="p">,</span> <span class="n">elev_inc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.slice_multi_layer_ipj">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.slice_multi_layer_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">slice_multi_layer_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">start_elev</span><span class="p">,</span> <span class="n">elev_inc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extract multiple slices of a voxel based on an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:         Grid Name</span>
@@ -1931,13 +2121,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_slice_multi_layer_ipj</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">orig_x</span><span class="p">,</span> <span class="n">orig_y</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">start_elev</span><span class="p">,</span> <span class="n">elev_inc</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.subset_to_double_extents"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.subset_to_double_extents">[docs]</a>    <span class="k">def</span> <span class="nf">subset_to_double_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.subset_to_double_extents">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.subset_to_double_extents">[docs]</a>
+    <span class="k">def</span> <span class="nf">subset_to_double_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Subset a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` to real extents.</span>
 <span class="sd">        </span>
 <span class="sd">        :param output_vox:  Output voxel file name.</span>
@@ -1948,13 +2141,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_subset_to_double_extents</span><span class="p">(</span><span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.sync"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sync">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.sync">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.sync">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sync</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Syncronize the Metadata for this Voxel</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Voxel name</span>
@@ -1965,13 +2161,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_sync</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.window_ply"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.window_ply">[docs]</a>    <span class="k">def</span> <span class="nf">window_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">,</span> <span class="n">clip_dummies</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.window_ply">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.window_ply">[docs]</a>
+    <span class="k">def</span> <span class="nf">window_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">,</span> <span class="n">clip_dummies</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Window a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` to a `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` file and Z.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pply:          `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` object</span>
@@ -1996,13 +2195,16 @@
 <span class="sd">        The output can be clipped to the non-dummied cells.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_window_ply</span><span class="p">(</span><span class="n">pply</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">clip_dummies</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.window_xyz"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.window_xyz">[docs]</a>    <span class="k">def</span> <span class="nf">window_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">,</span> <span class="n">clip_dummies</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.window_xyz">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.window_xyz">[docs]</a>
+    <span class="k">def</span> <span class="nf">window_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">,</span> <span class="n">clip_dummies</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Window a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` to ranges in X, Y and Z.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:         Minimum X (optional, `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for no minimum)</span>
@@ -2030,13 +2232,16 @@
 <span class="sd">        The output can be clipped to the non-dummied cells.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_window_xyz</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">clip_dummies</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.write_xml"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.write_xml">[docs]</a>    <span class="k">def</span> <span class="nf">write_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.write_xml">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.write_xml">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export the `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` to XML</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  XML file to create</span>
@@ -2047,13 +2252,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_xml</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.convert_numeric_to_thematic"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_numeric_to_thematic">[docs]</a>    <span class="k">def</span> <span class="nf">convert_numeric_to_thematic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_translate</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.convert_numeric_to_thematic">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_numeric_to_thematic">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_numeric_to_thematic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_translate</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert numeric voxel to thematic (lithology) voxel</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_translate:  Translation `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
@@ -2066,13 +2274,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_numeric_to_thematic</span><span class="p">(</span><span class="n">vv_translate</span><span class="p">,</span> <span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.convert_thematic_to_numeric"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_thematic_to_numeric">[docs]</a>    <span class="k">def</span> <span class="nf">convert_thematic_to_numeric</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_translate</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.convert_thematic_to_numeric">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_thematic_to_numeric">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_thematic_to_numeric</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_translate</span><span class="p">,</span> <span class="n">output_vox</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert thematic (lithology) voxel to numeric voxel</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_translate:  Translation `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
@@ -2085,13 +2296,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_thematic_to_numeric</span><span class="p">(</span><span class="n">vv_translate</span><span class="p">,</span> <span class="n">output_vox</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.convert_velocity_to_density"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_velocity_to_density">[docs]</a>    <span class="k">def</span> <span class="nf">convert_velocity_to_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.convert_velocity_to_density">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_velocity_to_density">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_velocity_to_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Produces a density voxel using the velocity values in this voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_scaling_factor:   1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.</span>
@@ -2118,13 +2332,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_velocity_to_density</span><span class="p">(</span><span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.convert_velocity_in_range_to_density"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_velocity_in_range_to_density">[docs]</a>    <span class="k">def</span> <span class="nf">convert_velocity_in_range_to_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.convert_velocity_in_range_to_density">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_velocity_in_range_to_density">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_velocity_in_range_to_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Produces a density voxel using the velocity values in this voxel, as long as the velocity values are in range.</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_scaling_factor:   1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.</span>
@@ -2155,13 +2372,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_velocity_in_range_to_density</span><span class="p">(</span><span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.convert_density_to_velocity"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_density_to_velocity">[docs]</a>    <span class="k">def</span> <span class="nf">convert_density_to_velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.convert_density_to_velocity">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.convert_density_to_velocity">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_density_to_velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Produces a velocity voxel using the density values in this voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_scaling_factor:   1.0, if this voxel is in g/cm^3. Otherwise, a value by which each input cell is multiplied to convert it into g/cm^3.</span>
@@ -2192,13 +2412,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_density_to_velocity</span><span class="p">(</span><span class="n">input_scaling_factor</span><span class="p">,</span> <span class="n">input_lower_bound</span><span class="p">,</span> <span class="n">input_upper_bound</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">output_scaling_factor</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.invert_z"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.invert_z">[docs]</a>    <span class="k">def</span> <span class="nf">invert_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.invert_z">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.invert_z">[docs]</a>
+    <span class="k">def</span> <span class="nf">invert_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_voxel_filename</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert an inverted voxel to normal orientation</span>
 <span class="sd">        </span>
 <span class="sd">        :param output_voxel_filename:  Output voxel file name.</span>
@@ -2209,13 +2432,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_invert_z</span><span class="p">(</span><span class="n">output_voxel_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.dw_grid_db"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.dw_grid_db">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.dw_grid_db">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.dw_grid_db">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dw_grid_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        `dw_grid_db &lt;geosoft.gxapi.GXVOX.dw_grid_db&gt;`     Inverse-distance weighting gridding method, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version, 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel:  Output voxel name</span>
@@ -2258,13 +2484,16 @@
 <span class="sd">        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO &lt;geosoft.gxapi.VV_LOG_NEGATIVE_NO&gt;` (default) or `VV_LOG_NEGATIVE_YES &lt;geosoft.gxapi.VV_LOG_NEGATIVE_YES&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_dw_grid_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.tin_grid_db"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.tin_grid_db">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.tin_grid_db">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.tin_grid_db">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tin_grid_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">z_cell</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        `tin_grid_db &lt;geosoft.gxapi.GXVOX.tin_grid_db&gt;`   `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`-Gridding, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version, 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel:   Output voxel name</span>
@@ -2301,13 +2530,16 @@
 <span class="sd">        DZ and NZ are used only if the input cell sizes `GXVV &lt;geosoft.gxapi.GXVV&gt;` is of zero length.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_tin_grid_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">z_cell</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.get_multi_voxset_guid"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_multi_voxset_guid">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.get_multi_voxset_guid">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.get_multi_voxset_guid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_multi_voxset_guid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxel_file</span><span class="p">,</span> <span class="n">p_uuid_string</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the UUID</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel_file:     Input Voxel file</span>
@@ -2320,13 +2552,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">p_uuid_string</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_get_multi_voxset_guid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxel_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p_uuid_string</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_gocad"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_gocad">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.generate_gocad">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_gocad">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_gocad</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a GOCAD File</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:      Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -2349,9 +2584,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_oriented_gocad"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_oriented_gocad">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.generate_oriented_gocad">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_oriented_gocad">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_oriented_gocad</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="nb">property</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">orientation</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a GOCAD File</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:         Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -2378,9 +2616,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_ubc"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_ubc">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.generate_ubc">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_ubc">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_ubc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from a UBC File</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:   Name of output `GXVOX &lt;geosoft.gxapi.GXVOX&gt;`</span>
@@ -2406,9 +2647,12 @@
 
 
 
-<div class="viewcode-block" id="GXVOX.generate_xyz"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_xyz">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVOX.generate_xyz">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.generate_xyz">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">generate_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` from an XYZ File</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Voxel Name</span>
@@ -2425,13 +2669,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_generate_xyz</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ra</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXVOX.list_gocad_properties"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.list_gocad_properties">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVOX.list_gocad_properties">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.list_gocad_properties">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">list_gocad_properties</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        List all the properties available in this GOCAD file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param header:  Name of GOCAD Voxel file</span>
@@ -2444,13 +2691,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOX</span><span class="o">.</span><span class="n">_list_gocad_properties</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">header</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVOX.export_db"><a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_db">[docs]</a>    <span class="k">def</span> <span class="nf">export_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVOX.export_db">
+<a class="viewcode-back" href="../../../GXVOX.html#geosoft.gxapi.GXVOX.export_db">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a Voxel to a database</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       Database</span>
@@ -2474,7 +2724,9 @@
 
 <span class="sd">        **Note:** The database lines contain a slice of the voxel at a time.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_export_db</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_db</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -2504,7 +2756,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVOX</a></li> 
@@ -2512,8 +2764,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

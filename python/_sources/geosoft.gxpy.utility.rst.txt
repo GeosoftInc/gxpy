@@ -1,7 +1,92 @@
-geosoft.gxpy.utility submodule
-=============================================
+﻿geosoft.gxpy.utility
+====================
 
 .. automodule:: geosoft.gxpy.utility
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      _temp_dict_file_name
+      _validate_parameter
+      check_version
+      crc32
+      crc32_file
+      crc32_str
+      datetime_from_year
+      decode
+      delete_file
+      delete_files_by_root
+      delete_folder
+      dict_from_http_response_text
+      dict_from_lst
+      dict_from_reg
+      dict_from_xml
+      display_message
+      dtype_gx
+      dtype_gx_dimension
+      dummyMask
+      dummy_mask
+      dummy_none
+      dummy_to_nan
+      file_age
+      folder_temp
+      folder_user
+      folder_workspace
+      geosoft_metadata
+      geosoft_xml_from_dict
+      get_parameters
+      get_shared_dict
+      gxDummy
+      gx_dtype
+      gx_dtype_dimension
+      gx_dummy
+      is_file_locked
+      is_float
+      is_int
+      is_path_locked
+      is_string
+      jupyter_markdown_toc
+      merge_dict
+      normalize_file_name
+      rdecode
+      rdecode_err
+      reg_from_dict
+      run_external_python
+      save_parameters
+      set_shared_dict
+      str_significant
+      time_stamp
+      unique_name
+      url_retrieve
+      uuid
+      vector_normalize
+      xml_from_dict
+      yearFromJulianDay2
+      year_from_datetime
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      UtilityException
+   
+   
+
+
+

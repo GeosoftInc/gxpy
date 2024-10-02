@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPLY &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXPLY &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPLY</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,20 +75,27 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXPLY"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY">[docs]</a><span class="k">class</span> <span class="nc">GXPLY</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPLY</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY">[docs]</a>
+<span class="k">class</span> <span class="nc">GXPLY</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPLY</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXPLY class.</span>
 
 <span class="sd">    The `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` object contains the definitions for one or more</span>
 <span class="sd">    polygons, and does import and export of polygon files.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXPLY.__init__"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXPLY.__init__">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXPLY</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXPLY.null"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXPLY.null">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`</span>
@@ -99,8 +103,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXPLY</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXPLY.is_null"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.is_null">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -110,12 +117,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXPLY.add_polygon"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.add_polygon">[docs]</a>    <span class="k">def</span> <span class="nf">add_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.add_polygon">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.add_polygon">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a polygon to the polygon file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
@@ -128,13 +138,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_polygon</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.add_polygon_ex"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.add_polygon_ex">[docs]</a>    <span class="k">def</span> <span class="nf">add_polygon_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">exclude</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.add_polygon_ex">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.add_polygon_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_polygon_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">exclude</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a polygon to the polygon file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:     X `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
@@ -149,13 +162,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_polygon_ex</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">exclude</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.change_ipj"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.change_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">change_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.change_ipj">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.change_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:   `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to place in the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`</span>
@@ -168,13 +184,16 @@
 <span class="sd">        **Note:** The `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` is re-projected to the new projection.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_change_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.clear"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.clear">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clear">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clear/remove all polygons from the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`.</span>
 <span class="sd">        </span>
 
@@ -183,13 +202,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.copy"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.copy">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copies one `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` Object to another</span>
 <span class="sd">        </span>
 <span class="sd">        :param srce:  Source</span>
@@ -200,13 +222,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">srce</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.is_valid"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.is_valid">[docs]</a>    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.is_valid">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.is_valid">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Ensure a polygon is valid</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       int</span>
@@ -221,8 +246,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.combine"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.combine">[docs]</a>    <span class="k">def</span> <span class="nf">combine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">,</span> <span class="n">exclude</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.combine">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.combine">[docs]</a>
+    <span class="k">def</span> <span class="nf">combine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srce</span><span class="p">,</span> <span class="n">exclude</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Combines two `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` Object with another</span>
 <span class="sd">        </span>
 <span class="sd">        :param srce:     Source</span>
@@ -235,13 +263,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_combine</span><span class="p">(</span><span class="n">srce</span><span class="p">,</span> <span class="n">exclude</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXPLY.create"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXPLY.create">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a Polygon Object.</span>
 <span class="sd">        </span>
 
@@ -257,9 +288,12 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.create_s"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXPLY.create_s">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.create_s">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` Object from a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:  `GXBF &lt;geosoft.gxapi.GXBF&gt;` to serialize from</span>
@@ -280,8 +314,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.extent"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.extent">[docs]</a>    <span class="k">def</span> <span class="nf">extent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.extent">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.extent">[docs]</a>
+    <span class="k">def</span> <span class="nf">extent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the extent of the current polygon.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Min X</span>
@@ -300,13 +337,16 @@
 <span class="sd">        **Note:** If there are no polygons in the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` object, returns dummies.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extent</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.get_ipj"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.get_ipj">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:   `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` in which to place the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` projection</span>
@@ -317,13 +357,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.get_polygon"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_polygon">[docs]</a>    <span class="k">def</span> <span class="nf">get_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">poly</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.get_polygon">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_polygon">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">poly</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a polygon from the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
@@ -338,13 +381,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_polygon</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">poly</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.get_polygon_ex"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_polygon_ex">[docs]</a>    <span class="k">def</span> <span class="nf">get_polygon_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">exclude</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.get_polygon_ex">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_polygon_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_polygon_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">exclude</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a polygon from the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:     X `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
@@ -361,13 +407,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">exclude</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_polygon_ex</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">exclude</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.clip_area"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_area">[docs]</a>    <span class="k">def</span> <span class="nf">clip_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.clip_area">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">clip_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clip a polygon to an area</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Min X</span>
@@ -392,8 +441,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.clip_line_int"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_line_int">[docs]</a>    <span class="k">def</span> <span class="nf">clip_line_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">first</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.clip_line_int">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_line_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">clip_line_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">first</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clips a line in or out of the polygons for intersections (`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`).</span>
 <span class="sd">        Intersections are returned as fiducials down the line stored in `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        starting at the first point of the line.</span>
@@ -432,8 +484,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.clip_ply"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_ply">[docs]</a>    <span class="k">def</span> <span class="nf">clip_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pply_b</span><span class="p">,</span> <span class="n">pply_c</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.clip_ply">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_ply">[docs]</a>
+    <span class="k">def</span> <span class="nf">clip_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pply_b</span><span class="p">,</span> <span class="n">pply_c</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clip one polygon against another</span>
 <span class="sd">        </span>
 <span class="sd">        :param pply_b:  Polygon B</span>
@@ -458,8 +513,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.clip_point"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_point">[docs]</a>    <span class="k">def</span> <span class="nf">clip_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.clip_point">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.clip_point">[docs]</a>
+    <span class="k">def</span> <span class="nf">clip_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clips a point in or out of the polygon.</span>
 <span class="sd">        Point is inside: `PLY_POINT_CLIP_INSIDE &lt;geosoft.gxapi.PLY_POINT_CLIP_INSIDE&gt;`</span>
 <span class="sd">        Point is outside: `PLY_POINT_CLIP_OUTSIDE &lt;geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE&gt;`</span>
@@ -483,8 +541,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.get_description"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_description">[docs]</a>    <span class="k">def</span> <span class="nf">get_description</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.get_description">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.get_description">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_description</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` description string</span>
 <span class="sd">        </span>
 <span class="sd">        :param desc:  Polygon description</span>
@@ -495,13 +556,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">desc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_description</span><span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.num_poly"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.num_poly">[docs]</a>    <span class="k">def</span> <span class="nf">num_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.num_poly">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.num_poly">[docs]</a>
+    <span class="k">def</span> <span class="nf">num_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the number of polygons.</span>
 <span class="sd">        </span>
 
@@ -518,8 +582,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.load_table"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.load_table">[docs]</a>    <span class="k">def</span> <span class="nf">load_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.load_table">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.load_table">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads Polygons from a Polygon file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param table:  Name of the polygon file File contains coordinates of one or more polygons</span>
@@ -530,13 +597,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_table</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.area"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.area">[docs]</a>    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.area">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.area">[docs]</a>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the Area of a polygon</span>
 <span class="sd">        </span>
 
@@ -555,8 +625,11 @@
 
 
 
-<div class="viewcode-block" id="GXPLY.rectangle"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.rectangle">[docs]</a>    <span class="k">def</span> <span class="nf">rectangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXPLY.rectangle">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.rectangle">[docs]</a>
+    <span class="k">def</span> <span class="nf">rectangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a polygon from a rectangular area.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Min X</span>
@@ -573,13 +646,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_rectangle</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.rotate"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.rotate">[docs]</a>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.rotate">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.rotate">[docs]</a>
+    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Rotate a polygon about a point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     Rotation point, X</span>
@@ -594,13 +670,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_rotate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rot</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.save_table"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.save_table">[docs]</a>    <span class="k">def</span> <span class="nf">save_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.save_table">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.save_table">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save Polygons to a Polygon file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param table:  Name of the polygon file</span>
@@ -611,13 +690,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_table</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.serial"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.serial">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.serial">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Serialize an `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:   `GXBF &lt;geosoft.gxapi.GXBF&gt;` to serialize to</span>
@@ -628,13 +710,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.set_description"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.set_description">[docs]</a>    <span class="k">def</span> <span class="nf">set_description</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.set_description">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.set_description">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_description</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` description string</span>
 <span class="sd">        </span>
 <span class="sd">        :param desc:  Polygon description</span>
@@ -645,13 +730,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_description</span><span class="p">(</span><span class="n">desc</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.set_ipj"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.set_ipj">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.set_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:   `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to place in the `GXPLY &lt;geosoft.gxapi.GXPLY&gt;`</span>
@@ -664,13 +752,16 @@
 <span class="sd">        **Note:** This changes the projection information only.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXPLY.thin"><a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.thin">[docs]</a>    <span class="k">def</span> <span class="nf">thin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">thin</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXPLY.thin">
+<a class="viewcode-back" href="../../../GXPLY.html#geosoft.gxapi.GXPLY.thin">[docs]</a>
+    <span class="k">def</span> <span class="nf">thin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">thin</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Thin polygons to a desired resolution</span>
 <span class="sd">        </span>
 <span class="sd">        :param thin:  Thining resolution</span>
@@ -684,7 +775,9 @@
 <span class="sd">        neighboring points by more than the thining resolution will</span>
 <span class="sd">        be removed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_thin</span><span class="p">(</span><span class="n">thin</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_thin</span><span class="p">(</span><span class="n">thin</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -714,7 +807,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPLY</a></li> 
@@ -722,8 +815,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXSURFACEITEM &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXSURFACEITEM &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSURFACEITEM</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXSURFACEITEM"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM">[docs]</a><span class="k">class</span> <span class="nc">GXSURFACEITEM</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSURFACEITEM</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM">[docs]</a>
+<span class="k">class</span> <span class="nc">GXSURFACEITEM</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSURFACEITEM</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXSURFACEITEM class.</span>
 
 <span class="sd">    The `GXSURFACEITEM &lt;geosoft.gxapi.GXSURFACEITEM&gt;` allows you to create, read and alter Geosurface files (``*.geosoft_surface``).</span>
@@ -87,12 +86,17 @@
 <span class="sd">    contains one or more triangular polyhedral meshes.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXSURFACEITEM.__init__"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXSURFACEITEM.__init__">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXSURFACEITEM</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXSURFACEITEM.null"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSURFACEITEM.null">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXSURFACEITEM &lt;geosoft.gxapi.GXSURFACEITEM&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXSURFACEITEM &lt;geosoft.gxapi.GXSURFACEITEM&gt;`</span>
@@ -100,8 +104,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXSURFACEITEM</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXSURFACEITEM.is_null"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSURFACEITEM.is_null">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -111,12 +118,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.create"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXSURFACEITEM.create">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a `GXSURFACEITEM &lt;geosoft.gxapi.GXSURFACEITEM&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  Type</span>
@@ -143,8 +153,11 @@
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_guid"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_guid">[docs]</a>    <span class="k">def</span> <span class="nf">get_guid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSURFACEITEM.get_guid">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_guid">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_guid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the GUID of the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:         GUID</span>
@@ -157,13 +170,16 @@
 <span class="sd">        **Note:** The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item &lt;geosoft.gxapi.GXSURFACE.add_surface_item&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">guid</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_guid</span><span class="p">(</span><span class="n">guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.set_properties"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.set_properties">[docs]</a>    <span class="k">def</span> <span class="nf">set_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.set_properties">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.set_properties">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the properties of the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:                      Type</span>
@@ -192,13 +208,16 @@
 <span class="sd">            `GXSYS.generate_guid &lt;geosoft.gxapi.GXSYS.generate_guid&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_properties</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_measure</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.set_properties_ex"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.set_properties_ex">[docs]</a>    <span class="k">def</span> <span class="nf">set_properties_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_option</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">,</span> <span class="n">secondary_source_measure2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.set_properties_ex">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.set_properties_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_properties_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_option</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">,</span> <span class="n">secondary_source_measure2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the properties of the surface item (includes new properties introduced in 8.5).</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:                       Type</span>
@@ -231,13 +250,16 @@
 <span class="sd">            `GXSYS.generate_guid &lt;geosoft.gxapi.GXSYS.generate_guid&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_properties_ex</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_option</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">,</span> <span class="n">secondary_source_measure2</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_properties"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_properties">[docs]</a>    <span class="k">def</span> <span class="nf">get_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.get_properties">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_properties">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the properties of the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:                      Type</span>
@@ -262,13 +284,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">source_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">source_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_properties</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_properties_ex"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_properties_ex">[docs]</a>    <span class="k">def</span> <span class="nf">get_properties_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_option</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">,</span> <span class="n">secondary_source_measure2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.get_properties_ex">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_properties_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_properties_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">source_guid</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="n">source_measure</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="p">,</span> <span class="n">secondary_source_option</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="p">,</span> <span class="n">secondary_source_measure2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the properties of the surface item  (includes new properties introduced in 8.5).</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:                       Type</span>
@@ -297,13 +322,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">source_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">source_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_option</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_measure2</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_properties_ex</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondary_source_option</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_measure</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">secondary_source_measure2</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.set_default_render_properties"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.set_default_render_properties">[docs]</a>    <span class="k">def</span> <span class="nf">set_default_render_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">transparency</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.set_default_render_properties">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.set_default_render_properties">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_default_render_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">transparency</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets default render properties of the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param color:         Color</span>
@@ -322,13 +350,16 @@
 <span class="sd">            `GXMVIEW.color &lt;geosoft.gxapi.GXMVIEW.color&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_default_render_properties</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">transparency</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_default_render_properties"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_default_render_properties">[docs]</a>    <span class="k">def</span> <span class="nf">get_default_render_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">transparency</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.get_default_render_properties">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_default_render_properties">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_default_render_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">transparency</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets default render properties of the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param color:         Color</span>
@@ -347,13 +378,16 @@
 <span class="sd">            `GXMVIEW.color &lt;geosoft.gxapi.GXMVIEW.color&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">transparency</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_default_render_properties</span><span class="p">(</span><span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">transparency</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.num_components"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.num_components">[docs]</a>    <span class="k">def</span> <span class="nf">num_components</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.num_components">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.num_components">[docs]</a>
+    <span class="k">def</span> <span class="nf">num_components</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the number of components in the surface item.</span>
 <span class="sd">        </span>
 
@@ -370,8 +404,11 @@
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.add_mesh"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.add_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">add_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">,</span> <span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSURFACEITEM.add_mesh">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.add_mesh">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">,</span> <span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds a triangular polyhedral mesh component to the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vert_v_vx:    Vertices X location</span>
@@ -400,8 +437,11 @@
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_mesh"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">get_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">,</span> <span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSURFACEITEM.get_mesh">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_mesh">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">,</span> <span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets a triangular polyhedral mesh of a component in the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:        Index of the component</span>
@@ -424,13 +464,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_mesh</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">,</span> <span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_extents"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_extents">[docs]</a>    <span class="k">def</span> <span class="nf">get_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.get_extents">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_extents">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the spatial range of the the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:        Minimum valid data in X.</span>
@@ -451,13 +494,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_extents</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_mesh_info"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_mesh_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_mesh_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">closed</span><span class="p">,</span> <span class="n">n_inner_comps</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.get_mesh_info">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_mesh_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_mesh_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">closed</span><span class="p">,</span> <span class="n">n_inner_comps</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets information about a triangular polyhedral mesh component in the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:                       Index of the component</span>
@@ -478,13 +524,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">closed</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">n_inner_comps</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_mesh_info</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">closed</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">n_inner_comps</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_info"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">closed</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.get_info">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">closed</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets information about the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param closed:                      indicating if all meshes in item is closed</span>
@@ -501,13 +550,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">closed</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">(</span><span class="n">closed</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">volume_confidence_interval</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.get_geometry_info"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_geometry_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_geometry_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">triangles</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.get_geometry_info">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.get_geometry_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_geometry_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">triangles</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the total number of vertices and triangles of all mesh components in item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vertices:     Total number of vertices</span>
@@ -520,13 +572,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">vertices</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">triangles</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_geometry_info</span><span class="p">(</span><span class="n">vertices</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">triangles</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.compute_extended_info"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.compute_extended_info">[docs]</a>    <span class="k">def</span> <span class="nf">compute_extended_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">triangles</span><span class="p">,</span> <span class="n">inconsistent</span><span class="p">,</span> <span class="n">invalid</span><span class="p">,</span> <span class="n">intersectiona</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.compute_extended_info">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.compute_extended_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_extended_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">triangles</span><span class="p">,</span> <span class="n">inconsistent</span><span class="p">,</span> <span class="n">invalid</span><span class="p">,</span> <span class="n">intersectiona</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute more information (including validation) about of all mesh components in the surface item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param components:     Number of inner components (recomputed)</span>
@@ -549,13 +604,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">components</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vertices</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">edges</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">triangles</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">inconsistent</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">invalid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">intersectiona</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_extended_info</span><span class="p">(</span><span class="n">components</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vertices</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">edges</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">triangles</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">inconsistent</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">invalid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">intersectiona</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.compute_poly_line_intersections"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections">[docs]</a>    <span class="k">def</span> <span class="nf">compute_poly_line_intersections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_x_out</span><span class="p">,</span> <span class="n">vv_y_out</span><span class="p">,</span> <span class="n">vv_z_out</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.compute_poly_line_intersections">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_poly_line_intersections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_x_out</span><span class="p">,</span> <span class="n">vv_y_out</span><span class="p">,</span> <span class="n">vv_z_out</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute intersections of a 3D PolyLine with a `GXSURFACEITEM &lt;geosoft.gxapi.GXSURFACEITEM&gt;` Object</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:         X coordinates.</span>
@@ -576,13 +634,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_compute_poly_line_intersections</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_x_out</span><span class="p">,</span> <span class="n">vv_y_out</span><span class="p">,</span> <span class="n">vv_z_out</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSURFACEITEM.intersects_bounding_box"><a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box">[docs]</a>    <span class="k">def</span> <span class="nf">intersects_bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSURFACEITEM.intersects_bounding_box">
+<a class="viewcode-back" href="../../../GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box">[docs]</a>
+    <span class="k">def</span> <span class="nf">intersects_bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks intersections of a bounding box with a `GXSURFACEITEM &lt;geosoft.gxapi.GXSURFACEITEM&gt;` Object</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:        Min X</span>
@@ -604,7 +665,9 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intersects_bounding_box</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret_val</span></div></div>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+</div>
+
 
 
 
@@ -633,7 +696,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSURFACEITEM</a></li> 
@@ -641,8 +704,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

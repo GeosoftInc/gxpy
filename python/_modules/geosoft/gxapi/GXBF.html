@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXBF &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXBF &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXBF</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXBF"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF">[docs]</a><span class="k">class</span> <span class="nc">GXBF</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapBF</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF">[docs]</a>
+<span class="k">class</span> <span class="nc">GXBF</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapBF</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXBF class.</span>
 
 <span class="sd">    The `GXBF &lt;geosoft.gxapi.GXBF&gt;` class is used to access (or create) Binary files and remove</span>
@@ -88,12 +87,17 @@
 <span class="sd">    files and writing to files.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXBF.__init__"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXBF.__init__">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXBF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXBF.null"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXBF.null">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
@@ -101,8 +105,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXBF</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXBF.is_null"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXBF.is_null">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -112,12 +119,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXBF.ch_size"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.ch_size">[docs]</a>    <span class="k">def</span> <span class="nf">ch_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.ch_size">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.ch_size">[docs]</a>
+    <span class="k">def</span> <span class="nf">ch_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Changes the size of a file</span>
 <span class="sd">        </span>
 <span class="sd">        :param size:  New length in bytes</span>
@@ -128,13 +138,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ch_size</span><span class="p">(</span><span class="n">size</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.seek"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.seek">[docs]</a>    <span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.seek">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.seek">[docs]</a>
+    <span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Moves file position</span>
 <span class="sd">        </span>
 <span class="sd">        :param offset:  Number of bytes from reference point</span>
@@ -150,13 +163,16 @@
 <span class="sd">        a read-only file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_seek</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">ref</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.copy"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b_fw</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.copy">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b_fw</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy entire contents of a source `GXBF &lt;geosoft.gxapi.GXBF&gt;` to a destination `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param b_fw:  Destination `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
@@ -167,13 +183,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">b_fw</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.crc"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.crc">[docs]</a>    <span class="k">def</span> <span class="nf">crc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">crc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.crc">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.crc">[docs]</a>
+    <span class="k">def</span> <span class="nf">crc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">crc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute CRC of a file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param size:  Number of bytes to CRC</span>
@@ -193,9 +212,12 @@
 
 
 
-<div class="viewcode-block" id="GXBF.create"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.create">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXBF.create">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create `GXBF &lt;geosoft.gxapi.GXBF&gt;` object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:    File name to open (&quot;&quot; is a temporary file)</span>
@@ -227,9 +249,12 @@
 
 
 
-<div class="viewcode-block" id="GXBF.create_sbf"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.create_sbf">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXBF.create_sbf">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.create_sbf">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_sbf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">sbf</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create `GXBF &lt;geosoft.gxapi.GXBF&gt;` object inside an `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param sbf:     Storage</span>
@@ -258,8 +283,11 @@
 
 
 
-<div class="viewcode-block" id="GXBF.eof"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.eof">[docs]</a>    <span class="k">def</span> <span class="nf">eof</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXBF.eof">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.eof">[docs]</a>
+    <span class="k">def</span> <span class="nf">eof</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns 1 if at the end of the file</span>
 <span class="sd">        </span>
 
@@ -277,8 +305,11 @@
 
 
 
-<div class="viewcode-block" id="GXBF.query_write"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.query_write">[docs]</a>    <span class="k">def</span> <span class="nf">query_write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXBF.query_write">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.query_write">[docs]</a>
+    <span class="k">def</span> <span class="nf">query_write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if you can write to the `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
 <span class="sd">        </span>
 
@@ -296,8 +327,11 @@
 
 
 
-<div class="viewcode-block" id="GXBF.read_binary_string"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_binary_string">[docs]</a>    <span class="k">def</span> <span class="nf">read_binary_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXBF.read_binary_string">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_binary_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_binary_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reads string data from current position in `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bytes:     Number of bytes to read</span>
@@ -312,13 +346,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_binary_string</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.size"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.size">[docs]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.size">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.size">[docs]</a>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the file length</span>
 <span class="sd">        </span>
 
@@ -335,8 +372,11 @@
 
 
 
-<div class="viewcode-block" id="GXBF.tell"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.tell">[docs]</a>    <span class="k">def</span> <span class="nf">tell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXBF.tell">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.tell">[docs]</a>
+    <span class="k">def</span> <span class="nf">tell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns current position of file pointer in bytes</span>
 <span class="sd">        </span>
 
@@ -353,8 +393,11 @@
 
 
 
-<div class="viewcode-block" id="GXBF.read_int"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_int">[docs]</a>    <span class="k">def</span> <span class="nf">read_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXBF.read_int">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reads int data from current position in `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`</span>
@@ -378,13 +421,16 @@
 <span class="sd">        in the native byte order of the reading/writing computer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_int</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.read_double"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_double">[docs]</a>    <span class="k">def</span> <span class="nf">read_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.read_double">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reads real data from current position in `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`</span>
@@ -408,13 +454,16 @@
 <span class="sd">        in the native byte order of the reading/writing computer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_double</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.read_vv"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_vv">[docs]</a>    <span class="k">def</span> <span class="nf">read_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.read_vv">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.read_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Read data to a `GXVV &lt;geosoft.gxapi.GXVV&gt;` from current position in `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`</span>
@@ -438,13 +487,16 @@
 <span class="sd">        in the native byte order of the reading/writing computer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_read_vv</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.set_destroy_status"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.set_destroy_status">[docs]</a>    <span class="k">def</span> <span class="nf">set_destroy_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.set_destroy_status">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.set_destroy_status">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_destroy_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the flag to delete the file on close</span>
 <span class="sd">        </span>
 <span class="sd">        :param status:  :ref:`BF_CLOSE`</span>
@@ -455,13 +507,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_destroy_status</span><span class="p">(</span><span class="n">status</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.write_binary_string"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_binary_string">[docs]</a>    <span class="k">def</span> <span class="nf">write_binary_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.write_binary_string">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_binary_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_binary_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write a binary string to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param encoding:  :ref:`BF_ENCODE`</span>
@@ -474,13 +529,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_binary_string</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.write_data_null"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_data_null">[docs]</a>    <span class="k">def</span> <span class="nf">write_data_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.write_data_null">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_data_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_data_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes a null byte (0) to `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 
@@ -489,13 +547,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_data_null</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.write_int"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_int">[docs]</a>    <span class="k">def</span> <span class="nf">write_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.write_int">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes int to the `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`</span>
@@ -514,13 +575,16 @@
 <span class="sd">        in the native byte order of the writing computer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_int</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.write_double"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_double">[docs]</a>    <span class="k">def</span> <span class="nf">write_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.write_double">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes real to the `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`</span>
@@ -539,13 +603,16 @@
 <span class="sd">        in the native byte order of the writing computer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_double</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXBF.write_vv"><a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_vv">[docs]</a>    <span class="k">def</span> <span class="nf">write_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXBF.write_vv">
+<a class="viewcode-back" href="../../../GXBF.html#geosoft.gxapi.GXBF.write_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes `GXVV &lt;geosoft.gxapi.GXVV&gt;` to the `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`</span>
@@ -563,7 +630,9 @@
 <span class="sd">        If a byte order is not specified, the data is written</span>
 <span class="sd">        in the native byte order of the writing computer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_write_vv</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_vv</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -593,7 +662,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXBF</a></li> 
@@ -601,8 +670,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

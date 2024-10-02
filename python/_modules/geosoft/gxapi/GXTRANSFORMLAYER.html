@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXTRANSFORMLAYER &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXTRANSFORMLAYER &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTRANSFORMLAYER</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,19 +75,26 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXTRANSFORMLAYER"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER">[docs]</a><span class="k">class</span> <span class="nc">GXTRANSFORMLAYER</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTRANSFORMLAYER</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER">[docs]</a>
+<span class="k">class</span> <span class="nc">GXTRANSFORMLAYER</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTRANSFORMLAYER</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXTRANSFORMLAYER class.</span>
 
 <span class="sd">    Object to interface with GMSYS 3D view objects that supports transforming layer.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.__init__"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.__init__">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXTRANSFORMLAYER</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.null"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXTRANSFORMLAYER.null">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXTRANSFORMLAYER &lt;geosoft.gxapi.GXTRANSFORMLAYER&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXTRANSFORMLAYER &lt;geosoft.gxapi.GXTRANSFORMLAYER&gt;`</span>
@@ -98,8 +102,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXTRANSFORMLAYER</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.is_null"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTRANSFORMLAYER.is_null">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -109,12 +116,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.end"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.end">[docs]</a>    <span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">applyChanges</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.end">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.end">[docs]</a>
+    <span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">applyChanges</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        End interactive editing for selected grid layer in gmsys.</span>
 <span class="sd">        </span>
 <span class="sd">        :param applyChanges:  Apply changes to layer.</span>
@@ -127,13 +137,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_end</span><span class="p">(</span><span class="n">applyChanges</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.cancel_"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.cancel_">[docs]</a>    <span class="k">def</span> <span class="nf">cancel_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.cancel_">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.cancel_">[docs]</a>
+    <span class="k">def</span> <span class="nf">cancel_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Cancel changes done in the transform layer</span>
 <span class="sd">        </span>
 
@@ -144,13 +157,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cancel_</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.undo"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.undo">[docs]</a>    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.undo">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.undo">[docs]</a>
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Undo one step of editing in the transform layer</span>
 <span class="sd">        </span>
 
@@ -161,13 +177,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_undo</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.redo"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.redo">[docs]</a>    <span class="k">def</span> <span class="nf">redo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.redo">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.redo">[docs]</a>
+    <span class="k">def</span> <span class="nf">redo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Redo one step of editing in the transform layer</span>
 <span class="sd">        </span>
 
@@ -178,13 +197,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_redo</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.can_undo"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.can_undo">[docs]</a>    <span class="k">def</span> <span class="nf">can_undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.can_undo">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.can_undo">[docs]</a>
+    <span class="k">def</span> <span class="nf">can_undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Can perform undo on the transform layer</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:             int</span>
@@ -201,8 +223,11 @@
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.can_redo"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.can_redo">[docs]</a>    <span class="k">def</span> <span class="nf">can_redo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTRANSFORMLAYER.can_redo">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.can_redo">[docs]</a>
+    <span class="k">def</span> <span class="nf">can_redo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Can perform redo on the transform layer</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:             int</span>
@@ -219,8 +244,11 @@
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.save_to_new_layer_grid"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.save_to_new_layer_grid">[docs]</a>    <span class="k">def</span> <span class="nf">save_to_new_layer_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sGrid</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTRANSFORMLAYER.save_to_new_layer_grid">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.save_to_new_layer_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_to_new_layer_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sGrid</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save changes to a new grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param sGrid:       output grid path</span>
@@ -233,13 +261,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_to_new_layer_grid</span><span class="p">(</span><span class="n">sGrid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.apply_constant_transform"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.apply_constant_transform">[docs]</a>    <span class="k">def</span> <span class="nf">apply_constant_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elevation</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.apply_constant_transform">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.apply_constant_transform">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_constant_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elevation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply constant transform to the transform layer</span>
 <span class="sd">        </span>
 <span class="sd">        :param elevation:   change in elevation to apply</span>
@@ -252,13 +283,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_apply_constant_transform</span><span class="p">(</span><span class="n">elevation</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.select_node"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.select_node">[docs]</a>    <span class="k">def</span> <span class="nf">select_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodeIdx</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.select_node">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.select_node">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodeIdx</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Select or deselect a node by its index</span>
 <span class="sd">        </span>
 <span class="sd">        :param nodeIdx:     node index</span>
@@ -271,13 +305,16 @@
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_select_node</span><span class="p">(</span><span class="n">nodeIdx</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTRANSFORMLAYER.clear_node_selection"><a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.clear_node_selection">[docs]</a>    <span class="k">def</span> <span class="nf">clear_node_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTRANSFORMLAYER.clear_node_selection">
+<a class="viewcode-back" href="../../../GXTRANSFORMLAYER.html#geosoft.gxapi.GXTRANSFORMLAYER.clear_node_selection">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear_node_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clear the section status of every node</span>
 <span class="sd">        </span>
 
@@ -287,7 +324,9 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_node_selection</span><span class="p">()</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_node_selection</span><span class="p">()</span></div>
+</div>
+
         
 
 
@@ -317,7 +356,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTRANSFORMLAYER</a></li> 
@@ -325,8 +364,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

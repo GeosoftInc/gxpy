@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMESHUTIL &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXMESHUTIL &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMESHUTIL</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,19 +75,26 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXMESHUTIL"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL">[docs]</a><span class="k">class</span> <span class="nc">GXMESHUTIL</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXMESHUTIL">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL">[docs]</a>
+<span class="k">class</span> <span class="nc">GXMESHUTIL</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXMESHUTIL class.</span>
 
 <span class="sd">    Mesh utility methods.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXMESHUTIL.__init__"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXMESHUTIL.__init__">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXMESHUTIL</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXMESHUTIL.null"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXMESHUTIL.null">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXMESHUTIL &lt;geosoft.gxapi.GXMESHUTIL&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXMESHUTIL &lt;geosoft.gxapi.GXMESHUTIL&gt;`</span>
@@ -98,8 +102,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXMESHUTIL</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXMESHUTIL.is_null"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXMESHUTIL.is_null">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -109,12 +116,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXMESHUTIL.import_grid_to_surface"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.import_grid_to_surface">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.import_grid_to_surface">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.import_grid_to_surface">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_grid_to_surface</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid_file_name</span><span class="p">,</span> <span class="n">geosurface_filename</span><span class="p">,</span> <span class="n">surface_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Imports a Grid to a Surface</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid_file_name:       Grid File Name</span>
@@ -129,13 +139,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_import_grid_to_surface</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid_file_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">geosurface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surface_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.clip_surface_with_grid"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.clip_surface_with_grid">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.clip_surface_with_grid">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.clip_surface_with_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">clip_surface_with_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inputSurfaceFile</span><span class="p">,</span> <span class="n">inputSurface</span><span class="p">,</span> <span class="n">gridSurfaceFileName</span><span class="p">,</span> <span class="n">gridSurfaceName</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurfaceNameAbove</span><span class="p">,</span> <span class="n">outputSurfaceNameBelow</span><span class="p">,</span> <span class="n">surface_clip_mode</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clip a Surface with a Grid Surface (grid converted to surface)</span>
 <span class="sd">        </span>
 <span class="sd">        :param inputSurfaceFile:        Input Geosurface file</span>
@@ -167,9 +180,12 @@
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.clip_surface_with_extents"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.clip_surface_with_extents">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXMESHUTIL.clip_surface_with_extents">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.clip_surface_with_extents">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">clip_surface_with_extents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inputSurfaceFile</span><span class="p">,</span> <span class="n">inputSurface</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurfaceName</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clip a Surface with X,Y,Z extents</span>
 <span class="sd">        </span>
 <span class="sd">        :param inputSurfaceFile:   Input Geosurface file</span>
@@ -205,9 +221,12 @@
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.clip_surface_with_polygon2d"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.clip_surface_with_polygon2d">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXMESHUTIL.clip_surface_with_polygon2d">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.clip_surface_with_polygon2d">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">clip_surface_with_polygon2d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inputSurfaceFile</span><span class="p">,</span> <span class="n">inputSurface</span><span class="p">,</span> <span class="n">polygonFile</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurfaceName</span><span class="p">,</span> <span class="n">maskInside</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clip a Surface a specified Polygon file</span>
 <span class="sd">        </span>
 <span class="sd">        :param inputSurfaceFile:   Input Geosurface file</span>
@@ -235,9 +254,12 @@
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.compute_surface_union"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_union">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXMESHUTIL.compute_surface_union">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_union">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">compute_surface_union</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">primarySurfaceFile</span><span class="p">,</span> <span class="n">primarySurface</span><span class="p">,</span> <span class="n">secondarySurfaceFile</span><span class="p">,</span> <span class="n">secondarySurface</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurface</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute union of two surfaces</span>
 <span class="sd">        </span>
 <span class="sd">        :param primarySurfaceFile:    Primary Geosurface file</span>
@@ -258,13 +280,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_compute_surface_union</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">primarySurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">primarySurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondarySurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondarySurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurface</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.compute_surface_clip"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_clip">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.compute_surface_clip">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_clip">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">compute_surface_clip</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">primarySurfaceFile</span><span class="p">,</span> <span class="n">primarySurface</span><span class="p">,</span> <span class="n">secondarySurfaceFile</span><span class="p">,</span> <span class="n">secondarySurface</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurface</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clip a surface with another surface, and output the clipped surfaces</span>
 <span class="sd">        </span>
 <span class="sd">        :param primarySurfaceFile:    Primary Geosurface file</span>
@@ -285,13 +310,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_compute_surface_clip</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">primarySurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">primarySurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondarySurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondarySurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurface</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.compute_surface_intersection"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_intersection">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.compute_surface_intersection">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_intersection">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">compute_surface_intersection</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">primarySurfaceFile</span><span class="p">,</span> <span class="n">primarySurface</span><span class="p">,</span> <span class="n">secondarySurfaceFile</span><span class="p">,</span> <span class="n">secondarySurface</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurface</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes and outputs the intersection of two closed surfaces</span>
 <span class="sd">        </span>
 <span class="sd">        :param primarySurfaceFile:    Primary Geosurface file</span>
@@ -312,13 +340,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_compute_surface_intersection</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">primarySurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">primarySurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondarySurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">secondarySurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurface</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.compute_surface_simplification"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_simplification">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.compute_surface_simplification">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_simplification">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">compute_surface_simplification</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inputSurfaceFile</span><span class="p">,</span> <span class="n">inputSurface</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurface</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Simplifies a surface by reducing the number of edges by half</span>
 <span class="sd">        </span>
 <span class="sd">        :param inputSurfaceFile:   Input Geosurface file</span>
@@ -335,13 +366,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_compute_surface_simplification</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">inputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inputSurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurface</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.compute_surface_subdivision"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_subdivision">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.compute_surface_subdivision">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.compute_surface_subdivision">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">compute_surface_subdivision</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inputSurfaceFile</span><span class="p">,</span> <span class="n">inputSurface</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurface</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Smooths a surface by applying a loop subdivision algorithm</span>
 <span class="sd">        </span>
 <span class="sd">        :param inputSurfaceFile:   Input Geosurface file</span>
@@ -358,13 +392,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_compute_surface_subdivision</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">inputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inputSurface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurface</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.does_surface_intersect"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.does_surface_intersect">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.does_surface_intersect">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.does_surface_intersect">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">does_surface_intersect</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">primarySurfaceFile</span><span class="p">,</span> <span class="n">primarySurface</span><span class="p">,</span> <span class="n">secondarySurfaceFile</span><span class="p">,</span> <span class="n">secondarySurface</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if the two surfaces intersect at all</span>
 <span class="sd">        </span>
 <span class="sd">        :param primarySurfaceFile:    Primary Geosurface file</span>
@@ -388,9 +425,12 @@
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.does_surface_self_intersect"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.does_surface_self_intersect">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXMESHUTIL.does_surface_self_intersect">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.does_surface_self_intersect">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">does_surface_self_intersect</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">surfaceFile</span><span class="p">,</span> <span class="n">surfaceName</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if a surface self-intersects</span>
 <span class="sd">        </span>
 <span class="sd">        :param surfaceFile:  Geosurface file</span>
@@ -410,9 +450,12 @@
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.extract_isosurface_from_voxel"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.extract_isosurface_from_voxel">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXMESHUTIL.extract_isosurface_from_voxel">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.extract_isosurface_from_voxel">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">extract_isosurface_from_voxel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">voxelFile</span><span class="p">,</span> <span class="n">surfaceFile</span><span class="p">,</span> <span class="n">surfaceName</span><span class="p">,</span> <span class="n">contourMin</span><span class="p">,</span> <span class="n">contourMax</span><span class="p">,</span> <span class="n">close</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extracts isosurface from a voxel, and saves the voxel to a Geosurface file</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxelFile:    Voxel file</span>
@@ -433,13 +476,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_extract_isosurface_from_voxel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">voxelFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">contourMin</span><span class="p">,</span> <span class="n">contourMax</span><span class="p">,</span> <span class="n">close</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.reproject_geosurface_file"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.reproject_geosurface_file">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.reproject_geosurface_file">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.reproject_geosurface_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">reproject_geosurface_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_surface_filename</span><span class="p">,</span> <span class="n">output_surface_filename</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Repoject surface with the coordinate system of the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_surface_filename:   Input Geosurface file name</span>
@@ -454,13 +500,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_reproject_geosurface_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.project_geosurface_onto_grid"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.project_geosurface_onto_grid">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.project_geosurface_onto_grid">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.project_geosurface_onto_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">project_geosurface_onto_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">surface_filename</span><span class="p">,</span> <span class="n">surface_name</span><span class="p">,</span> <span class="n">input_geometry_grid</span><span class="p">,</span> <span class="n">projection_method</span><span class="p">,</span> <span class="n">output_grid</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Repoject surface with the coordinate system of the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param surface_filename:     Input Geosurface file name</span>
@@ -479,13 +528,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_project_geosurface_onto_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surface_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">input_geometry_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">projection_method</span><span class="p">,</span> <span class="n">output_grid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.copy_mesh_to_geo_surface_file"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.copy_mesh_to_geo_surface_file">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.copy_mesh_to_geo_surface_file">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.copy_mesh_to_geo_surface_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">copy_mesh_to_geo_surface_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_surface_filename</span><span class="p">,</span> <span class="n">surface_name</span><span class="p">,</span> <span class="n">output_surface_filename</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy a mesh from one geosurface file to another</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_surface_filename:   Input Geosurface file name</span>
@@ -500,13 +552,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_copy_mesh_to_geo_surface_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">surface_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_surface_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXMESHUTIL.apply_transformation"><a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.apply_transformation">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXMESHUTIL.apply_transformation">
+<a class="viewcode-back" href="../../../GXMESHUTIL.html#geosoft.gxapi.GXMESHUTIL.apply_transformation">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inputSurfaceFile</span><span class="p">,</span> <span class="n">inputSurfaceName</span><span class="p">,</span> <span class="n">outputSurfaceFile</span><span class="p">,</span> <span class="n">outputSurfaceName</span><span class="p">,</span> <span class="n">transformationMethod</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies a transformation to a surface, see :ref:`SURFACE_TRANSFORMATION_METHOD`for available operations. The existing mesh will be preserved, and a new mesh will be created with the target name in the target file. Reprojection willbe handled automatically in the case that the coordinate systems differ.</span>
 <span class="sd">        </span>
 <span class="sd">        :param inputSurfaceFile:      Input surface file name</span>
@@ -530,7 +585,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_apply_transformation</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">inputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inputSurfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">transformationMethod</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMESHUTIL</span><span class="o">.</span><span class="n">_apply_transformation</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">inputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inputSurfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceFile</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">outputSurfaceName</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">transformationMethod</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -560,7 +617,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMESHUTIL</a></li> 
@@ -568,8 +625,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -25,6 +25,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXCHIMERA
    GXCOM
    GXCSYMB
+   GXCSYMB3D
    GXDAT
    GXDATALINKD
    GXDATAMINE

@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVM &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXVM &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVM</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXVM"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM">[docs]</a><span class="k">class</span> <span class="nc">GXVM</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVM</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVM">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM">[docs]</a>
+<span class="k">class</span> <span class="nc">GXVM</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVM</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXVM class.</span>
 
 <span class="sd">    In-memory vector data methods</span>
@@ -103,12 +102,17 @@
 <span class="sd">    See `GXVV &lt;geosoft.gxapi.GXVV&gt;` for methods to move data between a `GXVM &lt;geosoft.gxapi.GXVM&gt;` and a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXVM.__init__"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXVM.__init__">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXVM</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXVM.null"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVM.null">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXVM &lt;geosoft.gxapi.GXVM&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXVM &lt;geosoft.gxapi.GXVM&gt;`</span>
@@ -116,8 +120,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXVM</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXVM.is_null"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVM.is_null">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -127,12 +134,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXVM.create"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXVM.create">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:      :ref:`GEO_VAR`</span>
@@ -154,9 +164,12 @@
 
 
 
-<div class="viewcode-block" id="GXVM.create_ext"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.create_ext">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXVM.create_ext">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.create_ext">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ext</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a `GXVM &lt;geosoft.gxapi.GXVM&gt;`, using one of the :ref:`GS_TYPES` special data types.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:      :ref:`GS_TYPES`</span>
@@ -181,8 +194,11 @@
 
 
 
-<div class="viewcode-block" id="GXVM.get_int"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.get_int">[docs]</a>    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVM.get_int">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.get_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get an integer element from a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element wanted</span>
@@ -202,8 +218,11 @@
 
 
 
-<div class="viewcode-block" id="GXVM.get_string"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.get_string">[docs]</a>    <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVM.get_string">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.get_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a string element from a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element wanted</span>
@@ -222,13 +241,16 @@
 <span class="sd">        are converted to &quot;*&quot; string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVM.length"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.length">[docs]</a>    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVM.length">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.length">[docs]</a>
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns current `GXVM &lt;geosoft.gxapi.GXVM&gt;` length.</span>
 <span class="sd">        </span>
 
@@ -245,8 +267,11 @@
 
 
 
-<div class="viewcode-block" id="GXVM.re_size"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.re_size">[docs]</a>    <span class="k">def</span> <span class="nf">re_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newsize</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVM.re_size">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.re_size">[docs]</a>
+    <span class="k">def</span> <span class="nf">re_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newsize</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Re-set the size of a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param newsize:  New size (number of elements)</span>
@@ -259,13 +284,16 @@
 <span class="sd">        **Note:** If increasing the `GXVM &lt;geosoft.gxapi.GXVM&gt;` size, new elements are set to dummies.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_re_size</span><span class="p">(</span><span class="n">newsize</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVM.get_double"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.get_double">[docs]</a>    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVM.get_double">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.get_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a real element from a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element wanted</span>
@@ -285,8 +313,11 @@
 
 
 
-<div class="viewcode-block" id="GXVM.set_int"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.set_int">[docs]</a>    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXVM.set_int">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.set_int">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set an integer element in a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element to set</span>
@@ -305,13 +336,16 @@
 <span class="sd">        memory and should be avoided if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVM.set_double"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.set_double">[docs]</a>    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVM.set_double">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.set_double">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a real element in a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element to set</span>
@@ -330,13 +364,16 @@
 <span class="sd">        memory and should be avoided if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXVM.set_string"><a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.set_string">[docs]</a>    <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXVM.set_string">
+<a class="viewcode-back" href="../../../GXVM.html#geosoft.gxapi.GXVM.set_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a string element in a `GXVM &lt;geosoft.gxapi.GXVM&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element to set</span>
@@ -354,7 +391,9 @@
 <span class="sd">        increased.  Reallocating `GXVM &lt;geosoft.gxapi.GXVM&gt;` lengths can lead to fragmented</span>
 <span class="sd">        memory and should be avoided if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
         
 
 
@@ -384,7 +423,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVM</a></li> 
@@ -392,8 +431,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

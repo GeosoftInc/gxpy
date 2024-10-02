@@ -1,7 +1,46 @@
-geosoft.gxpy.vox submodule
-=============================================
+﻿geosoft.gxpy.vox
+================
 
 .. automodule:: geosoft.gxpy.vox
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      _vox_file_name
+      _vox_name
+      delete_files
+      elevation_from_depth
+      locations_from_cells
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Vox
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      VoxException
+   
+   
+
+
+

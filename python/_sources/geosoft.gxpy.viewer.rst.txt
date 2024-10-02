@@ -1,7 +1,37 @@
-geosoft.gxpy.viewer submodule
-=============================================
+﻿geosoft.gxpy.viewer
+===================
 
 .. automodule:: geosoft.gxpy.viewer
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _get_default_gd_exe
+      _t
+      view_document
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      ViewerException
+   
+   
+
+
+

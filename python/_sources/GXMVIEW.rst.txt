@@ -454,6 +454,10 @@ Defines for mview types
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.MVIEW_IS_VOXSURF
+.. autodata:: geosoft.gxapi.MVIEW_IS_CSYMB3D
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MVIEW_IS_CSYMB3D
 
 
 .. _MVIEW_LABEL_BOUND:

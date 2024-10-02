@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXLAYOUT class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXLAYOUT class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,30 +28,75 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXLAYOUT class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXLAYOUT class</a><ul>
-<li><a class="reference internal" href="#layout-constr-constants">LAYOUT_CONSTR constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.__init__"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.add_constraint"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.add_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.add_rectangle"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.add_rectangle()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.calculate_rects"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.calculate_rects()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.clear_all"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.clear_all()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.clear_constraints"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.clear_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.create"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.get_rect_name"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.get_rect_name()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.get_rectangle"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.get_rectangle()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.is_null"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.null"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.num_rectangles"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.num_rectangles()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.set_rectangle"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.set_rectangle()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT.set_rectangle_name"><code class="docutils literal notranslate"><span class="pre">GXLAYOUT.set_rectangle_name()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#layout-constr-constants">LAYOUT_CONSTR constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_LEFT"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_LEFT</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_LEFT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_RIGHT"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_RIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_RIGHT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_TOP"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_TOP</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_TOP</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_BOTTOM"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_BOTTOM</span></code></a></li>
+<li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_BOTTOM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_WIDTH"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_WIDTH</span></code></a></li>
+<li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_WIDTH</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_HEIGHT"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_HEIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_HEIGHT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_HCENTER"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_HCENTER</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_HCENTER</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_VCENTER"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_VCENTER</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_VCENTER</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEL"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_MOVEL</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_MOVEL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVER"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_MOVER</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_MOVER</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVET"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_MOVET</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_MOVET</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEB"><code class="docutils literal notranslate"><span class="pre">LAYOUT_CONSTR_MOVEB</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_CONSTR_MOVEB</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,11 +112,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxlayout-class">
-<span id="gxlayout"></span><h1>GXLAYOUT class<a class="headerlink" href="#gxlayout-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxlayout-class">
+<span id="gxlayout"></span><h1>GXLAYOUT class<a class="headerlink" href="#gxlayout-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXLAYOUT">
-<em class="property">class </em><code class="sig-name descname">GXLAYOUT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXLAYOUT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT" title="Link to this definition">¶</a></dt>
 <dd><p>GXLAYOUT class.</p>
 <p>Layout class for generic relative layout calculation</p>
 <p>The relative layout algorithm allows a logical organization of layout rectangles.
@@ -85,17 +128,16 @@ You can set constraints with English-like semantics. For example:</p>
 the last one that would influence the rectangle calculations. See the notes for iSetConstraint
 for more details.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.add_constraint">
-<code class="sig-name descname">add_constraint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect_from</span></em>, <em class="sig-param"><span class="n">constr_from</span></em>, <em class="sig-param"><span class="n">rect_to</span></em>, <em class="sig-param"><span class="n">constr_to</span></em>, <em class="sig-param"><span class="n">o_mod</span></em>, <em class="sig-param"><span class="n">m_mod</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.add_constraint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_constraint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.add_constraint">
+<span class="sig-name descname"><span class="pre">add_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constr_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rect_to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constr_to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">o_mod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_mod</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.add_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_constraint" title="Link to this definition">¶</a></dt>
 <dd><p>Add a constraint between any two rectangles or to one with absolute positioning</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rect_from</strong> (<em>int</em>) – From rectangle (Or -1 for parent)</p></li>
 <li><p><strong>constr_from</strong> (<em>int</em>) – <a class="reference internal" href="#layout-constr"><span class="std std-ref">LAYOUT_CONSTR constants</span></a> From constraint flag</p></li>
@@ -105,11 +147,11 @@ for more details.</p>
 <li><p><strong>m_mod</strong> (<em>float</em>) – Multiplicative modifier</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>0 - OK
 1 - Error</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -144,11 +186,11 @@ A, <a class="reference internal" href="#id18" title="geosoft.gxapi.LAYOUT_CONSTR
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.add_rectangle">
-<code class="sig-name descname">add_rectangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_x</span></em>, <em class="sig-param"><span class="n">min_y</span></em>, <em class="sig-param"><span class="n">max_x</span></em>, <em class="sig-param"><span class="n">max_y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.add_rectangle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_rectangle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.add_rectangle">
+<span class="sig-name descname"><span class="pre">add_rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.add_rectangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.add_rectangle" title="Link to this definition">¶</a></dt>
 <dd><p>Adds a rectangle as one of the layout’s children (Higer.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min_x</strong> (<em>float</em>) – Rectangle Min X   (All 0’s for undefined allowed)</p></li>
 <li><p><strong>min_y</strong> (<em>float</em>) – Rectangle Min Y</p></li>
@@ -156,10 +198,10 @@ A, <a class="reference internal" href="#id18" title="geosoft.gxapi.LAYOUT_CONSTR
 <li><p><strong>max_y</strong> (<em>float</em>) – Rectangle Max Y</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Rectangle number, -1 on error</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -170,11 +212,11 @@ A, <a class="reference internal" href="#id18" title="geosoft.gxapi.LAYOUT_CONSTR
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.calculate_rects">
-<code class="sig-name descname">calculate_rects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_x</span></em>, <em class="sig-param"><span class="n">min_y</span></em>, <em class="sig-param"><span class="n">max_x</span></em>, <em class="sig-param"><span class="n">max_y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.calculate_rects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.calculate_rects" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.calculate_rects">
+<span class="sig-name descname"><span class="pre">calculate_rects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.calculate_rects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.calculate_rects" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate new positions based on initial conditions and constraints</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Parent Rectangle Min X after calculation</p></li>
 <li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Parent Rectangle Min Y after calculation</p></li>
@@ -193,8 +235,8 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.clear_all">
-<code class="sig-name descname">clear_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.clear_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.clear_all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.clear_all">
+<span class="sig-name descname"><span class="pre">clear_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.clear_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.clear_all" title="Link to this definition">¶</a></dt>
 <dd><p>Remove all children and constraints from layout</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 6.3.</span></p>
@@ -203,8 +245,8 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.clear_constraints">
-<code class="sig-name descname">clear_constraints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.clear_constraints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.clear_constraints" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.clear_constraints">
+<span class="sig-name descname"><span class="pre">clear_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.clear_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.clear_constraints" title="Link to this definition">¶</a></dt>
 <dd><p>Remove all constraints from layout</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 6.3.</span></p>
@@ -213,21 +255,21 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a layout calculation object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num</strong> (<em>int</em>) – Initial number of objects (may be 0)</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Optional name of parent layout (may be empty)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLAYOUT</span></code></a> object.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT">GXLAYOUT</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT.GXLAYOUT">GXLAYOUT</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -237,11 +279,11 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.get_rect_name">
-<code class="sig-name descname">get_rect_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.get_rect_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.get_rect_name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.get_rect_name">
+<span class="sig-name descname"><span class="pre">get_rect_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.get_rect_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.get_rect_name" title="Link to this definition">¶</a></dt>
 <dd><p>Gets an optional name the current info for a rectangle or the parent layout</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rect</strong> (<em>int</em>) – Rectangle to get info for (-1 for parent)</p></li>
 <li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer for name of the rectangle</p></li>
@@ -255,11 +297,11 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.get_rectangle">
-<code class="sig-name descname">get_rectangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">min_x</span></em>, <em class="sig-param"><span class="n">min_y</span></em>, <em class="sig-param"><span class="n">max_x</span></em>, <em class="sig-param"><span class="n">max_y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.get_rectangle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.get_rectangle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.get_rectangle">
+<span class="sig-name descname"><span class="pre">get_rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.get_rectangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.get_rectangle" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the current bounds for a rectangle or the parent layout</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rect</strong> (<em>int</em>) – Rectangle to get info for (-1 for parent)</p></li>
 <li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Rectangle Min X</p></li>
@@ -276,42 +318,42 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLAYOUT</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLAYOUT</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT">GXLAYOUT</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXLAYOUT" title="geosoft.gxapi.GXLAYOUT.GXLAYOUT">GXLAYOUT</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.num_rectangles">
-<code class="sig-name descname">num_rectangles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.num_rectangles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.num_rectangles" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.num_rectangles">
+<span class="sig-name descname"><span class="pre">num_rectangles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.num_rectangles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.num_rectangles" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the number of children in the list.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Number of rectangles not counting the parent</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -322,11 +364,11 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.set_rectangle">
-<code class="sig-name descname">set_rectangle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">min_x</span></em>, <em class="sig-param"><span class="n">min_y</span></em>, <em class="sig-param"><span class="n">max_x</span></em>, <em class="sig-param"><span class="n">max_y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.set_rectangle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.set_rectangle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.set_rectangle">
+<span class="sig-name descname"><span class="pre">set_rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.set_rectangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.set_rectangle" title="Link to this definition">¶</a></dt>
 <dd><p>Sets the current bounds for a rectangle previously added to the layout</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rect</strong> (<em>int</em>) – Rectangle to set info for (-1 for parent)</p></li>
 <li><p><strong>min_x</strong> (<em>float</em>) – Rectangle Min X</p></li>
@@ -343,11 +385,11 @@ after the calculation (returned here for convenience).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXLAYOUT.set_rectangle_name">
-<code class="sig-name descname">set_rectangle_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">p3</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.set_rectangle_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.set_rectangle_name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLAYOUT.set_rectangle_name">
+<span class="sig-name descname"><span class="pre">set_rectangle_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLAYOUT.html#GXLAYOUT.set_rectangle_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLAYOUT.set_rectangle_name" title="Link to this definition">¶</a></dt>
 <dd><p>Sets an optional name the current info for a rectangle or the parent layout</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rect</strong> (<em>int</em>) – Rectangle to set info for (-1 for parent)</p></li>
 <li><p><strong>p3</strong> (<em>str</em>) – Name</p></li>
@@ -362,143 +404,143 @@ after the calculation (returned here for convenience).</p>
 
 </dd></dl>
 
-<div class="section" id="layout-constr-constants">
-<span id="layout-constr"></span><h2>LAYOUT_CONSTR constants<a class="headerlink" href="#layout-constr-constants" title="Permalink to this headline">¶</a></h2>
+<section id="layout-constr-constants">
+<span id="layout-constr"></span><h2>LAYOUT_CONSTR constants<a class="headerlink" href="#layout-constr-constants" title="Link to this heading">¶</a></h2>
 <p>Layout constraint specifiers</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_LEFT">
-<code class="sig-name descname">LAYOUT_CONSTR_LEFT</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_LEFT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_LEFT">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_LEFT</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_LEFT" title="Link to this definition">¶</a></dt>
 <dd><p>Adjust rectangle’s left side</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_LEFT</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_RIGHT">
-<code class="sig-name descname">LAYOUT_CONSTR_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_RIGHT">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_RIGHT</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_RIGHT" title="Link to this definition">¶</a></dt>
 <dd><p>Adjust rectangle’s right side</p>
 <dl class="py attribute">
-<dt id="id11">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_RIGHT</code><em class="property"> = 1</em><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id11">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_TOP">
-<code class="sig-name descname">LAYOUT_CONSTR_TOP</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_TOP" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_TOP">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_TOP</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_TOP" title="Link to this definition">¶</a></dt>
 <dd><p>Adjust rectangle’s top side</p>
 <dl class="py attribute">
-<dt id="id12">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_TOP</code><em class="property"> = 2</em><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id12">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_BOTTOM">
-<code class="sig-name descname">LAYOUT_CONSTR_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_BOTTOM">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_BOTTOM</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_BOTTOM" title="Link to this definition">¶</a></dt>
 <dd><p>Adjust rectangle’s bottom side</p>
 <dl class="py attribute">
-<dt id="id13">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_BOTTOM</code><em class="property"> = 3</em><a class="headerlink" href="#id13" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id13">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_WIDTH">
-<code class="sig-name descname">LAYOUT_CONSTR_WIDTH</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_WIDTH" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_WIDTH">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_WIDTH</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_WIDTH" title="Link to this definition">¶</a></dt>
 <dd><p>Adjust rectangle’s width</p>
 <dl class="py attribute">
-<dt id="id14">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_WIDTH</code><em class="property"> = 4</em><a class="headerlink" href="#id14" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id14">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_WIDTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_HEIGHT">
-<code class="sig-name descname">LAYOUT_CONSTR_HEIGHT</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_HEIGHT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_HEIGHT">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_HEIGHT</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_HEIGHT" title="Link to this definition">¶</a></dt>
 <dd><p>Adjust rectangle’s height</p>
 <dl class="py attribute">
-<dt id="id15">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_HEIGHT</code><em class="property"> = 5</em><a class="headerlink" href="#id15" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id15">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_HEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_HCENTER">
-<code class="sig-name descname">LAYOUT_CONSTR_HCENTER</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_HCENTER" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_HCENTER">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_HCENTER</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_HCENTER" title="Link to this definition">¶</a></dt>
 <dd><p>Center rectangle with respect to width</p>
 <dl class="py attribute">
-<dt id="id16">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_HCENTER</code><em class="property"> = 6</em><a class="headerlink" href="#id16" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id16">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_HCENTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_VCENTER">
-<code class="sig-name descname">LAYOUT_CONSTR_VCENTER</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_VCENTER" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_VCENTER">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_VCENTER</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_VCENTER" title="Link to this definition">¶</a></dt>
 <dd><p>Center rectangle with respect to height</p>
 <dl class="py attribute">
-<dt id="id17">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_VCENTER</code><em class="property"> = 7</em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id17">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_VCENTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVEL">
-<code class="sig-name descname">LAYOUT_CONSTR_MOVEL</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEL" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_MOVEL">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVEL</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEL" title="Link to this definition">¶</a></dt>
 <dd><p>Move rectangle, with respect to left</p>
 <dl class="py attribute">
-<dt id="id18">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_MOVEL</code><em class="property"> = 8</em><a class="headerlink" href="#id18" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id18">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVER">
-<code class="sig-name descname">LAYOUT_CONSTR_MOVER</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVER" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_MOVER">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVER</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVER" title="Link to this definition">¶</a></dt>
 <dd><p>Move rectangle, with respect to right</p>
 <dl class="py attribute">
-<dt id="id19">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_MOVER</code><em class="property"> = 9</em><a class="headerlink" href="#id19" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id19">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVET">
-<code class="sig-name descname">LAYOUT_CONSTR_MOVET</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVET" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_MOVET">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVET</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVET" title="Link to this definition">¶</a></dt>
 <dd><p>Move rectangle, with respect to top</p>
 <dl class="py attribute">
-<dt id="id20">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_MOVET</code><em class="property"> = 10</em><a class="headerlink" href="#id20" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id20">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.LAYOUT_CONSTR_MOVEB">
-<code class="sig-name descname">LAYOUT_CONSTR_MOVEB</code><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEB" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.LAYOUT_CONSTR_MOVEB">
+<span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVEB</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_CONSTR_MOVEB" title="Link to this definition">¶</a></dt>
 <dd><p>Move rectangle, with respect to bottom</p>
 <dl class="py attribute">
-<dt id="id21">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">LAYOUT_CONSTR_MOVEB</code><em class="property"> = 11</em><a class="headerlink" href="#id21" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id21">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_CONSTR_MOVEB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -513,14 +555,14 @@ after the calculation (returned here for convenience).</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXLAYOUT class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

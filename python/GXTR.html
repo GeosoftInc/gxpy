@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXTR class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXTR class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,22 +28,39 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXTR class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXTR class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTR"><code class="docutils literal notranslate"><span class="pre">GXTR</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTR.__init__"><code class="docutils literal notranslate"><span class="pre">GXTR.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTR.copy"><code class="docutils literal notranslate"><span class="pre">GXTR.copy()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTR.create"><code class="docutils literal notranslate"><span class="pre">GXTR.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTR.is_null"><code class="docutils literal notranslate"><span class="pre">GXTR.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXTR.null"><code class="docutils literal notranslate"><span class="pre">GXTR.null()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -61,28 +76,27 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxtr-class">
-<span id="gxtr"></span><h1>GXTR class<a class="headerlink" href="#gxtr-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxtr-class">
+<span id="gxtr"></span><h1>GXTR class<a class="headerlink" href="#gxtr-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXTR">
-<em class="property">class </em><code class="sig-name descname">GXTR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXTR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXTR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTR" title="Link to this definition">¶</a></dt>
 <dd><p>GXTR class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTR</span></code></a> object contains trend information about a grid or
 grid pager. Currently, it is used only in conjunction with
 the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_tr" title="geosoft.gxapi.GXIMG.get_tr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG.get_tr</span></code></a>, <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.set_tr" title="geosoft.gxapi.GXIMG.set_tr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG.set_tr</span></code></a>, and <a class="reference internal" href="GXPGU.html#geosoft.gxapi.GXPGU.trend" title="geosoft.gxapi.GXPGU.trend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPGU.trend</span></code></a> functions.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXTR.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTR.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXTR.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t_rs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.copy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTR.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_rs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.copy" title="Link to this definition">¶</a></dt>
 <dd><p>This method copies a table resource to another trend table resource.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>t_rs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) – Source Trend Object to Copy</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t_rs</strong> (<a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR.GXTR"><em>GXTR</em></a>) – Source Trend Object to Copy</p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -92,18 +106,18 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_tr" t
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXTR.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">order</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTR.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a Trend object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>order</strong> (<em>int</em>) – Trend order (must &gt;=0 and &lt;=3)</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTR</span></code></a> Object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR">GXTR</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR.GXTR">GXTR</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -113,36 +127,36 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_tr" t
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXTR.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTR.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXTR.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXTR.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTR.html#GXTR.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTR.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTR</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTR</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR">GXTR</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR.GXTR">GXTR</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -157,14 +171,14 @@ the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG.get_tr" t
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXTR class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIPJ &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXIPJ &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIPJ</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXIPJ"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ">[docs]</a><span class="k">class</span> <span class="nc">GXIPJ</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ">[docs]</a>
+<span class="k">class</span> <span class="nc">GXIPJ</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXIPJ class.</span>
 
 <span class="sd">    The `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` class describes a single spatial reference in the world,</span>
@@ -98,12 +97,17 @@
 <span class="sd">    `GXLL2 &lt;geosoft.gxapi.GXLL2&gt;`   Creates Datum correction lookups.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXIPJ.__init__"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXIPJ.__init__">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXIPJ</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXIPJ.null"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIPJ.null">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
@@ -111,8 +115,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXIPJ</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXIPJ.is_null"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.is_null">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -122,12 +129,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXIPJ.clear_warp"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.clear_warp">[docs]</a>    <span class="k">def</span> <span class="nf">clear_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.clear_warp">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.clear_warp">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clear warp parameters (if any) from an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 
@@ -136,13 +146,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_warp</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.make_geographic"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.make_geographic">[docs]</a>    <span class="k">def</span> <span class="nf">make_geographic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.make_geographic">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.make_geographic">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_geographic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove a projected coordinate system from an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 
@@ -153,13 +166,16 @@
 <span class="sd">        **Note:** This function does nothing if the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` is not a projected coordinate system.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_geographic</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.make_wgs84"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.make_wgs84">[docs]</a>    <span class="k">def</span> <span class="nf">make_wgs84</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.make_wgs84">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.make_wgs84">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_wgs84</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make a WGS 84 geographic projection</span>
 <span class="sd">        </span>
 
@@ -168,13 +184,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_wgs84</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_units"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_units">[docs]</a>    <span class="k">def</span> <span class="nf">set_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_units">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_units">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set unit parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param scale:    Factor to meters, must be &gt;= 0.0</span>
@@ -187,13 +206,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_units</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.add_exagg_warp"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_exagg_warp">[docs]</a>    <span class="k">def</span> <span class="nf">add_exagg_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_exag</span><span class="p">,</span> <span class="n">y_exag</span><span class="p">,</span> <span class="n">z_exag</span><span class="p">,</span> <span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">z_orig</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.add_exagg_warp">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_exagg_warp">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_exagg_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_exag</span><span class="p">,</span> <span class="n">y_exag</span><span class="p">,</span> <span class="n">z_exag</span><span class="p">,</span> <span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">z_orig</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a warp to `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to exaggerate X, Y and Z.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_exag:  X exaggeration, must be &gt; 0.0</span>
@@ -214,13 +236,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_exagg_warp</span><span class="p">(</span><span class="n">x_exag</span><span class="p">,</span> <span class="n">y_exag</span><span class="p">,</span> <span class="n">z_exag</span><span class="p">,</span> <span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">z_orig</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.add_log_warp"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_log_warp">[docs]</a>    <span class="k">def</span> <span class="nf">add_log_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.add_log_warp">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_log_warp">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_log_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a warp to `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to log one or both coordinantes</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:    Log in X?</span>
@@ -233,13 +258,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_log_warp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.add_matrix_warp"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_matrix_warp">[docs]</a>    <span class="k">def</span> <span class="nf">add_matrix_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.add_matrix_warp">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_matrix_warp">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_matrix_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a warp to `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` using a matrix</span>
 <span class="sd">        </span>
 <span class="sd">        :param v00:  Row 0 Element 0</span>
@@ -280,13 +308,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_matrix_warp</span><span class="p">(</span><span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.add_warp"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_warp">[docs]</a>    <span class="k">def</span> <span class="nf">add_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x_old</span><span class="p">,</span> <span class="n">vv_y_old</span><span class="p">,</span> <span class="n">vv_x_new</span><span class="p">,</span> <span class="n">vv_y_new</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.add_warp">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_warp">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">vv_x_old</span><span class="p">,</span> <span class="n">vv_y_old</span><span class="p">,</span> <span class="n">vv_x_new</span><span class="p">,</span> <span class="n">vv_y_new</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a warp to `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:      :ref:`IPJ_TYPE`</span>
@@ -315,13 +346,16 @@
 <span class="sd">        Cannot be used with WARP_MATRIX or WARP_LOG</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_warp</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">vv_x_old</span><span class="p">,</span> <span class="n">vv_y_old</span><span class="p">,</span> <span class="n">vv_x_new</span><span class="p">,</span> <span class="n">vv_y_new</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.clear_coordinate_system"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.clear_coordinate_system">[docs]</a>    <span class="k">def</span> <span class="nf">clear_coordinate_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.clear_coordinate_system">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.clear_coordinate_system">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear_coordinate_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clear coordinate sytsem, except for units</span>
 <span class="sd">        </span>
 
@@ -333,13 +367,16 @@
 <span class="sd">        Leaves units, any warp or orientation warp unchanged.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_coordinate_system</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.clear_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.clear_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">clear_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.clear_orientation">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.clear_orientation">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clear any orientation and/or warp from an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 
@@ -348,13 +385,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_orientation</span><span class="p">()</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.copy_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.copy_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">copy_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jd</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.copy_orientation">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.copy_orientation">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jd</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy any orientation and/or warp from one `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to another.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ip_jd:  Destination `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
@@ -365,13 +405,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy_orientation</span><span class="p">(</span><span class="n">ip_jd</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.convert_orientation_warp_vv"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.convert_orientation_warp_vv">[docs]</a>    <span class="k">def</span> <span class="nf">convert_orientation_warp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.convert_orientation_warp_vv">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.convert_orientation_warp_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_orientation_warp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert X,Y and Z VVs using the orientation warp from an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:       X `GXVV &lt;geosoft.gxapi.GXVV&gt;` coordinates converted on output</span>
@@ -388,13 +431,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_orientation_warp_vv</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.copy"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jd</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.copy">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jd</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy IPJs</span>
 <span class="sd">        </span>
 <span class="sd">        :param ip_jd:  Destination `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
@@ -405,13 +451,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">ip_jd</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.copy_projection"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.copy_projection">[docs]</a>    <span class="k">def</span> <span class="nf">copy_projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jd</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.copy_projection">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.copy_projection">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy_projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jd</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy the projection from one `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to another</span>
 <span class="sd">        </span>
 <span class="sd">        :param ip_jd:  Source</span>
@@ -425,13 +474,16 @@
 <span class="sd">        (e.g. Datum, Local Datum Transform) unchanged.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy_projection</span><span class="p">(</span><span class="n">ip_jd</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIPJ.create"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIPJ.create">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method creates a projection object.</span>
 <span class="sd">        </span>
 
@@ -447,9 +499,12 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.create_s"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIPJ.create_s">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.create_s">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` from serialized source.</span>
 <span class="sd">        </span>
 <span class="sd">        :type  bf:  GXBF</span>
@@ -466,9 +521,12 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.create_xml"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.create_xml">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIPJ.create_xml">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.create_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` from serialized Geosoft MetaData XML file</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File Name</span>
@@ -489,8 +547,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_3d_view"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_3d_view">[docs]</a>    <span class="k">def</span> <span class="nf">get_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.get_3d_view">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_3d_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get 3D orientation parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:        X location of view origin</span>
@@ -519,13 +580,16 @@
 <span class="sd">        **Note:** The view must have a 3D orientation</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ry</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_3d_view</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ry</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_3d_view_ex"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_3d_view_ex">[docs]</a>    <span class="k">def</span> <span class="nf">get_3d_view_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">rotate</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_3d_view_ex">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_3d_view_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_3d_view_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">rotate</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get 3D orientation parameters with new flags</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:        X location of view origin</span>
@@ -558,13 +622,16 @@
 <span class="sd">        **Note:** The view must have a 3D orientation</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ry</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rotate</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">flags</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_3d_view_ex</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ry</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rz</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rotate</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">flags</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_crooked_section_view_v_vs"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_crooked_section_view_v_vs">[docs]</a>    <span class="k">def</span> <span class="nf">get_crooked_section_view_v_vs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dist_vv</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">log_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_crooked_section_view_v_vs">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_crooked_section_view_v_vs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_crooked_section_view_v_vs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dist_vv</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">log_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the crooked section path.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dist_vv:  Section X locations (e.g. distance along the curve)</span>
@@ -583,13 +650,16 @@
 <span class="sd">        **Note:** Returns the orignal VVs used to set up the crooked section path.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">log_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_crooked_section_view_v_vs</span><span class="p">(</span><span class="n">dist_vv</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">log_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_list"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_list">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIPJ.get_list">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_list">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_list</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a list of parameters.</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:   :ref:`IPJ_PARM_LST`</span>
@@ -607,13 +677,16 @@
 <span class="sd">        list to those valid for the spacified datum.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="o">.</span><span class="n">_get_list</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">parm</span><span class="p">,</span> <span class="n">datum</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_orientation_info"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_orientation_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_orientation_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">swing</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_orientation_info">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_orientation_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_orientation_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">swing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` orientation parameters.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:      Plane Origin X</span>
@@ -650,13 +723,16 @@
 <span class="sd">        preserve elevations, even if the section has a swing.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">az</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">swing</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_orientation_info</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">az</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">swing</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_plane_equation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_plane_equation">[docs]</a>    <span class="k">def</span> <span class="nf">get_plane_equation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_plane_equation">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_plane_equation">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_plane_equation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the equation of a plane</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:    Min X of surface</span>
@@ -697,13 +773,16 @@
 <span class="sd">        of a grid.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yaw</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">roll</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_plane_equation</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yaw</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">roll</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_plane_equation2"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_plane_equation2">[docs]</a>    <span class="k">def</span> <span class="nf">get_plane_equation2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jo</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_plane_equation2">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_plane_equation2">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_plane_equation2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jo</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the equation of a plane with reprojection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ip_jo:    `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object for the output values</span>
@@ -751,13 +830,16 @@
 <span class="sd">        function is called directly, using the input `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yaw</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">roll</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_plane_equation2</span><span class="p">(</span><span class="n">ip_jo</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yaw</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">roll</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">sy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.compare_datums"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.compare_datums">[docs]</a>    <span class="k">def</span> <span class="nf">compare_datums</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.compare_datums">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.compare_datums">[docs]</a>
+    <span class="k">def</span> <span class="nf">compare_datums</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compare the datums of two coordinate systems?</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -786,8 +868,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.compare_datums_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.compare_datums_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">compare_datums_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.compare_datums_to_specified_tolerance_with_feedback">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.compare_datums_to_specified_tolerance_with_feedback">[docs]</a>
+    <span class="k">def</span> <span class="nf">compare_datums_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compare the datums of two coordinate systems, but allows for a specified accuracy and returns the reason if they are different</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -820,8 +905,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.convert_warp"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.convert_warp">[docs]</a>    <span class="k">def</span> <span class="nf">convert_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.convert_warp">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.convert_warp">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_warp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts a point X, Y, Z to the new `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` plane.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:          X coordinates converted on output</span>
@@ -846,8 +934,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.convert_warp_vv"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.convert_warp_vv">[docs]</a>    <span class="k">def</span> <span class="nf">convert_warp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.convert_warp_vv">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.convert_warp_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_warp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">f_forward</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts a set of X &amp; Y VVs to the new `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` plane. The Z is assumed to be 0</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:       X `GXVV &lt;geosoft.gxapi.GXVV&gt;` coordinates converted on output</span>
@@ -870,8 +961,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.coordinate_systems_are_the_same"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same">[docs]</a>    <span class="k">def</span> <span class="nf">coordinate_systems_are_the_same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.coordinate_systems_are_the_same">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same">[docs]</a>
+    <span class="k">def</span> <span class="nf">coordinate_systems_are_the_same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Are these two coordinate systems the same?</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -893,8 +987,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.coordinate_systems_are_the_same_within_a_small_tolerance"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_within_a_small_tolerance">[docs]</a>    <span class="k">def</span> <span class="nf">coordinate_systems_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.coordinate_systems_are_the_same_within_a_small_tolerance">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_within_a_small_tolerance">[docs]</a>
+    <span class="k">def</span> <span class="nf">coordinate_systems_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `coordinate_systems_are_the_same &lt;geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same&gt;`, but allows for small numerical differences</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -914,8 +1011,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.coordinate_systems_are_the_same_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">coordinate_systems_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">sig_digits_EN</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.coordinate_systems_are_the_same_to_specified_tolerance_with_feedback">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>
+    <span class="k">def</span> <span class="nf">coordinate_systems_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">sig_digits_EN</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `coordinate_systems_are_the_same &lt;geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same&gt;`, but allows for a specified accuracy and returns the reason if they are different</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:           `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -941,8 +1041,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_display_name"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_display_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_display_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.get_display_name">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_display_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_display_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a name for display purposes from `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Name returned</span>
@@ -953,13 +1056,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_display_name</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_esri"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_esri">[docs]</a>    <span class="k">def</span> <span class="nf">get_esri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">esri</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_esri">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_esri">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_esri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">esri</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Store coordinate system in an ESRI prj coordinate string</span>
 <span class="sd">        </span>
 <span class="sd">        :param esri:  ESRI projection string returned</span>
@@ -973,13 +1079,16 @@
 <span class="sd">        string will be empty.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">esri</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_esri</span><span class="p">(</span><span class="n">esri</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_gxf"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_gxf">[docs]</a>    <span class="k">def</span> <span class="nf">get_gxf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">,</span> <span class="n">str4</span><span class="p">,</span> <span class="n">str5</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_gxf">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_gxf">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_gxf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">,</span> <span class="n">str4</span><span class="p">,</span> <span class="n">str5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Store coordinate system in GXF style strings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str1:  Projection name</span>
@@ -1002,13 +1111,16 @@
 <span class="sd">        Strings too short will be truncated.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str5</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_gxf</span><span class="p">(</span><span class="n">str1</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str2</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str3</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str4</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str5</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_mi_coord_sys"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_mi_coord_sys">[docs]</a>    <span class="k">def</span> <span class="nf">get_mi_coord_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_mi_coord_sys">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_mi_coord_sys">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_mi_coord_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Store coordinate system in MapInfo coordsys pair</span>
 <span class="sd">        </span>
 <span class="sd">        :param coord:  MapInfo coordsys string returned</span>
@@ -1021,13 +1133,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">coord</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">units</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_mi_coord_sys</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">units</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_name"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_name">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` name</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:     :ref:`IPJ_NAME`</span>
@@ -1040,13 +1155,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_vcs"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_vcs">[docs]</a>    <span class="k">def</span> <span class="nf">set_vcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_vcs">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_vcs">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_vcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the Vertical Coordinate System in the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` name string</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  New name (See Valid inputs above).</span>
@@ -1073,13 +1191,16 @@
 <span class="sd">             &quot;&quot;                - Clears the vcs</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_vcs</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">get_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_orientation">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_orientation">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` orientation in space.</span>
 <span class="sd">        </span>
 
@@ -1099,8 +1220,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_orientation_name"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_orientation_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_orientation_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.get_orientation_name">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_orientation_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_orientation_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a name for display purposes from `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Name returned</span>
@@ -1111,13 +1235,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_orientation_name</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_units"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_units">[docs]</a>    <span class="k">def</span> <span class="nf">get_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_units">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_units">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get unit parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param scale:    Factor to meters</span>
@@ -1130,13 +1257,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">scale</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_units</span><span class="p">(</span><span class="n">scale</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_xml"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_xml">[docs]</a>    <span class="k">def</span> <span class="nf">get_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_xml">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_xml">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get an Geosoft Metadata XML string from an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  XML string returned</span>
@@ -1147,13 +1277,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_xml</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.has_projection"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.has_projection">[docs]</a>    <span class="k">def</span> <span class="nf">has_projection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.has_projection">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.has_projection">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_projection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Does the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object contain a projection?</span>
 <span class="sd">        </span>
 
@@ -1171,8 +1304,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.is_3d_inverted"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_3d_inverted">[docs]</a>    <span class="k">def</span> <span class="nf">is_3d_inverted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.is_3d_inverted">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_3d_inverted">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_3d_inverted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Is this 3D View inverted ?</span>
 <span class="sd">        </span>
 
@@ -1190,8 +1326,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.is_3d_inverted_angles"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_3d_inverted_angles">[docs]</a>    <span class="k">def</span> <span class="nf">is_3d_inverted_angles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.is_3d_inverted_angles">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_3d_inverted_angles">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_3d_inverted_angles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Are the angles in this 3D View inverted ?</span>
 <span class="sd">        </span>
 
@@ -1209,8 +1348,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.is_geographic"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_geographic">[docs]</a>    <span class="k">def</span> <span class="nf">is_geographic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.is_geographic">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.is_geographic">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_geographic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        See if this projection is geographic</span>
 <span class="sd">        </span>
 
@@ -1228,8 +1370,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.orientations_are_the_same"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.orientations_are_the_same">[docs]</a>    <span class="k">def</span> <span class="nf">orientations_are_the_same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.orientations_are_the_same">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.orientations_are_the_same">[docs]</a>
+    <span class="k">def</span> <span class="nf">orientations_are_the_same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Are these two orientations the same?</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -1249,8 +1394,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.orientations_are_the_same_within_a_small_tolerance"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.orientations_are_the_same_within_a_small_tolerance">[docs]</a>    <span class="k">def</span> <span class="nf">orientations_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.orientations_are_the_same_within_a_small_tolerance">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.orientations_are_the_same_within_a_small_tolerance">[docs]</a>
+    <span class="k">def</span> <span class="nf">orientations_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `orientations_are_the_same &lt;geosoft.gxapi.GXIPJ.orientations_are_the_same&gt;`, but allows for small numerical differences</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -1270,8 +1418,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.orientations_are_the_same_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.orientations_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">orientations_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.orientations_are_the_same_to_specified_tolerance_with_feedback">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.orientations_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>
+    <span class="k">def</span> <span class="nf">orientations_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `orientations_are_the_same &lt;geosoft.gxapi.GXIPJ.orientations_are_the_same&gt;`, but allows for small numerical differences</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -1295,8 +1446,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.has_section_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.has_section_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">has_section_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.has_section_orientation">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.has_section_orientation">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_section_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Does this projection contain an orientation used by section plots?</span>
 <span class="sd">        </span>
 
@@ -1328,8 +1482,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.projection_type_is_fully_supported"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.projection_type_is_fully_supported">[docs]</a>    <span class="k">def</span> <span class="nf">projection_type_is_fully_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.projection_type_is_fully_supported">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.projection_type_is_fully_supported">[docs]</a>
+    <span class="k">def</span> <span class="nf">projection_type_is_fully_supported</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Is the projection type fully supported?</span>
 <span class="sd">        </span>
 
@@ -1353,8 +1510,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_gxf_safe"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_gxf_safe">[docs]</a>    <span class="k">def</span> <span class="nf">set_gxf_safe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">,</span> <span class="n">str4</span><span class="p">,</span> <span class="n">str5</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.set_gxf_safe">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_gxf_safe">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_gxf_safe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">,</span> <span class="n">str4</span><span class="p">,</span> <span class="n">str5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `set_gxf &lt;geosoft.gxapi.GXIPJ.set_gxf&gt;`, but fails gracefully.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str1:  &quot;projection name&quot; or PCS_NAME from ipj_pcs.csv (datum / projection) or EPSG coordinate system code number or &quot;&lt;file.prj&gt;&quot; projection file name or &quot;&lt;file.wrp&gt;&quot; warp file name</span>
@@ -1386,8 +1546,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.source_type"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.source_type">[docs]</a>    <span class="k">def</span> <span class="nf">source_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.source_type">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.source_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">source_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` source type</span>
 <span class="sd">        </span>
 
@@ -1404,8 +1567,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.support_datum_transform"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.support_datum_transform">[docs]</a>    <span class="k">def</span> <span class="nf">support_datum_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.support_datum_transform">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.support_datum_transform">[docs]</a>
+    <span class="k">def</span> <span class="nf">support_datum_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Can we transform between these two datums?</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -1434,9 +1600,12 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.unit_name"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.unit_name">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIPJ.unit_name">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.unit_name">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">unit_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a unit name given a scale factor</span>
 <span class="sd">        </span>
 <span class="sd">        :param val:   Factor to meters</span>
@@ -1451,13 +1620,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="o">.</span><span class="n">_unit_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">val</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.warped"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warped">[docs]</a>    <span class="k">def</span> <span class="nf">warped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.warped">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warped">[docs]</a>
+    <span class="k">def</span> <span class="nf">warped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Does `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` contain a warp?</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:      bool</span>
@@ -1472,8 +1644,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.warps_are_the_same"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warps_are_the_same">[docs]</a>    <span class="k">def</span> <span class="nf">warps_are_the_same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.warps_are_the_same">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warps_are_the_same">[docs]</a>
+    <span class="k">def</span> <span class="nf">warps_are_the_same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Are these two warps the same?</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -1493,8 +1668,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.warps_are_the_same_within_a_small_tolerance"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warps_are_the_same_within_a_small_tolerance">[docs]</a>    <span class="k">def</span> <span class="nf">warps_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.warps_are_the_same_within_a_small_tolerance">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warps_are_the_same_within_a_small_tolerance">[docs]</a>
+    <span class="k">def</span> <span class="nf">warps_are_the_same_within_a_small_tolerance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `warps_are_the_same &lt;geosoft.gxapi.GXIPJ.warps_are_the_same&gt;`, but allows for small numerical differences</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -1514,8 +1692,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.warps_are_the_same_to_specified_tolerance_with_feedback"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warps_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>    <span class="k">def</span> <span class="nf">warps_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.warps_are_the_same_to_specified_tolerance_with_feedback">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warps_are_the_same_to_specified_tolerance_with_feedback">[docs]</a>
+    <span class="k">def</span> <span class="nf">warps_are_the_same_to_specified_tolerance_with_feedback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">sig_digits</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Same as `warps_are_the_same &lt;geosoft.gxapi.GXIPJ.warps_are_the_same&gt;`, but allows for a specified accuracy and returns the reason if they are different</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj2:        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` 2</span>
@@ -1539,8 +1720,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.warp_type"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warp_type">[docs]</a>    <span class="k">def</span> <span class="nf">warp_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.warp_type">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.warp_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">warp_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Obtain the warp type of an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 
@@ -1557,8 +1741,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.make_projected"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.make_projected">[docs]</a>    <span class="k">def</span> <span class="nf">make_projected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_lon</span><span class="p">,</span> <span class="n">min_lat</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">,</span> <span class="n">max_lat</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.make_projected">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.make_projected">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_projected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_lon</span><span class="p">,</span> <span class="n">min_lat</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">,</span> <span class="n">max_lat</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a default projected coordinate system from lat-long ranges.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_lon:  Minimum longitude</span>
@@ -1582,13 +1769,16 @@
 <span class="sd">        supported.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_projected</span><span class="p">(</span><span class="n">min_lon</span><span class="p">,</span> <span class="n">min_lat</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">,</span> <span class="n">max_lat</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.new_box_resolution"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.new_box_resolution">[docs]</a>    <span class="k">def</span> <span class="nf">new_box_resolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jo</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">min_res</span><span class="p">,</span> <span class="n">max_res</span><span class="p">,</span> <span class="n">diag_res</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.new_box_resolution">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.new_box_resolution">[docs]</a>
+    <span class="k">def</span> <span class="nf">new_box_resolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_jo</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">min_res</span><span class="p">,</span> <span class="n">max_res</span><span class="p">,</span> <span class="n">diag_res</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determine a data resolution in a new coordinate system</span>
 <span class="sd">        </span>
 <span class="sd">        :param ip_jo:     New `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
@@ -1619,13 +1809,16 @@
 <span class="sd">        along the four edges and two diagonals.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">min_res</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_res</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">diag_res</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_box_resolution</span><span class="p">(</span><span class="n">ip_jo</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">min_res</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_res</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">diag_res</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.read"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.read">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.read">[docs]</a>
+    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Read and define an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` from a standard file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`IPJ_TYPE`</span>
@@ -1642,13 +1835,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_read</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">str1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str3</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_method_parm"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_method_parm">[docs]</a>    <span class="k">def</span> <span class="nf">get_method_parm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_method_parm">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_method_parm">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_method_parm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get projection method parameter</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:  :ref:`IPJ_CSP`</span>
@@ -1667,8 +1863,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_north_azimuth"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_north_azimuth">[docs]</a>    <span class="k">def</span> <span class="nf">get_north_azimuth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.get_north_azimuth">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_north_azimuth">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_north_azimuth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the azimuth of geographic North at a point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:    Input X location</span>
@@ -1691,9 +1890,12 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.unit_scale"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.unit_scale">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIPJ.unit_scale">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.unit_scale">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">unit_scale</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">default</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a unit scale (m/unit) given a name</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     Unit name, abbreviation or full name</span>
@@ -1716,8 +1918,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.serial"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.serial">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Serialize `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :type  bf:   GXBF</span>
@@ -1727,13 +1932,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.serial_fgdcxml"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial_fgdcxml">[docs]</a>    <span class="k">def</span> <span class="nf">serial_fgdcxml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.serial_fgdcxml">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial_fgdcxml">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial_fgdcxml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` as a FDGC MetaData XML object</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Name of file to export to</span>
@@ -1744,13 +1952,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial_fgdcxml</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.serial_isoxml"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial_isoxml">[docs]</a>    <span class="k">def</span> <span class="nf">serial_isoxml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.serial_isoxml">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial_isoxml">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial_isoxml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` as a ISO MetaData XML object</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Name of file to export to</span>
@@ -1761,13 +1972,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial_isoxml</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.serial_xml"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial_xml">[docs]</a>    <span class="k">def</span> <span class="nf">serial_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.serial_xml">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.serial_xml">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Write the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` as a Geosoft MetaData XML object</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Name of file to export to</span>
@@ -1778,13 +1992,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial_xml</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_3d_inverted"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_inverted">[docs]</a>    <span class="k">def</span> <span class="nf">set_3d_inverted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inverted</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_3d_inverted">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_inverted">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_3d_inverted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inverted</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set whether a view is inverted (must be 3D already)</span>
 <span class="sd">        </span>
 <span class="sd">        :param inverted:  Inverted (0 or 1)</span>
@@ -1795,13 +2012,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_3d_inverted</span><span class="p">(</span><span class="n">inverted</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_3d_inverted_angles"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_inverted_angles">[docs]</a>    <span class="k">def</span> <span class="nf">set_3d_inverted_angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inverted</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_3d_inverted_angles">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_inverted_angles">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_3d_inverted_angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inverted</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set whether the angles in this view are inverted (must be 3D already)</span>
 <span class="sd">        </span>
 <span class="sd">        :param inverted:  Inverted (0 or 1)</span>
@@ -1812,13 +2032,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_3d_inverted_angles</span><span class="p">(</span><span class="n">inverted</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_3d_view"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_view">[docs]</a>    <span class="k">def</span> <span class="nf">set_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_3d_view">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set 3D orientation parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:        X location of view origin</span>
@@ -1848,13 +2071,16 @@
 <span class="sd">        for 3D objects.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_3d_view</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_3d_view_ex"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_view_ex">[docs]</a>    <span class="k">def</span> <span class="nf">set_3d_view_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">rotate</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_3d_view_ex">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_view_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_3d_view_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">rotate</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set 3D orientation parameters with new flags</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:        X location of view origin</span>
@@ -1888,13 +2114,16 @@
 <span class="sd">        for 3D objects.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_3d_view_ex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">rotate</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_3d_view_from_axes"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_view_from_axes">[docs]</a>    <span class="k">def</span> <span class="nf">set_3d_view_from_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_3d_view_from_axes">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_view_from_axes">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_3d_view_from_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set 3D orientation parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:        X location of view origin</span>
@@ -1930,13 +2159,16 @@
 <span class="sd">        for 3D objects, based on input origin and X and Y axis vectors.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_3d_view_from_axes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">str_val</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_crooked_section_view"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_crooked_section_view">[docs]</a>    <span class="k">def</span> <span class="nf">set_crooked_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dist_vv</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">log_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_crooked_section_view">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_crooked_section_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_crooked_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dist_vv</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">log_z</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set up the crooked section view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dist_vv:  Section X locations (e.g. distance along the curve)</span>
@@ -1956,13 +2188,16 @@
 <span class="sd">        (X, Y).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_crooked_section_view</span><span class="p">(</span><span class="n">dist_vv</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">log_z</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_depth_section_view"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_depth_section_view">[docs]</a>    <span class="k">def</span> <span class="nf">set_depth_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_depth_section_view">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_depth_section_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_depth_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set depth section orientation parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param depth:  View Y value for Depth = 0.0.</span>
@@ -1973,13 +2208,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_depth_section_view</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_esri"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_esri">[docs]</a>    <span class="k">def</span> <span class="nf">set_esri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">esri</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_esri">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_esri">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_esri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">esri</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set coordinate system from an ESRI prj coordinate string</span>
 <span class="sd">        </span>
 <span class="sd">        :param esri:  ESRI prj format projection string</span>
@@ -1993,13 +2231,16 @@
 <span class="sd">        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` will be unknown.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_esri</span><span class="p">(</span><span class="n">esri</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_gxf"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_gxf">[docs]</a>    <span class="k">def</span> <span class="nf">set_gxf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">,</span> <span class="n">str4</span><span class="p">,</span> <span class="n">str5</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_gxf">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_gxf">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_gxf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">,</span> <span class="n">str4</span><span class="p">,</span> <span class="n">str5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set coordinate system from GXF style strings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str1:  &quot;projection name&quot; or PCS_NAME from ipj_pcs.csv (datum / projection) or EPSG coordinate system code number or &quot;&lt;file.prj&gt;&quot; projection file name or &quot;&lt;file.wrp&gt;&quot; warp file name</span>
@@ -2153,13 +2394,16 @@
 <span class="sd">            &quot;&quot;Arc 1960 / UTM zone 37S&quot;&lt;525000,2500000,0,0,0,15&gt;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_gxf</span><span class="p">(</span><span class="n">str1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str3</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str4</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">str5</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_method_parm"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_method_parm">[docs]</a>    <span class="k">def</span> <span class="nf">set_method_parm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">parm_value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_method_parm">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_method_parm">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_method_parm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">parm_value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set projection method parameter</span>
 <span class="sd">        </span>
 <span class="sd">        :param parm:        :ref:`IPJ_CSP`</span>
@@ -2174,13 +2418,16 @@
 <span class="sd">        **Note:** If parameter is not valid, nothing happens.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_method_parm</span><span class="p">(</span><span class="n">parm</span><span class="p">,</span> <span class="n">parm_value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_mi_coord_sys"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_mi_coord_sys">[docs]</a>    <span class="k">def</span> <span class="nf">set_mi_coord_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_mi_coord_sys">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_mi_coord_sys">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_mi_coord_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set coordinate system from a MapInfo coordsys command</span>
 <span class="sd">        </span>
 <span class="sd">        :param coord:  MapInfo Coordinate System</span>
@@ -2193,13 +2440,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_mi_coord_sys</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">units</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_normal_section_view"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_normal_section_view">[docs]</a>    <span class="k">def</span> <span class="nf">set_normal_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">swing</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_normal_section_view">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_normal_section_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_normal_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">swing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set normal section orientation parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:        X location of view origin</span>
@@ -2222,13 +2472,16 @@
 <span class="sd">        do not necessarily correspond to the elvations for a swung section.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_normal_section_view</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">swing</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_plan_view"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_plan_view">[docs]</a>    <span class="k">def</span> <span class="nf">set_plan_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_plan_view">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_plan_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_plan_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set plan orientation parameters.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:    X location of view rotation point</span>
@@ -2260,13 +2513,16 @@
 <span class="sd">        default them to (0, 0).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_plan_view</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rot</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_section_view"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_section_view">[docs]</a>    <span class="k">def</span> <span class="nf">set_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">swing</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_section_view">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_section_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_section_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">swing</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set section orientation parameters</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:        X location of view origin</span>
@@ -2298,13 +2554,16 @@
 <span class="sd">        an orientation for a dipping grid or view.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_section_view</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">swing</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_wms_coord_sys"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_wms_coord_sys">[docs]</a>    <span class="k">def</span> <span class="nf">set_wms_coord_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_wms_coord_sys">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_wms_coord_sys">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_wms_coord_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set coordinate system from a WMS coordsys string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param coord:  WMS style coordinate string</span>
@@ -2346,13 +2605,16 @@
 <span class="sd">        long/lat (9102) to metres (9001).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_wms_coord_sys</span><span class="p">(</span><span class="n">coord</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_xml"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_xml">[docs]</a>    <span class="k">def</span> <span class="nf">set_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_xml">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_xml">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` from a Geosoft Metadata XML string</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  XML string to set</span>
@@ -2363,13 +2625,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_xml</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_from_binary_as_string"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_from_binary_as_string">[docs]</a>    <span class="k">def</span> <span class="nf">set_from_binary_as_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_from_binary_as_string">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_from_binary_as_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_from_binary_as_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` from binary-as-string</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Binary as string</span>
@@ -2380,13 +2645,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_from_binary_as_string</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_from_binary_as_string"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_from_binary_as_string">[docs]</a>    <span class="k">def</span> <span class="nf">get_from_binary_as_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_from_binary_as_string">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_from_binary_as_string">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_from_binary_as_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` from binary-as-string</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Binary as string returned</span>
@@ -2397,13 +2665,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_from_binary_as_string</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_3d_matrix_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_3d_matrix_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">get_3d_matrix_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_3d_matrix_orientation">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_3d_matrix_orientation">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_3d_matrix_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the coefficients of a 3D matrix orientation.</span>
 <span class="sd">        </span>
 <span class="sd">        :param v00:  Row 0 Element 0</span>
@@ -2444,13 +2715,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">v00</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v01</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v02</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v03</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v10</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v11</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v12</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v13</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v20</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v21</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v22</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v23</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v30</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v31</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v32</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v33</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_3d_matrix_orientation</span><span class="p">(</span><span class="n">v00</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v01</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v02</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v03</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v10</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v11</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v12</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v13</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v20</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v21</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v22</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v23</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v30</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v31</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v32</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v33</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.set_3d_matrix_orientation"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_matrix_orientation">[docs]</a>    <span class="k">def</span> <span class="nf">set_3d_matrix_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.set_3d_matrix_orientation">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.set_3d_matrix_orientation">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_3d_matrix_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply a 3D orientation directly using matrix coefficients.</span>
 <span class="sd">        </span>
 <span class="sd">        :param v00:  Row 0 Element 0</span>
@@ -2491,13 +2765,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_3d_matrix_orientation</span><span class="p">(</span><span class="n">v00</span><span class="p">,</span> <span class="n">v01</span><span class="p">,</span> <span class="n">v02</span><span class="p">,</span> <span class="n">v03</span><span class="p">,</span> <span class="n">v10</span><span class="p">,</span> <span class="n">v11</span><span class="p">,</span> <span class="n">v12</span><span class="p">,</span> <span class="n">v13</span><span class="p">,</span> <span class="n">v20</span><span class="p">,</span> <span class="n">v21</span><span class="p">,</span> <span class="n">v22</span><span class="p">,</span> <span class="n">v23</span><span class="p">,</span> <span class="n">v30</span><span class="p">,</span> <span class="n">v31</span><span class="p">,</span> <span class="n">v32</span><span class="p">,</span> <span class="n">v33</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.reproject_section_grid"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.reproject_section_grid">[docs]</a>    <span class="k">def</span> <span class="nf">reproject_section_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_ipj</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.reproject_section_grid">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.reproject_section_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">reproject_section_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_ipj</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reproject a section grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param output_ipj:  Reprojected `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` on input (need not include an orientation). On output contains the same</span>
@@ -2522,13 +2799,16 @@
 <span class="sd">        it remains in the same location.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reproject_section_grid</span><span class="p">(</span><span class="n">output_ipj</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dy</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rot</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_authority_id"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_authority_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_authority_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">authority</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXIPJ.get_authority_id">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_authority_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_authority_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">authority</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get Authority ID (e.g. EPSG, ESRI) for coordinate system or `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;` if unknown.</span>
 <span class="sd">        </span>
 <span class="sd">        :param authority:  Authority ID (e.g. EPSG and ESRI)</span>
@@ -2547,8 +2827,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_epsgid_for_datum"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_epsgid_for_datum">[docs]</a>    <span class="k">def</span> <span class="nf">get_epsgid_for_datum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.get_epsgid_for_datum">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_epsgid_for_datum">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_epsgid_for_datum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get EPSG ID for datum of coordinate system or `iDUMMY &lt;geosoft.gxapi.iDUMMY&gt;` if unknown.</span>
 <span class="sd">        </span>
 
@@ -2565,8 +2848,11 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.add_as_favourite_coordinate_system"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_as_favourite_coordinate_system">[docs]</a>    <span class="k">def</span> <span class="nf">add_as_favourite_coordinate_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXIPJ.add_as_favourite_coordinate_system">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.add_as_favourite_coordinate_system">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_as_favourite_coordinate_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add as favourite coordinate system to Settings.</span>
 <span class="sd">        </span>
 
@@ -2575,13 +2861,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_as_favourite_coordinate_system</span><span class="p">()</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_number_of_favourite_coordinate_systems"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_number_of_favourite_coordinate_systems">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXIPJ.get_number_of_favourite_coordinate_systems">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_number_of_favourite_coordinate_systems">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_number_of_favourite_coordinate_systems</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get number of favourite coordinate systems in Settings.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:      int</span>
@@ -2595,9 +2884,12 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.get_favourite_coordinate_system"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_favourite_coordinate_system">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIPJ.get_favourite_coordinate_system">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.get_favourite_coordinate_system">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_favourite_coordinate_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a favourite coordinate system from Settings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:  Index of item.</span>
@@ -2613,9 +2905,12 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.remove_favourite_coordinate_system"><a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.remove_favourite_coordinate_system">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXIPJ.remove_favourite_coordinate_system">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.remove_favourite_coordinate_system">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_favourite_coordinate_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove favourite coordinate system from Settings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:  Index of item.</span>
@@ -2625,7 +2920,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="o">.</span><span class="n">_remove_favourite_coordinate_system</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">)</span></div></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIPJ</span><span class="o">.</span><span class="n">_remove_favourite_coordinate_system</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -2655,7 +2952,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIPJ</a></li> 
@@ -2663,8 +2960,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

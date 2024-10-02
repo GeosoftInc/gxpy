@@ -1,7 +1,41 @@
-geosoft.gxpy.va submodule
-=============================================
+﻿geosoft.gxpy.va
+===============
 
 .. automodule:: geosoft.gxpy.va
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      GXva
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      VAException
+   
+   
+
+
+

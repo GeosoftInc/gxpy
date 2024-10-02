@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxpy.grid submodule &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>geosoft.gxpy.grid &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,8 +28,8 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.grid submodule</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.grid</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -40,12 +38,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -61,27 +59,27 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-geosoft.gxpy.grid">
-<span id="geosoft-gxpy-grid-submodule"></span><h1>geosoft.gxpy.grid submodule<a class="headerlink" href="#module-geosoft.gxpy.grid" title="Permalink to this headline">¶</a></h1>
+  <section id="module-geosoft.gxpy.grid">
+<span id="geosoft-gxpy-grid"></span><h1>geosoft.gxpy.grid<a class="headerlink" href="#module-geosoft.gxpy.grid" title="Link to this heading">¶</a></h1>
 <p>Geosoft grid and image handling, including all
 <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a> .</p>
 <dl class="field-list simple">
-<dt class="field-odd">Classes</dt>
+<dt class="field-odd">Classes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="field-list simple">
-<dt class="field-odd"><a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code></a></dt>
+<dt class="field-odd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code><span class="colon">:</span></dt>
 <dd class="field-odd"><p>grid dataset</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Constants</dt>
+<dt class="field-even">Constants<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="field-list simple">
-<dt class="field-odd">FILE_READ</dt>
+<dt class="field-odd">FILE_READ<span class="colon">:</span></dt>
 <dd class="field-odd"><p>0 open for read, files are not changed</p>
 </dd>
-<dt class="field-even">FILE_READWRITE</dt>
+<dt class="field-even">FILE_READWRITE<span class="colon">:</span></dt>
 <dd class="field-even"><p>1 open for read and write, files can be changed</p>
 </dd>
-<dt class="field-odd">FILE_NEW</dt>
+<dt class="field-odd">FILE_NEW<span class="colon">:</span></dt>
 <dd class="field-odd"><p>2 new grid file, accompanied by <code class="xref py py-obj docutils literal notranslate"><span class="pre">overwrite=</span></code> parameter</p>
 </dd>
 </dl>
@@ -97,1272 +95,79 @@
 <p>Regression tests provide usage examples:     
 <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_grid.py">Tests</a></p>
 </div>
-<dl class="py class">
-<dt id="geosoft.gxpy.grid.Grid">
-<em class="property">class </em><code class="sig-name descname">Grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_memory</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kx</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
-<p>Grid and image class.</p>
-<dl class="field-list">
-<dt class="field-odd">Constructors</dt>
-<dd class="field-odd"><table class="docutils align-default">
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 71%" />
-</colgroup>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.grid.Grid.open" title="geosoft.gxpy.grid.Grid.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a></p></td>
-<td><p>open an existing grid/image</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_t</span></code>(s)</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.grid.Grid.new" title="geosoft.gxpy.grid.Grid.new"><code class="xref py py-meth docutils literal notranslate"><span class="pre">new()</span></code></a></p></td>
-<td><p>create a new grid/image</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_transform_color_int_to_rgba</span></code>(np_values)</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.grid.Grid.copy" title="geosoft.gxpy.grid.Grid.copy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">copy()</span></code></a></p></td>
-<td><p>create a copy</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">array_locations</span></code>(properties)</p></td>
+<td><p>Create an array of (x,y,z) points for a grid defined by properties :param properties:  grid properties :returns:           array of points, shaped (ny, nx, 3)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.grid.Grid.index_window" title="geosoft.gxpy.grid.Grid.index_window"><code class="xref py py-meth docutils literal notranslate"><span class="pre">index_window()</span></code></a></p></td>
-<td><p>create a windowed grid based on grid indexes</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">decorate_name</span></code>(name[, decorations])</p></td>
+<td><p>Properly decorate a grid name.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#geosoft.gxpy.grid.Grid.from_data_array" title="geosoft.gxpy.grid.Grid.from_data_array"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_data_array()</span></code></a></p></td>
-<td><p>create a new grid from a 2d data array</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_files</span></code>(file_name)</p></td>
+<td><p>Delete all files associates with this grid name.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#geosoft.gxpy.grid.Grid.minimum_curvature" title="geosoft.gxpy.grid.Grid.minimum_curvature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">minimum_curvature()</span></code></a></p></td>
-<td><p>create by fitting a minimum-curvature surface to located data.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">figure_map</span></code>(grid_file[, map_file, shade, ...])</p></td>
+<td><p>Create a map figure from a grid file.</p></td>
 </tr>
-</tbody>
-</table>
-</dd>
-</dl>
-<p>A grid instance supports iteration that yields (x, y, z, grid_value) by points along rows.
-For example, the following prints the x, y, z, grid_value of every non-dummy point in a grid:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.grid</span> <span class="k">as</span> <span class="nn">gxgrd</span>
-
-<span class="k">with</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;some.grd&#39;</span><span class="p">)</span> <span class="n">ad</span> <span class="n">g</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-</pre></div>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gridBool</span></code>(*args, **kwargs)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 9.2: </span>use <code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_bool</span></code></p>
 </div>
-<p>Specific grid cell values can be indexed (null grid values are None):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geosoft.gxpy.grid</span> <span class="k">as</span> <span class="nn">gxgrd</span>
-
-<span class="k">with</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;some.grd&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">g</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">nx</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">iy</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">ny</span><span class="p">):</span>
-            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="n">ix</span><span class="p">,</span> <span class="n">iy</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.2.1: </span>added iterator support</p>
-</div>
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">in_memory</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kx</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">discard</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.close" title="Permalink to this definition">¶</a></dt>
-<dd><p>Close the grid and release all instance resources.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>discard</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to discard associated files on close</p>
-</dd>
-</dl>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.4: </span>added <code class="xref py py-obj docutils literal notranslate"><span class="pre">discard</span></code> parameter</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.coordinate_system">
-<em class="property">property </em><code class="sig-name descname">coordinate_system</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.coordinate_system" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid coordinate system as a <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance.</p>
-<p>Can be set from any <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> constructor.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.3: </span>added ability to set directly</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.copy">
-<em class="property">classmethod </em><code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grd</span></em>, <em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">in_memory</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new Grid instance as a copy of an existing grid.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>grd</strong> – <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a> instance to save as a new grid, or a grid file name</p></li>
-<li><p><strong>file_name</strong> – name of the new grid (file with optional decorations). If not specified a temporary file
-is created.</p></li>
-<li><p><strong>dtype</strong> – numpy data type, None to use type of the parent grid</p></li>
-<li><p><strong>overwrite</strong> – True to overwrite if the file exists, False to not overwrite.</p></li>
-<li><p><strong>in_memory</strong> – True to create a grin in memory.</p></li>
-<li><p><strong>mode</strong> – <a class="reference internal" href="#geosoft.gxpy.grid.Grid.open" title="geosoft.gxpy.grid.Grid.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a> mode for working with the copy.</p></li>
-</ul>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.crooked_path">
-<code class="sig-name descname">crooked_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.crooked_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.crooked_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the <code class="xref py py-obj docutils literal notranslate"><span class="pre">CrookedPath</span></code> instance for a crooked-path grid.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.decorate_name">
-<em class="property">static </em><code class="sig-name descname">decorate_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">decorations</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.decorate_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.decorate_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.2: </span>use gxpy.grid.name_parts()</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.decoration">
-<em class="property">property </em><code class="sig-name descname">decoration</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.decoration" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid descriptive decoration</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.delete_files">
-<code class="sig-name descname">delete_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delete</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.delete_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.delete_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete the files associated with this grid when deleting the grid object.
-Note that files are not deleted until all references to this object are
-deleted and garbage collection is performed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>delete</strong> – set to False to reverse a previous delete request</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.dtype">
-<em class="property">property </em><code class="sig-name descname">dtype</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.dtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>numpy data type for the grid</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.dummy_value">
-<em class="property">property </em><code class="sig-name descname">dummy_value</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.dummy_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the grid data dummy value.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.dx">
-<em class="property">property </em><code class="sig-name descname">dx</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.dx" title="Permalink to this definition">¶</a></dt>
-<dd><p>separation between grid points in the grid x direction</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.dy">
-<em class="property">property </em><code class="sig-name descname">dy</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.dy" title="Permalink to this definition">¶</a></dt>
-<dd><p>separation between grid points in the grid y direction</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.extent">
-<em class="property">property </em><code class="sig-name descname">extent</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Grid cell extent as <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a>.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.extent_2d">
-<code class="sig-name descname">extent_2d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.extent_2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_2d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the 2D extent of the grid on the grid plane.</p>
-<p>Extent is to the outer edge of grid “cells”, which extend half a cell beyond the edge points.</p>
-<p>:returns:(min_x, min_y, max_x, max_y)</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.4: </span>- extent to the cell edges.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.extent_3d">
-<code class="sig-name descname">extent_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.extent_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_3d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the 3D extent of the grid in the base coordinate system.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>(min_x, min_y, min_z, max_x, max_y, max_z)</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.extent_cell_2d">
-<code class="sig-name descname">extent_cell_2d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.extent_cell_2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_cell_2d" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.4: </span>- same as <a class="reference internal" href="#geosoft.gxpy.grid.Grid.extent_2d" title="geosoft.gxpy.grid.Grid.extent_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extent_2d()</span></code></a></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.extent_cell_3d">
-<code class="sig-name descname">extent_cell_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.extent_cell_3d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_cell_3d" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.4: </span>- same as <a class="reference internal" href="#geosoft.gxpy.grid.Grid.extent_3d" title="geosoft.gxpy.grid.Grid.extent_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extent_3d()</span></code></a></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.extent_point_2d">
-<code class="sig-name descname">extent_point_2d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.extent_point_2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_point_2d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the 2D extent of the grid point (cell centers) on the grid plane.</p>
-<p>:returns:(min_x, min_y, max_x, max_y)</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.file_name">
-<em class="property">property </em><code class="sig-name descname">file_name</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.file_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid file name without decorations</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.file_name_decorated">
-<em class="property">property </em><code class="sig-name descname">file_name_decorated</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.file_name_decorated" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid file name with decorations</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.from_data_array">
-<em class="property">classmethod </em><code class="sig-name descname">from_data_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.from_data_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.from_data_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create grid from a 2D data array or <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXPG</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – 2D numpy data array, a 2d list, ir a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXPG</span></code></a>.</p></li>
-<li><p><strong>file_name</strong> – name of the file, default creates a temporary file name</p></li>
-<li><p><strong>properties</strong> – grid properties as a dictionary</p></li>
-<li><p><strong>overwrite</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to overwrite existing grid.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a> instance</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.4: </span>- support for default temporary file name and creation from a GXPG.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.generate_color_map">
-<code class="sig-name descname">generate_color_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.generate_color_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.generate_color_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate color map for grid based on statistics and method</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>method</strong> – <a class="reference internal" href="GXITR.html#itr-zone"><span class="std std-ref">ITR_ZONE constants</span></a></p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance.</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.0.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.get_default_color_map">
-<code class="sig-name descname">get_default_color_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.get_default_color_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.get_default_color_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get default color map for grid</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance.</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.0.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.get_value">
-<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.get_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.get_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a grid value at a point as a float.  For scalar data the point value will
-be interpolated between neighbors.  For color data the nearest value is returned
-as a color int.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – X location on the grid plane</p></li>
-<li><p><strong>y</strong> – Y location on the grid plane</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>grid value, or None if outside of grid area</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.gridtype">
-<em class="property">property </em><code class="sig-name descname">gridtype</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.gridtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid type (e.g. ‘GRD’, ‘HGD’ etc. ‘MEMORY’ for in-memory grid)</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.gximg">
-<em class="property">property </em><code class="sig-name descname">gximg</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.gximg" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXIMG</span></code></a> instance handle.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.gxpg">
-<code class="sig-name descname">gxpg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">copy</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.gxpg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.gxpg" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a copy of the <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXPG</span></code></a> instance for the grid.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>copy</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to return a copy of the grids pager. The default is <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>, which
-returns the shared grid pager, such that changes to the pager change the grid
-and the pager is invalid when thr grid is closed or loses context.</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.4: </span>added <a class="reference internal" href="#geosoft.gxpy.grid.Grid.copy" title="geosoft.gxpy.grid.Grid.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a> parameter</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.gxtype">
-<em class="property">property </em><code class="sig-name descname">gxtype</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.gxtype" title="Permalink to this definition">¶</a></dt>
-<dd><p>Geosoft data type for the grid</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.image_file">
-<code class="sig-name descname">image_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image_type</span><span class="o">=</span><span class="default_value">'PNG'</span></em>, <em class="sig-param"><span class="n">pix_width</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shade</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">color_map</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">contour</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">display_area</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pix_32_bit</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.image_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.image_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save as a georeferenced image file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>image_file_name</strong> – image file name. The extension should be consistent with the image_type.
-If not specified a temporary PNG file is created.</p></li>
-<li><p><strong>image_type</strong> – image type, one ot the RASTER_FORMAT constants in <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map</span></code></a>.</p></li>
-<li><p><strong>pix_width</strong> – desired image width in pixels, default is the width of the aggregate base layer</p></li>
-<li><p><strong>shade</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to add shading effect</p></li>
-<li><p><strong>color_map</strong> – <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name,
-default is grid’s default</p></li>
-<li><p><strong>contour</strong> – colour contour interval if colours need to break at exact levels</p></li>
-<li><p><strong>display_area</strong> – <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance, which defines the desired display
-area. The display area coordinate system can be different from the grid.</p></li>
-<li><p><strong>pix_32_bit</strong> – make 32-bit image (with 8-bit alpha background)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>image file name.</p>
-</dd>
-</dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#geosoft.gxpy.grid.image_file" title="geosoft.gxpy.grid.image_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.image_file</span></code></a>, which creates an image directly from a grid file.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Unless read-only this method saves the grid as a temporary file from which an aggregate and image are
-created. If the grid already exists as a grid file it is more efficient to call
-<a class="reference internal" href="#geosoft.gxpy.grid.image_file" title="geosoft.gxpy.grid.image_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.image_file</span></code></a>.</p>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.indexWindow">
-<code class="sig-name descname">indexWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">y0</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nx</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ny</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.indexWindow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.indexWindow" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.2: </span>gxpy.Grid.index_window()</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.index_window">
-<em class="property">classmethod </em><code class="sig-name descname">index_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grd</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">y0</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">nx</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ny</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.index_window"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.index_window" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a windowed instance of a grid.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>grd</strong> – <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a> instance</p></li>
-<li><p><strong>name</strong> – name for the windowed_grid, default is constructed from input grid</p></li>
-<li><p><strong>x0</strong> – integer index of the first X point</p></li>
-<li><p><strong>y0</strong> – integer index of the first Y point</p></li>
-<li><p><strong>nx</strong> – number of points in x</p></li>
-<li><p><strong>ny</strong> – number of points in y</p></li>
-<li><p><strong>overwrite</strong> – True to overwrite existing file, default is False</p></li>
-</ul>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.is_color">
-<em class="property">property </em><code class="sig-name descname">is_color</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.is_color" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns True if grid contains colors. is_int will also be True</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.is_crooked_path">
-<em class="property">property </em><code class="sig-name descname">is_crooked_path</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.is_crooked_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>True if this grid follows a crooked path section.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.is_int">
-<em class="property">property </em><code class="sig-name descname">is_int</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.is_int" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns True if base grid type is integer, which includes color integers</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.mask">
-<code class="sig-name descname">mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mask</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.mask" title="Permalink to this definition">¶</a></dt>
-<dd><p>Mask against blank areas in <a class="reference internal" href="#geosoft.gxpy.grid.Grid.mask" title="geosoft.gxpy.grid.Grid.mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask</span></code></a> grid.  Both grids must be same dimension.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mask</strong> – reference mask grid, file of <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code></a> instance.</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.metadata">
-<em class="property">property </em><code class="sig-name descname">metadata</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.metadata" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the grid metadata as a dictionary.  Can be set, in which case
-the dictionary items passed will be added to, or replace existing metadata.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Geosoft+Metadata+Schema">Geosoft metadata schema</a></p>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.minimum_curvature">
-<em class="property">classmethod </em><code class="sig-name descname">minimum_curvature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">unit_of_measure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_segments</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">coordinate_system</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cs</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">area</span><span class="o">=</span><span class="default_value">'', '', '', ''</span></em>, <em class="sig-param"><span class="n">bclip</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">logopt</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">logmin</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">idsf</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">bkd</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">srd</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">iwt</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">edgclp</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">tol</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">pastol</span><span class="o">=</span><span class="default_value">'100'</span></em>, <em class="sig-param"><span class="n">itrmax</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">ti</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">icgr</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.minimum_curvature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.minimum_curvature" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a minimum-curvature surface grid from (x, y, value) located data.</p>
-<p>Reference: Smith and Wessel, 1990, Gridding with continuous curvature splines in tension.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – list of [(x, y, value), …] or a callback that returns lists, or a tuple
-(gdb, value_channel, x_channel, y_channel) where x_channel and y_channel, if not
-specified, default to the current database (x, y) channels.  See below.</p></li>
-<li><p><strong>unit_of_measure</strong> – string unit of measurement descriptor.</p></li>
-<li><p><strong>file_name</strong> – <p>name of the grid file, None for a temporary grid. See <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a>)</p>
-</p></li>
-<li><p><strong>overwrite</strong> – True to overwrite existing file</p></li>
-<li><p><strong>max_segments</strong> – Maximum number of line segments if using a callback, defaults to 1000.</p></li>
-<li><p><strong>coordinate_system</strong> – coordinate system</p></li>
-</ul>
-</dd>
-</dl>
-<p>Gridding parameters follow the nomenclature of the rangrid.con file:
-<a class="reference external" href="https://github.com/GeosoftInc/gxc/blob/master/reference/con_files/rangrid.con">https://github.com/GeosoftInc/gxc/blob/master/reference/con_files/rangrid.con</a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cs</strong> – The grid cell size in reference system units.</p></li>
-<li><p><strong>area</strong> – (xmin, ymin, xmax, ymax) - grid area, default is the data limits</p></li>
-<li><p><strong>bclip</strong> – 0 to use all data (default), 1 to only use data in the dat area.</p></li>
-<li><p><strong>logopt</strong> – 1 for log(value) minimum cliped to log(logmin); 2 for <code class="xref py py-obj docutils literal notranslate"><span class="pre">logmin</span> <span class="pre">+</span> <span class="pre">log(value/logmin)</span></code> for
-postive <code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">-logmin</span> <span class="pre">-</span> <span class="pre">log(-value/logmin</span></code> for negative <code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></p></li>
-<li><p><strong>logmin</strong> – see <code class="xref py py-obj docutils literal notranslate"><span class="pre">logopt</span></code>, default is 1.</p></li>
-<li><p><strong>idsf</strong> – low-pass desampling factor in cells, default is 1. Effectively a low-pass filter that
-can smooth noisy data that has clustered locations.</p></li>
-<li><p><strong>bkd</strong> – Blanking distance. All grid cells farther than the blanking
-distance from a valid point will be blanked in the output grid.
-The default is the nominal sample interval, i.e. sqrt(area/#data).
-This parameter should normally be set to just greater than the maximum
-sampling interval through which interpolation is desired.
-If there are too many holes in the resulting grid,
-increase appropriately.</p></li>
-<li><p><strong>srd</strong> – The maximum search radius to use for establishing the starting
-values for the coarse grid.  The default is four times the coarse
-grid size defined by <code class="xref py py-obj docutils literal notranslate"><span class="pre">icgr</span></code>.  If no data is found within the maximum
-search radius, the mean of the data is used as the starting value.
-If the search radius is too small, the starting grid can be a poor
-approximation of the desired grid, resulting in excessive processing
-time.  If too large, too much time will be consumed establishing
-the original coarse grid.</p></li>
-<li><p><strong>iwt</strong> – The weighting power to use to establish the coarse starting grid.
-The default is 2, for inverse distance squared.  There is little
-reason to change this from the default.</p></li>
-<li><p><strong>edgclp</strong> – Edge clipping parameter, the number of grid cells to extend beyond
-the outside limits of the data. The default (-1) is not to apply
-edge clipping to the blanking distanced grid.
-Use this parameter to ensure the grid does not extend too far
-beyond the actual data limits, which can occur when using a large
-blanking distance with widely spaced data.</p></li>
-<li><p><strong>tol</strong> – The tolerance required for each grid cell. The default is 0.1
-percent of the range of the data. Decrease for a more accurate grid.</p></li>
-<li><p><strong>pastol</strong> – The percentage of points that must meet the tolerance. The
-iteration process will stop when the percentage of points change
-by higher than this required percentage in iteration. The default
-is 100.0 percent. Decrease for rough data to reduce minimum curvature
-overshoot, and increase for a to make the grid surface more accurately
-match the data. Overshoot can also be controlled by increasing tension (ti).</p></li>
-<li><p><strong>itrmax</strong> – Maximum number of iterations to use in solving the minimum curvature
-function.  The default is 200 iterations.  Increase for a more
-accurate grid.  A value of 1000 is typically sufficient for maximum accuracy.</p></li>
-<li><p><strong>ti</strong> – The degree of internal tension ( between 0 and 1 ).
-The default is no tension (0.0) which produces a true minimum
-curvature surface.  Increasing tension can prevent overshooting of
-valid data in sparse areas at the expense of increased local curvature
-near data points.</p></li>
-<li><p><strong>icgr</strong> – The course grid size relative to the final grid size.  Allowable
-factors are 16,8,4,2 or 1.  The default is 8.  The optimum is a
-factor close to half the nominal data spacing, although in most
-situations the default is fine.  This parameter effects the
-length of time it takes to find a solution.</p></li>
-</ul>
-</dd>
-</dl>
-<p><strong>The</strong> <code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code> <strong>parameter:</strong></p>
-<p>The data can be provided to the gridding algorithm either as a list array, a callback function that
-returns list array segments, or a <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_database</span></code> instance. In the case of a list or
-a callback, a temporary database is constructed internally.</p>
-<p>A callback is passed a sequence number, 0, 1, 2, … and is expected to return a list array with each call
-or None when there is no more data.  See the example below. When a callback is used, the <code class="xref py py-obj docutils literal notranslate"><span class="pre">max_segments</span></code>
-parameter sets the maximum number of lines for the temporary database as each return from the
-callback will create a new line in the internal temporary database.</p>
-<p>If a database instance is passed it must be the first item in a tuple of 2 or 4 items:
-(gdb_instance, value_channel) or (gdb_instance, value_channel, x_channel, y_channel).
-In the first case the default spatial (x, y) channels in the database are assumed.</p>
-<p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">geosoft.gxpy.grid</span> <span class="k">as</span> <span class="nn">gxgrd</span>
-
-<span class="c1"># simple data array</span>
-<span class="n">xyv</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">45.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">60.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">),</span> <span class="p">(</span><span class="mf">50.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">80.</span><span class="p">)]</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">minimum_curvature</span><span class="p">(</span><span class="n">xyv</span><span class="p">)</span>
-
-<span class="c1"># or a numpy array</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">minimum_curvature</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xyv</span><span class="p">))</span>
-
-<span class="c1"># a database, grid to a cell size of 100</span>
-<span class="kn">import</span> <span class="nn">geosoft.gxpy.gdb</span> <span class="k">as</span> <span class="nn">gxgdb</span>
-<span class="n">gdb</span> <span class="o">=</span> <span class="n">gxgdb</span><span class="o">.</span><span class="n">Geosoft_database</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;some_mag_data.gdb&#39;</span><span class="p">)</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">minimum_curvature</span><span class="p">((</span><span class="n">gdb</span><span class="p">,</span> <span class="s1">&#39;tmi&#39;</span><span class="p">),</span> <span class="n">cs</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="c1"># a callback, used for very large data, or to feed data efficiently from some other source.</span>
-<span class="n">nxyv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[(</span><span class="mf">45.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">60.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">),</span> <span class="p">(</span><span class="mf">50.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">81.</span><span class="p">),</span> <span class="p">(</span><span class="mf">55.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span> <span class="mf">66.</span><span class="p">)],</span>
-                 <span class="p">[(</span><span class="mf">20.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mi">108</span><span class="p">),</span> <span class="p">(</span><span class="mf">25.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">),</span> <span class="p">(</span><span class="mf">33.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">),</span> <span class="p">(</span><span class="mf">28.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">22.</span><span class="p">)],</span>
-                 <span class="p">[(</span><span class="mf">35.</span><span class="p">,</span> <span class="mf">18.</span><span class="p">,</span> <span class="mi">110</span><span class="p">),</span> <span class="p">(</span><span class="mf">40.</span><span class="p">,</span> <span class="mf">31.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">),</span> <span class="p">(</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">83.</span><span class="p">),</span> <span class="p">(</span><span class="mf">44.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">)]])</span>
-<span class="k">def</span> <span class="nf">feed_data</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nxyv</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">return</span> <span class="n">nxyv</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">minimum_curvature</span><span class="p">(</span><span class="n">feed_data</span><span class="p">,</span> <span class="n">cs</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Grid name, usually the file name without path or extension.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.name_parts">
-<em class="property">static </em><code class="sig-name descname">name_parts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.name_parts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.name_parts" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.2: </span>use gxpy.grid.name_parts()</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.new">
-<em class="property">classmethod </em><code class="sig-name descname">new</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">in_memory</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.new"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.new" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new grid file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>file_name</strong> – <p>name of the grid file, None for a temporary grid. See <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a>)</p>
-</p></li>
-<li><p><strong>in_memory</strong> – Creates an in-memory grid (file_name will be ignored)</p></li>
-<li><p><strong>properties</strong> – dictionary of grid properties, see <a class="reference internal" href="#geosoft.gxpy.grid.Grid.properties" title="geosoft.gxpy.grid.Grid.properties"><code class="xref py py-meth docutils literal notranslate"><span class="pre">properties()</span></code></a></p></li>
-<li><p><strong>overwrite</strong> – True to overwrite existing file</p></li>
-</ul>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.np">
-<code class="sig-name descname">np</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.np"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.np" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a numpy array of grid values in the working dtype.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dtype</strong> – desired data type, default is the work_dtype, ignored for color grids</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>numpy array shape (nx, ny) or (nx, ny, 4) containing RGBA bytes in case of color grids</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.nx">
-<em class="property">property </em><code class="sig-name descname">nx</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.nx" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid x dimension (number of columns)</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.ny">
-<em class="property">property </em><code class="sig-name descname">ny</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.ny" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid y dimension (number of rows)</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.open">
-<em class="property">classmethod </em><code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">coordinate_system</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cell_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expand</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Open an existing grid file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>file_name</strong> – <p>name of the grid file, with decorations. See <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a>)</p>
-</p></li>
-<li><p><strong>dtype</strong> – numpy data type, which will be the grid data type.</p></li>
-<li><p><strong>mode</strong> – <p>open mode:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 74%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>FILE_READ</p></td>
-<td><p>only read the file, properties cannot be changed</p></td>
+</p></td>
 </tr>
-<tr class="row-even"><td><p>FILE_READWRITE</p></td>
-<td><p>grid stays the same, but properties may change</p></td>
-</tr>
-</tbody>
-</table>
-</p></li>
-<li><p><strong>coordinate_system</strong> – desired coordinate system. The grid will be reprojected if necessary.</p></li>
-<li><p><strong>cell_size</strong> – desired cell size, defaults to the current cell size.</p></li>
-<li><p><strong>expand</strong> – if reprojecting or resampling the are can be expanded by this percentage
-to allow for curved edges in the new coordinate system space.  The default
-expands by 1%. Set to 0 to prevent expansion.</p></li>
-</ul>
-</dd>
-</dl>
-<p>If reprojecting or setting the cell size different from the original grid, the mode must be FILE_READ.</p>
-<p>If reprojecting without setting the cell size a default cell size will be calculated in the new
-coordinate system that is nominally equivalent to the current cell size.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.4: </span>added reprojection support</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.properties">
-<code class="sig-name descname">properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.properties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the grid properties dictionary</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>dictionary of all grid properties</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.4: </span>added ‘unit_of_measure’</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.read_column">
-<code class="sig-name descname">read_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">length</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.read_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.read_column" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>column</strong> – column to read, if not specified the next column is read starting from column 0</p></li>
-<li><p><strong>start</strong> – the first point in the column, default is 0</p></li>
-<li><p><strong>length</strong> – number of points to read, the default is to the end of the col.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxvv.GXvv</span></code> instance</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.read_row">
-<code class="sig-name descname">read_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">row</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">length</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.read_row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.read_row" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>row</strong> – row to read, if not specified the next row is read starting from row 0</p></li>
-<li><p><strong>start</strong> – the first point in the row, default is 0</p></li>
-<li><p><strong>length</strong> – number of points to read, the default is to the end of the row.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxvv.GXvv</span></code> instance</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.remove_on_close">
-<em class="property">property </em><code class="sig-name descname">remove_on_close</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.remove_on_close" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove files on close setting, can be set.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.reset_read_write">
-<code class="sig-name descname">reset_read_write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.reset_read_write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.reset_read_write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reset the default read/write to the grid row 0, column 0.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.rot">
-<em class="property">property </em><code class="sig-name descname">rot</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.rot" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid rotation angle, degrees azimuth</p>
-<p>Note that grid rotations in the gxapi GXIMG are degrees clockwise, which is the opposite of
-degree azimuth, used here.  All horizontal plane angles in the Python gxpy module are degrees
-azimuth for consistency.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.rotation_cos_sine">
-<em class="property">property </em><code class="sig-name descname">rotation_cos_sine</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.rotation_cos_sine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns grid rotation (cosine, sine).</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.set_properties">
-<code class="sig-name descname">set_properties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.set_properties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.set_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set grid properties from a properties dict.  Settable property keys are:</p>
-<blockquote>
-<div><table class="docutils align-default">
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 69%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>‘x0’</p></td>
-<td><p>grid X origin location (default 0.0)</p></td>
-</tr>
-<tr class="row-even"><td><p>‘y0’</p></td>
-<td><p>grid Y origin location (0.0)</p></td>
-</tr>
-<tr class="row-odd"><td><p>‘dx’</p></td>
-<td><p>grid X point separation (1.0)</p></td>
-</tr>
-<tr class="row-even"><td><p>‘dy’</p></td>
-<td><p>grid Y point separation (1.0)</p></td>
-</tr>
-<tr class="row-odd"><td><p>‘rot’</p></td>
-<td><p>grid rotation angle in degrees azimuth (0.0)</p></td>
-</tr>
-<tr class="row-even"><td><p>‘unit_of_measure’</p></td>
-<td><p>unit of measure for the grid data</p></td>
-</tr>
-<tr class="row-odd"><td><p>‘coordinate_system’</p></td>
-<td><p>coordinate system (unchanged)</p></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>Not all keys need be passed, though typically one will get the properties from
-the grid and modify those that need to change and pass the properties back.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>properties</strong> – properties dictionary</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.statistics">
-<code class="sig-name descname">statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gxst</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.statistics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.statistics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate and return current grid data statistics as a dictionary.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>gxst</strong> – gxapi.GXST instance, to which stats will be accumulated, or None.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dictionary of grid data statistics:</p>
-</dd>
-</dl>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>min</p></td>
-<td><p>minimum</p></td>
-</tr>
-<tr class="row-even"><td><p>max</p></td>
-<td><p>maximum</p></td>
-</tr>
-<tr class="row-odd"><td><p>mean</p></td>
-<td><p>mean</p></td>
-</tr>
-<tr class="row-even"><td><p>geometric_mean</p></td>
-<td><p>geometric mean</p></td>
-</tr>
-<tr class="row-odd"><td><p>variance</p></td>
-<td><p>variance</p></td>
-</tr>
-<tr class="row-even"><td><p>sd</p></td>
-<td><p>standard deviation</p></td>
-</tr>
-<tr class="row-odd"><td><p>skew</p></td>
-<td><p>skew</p></td>
-</tr>
-<tr class="row-even"><td><p>kurtosis</p></td>
-<td><p>kurtosis</p></td>
-</tr>
-<tr class="row-odd"><td><p>sum</p></td>
-<td><p>sum of all data</p></td>
-</tr>
-<tr class="row-even"><td><p>sum_power_2</p></td>
-<td><p>sum of data**2</p></td>
-</tr>
-<tr class="row-odd"><td><p>sum_power_3</p></td>
-<td><p>sum of data**3</p></td>
-</tr>
-<tr class="row-even"><td><p>sum_power_4</p></td>
-<td><p>sum of data**4</p></td>
-</tr>
-<tr class="row-odd"><td><p>num_data</p></td>
-<td><p>number of valid data values</p></td>
-</tr>
-<tr class="row-even"><td><p>num_dummy</p></td>
-<td><p>number of dummy values</p></td>
-</tr>
-</tbody>
-</table>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.unit_of_measure">
-<em class="property">property </em><code class="sig-name descname">unit_of_measure</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.unit_of_measure" title="Permalink to this definition">¶</a></dt>
-<dd><p>Units of measurement (a string) for the grid data, can be set.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.write_column">
-<code class="sig-name descname">write_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">column</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">length</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.write_column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.write_column" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – data to write, <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instance or an array</p></li>
-<li><p><strong>column</strong> – column to write, if not specified the next column is written starting from column 0</p></li>
-<li><p><strong>start</strong> – the first point in the column, default is 0</p></li>
-<li><p><strong>length</strong> – number of points to write, the default is to the end of the row.</p></li>
-</ul>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.write_row">
-<code class="sig-name descname">write_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">row</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">length</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.write_row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.write_row" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – data to write, <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instance or an array</p></li>
-<li><p><strong>row</strong> – row to write, if not specified the next row is written starting from row 0</p></li>
-<li><p><strong>start</strong> – the first point in the row, default is 0</p></li>
-<li><p><strong>length</strong> – number of points to read, the default is to the end of the row.</p></li>
-</ul>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.write_rows">
-<code class="sig-name descname">write_rows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ix0</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">iy0</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">order</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.write_rows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.write_rows" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write data to a grid by rows.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – array of data to write, numpy, list or <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXPG</span></code></a></p></li>
-<li><p><strong>ix0</strong> – grid X index of first point</p></li>
-<li><p><strong>iy0</strong> – grid Y index of first point, top index if writing rows top to bottom</p></li>
-<li><p><strong>order</strong> – 1: bottom to top; -1: top to bottom</p></li>
-</ul>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.4: </span>accepts list or GXPG</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.x0">
-<em class="property">property </em><code class="sig-name descname">x0</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.x0" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid origin x location in the plane coordinate system</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.xy_from_index">
-<code class="sig-name descname">xy_from_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ix</span></em>, <em class="sig-param"><span class="n">iy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.xy_from_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.xy_from_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the rotated location of grid index ix, iy</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ix</strong> – grid index x</p></li>
-<li><p><strong>iy</strong> – grid index y</p></li>
-</ul>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.xyz">
-<code class="sig-name descname">xyz</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.xyz"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.xyz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the (x, y, z) location of an indexed point in the grid.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>item</strong> – tuple (ix, iy) grid point, or the point number counting by row</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>tuple (x, y, z) location</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.xyzv">
-<code class="sig-name descname">xyzv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#Grid.xyzv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.Grid.xyzv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a numpy float array of (x, y, z, v) grid points.</p>
-<p>x, y, z) is the location of each grid point in 3D space and v is the grid value at that location.
-Dummies will be numpy.nan.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>numpy array shape (nx, ny, 4)</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="geosoft.gxpy.grid.Grid.y0">
-<em class="property">property </em><code class="sig-name descname">y0</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.y0" title="Permalink to this definition">¶</a></dt>
-<dd><p>grid origin y location in the plane coordinate system</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt id="geosoft.gxpy.grid.GridException">
-<em class="property">exception </em><code class="sig-name descname">GridException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#GridException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.GridException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
-<p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.grid" title="geosoft.gxpy.grid"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.grid</span></code></a>.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.array_locations">
-<code class="sig-name descname">array_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#array_locations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.array_locations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an array of (x,y,z) points for a grid defined by properties
-:param properties:  grid properties
-:returns:           array of points, shaped (ny, nx, 3)</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.decorate_name">
-<code class="sig-name descname">decorate_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">decorations</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#decorate_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.decorate_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Properly decorate a grid name.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> – file name</p></li>
-<li><p><strong>decorations</strong> – file decorations, semicolon delimited</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>decorated file name</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.delete_files">
-<code class="sig-name descname">delete_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#delete_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.delete_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete all files associates with this grid name.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file_name</strong> – name of the grid file</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.figure_map">
-<code class="sig-name descname">figure_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid_file</span></em>, <em class="sig-param"><span class="n">map_file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shade</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">color_map</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">contour</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#figure_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.figure_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a map figure from a grid file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>grid_file</strong> – grid file name</p></li>
-<li><p><strong>map_file</strong> – name of the map file, if <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> a default map is created.</p></li>
-<li><p><strong>shade</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to add shading effect</p></li>
-<li><p><strong>color_map</strong> – <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name, default is user’s default</p></li>
-<li><p><strong>contour</strong> – colour contour interval if colours need to break at exact levels</p></li>
-<li><p><strong>kwargs</strong> – passed to  <a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.figure_map" title="geosoft.gxpy.agg.Aggregate_image.figure_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image.figure_map</span></code></a> and <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map" title="geosoft.gxpy.map.Map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map</span></code></a> instance</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.gridBool">
-<code class="sig-name descname">gridBool</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#gridBool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.gridBool" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.2: </span>use <a class="reference internal" href="#geosoft.gxpy.grid.grid_bool" title="geosoft.gxpy.grid.grid_bool"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_bool</span></code></a></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.gridMosaic">
-<code class="sig-name descname">gridMosaic</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#gridMosaic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.gridMosaic" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gridMosaic</span></code>(*args, **kwargs)</p></td>
+<td><p><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 9.2: </span>use :py:method: grid_mosaic</p>
 </div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.grid_bool">
-<code class="sig-name descname">grid_bool</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#grid_bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.grid_bool" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.4: </span>use <a class="reference internal" href="geosoft.gxpy.grid_utility.html#geosoft.gxpy.grid_utility.grid_bool" title="geosoft.gxpy.grid_utility.grid_bool"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid_utility.grid_bool</span></code></a></p>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_bool</span></code>(*args, **kwargs)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 9.4: </span>use <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid_utility.grid_bool</span></code></p>
 </div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.grid_mosaic">
-<code class="sig-name descname">grid_mosaic</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#grid_mosaic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.grid_mosaic" title="Permalink to this definition">¶</a></dt>
-<dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 9.4: </span>use <a class="reference internal" href="geosoft.gxpy.grid_utility.html#geosoft.gxpy.grid_utility.grid_mosaic" title="geosoft.gxpy.grid_utility.grid_mosaic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid_utility.grid_mosaic</span></code></a></p>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_mosaic</span></code>(*args, **kwargs)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 9.4: </span>use <code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid_utility.grid_mosaic</span></code></p>
 </div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.image_file">
-<code class="sig-name descname">image_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid_file</span></em>, <em class="sig-param"><span class="n">image_file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image_type</span><span class="o">=</span><span class="default_value">'PNG'</span></em>, <em class="sig-param"><span class="n">pix_width</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shade</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">color_map</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">contour</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">display_area</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pix_32_bit</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#image_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.image_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save a grid file grid as a georeferenced image file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>grid_file</strong> – grid file name</p></li>
-<li><p><strong>image_file</strong> – image file name. The extension should be consistent with the image_type.
-If not specified a temporary PNG file is created.</p></li>
-<li><p><strong>image_type</strong> – image type, one ot the RASTER_FORMAT constants in <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.map</span></code></a>.</p></li>
-<li><p><strong>pix_width</strong> – desired image width in pixels, default is the width of the aggregate base layer</p></li>
-<li><p><strong>shade</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> to add shading effect</p></li>
-<li><p><strong>color_map</strong> – <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name, default is grid’s default</p></li>
-<li><p><strong>contour</strong> – colour contour interval if colours need to break at exact levels</p></li>
-<li><p><strong>display_area</strong> – <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance, which defines the desired display
-area. The display area coordinate system can be different from the grid.</p></li>
-<li><p><strong>pix_32_bit</strong> – make 32-bit image (with 8-bit alpha background)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>image file name.</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.name_parts">
-<code class="sig-name descname">name_parts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#name_parts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.name_parts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return folder, undecorated file name + ext, file root, ext, decorations.</p>
-<p>If extension is not specified, “.grd” assumed</p>
-<p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">geosoft.gxpy.grid</span> <span class="k">as</span> <span class="nn">gxgrd</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">namep</span> <span class="o">=</span> <span class="n">gxgrd</span><span class="o">.</span><span class="n">name_parts</span><span class="p">(</span><span class="s2">&quot;f:/someFolder/name.grd(GRD;TYPE=SHORT)&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">namep</span><span class="p">)</span>
-<span class="go">(&#39;f:/someFolder/&#39;,&#39;name.grd&#39;,&#39;name&#39;,&#39;.grd&#39;,&#39;(GRD;TYPE=SHORT)&#39;)</span>
-</pre></div>
-</div>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="geosoft.gxpy.grid.reopen">
-<code class="sig-name descname">reopen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxpy/grid.html#reopen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxpy.grid.reopen" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reopen a grid to access the grid as an existing grid.</p>
-<p>Some gxapi.GXIMU methods will not work with grids open as new grids. This method closes
-the grid and reopens in the specific mode</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>g</strong> – <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code></a> instance</p></li>
-<li><p><strong>dtype</strong> – data type, None to match the data type of the grid being reopened</p></li>
-<li><p><strong>mode</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">FILE_READWRITE</span></code> (default) or <code class="xref py py-obj docutils literal notranslate"><span class="pre">FILE_READ</span></code></p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>new <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code></a> instance</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
-</div>
-</dd></dl>
-
-</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">image_file</span></code>(grid_file[, image_file, ...])</p></td>
+<td><p>Save a grid file grid as a georeferenced image file.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">name_parts</span></code>(name)</p></td>
+<td><p>Return folder, undecorated file name + ext, file root, ext, decorations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reopen</span></code>(g[, dtype, mode])</p></td>
+<td><p>Reopen a grid to access the grid as an existing grid.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code>([file_name, in_memory, dtype, mode, ...])</p></td>
+<td><p>Grid and image class.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Exceptions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GridException</span></code>(message)</p></td>
+<td><p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.grid" title="geosoft.gxpy.grid"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.grid</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 
 
             <div class="clearer"></div>
@@ -1377,14 +182,14 @@ the grid and reopens in the specific mode</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.grid submodule</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy.grid</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

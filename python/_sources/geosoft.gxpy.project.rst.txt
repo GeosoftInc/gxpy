@@ -1,7 +1,48 @@
-geosoft.gxpy.project submodule
-=============================================
+﻿geosoft.gxpy.project
+====================
 
 .. automodule:: geosoft.gxpy.project
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      _user_input_gx
+      add_document
+      get_user_input
+      pause
+      remove_document
+      running_script
+      user_message
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Geosoft_project
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      ProjectException
+   
+   
+
+
+

@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXEUL3 class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXEUL3 class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,30 +28,62 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEUL3 class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXEUL3 class</a><ul>
-<li><a class="reference internal" href="#eul3-result-constants">EUL3_RESULT constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3"><code class="docutils literal notranslate"><span class="pre">GXEUL3</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.__init__"><code class="docutils literal notranslate"><span class="pre">GXEUL3.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.creat"><code class="docutils literal notranslate"><span class="pre">GXEUL3.creat()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.destr"><code class="docutils literal notranslate"><span class="pre">GXEUL3.destr()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.ex_euler_calc"><code class="docutils literal notranslate"><span class="pre">GXEUL3.ex_euler_calc()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.ex_euler_derive"><code class="docutils literal notranslate"><span class="pre">GXEUL3.ex_euler_derive()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.get_result"><code class="docutils literal notranslate"><span class="pre">GXEUL3.get_result()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.is_null"><code class="docutils literal notranslate"><span class="pre">GXEUL3.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.null"><code class="docutils literal notranslate"><span class="pre">GXEUL3.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEUL3.write"><code class="docutils literal notranslate"><span class="pre">GXEUL3.write()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#eul3-result-constants">EUL3_RESULT constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_X"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_X</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_X</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_Y"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_Y</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_Y</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_DEPTH"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_DEPTH</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_DEPTH</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_BACKGROUND"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_BACKGROUND</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_BACKGROUND</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_DEPTHERROR"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_DEPTHERROR</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_DEPTHERROR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_LOCATIONERROR"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_LOCATIONERROR</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_LOCATIONERROR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_WINDOWX"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_WINDOWX</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_WINDOWX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EUL3_RESULT_WINDOWY"><code class="docutils literal notranslate"><span class="pre">EUL3_RESULT_WINDOWY</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">gxapi.EUL3_RESULT_WINDOWY</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,26 +99,25 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxeul3-class">
-<span id="gxeul3"></span><h1>GXEUL3 class<a class="headerlink" href="#gxeul3-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxeul3-class">
+<span id="gxeul3"></span><h1>GXEUL3 class<a class="headerlink" href="#gxeul3-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXEUL3">
-<em class="property">class </em><code class="sig-name descname">GXEUL3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXEUL3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3" title="Link to this definition">¶</a></dt>
 <dd><p>GXEUL3 class.</p>
 <p>This is a specialized class which performs 3D Euler deconvolution
 for potential field interpretation.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.creat">
-<em class="property">classmethod </em><code class="sig-name descname">creat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">imgt</span></em>, <em class="sig-param"><span class="n">imgtx</span></em>, <em class="sig-param"><span class="n">imgty</span></em>, <em class="sig-param"><span class="n">imgtz</span></em>, <em class="sig-param"><span class="n">wnd_siz</span></em>, <em class="sig-param"><span class="n">gi</span></em>, <em class="sig-param"><span class="n">tolrnc</span></em>, <em class="sig-param"><span class="n">max_dis</span></em>, <em class="sig-param"><span class="n">obs_flg</span></em>, <em class="sig-param"><span class="n">obs_hght</span></em>, <em class="sig-param"><span class="n">obs_elev</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.creat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.creat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.creat">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">creat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgtx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgtz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wnd_siz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolrnc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_flg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_hght</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_elev</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.creat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.creat" title="Link to this definition">¶</a></dt>
 <dd><p>Creates an <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>imgt</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid T</p></li>
 <li><p><strong>imgtx</strong> (<a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><em>GXIMG</em></a>) – Image of grid Tx</p></li>
@@ -103,11 +132,11 @@ for potential field interpretation.</p>
 <li><p><strong>obs_elev</strong> (<em>float</em>) – Elevation of observation plane</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> Object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3">GXEUL3</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3.GXEUL3">GXEUL3</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -117,8 +146,8 @@ for potential field interpretation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.destr">
-<code class="sig-name descname">destr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.destr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.destr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.destr">
+<span class="sig-name descname"><span class="pre">destr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.destr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.destr" title="Link to this definition">¶</a></dt>
 <dd><p>Destroys a <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.0.</span></p>
@@ -127,11 +156,11 @@ for potential field interpretation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.ex_euler_calc">
-<em class="property">classmethod </em><code class="sig-name descname">ex_euler_calc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">typ</span></em>, <em class="sig-param"><span class="n">p2</span></em>, <em class="sig-param"><span class="n">p3</span></em>, <em class="sig-param"><span class="n">p4</span></em>, <em class="sig-param"><span class="n">p5</span></em>, <em class="sig-param"><span class="n">p6</span></em>, <em class="sig-param"><span class="n">p7</span></em>, <em class="sig-param"><span class="n">p8</span></em>, <em class="sig-param"><span class="n">p9</span></em>, <em class="sig-param"><span class="n">p10</span></em>, <em class="sig-param"><span class="n">p11</span></em>, <em class="sig-param"><span class="n">p12</span></em>, <em class="sig-param"><span class="n">p13</span></em>, <em class="sig-param"><span class="n">p14</span></em>, <em class="sig-param"><span class="n">p15</span></em>, <em class="sig-param"><span class="n">p16</span></em>, <em class="sig-param"><span class="n">p17</span></em>, <em class="sig-param"><span class="n">p18</span></em>, <em class="sig-param"><span class="n">p19</span></em>, <em class="sig-param"><span class="n">p20</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.ex_euler_calc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.ex_euler_calc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.ex_euler_calc">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ex_euler_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p19</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.ex_euler_calc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.ex_euler_calc" title="Link to this definition">¶</a></dt>
 <dd><p>Does the exeuler depth calculations</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>typ</strong> (<em>int</em>) – Solution type flag (0 for contacts, 1 for dykes)</p></li>
 <li><p><strong>p2</strong> (<em>float</em>) – Structural index value (used only when generating dykes)</p></li>
@@ -155,10 +184,10 @@ for potential field interpretation.</p>
 <li><p><strong>p20</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – The susceptibility for each solution</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>&gt;0 for OK, -1 for Error</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -169,11 +198,11 @@ for potential field interpretation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.ex_euler_derive">
-<em class="property">classmethod </em><code class="sig-name descname">ex_euler_derive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv_dist</span></em>, <em class="sig-param"><span class="n">pr_dx</span></em>, <em class="sig-param"><span class="n">vv_mag</span></em>, <em class="sig-param"><span class="n">length</span></em>, <em class="sig-param"><span class="n">vv_gx</span></em>, <em class="sig-param"><span class="n">vv_gz</span></em>, <em class="sig-param"><span class="n">max_sol</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.ex_euler_derive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.ex_euler_derive" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.ex_euler_derive">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ex_euler_derive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pr_dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_mag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_gx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_gz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_sol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.ex_euler_derive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.ex_euler_derive" title="Link to this definition">¶</a></dt>
 <dd><p>Calculates gradients</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vv_dist</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input distance</p></li>
 <li><p><strong>pr_dx</strong> (<em>float</em>) – Sample Interval</p></li>
@@ -184,10 +213,10 @@ for potential field interpretation.</p>
 <li><p><strong>max_sol</strong> (<em>int</em>) – Output array size limit</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>0 for OK, -1 for Error</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -198,11 +227,11 @@ for potential field interpretation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.get_result">
-<code class="sig-name descname">get_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vv_r</span></em>, <em class="sig-param"><span class="n">pi_res_field</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.get_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.get_result" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pi_res_field</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.get_result"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.get_result" title="Link to this definition">¶</a></dt>
 <dd><p>Get a result field <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vv_r</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to store the result</p></li>
 <li><p><strong>pi_res_field</strong> (<em>int</em>) – <a class="reference internal" href="#eul3-result"><span class="std std-ref">EUL3_RESULT constants</span></a></p></li>
@@ -216,39 +245,39 @@ for potential field interpretation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3">GXEUL3</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3.GXEUL3">GXEUL3</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXEUL3.write">
-<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out_fil</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.write" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEUL3.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_fil</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEUL3.html#GXEUL3.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEUL3.write" title="Link to this definition">¶</a></dt>
 <dd><p>Write the results of <a class="reference internal" href="#geosoft.gxapi.GXEUL3" title="geosoft.gxapi.GXEUL3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEUL3</span></code></a> object to output file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>out_fil</strong> (<em>str</em>) – Output File Name</p>
 </dd>
 </dl>
@@ -260,99 +289,99 @@ for potential field interpretation.</p>
 
 </dd></dl>
 
-<div class="section" id="eul3-result-constants">
-<span id="eul3-result"></span><h2>EUL3_RESULT constants<a class="headerlink" href="#eul3-result-constants" title="Permalink to this headline">¶</a></h2>
+<section id="eul3-result-constants">
+<span id="eul3-result"></span><h2>EUL3_RESULT constants<a class="headerlink" href="#eul3-result-constants" title="Link to this heading">¶</a></h2>
 <p>Euler result types</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_X">
-<code class="sig-name descname">EUL3_RESULT_X</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_X" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_X">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_X</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_X" title="Link to this definition">¶</a></dt>
 <dd><p>X</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_X</code><em class="property"> = 1</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_Y">
-<code class="sig-name descname">EUL3_RESULT_Y</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_Y" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_Y">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_Y</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_Y" title="Link to this definition">¶</a></dt>
 <dd><p>Y</p>
 <dl class="py attribute">
-<dt id="id6">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_Y</code><em class="property"> = 2</em><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id6">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_Y</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_DEPTH">
-<code class="sig-name descname">EUL3_RESULT_DEPTH</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_DEPTH" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_DEPTH">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_DEPTH</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_DEPTH" title="Link to this definition">¶</a></dt>
 <dd><p>Depth</p>
 <dl class="py attribute">
-<dt id="id7">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_DEPTH</code><em class="property"> = 3</em><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id7">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_DEPTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_BACKGROUND">
-<code class="sig-name descname">EUL3_RESULT_BACKGROUND</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_BACKGROUND" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_BACKGROUND">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_BACKGROUND</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_BACKGROUND" title="Link to this definition">¶</a></dt>
 <dd><p>Background</p>
 <dl class="py attribute">
-<dt id="id8">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_BACKGROUND</code><em class="property"> = 4</em><a class="headerlink" href="#id8" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id8">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_BACKGROUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_DEPTHERROR">
-<code class="sig-name descname">EUL3_RESULT_DEPTHERROR</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_DEPTHERROR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_DEPTHERROR">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_DEPTHERROR</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_DEPTHERROR" title="Link to this definition">¶</a></dt>
 <dd><p>Deptherror</p>
 <dl class="py attribute">
-<dt id="id9">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_DEPTHERROR</code><em class="property"> = 5</em><a class="headerlink" href="#id9" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id9">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_DEPTHERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_LOCATIONERROR">
-<code class="sig-name descname">EUL3_RESULT_LOCATIONERROR</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_LOCATIONERROR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_LOCATIONERROR">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_LOCATIONERROR</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_LOCATIONERROR" title="Link to this definition">¶</a></dt>
 <dd><p>Locationerror</p>
 <dl class="py attribute">
-<dt id="id10">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_LOCATIONERROR</code><em class="property"> = 6</em><a class="headerlink" href="#id10" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id10">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_LOCATIONERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_WINDOWX">
-<code class="sig-name descname">EUL3_RESULT_WINDOWX</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_WINDOWX" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_WINDOWX">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_WINDOWX</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_WINDOWX" title="Link to this definition">¶</a></dt>
 <dd><p>Windowx</p>
 <dl class="py attribute">
-<dt id="id11">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_WINDOWX</code><em class="property"> = 7</em><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id11">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_WINDOWX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.EUL3_RESULT_WINDOWY">
-<code class="sig-name descname">EUL3_RESULT_WINDOWY</code><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_WINDOWY" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.EUL3_RESULT_WINDOWY">
+<span class="sig-name descname"><span class="pre">EUL3_RESULT_WINDOWY</span></span><a class="headerlink" href="#geosoft.gxapi.EUL3_RESULT_WINDOWY" title="Link to this definition">¶</a></dt>
 <dd><p>Windowy</p>
 <dl class="py attribute">
-<dt id="id12">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">EUL3_RESULT_WINDOWY</code><em class="property"> = 8</em><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id12">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EUL3_RESULT_WINDOWY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -367,14 +396,14 @@ for potential field interpretation.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEUL3 class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

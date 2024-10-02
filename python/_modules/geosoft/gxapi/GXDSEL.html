@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDSEL &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXDSEL &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDSEL</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,19 +75,26 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXDSEL"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL">[docs]</a><span class="k">class</span> <span class="nc">GXDSEL</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDSEL</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL">[docs]</a>
+<span class="k">class</span> <span class="nc">GXDSEL</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDSEL</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXDSEL class.</span>
 
 <span class="sd">    The `GXDSEL &lt;geosoft.gxapi.GXDSEL&gt;` object is used to select subsets of data from the DATA object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXDSEL.__init__"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXDSEL.__init__">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXDSEL</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXDSEL.null"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXDSEL.null">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXDSEL &lt;geosoft.gxapi.GXDSEL&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXDSEL &lt;geosoft.gxapi.GXDSEL&gt;`</span>
@@ -98,8 +102,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXDSEL</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXDSEL.is_null"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDSEL.is_null">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -109,12 +116,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXDSEL.create"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXDSEL.create">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a Selection object</span>
 <span class="sd">        </span>
 
@@ -131,8 +141,11 @@
 
 
 
-<div class="viewcode-block" id="GXDSEL.data_significant_figures"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.data_significant_figures">[docs]</a>    <span class="k">def</span> <span class="nf">data_significant_figures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXDSEL.data_significant_figures">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.data_significant_figures">[docs]</a>
+    <span class="k">def</span> <span class="nf">data_significant_figures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify the data significant figures required</span>
 <span class="sd">        </span>
 <span class="sd">        :param sf:    Significant figures (positive, can be fractional)</span>
@@ -149,6 +162,7 @@
 <span class="sd">        See sSpatialResolution_DSEL to set the desired spatial resolution.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data_significant_figures</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span></div>
+
         
 
 
@@ -156,8 +170,10 @@
 
 
 
-<div class="viewcode-block" id="GXDSEL.meta_query"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.meta_query">[docs]</a>    <span class="k">def</span> <span class="nf">meta_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.meta_query">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.meta_query">[docs]</a>
+    <span class="k">def</span> <span class="nf">meta_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify a metadata query string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param query:  Meta query string</span>
@@ -168,13 +184,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_meta_query</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.picture_quality"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.picture_quality">[docs]</a>    <span class="k">def</span> <span class="nf">picture_quality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quality</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.picture_quality">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.picture_quality">[docs]</a>
+    <span class="k">def</span> <span class="nf">picture_quality</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quality</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify the quality of pictures being returned.</span>
 <span class="sd">        </span>
 <span class="sd">        :param quality:  Quality</span>
@@ -187,13 +206,16 @@
 <span class="sd">        **Note:** Affected Data Types: PICTURE</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_picture_quality</span><span class="p">(</span><span class="n">quality</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.request_all_info"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.request_all_info">[docs]</a>    <span class="k">def</span> <span class="nf">request_all_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.request_all_info">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.request_all_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">request_all_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Request that all meta-data info be sent</span>
 <span class="sd">        </span>
 <span class="sd">        :param request:  TRUE to for all data, FALSE - for normal data</span>
@@ -204,13 +226,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_request_all_info</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.select_area"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_area">[docs]</a>    <span class="k">def</span> <span class="nf">select_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pply</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.select_area">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pply</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Select a complex clipping area</span>
 <span class="sd">        </span>
 <span class="sd">        :param pply:  `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` containing complex area (must contain a projection)</span>
@@ -224,13 +249,16 @@
 <span class="sd">        more data than requested.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_select_area</span><span class="p">(</span><span class="n">pply</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.select_rect"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_rect">[docs]</a>    <span class="k">def</span> <span class="nf">select_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.select_rect">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_rect">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Select a rectangular area.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Min X</span>
@@ -247,13 +275,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_select_rect</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.select_resolution"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_resolution">[docs]</a>    <span class="k">def</span> <span class="nf">select_resolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">force</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.select_resolution">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_resolution">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_resolution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">force</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify the resolution desired</span>
 <span class="sd">        </span>
 <span class="sd">        :param res:    Minimum Resolution</span>
@@ -276,13 +307,16 @@
 <span class="sd">        the data to the resolution requested.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_select_resolution</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">force</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.select_size"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_size">[docs]</a>    <span class="k">def</span> <span class="nf">select_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.select_size">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.select_size">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify the image size desired</span>
 <span class="sd">        </span>
 <span class="sd">        :param width:   Image width in pixels</span>
@@ -295,13 +329,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_select_size</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.set_extract_as_document"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.set_extract_as_document">[docs]</a>    <span class="k">def</span> <span class="nf">set_extract_as_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.set_extract_as_document">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.set_extract_as_document">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_extract_as_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify that we want to extract this file as a document</span>
 <span class="sd">        </span>
 <span class="sd">        :param value:  TRUE (1) if we want as a document</span>
@@ -312,13 +349,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_extract_as_document</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.set_ipj"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">force</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.set_ipj">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.set_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">force</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the desired projection</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:    `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to set</span>
@@ -339,13 +379,16 @@
 <span class="sd">        coordinate system defined by this `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">,</span> <span class="n">force</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXDSEL.spatial_accuracy"><a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.spatial_accuracy">[docs]</a>    <span class="k">def</span> <span class="nf">spatial_accuracy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">acc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXDSEL.spatial_accuracy">
+<a class="viewcode-back" href="../../../GXDSEL.html#geosoft.gxapi.GXDSEL.spatial_accuracy">[docs]</a>
+    <span class="k">def</span> <span class="nf">spatial_accuracy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">acc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Specify the spatial accuracy required.</span>
 <span class="sd">        </span>
 <span class="sd">        :param acc:   Spatial accuracy desired</span>
@@ -362,7 +405,9 @@
 <span class="sd">        You can reduce this number to achieve better compression ratios.</span>
 <span class="sd">        This should only be used when there is one data type in the data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_spatial_accuracy</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spatial_accuracy</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -392,7 +437,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDSEL</a></li> 
@@ -400,8 +445,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

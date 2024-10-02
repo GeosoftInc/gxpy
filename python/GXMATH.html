@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXMATH class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXMATH class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,22 +28,74 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMATH class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXMATH class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH"><code class="docutils literal notranslate"><span class="pre">GXMATH</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.__init__"><code class="docutils literal notranslate"><span class="pre">GXMATH.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.abs_double_"><code class="docutils literal notranslate"><span class="pre">GXMATH.abs_double_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.abs_int_"><code class="docutils literal notranslate"><span class="pre">GXMATH.abs_int_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.and_"><code class="docutils literal notranslate"><span class="pre">GXMATH.and_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.arc_cos_"><code class="docutils literal notranslate"><span class="pre">GXMATH.arc_cos_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.arc_sin_"><code class="docutils literal notranslate"><span class="pre">GXMATH.arc_sin_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.arc_tan2_"><code class="docutils literal notranslate"><span class="pre">GXMATH.arc_tan2_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.arc_tan_"><code class="docutils literal notranslate"><span class="pre">GXMATH.arc_tan_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.ceil_"><code class="docutils literal notranslate"><span class="pre">GXMATH.ceil_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.cos_"><code class="docutils literal notranslate"><span class="pre">GXMATH.cos_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.cross_product_"><code class="docutils literal notranslate"><span class="pre">GXMATH.cross_product_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.dot_product_3d_"><code class="docutils literal notranslate"><span class="pre">GXMATH.dot_product_3d_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.exp_"><code class="docutils literal notranslate"><span class="pre">GXMATH.exp_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.floor_"><code class="docutils literal notranslate"><span class="pre">GXMATH.floor_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.hypot_"><code class="docutils literal notranslate"><span class="pre">GXMATH.hypot_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.is_null"><code class="docutils literal notranslate"><span class="pre">GXMATH.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.lambda_trans_"><code class="docutils literal notranslate"><span class="pre">GXMATH.lambda_trans_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.lambda_trans_rev_"><code class="docutils literal notranslate"><span class="pre">GXMATH.lambda_trans_rev_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.log10_"><code class="docutils literal notranslate"><span class="pre">GXMATH.log10_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.log_"><code class="docutils literal notranslate"><span class="pre">GXMATH.log_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.log_z_"><code class="docutils literal notranslate"><span class="pre">GXMATH.log_z_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.mod_double_"><code class="docutils literal notranslate"><span class="pre">GXMATH.mod_double_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.mod_int_"><code class="docutils literal notranslate"><span class="pre">GXMATH.mod_int_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.nicer_log_scale_"><code class="docutils literal notranslate"><span class="pre">GXMATH.nicer_log_scale_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.nicer_scale_"><code class="docutils literal notranslate"><span class="pre">GXMATH.nicer_scale_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.normalise_3d_"><code class="docutils literal notranslate"><span class="pre">GXMATH.normalise_3d_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.null"><code class="docutils literal notranslate"><span class="pre">GXMATH.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.or_"><code class="docutils literal notranslate"><span class="pre">GXMATH.or_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.pow_"><code class="docutils literal notranslate"><span class="pre">GXMATH.pow_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.rand_"><code class="docutils literal notranslate"><span class="pre">GXMATH.rand_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.rotate_vector_"><code class="docutils literal notranslate"><span class="pre">GXMATH.rotate_vector_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.round_double_"><code class="docutils literal notranslate"><span class="pre">GXMATH.round_double_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.round_int_"><code class="docutils literal notranslate"><span class="pre">GXMATH.round_int_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.s_rand_"><code class="docutils literal notranslate"><span class="pre">GXMATH.s_rand_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.sign_"><code class="docutils literal notranslate"><span class="pre">GXMATH.sign_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.sin_"><code class="docutils literal notranslate"><span class="pre">GXMATH.sin_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.sqrt_"><code class="docutils literal notranslate"><span class="pre">GXMATH.sqrt_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.tan_"><code class="docutils literal notranslate"><span class="pre">GXMATH.tan_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.un_log_z_"><code class="docutils literal notranslate"><span class="pre">GXMATH.un_log_z_()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMATH.xor_"><code class="docutils literal notranslate"><span class="pre">GXMATH.xor_()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -61,33 +111,32 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxmath-class">
-<span id="gxmath"></span><h1>GXMATH class<a class="headerlink" href="#gxmath-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxmath-class">
+<span id="gxmath"></span><h1>GXMATH class<a class="headerlink" href="#gxmath-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXMATH">
-<em class="property">class </em><code class="sig-name descname">GXMATH</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXMATH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH" title="Link to this definition">¶</a></dt>
 <dd><p>GXMATH class.</p>
 <p>This is not a class. This is a collection of standard
 mathematical functions, including most of the common
 logarithmic and geometric functions.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.abs_double_">
-<em class="property">classmethod </em><code class="sig-name descname">abs_double_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.abs_double_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_double_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.abs_double_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">abs_double_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.abs_double_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_double_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate absolute value</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -99,17 +148,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.abs_int_">
-<em class="property">classmethod </em><code class="sig-name descname">abs_int_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.abs_int_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_int_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.abs_int_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">abs_int_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.abs_int_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.abs_int_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate absolute value</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Integer</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Integer</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -121,19 +170,19 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.and_">
-<em class="property">classmethod </em><code class="sig-name descname">and_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pi_val1</span></em>, <em class="sig-param"><span class="n">pi_val2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.and_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.and_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.and_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">and_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pi_val1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pi_val2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.and_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.and_" title="Link to this definition">¶</a></dt>
 <dd><p>Return the unary operation result of A &amp; B</p>
 <p>Returns                 an integer number</p>
 <p>If A or B is a dummy, returns dummy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pi_val1</strong> (<em>int</em>) – A</p></li>
 <li><p><strong>pi_val2</strong> (<em>int</em>) – B</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -144,17 +193,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.arc_cos_">
-<em class="property">classmethod </em><code class="sig-name descname">arc_cos_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_cos_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_cos_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.arc_cos_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arc_cos_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_cos_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_cos_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the arccosine</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -166,17 +215,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.arc_sin_">
-<em class="property">classmethod </em><code class="sig-name descname">arc_sin_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_sin_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_sin_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.arc_sin_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arc_sin_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_sin_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_sin_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the arcsin</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -188,20 +237,20 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.arc_tan2_">
-<em class="property">classmethod </em><code class="sig-name descname">arc_tan2_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_tan2_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan2_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.arc_tan2_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arc_tan2_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_tan2_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan2_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate ArcTan(Y/X)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y</strong> (<em>float</em>) – Y</p></li>
 <li><p><strong>x</strong> (<em>float</em>) – X</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -213,17 +262,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.arc_tan_">
-<em class="property">classmethod </em><code class="sig-name descname">arc_tan_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_tan_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.arc_tan_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arc_tan_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.arc_tan_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.arc_tan_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the arctan</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -235,17 +284,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.ceil_">
-<em class="property">classmethod </em><code class="sig-name descname">ceil_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.ceil_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.ceil_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.ceil_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ceil_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.ceil_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.ceil_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculates the ceiling of the value</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -257,17 +306,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.cos_">
-<em class="property">classmethod </em><code class="sig-name descname">cos_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.cos_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.cos_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.cos_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cos_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.cos_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.cos_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the cosine</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Angle in radians</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -279,11 +328,11 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.cross_product_">
-<em class="property">classmethod </em><code class="sig-name descname">cross_product_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x1</span></em>, <em class="sig-param"><span class="n">y1</span></em>, <em class="sig-param"><span class="n">z1</span></em>, <em class="sig-param"><span class="n">x2</span></em>, <em class="sig-param"><span class="n">y2</span></em>, <em class="sig-param"><span class="n">z2</span></em>, <em class="sig-param"><span class="n">x3</span></em>, <em class="sig-param"><span class="n">y3</span></em>, <em class="sig-param"><span class="n">z3</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.cross_product_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.cross_product_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.cross_product_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cross_product_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.cross_product_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.cross_product_" title="Link to this definition">¶</a></dt>
 <dd><p>Cross product of two vectors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x1</strong> (<em>float</em>) – X1 component</p></li>
 <li><p><strong>y1</strong> (<em>float</em>) – Y1 component</p></li>
@@ -304,11 +353,11 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.dot_product_3d_">
-<em class="property">classmethod </em><code class="sig-name descname">dot_product_3d_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x1</span></em>, <em class="sig-param"><span class="n">y1</span></em>, <em class="sig-param"><span class="n">z1</span></em>, <em class="sig-param"><span class="n">x2</span></em>, <em class="sig-param"><span class="n">y2</span></em>, <em class="sig-param"><span class="n">z2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.dot_product_3d_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.dot_product_3d_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.dot_product_3d_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dot_product_3d_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.dot_product_3d_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.dot_product_3d_" title="Link to this definition">¶</a></dt>
 <dd><p>Compute Dot product of two vectors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x1</strong> (<em>float</em>) – X1 component</p></li>
 <li><p><strong>y1</strong> (<em>float</em>) – Y1 component</p></li>
@@ -318,10 +367,10 @@ logarithmic and geometric functions.</p>
 <li><p><strong>z2</strong> (<em>float</em>) – Z2 component</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Dot product</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -332,17 +381,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.exp_">
-<em class="property">classmethod </em><code class="sig-name descname">exp_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.exp_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.exp_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.exp_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">exp_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.exp_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.exp_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate e raised to the power of X</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – X</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -354,17 +403,17 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.floor_">
-<em class="property">classmethod </em><code class="sig-name descname">floor_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.floor_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.floor_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.floor_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">floor_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.floor_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.floor_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculates the floor of the value</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -376,20 +425,20 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.hypot_">
-<em class="property">classmethod </em><code class="sig-name descname">hypot_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.hypot_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.hypot_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.hypot_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hypot_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.hypot_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.hypot_" title="Link to this definition">¶</a></dt>
 <dd><p>sqrt(X*X + Y*Y)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>float</em>) – X</p></li>
 <li><p><strong>y</strong> (<em>float</em>) – Y</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -401,34 +450,34 @@ logarithmic and geometric functions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.lambda_trans_">
-<em class="property">classmethod </em><code class="sig-name descname">lambda_trans_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">lda</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.lambda_trans_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.lambda_trans_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lambda_trans_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lda</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.lambda_trans_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans_" title="Link to this definition">¶</a></dt>
 <dd><p>Performs lambda transform on a value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z</strong> (<em>float</em>) – Z Value</p></li>
 <li><p><strong>lda</strong> (<em>float</em>) – Lambda value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The lambda transformed value</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -447,20 +496,20 @@ returns dummy for Z = dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.lambda_trans_rev_">
-<em class="property">classmethod </em><code class="sig-name descname">lambda_trans_rev_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">lda</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.lambda_trans_rev_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans_rev_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.lambda_trans_rev_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lambda_trans_rev_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lda</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.lambda_trans_rev_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.lambda_trans_rev_" title="Link to this definition">¶</a></dt>
 <dd><p>Performs a reverse lambda transform on a value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z</strong> (<em>float</em>) – Lambda transformed Z Value</p></li>
 <li><p><strong>lda</strong> (<em>float</em>) – Lambda value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The original non-lambda transformed value</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -476,17 +525,17 @@ returns dummy for Z = dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.log10_">
-<em class="property">classmethod </em><code class="sig-name descname">log10_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.log10_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.log10_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.log10_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log10_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.log10_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.log10_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the base 10 log</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -498,17 +547,17 @@ returns dummy for Z = dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.log_">
-<em class="property">classmethod </em><code class="sig-name descname">log_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.log_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.log_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.log_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.log_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.log_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the natural log</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -520,22 +569,22 @@ returns dummy for Z = dummy.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.log_z_">
-<em class="property">classmethod </em><code class="sig-name descname">log_z_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">min</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.log_z_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.log_z_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.log_z_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log_z_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.log_z_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.log_z_" title="Link to this definition">¶</a></dt>
 <dd><p>Given a Z value and the Log style and Log Minimum this
 function will return the log value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z</strong> (<em>float</em>) – Z Value</p></li>
 <li><p><strong>mode</strong> (<em>int</em>) – Log Mode (0 - Log, 1 - LogLinearLog)</p></li>
 <li><p><strong>min</strong> (<em>float</em>) – Log Minimum (must be greater than 0)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The Log Value.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -561,20 +610,20 @@ function will return the log value.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.mod_double_">
-<em class="property">classmethod </em><code class="sig-name descname">mod_double_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.mod_double_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_double_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.mod_double_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mod_double_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.mod_double_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_double_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculates the modulus of two reals (A mod B)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – A</p></li>
 <li><p><strong>b</strong> (<em>float</em>) – B (must not be zero)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -592,20 +641,20 @@ smaller than or equal to A.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.mod_int_">
-<em class="property">classmethod </em><code class="sig-name descname">mod_int_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.mod_int_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_int_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.mod_int_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mod_int_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.mod_int_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.mod_int_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculates the modulus of two integers</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>int</em>) – A</p></li>
 <li><p><strong>b</strong> (<em>int</em>) – B (must not be zero)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Int</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -617,11 +666,11 @@ smaller than or equal to A.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.nicer_log_scale_">
-<em class="property">classmethod </em><code class="sig-name descname">nicer_log_scale_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em>, <em class="sig-param"><span class="n">fine</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.nicer_log_scale_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_log_scale_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.nicer_log_scale_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nicer_log_scale_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.nicer_log_scale_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_log_scale_" title="Link to this definition">¶</a></dt>
 <dd><p>Finds nicer min, max values for logarithmic plot scales.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min value (changed)</p></li>
 <li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max value (changed)</p></li>
@@ -647,11 +696,11 @@ fine scaling, and (0.01, 100) for coarse scaling.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.nicer_scale_">
-<em class="property">classmethod </em><code class="sig-name descname">nicer_scale_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em>, <em class="sig-param"><span class="n">inc</span></em>, <em class="sig-param"><span class="n">pow</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.nicer_scale_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_scale_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.nicer_scale_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nicer_scale_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pow</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.nicer_scale_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.nicer_scale_" title="Link to this definition">¶</a></dt>
 <dd><p>Compute a nicer scale for a given min and max.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min value (changed)</p></li>
 <li><p><strong>max</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max value (changed)</p></li>
@@ -667,11 +716,11 @@ fine scaling, and (0.01, 100) for coarse scaling.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.normalise_3d_">
-<em class="property">classmethod </em><code class="sig-name descname">normalise_3d_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.normalise_3d_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.normalise_3d_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.normalise_3d_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">normalise_3d_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.normalise_3d_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.normalise_3d_" title="Link to this definition">¶</a></dt>
 <dd><p>Scale a vector to unit length.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – X component (altered)</p></li>
 <li><p><strong>y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Y component (altered)</p></li>
@@ -688,33 +737,33 @@ magnitude.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMATH" title="geosoft.gxapi.GXMATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMATH</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXMATH" title="geosoft.gxapi.GXMATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMATH</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMATH" title="geosoft.gxapi.GXMATH">GXMATH</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMATH" title="geosoft.gxapi.GXMATH.GXMATH">GXMATH</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.or_">
-<em class="property">classmethod </em><code class="sig-name descname">or_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pi_val1</span></em>, <em class="sig-param"><span class="n">pi_val2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.or_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.or_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.or_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">or_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pi_val1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pi_val2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.or_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.or_" title="Link to this definition">¶</a></dt>
 <dd><p>Return the unary operation result of A | B</p>
 <p>Returns                 an integer number</p>
 <p>If A or B is a dummy, returns dummy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pi_val1</strong> (<em>int</em>) – A</p></li>
 <li><p><strong>pi_val2</strong> (<em>int</em>) – B</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -725,20 +774,20 @@ magnitude.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.pow_">
-<em class="property">classmethod </em><code class="sig-name descname">pow_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.pow_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.pow_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.pow_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pow_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.pow_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.pow_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate X raised to the power of Y</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>float</em>) – X</p></li>
 <li><p><strong>y</strong> (<em>float</em>) – Y</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -750,14 +799,14 @@ magnitude.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.rand_">
-<em class="property">classmethod </em><code class="sig-name descname">rand_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.rand_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.rand_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.rand_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rand_</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.rand_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.rand_" title="Link to this definition">¶</a></dt>
 <dd><p>Get a  random number between 0 and 1</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A real number</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -771,11 +820,11 @@ The standard “C” function rand() is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.rotate_vector_">
-<em class="property">classmethod </em><code class="sig-name descname">rotate_vector_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x1</span></em>, <em class="sig-param"><span class="n">y1</span></em>, <em class="sig-param"><span class="n">z1</span></em>, <em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="n">x2</span></em>, <em class="sig-param"><span class="n">y2</span></em>, <em class="sig-param"><span class="n">z2</span></em>, <em class="sig-param"><span class="n">x3</span></em>, <em class="sig-param"><span class="n">y3</span></em>, <em class="sig-param"><span class="n">z3</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.rotate_vector_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.rotate_vector_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.rotate_vector_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotate_vector_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.rotate_vector_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.rotate_vector_" title="Link to this definition">¶</a></dt>
 <dd><p>Rotate a vector about an axis.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x1</strong> (<em>float</em>) – X1 component (vector to rotate)</p></li>
 <li><p><strong>y1</strong> (<em>float</em>) – Y1 component</p></li>
@@ -800,20 +849,20 @@ Assumes a right hand coordinate system.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.round_double_">
-<em class="property">classmethod </em><code class="sig-name descname">round_double_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.round_double_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.round_double_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.round_double_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">round_double_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.round_double_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.round_double_" title="Link to this definition">¶</a></dt>
 <dd><p>Round to n significant digits</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z</strong> (<em>float</em>) – Real</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – Number of significant digits to round to</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -827,17 +876,17 @@ Dummy values return dummy</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.round_int_">
-<em class="property">classmethod </em><code class="sig-name descname">round_int_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.round_int_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.round_int_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.round_int_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">round_int_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.round_int_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.round_int_" title="Link to this definition">¶</a></dt>
 <dd><p>Round to the nearest whole number</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<em>float</em>) – Round</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Integer</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -851,8 +900,8 @@ Dummy values return dummy</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.s_rand_">
-<em class="property">classmethod </em><code class="sig-name descname">s_rand_</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.s_rand_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.s_rand_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.s_rand_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">s_rand_</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.s_rand_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.s_rand_" title="Link to this definition">¶</a></dt>
 <dd><p>Seed the random-number generator with current time</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 6.3.</span></p>
@@ -863,20 +912,20 @@ The standard “C” function srand() is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.sign_">
-<em class="property">classmethod </em><code class="sig-name descname">sign_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z_sign</span></em>, <em class="sig-param"><span class="n">z_val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.sign_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.sign_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.sign_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sign_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_sign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.sign_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.sign_" title="Link to this definition">¶</a></dt>
 <dd><p>Determine return value based on value of Z1</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z_sign</strong> (<em>float</em>) – Z1</p></li>
 <li><p><strong>z_val</strong> (<em>float</em>) – Z2</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">|Z2|</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">&gt;</span> <span class="pre">0,</span> <span class="pre">-|Z2|</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">&lt;</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">and</span> <span class="pre">Z2</span> <span class="pre">if</span> <span class="pre">Z1</span> <span class="pre">=</span> <span class="pre">Dummy</span></code></p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -888,17 +937,17 @@ The standard “C” function srand() is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.sin_">
-<em class="property">classmethod </em><code class="sig-name descname">sin_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.sin_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.sin_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.sin_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sin_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.sin_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.sin_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the sin</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Angle in radians</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -910,17 +959,17 @@ The standard “C” function srand() is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.sqrt_">
-<em class="property">classmethod </em><code class="sig-name descname">sqrt_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.sqrt_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.sqrt_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.sqrt_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sqrt_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.sqrt_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.sqrt_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the square root</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Real</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -932,17 +981,17 @@ The standard “C” function srand() is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.tan_">
-<em class="property">classmethod </em><code class="sig-name descname">tan_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.tan_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.tan_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.tan_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tan_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.tan_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.tan_" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the tangent</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Angle in radians</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Real</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -954,21 +1003,21 @@ The standard “C” function srand() is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.un_log_z_">
-<em class="property">classmethod </em><code class="sig-name descname">un_log_z_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">min</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.un_log_z_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.un_log_z_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.un_log_z_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">un_log_z_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.un_log_z_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.un_log_z_" title="Link to this definition">¶</a></dt>
 <dd><p>Inverse of rLogZ</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>z</strong> (<em>float</em>) – Log value</p></li>
 <li><p><strong>mode</strong> (<em>int</em>) – Log Mode (0 - Log, 1 - LogLinearLog)</p></li>
 <li><p><strong>min</strong> (<em>float</em>) – Log Minimum (must be greater than 0)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The original value</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
@@ -984,19 +1033,19 @@ The standard “C” function srand() is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXMATH.xor_">
-<em class="property">classmethod </em><code class="sig-name descname">xor_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pi_val1</span></em>, <em class="sig-param"><span class="n">pi_val2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.xor_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.xor_" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMATH.xor_">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xor_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pi_val1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pi_val2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMATH.html#GXMATH.xor_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMATH.xor_" title="Link to this definition">¶</a></dt>
 <dd><p>Return the unary operation result of A ^ B</p>
 <p>Returns                 an integer number</p>
 <p>If A or B is a dummy, returns dummy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pi_val1</strong> (<em>int</em>) – A</p></li>
 <li><p><strong>pi_val2</strong> (<em>int</em>) – B</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -1008,7 +1057,7 @@ The standard “C” function srand() is called.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -1023,14 +1072,14 @@ The standard “C” function srand() is called.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMATH class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

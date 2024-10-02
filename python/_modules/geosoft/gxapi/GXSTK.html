@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXSTK &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXSTK &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSTK</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXSTK"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK">[docs]</a><span class="k">class</span> <span class="nc">GXSTK</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTK</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK">[docs]</a>
+<span class="k">class</span> <span class="nc">GXSTK</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSTK</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXSTK class.</span>
 
 <span class="sd">    The `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` class is used for plotting a single data profile in</span>
@@ -92,12 +91,17 @@
 <span class="sd">    SEE `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` FILE FOR DETAILED DESCRIPTIONS OF ALL FUNCTION PARAMETERS.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXSTK.__init__"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXSTK.__init__">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXSTK</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXSTK.null"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXSTK.null">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXSTK &lt;geosoft.gxapi.GXSTK&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXSTK &lt;geosoft.gxapi.GXSTK&gt;`</span>
@@ -105,8 +109,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXSTK</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXSTK.is_null"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSTK.is_null">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -116,12 +123,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXSTK.get_trans_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_trans_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_trans_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_trans_t</span><span class="p">,</span> <span class="n">x_log_min</span><span class="p">,</span> <span class="n">xvv_lev</span><span class="p">,</span> <span class="n">xvv_cmp</span><span class="p">,</span> <span class="n">y_trans_t</span><span class="p">,</span> <span class="n">y_log_min</span><span class="p">,</span> <span class="n">yvv_lev</span><span class="p">,</span> <span class="n">yvv_cmp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_trans_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_trans_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_trans_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_trans_t</span><span class="p">,</span> <span class="n">x_log_min</span><span class="p">,</span> <span class="n">xvv_lev</span><span class="p">,</span> <span class="n">xvv_cmp</span><span class="p">,</span> <span class="n">y_trans_t</span><span class="p">,</span> <span class="n">y_log_min</span><span class="p">,</span> <span class="n">yvv_lev</span><span class="p">,</span> <span class="n">yvv_cmp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get transformation parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_trans_t:  Type of transformation for horizontal axis</span>
@@ -152,13 +162,16 @@
 <span class="sd">        See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x_trans_t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_log_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_trans_t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_log_min</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_trans_parms</span><span class="p">(</span><span class="n">x_trans_t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_log_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xvv_lev</span><span class="p">,</span> <span class="n">xvv_cmp</span><span class="p">,</span> <span class="n">y_trans_t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_log_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">yvv_lev</span><span class="p">,</span> <span class="n">yvv_cmp</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_axis_format"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_axis_format">[docs]</a>    <span class="k">def</span> <span class="nf">get_axis_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_axis_format">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_axis_format">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_axis_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get axis number display format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param xy:   :ref:`STK_AXIS`</span>
@@ -179,8 +192,11 @@
 
 
 
-<div class="viewcode-block" id="GXSTK.get_axis_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_axis_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_axis_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar_draw</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tick_interval</span><span class="p">,</span> <span class="n">tick_size1</span><span class="p">,</span> <span class="n">tick_size2</span><span class="p">,</span> <span class="n">min_tick</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSTK.get_axis_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_axis_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_axis_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar_draw</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tick_interval</span><span class="p">,</span> <span class="n">tick_size1</span><span class="p">,</span> <span class="n">tick_size2</span><span class="p">,</span> <span class="n">min_tick</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating drawing X/Y axis</span>
 <span class="sd">        </span>
 <span class="sd">        :param bar_draw:       ?BARDRAW: Bottom and/or Top, or Left and/or Right</span>
@@ -212,13 +228,16 @@
 <span class="sd">        ? mark in the note represent either X and Y</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">bar_draw</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">tick_interval</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">tick_size1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">tick_size2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_tick</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_parms</span><span class="p">(</span><span class="n">bar_draw</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tick_interval</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">tick_size1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">tick_size2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_tick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xy</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_fid_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_fid_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_fid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fid_y_loc</span><span class="p">,</span> <span class="n">fid_tick_size</span><span class="p">,</span> <span class="n">fid_interval</span><span class="p">,</span> <span class="n">fid_text_font</span><span class="p">,</span> <span class="n">fid_text_size</span><span class="p">,</span> <span class="n">fid_text_color</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_fid_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_fid_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_fid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fid_y_loc</span><span class="p">,</span> <span class="n">fid_tick_size</span><span class="p">,</span> <span class="n">fid_interval</span><span class="p">,</span> <span class="n">fid_text_font</span><span class="p">,</span> <span class="n">fid_text_size</span><span class="p">,</span> <span class="n">fid_text_color</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating drawing fid ticks</span>
 <span class="sd">        </span>
 <span class="sd">        :param fid_y_loc:       Y location in data unit to draw Fid ticks. Default is the bottom of the stack</span>
@@ -241,13 +260,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">fid_y_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_tick_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_interval</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_text_font</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_text_color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fid_parms</span><span class="p">(</span><span class="n">fid_y_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_tick_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_interval</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_text_font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fid_text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid_text_color</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_flag"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_flag">[docs]</a>    <span class="k">def</span> <span class="nf">get_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">part</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_flag">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_flag">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">part</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get flag indicating part of `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object is to be drawn or not</span>
 <span class="sd">        </span>
 <span class="sd">        :param part:  :ref:`STK_FLAG`</span>
@@ -267,8 +289,11 @@
 
 
 
-<div class="viewcode-block" id="GXSTK.get_gen_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_gen_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_gen_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">grp_name</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">,</span> <span class="n">x_start</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">y_start</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSTK.get_gen_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_gen_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_gen_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">grp_name</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">,</span> <span class="n">x_start</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">y_start</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get general parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_ch:      X channel name, REQUIRED</span>
@@ -301,13 +326,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x_ch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grp_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_scale</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_scale</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_end</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">height</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_gen_parms</span><span class="p">(</span><span class="n">x_ch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grp_name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_scale</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_scale</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_end</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">height</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_grid_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_grid_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_grid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">cross</span><span class="p">,</span> <span class="n">x_sep</span><span class="p">,</span> <span class="n">y_sep</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">grid12</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_grid_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_grid_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_grid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">cross</span><span class="p">,</span> <span class="n">x_sep</span><span class="p">,</span> <span class="n">y_sep</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">grid12</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get background grid parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:    Type of grid to draw:</span>
@@ -341,13 +369,16 @@
 <span class="sd">        ? mark in the note represent either X and Y</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cross</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_sep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_sep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_grid_parms</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cross</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_sep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_sep</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid12</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_label_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_label_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_label_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">min_orient</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">max_orient</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_label_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_label_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_label_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">min_orient</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">max_orient</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating X/Y axis labels</span>
 <span class="sd">        </span>
 <span class="sd">        :param axis:        Which axes to draw: Bottom/Top or Left/Right axes</span>
@@ -383,13 +414,16 @@
 <span class="sd">        use the `set_axis_format &lt;geosoft.gxapi.GXSTK.set_axis_format&gt;` function AFTER calling this.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">axis</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">interval</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bound</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_label_parms</span><span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">interval</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bound</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xy</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_profile"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_profile">[docs]</a>    <span class="k">def</span> <span class="nf">get_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_profile">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_profile">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get profile parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param prof_type:    Profile line type.    1 - solid (default)</span>
@@ -428,13 +462,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">prof_type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ln_clr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">wrap</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">clip</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">smooth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ref</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile</span><span class="p">(</span><span class="n">prof_type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ln_clr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wrap</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">clip</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">smooth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ref</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prof_va_num</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_profile_ex"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_profile_ex">[docs]</a>    <span class="k">def</span> <span class="nf">get_profile_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">break_dum</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_profile_ex">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_profile_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_profile_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">break_dum</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get profile parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object (added Break on dummy option)</span>
 <span class="sd">        </span>
 <span class="sd">        :param prof_type:    Profile line type.    1 - solid (default)</span>
@@ -475,13 +512,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">prof_type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ln_clr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">break_dum</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">wrap</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">clip</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">smooth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ref</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_ex</span><span class="p">(</span><span class="n">prof_type</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ln_clr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">break_dum</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">wrap</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">clip</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">smooth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ref</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prof_va_num</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_symb_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_symb_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_symb_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symb_font</span><span class="p">,</span> <span class="n">symb_size</span><span class="p">,</span> <span class="n">line_clr</span><span class="p">,</span> <span class="n">fill_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">symb_y_loc</span><span class="p">,</span> <span class="n">no_levels</span><span class="p">,</span> <span class="n">vv_level</span><span class="p">,</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">text_font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_symb_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_symb_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_symb_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symb_font</span><span class="p">,</span> <span class="n">symb_size</span><span class="p">,</span> <span class="n">line_clr</span><span class="p">,</span> <span class="n">fill_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">symb_y_loc</span><span class="p">,</span> <span class="n">no_levels</span><span class="p">,</span> <span class="n">vv_level</span><span class="p">,</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">text_font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating drawing symbols</span>
 <span class="sd">        </span>
 <span class="sd">        :param symb_font:   Font to use to draw symbols. Default is use &#39;symbols.gfn&#39; font</span>
@@ -520,13 +560,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">symb_font</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">symb_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_clr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fill_clr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">wrap</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">clip</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">symb_y_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">no_levels</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_font</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_symb_parms</span><span class="p">(</span><span class="n">symb_font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symb_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_clr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fill_clr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wrap</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">clip</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">symb_y_loc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">no_levels</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv_level</span><span class="p">,</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.get_title_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_title_parms">[docs]</a>    <span class="k">def</span> <span class="nf">get_title_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title1</span><span class="p">,</span> <span class="n">title2</span><span class="p">,</span> <span class="n">title1_orient</span><span class="p">,</span> <span class="n">title1_x</span><span class="p">,</span> <span class="n">title1_y</span><span class="p">,</span> <span class="n">title2_orient</span><span class="p">,</span> <span class="n">title2_x</span><span class="p">,</span> <span class="n">title2_y</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.get_title_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.get_title_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_title_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title1</span><span class="p">,</span> <span class="n">title2</span><span class="p">,</span> <span class="n">title1_orient</span><span class="p">,</span> <span class="n">title1_x</span><span class="p">,</span> <span class="n">title1_y</span><span class="p">,</span> <span class="n">title2_orient</span><span class="p">,</span> <span class="n">title2_x</span><span class="p">,</span> <span class="n">title2_y</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating X/Y axis titles</span>
 <span class="sd">        </span>
 <span class="sd">        :param title1:         Title for bottom X axis/left Y axis. Default is no title.</span>
@@ -562,13 +605,16 @@
 <span class="sd">        ? mark in the note represent either X and Y</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">title1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title1_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title1_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title1_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title2_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title2_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title2_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_title_parms</span><span class="p">(</span><span class="n">title1</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">title2</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">title1_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title1_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title1_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title2_orient</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title2_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">title2_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xy</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_flag"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_flag">[docs]</a>    <span class="k">def</span> <span class="nf">set_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">part</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_flag">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_flag">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">part</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set flag indicating part of `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object is to be drawn or not</span>
 <span class="sd">        </span>
 <span class="sd">        :param flag:  Flag to set (0 or 1)</span>
@@ -581,13 +627,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_flag</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">part</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_array_colors"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_array_colors">[docs]</a>    <span class="k">def</span> <span class="nf">set_array_colors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_array_colors">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_array_colors">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_array_colors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set colors for individual channels in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`, via an `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param itr:  `GXITR &lt;geosoft.gxapi.GXITR&gt;` object for colors</span>
@@ -602,13 +651,16 @@
 <span class="sd">        be in the range: 0 &gt; values &gt;= 1.0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_array_colors</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_axis_format"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_axis_format">[docs]</a>    <span class="k">def</span> <span class="nf">set_axis_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_axis_format">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_axis_format">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_axis_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set axis number display format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param format:  :ref:`DB_CHAN_FORMAT`</span>
@@ -624,13 +676,16 @@
 <span class="sd">        or for values &gt; 1.e7, `DB_CHAN_FORMAT_EXP &lt;geosoft.gxapi.DB_CHAN_FORMAT_EXP&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_axis_format</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="n">xy</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_axis_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_axis_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_axis_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar_draw</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tick_interval</span><span class="p">,</span> <span class="n">tick_size1</span><span class="p">,</span> <span class="n">tick_size2</span><span class="p">,</span> <span class="n">min_tick</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_axis_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_axis_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_axis_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bar_draw</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tick_interval</span><span class="p">,</span> <span class="n">tick_size1</span><span class="p">,</span> <span class="n">tick_size2</span><span class="p">,</span> <span class="n">min_tick</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating drawing X/Y axis</span>
 <span class="sd">        </span>
 <span class="sd">        :param bar_draw:       ?BARDRAW, :ref:`STK_AXIS_POS`</span>
@@ -662,13 +717,16 @@
 <span class="sd">        ? mark in the note represent either X and Y</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_axis_parms</span><span class="p">(</span><span class="n">bar_draw</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tick_interval</span><span class="p">,</span> <span class="n">tick_size1</span><span class="p">,</span> <span class="n">tick_size2</span><span class="p">,</span> <span class="n">min_tick</span><span class="p">,</span> <span class="n">xy</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_fid_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_fid_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_fid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fid_y_loc</span><span class="p">,</span> <span class="n">fid_tick_size</span><span class="p">,</span> <span class="n">fid_interval</span><span class="p">,</span> <span class="n">fid_text_font</span><span class="p">,</span> <span class="n">fid_text_size</span><span class="p">,</span> <span class="n">fid_text_color</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_fid_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_fid_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_fid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fid_y_loc</span><span class="p">,</span> <span class="n">fid_tick_size</span><span class="p">,</span> <span class="n">fid_interval</span><span class="p">,</span> <span class="n">fid_text_font</span><span class="p">,</span> <span class="n">fid_text_size</span><span class="p">,</span> <span class="n">fid_text_color</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating drawing fid ticks</span>
 <span class="sd">        </span>
 <span class="sd">        :param fid_y_loc:       Y location in data unit to draw Fid ticks. Default is the bottom of the stack</span>
@@ -691,13 +749,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_fid_parms</span><span class="p">(</span><span class="n">fid_y_loc</span><span class="p">,</span> <span class="n">fid_tick_size</span><span class="p">,</span> <span class="n">fid_interval</span><span class="p">,</span> <span class="n">fid_text_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fid_text_size</span><span class="p">,</span> <span class="n">fid_text_color</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_gen_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_gen_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_gen_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">grp_name</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">,</span> <span class="n">x_start</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">y_start</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_gen_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_gen_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_gen_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">grp_name</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">,</span> <span class="n">x_start</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">y_start</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set general parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_ch:      X channel name, REQUIRED</span>
@@ -730,13 +791,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_gen_parms</span><span class="p">(</span><span class="n">x_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grp_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">,</span> <span class="n">x_start</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">y_start</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_grid_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_grid_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_grid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">cross</span><span class="p">,</span> <span class="n">x_sep</span><span class="p">,</span> <span class="n">y_sep</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">grid12</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_grid_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_grid_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_grid_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">cross</span><span class="p">,</span> <span class="n">x_sep</span><span class="p">,</span> <span class="n">y_sep</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">grid12</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set background grid parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:    Type of grid to draw:</span>
@@ -770,13 +834,16 @@
 <span class="sd">        ? mark in the note represent either X and Y</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_grid_parms</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">cross</span><span class="p">,</span> <span class="n">x_sep</span><span class="p">,</span> <span class="n">y_sep</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid12</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_label_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_label_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_label_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">min_orient</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">max_orient</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_label_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_label_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_label_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">min_orient</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">max_orient</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating X/Y axis labels</span>
 <span class="sd">        </span>
 <span class="sd">        :param axis:        :ref:`STK_AXIS_POS`</span>
@@ -812,13 +879,16 @@
 <span class="sd">        use the `set_axis_format &lt;geosoft.gxapi.GXSTK.set_axis_format&gt;` function AFTER calling this.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_label_parms</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">min_loc</span><span class="p">,</span> <span class="n">min_orient</span><span class="p">,</span> <span class="n">max_loc</span><span class="p">,</span> <span class="n">max_orient</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bound</span><span class="p">,</span> <span class="n">xy</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_line_parm"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_line_parm">[docs]</a>    <span class="k">def</span> <span class="nf">set_line_parm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_line_parm">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_line_parm">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_line_parm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set line parameter (of Y Chan) in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param line:  Line symb</span>
@@ -831,13 +901,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_line_parm</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_profile"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_profile">[docs]</a>    <span class="k">def</span> <span class="nf">set_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_profile">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_profile">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set profile parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param prof_type:    Profile line type.    1 - solid (default)</span>
@@ -876,13 +949,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile</span><span class="p">(</span><span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prof_va_num</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_profile_ex"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_profile_ex">[docs]</a>    <span class="k">def</span> <span class="nf">set_profile_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">break_dum</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_profile_ex">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_profile_ex">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_profile_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="p">,</span> <span class="n">break_dum</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">,</span> <span class="n">prof_va_num</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set profile parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object (added Break on dummy option)</span>
 <span class="sd">        </span>
 <span class="sd">        :param prof_type:    Profile line type.    1 - solid (default)</span>
@@ -923,13 +999,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_ex</span><span class="p">(</span><span class="n">prof_type</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">ln_clr</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">break_dum</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">smooth</span><span class="p">,</span> <span class="n">vv_ind</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ref</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prof_va_num</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_symb_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_symb_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_symb_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symb_font</span><span class="p">,</span> <span class="n">symb_size</span><span class="p">,</span> <span class="n">line_clr</span><span class="p">,</span> <span class="n">fill_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">symb_y_loc</span><span class="p">,</span> <span class="n">no_levels</span><span class="p">,</span> <span class="n">vv_level</span><span class="p">,</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">text_font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_symb_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_symb_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_symb_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symb_font</span><span class="p">,</span> <span class="n">symb_size</span><span class="p">,</span> <span class="n">line_clr</span><span class="p">,</span> <span class="n">fill_clr</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">symb_y_loc</span><span class="p">,</span> <span class="n">no_levels</span><span class="p">,</span> <span class="n">vv_level</span><span class="p">,</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">text_font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating drawing symbols</span>
 <span class="sd">        </span>
 <span class="sd">        :param symb_font:   Font to use to draw symbols. Default is use &#39;symbols.gfn&#39; font</span>
@@ -968,13 +1047,16 @@
 <span class="sd">        **Note:** See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_symb_parms</span><span class="p">(</span><span class="n">symb_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symb_size</span><span class="p">,</span> <span class="n">line_clr</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fill_clr</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">clip</span><span class="p">,</span> <span class="n">symb_y_loc</span><span class="p">,</span> <span class="n">no_levels</span><span class="p">,</span> <span class="n">vv_level</span><span class="p">,</span> <span class="n">vv_type</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">text_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">text_clr</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_title_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_title_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_title_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title1</span><span class="p">,</span> <span class="n">title2</span><span class="p">,</span> <span class="n">title1_orient</span><span class="p">,</span> <span class="n">title1_x</span><span class="p">,</span> <span class="n">title1_y</span><span class="p">,</span> <span class="n">title2_orient</span><span class="p">,</span> <span class="n">title2_x</span><span class="p">,</span> <span class="n">title2_y</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_title_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_title_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_title_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title1</span><span class="p">,</span> <span class="n">title2</span><span class="p">,</span> <span class="n">title1_orient</span><span class="p">,</span> <span class="n">title1_x</span><span class="p">,</span> <span class="n">title1_y</span><span class="p">,</span> <span class="n">title2_orient</span><span class="p">,</span> <span class="n">title2_x</span><span class="p">,</span> <span class="n">title2_y</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">xy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object relating X/Y axis titles</span>
 <span class="sd">        </span>
 <span class="sd">        :param title1:         Title for bottom X axis/left Y axis. Default is no title.</span>
@@ -1010,13 +1092,16 @@
 <span class="sd">        ? mark in the note represent either X and Y</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_title_parms</span><span class="p">(</span><span class="n">title1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">title2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">title1_orient</span><span class="p">,</span> <span class="n">title1_x</span><span class="p">,</span> <span class="n">title1_y</span><span class="p">,</span> <span class="n">title2_orient</span><span class="p">,</span> <span class="n">title2_x</span><span class="p">,</span> <span class="n">title2_y</span><span class="p">,</span> <span class="n">font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xy</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_trans_parms"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_trans_parms">[docs]</a>    <span class="k">def</span> <span class="nf">set_trans_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_trans_t</span><span class="p">,</span> <span class="n">x_log_min</span><span class="p">,</span> <span class="n">xvv_lev</span><span class="p">,</span> <span class="n">xvv_cmp</span><span class="p">,</span> <span class="n">y_trans_t</span><span class="p">,</span> <span class="n">y_log_min</span><span class="p">,</span> <span class="n">yvv_lev</span><span class="p">,</span> <span class="n">yvv_cmp</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_trans_parms">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_trans_parms">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_trans_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_trans_t</span><span class="p">,</span> <span class="n">x_log_min</span><span class="p">,</span> <span class="n">xvv_lev</span><span class="p">,</span> <span class="n">xvv_cmp</span><span class="p">,</span> <span class="n">y_trans_t</span><span class="p">,</span> <span class="n">y_log_min</span><span class="p">,</span> <span class="n">yvv_lev</span><span class="p">,</span> <span class="n">yvv_cmp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set transformation parameters in `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_trans_t:  Type of transformation for horizontal axis</span>
@@ -1046,13 +1131,16 @@
 <span class="sd">        See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_trans_parms</span><span class="p">(</span><span class="n">x_trans_t</span><span class="p">,</span> <span class="n">x_log_min</span><span class="p">,</span> <span class="n">xvv_lev</span><span class="p">,</span> <span class="n">xvv_cmp</span><span class="p">,</span> <span class="n">y_trans_t</span><span class="p">,</span> <span class="n">y_log_min</span><span class="p">,</span> <span class="n">yvv_lev</span><span class="p">,</span> <span class="n">yvv_cmp</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_va_index_start"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_va_index_start">[docs]</a>    <span class="k">def</span> <span class="nf">set_va_index_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_va_index_start">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_va_index_start">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_va_index_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Start array profile index labels at 0 or 1.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index0:  Starting index (0 or 1)</span>
@@ -1067,13 +1155,16 @@
 <span class="sd">        or 1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_va_index_start</span><span class="p">(</span><span class="n">index0</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXSTK.set_error_plot_params"><a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_error_plot_params">[docs]</a>    <span class="k">def</span> <span class="nf">set_error_plot_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">error_channel</span><span class="p">,</span> <span class="n">elements_csv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXSTK.set_error_plot_params">
+<a class="viewcode-back" href="../../../GXSTK.html#geosoft.gxapi.GXSTK.set_error_plot_params">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_error_plot_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">error_channel</span><span class="p">,</span> <span class="n">elements_csv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set error bar plot parameters for the current profile.</span>
 <span class="sd">        </span>
 <span class="sd">        :param enabled:        Enable(1) or disable(0) error bar plot rendering.</span>
@@ -1091,7 +1182,9 @@
 <span class="sd">        profile.</span>
 <span class="sd">        See `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` for detailed description of all function parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_error_plot_params</span><span class="p">(</span><span class="n">enabled</span><span class="p">,</span> <span class="n">error_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">elements_csv</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_error_plot_params</span><span class="p">(</span><span class="n">enabled</span><span class="p">,</span> <span class="n">error_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">elements_csv</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
         
 
 
@@ -1121,7 +1214,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSTK</a></li> 
@@ -1129,8 +1222,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

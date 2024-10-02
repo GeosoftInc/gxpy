@@ -1,7 +1,36 @@
-geosoft.gxpy.geometry_utility submodule
-=============================================
+﻿geosoft.gxpy.geometry\_utility
+==============================
 
 .. automodule:: geosoft.gxpy.geometry_utility
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      resample
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GeometryUtilityException
+   
+   
+
+
+

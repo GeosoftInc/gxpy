@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXHTTP &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXHTTP &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXHTTP</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXHTTP"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP">[docs]</a><span class="k">class</span> <span class="nc">GXHTTP</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapHTTP</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXHTTP">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP">[docs]</a>
+<span class="k">class</span> <span class="nc">GXHTTP</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapHTTP</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXHTTP class.</span>
 
 <span class="sd">    Connect to an Internet Server using `GXHTTP &lt;geosoft.gxapi.GXHTTP&gt;`.</span>
@@ -98,12 +97,17 @@
 <span class="sd">    be  specified as &quot;This%20one&quot;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXHTTP.__init__"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXHTTP.__init__">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXHTTP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXHTTP.null"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXHTTP.null">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXHTTP &lt;geosoft.gxapi.GXHTTP&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXHTTP &lt;geosoft.gxapi.GXHTTP&gt;`</span>
@@ -111,8 +115,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXHTTP</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXHTTP.is_null"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXHTTP.is_null">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -122,12 +129,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
-<div class="viewcode-block" id="GXHTTP.create"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXHTTP.create">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">user_name</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">purpose</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method creates a connection to an `GXHTTP &lt;geosoft.gxapi.GXHTTP&gt;` server</span>
 <span class="sd">        </span>
 <span class="sd">        :param url:        URL of the server</span>
@@ -175,8 +185,11 @@
 
 
 
-<div class="viewcode-block" id="GXHTTP.download"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.download">[docs]</a>    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">dynamic</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXHTTP.download">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.download">[docs]</a>
+    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">dynamic</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Download file from the internet to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:     File Name on the `GXHTTP &lt;geosoft.gxapi.GXHTTP&gt;` site</span>
@@ -194,13 +207,16 @@
 <span class="sd">        in the `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_download</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bf</span><span class="p">,</span> <span class="n">dynamic</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXHTTP.silent_download"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.silent_download">[docs]</a>    <span class="k">def</span> <span class="nf">silent_download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">dynamic</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXHTTP.silent_download">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.silent_download">[docs]</a>
+    <span class="k">def</span> <span class="nf">silent_download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">dynamic</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Download file from the internet to a `GXBF &lt;geosoft.gxapi.GXBF&gt;` with no prompt for proxy authentication.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:     File Name on the `GXHTTP &lt;geosoft.gxapi.GXHTTP&gt;` site</span>
@@ -218,13 +234,16 @@
 <span class="sd">        in the `GXBF &lt;geosoft.gxapi.GXBF&gt;`. No prompt for proxy authentication</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_silent_download</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bf</span><span class="p">,</span> <span class="n">dynamic</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXHTTP.get"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cl</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">ret_bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXHTTP.get">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.get">[docs]</a>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cl</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">ret_bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get data from a server.</span>
 <span class="sd">        </span>
 <span class="sd">        :param cl:      Http path (file or an ISAPI DLL), no spaces</span>
@@ -247,13 +266,16 @@
 <span class="sd">        http://server/path?search</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">method</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bf</span><span class="p">,</span> <span class="n">ret_bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXHTTP.post"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.post">[docs]</a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cl</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXHTTP.post">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.post">[docs]</a>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cl</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Post data to the server.</span>
 <span class="sd">        </span>
 <span class="sd">        :param cl:      Http path (file or an ISAPI DLL)</span>
@@ -273,13 +295,16 @@
 <span class="sd">        http://server/path?search</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">method</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXHTTP.set_proxy_credentials"><a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.set_proxy_credentials">[docs]</a>    <span class="k">def</span> <span class="nf">set_proxy_credentials</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXHTTP.set_proxy_credentials">
+<a class="viewcode-back" href="../../../GXHTTP.html#geosoft.gxapi.GXHTTP.set_proxy_credentials">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_proxy_credentials</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Assigns the proxy username and password so that</span>
 <span class="sd">        user is not prompted when the first download fails</span>
 <span class="sd">        </span>
@@ -292,7 +317,9 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_proxy_credentials</span><span class="p">(</span><span class="n">username</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_proxy_credentials</span><span class="p">(</span><span class="n">username</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
         
 
 
@@ -322,7 +349,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXHTTP</a></li> 
@@ -330,8 +357,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

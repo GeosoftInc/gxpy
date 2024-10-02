@@ -1,7 +1,46 @@
-geosoft.gxpy.surface submodule
-=============================================
+﻿geosoft.gxpy.surface
+====================
 
 .. automodule:: geosoft.gxpy.surface
-    :members:
-    :undoc-members:
-    :show-inheritance:
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _surface_file_name
+      _surface_name
+      _t
+      delete_files
+      render
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Surface
+      SurfaceDataset
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      SurfaceException
+   
+   
+
+
+

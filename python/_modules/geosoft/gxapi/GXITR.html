@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXITR &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXITR &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXITR</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -79,8 +76,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXITR"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR">[docs]</a><span class="k">class</span> <span class="nc">GXITR</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapITR</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR">[docs]</a>
+<span class="k">class</span> <span class="nc">GXITR</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapITR</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXITR class.</span>
 
 <span class="sd">    The `GXITR &lt;geosoft.gxapi.GXITR&gt;` class provides access to `GXITR &lt;geosoft.gxapi.GXITR&gt;` files. An `GXITR &lt;geosoft.gxapi.GXITR&gt;` file maps</span>
@@ -109,12 +108,17 @@
 <span class="sd">    The `ITR_NULL &lt;geosoft.gxapi.ITR_NULL&gt;` is used to hold a NULL handle to an `GXITR &lt;geosoft.gxapi.GXITR&gt;` class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXITR.__init__"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXITR.__init__">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXITR</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXITR.null"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXITR.null">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
@@ -122,8 +126,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXITR</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXITR.is_null"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.is_null">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -133,12 +140,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXITR.set_name"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_name">[docs]</a>    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_name">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the name of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name to set</span>
@@ -149,13 +159,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.get_name"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.get_name">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the name of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name returned</span>
@@ -166,13 +179,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.change_brightness"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.change_brightness">[docs]</a>    <span class="k">def</span> <span class="nf">change_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brt</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.change_brightness">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.change_brightness">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brt</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Change the brightness.</span>
 <span class="sd">        </span>
 <span class="sd">        :param brt:  -1.0 - black; 0.0 no change; 1.0 white</span>
@@ -187,13 +203,16 @@
 <span class="sd">        0.0 to 1.0 makes colors lighter, 1.0 is white</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_change_brightness</span><span class="p">(</span><span class="n">brt</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.color_vv"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.color_vv">[docs]</a>    <span class="k">def</span> <span class="nf">color_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.color_vv">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.color_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">color_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get color transform of a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_d:  Input `GXVV &lt;geosoft.gxapi.GXVV&gt;` of values (none-string)</span>
@@ -209,13 +228,16 @@
 <span class="sd">        is 0 (no color).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_color_vv</span><span class="p">(</span><span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.copy"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">it_rs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.copy">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">it_rs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copies ITRs</span>
 <span class="sd">        </span>
 <span class="sd">        :param it_rs:  `GXITR &lt;geosoft.gxapi.GXITR&gt;` Source</span>
@@ -226,13 +248,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">it_rs</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXITR.create"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXITR.create">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an `GXITR &lt;geosoft.gxapi.GXITR&gt;` object</span>
 <span class="sd">        </span>
 
@@ -248,9 +273,12 @@
 
 
 
-<div class="viewcode-block" id="GXITR.create_file"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_file">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXITR.create_file">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_file">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an `GXITR &lt;geosoft.gxapi.GXITR&gt;` object from an itr, tbl, zon, lut file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File name, type determined from extension</span>
@@ -268,9 +296,12 @@
 
 
 
-<div class="viewcode-block" id="GXITR.create_img"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_img">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXITR.create_img">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_img">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_img</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">tbl</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an `GXITR &lt;geosoft.gxapi.GXITR&gt;` for an image.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tbl:      Color table name, NULL for default</span>
@@ -301,9 +332,12 @@
 
 
 
-<div class="viewcode-block" id="GXITR.create_map"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_map">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXITR.create_map">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_map">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create `GXITR &lt;geosoft.gxapi.GXITR&gt;` from Map with `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` Group name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:   `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` on which to place the view</span>
@@ -323,9 +357,12 @@
 
 
 
-<div class="viewcode-block" id="GXITR.create_s"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXITR.create_s">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.create_s">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an `GXITR &lt;geosoft.gxapi.GXITR&gt;` object from a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:  `GXBF &lt;geosoft.gxapi.GXBF&gt;` to serialize from</span>
@@ -346,8 +383,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.equal_area"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.equal_area">[docs]</a>    <span class="k">def</span> <span class="nf">equal_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.equal_area">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.equal_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">equal_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate an equal area transform.</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:       Stat object with a histogram</span>
@@ -367,13 +407,16 @@
 <span class="sd">        there is no valid data at all.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_equal_area</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.equal_area_or_linear"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.equal_area_or_linear">[docs]</a>    <span class="k">def</span> <span class="nf">equal_area_or_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.equal_area_or_linear">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.equal_area_or_linear">[docs]</a>
+    <span class="k">def</span> <span class="nf">equal_area_or_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate an equal area transform.</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:       Stat object with a histogram</span>
@@ -393,13 +436,16 @@
 <span class="sd">        there is no valid data at all.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_equal_area_or_linear</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.get_data_limits"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_data_limits">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.get_data_limits">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_data_limits">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get `GXITR &lt;geosoft.gxapi.GXITR&gt;` max/min data limits.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:  Data minimum value (or `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` if not set)</span>
@@ -419,13 +465,16 @@
 <span class="sd">        those cases dummy values will be returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_limits</span><span class="p">(</span><span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.get_reg"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_reg">[docs]</a>    <span class="k">def</span> <span class="nf">get_reg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.get_reg">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_reg">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the `GXITR &lt;geosoft.gxapi.GXITR&gt;`&#39;s `GXREG &lt;geosoft.gxapi.GXREG&gt;`</span>
 <span class="sd">        </span>
 
@@ -442,8 +491,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.get_zone_color"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_color">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.get_zone_color">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_color">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_zone_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the color in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:   Number of the zone to set.</span>
@@ -458,13 +510,16 @@
 <span class="sd">        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_zone_color</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.get_zone_base_color"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_base_color">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_base_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.get_zone_base_color">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_base_color">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_zone_base_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the base color in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:   Number of the zone to set.</span>
@@ -480,13 +535,16 @@
 <span class="sd">        The base colour is the colour in the ITR before any brightness is applied.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_zone_base_color</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.color_value"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.color_value">[docs]</a>    <span class="k">def</span> <span class="nf">color_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.color_value">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.color_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">color_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Transform single data value to color</span>
 <span class="sd">        </span>
 <span class="sd">        :param val:  Data value</span>
@@ -505,8 +563,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.get_size"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_size">[docs]</a>    <span class="k">def</span> <span class="nf">get_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.get_size">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_size">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the number of zones in an `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 
@@ -523,8 +584,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.get_zone_model_type"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_model_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_model_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.get_zone_model_type">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_model_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_zone_model_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the `GXITR &lt;geosoft.gxapi.GXITR&gt;` zone model (e.g. Linear, LogLin, Equal Area).</span>
 <span class="sd">        </span>
 
@@ -544,8 +608,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.get_zone_model"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_model">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.get_zone_model">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_zone_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the `GXITR &lt;geosoft.gxapi.GXITR&gt;` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)</span>
 <span class="sd">        </span>
 <span class="sd">        :param model:       :ref:`ITR_ZONE_MODEL`</span>
@@ -565,13 +632,16 @@
 <span class="sd">        All other types do not return any values (the VV will be empty).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">model</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_zone_model</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">parameters</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.set_zone_model"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_model">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_zone_model">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_zone_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the `GXITR &lt;geosoft.gxapi.GXITR&gt;` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)</span>
 <span class="sd">        </span>
 <span class="sd">        :param model:       :ref:`ITR_ZONE_MODEL`</span>
@@ -593,13 +663,16 @@
 <span class="sd">        specification accurately reflects the actual ranges.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">parameters</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.linear"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.linear">[docs]</a>    <span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.linear">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.linear">[docs]</a>
+    <span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate a linear transform.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:      Minimum</span>
@@ -614,13 +687,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_linear</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.load_a"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.load_a">[docs]</a>    <span class="k">def</span> <span class="nf">load_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.load_a">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.load_a">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load to an ASCII file, ZON, TBL or ER-Mapper LUT</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File name</span>
@@ -631,13 +707,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_a</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.log_linear"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.log_linear">[docs]</a>    <span class="k">def</span> <span class="nf">log_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.log_linear">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.log_linear">[docs]</a>
+    <span class="k">def</span> <span class="nf">log_linear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate a log transform.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:      Minimum ( &gt; 0)</span>
@@ -654,13 +733,16 @@
 <span class="sd">        **Note:** The function name is a misnomer. This is a pure log transform.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_log_linear</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.normal"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.normal">[docs]</a>    <span class="k">def</span> <span class="nf">normal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.normal">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.normal">[docs]</a>
+    <span class="k">def</span> <span class="nf">normal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate a normal distribution transform.</span>
 <span class="sd">        </span>
 <span class="sd">        :param std_dev:  Standard deviation</span>
@@ -677,13 +759,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_normal</span><span class="p">(</span><span class="n">std_dev</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.power_zone"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.power_zone">[docs]</a>    <span class="k">def</span> <span class="nf">power_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">pow</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.power_zone">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.power_zone">[docs]</a>
+    <span class="k">def</span> <span class="nf">power_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">pow</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Modified `GXITR &lt;geosoft.gxapi.GXITR&gt;` zone values to 10 (or e) raized to the power of the values</span>
 <span class="sd">        </span>
 <span class="sd">        :param pow:  :ref:`ITR_POWER`</span>
@@ -694,13 +779,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_power_zone</span><span class="p">(</span><span class="nb">pow</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.get_brightness"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_brightness">[docs]</a>    <span class="k">def</span> <span class="nf">get_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.get_brightness">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_brightness">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the brightness setting of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 
@@ -725,8 +813,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.get_contrast"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_contrast">[docs]</a>    <span class="k">def</span> <span class="nf">get_contrast</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.get_contrast">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_contrast">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_contrast</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the contrast setting of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 
@@ -749,8 +840,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.get_contour"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_contour">[docs]</a>    <span class="k">def</span> <span class="nf">get_contour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.get_contour">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_contour">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_contour</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the contour value associated with the current transform model of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 
@@ -771,8 +865,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.get_zone_value"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.get_zone_value">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_zone_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the value in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:  Number of the zone to set.</span>
@@ -793,8 +890,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.save_a"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.save_a">[docs]</a>    <span class="k">def</span> <span class="nf">save_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.save_a">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.save_a">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save to an ASCII file, ZON, TBL or ER-Mapper LUT</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File name</span>
@@ -805,13 +905,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_a</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.save_file"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.save_file">[docs]</a>    <span class="k">def</span> <span class="nf">save_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.save_file">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.save_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save to any type (based on the extension of the input file name).</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File name</span>
@@ -822,13 +925,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_file</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.serial"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.serial">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.serial">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Serialize an `GXITR &lt;geosoft.gxapi.GXITR&gt;` to a `GXBF &lt;geosoft.gxapi.GXBF&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:   `GXBF &lt;geosoft.gxapi.GXBF&gt;` to serialize to</span>
@@ -839,13 +945,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXITR.set_agg_map"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_agg_map">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXITR.set_agg_map">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_agg_map">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_agg_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set `GXITR &lt;geosoft.gxapi.GXITR&gt;` to an `GXAGG &lt;geosoft.gxapi.GXAGG&gt;` in map</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:   `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` on which to place the view</span>
@@ -862,13 +971,16 @@
 <span class="sd">        **Note:** See the `create_map &lt;geosoft.gxapi.GXITR.create_map&gt;` function</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapITR</span><span class="o">.</span><span class="n">_set_agg_map</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">itr</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.set_bright_contrast"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_bright_contrast">[docs]</a>    <span class="k">def</span> <span class="nf">set_bright_contrast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brt</span><span class="p">,</span> <span class="n">con</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_bright_contrast">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_bright_contrast">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_bright_contrast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brt</span><span class="p">,</span> <span class="n">con</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the brightness of the `GXITR &lt;geosoft.gxapi.GXITR&gt;` colors</span>
 <span class="sd">        </span>
 <span class="sd">        :param brt:  0.0 - black; 0.5 normal; 1.0 white</span>
@@ -890,13 +1002,16 @@
 <span class="sd">        1.0   - full contrast (normal)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_bright_contrast</span><span class="p">(</span><span class="n">brt</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.set_color_model"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_color_model">[docs]</a>    <span class="k">def</span> <span class="nf">set_color_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_color_model">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_color_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_color_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the color model of an `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param model:  :ref:`ITR_COLOR_MODEL`</span>
@@ -907,13 +1022,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_color_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXITR.default_color_method"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.default_color_method">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXITR.default_color_method">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.default_color_method">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">default_color_method</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the user-defined global default color method.</span>
 <span class="sd">        </span>
 
@@ -930,8 +1048,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.set_data_limits"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_data_limits">[docs]</a>    <span class="k">def</span> <span class="nf">set_data_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.set_data_limits">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_data_limits">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_data_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set `GXITR &lt;geosoft.gxapi.GXITR&gt;` max/min data limits.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:  Data minimum value</span>
@@ -944,13 +1065,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_data_limits</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.set_size"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_size">[docs]</a>    <span class="k">def</span> <span class="nf">set_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zones</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_size">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_size">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zones</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the number of zones in an `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param zones:  Number of zones to set `GXITR &lt;geosoft.gxapi.GXITR&gt;` to.</span>
@@ -961,13 +1085,16 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_size</span><span class="p">(</span><span class="n">zones</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.set_zone_color"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_color">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_zone_color">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_color">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_zone_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the color in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:   Number of the zone to set.</span>
@@ -986,13 +1113,16 @@
 <span class="sd">                       to zero, with all the &quot;rendered&quot; colours becoming the &quot;base&quot; colours.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_color</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.set_zone_base_color"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_base_color">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_base_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_zone_base_color">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_base_color">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_zone_base_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the color in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:   Number of the zone to set.</span>
@@ -1011,13 +1141,16 @@
 <span class="sd">                       internal brightness remains unchanged.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_base_color</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.set_zone_active"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_active">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">active</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.set_zone_active">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_active">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_zone_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">active</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set whether a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;` is active (1) or rendered trasparent (0)</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:    Number of the zone to set.</span>
@@ -1032,13 +1165,16 @@
 <span class="sd">        **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_active</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">active</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXITR.get_zone_active"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_active">[docs]</a>    <span class="k">def</span> <span class="nf">get_zone_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXITR.get_zone_active">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.get_zone_active">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_zone_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get whether a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;` is active (1) or rendered trasparent (0)</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:  Number of the zone to set.</span>
@@ -1057,8 +1193,11 @@
 
 
 
-<div class="viewcode-block" id="GXITR.set_zone_value"><a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_value">[docs]</a>    <span class="k">def</span> <span class="nf">set_zone_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXITR.set_zone_value">
+<a class="viewcode-back" href="../../../GXITR.html#geosoft.gxapi.GXITR.set_zone_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_zone_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the value in a zone of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param zone:   Number of the zone to set.</span>
@@ -1072,7 +1211,9 @@
 
 <span class="sd">        **Note:** Valid indices are 0 to N-2, where N is the size of the `GXITR &lt;geosoft.gxapi.GXITR&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_value</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_zone_value</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -1102,7 +1243,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXITR</a></li> 
@@ -1110,8 +1251,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,19 +1,17 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GXFFT class &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXFFT class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,31 +28,83 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXFFT class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">GXFFT class</a><ul>
-<li><a class="reference internal" href="#fft-detrend-constants">FFT_DETREND constants</a></li>
-<li><a class="reference internal" href="#fft-white-noise-constants">FFT_WHITE_NOISE constants</a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT"><code class="docutils literal notranslate"><span class="pre">GXFFT</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.__init__"><code class="docutils literal notranslate"><span class="pre">GXFFT.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.add_white_noise"><code class="docutils literal notranslate"><span class="pre">GXFFT.add_white_noise()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.app_dens"><code class="docutils literal notranslate"><span class="pre">GXFFT.app_dens()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.app_susc"><code class="docutils literal notranslate"><span class="pre">GXFFT.app_susc()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.b_worth"><code class="docutils literal notranslate"><span class="pre">GXFFT.b_worth()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.band_pass"><code class="docutils literal notranslate"><span class="pre">GXFFT.band_pass()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.contin"><code class="docutils literal notranslate"><span class="pre">GXFFT.contin()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.cos_roll"><code class="docutils literal notranslate"><span class="pre">GXFFT.cos_roll()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.create"><code class="docutils literal notranslate"><span class="pre">GXFFT.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.create_ex"><code class="docutils literal notranslate"><span class="pre">GXFFT.create_ex()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.create_ref"><code class="docutils literal notranslate"><span class="pre">GXFFT.create_ref()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.create_ref_ex"><code class="docutils literal notranslate"><span class="pre">GXFFT.create_ref_ex()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.gaus"><code class="docutils literal notranslate"><span class="pre">GXFFT.gaus()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.get_vv"><code class="docutils literal notranslate"><span class="pre">GXFFT.get_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.h_drv"><code class="docutils literal notranslate"><span class="pre">GXFFT.h_drv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.h_int"><code class="docutils literal notranslate"><span class="pre">GXFFT.h_int()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.high_pass"><code class="docutils literal notranslate"><span class="pre">GXFFT.high_pass()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.inverse"><code class="docutils literal notranslate"><span class="pre">GXFFT.inverse()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.is_null"><code class="docutils literal notranslate"><span class="pre">GXFFT.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.low_pass"><code class="docutils literal notranslate"><span class="pre">GXFFT.low_pass()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.null"><code class="docutils literal notranslate"><span class="pre">GXFFT.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.nyquist"><code class="docutils literal notranslate"><span class="pre">GXFFT.nyquist()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.rc_filter"><code class="docutils literal notranslate"><span class="pre">GXFFT.rc_filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.red_pol"><code class="docutils literal notranslate"><span class="pre">GXFFT.red_pol()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.samp_incr"><code class="docutils literal notranslate"><span class="pre">GXFFT.samp_incr()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv"><code class="docutils literal notranslate"><span class="pre">GXFFT.set_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.spectrum"><code class="docutils literal notranslate"><span class="pre">GXFFT.spectrum()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.v_drv"><code class="docutils literal notranslate"><span class="pre">GXFFT.v_drv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.v_int"><code class="docutils literal notranslate"><span class="pre">GXFFT.v_int()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.wave_incr"><code class="docutils literal notranslate"><span class="pre">GXFFT.wave_incr()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXFFT.write_spectrum"><code class="docutils literal notranslate"><span class="pre">GXFFT.write_spectrum()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fft-detrend-constants">FFT_DETREND constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.FFT_DETREND_NONE"><code class="docutils literal notranslate"><span class="pre">FFT_DETREND_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.FFT_DETREND_NONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FFT_DETREND_ENDS"><code class="docutils literal notranslate"><span class="pre">FFT_DETREND_ENDS</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.FFT_DETREND_ENDS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FFT_DETREND_ALL"><code class="docutils literal notranslate"><span class="pre">FFT_DETREND_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.FFT_DETREND_ALL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FFT_DETREND_MEAN"><code class="docutils literal notranslate"><span class="pre">FFT_DETREND_MEAN</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.FFT_DETREND_MEAN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fft-white-noise-constants">FFT_WHITE_NOISE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.FFT_WHITE_NOISE_ADD"><code class="docutils literal notranslate"><span class="pre">FFT_WHITE_NOISE_ADD</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.FFT_WHITE_NOISE_ADD</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FFT_WHITE_NOISE_SET"><code class="docutils literal notranslate"><span class="pre">FFT_WHITE_NOISE_SET</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.FFT_WHITE_NOISE_SET</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -70,28 +120,27 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gxfft-class">
-<span id="gxfft"></span><h1>GXFFT class<a class="headerlink" href="#gxfft-class" title="Permalink to this headline">¶</a></h1>
+  <section id="gxfft-class">
+<span id="gxfft"></span><h1>GXFFT class<a class="headerlink" href="#gxfft-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="geosoft.gxapi.GXFFT">
-<em class="property">class </em><code class="sig-name descname">GXFFT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXFFT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT" title="Link to this definition">¶</a></dt>
 <dd><p>GXFFT class.</p>
 <p>This class allows for the application of predefined
 filters to data in an OASIS database. The system uses
 the Winograd algorithm to transform data in the spatial
 domain to the wavenumber or Fourier domain.</p>
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.add_white_noise">
-<code class="sig-name descname">add_white_noise</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">amp</span></em>, <em class="sig-param"><span class="n">option</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.add_white_noise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.add_white_noise" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.add_white_noise">
+<span class="sig-name descname"><span class="pre">add_white_noise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.add_white_noise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.add_white_noise" title="Link to this definition">¶</a></dt>
 <dd><p>Add white noise to the power spectrum of an FFT object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>amp</strong> (<em>float</em>) – The value added to the real part of all non-DC components of the current power spectrum</p></li>
 <li><p><strong>option</strong> (<em>int</em>) – <a class="reference internal" href="#fft-white-noise"><span class="std std-ref">FFT_WHITE_NOISE constants</span></a></p></li>
@@ -105,11 +154,11 @@ domain to the wavenumber or Fourier domain.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.app_dens">
-<code class="sig-name descname">app_dens</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thick</span></em>, <em class="sig-param"><span class="n">dens</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.app_dens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.app_dens" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.app_dens">
+<span class="sig-name descname"><span class="pre">app_dens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thick</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.app_dens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.app_dens" title="Link to this definition">¶</a></dt>
 <dd><p>Appparent density filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>thick</strong> (<em>float</em>) – Thickness (meters) of the earth model</p></li>
 <li><p><strong>dens</strong> (<em>float</em>) – Background density (g/cm3) (default = 0)</p></li>
@@ -123,11 +172,11 @@ domain to the wavenumber or Fourier domain.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.app_susc">
-<code class="sig-name descname">app_susc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strength</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.app_susc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.app_susc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.app_susc">
+<span class="sig-name descname"><span class="pre">app_susc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.app_susc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.app_susc" title="Link to this definition">¶</a></dt>
 <dd><p>Apparent susceptiblity filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>strength</strong> (<em>float</em>) – Total magnetic field strength</p>
 </dd>
 </dl>
@@ -140,11 +189,11 @@ domain to the wavenumber or Fourier domain.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.b_worth">
-<code class="sig-name descname">b_worth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clen</span></em>, <em class="sig-param"><span class="n">degree</span></em>, <em class="sig-param"><span class="n">filter_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.b_worth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.b_worth" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.b_worth">
+<span class="sig-name descname"><span class="pre">b_worth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.b_worth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.b_worth" title="Link to this definition">¶</a></dt>
 <dd><p>Butterworth filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>clen</strong> (<em>float</em>) – Central cutoff wavelength (meter)</p></li>
 <li><p><strong>degree</strong> (<em>float</em>) – Degree of the filter function (default = 8.0)</p></li>
@@ -159,11 +208,11 @@ domain to the wavenumber or Fourier domain.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.band_pass">
-<code class="sig-name descname">band_pass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">llen</span></em>, <em class="sig-param"><span class="n">hlen</span></em>, <em class="sig-param"><span class="n">pass_defined</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.band_pass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.band_pass" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.band_pass">
+<span class="sig-name descname"><span class="pre">band_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">llen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pass_defined</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.band_pass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.band_pass" title="Link to this definition">¶</a></dt>
 <dd><p>Bandpass filter (using low and high wavelength cutoffs)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>llen</strong> (<em>float</em>) – Low Cutoff wavelength (meters)</p></li>
 <li><p><strong>hlen</strong> (<em>float</em>) – High Cutoff wavelength (meter)</p></li>
@@ -178,11 +227,11 @@ domain to the wavenumber or Fourier domain.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.contin">
-<code class="sig-name descname">contin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dist</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.contin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.contin" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.contin">
+<span class="sig-name descname"><span class="pre">contin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.contin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.contin" title="Link to this definition">¶</a></dt>
 <dd><p>Upward/Downward continuation filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dist</strong> (<em>float</em>) – Distance to continue; positive = downwards negative = upwards</p>
 </dd>
 </dl>
@@ -193,11 +242,11 @@ domain to the wavenumber or Fourier domain.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.cos_roll">
-<code class="sig-name descname">cos_roll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">llen</span></em>, <em class="sig-param"><span class="n">hlen</span></em>, <em class="sig-param"><span class="n">degree</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.cos_roll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.cos_roll" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.cos_roll">
+<span class="sig-name descname"><span class="pre">cos_roll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">llen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.cos_roll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.cos_roll" title="Link to this definition">¶</a></dt>
 <dd><p>Cosine roll-off filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>llen</strong> (<em>float</em>) – Low wavelength start point (meters)</p></li>
 <li><p><strong>hlen</strong> (<em>float</em>) – High wavelength end point (meters)</p></li>
@@ -213,22 +262,22 @@ domain to the wavenumber or Fourier domain.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gvv</span></em>, <em class="sig-param"><span class="n">interv</span></em>, <em class="sig-param"><span class="n">trend</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trend</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create a New <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> with detrend options.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to transform.</p></li>
 <li><p><strong>interv</strong> (<em>float</em>) – Element space interval</p></li>
 <li><p><strong>trend</strong> (<em>int</em>) – <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> Object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT">GXFFT</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT.GXFFT">GXFFT</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -240,11 +289,11 @@ before the <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geos
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.create_ex">
-<em class="property">classmethod </em><code class="sig-name descname">create_ex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gvv</span></em>, <em class="sig-param"><span class="n">interv</span></em>, <em class="sig-param"><span class="n">trend</span></em>, <em class="sig-param"><span class="n">expansion</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create_ex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ex" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.create_ex">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expansion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ex" title="Link to this definition">¶</a></dt>
 <dd><p>Create a New <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> with detrend and expansion options.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to transform.</p></li>
 <li><p><strong>interv</strong> (<em>float</em>) – Element space interval</p></li>
@@ -252,11 +301,11 @@ before the <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geos
 <li><p><strong>expansion</strong> (<em>float</em>) – Minimum expansion %</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> Object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT">GXFFT</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT.GXFFT">GXFFT</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -269,23 +318,23 @@ data expansion before the <a class="reference internal" href="#geosoft.gxapi.GXF
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.create_ref">
-<em class="property">classmethod </em><code class="sig-name descname">create_ref</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gvv</span></em>, <em class="sig-param"><span class="n">interv</span></em>, <em class="sig-param"><span class="n">trend</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create_ref"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ref" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.create_ref">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trend</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create_ref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ref" title="Link to this definition">¶</a></dt>
 <dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> object with detrend options from reference (original) channel,
 but no <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> contains channel data to perform <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> operations upon.</p></li>
 <li><p><strong>interv</strong> (<em>float</em>) – Element space interval, should be the same as in <a class="reference internal" href="#geosoft.gxapi.GXFFT.create_ex" title="geosoft.gxapi.GXFFT.create_ex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_ex</span></code></a> call</p></li>
 <li><p><strong>trend</strong> (<em>int</em>) – <a class="reference internal" href="#fft-detrend"><span class="std std-ref">FFT_DETREND constants</span></a></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> Object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT">GXFFT</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT.GXFFT">GXFFT</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -297,12 +346,12 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.create_ref_ex">
-<em class="property">classmethod </em><code class="sig-name descname">create_ref_ex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gvv</span></em>, <em class="sig-param"><span class="n">interv</span></em>, <em class="sig-param"><span class="n">trend</span></em>, <em class="sig-param"><span class="n">expansion</span></em>, <em class="sig-param"><span class="n">d_cmult</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create_ref_ex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ref_ex" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.create_ref_ex">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ref_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expansion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_cmult</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.create_ref_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.create_ref_ex" title="Link to this definition">¶</a></dt>
 <dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> object with detrend and expansion options from reference (original) channel,
 but no <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> process.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> contains channel data to perform <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> operations upon.</p></li>
 <li><p><strong>interv</strong> (<em>float</em>) – Element space interval, should be the same as in <a class="reference internal" href="#geosoft.gxapi.GXFFT.create_ex" title="geosoft.gxapi.GXFFT.create_ex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_ex</span></code></a> call</p></li>
@@ -311,11 +360,11 @@ but no <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.
 <li><p><strong>d_cmult</strong> (<em>float</em>) – DC level multiple</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> Object</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT">GXFFT</a></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT.GXFFT">GXFFT</a></p>
 </dd>
 </dl>
 <div class="versionadded">
@@ -327,11 +376,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.gaus">
-<code class="sig-name descname">gaus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dev</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.gaus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.gaus" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.gaus">
+<span class="sig-name descname"><span class="pre">gaus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.gaus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.gaus" title="Link to this definition">¶</a></dt>
 <dd><p>Gaussian filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dev</strong> (<em>float</em>) – Standard deviation cutoff of function (meters)</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – Filter type: 1= Low-pass (residual) filter (default) 0= High-pass (regional) filter</p></li>
@@ -345,11 +394,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.get_vv">
-<code class="sig-name descname">get_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gv_vr</span></em>, <em class="sig-param"><span class="n">gv_vi</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.get_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.get_vv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.get_vv">
+<span class="sig-name descname"><span class="pre">get_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gv_vr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.get_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.get_vv" title="Link to this definition">¶</a></dt>
 <dd><p>Copies real and imaginary <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>’s to user <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>’s.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gv_vr</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Real component</p></li>
 <li><p><strong>gv_vi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Imaginary component</p></li>
@@ -363,11 +412,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.h_drv">
-<code class="sig-name descname">h_drv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">order</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.h_drv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.h_drv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.h_drv">
+<span class="sig-name descname"><span class="pre">h_drv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.h_drv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.h_drv" title="Link to this definition">¶</a></dt>
 <dd><p>Horizontal derivative</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>order</strong> (<em>float</em>) – Order of differentiation (default = 1)</p>
 </dd>
 </dl>
@@ -378,8 +427,8 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.h_int">
-<code class="sig-name descname">h_int</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.h_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.h_int" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.h_int">
+<span class="sig-name descname"><span class="pre">h_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.h_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.h_int" title="Link to this definition">¶</a></dt>
 <dd><p>Horizontal integration</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.1.4.</span></p>
@@ -388,11 +437,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.high_pass">
-<code class="sig-name descname">high_pass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">wlen</span></em>, <em class="sig-param"><span class="n">fid_int</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.high_pass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.high_pass" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.high_pass">
+<span class="sig-name descname"><span class="pre">high_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wlen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid_int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.high_pass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.high_pass" title="Link to this definition">¶</a></dt>
 <dd><p>High bandpass filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>wlen</strong> (<em>float</em>) – Cutoff wavelength (meter)</p></li>
 <li><p><strong>fid_int</strong> (<em>float</em>) – Fiducial increment of the <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a>’s channel data</p></li>
@@ -406,11 +455,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.inverse">
-<code class="sig-name descname">inverse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gvv</span></em>, <em class="sig-param"><span class="n">gv_vm</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.inverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.inverse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.inverse">
+<span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.inverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.inverse" title="Link to this definition">¶</a></dt>
 <dd><p>Inverse the <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> from wave number domain to space domain</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
 <li><p><strong>gv_vm</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Original <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> which was used to create <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> (will be used as mask for output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>; no masking if this parameter is NULL)</p></li>
@@ -424,25 +473,25 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.is_null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.low_pass">
-<code class="sig-name descname">low_pass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">wlen</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.low_pass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.low_pass" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.low_pass">
+<span class="sig-name descname"><span class="pre">low_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wlen</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.low_pass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.low_pass" title="Link to this definition">¶</a></dt>
 <dd><p>Low bandpass filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>wlen</strong> (<em>float</em>) – Cutoff wavelength (meters)</p>
 </dd>
 </dl>
@@ -453,28 +502,28 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.null" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT">GXFFT</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT.GXFFT">GXFFT</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.nyquist">
-<code class="sig-name descname">nyquist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.nyquist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.nyquist" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.nyquist">
+<span class="sig-name descname"><span class="pre">nyquist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.nyquist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.nyquist" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the Nyquist frequency (wavenumbers/sample unit).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Nyquist frequency (wavenumbers/sample unit).</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -485,11 +534,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.rc_filter">
-<code class="sig-name descname">rc_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">clen</span></em>, <em class="sig-param"><span class="n">filter_type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.rc_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.rc_filter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.rc_filter">
+<span class="sig-name descname"><span class="pre">rc_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.rc_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.rc_filter" title="Link to this definition">¶</a></dt>
 <dd><p>RC filter</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>clen</strong> (<em>float</em>) – Central cutoff wavelength (meter)</p></li>
 <li><p><strong>filter_type</strong> (<em>int</em>) – Filter type: 1= Low-pass (regional) filter (default) 0= High-pass (residual) filter</p></li>
@@ -503,11 +552,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.red_pol">
-<code class="sig-name descname">red_pol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inc</span></em>, <em class="sig-param"><span class="n">dec</span></em>, <em class="sig-param"><span class="n">incp</span></em>, <em class="sig-param"><span class="n">dir</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.red_pol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.red_pol" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.red_pol">
+<span class="sig-name descname"><span class="pre">red_pol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.red_pol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.red_pol" title="Link to this definition">¶</a></dt>
 <dd><p>Reduction to magnetic pole</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>inc</strong> (<em>float</em>) – Geomagnetic inclination (degrees)</p></li>
 <li><p><strong>dec</strong> (<em>float</em>) – Geomagnetic declination (degrees)</p></li>
@@ -523,14 +572,14 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.samp_incr">
-<code class="sig-name descname">samp_incr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.samp_incr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.samp_incr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.samp_incr">
+<span class="sig-name descname"><span class="pre">samp_incr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.samp_incr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.samp_incr" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the original sample increment.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Original sample increment.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -541,11 +590,11 @@ immediately after with <a class="reference internal" href="#geosoft.gxapi.GXFFT.
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.set_vv">
-<code class="sig-name descname">set_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gv_vr</span></em>, <em class="sig-param"><span class="n">gv_vi</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.set_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.set_vv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.set_vv">
+<span class="sig-name descname"><span class="pre">set_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gv_vr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gv_vi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.set_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.set_vv" title="Link to this definition">¶</a></dt>
 <dd><p>Sets real and imaginary VVs in <a class="reference internal" href="#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gv_vr</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Real component</p></li>
 <li><p><strong>gv_vi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Imaginary component</p></li>
@@ -561,11 +610,11 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.spectrum">
-<code class="sig-name descname">spectrum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gvv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.spectrum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.spectrum" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.spectrum">
+<span class="sig-name descname"><span class="pre">spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gvv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.spectrum" title="Link to this definition">¶</a></dt>
 <dd><p>Calculates a power spectrum</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output power spectrum <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p>
 </dd>
 </dl>
@@ -576,11 +625,11 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.v_drv">
-<code class="sig-name descname">v_drv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">order</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.v_drv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.v_drv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.v_drv">
+<span class="sig-name descname"><span class="pre">v_drv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.v_drv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.v_drv" title="Link to this definition">¶</a></dt>
 <dd><p>Vertical derivative</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>order</strong> (<em>float</em>) – Order of differentiation (default = 1)</p>
 </dd>
 </dl>
@@ -591,8 +640,8 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.v_int">
-<code class="sig-name descname">v_int</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.v_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.v_int" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.v_int">
+<span class="sig-name descname"><span class="pre">v_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.v_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.v_int" title="Link to this definition">¶</a></dt>
 <dd><p>Vertical integration</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.0.</span></p>
@@ -601,14 +650,14 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.wave_incr">
-<code class="sig-name descname">wave_incr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.wave_incr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.wave_incr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.wave_incr">
+<span class="sig-name descname"><span class="pre">wave_incr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.wave_incr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.wave_incr" title="Link to this definition">¶</a></dt>
 <dd><p>Get the wave number increment.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Wave number increment</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -619,11 +668,11 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 </dd></dl>
 
 <dl class="py method">
-<dt id="geosoft.gxapi.GXFFT.write_spectrum">
-<code class="sig-name descname">write_spectrum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gvv</span></em>, <em class="sig-param"><span class="n">out_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.write_spectrum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.write_spectrum" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.GXFFT.write_spectrum">
+<span class="sig-name descname"><span class="pre">write_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXFFT.html#GXFFT.write_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXFFT.write_spectrum" title="Link to this definition">¶</a></dt>
 <dd><p>Writes a power spectrum to a file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output power spectrum <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
 <li><p><strong>out_file</strong> (<em>str</em>) – File name for output spectrum</p></li>
@@ -638,81 +687,81 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
 
 </dd></dl>
 
-<div class="section" id="fft-detrend-constants">
-<span id="fft-detrend"></span><h2>FFT_DETREND constants<a class="headerlink" href="#fft-detrend-constants" title="Permalink to this headline">¶</a></h2>
+<section id="fft-detrend-constants">
+<span id="fft-detrend"></span><h2>FFT_DETREND constants<a class="headerlink" href="#fft-detrend-constants" title="Link to this heading">¶</a></h2>
 <p>Detrending option</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.FFT_DETREND_NONE">
-<code class="sig-name descname">FFT_DETREND_NONE</code><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_NONE" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.FFT_DETREND_NONE">
+<span class="sig-name descname"><span class="pre">FFT_DETREND_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>No trend remove</p>
 <dl class="py attribute">
-<dt id="id0">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT_DETREND_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FFT_DETREND_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.FFT_DETREND_ENDS">
-<code class="sig-name descname">FFT_DETREND_ENDS</code><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_ENDS" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.FFT_DETREND_ENDS">
+<span class="sig-name descname"><span class="pre">FFT_DETREND_ENDS</span></span><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_ENDS" title="Link to this definition">¶</a></dt>
 <dd><p>Detrend order 1 using only two end points</p>
 <dl class="py attribute">
-<dt id="id28">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT_DETREND_ENDS</code><em class="property"> = 1</em><a class="headerlink" href="#id28" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id28">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FFT_DETREND_ENDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.FFT_DETREND_ALL">
-<code class="sig-name descname">FFT_DETREND_ALL</code><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_ALL" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.FFT_DETREND_ALL">
+<span class="sig-name descname"><span class="pre">FFT_DETREND_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>Detrend order 1 using all data points</p>
 <dl class="py attribute">
-<dt id="id29">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT_DETREND_ALL</code><em class="property"> = 2</em><a class="headerlink" href="#id29" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id29">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FFT_DETREND_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.FFT_DETREND_MEAN">
-<code class="sig-name descname">FFT_DETREND_MEAN</code><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_MEAN" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.FFT_DETREND_MEAN">
+<span class="sig-name descname"><span class="pre">FFT_DETREND_MEAN</span></span><a class="headerlink" href="#geosoft.gxapi.FFT_DETREND_MEAN" title="Link to this definition">¶</a></dt>
 <dd><p>Remove mean value</p>
 <dl class="py attribute">
-<dt id="id30">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT_DETREND_MEAN</code><em class="property"> = 3</em><a class="headerlink" href="#id30" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id30">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FFT_DETREND_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="fft-white-noise-constants">
-<span id="fft-white-noise"></span><h2>FFT_WHITE_NOISE constants<a class="headerlink" href="#fft-white-noise-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="fft-white-noise-constants">
+<span id="fft-white-noise"></span><h2>FFT_WHITE_NOISE constants<a class="headerlink" href="#fft-white-noise-constants" title="Link to this heading">¶</a></h2>
 <p>Add white noise option</p>
 <dl class="py data">
-<dt id="geosoft.gxapi.FFT_WHITE_NOISE_ADD">
-<code class="sig-name descname">FFT_WHITE_NOISE_ADD</code><a class="headerlink" href="#geosoft.gxapi.FFT_WHITE_NOISE_ADD" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.FFT_WHITE_NOISE_ADD">
+<span class="sig-name descname"><span class="pre">FFT_WHITE_NOISE_ADD</span></span><a class="headerlink" href="#geosoft.gxapi.FFT_WHITE_NOISE_ADD" title="Link to this definition">¶</a></dt>
 <dd><p>Add the input value to the real part of all non-DC components of the current power spectrum</p>
 <dl class="py attribute">
-<dt id="id31">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT_WHITE_NOISE_ADD</code><em class="property"> = 0</em><a class="headerlink" href="#id31" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id31">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FFT_WHITE_NOISE_ADD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py data">
-<dt id="geosoft.gxapi.FFT_WHITE_NOISE_SET">
-<code class="sig-name descname">FFT_WHITE_NOISE_SET</code><a class="headerlink" href="#geosoft.gxapi.FFT_WHITE_NOISE_SET" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="geosoft.gxapi.FFT_WHITE_NOISE_SET">
+<span class="sig-name descname"><span class="pre">FFT_WHITE_NOISE_SET</span></span><a class="headerlink" href="#geosoft.gxapi.FFT_WHITE_NOISE_SET" title="Link to this definition">¶</a></dt>
 <dd><p>Set non-DC components to the input value and set the DC value to 0.0</p>
 <dl class="py attribute">
-<dt id="id32">
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">FFT_WHITE_NOISE_SET</code><em class="property"> = 1</em><a class="headerlink" href="#id32" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id32">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FFT_WHITE_NOISE_SET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -727,14 +776,14 @@ using the <a class="reference internal" href="#geosoft.gxapi.GXFFT.set_vv" title
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXFFT class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -949,6 +949,79 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2024.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXCSYMB3D.add_color_data` Add data for colors to a CSYMB3D object.
+
+:func:`geosoft.gxapi.GXCSYMB3D.add_locations` Add x,y,z locations to a CSYMB3D object.
+
+:func:`geosoft.gxapi.GXCSYMB3D.add_size_data` Add data for sizes to a CSYMB3D object.
+
+:func:`geosoft.gxapi.GXCSYMB3D.create` Create a `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>`.
+
+:func:`geosoft.gxapi.GXCSYMB3D.fixed_color` Return whether colours are fixed (1) or use a transform (0)
+
+:func:`geosoft.gxapi.GXCSYMB3D.get_color_data` Get data for colors from a CSYMB3D object.
+
+:func:`geosoft.gxapi.GXCSYMB3D.get_fixed_color` Get the fixed colour. There is always one even if we are using an ITR
+
+:func:`geosoft.gxapi.GXCSYMB3D.get_itr` Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>`
+
+:func:`geosoft.gxapi.GXCSYMB3D.get_locations` Get x,y,z locations from a color symbol object.
+
+:func:`geosoft.gxapi.GXCSYMB3D.get_size_data` Get data for sizes from a CSYMB3D object.
+
+:func:`geosoft.gxapi.GXCSYMB3D.get_st` Get a copy of the CSYMB3D statistics object
+
+:func:`geosoft.gxapi.GXCSYMB3D.set_fixed_color` Set symbols to a fixed colour
+
+:func:`geosoft.gxapi.GXCSYMB3D.set_fixed_size` Fix the symbol size.
+
+:func:`geosoft.gxapi.GXCSYMB3D.set_itr` Set the `GXITR <geosoft.gxapi.GXITR>` of the `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>`
+
+:func:`geosoft.gxapi.GXCSYMB3D.set_size_min_max` Scale the symbol size based on value. By default symbols are fixed size
+
+:func:`geosoft.gxapi.GXCSYMB3D.set_size_scale` Set the symbol size based on a scale.
+
+:func:`geosoft.gxapi.GXCSYMB3D.set_symbol` Set the symbol type.
+
+:func:`geosoft.gxapi.GXCSYMB3D.statistics` Add the CSYMB values to a statistics object
+
+:func:`geosoft.gxapi.GXDU.sample_img_line_lst_ex` Sample an `GXIMG <geosoft.gxapi.GXIMG>` at a specified X and Y, for a `GXLST <geosoft.gxapi.GXLST>` of lines.
+
+:func:`geosoft.gxapi.GXMAP.remove_geosurface` Remove all geosurface groups from a map that are linked to a specific geosurface file.
+
+:func:`geosoft.gxapi.GXMAP.remove_grid` Remove references to a grid from a map.
+
+:func:`geosoft.gxapi.GXMAP.remove_voxel` Remove all voxel groups from a map that are linked to a specific voxel file.
+
+:func:`geosoft.gxapi.GXMAP.repair_broken_geosurface_links` Replaces/repairs references to a geosurface inside a map.
+
+:func:`geosoft.gxapi.GXMAP.repair_broken_grid_links` Replaces/repairs references to a grid inside a map.
+
+:func:`geosoft.gxapi.GXMAP.repair_broken_voxel_links` Replaces/repairs references to a Geosoft Voxel inside a map.
+
+:func:`geosoft.gxapi.GXMVIEW.csymb_3d` Add a 3D coloured symbol (`GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>`) object to the view.
+
+:func:`geosoft.gxapi.GXMVIEW.get_csymb_3d` Get an existing 3D coloured symbol `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>` object from the view.
+
+:func:`geosoft.gxapi.GXPROJ.add_grid_documents` Adds (and opens) multiple grid document files of the same type in the current project with a shared (same) colour distribution and colour file.
+
+:func:`geosoft.gxapi.GXPROJ.get_registered_background_script_ex` Retrieve info on a registered OMS script launched from the project
+
+:func:`geosoft.gxapi.GXPROJ.register_background_script_ex` Register an OMS script launched from the project
+
+:func:`geosoft.gxapi.GXSYS.dat_list_lst` Returns a LST of Grid/Image types as names and qualifiers as values`GXLST <geosoft.gxapi.GXLST>`
+
+:func:`geosoft.gxapi.GXSYS.set_background_run` Sets the environment as running in the background.
+
+
+  
 Version 2023.2
 -----------------
 
@@ -1217,6 +1290,17 @@ New Functions
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.database_contains_voxel_geometry` Returns 1 if the original voxel geometry is stored inside the database
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_gdb_ignore_stored_voxel_geometry` Imports from a Geosoft Database, but ignores any stored internal geometry
+
+
+  
+Version 2014.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXSYS.log_background_task` This method logs that a background task was run
 
 
   

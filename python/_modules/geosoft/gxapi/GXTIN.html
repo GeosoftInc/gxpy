@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXTIN &#8212; Geosoft GX Python API 2023.2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
+    <title>geosoft.gxapi.GXTIN &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=9887e882"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -30,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTIN</a></li> 
@@ -48,12 +45,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -78,8 +75,10 @@
 
 <span class="c1">### block ClassImplementation</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<div class="viewcode-block" id="GXTIN"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN">[docs]</a><span class="k">class</span> <span class="nc">GXTIN</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTIN</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN">[docs]</a>
+<span class="k">class</span> <span class="nc">GXTIN</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTIN</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXTIN class.</span>
 
 <span class="sd">    The `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` class calculates the Delaunay triangulation of the</span>
@@ -90,12 +89,17 @@
 <span class="sd">    Delaunay triangles or Voronoi cells to a map.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="GXTIN.__init__"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="GXTIN.__init__">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXTIN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GXTIN.null"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.null">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXTIN.null">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.null">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: A null `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
@@ -103,8 +107,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GXTIN</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GXTIN.is_null"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTIN.is_null">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
 <span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
@@ -114,12 +121,15 @@
 
 
 
+
 <span class="c1"># Miscellaneous</span>
 
 
 
-<div class="viewcode-block" id="GXTIN.copy"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.copy">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param source:  Source `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
@@ -130,13 +140,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">source</span><span class="p">)</span></div>
+
         
 
 
 
-<div class="viewcode-block" id="GXTIN.create"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GXTIN.create">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.create">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method creates a `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X positions</span>
@@ -162,9 +175,12 @@
 
 
 
-<div class="viewcode-block" id="GXTIN.create_s"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.create_s">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXTIN.create_s">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.create_s">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_s</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` from a serialized source</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:  `GXBF &lt;geosoft.gxapi.GXBF&gt;` from which to read `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
@@ -184,9 +200,12 @@
 
 
 
-<div class="viewcode-block" id="GXTIN.export_xml"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.export_xml">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="GXTIN.export_xml">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.export_xml">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_xml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">tin</span><span class="p">,</span> <span class="n">crc</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Export a `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` object as XML</span>
 <span class="sd">        </span>
 <span class="sd">        :param tin:   `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` file</span>
@@ -201,13 +220,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">crc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTIN</span><span class="o">.</span><span class="n">_export_xml</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">tin</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_convex_hull"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_convex_hull">[docs]</a>    <span class="k">def</span> <span class="nf">get_convex_hull</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ply</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_convex_hull">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_convex_hull">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_convex_hull</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ply</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the convex hull of the `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ply:  `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` object</span>
@@ -221,13 +243,16 @@
 <span class="sd">        triangulated region.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_convex_hull</span><span class="p">(</span><span class="n">ply</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_ipj"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_ipj">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` in which to place the `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` projection</span>
@@ -238,13 +263,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_joins"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_joins">[docs]</a>    <span class="k">def</span> <span class="nf">get_joins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_joins</span><span class="p">,</span> <span class="n">vv_index</span><span class="p">,</span> <span class="n">vv_num</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_joins">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_joins">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_joins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_joins</span><span class="p">,</span> <span class="n">vv_index</span><span class="p">,</span> <span class="n">vv_num</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get joins from a `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` mesh.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_joins:  Joins `GXVV &lt;geosoft.gxapi.GXVV&gt;` (adjacent nodes)</span>
@@ -270,13 +298,16 @@
 <span class="sd">        All VVs must be type `GS_LONG &lt;geosoft.gxapi.GS_LONG&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_joins</span><span class="p">(</span><span class="n">vv_joins</span><span class="p">,</span> <span class="n">vv_index</span><span class="p">,</span> <span class="n">vv_num</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_mesh"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">get_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_mesh">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_mesh">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get lines from a `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` mesh.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type GS_D2LINE (returned)</span>
@@ -287,13 +318,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_mesh</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_nodes"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_nodes">[docs]</a>    <span class="k">def</span> <span class="nf">get_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_nodes">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_nodes">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the X,Y locations and Z values of the `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` nodes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -311,13 +345,16 @@
 <span class="sd">        be dummies.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_nodes</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_triangles"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_triangles">[docs]</a>    <span class="k">def</span> <span class="nf">get_triangles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_triangles">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_triangles">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_triangles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the triangle nodes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tri_vv_pt1:  Node 1 `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -332,13 +369,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_triangles</span><span class="p">(</span><span class="n">tri_vv_pt1</span><span class="p">,</span> <span class="n">tri_vv_pt2</span><span class="p">,</span> <span class="n">tri_vv_pt3</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_triangle"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_triangle">[docs]</a>    <span class="k">def</span> <span class="nf">get_triangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_triangle">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_triangle">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_triangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the locations of the vertices of a specific triangle</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:  Triangle index [0...N-1]</span>
@@ -361,13 +401,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_triangle</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.get_voronoi_edges"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_voronoi_edges">[docs]</a>    <span class="k">def</span> <span class="nf">get_voronoi_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.get_voronoi_edges">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.get_voronoi_edges">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_voronoi_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get line segments defining Voronoi cells.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` of GS_D2LINE type (create with type -32)</span>
@@ -378,13 +421,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_voronoi_edges</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.is_z_valued"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.is_z_valued">[docs]</a>    <span class="k">def</span> <span class="nf">is_z_valued</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.is_z_valued">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.is_z_valued">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_z_valued</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Does the `GXTIN &lt;geosoft.gxapi.GXTIN&gt;` contain Z values with each X,Y?</span>
 <span class="sd">        </span>
 
@@ -401,8 +447,11 @@
 
 
 
-<div class="viewcode-block" id="GXTIN.locate_triangle"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.locate_triangle">[docs]</a>    <span class="k">def</span> <span class="nf">locate_triangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTIN.locate_triangle">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.locate_triangle">[docs]</a>
+    <span class="k">def</span> <span class="nf">locate_triangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the index of the triangle containing X, Y.</span>
 <span class="sd">        </span>
 <span class="sd">        :param t:    Seed triangle (can be iDummy or &lt;0)</span>
@@ -442,8 +491,11 @@
 
 
 
-<div class="viewcode-block" id="GXTIN.nodes"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.nodes">[docs]</a>    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTIN.nodes">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.nodes">[docs]</a>
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the number of nodes in the `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
 <span class="sd">        </span>
 
@@ -460,8 +512,11 @@
 
 
 
-<div class="viewcode-block" id="GXTIN.interp_vv"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.interp_vv">[docs]</a>    <span class="k">def</span> <span class="nf">interp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTIN.interp_vv">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.interp_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">interp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Interp TINned values using the natural neighbour method.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` X locations to interpolate (`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`)</span>
@@ -488,13 +543,16 @@
 <span class="sd">        Geophysical Journal International, 122 p. 837-857.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_interp_vv</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.triangles"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.triangles">[docs]</a>    <span class="k">def</span> <span class="nf">triangles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.triangles">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.triangles">[docs]</a>
+    <span class="k">def</span> <span class="nf">triangles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the number of triangles in the `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`.</span>
 <span class="sd">        </span>
 
@@ -511,8 +569,11 @@
 
 
 
-<div class="viewcode-block" id="GXTIN.linear_interp_vv"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.linear_interp_vv">[docs]</a>    <span class="k">def</span> <span class="nf">linear_interp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXTIN.linear_interp_vv">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.linear_interp_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">linear_interp_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Interp TINned values using the linear interpolation</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` X locations to interpolate (`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`)</span>
@@ -536,13 +597,16 @@
 <span class="sd">        plane.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_linear_interp_vv</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.nearest_vv"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.nearest_vv">[docs]</a>    <span class="k">def</span> <span class="nf">nearest_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.nearest_vv">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.nearest_vv">[docs]</a>
+    <span class="k">def</span> <span class="nf">nearest_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Interp TINned values using the nearest neighbour.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` X locations to interpolate (`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`)</span>
@@ -566,13 +630,16 @@
 <span class="sd">        X,Y location is returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_nearest_vv</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.range_xy"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.range_xy">[docs]</a>    <span class="k">def</span> <span class="nf">range_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.range_xy">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.range_xy">[docs]</a>
+    <span class="k">def</span> <span class="nf">range_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the range in X and Y of the TINned region.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_min:  Min X  (returned)</span>
@@ -594,13 +661,16 @@
 <span class="sd">        convex hull is not calculated.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">x_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_range_xy</span><span class="p">(</span><span class="n">x_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.serial"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.serial">[docs]</a>    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.serial">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.serial">[docs]</a>
+    <span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Serialize `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param bf:   `GXBF &lt;geosoft.gxapi.GXBF&gt;` in which to write `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
@@ -611,13 +681,16 @@
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_serial</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span></div>
+
         
 
 
 
 
-<div class="viewcode-block" id="GXTIN.set_ipj"><a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.set_ipj">[docs]</a>    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GXTIN.set_ipj">
+<a class="viewcode-back" href="../../../GXTIN.html#geosoft.gxapi.GXTIN.set_ipj">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set the projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:  `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to place in the `GXTIN &lt;geosoft.gxapi.GXTIN&gt;`</span>
@@ -627,7 +700,9 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+</div>
+
         
 
 
@@ -657,7 +732,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2023.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTIN</a></li> 
@@ -665,8 +740,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    &#169; Copyright 2024, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
