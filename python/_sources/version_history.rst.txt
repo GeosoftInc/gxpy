@@ -2,6 +2,21 @@ geosoft.gxpy module history
 ==========================================
 
   
+Version 9.6
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.delete_line_data` Delete all data in line(s) by name or symbol but keep the line.
+
+:func:`geosoft.gxpy.gdb.Geosoft_gdb.sorted_chan_list` Get a list of sorted channels from Gdb, placing x, y and z channels (if defined) at front of list.
+
+:func:`geosoft.gxpy.gdb.Line.delete_data` Delete all data in a line but keep the line
+
+
+  
 Version 9.5
 -----------------
 
@@ -118,17 +133,6 @@ New Functions
 :func:`geosoft.gxpy.utility.geosoft_xml_from_dict` Return a unicode XML string of a dictionary with geosoft namespace defined.
 
 :func:`geosoft.gxpy.view.CrookedPath.set_in_geosoft_ipj` Set the crooked-path in the `geosoft.gxapi.GXIPJ` instance of the coordinate system.
-
-
-  
-Version 9.3.2
------------------
-
-
-New Functions
-^^^^^^^^^^^^^
-
-:func:`geosoft.gxpy.gx.GXpy.remove_stale_temporary_files` Removes stale temporary files from the current instance temporary file folder.
 
 
   
@@ -335,8 +339,6 @@ New Functions
 :func:`geosoft.gxpy.group.color_from_string` Return a Geosoft color number from a color string.
 
 :func:`geosoft.gxpy.group.contour` Create a contour group from a grid file.  A default contour interval is determined from the grid.
-
-:func:`geosoft.gxpy.gx.GXpy.has_entitlement` Returns True if the user has this entitlement.
 
 :func:`geosoft.gxpy.map.Map.crc_image` Return the CRC of a map based on the output bitmap image.
 
@@ -593,16 +595,6 @@ New Functions
 
 :func:`geosoft.gxpy.group.thickness_from_font_weight` Returns the line thickness appropriate for a text weight.
 
-:func:`geosoft.gxpy.gx.GXpy.elapsed_seconds` Return the elapsed seconds since this GX instance started.
-
-:func:`geosoft.gxpy.gx.GXpy.keep_temp_folder` Keep temporary file folder setting.
-
-:func:`geosoft.gxpy.gx.GXpy.log` Log a string to the log file or log call-back as defined when creating :class:`GXpy` instance.
-
-:func:`geosoft.gxpy.gx.GXpy.temp_file` Return a unique temporary file name as a full path.  The temporary file is created in
-
-:func:`geosoft.gxpy.gx.GXpy.temp_folder` Return the GX temporary folder path.
-
 :func:`geosoft.gxpy.gx.pop_resource` Pop a tracked resource off the resource stack.
 
 :func:`geosoft.gxpy.gx.track_resource` Track a resource.  Resource tracking is useful for debugging resource leaks.  If you create a class
@@ -727,8 +719,6 @@ New Classes
 
 :class:`geosoft.gxpy.grid.Grid` Grid and image class.
 
-:class:`geosoft.gxpy.gx.GXpy` Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
-
 :class:`geosoft.gxpy.va.GXva` VA class wrapper.
 
 :class:`geosoft.gxpy.vv.GXvv` VV class wrapper.
@@ -833,12 +823,6 @@ New Functions
 
 :func:`geosoft.gxpy.grid_utility.sample` Return grid values sampled at the point locations.
 
-:func:`geosoft.gxpy.gx.GXpy.disable_app` Disables application windows to allow modal Python UI.
-
-:func:`geosoft.gxpy.gx.GXpy.enable_app` Enables application windows to allow modal Python UI.
-
-:func:`geosoft.gxpy.gx.GXpy.entitlements` :returns: The current user entitlements as a dictionary.
-
 :func:`geosoft.gxpy.project.dict_from_lst` Return a dictionary from a Geosoft `geosoft.gxapi.GXLST` instance.
 
 :func:`geosoft.gxpy.project.get_user_input` Display a dialog prompt on the Geosoft Desktop and wait for user input.
@@ -912,6 +896,172 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.6
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXACQUIRE.get_selection_info` Get some information from existing selection file.
+
+:func:`geosoft.gxapi.GXACQUIRE.selection_tool_force_grid_selection` Run the acQuire Selection Tool, but force selection of destination grid.
+
+:func:`geosoft.gxapi.GXARCPY.add_error` Add error message to output of current script
+
+:func:`geosoft.gxapi.GXARCPY.add_message` Add informational message to output of current script
+
+:func:`geosoft.gxapi.GXARCPY.add_warning` Add warning message to output of current script
+
+:func:`geosoft.gxapi.GXDH.get_mx_deposit_rights_info` Get MX Deposit Service API information via Geosoft ID rights.
+
+:func:`geosoft.gxapi.GXDH.navigate_to_mx_deposit` Navigate to MX Deposit portal
+
+:func:`geosoft.gxapi.GXDU.grav_drift2` Calculate base loop closure, calculate drift correction and correct for drift.
+
+:func:`geosoft.gxapi.GXDU.qc_survey_plan2` Same as QCSurveyPlan_DU, but lines split by the polygon increment version numbers and keep the line number the same.
+
+:func:`geosoft.gxapi.GXEDB.profile_rescale_all` Rescale all profiles in a selected window in both X and Y, based on current scaling selections
+
+:func:`geosoft.gxapi.GXEMAP.draw_ply` Draws a polygon on the current map.
+
+:func:`geosoft.gxapi.GXIMU.pigeon_hole_color` Pigeon-hole and count points by location and color locations in another grid based on ITR information.
+
+:func:`geosoft.gxapi.GXMAP.render_view_bitmap` Render a map view to a bitmap.
+
+:func:`geosoft.gxapi.GXMESHUTIL.extract_isosurface_from_voxel` Extracts isosurface from a voxel, and saves the voxel to a Geosurface file
+
+:func:`geosoft.gxapi.GXPLY.clip_point` Clips a point in or out of the polygon.
+
+:func:`geosoft.gxapi.GXSEGYREADER.check_sane_inline_crossline` Checks if the currently-configured inline and crossline fields seem sensible.
+
+:func:`geosoft.gxapi.GXSEGYREADER.estimate_number_of_traces` Get the number of traces that would be in the SEG-Y file, given a trace length and data type.
+
+:func:`geosoft.gxapi.GXSEGYREADER.export_voxel_and_database` Exports contents of SEG Y file to voxel and/or database.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_binary_header` Get the SEG Y file's binary header.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_endianess` Returns true if the file is little endian. false if it is big endian.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_field_configuration` Returns information on the data in the trace headers.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_georeferencing` Returns the georeferencing of the voxel that would be exported with the current configuration.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_inline_and_crossline_azimuths` Get the inline and crossline azimuths, in degrees
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_last_sample_at` Returns the depth of the last sample in the traces, in the units specified by `SetZUnits()`
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_num_trace_data_types` Returns the number of supported trace data types.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_possible_z_units` Get a list of the possible values that can be passed to `SetZUnits()`. The values returned by this function depend on what the z-type is set to.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_sample_interval_configuration` Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_sample_interval` Returns the sample interval of the trace data.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_text_header` Get the SEG Y file's text header.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_tie_point` Return  the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_count` Get the number of traces in the SEG Y file
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_data_at` Get the SEG Y trace file data for a particular data type, number of samples, and starting trace
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name` Get a string, suitable for displaying to the user, describing the type returned by passing the same `index` value to `GetTraceDataTypeName()`
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name` Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use `GetTraceDataTypeDisplayName() instead.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_data_type` Get the data type of the trace data. This will match one of the names rfeturned by `GetTraceDataTypeName()`
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_header_at` Get the SEG Y trace file header data for a particular starting trace
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration` Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_trace_length` Returns the number of data samples per trace.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_voxel_cell_size` Get the cell size of the voxel that would be exported with the current configuration.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_voxel_dimensions` Get the size of the voxel that would be exported with the current configuration.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_xy_units` Get the currently-specified xy-units.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_z_offset_configuration` Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_z_offset_units` Get the currently-specified units for the z offset.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_z_offset` Returns the z-offset (time delay) of the trace data. Positive values correspond to a deeper top-of-trace; negative values to a higher top-of-trace.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_z_type` Indicate if the z-dimension is time or depth.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_z_units` Get the currently-specified z-units.
+
+:func:`geosoft.gxapi.GXSEGYREADER.list_binary_header_fields` Returns the names and offsets of the fields in the binary header.
+
+:func:`geosoft.gxapi.GXSEGYREADER.list_trace_header_fields` Returns the names and offsets of the fields in the trace header.
+
+:func:`geosoft.gxapi.GXSEGYREADER.open_file` Opens a 3D SEG Y file.
+
+:func:`geosoft.gxapi.GXSEGYREADER.recalculate_georeferencing` Recalculate georeferencing; call after configuration has changed.
+
+:func:`geosoft.gxapi.GXSEGYREADER.reset_tie_points` Discard user-supplied tie points and auto-choose new ones..
+
+:func:`geosoft.gxapi.GXSEGYREADER.scan_file` Scans the SEG Y file, and attempts to guess the layout.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_auto_voxel_cell_size_xy` Set the XY cell size of the voxel that would be exported to the dimensions calculated from the tie points..
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_endianess` Set the endianess of the file.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_field_configuration` Sets the interpretation of the fields in the SEG Y file, and specifies which fields should be exported to GDB.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_georeferencing` Sets the georeferencing of the voxel that would be exported with the current configuration.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_sample_interval_configuration` Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_tie_point` Set the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_trace_data_type` Set the data type of the trace data. This must match one of the names returned by `GetTraceDataTypeName()`
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_trace_length_configuration` Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_user_voxel_cell_size_xy` Set the XY cell size of the voxel that would be exported with the current configuration.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_z_offset_configuration` Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_z_offset_units` Set the units that the z-offset is in.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_z_type` Specify if the z-dimension is time or depth.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_z_units` Set the z-units.
+
+:func:`geosoft.gxapi.GXSYS.check_product_updates` Check for product updates via Geosoft Connect
+
+:func:`geosoft.gxapi.GXSYS.get_error_ap` Get the error number of an error.
+
+:func:`geosoft.gxapi.GXSYS.testing_system_mode` Checks to see if the GX is running in the Geosoft testing system.
+
+:func:`geosoft.gxapi.GXUSERMETA.set_xml_format` Get the XML Format
+
+:func:`geosoft.gxapi.GXVA.range_columns` Computes the minimum and maximum range of the data for individual columns, in doubles,
+
+:func:`geosoft.gxapi.GXVA.range` Computes the minimum and maximum range of the data, in doubles,
+
+:func:`geosoft.gxapi.GXVV.get_ext_type` Return the internal data type of this VV
+
+
+  
+Version 9.5.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXEDB.get_profile_x_axis_options` Get profile X-axis options
+
+:func:`geosoft.gxapi.GXEDB.set_profile_x_axis_options` Set profile X-axis options
+
+
+  
 Version 9.5
 -----------------
 
@@ -932,10 +1082,6 @@ New Functions
 :func:`geosoft.gxapi.GXGU.despike_em_array` Despike a time-series with individual noise levels
 
 :func:`geosoft.gxapi.GXGUI.import_drill_wizard_ex` Generate a template file for importing drill holes where type is known
-
-:func:`geosoft.gxapi.GXGUI.launch_va_view_multiple_tool` Launch the coincident array channel viewer.
-
-:func:`geosoft.gxapi.GXGUI.va_view_multiple_tool_exists` See if there is a Multiple Array Channel viewer already open.
 
 :func:`geosoft.gxapi.GXMESH.add_face` Adds a face to a patch in a mesh
 
@@ -1015,8 +1161,6 @@ New Functions
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.extract_dem` Extract a DEM grid from a voxel.
 
-:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf` Creates a VOXEL from an database using RBF.
-
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_extents` Get the voxel size that has non-dummy data.
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_ground_extents` Get the voxel size in ground units that has non-dummy data.
@@ -1028,8 +1172,6 @@ New Functions
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_ex_from_gdb` Grid a grid3d from a database (using variable Z's)
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.grid_points_z_from_gdb` Grid a grid3d from a database (using variable Z's)
-
-:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.import_from_segy` Imports a MultiVoxset from a SEG Y File
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.invert_z` Invert the Z values in the Grid3d.
 

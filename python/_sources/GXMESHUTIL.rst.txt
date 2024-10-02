@@ -29,4 +29,25 @@ Surface Clip Mode
     
     .. autoattribute:: geosoft.gxapi.SURFACE_CLIP_BOTH
 
+
+.. _SURFACE_CLIP_STATUS:
+
+SURFACE_CLIP_STATUS constants
+-----------------------------------------------------------------------
+
+Surface Clip Return Code
+
+.. autodata:: geosoft.gxapi.SURFACE_CLIP_SUCCESS
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_CLIP_SUCCESS
+.. autodata:: geosoft.gxapi.SURFACE_CLIP_SUCCESS_EMPTY
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_CLIP_SUCCESS_EMPTY
+.. autodata:: geosoft.gxapi.SURFACE_CLIP_FAIL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SURFACE_CLIP_FAIL
+
 	

@@ -1,19 +1,18 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXTB class &#8212; Geosoft GX Python API 9.5.0 documentation</title>
+    <meta charset="utf-8" />
+    <title>GXTB class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,12 +29,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXTB class</a><ul>
 <li><a class="reference internal" href="#tb-search-constants">TB_SEARCH constants</a></li>
@@ -45,13 +44,11 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -75,31 +72,30 @@
 <span id="gxtb"></span><h1>GXTB class<a class="headerlink" href="#gxtb-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXTB">
-<em class="property">class </em><code class="descname">GXTB</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXTB</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXTB class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> class is a high-performance table class used to
 perform table-based processing, such as leveling data in
 an OASIS database. The <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> class is recommended for use
 with small tables produced from short lists such as the
 different geographic projections and their defining parameters.</p>
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXTB.create">
-<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads a table into memory and return a table handle.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of the table file to load</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Object</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the table file to load</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the table contains fewer data columns than are defined by the
@@ -107,24 +103,23 @@ the table header, the <a class="reference internal" href="#geosoft.gxapi.GXTB" t
 the elements of the missing data columns.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXTB.create_db">
-<em class="property">classmethod </em><code class="descname">create_db</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.create_db" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create_db</code><span class="sig-paren">(</span><em class="sig-param">db</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.create_db" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a table from a database.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Object</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table will contain fields for all channels in
@@ -133,350 +128,310 @@ the database.</p>
 function to load data into the table.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXTB.create_ltb">
-<em class="property">classmethod </em><code class="descname">create_ltb</code><span class="sig-paren">(</span><em>ltb</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.create_ltb" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create_ltb</code><span class="sig-paren">(</span><em class="sig-param">ltb</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.create_ltb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a table from an <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> database.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ltb</strong> (<a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) – <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Object</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ltb</strong> (<a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><em>GXLTB</em></a>) – <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.data_type">
-<code class="descname">data_type</code><span class="sig-paren">(</span><em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.data_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">data_type</code><span class="sig-paren">(</span><em class="sig-param">col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the data type for the specified column.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>col</strong> (<em>int</em>) – Column of element to Get</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXDB.html#db-category-chan"><span class="std std-ref">DB_CATEGORY_CHAN constants</span></a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>col</strong> (<em>int</em>) – Column of element to Get</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="GXDB.html#db-category-chan"><span class="std std-ref">DB_CATEGORY_CHAN constants</span></a></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.1.</span></p>
+<p><span class="versionmodified added">New in version 5.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.field">
-<code class="descname">field</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.field" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">field</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.field" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a field handle.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Field name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The handle to the field (must be present)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Field name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The handle to the field (must be present)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.find_col_by_index">
-<code class="descname">find_col_by_index</code><span class="sig-paren">(</span><em>idx</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.find_col_by_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_col_by_index</code><span class="sig-paren">(</span><em class="sig-param">idx</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.find_col_by_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds a column’s name by its index.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>idx</strong> (<em>int</em>) – Index of column to find</li>
-<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer for column name</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>idx</strong> (<em>int</em>) – Index of column to find</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Buffer for column name</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.1.6.</span></p>
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.find_col_by_name">
-<code class="descname">find_col_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.find_col_by_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_col_by_name</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.find_col_by_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds a column’s index by its name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of column to find</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Index of column.
--1 if not found.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of column to find</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Index of column.
+-1 if not found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.format">
-<code class="descname">format</code><span class="sig-paren">(</span><em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.format" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">format</code><span class="sig-paren">(</span><em class="sig-param">col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.format" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the channel format for the specified column.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>col</strong> (<em>int</em>) – Column of element to Get</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXDB.html#db-chan-format"><span class="std std-ref">DB_CHAN_FORMAT constants</span></a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>col</strong> (<em>int</em>) – Column of element to Get</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="GXDB.html#db-chan-format"><span class="std std-ref">DB_CHAN_FORMAT constants</span></a></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.1.</span></p>
+<p><span class="versionmodified added">New in version 5.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.get_double">
-<code class="descname">get_double</code><span class="sig-paren">(</span><em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.get_double" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_double</code><span class="sig-paren">(</span><em class="sig-param">row</em>, <em class="sig-param">col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.get_double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets an real value from a table element.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>row</strong> (<em>int</em>) – Row of element to Get</li>
-<li><strong>col</strong> (<em>int</em>) – Column of element to Get</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row of element to Get</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column of element to Get</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Value</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.get_int">
-<code class="descname">get_int</code><span class="sig-paren">(</span><em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.get_int" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_int</code><span class="sig-paren">(</span><em class="sig-param">row</em>, <em class="sig-param">col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.get_int" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets an integer value from a table element.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>row</strong> (<em>int</em>) – Row of element to Get</li>
-<li><strong>col</strong> (<em>int</em>) – Column of element to Get</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row of element to Get</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column of element to Get</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Value</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.get_string">
-<code class="descname">get_string</code><span class="sig-paren">(</span><em>row</em>, <em>col</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.get_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_string</code><span class="sig-paren">(</span><em class="sig-param">row</em>, <em class="sig-param">col</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.get_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a string value from a table element.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>row</strong> (<em>int</em>) – Row of element to Get</li>
-<li><strong>col</strong> (<em>int</em>) – Column of element to Get</li>
-<li><strong>val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned string</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row of element to Get</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column of element to Get</p></li>
+<li><p><strong>val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Returned string</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.load_db">
-<code class="descname">load_db</code><span class="sig-paren">(</span><em>db</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.load_db" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_db</code><span class="sig-paren">(</span><em class="sig-param">db</em>, <em class="sig-param">line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.load_db" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a database into a <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>line</strong> (<em>int</em>) – Line</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The line is appended to the data already in the table.</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="geosoft.gxapi.GXTB.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB">GXTB</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.num_columns">
-<code class="descname">num_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.num_columns" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">num_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.num_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the number of data fields (columns) in a table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of columns</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of columns</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.num_rows">
-<code class="descname">num_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.num_rows" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">num_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.num_rows" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the number of data rows in a table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of rows</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of rows</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the data in a table to a file. The table header will be
 in ASCII and the data will be in BINARY format.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of File to save table into</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of File to save table into</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.save_db">
-<code class="descname">save_db</code><span class="sig-paren">(</span><em>db</em>, <em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.save_db" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_db</code><span class="sig-paren">(</span><em class="sig-param">db</em>, <em class="sig-param">line</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.save_db" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save a <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> in a database line</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</li>
-<li><strong>line</strong> (<em>int</em>) – Line</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Missing channels are created.
@@ -485,42 +440,35 @@ Data in existing channels on the line will be replaced.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.save_to_ascii">
-<code class="descname">save_to_ascii</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.save_to_ascii" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_to_ascii</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.save_to_ascii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the data in a table to a file. The table header will be
 in ASCII and the data will be in ASCII format.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Name of File to save table into</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of File to save table into</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.set_double">
-<code class="descname">set_double</code><span class="sig-paren">(</span><em>row</em>, <em>col</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_double" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_double</code><span class="sig-paren">(</span><em class="sig-param">row</em>, <em class="sig-param">col</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets an real value into a table element.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>row</strong> (<em>int</em>) – Row of element to set</li>
-<li><strong>col</strong> (<em>int</em>) – Column of element to set</li>
-<li><strong>val</strong> (<em>float</em>) – Value to set</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row of element to set</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column of element to set</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – Value to set</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table field containing the element to be set MUST be
@@ -539,23 +487,19 @@ invalid data.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.set_int">
-<code class="descname">set_int</code><span class="sig-paren">(</span><em>row</em>, <em>col</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_int" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_int</code><span class="sig-paren">(</span><em class="sig-param">row</em>, <em class="sig-param">col</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_int" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets an integer value into a table element.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>row</strong> (<em>int</em>) – Row of element to set</li>
-<li><strong>col</strong> (<em>int</em>) – Column of element to set</li>
-<li><strong>val</strong> (<em>int</em>) – Value to set</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row of element to set</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column of element to set</p></li>
+<li><p><strong>val</strong> (<em>int</em>) – Value to set</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table field containing the element to be set MUST be
@@ -574,18 +518,15 @@ invalid data.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.set_search_mode">
-<code class="descname">set_search_mode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_search_mode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_search_mode</code><span class="sig-paren">(</span><em class="sig-param">mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_search_mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the search mode of a table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#tb-search"><span class="std std-ref">TB_SEARCH constants</span></a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#tb-search"><span class="std std-ref">TB_SEARCH constants</span></a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If performance is an issue, you may want to test which search
@@ -594,41 +535,34 @@ mode provides the best performance with typical data.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.set_sort_mode">
-<code class="descname">set_sort_mode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_sort_mode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_sort_mode</code><span class="sig-paren">(</span><em class="sig-param">mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_sort_mode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the sort mode of a table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#tb-sort"><span class="std std-ref">TB_SORT constants</span></a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#tb-sort"><span class="std std-ref">TB_SORT constants</span></a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">New in version 9.3.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.set_string">
-<code class="descname">set_string</code><span class="sig-paren">(</span><em>row</em>, <em>col</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_string</code><span class="sig-paren">(</span><em class="sig-param">row</em>, <em class="sig-param">col</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets a string value into a table element.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>row</strong> (<em>int</em>) – Row of element to set</li>
-<li><strong>col</strong> (<em>int</em>) – Column of element to set</li>
-<li><strong>val</strong> (<em>str</em>) – Value to set</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>int</em>) – Row of element to set</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Column of element to set</p></li>
+<li><p><strong>val</strong> (<em>str</em>) – Value to set</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table field containing the element to be set MUST be
@@ -644,18 +578,15 @@ invalid data.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXTB.sort">
-<code class="descname">sort</code><span class="sig-paren">(</span><em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.sort" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sort</code><span class="sig-paren">(</span><em class="sig-param">col</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.sort" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts a table by a specified column.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>col</strong> (<em>int</em>) – Index of data Column to sort table by</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>col</strong> (<em>int</em>) – Index of data Column to sort table by</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the column to sort by contains duplicated values, the
@@ -675,22 +606,22 @@ table.</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Searching mode</p>
 <dl class="data">
 <dt id="geosoft.gxapi.TB_SEARCH_BINARY">
-<code class="descname">TB_SEARCH_BINARY</code><a class="headerlink" href="#geosoft.gxapi.TB_SEARCH_BINARY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TB_SEARCH_BINARY</code><a class="headerlink" href="#geosoft.gxapi.TB_SEARCH_BINARY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Random searches in a table.</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">TB_SEARCH_BINARY</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TB_SEARCH_BINARY</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TB_SEARCH_LINEAR">
-<code class="descname">TB_SEARCH_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.TB_SEARCH_LINEAR" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TB_SEARCH_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.TB_SEARCH_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear searches up or down a table (Default).</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">TB_SEARCH_LINEAR</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TB_SEARCH_LINEAR</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -701,22 +632,22 @@ table.</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> Sorting mode</p>
 <dl class="data">
 <dt id="geosoft.gxapi.TB_SORT_UNIQUE">
-<code class="descname">TB_SORT_UNIQUE</code><a class="headerlink" href="#geosoft.gxapi.TB_SORT_UNIQUE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TB_SORT_UNIQUE</code><a class="headerlink" href="#geosoft.gxapi.TB_SORT_UNIQUE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unique values only when sorting.</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">TB_SORT_UNIQUE</code><em class="property"> = 0</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TB_SORT_UNIQUE</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES">
-<code class="descname">TB_SORT_ALLOW_DUPLICATES</code><a class="headerlink" href="#geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TB_SORT_ALLOW_DUPLICATES</code><a class="headerlink" href="#geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow duplicates when sorting.</p>
 <dl class="attribute">
 <dt>
-<code class="descclassname">gxapi.</code><code class="descname">TB_SORT_ALLOW_DUPLICATES</code><em class="property"> = 1</em></dt>
+<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">TB_SORT_ALLOW_DUPLICATES</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -736,13 +667,13 @@ table.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.5.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2018, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+        &#169; Copyright 2019, Geosoft Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

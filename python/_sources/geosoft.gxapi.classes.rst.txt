@@ -17,6 +17,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXARCDB
    GXARCDH
    GXARCMAP
+   GXARCPY
    GXARCSYS
    GXBF
    GXBIGRID
@@ -103,6 +104,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXREG
    GXRGRD
    GXSBF
+   GXSEGYREADER
    GXSEMPLOT
    GXSHP
    GXSQLSRV
