@@ -1,7 +1,0 @@
-geosoft.gxpy.grid_fft submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.grid_fft
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,7 +1,0 @@
-geosoft.gxpy.vox_display submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.vox_display
-    :members:
-    :undoc-members:
-    :show-inheritance:

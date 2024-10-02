@@ -1,7 +1,0 @@
-geosoft.gxpy.grid_utility submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.grid_utility
-    :members:
-    :undoc-members:
-    :show-inheritance:

@@ -1,7 +1,0 @@
-geosoft.gxpy.spatialdata submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.spatialdata
-    :members:
-    :undoc-members:
-    :show-inheritance:

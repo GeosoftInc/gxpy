@@ -1,7 +1,0 @@
-geosoft.gxpy.dap_client submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.dap_client
-    :members:
-    :undoc-members:
-    :show-inheritance:

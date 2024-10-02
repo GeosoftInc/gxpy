@@ -1,7 +1,0 @@
-geosoft.gxpy.coordinate_system submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.coordinate_system
-    :members:
-    :undoc-members:
-    :show-inheritance:

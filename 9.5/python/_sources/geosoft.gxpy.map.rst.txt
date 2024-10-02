@@ -1,7 +1,0 @@
-geosoft.gxpy.map submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.map
-    :members:
-    :undoc-members:
-    :show-inheritance:

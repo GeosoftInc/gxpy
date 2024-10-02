@@ -1,7 +1,0 @@
-geosoft.gxpy.geometry_utility submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.geometry_utility
-    :members:
-    :undoc-members:
-    :show-inheritance:

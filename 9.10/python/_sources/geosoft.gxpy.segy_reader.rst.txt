@@ -1,7 +1,0 @@
-geosoft.gxpy.segy_reader submodule
-=============================================
-
-.. automodule:: geosoft.gxpy.segy_reader
-    :members:
-    :undoc-members:
-    :show-inheritance:
