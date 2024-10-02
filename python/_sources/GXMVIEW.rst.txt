@@ -446,6 +446,14 @@ Defines for mview types
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.MVIEW_IS_VECTOR3D
+.. autodata:: geosoft.gxapi.MVIEW_IS_GENSURF
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MVIEW_IS_GENSURF
+.. autodata:: geosoft.gxapi.MVIEW_IS_VOXSURF
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.MVIEW_IS_VOXSURF
 
 
 .. _MVIEW_LABEL_BOUND:

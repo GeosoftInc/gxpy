@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>GXUNC class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXUNC class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,12 +30,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
+  <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXUNC class</a><ul>
 <li><a class="reference internal" href="#utf8-constants">UTF8 constants</a></li>
@@ -43,11 +44,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -71,7 +74,7 @@
 <span id="gxunc"></span><h1>GXUNC class<a class="headerlink" href="#gxunc-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXUNC">
-<em class="property">class </em><code class="sig-name descname">GXUNC</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXUNC</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXUNC class.</p>
 <p>This library is not a class. Use the <a class="reference internal" href="#geosoft.gxapi.GXUNC" title="geosoft.gxapi.GXUNC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUNC</span></code></a> library functions
 to work with Unicode characters and strings. Since version 6.2
@@ -83,107 +86,125 @@ functionality that is now possible (e.g. an expanded symbol range
 with TrueType fonts).</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXUNC.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXUNC.is_valid_utf16_char">
-<em class="property">classmethod </em><code class="sig-name descname">is_valid_utf16_char</code><span class="sig-paren">(</span><em class="sig-param">ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.is_valid_utf16_char" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">is_valid_utf16_char</code><span class="sig-paren">(</span><em>ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.is_valid_utf16_char" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the UTF-16 value is a valid Unicode character code point.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ch</strong> (<em>int</em>) – UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ch</strong> (<em>int</em>) – UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXUNC.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXUNC" title="geosoft.gxapi.GXUNC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUNC</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXUNC" title="geosoft.gxapi.GXUNC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUNC</span></code></a></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXUNC" title="geosoft.gxapi.GXUNC">GXUNC</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXUNC" title="geosoft.gxapi.GXUNC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXUNC</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXUNC" title="geosoft.gxapi.GXUNC">GXUNC</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXUNC.utf16_val_to_str">
-<em class="property">classmethod </em><code class="sig-name descname">utf16_val_to_str</code><span class="sig-paren">(</span><em class="sig-param">ch</em>, <em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.utf16_val_to_str" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">utf16_val_to_str</code><span class="sig-paren">(</span><em>ch</em>, <em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.utf16_val_to_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a UTF-16 value to a UTF-8 encoded string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ch</strong> (<em>int</em>) – UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</p></li>
-<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Converted string</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ch</strong> (<em>int</em>) – UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Converted string</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> An empty string will be returned for invalid symbols</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXUNC.valid_symbol">
-<em class="property">classmethod </em><code class="sig-name descname">valid_symbol</code><span class="sig-paren">(</span><em class="sig-param">face</em>, <em class="sig-param">geofont</em>, <em class="sig-param">number</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.valid_symbol" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">valid_symbol</code><span class="sig-paren">(</span><em>face</em>, <em>geofont</em>, <em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.valid_symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>See if a Symbol number is valid in a particular font.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>face</strong> (<em>str</em>) – Face name (undecorated)</p></li>
-<li><p><strong>geofont</strong> (<em>bool</em>) – Geosoft font?</p></li>
-<li><p><strong>number</strong> (<em>int</em>) – Symbol number</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>face</strong> (<em>str</em>) – Face name (undecorated)</li>
+<li><strong>geofont</strong> (<em>bool</em>) – Geosoft font?</li>
+<li><strong>number</strong> (<em>int</em>) – Symbol number</li>
 </ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXUNC.validate_symbols">
-<em class="property">classmethod </em><code class="sig-name descname">validate_symbols</code><span class="sig-paren">(</span><em class="sig-param">vv</em>, <em class="sig-param">face</em>, <em class="sig-param">geofont</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.validate_symbols" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">validate_symbols</code><span class="sig-paren">(</span><em>vv</em>, <em>face</em>, <em>geofont</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXUNC.validate_symbols" title="Permalink to this definition">¶</a></dt>
 <dd><p>High performance method to see if a set of symbols
 are valid in a particular font.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> of symbols</p></li>
-<li><p><strong>face</strong> (<em>str</em>) – Face name (undecorated)</p></li>
-<li><p><strong>geofont</strong> (<em>bool</em>) – Geosoft font?</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> of symbols</li>
+<li><strong>face</strong> (<em>str</em>) – Face name (undecorated)</li>
+<li><strong>geofont</strong> (<em>bool</em>) – Geosoft font?</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Invalid symbols in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> will be set to -1 by this call. <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> has to be of type <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.GS_LONG" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a>.</p>
@@ -196,11 +217,11 @@ are valid in a particular font.</p>
 <p>UTF-8 Defines</p>
 <dl class="data">
 <dt id="geosoft.gxapi.UTF8_MAX_CHAR">
-<code class="sig-name descname">UTF8_MAX_CHAR</code><a class="headerlink" href="#geosoft.gxapi.UTF8_MAX_CHAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UTF8_MAX_CHAR</code><a class="headerlink" href="#geosoft.gxapi.UTF8_MAX_CHAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum width of a single Unicode code point as a <a class="reference internal" href="#utf8"><span class="std std-ref">UTF8 constants</span></a> string, including terminator (5)</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">UTF8_MAX_CHAR</code><em class="property"> = 5</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">UTF8_MAX_CHAR</code><em class="property"> = 5</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -220,13 +241,13 @@ are valid in a particular font.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

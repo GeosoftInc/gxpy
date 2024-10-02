@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>GXVOXE class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXVOXE class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,12 +30,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
+  <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXVOXE class</a><ul>
 <li><a class="reference internal" href="#voxe-eval-constants">VOXE_EVAL constants</a></li>
@@ -43,11 +44,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -71,126 +74,143 @@
 <span id="gxvoxe"></span><h1>GXVOXE class<a class="headerlink" href="#gxvoxe-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXVOXE">
-<em class="property">class </em><code class="sig-name descname">GXVOXE</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXVOXE</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXVOXE class.</p>
 <p><a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> evaluator class. Used to sample values from
 the voxel.</p>
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXVOXE.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">vox</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>vox</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a handle to an <a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXE</span></code></a> object</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vox</strong> (<a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><em>GXVOX</em></a>) – <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> Object</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXE</span></code></a> handle, terminates if creation fails</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE">GXVOXE</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vox</strong> (<a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><em>GXVOX</em></a>) – <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXE</span></code></a> handle, terminates if creation fails</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE">GXVOXE</a></td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOXE.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXVOXE.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXE</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXE</span></code></a></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE">GXVOXE</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXE</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVOXE" title="geosoft.gxapi.GXVOXE">GXVOXE</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOXE.profile">
-<code class="sig-name descname">profile</code><span class="sig-paren">(</span><em class="sig-param">vv_x</em>, <em class="sig-param">vv_y</em>, <em class="sig-param">vv_z</em>, <em class="sig-param">vv_d</em>, <em class="sig-param">interp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.profile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">profile</code><span class="sig-paren">(</span><em>vv_x</em>, <em>vv_y</em>, <em>vv_z</em>, <em>vv_d</em>, <em>interp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract a profile of data along points provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</p></li>
-<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</p></li>
-<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</p></li>
-<li><p><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – D <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</p></li>
-<li><p><strong>interp</strong> (<em>int</em>) – <a class="reference internal" href="#voxe-eval"><span class="std std-ref">VOXE_EVAL constants</span></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</li>
+<li><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</li>
+<li><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – D <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</li>
+<li><strong>interp</strong> (<em>int</em>) – <a class="reference internal" href="#voxe-eval"><span class="std std-ref">VOXE_EVAL constants</span></a></li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOXE.value">
-<code class="sig-name descname">value</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z</em>, <em class="sig-param">interp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">value</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em>, <em>interp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a value at a specific point</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>float</em>) – X Location</p></li>
-<li><p><strong>y</strong> (<em>float</em>) – Y Location</p></li>
-<li><p><strong>z</strong> (<em>float</em>) – Z Location</p></li>
-<li><p><strong>interp</strong> (<em>int</em>) – <a class="reference internal" href="#voxe-eval"><span class="std std-ref">VOXE_EVAL constants</span></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>float</em>) – X Location</li>
+<li><strong>y</strong> (<em>float</em>) – Y Location</li>
+<li><strong>z</strong> (<em>float</em>) – Z Location</li>
+<li><strong>interp</strong> (<em>int</em>) – <a class="reference internal" href="#voxe-eval"><span class="std std-ref">VOXE_EVAL constants</span></a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Value at the point or DUMMY if not valid</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Value at the point or DUMMY if not valid</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVOXE.vector">
-<code class="sig-name descname">vector</code><span class="sig-paren">(</span><em class="sig-param">ox</em>, <em class="sig-param">oy</em>, <em class="sig-param">oz</em>, <em class="sig-param">vx</em>, <em class="sig-param">vy</em>, <em class="sig-param">vz</em>, <em class="sig-param">vv</em>, <em class="sig-param">interp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.vector" title="Permalink to this definition">¶</a></dt>
+<code class="descname">vector</code><span class="sig-paren">(</span><em>ox</em>, <em>oy</em>, <em>oz</em>, <em>vx</em>, <em>vy</em>, <em>vz</em>, <em>vv</em>, <em>interp</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVOXE.vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract a profile of data along a vector</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ox</strong> (<em>float</em>) – X Origin</p></li>
-<li><p><strong>oy</strong> (<em>float</em>) – Y Origin</p></li>
-<li><p><strong>oz</strong> (<em>float</em>) – Z Origin</p></li>
-<li><p><strong>vx</strong> (<em>float</em>) – X Delta</p></li>
-<li><p><strong>vy</strong> (<em>float</em>) – Y Delta</p></li>
-<li><p><strong>vz</strong> (<em>float</em>) – Z Delta</p></li>
-<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</p></li>
-<li><p><strong>interp</strong> (<em>int</em>) – <a class="reference internal" href="#voxe-eval"><span class="std std-ref">VOXE_EVAL constants</span></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ox</strong> (<em>float</em>) – X Origin</li>
+<li><strong>oy</strong> (<em>float</em>) – Y Origin</li>
+<li><strong>oz</strong> (<em>float</em>) – Z Origin</li>
+<li><strong>vx</strong> (<em>float</em>) – X Delta</li>
+<li><strong>vy</strong> (<em>float</em>) – Y Delta</li>
+<li><strong>vz</strong> (<em>float</em>) – Z Delta</li>
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (must be double)</li>
+<li><strong>interp</strong> (<em>int</em>) – <a class="reference internal" href="#voxe-eval"><span class="std std-ref">VOXE_EVAL constants</span></a></li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified">New in version 6.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -202,33 +222,33 @@ the voxel.</p>
 <p>Voxel Evaluation modes</p>
 <dl class="data">
 <dt id="geosoft.gxapi.VOXE_EVAL_NEAR">
-<code class="sig-name descname">VOXE_EVAL_NEAR</code><a class="headerlink" href="#geosoft.gxapi.VOXE_EVAL_NEAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">VOXE_EVAL_NEAR</code><a class="headerlink" href="#geosoft.gxapi.VOXE_EVAL_NEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nearest value</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VOXE_EVAL_NEAR</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">VOXE_EVAL_NEAR</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.VOXE_EVAL_INTERP">
-<code class="sig-name descname">VOXE_EVAL_INTERP</code><a class="headerlink" href="#geosoft.gxapi.VOXE_EVAL_INTERP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">VOXE_EVAL_INTERP</code><a class="headerlink" href="#geosoft.gxapi.VOXE_EVAL_INTERP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear Interpolation</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VOXE_EVAL_INTERP</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">VOXE_EVAL_INTERP</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.VOXE_EVAL_BEST">
-<code class="sig-name descname">VOXE_EVAL_BEST</code><a class="headerlink" href="#geosoft.gxapi.VOXE_EVAL_BEST" title="Permalink to this definition">¶</a></dt>
+<code class="descname">VOXE_EVAL_BEST</code><a class="headerlink" href="#geosoft.gxapi.VOXE_EVAL_BEST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Best Interpolation</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">VOXE_EVAL_BEST</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">VOXE_EVAL_BEST</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -248,13 +268,13 @@ the voxel.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>GXVVEXP class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXVVEXP class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,17 +30,19 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -63,91 +66,105 @@
 <span id="gxvvexp"></span><h1>GXVVEXP class<a class="headerlink" href="#gxvvexp-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXVVEXP">
-<em class="property">class </em><code class="sig-name descname">GXVVEXP</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXVVEXP</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXVVEXP class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a> class is similar to the <a class="reference internal" href="GXIEXP.html#geosoft.gxapi.GXIEXP" title="geosoft.gxapi.GXIEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIEXP</span></code></a> class, but is used
 to apply math expressions to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> objects.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXVVEXP.add_vv">
-<code class="sig-name descname">add_vv</code><span class="sig-paren">(</span><em class="sig-param">vv</em>, <em class="sig-param">var</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.add_vv" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_vv</code><span class="sig-paren">(</span><em>vv</em>, <em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.add_vv" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method adds a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to the <a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a> object with a
 variable name.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to add</p></li>
-<li><p><strong>var</strong> (<em>str</em>) – Variable name</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to add</li>
+<li><strong>var</strong> (<em>str</em>) – Variable name</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXVVEXP.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method creates an <a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a> object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a> Object</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP">GXVVEXP</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a> Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP">GXVVEXP</a></td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVVEXP.do_formula">
-<code class="sig-name descname">do_formula</code><span class="sig-paren">(</span><em class="sig-param">formula</em>, <em class="sig-param">unused</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.do_formula" title="Permalink to this definition">¶</a></dt>
+<code class="descname">do_formula</code><span class="sig-paren">(</span><em>formula</em>, <em>unused</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.do_formula" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method runs a formula on the grids.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>formula</strong> (<em>str</em>) – Formula</p></li>
-<li><p><strong>unused</strong> (<em>int</em>) – Legacy parameter, no longer used.</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>formula</strong> (<em>str</em>) – Formula</li>
+<li><strong>unused</strong> (<em>int</em>) – Legacy parameter, no longer used.</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified">New in version 6.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVVEXP.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXVVEXP.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVVEXP.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP">GXVVEXP</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVVEXP</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVVEXP" title="geosoft.gxapi.GXVVEXP">GXVVEXP</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -166,13 +183,13 @@ variable name.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

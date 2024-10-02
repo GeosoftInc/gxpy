@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>GXMVG class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXMVG class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,12 +30,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
+  <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXMVG class</a><ul>
 <li><a class="reference internal" href="#mvg-draw-constants">MVG_DRAW constants</a></li>
@@ -49,11 +50,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -77,27 +80,31 @@
 <span id="gxmvg"></span><h1>GXMVG class<a class="headerlink" href="#gxmvg-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXMVG">
-<em class="property">class </em><code class="sig-name descname">GXMVG</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXMVG</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXMVG class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> class provides the ability to create view graphs.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.axis_x">
-<code class="sig-name descname">axis_x</code><span class="sig-paren">(</span><em class="sig-param">d_y</em>, <em class="sig-param">d_lx</em>, <em class="sig-param">d_rx</em>, <em class="sig-param">d_maj_int</em>, <em class="sig-param">d_min_int</em>, <em class="sig-param">d_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.axis_x" title="Permalink to this definition">¶</a></dt>
+<code class="descname">axis_x</code><span class="sig-paren">(</span><em>d_y</em>, <em>d_lx</em>, <em>d_rx</em>, <em>d_maj_int</em>, <em>d_min_int</em>, <em>d_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.axis_x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw an X axis</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>d_y</strong> (<em>float</em>) – Y location in plot units (mm)</p></li>
-<li><p><strong>d_lx</strong> (<em>float</em>) – Left  X (rescaling unit)</p></li>
-<li><p><strong>d_rx</strong> (<em>float</em>) – Right X (rescaling unit)</p></li>
-<li><p><strong>d_maj_int</strong> (<em>float</em>) – Major tick interval (rescaling unit). Ticks drawn in decades in LOG or LOGLINEAR scale</p></li>
-<li><p><strong>d_min_int</strong> (<em>float</em>) – Minor tick interval  (rescaling unit). Not used in LOG/LOGLINEAR</p></li>
-<li><p><strong>d_size</strong> (<em>float</em>) – Tick size in view units (mm) (negative for down ticks)</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>d_y</strong> (<em>float</em>) – Y location in plot units (mm)</li>
+<li><strong>d_lx</strong> (<em>float</em>) – Left  X (rescaling unit)</li>
+<li><strong>d_rx</strong> (<em>float</em>) – Right X (rescaling unit)</li>
+<li><strong>d_maj_int</strong> (<em>float</em>) – Major tick interval (rescaling unit). Ticks drawn in decades in LOG or LOGLINEAR scale</li>
+<li><strong>d_min_int</strong> (<em>float</em>) – Minor tick interval  (rescaling unit). Not used in LOG/LOGLINEAR</li>
+<li><strong>d_size</strong> (<em>float</em>) – Tick size in view units (mm) (negative for down ticks)</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When Log annotation is applied, nice tick intervals will be
@@ -107,22 +114,26 @@ calculated</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.axis_y">
-<code class="sig-name descname">axis_y</code><span class="sig-paren">(</span><em class="sig-param">d_x</em>, <em class="sig-param">d_by</em>, <em class="sig-param">d_ty</em>, <em class="sig-param">d_maj_int</em>, <em class="sig-param">d_min_int</em>, <em class="sig-param">d_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.axis_y" title="Permalink to this definition">¶</a></dt>
+<code class="descname">axis_y</code><span class="sig-paren">(</span><em>d_x</em>, <em>d_by</em>, <em>d_ty</em>, <em>d_maj_int</em>, <em>d_min_int</em>, <em>d_size</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.axis_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a  Y axis</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>d_x</strong> (<em>float</em>) – X location in plot units (mm)</p></li>
-<li><p><strong>d_by</strong> (<em>float</em>) – Bottom Y (rescaling unit)</p></li>
-<li><p><strong>d_ty</strong> (<em>float</em>) – Top Y (rescaling unit)</p></li>
-<li><p><strong>d_maj_int</strong> (<em>float</em>) – Major tick interval (rescaling unit). Ticks drawn in decades in LOG or LOGLINEAR scale</p></li>
-<li><p><strong>d_min_int</strong> (<em>float</em>) – Minor tick interval  (rescaling unit). Not used in LOG/LOGLINEAR</p></li>
-<li><p><strong>d_size</strong> (<em>float</em>) – Tick size in plot units (mm)(negative for left ticks)</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>d_x</strong> (<em>float</em>) – X location in plot units (mm)</li>
+<li><strong>d_by</strong> (<em>float</em>) – Bottom Y (rescaling unit)</li>
+<li><strong>d_ty</strong> (<em>float</em>) – Top Y (rescaling unit)</li>
+<li><strong>d_maj_int</strong> (<em>float</em>) – Major tick interval (rescaling unit). Ticks drawn in decades in LOG or LOGLINEAR scale</li>
+<li><strong>d_min_int</strong> (<em>float</em>) – Minor tick interval  (rescaling unit). Not used in LOG/LOGLINEAR</li>
+<li><strong>d_size</strong> (<em>float</em>) – Tick size in plot units (mm)(negative for left ticks)</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When Log annotation is applied, nice tick intervals will be
@@ -130,34 +141,38 @@ calculated</p>
 <p>Obsolete</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMVG.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">map</em>, <em class="sig-param">name</em>, <em class="sig-param">xmin_m</em>, <em class="sig-param">ymin_m</em>, <em class="sig-param">xmax_m</em>, <em class="sig-param">ymax_m</em>, <em class="sig-param">xmin_u</em>, <em class="sig-param">ymin_u</em>, <em class="sig-param">xmax_u</em>, <em class="sig-param">ymax_u</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>map</em>, <em>name</em>, <em>xmin_m</em>, <em>ymin_m</em>, <em>xmax_m</em>, <em>ymax_m</em>, <em>xmin_u</em>, <em>ymin_u</em>, <em>xmax_u</em>, <em>ymax_u</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> object</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – H_MAP handle</p></li>
-<li><p><strong>name</strong> (<em>str</em>) – View Name</p></li>
-<li><p><strong>xmin_m</strong> (<em>float</em>) – Minimum X in map unit (mm)</p></li>
-<li><p><strong>ymin_m</strong> (<em>float</em>) – Minimum Y in map unit (mm)</p></li>
-<li><p><strong>xmax_m</strong> (<em>float</em>) – Maximum X in map unit (mm)</p></li>
-<li><p><strong>ymax_m</strong> (<em>float</em>) – Maximum Y in map unit (mm)</p></li>
-<li><p><strong>xmin_u</strong> (<em>float</em>) – Minimum X in view unit (m for example)</p></li>
-<li><p><strong>ymin_u</strong> (<em>float</em>) – Minimum Y in view unit</p></li>
-<li><p><strong>xmax_u</strong> (<em>float</em>) – Maximum X in view unit</p></li>
-<li><p><strong>ymax_u</strong> (<em>float</em>) – Maximum Y in view unit</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – H_MAP handle</li>
+<li><strong>name</strong> (<em>str</em>) – View Name</li>
+<li><strong>xmin_m</strong> (<em>float</em>) – Minimum X in map unit (mm)</li>
+<li><strong>ymin_m</strong> (<em>float</em>) – Minimum Y in map unit (mm)</li>
+<li><strong>xmax_m</strong> (<em>float</em>) – Maximum X in map unit (mm)</li>
+<li><strong>ymax_m</strong> (<em>float</em>) – Maximum Y in map unit (mm)</li>
+<li><strong>xmin_u</strong> (<em>float</em>) – Minimum X in view unit (m for example)</li>
+<li><strong>ymin_u</strong> (<em>float</em>) – Minimum Y in view unit</li>
+<li><strong>xmax_u</strong> (<em>float</em>) – Maximum X in view unit</li>
+<li><strong>ymax_u</strong> (<em>float</em>) – Maximum Y in view unit</li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> handle (NULL if error)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG">GXMVG</a></p>
-</dd>
-</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> handle (NULL if error)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG">GXMVG</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Obsolete</p>
@@ -165,18 +180,20 @@ calculated</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.get_mview">
-<code class="sig-name descname">get_mview</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.get_mview" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_mview</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.get_mview" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> Handle of the Object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> Handle</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW">GXMVIEW</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> Handle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW">GXMVIEW</a></td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Obsolete</p>
@@ -184,23 +201,27 @@ calculated</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.grid">
-<code class="sig-name descname">grid</code><span class="sig-paren">(</span><em class="sig-param">d1st_x</em>, <em class="sig-param">d1st_y</em>, <em class="sig-param">d_x</em>, <em class="sig-param">d_y</em>, <em class="sig-param">d_dx</em>, <em class="sig-param">d_dy</em>, <em class="sig-param">l_type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.grid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">grid</code><span class="sig-paren">(</span><em>d1st_x</em>, <em>d1st_y</em>, <em>d_x</em>, <em>d_y</em>, <em>d_dx</em>, <em>d_dy</em>, <em>l_type</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a grid in the current <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>d1st_x</strong> (<em>float</em>) – X position of 1st vertical grid line to draw (in rescaling unit)</p></li>
-<li><p><strong>d1st_y</strong> (<em>float</em>) – Y position of 1st horizontal grid line to draw (in rescaling unit)</p></li>
-<li><p><strong>d_x</strong> (<em>float</em>) – X grid increment of rescaled map unit (see above Rescaling functions)</p></li>
-<li><p><strong>d_y</strong> (<em>float</em>) – Y grid increment of rescaled map unit (see above Rescaling functions)</p></li>
-<li><p><strong>d_dx</strong> (<em>float</em>) – X dot increment/cross X size of rescaled map unit</p></li>
-<li><p><strong>d_dy</strong> (<em>float</em>) – Y dot increment/cross Y size of rescaled map unit</p></li>
-<li><p><strong>l_type</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-grid"><span class="std std-ref">MVG_GRID constants</span></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>d1st_x</strong> (<em>float</em>) – X position of 1st vertical grid line to draw (in rescaling unit)</li>
+<li><strong>d1st_y</strong> (<em>float</em>) – Y position of 1st horizontal grid line to draw (in rescaling unit)</li>
+<li><strong>d_x</strong> (<em>float</em>) – X grid increment of rescaled map unit (see above Rescaling functions)</li>
+<li><strong>d_y</strong> (<em>float</em>) – Y grid increment of rescaled map unit (see above Rescaling functions)</li>
+<li><strong>d_dx</strong> (<em>float</em>) – X dot increment/cross X size of rescaled map unit</li>
+<li><strong>d_dy</strong> (<em>float</em>) – Y dot increment/cross Y size of rescaled map unit</li>
+<li><strong>l_type</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-grid"><span class="std std-ref">MVG_GRID constants</span></a></li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> The grid will be drawn in the current window.</p>
@@ -212,37 +233,43 @@ ignored.  In addition, grid lines at 0 (zero) and LOGMIN will be drawn.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.label_x">
-<code class="sig-name descname">label_x</code><span class="sig-paren">(</span><em class="sig-param">y</em>, <em class="sig-param">lx</em>, <em class="sig-param">rx</em>, <em class="sig-param">maj_int</em>, <em class="sig-param">just</em>, <em class="sig-param">bound</em>, <em class="sig-param">orient</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.label_x" title="Permalink to this definition">¶</a></dt>
+<code class="descname">label_x</code><span class="sig-paren">(</span><em>y</em>, <em>lx</em>, <em>rx</em>, <em>maj_int</em>, <em>just</em>, <em>bound</em>, <em>orient</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.label_x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label annotations on the X axis</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>y</strong> (<em>float</em>) – Y location in plot units (mm)</p></li>
-<li><p><strong>lx</strong> (<em>float</em>) – Left  X (rescaling unit)</p></li>
-<li><p><strong>rx</strong> (<em>float</em>) – Right X (rescaling unit)</p></li>
-<li><p><strong>maj_int</strong> (<em>float</em>) – Major tick interval (ignored if in LOG or LOGLINEAR rescaling)</p></li>
-<li><p><strong>just</strong> (<em>int</em>) – Label justification <a class="reference internal" href="#mvg-label-just"><span class="std std-ref">MVG_LABEL_JUST constants</span></a></p></li>
-<li><p><strong>bound</strong> (<em>int</em>) – Edge label bounding <a class="reference internal" href="#mvg-label-bound"><span class="std std-ref">MVG_LABEL_BOUND constants</span></a></p></li>
-<li><p><strong>orient</strong> (<em>int</em>) – Label orientation   <a class="reference internal" href="#mvg-label-orient"><span class="std std-ref">MVG_LABEL_ORIENT constants</span></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>y</strong> (<em>float</em>) – Y location in plot units (mm)</li>
+<li><strong>lx</strong> (<em>float</em>) – Left  X (rescaling unit)</li>
+<li><strong>rx</strong> (<em>float</em>) – Right X (rescaling unit)</li>
+<li><strong>maj_int</strong> (<em>float</em>) – Major tick interval (ignored if in LOG or LOGLINEAR rescaling)</li>
+<li><strong>just</strong> (<em>int</em>) – Label justification <a class="reference internal" href="#mvg-label-just"><span class="std std-ref">MVG_LABEL_JUST constants</span></a></li>
+<li><strong>bound</strong> (<em>int</em>) – Edge label bounding <a class="reference internal" href="#mvg-label-bound"><span class="std std-ref">MVG_LABEL_BOUND constants</span></a></li>
+<li><strong>orient</strong> (<em>int</em>) – Label orientation   <a class="reference internal" href="#mvg-label-orient"><span class="std std-ref">MVG_LABEL_ORIENT constants</span></a></li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Label bounding will justify edge labels to be inside
@@ -250,30 +277,34 @@ the bar limits.</p>
 <p>When Log annotation is applied, labels will be drawn in decades.</p>
 <p>Obsolete</p>
 <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>sAxisX_MVG</p>
+<p class="first admonition-title">See also</p>
+<p class="last">sAxisX_MVG</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.label_y">
-<code class="sig-name descname">label_y</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">by</em>, <em class="sig-param">ty</em>, <em class="sig-param">maj_int</em>, <em class="sig-param">just</em>, <em class="sig-param">bound</em>, <em class="sig-param">orient</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.label_y" title="Permalink to this definition">¶</a></dt>
+<code class="descname">label_y</code><span class="sig-paren">(</span><em>x</em>, <em>by</em>, <em>ty</em>, <em>maj_int</em>, <em>just</em>, <em>bound</em>, <em>orient</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.label_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label annotations on the Y axis</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>float</em>) – X location in plot units (mm)</p></li>
-<li><p><strong>by</strong> (<em>float</em>) – Bottom  Y (rescaling unit)</p></li>
-<li><p><strong>ty</strong> (<em>float</em>) – Top Y (rescaling unit)</p></li>
-<li><p><strong>maj_int</strong> (<em>float</em>) – Label interval (ignored if in LOG or LOGLINEAR rescaling)</p></li>
-<li><p><strong>just</strong> (<em>int</em>) – Label justification <a class="reference internal" href="#mvg-label-just"><span class="std std-ref">MVG_LABEL_JUST constants</span></a></p></li>
-<li><p><strong>bound</strong> (<em>int</em>) – Edge label bounding <a class="reference internal" href="#mvg-label-bound"><span class="std std-ref">MVG_LABEL_BOUND constants</span></a></p></li>
-<li><p><strong>orient</strong> (<em>int</em>) – Label orientation   <a class="reference internal" href="#mvg-label-orient"><span class="std std-ref">MVG_LABEL_ORIENT constants</span></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) – X location in plot units (mm)</li>
+<li><strong>by</strong> (<em>float</em>) – Bottom  Y (rescaling unit)</li>
+<li><strong>ty</strong> (<em>float</em>) – Top Y (rescaling unit)</li>
+<li><strong>maj_int</strong> (<em>float</em>) – Label interval (ignored if in LOG or LOGLINEAR rescaling)</li>
+<li><strong>just</strong> (<em>int</em>) – Label justification <a class="reference internal" href="#mvg-label-just"><span class="std std-ref">MVG_LABEL_JUST constants</span></a></li>
+<li><strong>bound</strong> (<em>int</em>) – Edge label bounding <a class="reference internal" href="#mvg-label-bound"><span class="std std-ref">MVG_LABEL_BOUND constants</span></a></li>
+<li><strong>orient</strong> (<em>int</em>) – Label orientation   <a class="reference internal" href="#mvg-label-orient"><span class="std std-ref">MVG_LABEL_ORIENT constants</span></a></li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Label bounding will justify edge labels to be inside
@@ -281,42 +312,48 @@ the bar limits.</p>
 <p>When Log annotation is applied, labels will be drawn in decades.</p>
 <p>Obsolete</p>
 <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>sAxisY_MVG</p>
+<p class="first admonition-title">See also</p>
+<p class="last">sAxisY_MVG</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXMVG.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG">GXMVG</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG">GXMVG</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.poly_line_va">
-<code class="sig-name descname">poly_line_va</code><span class="sig-paren">(</span><em class="sig-param">draw</em>, <em class="sig-param">wrap</em>, <em class="sig-param">vv_x</em>, <em class="sig-param">va</em>, <em class="sig-param">vv_array</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.poly_line_va" title="Permalink to this definition">¶</a></dt>
+<code class="descname">poly_line_va</code><span class="sig-paren">(</span><em>draw</em>, <em>wrap</em>, <em>vv_x</em>, <em>va</em>, <em>vv_array</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.poly_line_va" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates PolyLines/polygons from <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> and <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>draw</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-draw"><span class="std std-ref">MVG_DRAW constants</span></a></p></li>
-<li><p><strong>wrap</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-wrap"><span class="std std-ref">MVG_WRAP constants</span></a></p></li>
-<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
-<li><p><strong>va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Y VAs</p></li>
-<li><p><strong>vv_array</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> containing list of <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> ranges, such as 1,2 40 … Entire <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is drawn if this <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is empty.</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>draw</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-draw"><span class="std std-ref">MVG_DRAW constants</span></a></li>
+<li><strong>wrap</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-wrap"><span class="std std-ref">MVG_WRAP constants</span></a></li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+<li><strong>va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Y VAs</li>
+<li><strong>vv_array</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> containing list of <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> ranges, such as 1,2 40 … Entire <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is drawn if this <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is empty.</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> If the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> contains dummies, the polylines
@@ -329,20 +366,24 @@ only POLYLINES are drawn.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.poly_line_vv">
-<code class="sig-name descname">poly_line_vv</code><span class="sig-paren">(</span><em class="sig-param">draw</em>, <em class="sig-param">wrap</em>, <em class="sig-param">vv_x</em>, <em class="sig-param">vv_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.poly_line_vv" title="Permalink to this definition">¶</a></dt>
+<code class="descname">poly_line_vv</code><span class="sig-paren">(</span><em>draw</em>, <em>wrap</em>, <em>vv_x</em>, <em>vv_y</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.poly_line_vv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates PolyLines/polygons from <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> and <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>draw</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-draw"><span class="std std-ref">MVG_DRAW constants</span></a></p></li>
-<li><p><strong>wrap</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-wrap"><span class="std std-ref">MVG_WRAP constants</span></a></p></li>
-<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
-<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>draw</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-draw"><span class="std std-ref">MVG_DRAW constants</span></a></li>
+<li><strong>wrap</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-wrap"><span class="std std-ref">MVG_WRAP constants</span></a></li>
+<li><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
+<li><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> If the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> contains dummies, the polylines
@@ -355,20 +396,24 @@ only POLYLINES are drawn.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.rescale_x_range">
-<code class="sig-name descname">rescale_x_range</code><span class="sig-paren">(</span><em class="sig-param">scale</em>, <em class="sig-param">min</em>, <em class="sig-param">max</em>, <em class="sig-param">log_min</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.rescale_x_range" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rescale_x_range</code><span class="sig-paren">(</span><em>scale</em>, <em>min</em>, <em>max</em>, <em>log_min</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.rescale_x_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Re-scale horizontal axis</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>scale</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-scale"><span class="std std-ref">MVG_SCALE constants</span></a></p></li>
-<li><p><strong>min</strong> (<em>float</em>) – Scale information: new minimum X</p></li>
-<li><p><strong>max</strong> (<em>float</em>) – Scale information: new maximum X</p></li>
-<li><p><strong>log_min</strong> (<em>float</em>) – Scale information: minimum X to apply log10, it is defined only for LOGLINEAR scale</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>scale</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-scale"><span class="std std-ref">MVG_SCALE constants</span></a></li>
+<li><strong>min</strong> (<em>float</em>) – Scale information: new minimum X</li>
+<li><strong>max</strong> (<em>float</em>) – Scale information: new maximum X</li>
+<li><strong>log_min</strong> (<em>float</em>) – Scale information: minimum X to apply log10, it is defined only for LOGLINEAR scale</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When RescaleX_MVG is used, only the scaling information
@@ -378,20 +423,24 @@ related to X axis will be considered</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXMVG.rescale_y_range">
-<code class="sig-name descname">rescale_y_range</code><span class="sig-paren">(</span><em class="sig-param">scale</em>, <em class="sig-param">min</em>, <em class="sig-param">max</em>, <em class="sig-param">log_min</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.rescale_y_range" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rescale_y_range</code><span class="sig-paren">(</span><em>scale</em>, <em>min</em>, <em>max</em>, <em>log_min</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMVG.rescale_y_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Re-scale vertical axis</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>scale</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-scale"><span class="std std-ref">MVG_SCALE constants</span></a></p></li>
-<li><p><strong>min</strong> (<em>float</em>) – Scale information: new minimum Y</p></li>
-<li><p><strong>max</strong> (<em>float</em>) – Scale information: new maximum Y</p></li>
-<li><p><strong>log_min</strong> (<em>float</em>) – Scale information: minimum Y to apply log10, it is defined only for LOGLINEAR scale</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>scale</strong> (<em>int</em>) – <a class="reference internal" href="#mvg-scale"><span class="std std-ref">MVG_SCALE constants</span></a></li>
+<li><strong>min</strong> (<em>float</em>) – Scale information: new minimum Y</li>
+<li><strong>max</strong> (<em>float</em>) – Scale information: new maximum Y</li>
+<li><strong>log_min</strong> (<em>float</em>) – Scale information: minimum Y to apply log10, it is defined only for LOGLINEAR scale</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When RescaleY_MVG is used, only the scaling information
@@ -406,22 +455,22 @@ related to Y axis will be considered</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> draw define</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_DRAW_POLYLINE">
-<code class="sig-name descname">MVG_DRAW_POLYLINE</code><a class="headerlink" href="#geosoft.gxapi.MVG_DRAW_POLYLINE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_DRAW_POLYLINE</code><a class="headerlink" href="#geosoft.gxapi.MVG_DRAW_POLYLINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Polyline</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_DRAW_POLYLINE</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_DRAW_POLYLINE</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_DRAW_POLYGON">
-<code class="sig-name descname">MVG_DRAW_POLYGON</code><a class="headerlink" href="#geosoft.gxapi.MVG_DRAW_POLYGON" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_DRAW_POLYGON</code><a class="headerlink" href="#geosoft.gxapi.MVG_DRAW_POLYGON" title="Permalink to this definition">¶</a></dt>
 <dd><p>Polygon</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_DRAW_POLYGON</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_DRAW_POLYGON</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -432,33 +481,33 @@ related to Y axis will be considered</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> grid define</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_GRID_DOT">
-<code class="sig-name descname">MVG_GRID_DOT</code><a class="headerlink" href="#geosoft.gxapi.MVG_GRID_DOT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_GRID_DOT</code><a class="headerlink" href="#geosoft.gxapi.MVG_GRID_DOT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dot</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_GRID_DOT</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_GRID_DOT</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_GRID_LINE">
-<code class="sig-name descname">MVG_GRID_LINE</code><a class="headerlink" href="#geosoft.gxapi.MVG_GRID_LINE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_GRID_LINE</code><a class="headerlink" href="#geosoft.gxapi.MVG_GRID_LINE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Line</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_GRID_LINE</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_GRID_LINE</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_GRID_CROSS">
-<code class="sig-name descname">MVG_GRID_CROSS</code><a class="headerlink" href="#geosoft.gxapi.MVG_GRID_CROSS" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_GRID_CROSS</code><a class="headerlink" href="#geosoft.gxapi.MVG_GRID_CROSS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cross</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_GRID_CROSS</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_GRID_CROSS</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -469,22 +518,22 @@ related to Y axis will be considered</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> label bound define</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_BOUND_NO">
-<code class="sig-name descname">MVG_LABEL_BOUND_NO</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_BOUND_NO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_BOUND_NO</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_BOUND_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_BOUND_NO</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_BOUND_NO</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_BOUND_YES">
-<code class="sig-name descname">MVG_LABEL_BOUND_YES</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_BOUND_YES" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_BOUND_YES</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_BOUND_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_BOUND_YES</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_BOUND_YES</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -495,44 +544,44 @@ related to Y axis will be considered</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> label justification define</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_JUST_TOP">
-<code class="sig-name descname">MVG_LABEL_JUST_TOP</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_TOP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_JUST_TOP</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_TOP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Top</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_JUST_TOP</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_JUST_TOP</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_JUST_BOTTOM">
-<code class="sig-name descname">MVG_LABEL_JUST_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_JUST_BOTTOM</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_BOTTOM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bottom</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_JUST_BOTTOM</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_JUST_BOTTOM</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_JUST_LEFT">
-<code class="sig-name descname">MVG_LABEL_JUST_LEFT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_JUST_LEFT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Left</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_JUST_LEFT</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_JUST_LEFT</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_JUST_RIGHT">
-<code class="sig-name descname">MVG_LABEL_JUST_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_JUST_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_JUST_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Right</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_JUST_RIGHT</code><em class="property"> = 3</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_JUST_RIGHT</code><em class="property"> = 3</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -543,33 +592,33 @@ related to Y axis will be considered</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> label orientation</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_ORIENT_HORIZONTAL">
-<code class="sig-name descname">MVG_LABEL_ORIENT_HORIZONTAL</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_ORIENT_HORIZONTAL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_ORIENT_HORIZONTAL</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_ORIENT_HORIZONTAL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Horizontal</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_ORIENT_HORIZONTAL</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_ORIENT_HORIZONTAL</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_ORIENT_TOP_RIGHT">
-<code class="sig-name descname">MVG_LABEL_ORIENT_TOP_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_ORIENT_TOP_RIGHT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Top right</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_ORIENT_TOP_RIGHT</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_ORIENT_TOP_RIGHT</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_LABEL_ORIENT_TOP_LEFT">
-<code class="sig-name descname">MVG_LABEL_ORIENT_TOP_LEFT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_LABEL_ORIENT_TOP_LEFT</code><a class="headerlink" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Top left</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_LABEL_ORIENT_TOP_LEFT</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_LABEL_ORIENT_TOP_LEFT</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -580,33 +629,33 @@ related to Y axis will be considered</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> scale define</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_SCALE_LINEAR">
-<code class="sig-name descname">MVG_SCALE_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.MVG_SCALE_LINEAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_SCALE_LINEAR</code><a class="headerlink" href="#geosoft.gxapi.MVG_SCALE_LINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_SCALE_LINEAR</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_SCALE_LINEAR</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_SCALE_LOG">
-<code class="sig-name descname">MVG_SCALE_LOG</code><a class="headerlink" href="#geosoft.gxapi.MVG_SCALE_LOG" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_SCALE_LOG</code><a class="headerlink" href="#geosoft.gxapi.MVG_SCALE_LOG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_SCALE_LOG</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_SCALE_LOG</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_SCALE_LOGLINEAR">
-<code class="sig-name descname">MVG_SCALE_LOGLINEAR</code><a class="headerlink" href="#geosoft.gxapi.MVG_SCALE_LOGLINEAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_SCALE_LOGLINEAR</code><a class="headerlink" href="#geosoft.gxapi.MVG_SCALE_LOGLINEAR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loglinear</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_SCALE_LOGLINEAR</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_SCALE_LOGLINEAR</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -617,22 +666,22 @@ related to Y axis will be considered</p>
 <p><a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> wrap define</p>
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_WRAP_NO">
-<code class="sig-name descname">MVG_WRAP_NO</code><a class="headerlink" href="#geosoft.gxapi.MVG_WRAP_NO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_WRAP_NO</code><a class="headerlink" href="#geosoft.gxapi.MVG_WRAP_NO" title="Permalink to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_WRAP_NO</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_WRAP_NO</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.MVG_WRAP_YES">
-<code class="sig-name descname">MVG_WRAP_YES</code><a class="headerlink" href="#geosoft.gxapi.MVG_WRAP_YES" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MVG_WRAP_YES</code><a class="headerlink" href="#geosoft.gxapi.MVG_WRAP_YES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">MVG_WRAP_YES</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">MVG_WRAP_YES</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -652,13 +701,13 @@ related to Y axis will be considered</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

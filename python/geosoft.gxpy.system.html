@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>geosoft.gxpy.system submodule &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>geosoft.gxpy.system submodule &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,17 +30,19 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -63,84 +66,92 @@
 <span id="geosoft-gxpy-system-submodule"></span><h1>geosoft.gxpy.system submodule<a class="headerlink" href="#module-geosoft.gxpy.system" title="Permalink to this headline">¶</a></h1>
 <p>Geosoft system functions.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_system.py">Tests</a></p>
+<p class="first admonition-title">Note</p>
+<p class="last">Regression tests provide usage examples: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_system.py">Tests</a></p>
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.system.GXSysException">
-<em class="property">exception </em><code class="sig-name descname">GXSysException</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.GXSysException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">GXSysException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.GXSysException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.system" title="geosoft.gxpy.system"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.system</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.app_name">
-<code class="sig-name descname">app_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.app_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">app_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.app_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns application script name.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.call_location">
-<code class="sig-name descname">call_location</code><span class="sig-paren">(</span><em class="sig-param">stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.call_location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">call_location</code><span class="sig-paren">(</span><em>stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.call_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns function call location including file and line number as a string</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>stack</strong> – depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>string formatted as ‘&lt;file&gt;, line XX in &lt;function&gt;’, empty string if too deep into the stack</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stack</strong> – depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string formatted as ‘&lt;file&gt;, line XX in &lt;function&gt;’, empty string if too deep into the stack</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.func_name">
-<code class="sig-name descname">func_name</code><span class="sig-paren">(</span><em class="sig-param">stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.func_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">func_name</code><span class="sig-paren">(</span><em>stack=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.func_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns function name.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>stack</strong> – depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>function name, None if too deep into the stack</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stack</strong> – depth into the calling stack, 0 (default) is this function, 1 is parent, etc.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">function name, None if too deep into the stack</td>
+</tr>
+</tbody>
+</table>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 9.2: </span>added stack</p>
+<p><span class="versionmodified">Changed in version 9.2: </span>added stack</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.parallel_map">
-<code class="sig-name descname">parallel_map</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">l</em>, <em class="sig-param">threads=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.parallel_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">parallel_map</code><span class="sig-paren">(</span><em>f</em>, <em>l</em>, <em>threads=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.parallel_map" title="Permalink to this definition">¶</a></dt>
 <dd><p>A parallel equivalent of the map() built-in Python function (it supports only one iterable argument though).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> – function to run in parallel f(). Must be thread-safe, of course.</p></li>
-<li><p><strong>l</strong> – iterable list of arguments to pass to each thread.  Use tuples for multiple arguments.</p></li>
-<li><p><strong>threads</strong> – number of threads to use, default is number of cores on computer</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>f</strong> – function to run in parallel f(). Must be thread-safe, of course.</li>
+<li><strong>l</strong> – iterable list of arguments to pass to each thread.  Use tuples for multiple arguments.</li>
+<li><strong>threads</strong> – number of threads to use, default is number of cores on computer</li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list of results from each call to f(), in order of iterable l.</p>
-</dd>
-<dt class="field-odd">Example</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gxpy.system</span> <span class="k">as</span> <span class="nn">gsys</span>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of results from each call to f(), in order of iterable l.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gxpy.system</span> <span class="k">as</span> <span class="nn">gsys</span>
 
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">ab</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
@@ -161,82 +172,90 @@
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.remove_dir">
-<code class="sig-name descname">remove_dir</code><span class="sig-paren">(</span><em class="sig-param">directory</em>, <em class="sig-param">wait=200</em>, <em class="sig-param">tries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.remove_dir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_dir</code><span class="sig-paren">(</span><em>directory</em>, <em>wait=200</em>, <em>tries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.remove_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Robust directory removal, with timed retries to allow for OS timing lags.  If you need to use this
 you may have a coding error in which you are not properly releasing a resource.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>directory</strong> – directory name, must be a directory</p></li>
-<li><p><strong>wait</strong> – wait between retries in milliseconds</p></li>
-<li><p><strong>tries</strong> – number of times to retry</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>directory</strong> – directory name, must be a directory</li>
+<li><strong>wait</strong> – wait between retries in milliseconds</li>
+<li><strong>tries</strong> – number of times to retry</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.translate">
-<code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.translate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">translate</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.translate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Translate string to user language.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.unzip">
-<code class="sig-name descname">unzip</code><span class="sig-paren">(</span><em class="sig-param">zip_file_name</em>, <em class="sig-param">folder=None</em>, <em class="sig-param">report=None</em>, <em class="sig-param">checkready=25</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.unzip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">unzip</code><span class="sig-paren">(</span><em>zip_file_name</em>, <em>folder=None</em>, <em>report=None</em>, <em>checkready=25</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.unzip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decompress and write the content of a zip file to a folder.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>zip_file_name</strong> – zip file name, must have extension</p></li>
-<li><p><strong>folder</strong> – folder to write results, create it it does not exist</p></li>
-<li><p><strong>report</strong> – ignored</p></li>
-<li><p><strong>checkready</strong> – time in 1/10 second to check completion of each file, default 25</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zip_file_name</strong> – zip file name, must have extension</li>
+<li><strong>folder</strong> – folder to write results, create it it does not exist</li>
+<li><strong>report</strong> – ignored</li>
+<li><strong>checkready</strong> – time in 1/10 second to check completion of each file, default 25</li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(folder that contains unzipped files, list of files)</p>
-</dd>
-</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(folder that contains unzipped files, list of files)</p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.system.wait_on_file">
-<code class="sig-name descname">wait_on_file</code><span class="sig-paren">(</span><em class="sig-param">fileName</em>, <em class="sig-param">wait=100</em>, <em class="sig-param">retries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.wait_on_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wait_on_file</code><span class="sig-paren">(</span><em>fileName</em>, <em>wait=100</em>, <em>retries=10</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.system.wait_on_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Working with large files on systems that cache the file can cause a situation
 where the file is not yet completely written out before an attempt is made to open
 a file that has just been closed.</p>
 <p>Call this function to wait for the file to be available.  Best to do this right after
 you know that you may have written out a large file, or in a try/except around a file
 open.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fileName</strong> – </p>
-</dd>
-<dt class="field-even">Wait</dt>
-<dd class="field-even"><p>time in milliseconds to wait between retries</p>
-</dd>
-<dt class="field-odd">Retries</dt>
-<dd class="field-odd"><p>maximum number of retries</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p>GX_SysException if fail to get read access to the file.</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fileName</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Wait:</th><td class="field-body">time in milliseconds to wait between retries</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Retries:</th><td class="field-body">maximum number of retries</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">GX_SysException if fail to get read access to the file.</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.1.</span></p>
+<p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
 </dd></dl>
 
@@ -254,13 +273,13 @@ open.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -896,6 +896,116 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.7.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces` Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces
+
+
+  
+Version 9.7
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXContext.get_key_based_product_dirs` Gets key product folders based on geosoft.key file and registry
+
+:func:`geosoft.gxapi.GXDH.convert_oriented_core_dip_dir_for_hole_survey` Converted alpha/beta values in oriented cores to dip/dip direction.
+
+:func:`geosoft.gxapi.GXDH.desurvey_from_to` Calculate survey locations and depth from a hole survey using from/to values
+
+:func:`geosoft.gxapi.GXDH.desurvey` Calculate survey locations and depth from a hole survey.
+
+:func:`geosoft.gxapi.GXEDB.profile_shown` Return index of first profile window in which a profile is shown
+
+:func:`geosoft.gxapi.GXGU.gravity_still_reading_database_correction` Gravity Still Reading Correction on selected lines, using a still readings database
+
+:func:`geosoft.gxapi.GXIMG.extent` Get the img extents
+
+:func:`geosoft.gxapi.GXIP.get_grids_vv` Get a VV populated with grids created making pseudosections by this IP object
+
+:func:`geosoft.gxapi.GXIP.locate_contributing_electrodes_3d` Locate on a 3D view electrodes selected in a database row.
+
+:func:`geosoft.gxapi.GXMULTIGRID3D.export_to_binary_ex` Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File, with dummy replacement.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_binary_ex` Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File, with dummy replacement.
+
+:func:`geosoft.gxapi.GXMVIEW.get_maker_name` Used to retrieve the maker for a particular view group.
+
+:func:`geosoft.gxapi.GXMVIEW.get_surface_filename` Get the surface filename.
+
+:func:`geosoft.gxapi.GXMVIEW.is_group_exportable` Query whether the group is an exportable type.
+
+:func:`geosoft.gxapi.GXMVIEW.is_plane_visible` Is the plane visible?
+
+:func:`geosoft.gxapi.GXMVIEW.is_surface_item_visible` Is the surface item visible?
+
+:func:`geosoft.gxapi.GXMVIEW.is_surface_plane` Is a surface plane?
+
+:func:`geosoft.gxapi.GXMVIEW.view_group_json` Generate a JSON representation of a Group.
+
+:func:`geosoft.gxapi.GXPROJ.add_grid_document` Adds (and opens) a grid document file in the current project with a particular colour distribution and colour file.
+
+:func:`geosoft.gxapi.GXSEGYREADER.add_trace_filter` Add a filter based on trace header fields.
+
+:func:`geosoft.gxapi.GXSEGYREADER.clear_trace_dummy_value` Disables the trace dummy value.
+
+:func:`geosoft.gxapi.GXSEGYREADER.clear_trace_filters` Remove all active trace filters.
+
+:func:`geosoft.gxapi.GXSEGYREADER.clear_user_range` Clears inline and crossline ranges to clamp to.
+
+:func:`geosoft.gxapi.GXSEGYREADER.clear_user_z_range` Clears Z-range to clamp to, disbling z-clamping.
+
+:func:`geosoft.gxapi.GXSEGYREADER.count_traces_that_pass_filters` Count the number of traces that pass the currently-configured trace filters.
+
+:func:`geosoft.gxapi.GXSEGYREADER.export_files` Exports contents of SEG Y file to voxel and/or database.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_clip_xy_extents` Gets the X,Y extents to clip the voxel.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_is_3d` Returns true if the file is 3D false if it is 2D.
+
+:func:`geosoft.gxapi.GXSEGYREADER.get_slice_filenames` Returns a list of the filenames of the XY slices that will be exported.
+
+:func:`geosoft.gxapi.GXSEGYREADER.override_navigation_2d` Specify the X/Y coordinates of the traces, instead of using values from the trace headers.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_crossline_slice_indices` Which crossline slices to export to a section grid.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_gdb_output_filename` Exports contents of SEG Y file to a database.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_inline_slice_indices` Which inline slices to export to a section grid.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_is_3d` Specify if the input SEG-Y file is 3D or 2D.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_section_output_filename` Exports contents of SEG Y file to a crooked section.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_slice_output_prefix` Exports inline or crossline slices to a section grid.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_trace_dummy_value` Sets the trace dummy value.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_user_crossline_range` Sets crossline-range to clamp to.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_user_inline_range` Sets inline-range to clamp to.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_user_z_range` Sets Z-range to clamp to.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename` Exports contents of SEG Y file to voxel.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_z_decimation` Sets Z decimation factor.
+
+:func:`geosoft.gxapi.GXSEGYREADER.set_z_slice_indices` Which z slices to export to a section grid.
+
+:func:`geosoft.gxapi.GXSYS.get_api_key` Get the API Key if signed in
+
+:func:`geosoft.gxapi.GXSYS.get_view_url` Get the View URL
+
+
+  
 Version 9.6
 -----------------
 

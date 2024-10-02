@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>geosoft.gxpy.viewer submodule &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>geosoft.gxpy.viewer submodule &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,17 +30,19 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -63,22 +66,22 @@
 <span id="geosoft-gxpy-viewer-submodule"></span><h1>geosoft.gxpy.viewer submodule<a class="headerlink" href="#module-geosoft.gxpy.viewer" title="Permalink to this headline">¶</a></h1>
 <p>Geosoft Viewers.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Test example: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/examples/stand-alone/test_viewer.py">Tests</a></p>
+<p class="first admonition-title">Note</p>
+<p class="last">Test example: <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/examples/stand-alone/test_viewer.py">Tests</a></p>
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.viewer.ViewerException">
-<em class="property">exception </em><code class="sig-name descname">ViewerException</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.viewer.ViewerException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descname">ViewerException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.viewer.ViewerException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.GXRuntimeError</span></code></p>
 <p>Exceptions from <a class="reference internal" href="#module-geosoft.gxpy.viewer" title="geosoft.gxpy.viewer"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.viewer</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="geosoft.gxpy.viewer.view_document">
-<code class="sig-name descname">view_document</code><span class="sig-paren">(</span><em class="sig-param">document_file_name</em>, <em class="sig-param">wait_for_close=True</em>, <em class="sig-param">env=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.viewer.view_document" title="Permalink to this definition">¶</a></dt>
+<code class="descname">view_document</code><span class="sig-paren">(</span><em>document_file_name</em>, <em>wait_for_close=True</em>, <em>env=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.viewer.view_document" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open Geosoft Desktop application for viewing a supported Geosoft document type.  These include:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdb</span> <span class="n">file</span>
 <span class="nb">map</span> <span class="n">files</span>
@@ -91,18 +94,22 @@
 <span class="n">GM</span><span class="o">-</span><span class="n">SYS</span> <span class="mi">3</span><span class="n">d</span> <span class="n">models</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>document_file_name</strong> – document file name, require decorators for grids, e.g. testgrid.grd(GRD).  
-Supports all documents that can be openned by Geosoft Desktop.</p></li>
-<li><p><strong>wait_for_close</strong> – wait for process to exit, default <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><strong>env</strong> – environment variables to add to os environment variables</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>document_file_name</strong> – document file name, require decorators for grids, e.g. testgrid.grd(GRD).  
+Supports all documents that can be openned by Geosoft Desktop.</li>
+<li><strong>wait_for_close</strong> – wait for process to exit, default <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></li>
+<li><strong>env</strong> – environment variables to add to os environment variables</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.2.</span></p>
+<p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 </dd></dl>
 
@@ -120,13 +127,13 @@ Supports all documents that can be openned by Geosoft Desktop.</p></li>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

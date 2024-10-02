@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>GXGEOSTRING class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXGEOSTRING class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,12 +30,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
+  <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">GXGEOSTRING class</a><ul>
 <li><a class="reference internal" href="#geostring-open-constants">GEOSTRING_OPEN constants</a></li>
@@ -44,11 +45,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -72,7 +75,7 @@
 <span id="gxgeostring"></span><h1>GXGEOSTRING class<a class="headerlink" href="#gxgeostring-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXGEOSTRING">
-<em class="property">class </em><code class="sig-name descname">GXGEOSTRING</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXGEOSTRING</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXGEOSTRING class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a> class is used to read information stored in Geostring files 
 (<code class="docutils literal notranslate"><span class="pre">*.geosoft_string</span></code>). Geosoft geostrings are 3D vector files that store digitized 
@@ -81,60 +84,70 @@ stored in the same file. This API currently only provides read access,
 but read/write support could be added in the future.</p>
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_all_shapes">
-<code class="sig-name descname">get_all_shapes</code><span class="sig-paren">(</span><em class="sig-param">lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_all_shapes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_all_shapes</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_all_shapes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the all shapes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_feature_properties">
-<code class="sig-name descname">get_feature_properties</code><span class="sig-paren">(</span><em class="sig-param">guid</em>, <em class="sig-param">name</em>, <em class="sig-param">description</em>, <em class="sig-param">polygon</em>, <em class="sig-param">pat_number</em>, <em class="sig-param">pat_size</em>, <em class="sig-param">pat_thick</em>, <em class="sig-param">pat_density</em>, <em class="sig-param">pat_color</em>, <em class="sig-param">pat_bg_color</em>, <em class="sig-param">line_style</em>, <em class="sig-param">line_thickness</em>, <em class="sig-param">line_pitch</em>, <em class="sig-param">line_color</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_feature_properties" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_feature_properties</code><span class="sig-paren">(</span><em>guid</em>, <em>name</em>, <em>description</em>, <em>polygon</em>, <em>pat_number</em>, <em>pat_size</em>, <em>pat_thick</em>, <em>pat_density</em>, <em>pat_color</em>, <em>pat_bg_color</em>, <em>line_style</em>, <em>line_thickness</em>, <em>line_pitch</em>, <em>line_color</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_feature_properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a feature’s properties</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>guid</strong> (<em>str</em>) – Feature GUID</p></li>
-<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name</p></li>
-<li><p><strong>description</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Description</p></li>
-<li><p><strong>polygon</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) – Indicates if feature is described by polygons (shapes are polylines if not set)</p></li>
-<li><p><strong>pat_number</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The fill pattern number (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_number" title="geosoft.gxapi.GXMVIEW.pat_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_number</span></code></a>)</p></li>
-<li><p><strong>pat_size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The fill pattern size (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_size" title="geosoft.gxapi.GXMVIEW.pat_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_size</span></code></a>)</p></li>
-<li><p><strong>pat_thick</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The fill pattern thickness (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_thick" title="geosoft.gxapi.GXMVIEW.pat_thick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_thick</span></code></a>)</p></li>
-<li><p><strong>pat_density</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The fill pattern density (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_density" title="geosoft.gxapi.GXMVIEW.pat_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_density</span></code></a>)</p></li>
-<li><p><strong>pat_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The fill color (an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> color)</p></li>
-<li><p><strong>pat_bg_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The fill background color (an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> color)</p></li>
-<li><p><strong>line_style</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The line style (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.line_style" title="geosoft.gxapi.GXMVIEW.line_style"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.line_style</span></code></a>)</p></li>
-<li><p><strong>line_thickness</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The line thickness (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.line_thick" title="geosoft.gxapi.GXMVIEW.line_thick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.line_thick</span></code></a>)</p></li>
-<li><p><strong>line_pitch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The dash pattern pitch (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.line_style" title="geosoft.gxapi.GXMVIEW.line_style"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.line_style</span></code></a>)</p></li>
-<li><p><strong>line_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The line color (an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> color)</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>guid</strong> (<em>str</em>) – Feature GUID</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name</li>
+<li><strong>description</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Description</li>
+<li><strong>polygon</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.bool_ref" title="geosoft.gxapi.bool_ref"><em>bool_ref</em></a>) – Indicates if feature is described by polygons (shapes are polylines if not set)</li>
+<li><strong>pat_number</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The fill pattern number (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_number" title="geosoft.gxapi.GXMVIEW.pat_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_number</span></code></a>)</li>
+<li><strong>pat_size</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The fill pattern size (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_size" title="geosoft.gxapi.GXMVIEW.pat_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_size</span></code></a>)</li>
+<li><strong>pat_thick</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The fill pattern thickness (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_thick" title="geosoft.gxapi.GXMVIEW.pat_thick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_thick</span></code></a>)</li>
+<li><strong>pat_density</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The fill pattern density (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.pat_density" title="geosoft.gxapi.GXMVIEW.pat_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.pat_density</span></code></a>)</li>
+<li><strong>pat_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The fill color (an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> color)</li>
+<li><strong>pat_bg_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The fill background color (an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> color)</li>
+<li><strong>line_style</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The line style (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.line_style" title="geosoft.gxapi.GXMVIEW.line_style"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.line_style</span></code></a>)</li>
+<li><strong>line_thickness</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The line thickness (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.line_thick" title="geosoft.gxapi.GXMVIEW.line_thick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.line_thick</span></code></a>)</li>
+<li><strong>line_pitch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – The dash pattern pitch (see <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.line_style" title="geosoft.gxapi.GXMVIEW.line_style"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.line_style</span></code></a>)</li>
+<li><strong>line_color</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – The line color (an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> color)</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_features">
-<code class="sig-name descname">get_features</code><span class="sig-paren">(</span><em class="sig-param">lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_features" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_features</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_features" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the features</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> List items are returned with feature GUID in name and feature name in value.</p>
@@ -142,59 +155,69 @@ but read/write support could be added in the future.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_ipj">
-<code class="sig-name descname">get_ipj</code><span class="sig-paren">(</span><em class="sig-param">ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_ipj" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ipj</code><span class="sig-paren">(</span><em>ipj</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_ipj" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the coordinate system of the Geostring.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> in which to place the Geostring coordinate system</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> in which to place the Geostring coordinate system</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_section_properties">
-<code class="sig-name descname">get_section_properties</code><span class="sig-paren">(</span><em class="sig-param">guid</em>, <em class="sig-param">name</em>, <em class="sig-param">container_name</em>, <em class="sig-param">orientation</em>, <em class="sig-param">easting</em>, <em class="sig-param">northing</em>, <em class="sig-param">elevation</em>, <em class="sig-param">azimuth</em>, <em class="sig-param">swing</em>, <em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">c</em>, <em class="sig-param">d</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_section_properties" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_section_properties</code><span class="sig-paren">(</span><em>guid</em>, <em>name</em>, <em>container_name</em>, <em>orientation</em>, <em>easting</em>, <em>northing</em>, <em>elevation</em>, <em>azimuth</em>, <em>swing</em>, <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_section_properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a section’s properties</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>guid</strong> (<em>str</em>) – Section GUID</p></li>
-<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name</p></li>
-<li><p><strong>container_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – ContainerName</p></li>
-<li><p><strong>orientation</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#section-orientation"><span class="std std-ref">SECTION_ORIENTATION constants</span></a></p></li>
-<li><p><strong>easting</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Easting</p></li>
-<li><p><strong>northing</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Northing</p></li>
-<li><p><strong>elevation</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Elevation</p></li>
-<li><p><strong>azimuth</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Azimuth</p></li>
-<li><p><strong>swing</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Swing</p></li>
-<li><p><strong>a</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – A in the scalar equation of best-fit plane describing the section</p></li>
-<li><p><strong>b</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – B in the scalar equation of best-fit plane describing the section</p></li>
-<li><p><strong>c</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – C in the scalar equation of best-fit plane describing the section</p></li>
-<li><p><strong>d</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – D in the scalar equation of best-fit plane describing the section</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>guid</strong> (<em>str</em>) – Section GUID</li>
+<li><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Name</li>
+<li><strong>container_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – ContainerName</li>
+<li><strong>orientation</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#section-orientation"><span class="std std-ref">SECTION_ORIENTATION constants</span></a></li>
+<li><strong>easting</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Easting</li>
+<li><strong>northing</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Northing</li>
+<li><strong>elevation</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Elevation</li>
+<li><strong>azimuth</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Azimuth</li>
+<li><strong>swing</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Swing</li>
+<li><strong>a</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – A in the scalar equation of best-fit plane describing the section</li>
+<li><strong>b</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – B in the scalar equation of best-fit plane describing the section</li>
+<li><strong>c</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – C in the scalar equation of best-fit plane describing the section</li>
+<li><strong>d</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – D in the scalar equation of best-fit plane describing the section</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_sections">
-<code class="sig-name descname">get_sections</code><span class="sig-paren">(</span><em class="sig-param">lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_sections" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_sections</code><span class="sig-paren">(</span><em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_sections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the sections</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> List items are returned with section GUID in name and section name in value.</p>
@@ -202,129 +225,153 @@ but read/write support could be added in the future.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shape_properties">
-<code class="sig-name descname">get_shape_properties</code><span class="sig-paren">(</span><em class="sig-param">guid</em>, <em class="sig-param">feature_guid</em>, <em class="sig-param">section_guid</em>, <em class="sig-param">vert_v_vx</em>, <em class="sig-param">vert_v_vy</em>, <em class="sig-param">vert_v_vz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shape_properties" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_shape_properties</code><span class="sig-paren">(</span><em>guid</em>, <em>feature_guid</em>, <em>section_guid</em>, <em>vert_v_vx</em>, <em>vert_v_vy</em>, <em>vert_v_vz</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shape_properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a shape’s properties</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>guid</strong> (<em>str</em>) – Shape GUID</p></li>
-<li><p><strong>feature_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Feature GUID</p></li>
-<li><p><strong>section_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Section GUID</p></li>
-<li><p><strong>vert_v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices X location</p></li>
-<li><p><strong>vert_v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Y location</p></li>
-<li><p><strong>vert_v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Z location</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>guid</strong> (<em>str</em>) – Shape GUID</li>
+<li><strong>feature_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Feature GUID</li>
+<li><strong>section_guid</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Section GUID</li>
+<li><strong>vert_v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices X location</li>
+<li><strong>vert_v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Y location</li>
+<li><strong>vert_v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertices Z location</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature">
-<code class="sig-name descname">get_shapes_for_feature</code><span class="sig-paren">(</span><em class="sig-param">guid</em>, <em class="sig-param">lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_shapes_for_feature</code><span class="sig-paren">(</span><em>guid</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all shapes linked to a specific feature</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>guid</strong> (<em>str</em>) – Feature GUID</p></li>
-<li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>guid</strong> (<em>str</em>) – Feature GUID</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature_and_section">
-<code class="sig-name descname">get_shapes_for_feature_and_section</code><span class="sig-paren">(</span><em class="sig-param">feature_guid</em>, <em class="sig-param">section_guid</em>, <em class="sig-param">lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature_and_section" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_shapes_for_feature_and_section</code><span class="sig-paren">(</span><em>feature_guid</em>, <em>section_guid</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature_and_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all shapes linked to a specific feature and section</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>feature_guid</strong> (<em>str</em>) – Feature GUID</p></li>
-<li><p><strong>section_guid</strong> (<em>str</em>) – Section GUID</p></li>
-<li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>feature_guid</strong> (<em>str</em>) – Feature GUID</li>
+<li><strong>section_guid</strong> (<em>str</em>) – Section GUID</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.get_shapes_for_section">
-<code class="sig-name descname">get_shapes_for_section</code><span class="sig-paren">(</span><em class="sig-param">guid</em>, <em class="sig-param">lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_section" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_shapes_for_section</code><span class="sig-paren">(</span><em>guid</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.get_shapes_for_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all shapes linked to a specific section</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>guid</strong> (<em>str</em>) – Section GUID</p></li>
-<li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>guid</strong> (<em>str</em>) – Section GUID</li>
+<li><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXGEOSTRING.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXGEOSTRING.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING">GXGEOSTRING</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING">GXGEOSTRING</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXGEOSTRING.open">
-<em class="property">classmethod </em><code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">geostring_file</em>, <em class="sig-param">mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.open" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">open</code><span class="sig-paren">(</span><em>geostring_file</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open a Geostring file</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>geostring_file</strong> (<em>str</em>) – Geostring file name</p></li>
-<li><p><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#geostring-open"><span class="std std-ref">GEOSTRING_OPEN constants</span></a></p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>geostring_file</strong> (<em>str</em>) – Geostring file name</li>
+<li><strong>mode</strong> (<em>int</em>) – <a class="reference internal" href="#geostring-open"><span class="std std-ref">GEOSTRING_OPEN constants</span></a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a> Object</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING">GXGEOSTRING</a></p>
-</dd>
-</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING">GXGEOSTRING</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified">New in version 8.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -336,22 +383,22 @@ but read/write support could be added in the future.</p>
 <p>Open Modes</p>
 <dl class="data">
 <dt id="geosoft.gxapi.GEOSTRING_OPEN_READ">
-<code class="sig-name descname">GEOSTRING_OPEN_READ</code><a class="headerlink" href="#geosoft.gxapi.GEOSTRING_OPEN_READ" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GEOSTRING_OPEN_READ</code><a class="headerlink" href="#geosoft.gxapi.GEOSTRING_OPEN_READ" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">GEOSTRING_OPEN_READ</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">GEOSTRING_OPEN_READ</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.GEOSTRING_OPEN_READWRITE">
-<code class="sig-name descname">GEOSTRING_OPEN_READWRITE</code><a class="headerlink" href="#geosoft.gxapi.GEOSTRING_OPEN_READWRITE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GEOSTRING_OPEN_READWRITE</code><a class="headerlink" href="#geosoft.gxapi.GEOSTRING_OPEN_READWRITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Readwrite</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">GEOSTRING_OPEN_READWRITE</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">GEOSTRING_OPEN_READWRITE</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -362,55 +409,55 @@ but read/write support could be added in the future.</p>
 <p>Section orientation types</p>
 <dl class="data">
 <dt id="geosoft.gxapi.SECTION_ORIENTATION_UNKNOWN">
-<code class="sig-name descname">SECTION_ORIENTATION_UNKNOWN</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_UNKNOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SECTION_ORIENTATION_UNKNOWN</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_UNKNOWN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unknown</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SECTION_ORIENTATION_UNKNOWN</code><em class="property"> = 0</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">SECTION_ORIENTATION_UNKNOWN</code><em class="property"> = 0</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SECTION_ORIENTATION_PLAN">
-<code class="sig-name descname">SECTION_ORIENTATION_PLAN</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_PLAN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SECTION_ORIENTATION_PLAN</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_PLAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plan</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SECTION_ORIENTATION_PLAN</code><em class="property"> = 1</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">SECTION_ORIENTATION_PLAN</code><em class="property"> = 1</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SECTION_ORIENTATION_SECTION">
-<code class="sig-name descname">SECTION_ORIENTATION_SECTION</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_SECTION" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SECTION_ORIENTATION_SECTION</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_SECTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Section</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SECTION_ORIENTATION_SECTION</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">SECTION_ORIENTATION_SECTION</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SECTION_ORIENTATION_CROOKED">
-<code class="sig-name descname">SECTION_ORIENTATION_CROOKED</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_CROOKED" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SECTION_ORIENTATION_CROOKED</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_CROOKED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Crooked</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SECTION_ORIENTATION_CROOKED</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">SECTION_ORIENTATION_CROOKED</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="data">
 <dt id="geosoft.gxapi.SECTION_ORIENTATION_GMSYS">
-<code class="sig-name descname">SECTION_ORIENTATION_GMSYS</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_GMSYS" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SECTION_ORIENTATION_GMSYS</code><a class="headerlink" href="#geosoft.gxapi.SECTION_ORIENTATION_GMSYS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gmsys</p>
 <dl class="attribute">
 <dt>
-<code class="sig-prename descclassname">gxapi.</code><code class="sig-name descname">SECTION_ORIENTATION_GMSYS</code><em class="property"> = 2</em></dt>
+<code class="descclassname">gxapi.</code><code class="descname">SECTION_ORIENTATION_GMSYS</code><em class="property"> = 2</em></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -430,13 +477,13 @@ but read/write support could be added in the future.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

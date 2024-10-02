@@ -1,18 +1,19 @@
 
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <title>GXVM class &#8212; Geosoft GX Python API 9.6.0 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GXVM class &#8212; Geosoft GX Python API 9.7.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -29,17 +30,19 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -63,7 +66,7 @@
 <span id="gxvm"></span><h1>GXVM class<a class="headerlink" href="#gxvm-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="geosoft.gxapi.GXVM">
-<em class="property">class </em><code class="sig-name descname">GXVM</code><span class="sig-paren">(</span><em class="sig-param">handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXVM</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXVM class.</p>
 <p>In-memory vector data methods
 The <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> class will store vector (array) data in a memory buffer which
@@ -83,51 +86,59 @@ memory paging file.  Note that the operating system virtual memory
 manager is much slower than the manager used by Geosoft when working with
 very large arrays in a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
 <p>See <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for methods to move data between a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> and a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXVM.create">
-<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">elements</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>type</em>, <em>elements</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#geo-var"><span class="std std-ref">GEO_VAR constants</span></a></p></li>
-<li><p><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length (less than 16777215)</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#geo-var"><span class="std std-ref">GEO_VAR constants</span></a></li>
+<li><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length (less than 16777215)</li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> Object</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM">GXVM</a></p>
-</dd>
-</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM">GXVM</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> elements are initialized to dummies.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXVM.create_ext">
-<em class="property">classmethod </em><code class="sig-name descname">create_ext</code><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">elements</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.create_ext" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">create_ext</code><span class="sig-paren">(</span><em>type</em>, <em>elements</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.create_ext" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>, using one of the <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> special data types.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
-<li><p><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length (less than 16777215)</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></li>
+<li><strong>elements</strong> (<em>int</em>) – <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length (less than 16777215)</li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> Object</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM">GXVM</a></p>
-</dd>
-</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> Object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM">GXVM</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.4.2.</span></p>
+<p><span class="versionmodified">New in version 6.4.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> elements are initialized to dummies.</p>
@@ -135,62 +146,68 @@ very large arrays in a <a class="reference internal" href="GXVV.html#geosoft.gxa
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.get_double">
-<code class="sig-name descname">get_double</code><span class="sig-paren">(</span><em class="sig-param">element</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.get_double" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_double</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.get_double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a real element from a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>element</strong> (<em>int</em>) – Element wanted</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>
-if the value is dummy or outside of the range of data.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>int</em>) – Element wanted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>
+if the value is dummy or outside of the range of data.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.get_int">
-<code class="sig-name descname">get_int</code><span class="sig-paren">(</span><em class="sig-param">element</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.get_int" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_int</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.get_int" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an integer element from a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>element</strong> (<em>int</em>) – Element wanted</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a>
-if the value is dummy or outside of the range of data.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> (<em>int</em>) – Element wanted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Element wanted, or <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.iDUMMY" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a>
+if the value is dummy or outside of the range of data.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.get_string">
-<code class="sig-name descname">get_string</code><span class="sig-paren">(</span><em class="sig-param">element</em>, <em class="sig-param">str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.get_string" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_string</code><span class="sig-paren">(</span><em>element</em>, <em>str_val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.get_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a string element from a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>element</strong> (<em>int</em>) – Element wanted</p></li>
-<li><p><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String in which to place element</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>element</strong> (<em>int</em>) – Element wanted</li>
+<li><strong>str_val</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – String in which to place element</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Returns element wanted, or blank string
@@ -201,61 +218,70 @@ are converted to “*” string.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.is_null">
-<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.length">
-<code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.length" title="Permalink to this definition">¶</a></dt>
+<code class="descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns current <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> length.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p># of elements in the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"># of elements in the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="classmethod">
 <dt id="geosoft.gxapi.GXVM.null">
-<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a></p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM">GXVM</a></p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM">GXVM</a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.re_size">
-<code class="sig-name descname">re_size</code><span class="sig-paren">(</span><em class="sig-param">newsize</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.re_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">re_size</code><span class="sig-paren">(</span><em>newsize</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.re_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Re-set the size of a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>newsize</strong> (<em>int</em>) – New size (number of elements)</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>newsize</strong> (<em>int</em>) – New size (number of elements)</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If increasing the <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a> size, new elements are set to dummies.</p>
@@ -263,18 +289,22 @@ are converted to “*” string.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.set_double">
-<code class="sig-name descname">set_double</code><span class="sig-paren">(</span><em class="sig-param">element</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.set_double" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_double</code><span class="sig-paren">(</span><em>element</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.set_double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a real element in a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>element</strong> (<em>int</em>) – Element to set</p></li>
-<li><p><strong>value</strong> (<em>float</em>) – Value to set</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>element</strong> (<em>int</em>) – Element to set</li>
+<li><strong>value</strong> (<em>float</em>) – Value to set</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Element being set cannot be &lt; 0.</p>
@@ -285,18 +315,22 @@ memory and should be avoided if possible.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.set_int">
-<code class="sig-name descname">set_int</code><span class="sig-paren">(</span><em class="sig-param">element</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.set_int" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_int</code><span class="sig-paren">(</span><em>element</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.set_int" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set an integer element in a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>element</strong> (<em>int</em>) – Element to set</p></li>
-<li><p><strong>value</strong> (<em>int</em>) – Value to set</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>element</strong> (<em>int</em>) – Element to set</li>
+<li><strong>value</strong> (<em>int</em>) – Value to set</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Element being set cannot be &lt; 0.</p>
@@ -307,18 +341,22 @@ memory and should be avoided if possible.</p>
 
 <dl class="method">
 <dt id="geosoft.gxapi.GXVM.set_string">
-<code class="sig-name descname">set_string</code><span class="sig-paren">(</span><em class="sig-param">element</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.set_string" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_string</code><span class="sig-paren">(</span><em>element</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXVM.set_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a string element in a <a class="reference internal" href="#geosoft.gxapi.GXVM" title="geosoft.gxapi.GXVM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVM</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>element</strong> (<em>int</em>) – Element to set</p></li>
-<li><p><strong>value</strong> (<em>str</em>) – String to set</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>element</strong> (<em>int</em>) – Element to set</li>
+<li><strong>value</strong> (<em>str</em>) – String to set</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Element being set cannot be &lt; 0.</p>
@@ -343,13 +381,13 @@ memory and should be avoided if possible.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.7.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
