@@ -57,6 +57,10 @@ Avaialable generic document types
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.EDOC_TYPE_GMS2D
+.. autodata:: geosoft.gxapi.EDOC_TYPE_GEOSURFACE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.EDOC_TYPE_GEOSURFACE
 
 
 .. _EDOC_UNLOAD:

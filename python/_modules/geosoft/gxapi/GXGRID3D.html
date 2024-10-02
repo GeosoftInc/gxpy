@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXGRID3D &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGRID3D</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXGRID3D</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXGRID3D"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D">[docs]</a><span class="k">class</span> <span class="nc">GXGRID3D</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGRID3D</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXGRID3D class.</span>
+
+<span class="sd">    High Performance 3D Grid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXGRID3D.__init__"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXGRID3D</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXGRID3D.null"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXGRID3D &lt;geosoft.gxapi.GXGRID3D&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXGRID3D &lt;geosoft.gxapi.GXGRID3D&gt;`</span>
+<span class="sd">        :rtype:   GXGRID3D</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXGRID3D</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXGRID3D.is_null"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_type"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the type of this GRID3D</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_type</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.is_thematic"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.is_thematic">[docs]</a>    <span class="k">def</span> <span class="nf">is_thematic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Does this grid3d contain thematic data</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:         bool</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_thematic</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.is_double"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.is_double">[docs]</a>    <span class="k">def</span> <span class="nf">is_double</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Does this grid3d contain floating point data</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:         bool</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_double</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.is_vector"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.is_vector">[docs]</a>    <span class="k">def</span> <span class="nf">is_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Does this grid3d contain vector data</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:         bool</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_vector</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_tpat"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_tpat">[docs]</a>    <span class="k">def</span> <span class="nf">get_tpat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the TPAT from the thematic grid3d.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:     `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object</span>
+<span class="sd">        :type  ipj:     GXTPAT</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_get_tpat</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.set_tpat"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.set_tpat">[docs]</a>    <span class="k">def</span> <span class="nf">set_tpat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the TPAT of a thematic grid3d.</span>
+<span class="sd">        </span>
+<span class="sd">        :param ipj:     `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object</span>
+<span class="sd">        :type  ipj:     GXTPAT</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_tpat</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_double_stats"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_double_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_double_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_valid</span><span class="p">,</span> <span class="n">num_dummies</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">stddev</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Double statistics.</span>
+<span class="sd">        </span>
+<span class="sd">        :param num_valid:    Number of valid values</span>
+<span class="sd">        :param num_dummies:  Number of invalid values</span>
+<span class="sd">        :param min:          Min value</span>
+<span class="sd">        :param max:          Maximum value</span>
+<span class="sd">        :param mean:         Mean value</span>
+<span class="sd">        :param stddev:       Standard Deviation</span>
+<span class="sd">        :type  num_valid:    int_ref</span>
+<span class="sd">        :type  num_dummies:  int_ref</span>
+<span class="sd">        :type  min:          float_ref</span>
+<span class="sd">        :type  max:          float_ref</span>
+<span class="sd">        :type  mean:         float_ref</span>
+<span class="sd">        :type  stddev:       float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dummies</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double_stats</span><span class="p">(</span><span class="n">num_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dummies</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_thematic_stats"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_thematic_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_thematic_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_valid</span><span class="p">,</span> <span class="n">num_dummies</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">stddev</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Thematic Data statistics.</span>
+<span class="sd">        </span>
+<span class="sd">        :param num_valid:    Number of valid values</span>
+<span class="sd">        :param num_dummies:  Number of invalid values</span>
+<span class="sd">        :param min:          Min value</span>
+<span class="sd">        :param max:          Maximum value</span>
+<span class="sd">        :param mean:         Mean value</span>
+<span class="sd">        :param stddev:       Standard Deviation</span>
+<span class="sd">        :type  num_valid:    int_ref</span>
+<span class="sd">        :type  num_dummies:  int_ref</span>
+<span class="sd">        :type  min:          int_ref</span>
+<span class="sd">        :type  max:          int_ref</span>
+<span class="sd">        :type  mean:         int_ref</span>
+<span class="sd">        :type  stddev:       int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dummies</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_thematic_stats</span><span class="p">(</span><span class="n">num_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dummies</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_vector_stats"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_vector_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_vector_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_valid</span><span class="p">,</span> <span class="n">num_dummies</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">mean_x</span><span class="p">,</span> <span class="n">mean_y</span><span class="p">,</span> <span class="n">mean_z</span><span class="p">,</span> <span class="n">stddev_x</span><span class="p">,</span> <span class="n">stddev_y</span><span class="p">,</span> <span class="n">stddev_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Vector Data statistics.</span>
+<span class="sd">        </span>
+<span class="sd">        :param num_valid:    Number of valid values</span>
+<span class="sd">        :param num_dummies:  Number of invalid values</span>
+<span class="sd">        :param min_x:        Min X value</span>
+<span class="sd">        :param min_y:        Min Y value</span>
+<span class="sd">        :param min_z:        Min Z value</span>
+<span class="sd">        :param max_x:        Maximum X value</span>
+<span class="sd">        :param max_y:        Maximum Y value</span>
+<span class="sd">        :param max_z:        Maximum Z value</span>
+<span class="sd">        :param mean_x:       Mean X value</span>
+<span class="sd">        :param mean_y:       Mean Y value</span>
+<span class="sd">        :param mean_z:       Mean Z value</span>
+<span class="sd">        :param stddev_x:     Standard X Deviation</span>
+<span class="sd">        :param stddev_y:     Standard Y Deviation</span>
+<span class="sd">        :param stddev_z:     Standard Z Deviation</span>
+<span class="sd">        :type  num_valid:    int_ref</span>
+<span class="sd">        :type  num_dummies:  int_ref</span>
+<span class="sd">        :type  min_x:        float_ref</span>
+<span class="sd">        :type  min_y:        float_ref</span>
+<span class="sd">        :type  min_z:        float_ref</span>
+<span class="sd">        :type  max_x:        float_ref</span>
+<span class="sd">        :type  max_y:        float_ref</span>
+<span class="sd">        :type  max_z:        float_ref</span>
+<span class="sd">        :type  mean_x:       float_ref</span>
+<span class="sd">        :type  mean_y:       float_ref</span>
+<span class="sd">        :type  mean_z:       float_ref</span>
+<span class="sd">        :type  stddev_x:     float_ref</span>
+<span class="sd">        :type  stddev_y:     float_ref</span>
+<span class="sd">        :type  stddev_z:     float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dummies</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_vector_stats</span><span class="p">(</span><span class="n">num_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dummies</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">mean_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stddev_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.fill_double"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.fill_double">[docs]</a>    <span class="k">def</span> <span class="nf">fill_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fill the grid3d with a single double value.</span>
+<span class="sd">        </span>
+<span class="sd">        :param value:   Fill Value</span>
+<span class="sd">        :type  value:   float</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fill_double</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.fill_thematic"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.fill_thematic">[docs]</a>    <span class="k">def</span> <span class="nf">fill_thematic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fill the grid3d with a single thematic value.</span>
+<span class="sd">        </span>
+<span class="sd">        :param value:   Fill Value</span>
+<span class="sd">        :type  value:   int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fill_thematic</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.fill_vector"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.fill_vector">[docs]</a>    <span class="k">def</span> <span class="nf">fill_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value_x</span><span class="p">,</span> <span class="n">value_y</span><span class="p">,</span> <span class="n">value_z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fill the grid3d with a single vector value.</span>
+<span class="sd">        </span>
+<span class="sd">        :param value_x:  Fill Value X</span>
+<span class="sd">        :param value_y:  Fill Value Y</span>
+<span class="sd">        :param value_z:  Fill Value Z</span>
+<span class="sd">        :type  value_x:  float</span>
+<span class="sd">        :type  value_y:  float</span>
+<span class="sd">        :type  value_z:  float</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fill_vector</span><span class="p">(</span><span class="n">value_x</span><span class="p">,</span> <span class="n">value_y</span><span class="p">,</span> <span class="n">value_z</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_elements_in_block_x"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_elements_in_block_x">[docs]</a>    <span class="k">def</span> <span class="nf">get_elements_in_block_x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of cells in the block in the X direction</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_elements_in_block_x</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_elements_in_block_y"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_elements_in_block_y">[docs]</a>    <span class="k">def</span> <span class="nf">get_elements_in_block_y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of cells in the block in the Y direction</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_elements_in_block_y</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.get_elements_in_block_z"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.get_elements_in_block_z">[docs]</a>    <span class="k">def</span> <span class="nf">get_elements_in_block_z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of cells in the block in the Z direction</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_elements_in_block_z</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.read_x"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.read_x">[docs]</a>    <span class="k">def</span> <span class="nf">read_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read data from a GRID3D in the x direction (MOST EFFICIENT)</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:       X location</span>
+<span class="sd">        :param y:       Y location</span>
+<span class="sd">        :param z:       Z location</span>
+<span class="sd">        :param VV:      VV Containing Data</span>
+<span class="sd">        :type  x:       int</span>
+<span class="sd">        :type  y:       int</span>
+<span class="sd">        :type  z:       int</span>
+<span class="sd">        :type  VV:      GXVV</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.write_x"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.write_x">[docs]</a>    <span class="k">def</span> <span class="nf">write_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write data to a GRID3D in the X direction (MOST EFFICIENT)</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:       X location</span>
+<span class="sd">        :param y:       Y location</span>
+<span class="sd">        :param z:       Z location</span>
+<span class="sd">        :param VV:      VV Containing Data</span>
+<span class="sd">        :type  x:       int</span>
+<span class="sd">        :type  y:       int</span>
+<span class="sd">        :type  z:       int</span>
+<span class="sd">        :type  VV:      GXVV</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.read_y"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.read_y">[docs]</a>    <span class="k">def</span> <span class="nf">read_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read data from a GRID3D in the Y direction</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:       X location</span>
+<span class="sd">        :param y:       Y location</span>
+<span class="sd">        :param z:       Z location</span>
+<span class="sd">        :param VV:      VV Containing Data</span>
+<span class="sd">        :type  x:       int</span>
+<span class="sd">        :type  y:       int</span>
+<span class="sd">        :type  z:       int</span>
+<span class="sd">        :type  VV:      GXVV</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.write_y"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.write_y">[docs]</a>    <span class="k">def</span> <span class="nf">write_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write data to a GRID3D in the Y direction</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:       X location</span>
+<span class="sd">        :param y:       Y location</span>
+<span class="sd">        :param z:       Z location</span>
+<span class="sd">        :param VV:      VV Containing Data</span>
+<span class="sd">        :type  x:       int</span>
+<span class="sd">        :type  y:       int</span>
+<span class="sd">        :type  z:       int</span>
+<span class="sd">        :type  VV:      GXVV</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.read_z"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.read_z">[docs]</a>    <span class="k">def</span> <span class="nf">read_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read data from a GRID3D in the Z direction</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:       X location</span>
+<span class="sd">        :param y:       Y location</span>
+<span class="sd">        :param z:       Z location</span>
+<span class="sd">        :param VV:      VV Containing Data</span>
+<span class="sd">        :type  x:       int</span>
+<span class="sd">        :type  y:       int</span>
+<span class="sd">        :type  z:       int</span>
+<span class="sd">        :type  VV:      GXVV</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXGRID3D.write_z"><a class="viewcode-back" href="../../../GXGRID3D.html#geosoft.gxapi.GXGRID3D.write_z">[docs]</a>    <span class="k">def</span> <span class="nf">write_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write data to a GRID3D in the Z direction</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:       X location</span>
+<span class="sd">        :param y:       Y location</span>
+<span class="sd">        :param z:       Z location</span>
+<span class="sd">        :param VV:      VV Containing Data</span>
+<span class="sd">        :type  x:       int</span>
+<span class="sd">        :type  y:       int</span>
+<span class="sd">        :type  z:       int</span>
+<span class="sd">        :type  VV:      GXVV</span>
+<span class="sd">        :rtype:         int</span>
+
+<span class="sd">        .. versionadded:: 9.4</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write_z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">VV</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div></div>
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGRID3D</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

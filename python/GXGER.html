@@ -1,19 +1,19 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXGER class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXGER class &#8212; Geosoft GX Python API 9.9.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,23 +30,22 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXGER class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -64,9 +63,9 @@
             
   <div class="section" id="gxger-class">
 <span id="gxger"></span><h1>GXGER class<a class="headerlink" href="#gxger-class" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="geosoft.gxapi.GXGER">
-<em class="property">class </em><code class="descname">GXGER</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXGER</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXGER class.</p>
 <p>Allows access to a Geosoft format error message file. This class
 does not in itself produce an error message, but retrieves a
@@ -89,153 +88,138 @@ may be replaced at run time with values using the <a class="reference internal" 
 <a class="reference internal" href="#geosoft.gxapi.GXGER.set_int" title="geosoft.gxapi.GXGER.set_int"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_int</span></code></a> and <a class="reference internal" href="#geosoft.gxapi.GXGER.set_double" title="geosoft.gxapi.GXGER.set_double"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_double</span></code></a> methods. The iGet_GER will return the message
 with strings replaced by their settings.  By convention, we recommend
 that you use “%1”, “%2”, etc. as replacement strings.</p>
-<dl class="classmethod">
+<dl class="py method">
+<dt id="geosoft.gxapi.GXGER.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXGER.create">
-<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opens an ASCII error file to read from.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a> file name.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a> Object</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER">GXGER</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a> file name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER">GXGER</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a> file may be in the local directory or the GEOSOFT
 directory.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXGER.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>num</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span></em>, <em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a message string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>num</strong> (<em>int</em>) – Message number</li>
-<li><strong>message</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Message string returned, replacements filtered</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num</strong> (<em>int</em>) – Message number</p></li>
+<li><p><strong>message</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Message string returned, replacements filtered</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">0 if message found
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 if message found
 1 if no message, passed message remains unchanged</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXGER.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXGER.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER">GXGER</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGER</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXGER" title="geosoft.gxapi.GXGER">GXGER</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXGER.set_double">
-<code class="descname">set_double</code><span class="sig-paren">(</span><em>parm</em>, <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.set_double" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_double</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parm</span></em>, <em class="sig-param"><span class="n">set</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.set_double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.set_double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a replacement string value to a real.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</li>
-<li><strong>set</strong> (<em>float</em>) – Setting</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</p></li>
+<li><p><strong>set</strong> (<em>float</em>) – Setting</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXGER.set_int">
-<code class="descname">set_int</code><span class="sig-paren">(</span><em>parm</em>, <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.set_int" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parm</span></em>, <em class="sig-param"><span class="n">set</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.set_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.set_int" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a replacement string value to an int.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</li>
-<li><strong>set</strong> (<em>int</em>) – Setting</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</p></li>
+<li><p><strong>set</strong> (<em>int</em>) – Setting</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXGER.set_string">
-<code class="descname">set_string</code><span class="sig-paren">(</span><em>parm</em>, <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXGER.set_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parm</span></em>, <em class="sig-param"><span class="n">set</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGER.html#GXGER.set_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXGER.set_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a replacement string value.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</li>
-<li><strong>set</strong> (<em>str</em>) – Setting</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parm</strong> (<em>str</em>) – Replacement string (ie. “%1”)</p></li>
+<li><p><strong>set</strong> (<em>str</em>) – Setting</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -245,6 +229,7 @@ directory.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -256,13 +241,14 @@ directory.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXGER class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

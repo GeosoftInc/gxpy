@@ -1,19 +1,19 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>geosoft.gxpy module history &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxpy module history &#8212; Geosoft GX Python API 9.9.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,105 +30,115 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy module history</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">geosoft.gxpy module history</a><ul>
-<li><a class="reference internal" href="#version-9-6">Version 9.6</a><ul>
+<li><a class="reference internal" href="#version-9-9">Version 9.9</a><ul>
+<li><a class="reference internal" href="#new-classes">New Classes</a></li>
 <li><a class="reference internal" href="#new-functions">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-9-5">Version 9.5</a><ul>
+<li><a class="reference internal" href="#version-9-6">Version 9.6</a><ul>
 <li><a class="reference internal" href="#id1">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-9-4">Version 9.4</a><ul>
-<li><a class="reference internal" href="#new-classes">New Classes</a></li>
+<li><a class="reference internal" href="#version-9-5">Version 9.5</a><ul>
 <li><a class="reference internal" href="#id2">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-9-3-1">Version 9.3.1</a><ul>
+<li><a class="reference internal" href="#version-9-4">Version 9.4</a><ul>
 <li><a class="reference internal" href="#id3">New Classes</a></li>
 <li><a class="reference internal" href="#id4">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-9-3">Version 9.3</a><ul>
+<li><a class="reference internal" href="#version-9-3-1">Version 9.3.1</a><ul>
 <li><a class="reference internal" href="#id5">New Classes</a></li>
 <li><a class="reference internal" href="#id6">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-9-2-1">Version 9.2.1</a><ul>
-<li><a class="reference internal" href="#id7">New Functions</a></li>
+<li><a class="reference internal" href="#version-9-3">Version 9.3</a><ul>
+<li><a class="reference internal" href="#id7">New Classes</a></li>
+<li><a class="reference internal" href="#id8">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-9-2">Version 9.2</a><ul>
-<li><a class="reference internal" href="#id8">New Classes</a></li>
+<li><a class="reference internal" href="#version-9-2-1">Version 9.2.1</a><ul>
 <li><a class="reference internal" href="#id9">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-9-1">Version 9.1</a><ul>
+<li><a class="reference internal" href="#version-9-2">Version 9.2</a><ul>
 <li><a class="reference internal" href="#id10">New Classes</a></li>
 <li><a class="reference internal" href="#id11">New Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-9-1">Version 9.1</a><ul>
+<li><a class="reference internal" href="#id12">New Classes</a></li>
+<li><a class="reference internal" href="#id13">New Functions</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a class="reference internal" href="#geosoft-gxapi-module-history">geosoft.gxapi module history</a><ul>
+<li><a class="reference internal" href="#id14">Version 9.9</a><ul>
+<li><a class="reference internal" href="#id15">New Functions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#version-9-8">Version 9.8</a><ul>
-<li><a class="reference internal" href="#id12">New Functions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#version-9-7-1">Version 9.7.1</a><ul>
-<li><a class="reference internal" href="#id13">New Functions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#version-9-7">Version 9.7</a><ul>
-<li><a class="reference internal" href="#id14">New Functions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id15">Version 9.6</a><ul>
 <li><a class="reference internal" href="#id16">New Functions</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#version-9-7-1">Version 9.7.1</a><ul>
+<li><a class="reference internal" href="#id17">New Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-9-7">Version 9.7</a><ul>
+<li><a class="reference internal" href="#id18">New Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">Version 9.6</a><ul>
+<li><a class="reference internal" href="#id20">New Functions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#version-9-5-1">Version 9.5.1</a><ul>
-<li><a class="reference internal" href="#id19">New Functions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id20">Version 9.5</a><ul>
-<li><a class="reference internal" href="#id21">New Functions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id22">Version 9.4</a><ul>
 <li><a class="reference internal" href="#id23">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id24">Version 9.3.1</a><ul>
+<li><a class="reference internal" href="#id24">Version 9.5</a><ul>
 <li><a class="reference internal" href="#id25">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id26">Version 9.3</a><ul>
+<li><a class="reference internal" href="#id26">Version 9.4</a><ul>
 <li><a class="reference internal" href="#id27">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id28">Version 9.2</a><ul>
+<li><a class="reference internal" href="#id28">Version 9.3.1</a><ul>
 <li><a class="reference internal" href="#id29">New Functions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id30">Version 9.1</a><ul>
-<li><a class="reference internal" href="#id31">New Classes</a></li>
-<li><a class="reference internal" href="#id34">New Functions</a></li>
+<li><a class="reference internal" href="#id30">Version 9.3</a><ul>
+<li><a class="reference internal" href="#id31">New Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id32">Version 9.2</a><ul>
+<li><a class="reference internal" href="#id33">New Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id34">Version 9.1</a><ul>
+<li><a class="reference internal" href="#id35">New Classes</a></li>
+<li><a class="reference internal" href="#id38">New Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#version-9-0">Version 9.0</a><ul>
-<li><a class="reference internal" href="#id35">New Functions</a></li>
+<li><a class="reference internal" href="#id39">New Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#version-8-5">Version 8.5</a><ul>
-<li><a class="reference internal" href="#id36">New Functions</a></li>
+<li><a class="reference internal" href="#id40">New Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -136,17 +146,15 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -164,10 +172,23 @@
             
   <div class="section" id="geosoft-gxpy-module-history">
 <h1>geosoft.gxpy module history<a class="headerlink" href="#geosoft-gxpy-module-history" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-9-6">
-<h2>Version 9.6<a class="headerlink" href="#version-9-6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-9-9">
+<h2>Version 9.9<a class="headerlink" href="#version-9-9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="new-classes">
+<h3>New Classes<a class="headerlink" href="#new-classes" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.PlaneReliefSurfaceInfo" title="geosoft.gxpy.view.PlaneReliefSurfaceInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.view.PlaneReliefSurfaceInfo</span></code></a> Information about a relief surface assigned to a plane. The following properties are represented:</p>
+</div>
 <div class="section" id="new-functions">
 <h3>New Functions<a class="headerlink" href="#new-functions" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.from_gxapi" title="geosoft.gxpy.map.Map.from_gxapi"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.map.Map.from_gxapi()</span></code></a> Instantiate Map from gxapi instance.</p>
+<p><a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View.from_gxapi" title="geosoft.gxpy.view.View.from_gxapi"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.view.View.from_gxapi()</span></code></a> Instantiate View from gxapi instance.</p>
+<p><a class="reference internal" href="geosoft.gxpy.view.html#geosoft.gxpy.view.View_3d.from_gxapi" title="geosoft.gxpy.view.View_3d.from_gxapi"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.view.View_3d.from_gxapi()</span></code></a> Instantiate View_3d from gxapi instance.</p>
+</div>
+</div>
+<div class="section" id="version-9-6">
+<h2>Version 9.6<a class="headerlink" href="#version-9-6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>New Functions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb.delete_line_data" title="geosoft.gxpy.gdb.Geosoft_gdb.delete_line_data"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb.delete_line_data()</span></code></a> Delete all data in line(s) by name or symbol but keep the line.</p>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb.sorted_chan_list" title="geosoft.gxpy.gdb.Geosoft_gdb.sorted_chan_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb.sorted_chan_list()</span></code></a> Get a list of sorted channels from Gdb, placing x, y and z channels (if defined) at front of list.</p>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Line.delete_data" title="geosoft.gxpy.gdb.Line.delete_data"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Line.delete_data()</span></code></a> Delete all data in a line but keep the line</p>
@@ -175,15 +196,15 @@
 </div>
 <div class="section" id="version-9-5">
 <h2>Version 9.5<a class="headerlink" href="#version-9-5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>New Functions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>New Functions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb.read_line_dataframe" title="geosoft.gxpy.gdb.Geosoft_gdb.read_line_dataframe"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb.read_line_dataframe()</span></code></a> Read a line of data into a Pandas DataFrame</p>
 </div>
 </div>
 <div class="section" id="version-9-4">
 <h2>Version 9.4<a class="headerlink" href="#version-9-4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="new-classes">
-<h3>New Classes<a class="headerlink" href="#new-classes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>New Classes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.dap_client.html#geosoft.gxpy.dap_client.DapClient" title="geosoft.gxpy.dap_client.DapClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.dap_client.DapClient</span></code></a> DapClient class to communicate with a Geosoft DAP server.</p>
 <p><a class="reference internal" href="geosoft.gxpy.dap_client.html#geosoft.gxpy.dap_client.DataCard" title="geosoft.gxpy.dap_client.DataCard"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.dap_client.DataCard</span></code></a> Single dataset information instance.</p>
 <p><a class="reference internal" href="geosoft.gxpy.dap_client.html#geosoft.gxpy.dap_client.DataExtract" title="geosoft.gxpy.dap_client.DataExtract"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.dap_client.DataExtract</span></code></a> Data extraction instance.</p>
@@ -195,8 +216,8 @@
 <p><a class="reference internal" href="geosoft.gxpy.geometry_utility.html#geosoft.gxpy.geometry_utility.GeometryUtilityException" title="geosoft.gxpy.geometry_utility.GeometryUtilityException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry_utility.GeometryUtilityException</span></code></a> Exceptions from <a class="reference internal" href="geosoft.gxpy.geometry_utility.html#module-geosoft.gxpy.geometry_utility" title="geosoft.gxpy.geometry_utility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry_utility</span></code></a>.</p>
 <p><a class="reference internal" href="geosoft.gxpy.grid_utility.html#geosoft.gxpy.grid_utility.GridUtilityException" title="geosoft.gxpy.grid_utility.GridUtilityException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxpy.grid_utility.GridUtilityException</span></code></a> Exceptions from <a class="reference internal" href="geosoft.gxpy.grid_utility.html#module-geosoft.gxpy.grid_utility" title="geosoft.gxpy.grid_utility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxpy.grid_utility</span></code></a>.</p>
 </div>
-<div class="section" id="id2">
-<h3>New Functions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>New Functions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.dap_client.html#geosoft.gxpy.dap_client.DapClient.catalog" title="geosoft.gxpy.dap_client.DapClient.catalog"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.dap_client.DapClient.catalog()</span></code></a> Return a filtered catalog list.</p>
 <p><a class="reference internal" href="geosoft.gxpy.dap_client.html#geosoft.gxpy.dap_client.DapClient.datacard_from_id" title="geosoft.gxpy.dap_client.DapClient.datacard_from_id"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.dap_client.DapClient.datacard_from_id()</span></code></a> Return the <code class="xref py py-obj docutils literal notranslate"><span class="pre">DataCard</span></code> instance based on the dataset ID #</p>
 <p><a class="reference internal" href="geosoft.gxpy.dap_client.html#geosoft.gxpy.dap_client.DapClient.fetch_data" title="geosoft.gxpy.dap_client.DapClient.fetch_data"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.dap_client.DapClient.fetch_data()</span></code></a> Fetch data from the server.</p>
@@ -239,8 +260,8 @@
 </div>
 <div class="section" id="version-9-3-1">
 <h2>Version 9.3.1<a class="headerlink" href="#version-9-3-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>New Classes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>New Classes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.geometry.Mesh</span></code></a> Mesh - set of triangular faces, which are indexes into verticies.</p>
 <p><a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.VoxDisplayGroup" title="geosoft.gxpy.group.VoxDisplayGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.group.VoxDisplayGroup</span></code></a> Vox display group in a view.  Use class methods <code class="xref py py-obj docutils literal notranslate"><span class="pre">new()</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">open()</span></code></p>
 <p><a class="reference internal" href="geosoft.gxpy.spatialdata.html#geosoft.gxpy.spatialdata.SpatialData" title="geosoft.gxpy.spatialdata.SpatialData"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.spatialdata.SpatialData</span></code></a> Base class for spatial datasets.</p>
@@ -249,8 +270,8 @@
 <p><a class="reference internal" href="geosoft.gxpy.vox.html#geosoft.gxpy.vox.Vox" title="geosoft.gxpy.vox.Vox"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.vox.Vox</span></code></a> Vox (voxset) class.</p>
 <p><a class="reference internal" href="geosoft.gxpy.vox_display.html#geosoft.gxpy.vox_display.VoxDisplay" title="geosoft.gxpy.vox_display.VoxDisplay"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.vox_display.VoxDisplay</span></code></a> Creation and handling of vox displays. Vox displays can be placed into a 3D view for display.</p>
 </div>
-<div class="section" id="id4">
-<h3>New Functions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>New Functions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.image_file" title="geosoft.gxpy.agg.Aggregate_image.image_file"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image.image_file()</span></code></a> Save the aggregate as a georeferenced image file.</p>
 <p><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system.local" title="geosoft.gxpy.coordinate_system.Coordinate_system.local"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system.local()</span></code></a> Create an ad-hoc local coordinate system.</p>
 <p><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_translate.convert_vv" title="geosoft.gxpy.coordinate_system.Coordinate_translate.convert_vv"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_translate.convert_vv()</span></code></a> Project vv locations in-place.</p>
@@ -317,15 +338,15 @@
 </div>
 <div class="section" id="version-9-3">
 <h2>Version 9.3<a class="headerlink" href="#version-9-3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
-<h3>New Classes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>New Classes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Channel" title="geosoft.gxpy.gdb.Channel"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Channel</span></code></a> Class to work with database channels.  Use constructor <code class="xref py py-obj docutils literal notranslate"><span class="pre">Channel.new</span></code> to create a new channel.</p>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Line" title="geosoft.gxpy.gdb.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Line</span></code></a> Class to work with database lines.  Use constructor <code class="xref py py-obj docutils literal notranslate"><span class="pre">Line.new</span></code> to create a new line.</p>
 <p><a class="reference internal" href="geosoft.gxpy.metadata.html#geosoft.gxpy.metadata.Metadata" title="geosoft.gxpy.metadata.Metadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.metadata.Metadata</span></code></a> Simple interface to work with Geosoft metadata objects <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMETA</span></code></a>.</p>
 <p><a class="reference internal" href="geosoft.gxpy.metadata.html#geosoft.gxpy.metadata.MetadataException" title="geosoft.gxpy.metadata.MetadataException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxpy.metadata.MetadataException</span></code></a> Exceptions from <a class="reference internal" href="geosoft.gxpy.metadata.html#module-geosoft.gxpy.metadata" title="geosoft.gxpy.metadata"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.metadata</span></code></a>.</p>
 </div>
-<div class="section" id="id6">
-<h3>New Functions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>New Functions<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.figure_map" title="geosoft.gxpy.agg.Aggregate_image.figure_map"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image.figure_map()</span></code></a> Create a figure map file from an aggregate.</p>
 <p><a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.layer_unit_of_measure" title="geosoft.gxpy.agg.Aggregate_image.layer_unit_of_measure"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image.layer_unit_of_measure()</span></code></a> Return the unit of measurement for the specified layer</p>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Channel.delete" title="geosoft.gxpy.gdb.Channel.delete"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Channel.delete()</span></code></a> Delete the channel and all associated data.  After calling this method this</p>
@@ -369,15 +390,15 @@
 </div>
 <div class="section" id="version-9-2-1">
 <h2>Version 9.2.1<a class="headerlink" href="#version-9-2-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>New Functions<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>New Functions<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid.xyz" title="geosoft.gxpy.grid.Grid.xyz"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid.xyz()</span></code></a> Returns the (x, y, z) location of an indexed point in the grid.</p>
 </div>
 </div>
 <div class="section" id="version-9-2">
 <h2>Version 9.2<a class="headerlink" href="#version-9-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id8">
-<h3>New Classes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>New Classes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image" title="geosoft.gxpy.agg.Aggregate_image"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image</span></code></a> The AGG class supports the creation of aggregate images from one or more grid data sets. Aggregates</p>
 <p><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> Coordinate system class. A coordinate system defines a horizontal and vertical reference</p>
 <p><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_translate" title="geosoft.gxpy.coordinate_system.Coordinate_translate"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_translate</span></code></a> Class to reproject coordinates between different coordinate systems.</p>
@@ -404,8 +425,8 @@
 <p><a class="reference internal" href="geosoft.gxpy.viewer.html#geosoft.gxpy.viewer.ViewerException" title="geosoft.gxpy.viewer.ViewerException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxpy.viewer.ViewerException</span></code></a> Exceptions from <a class="reference internal" href="geosoft.gxpy.viewer.html#module-geosoft.gxpy.viewer" title="geosoft.gxpy.viewer"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.viewer</span></code></a>.</p>
 <p><a class="reference internal" href="geosoft.gxpy.vox_display.html#geosoft.gxpy.vox_display.VoxDisplayException" title="geosoft.gxpy.vox_display.VoxDisplayException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxpy.vox_display.VoxDisplayException</span></code></a> Exceptions from <a class="reference internal" href="geosoft.gxpy.vox_display.html#module-geosoft.gxpy.vox_display" title="geosoft.gxpy.vox_display"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.vox_display</span></code></a>.</p>
 </div>
-<div class="section" id="id9">
-<h3>New Functions<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>New Functions<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.add_layer" title="geosoft.gxpy.agg.Aggregate_image.add_layer"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image.add_layer()</span></code></a> Add an image layer to an aggregate</p>
 <p><a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.layer_color_map" title="geosoft.gxpy.agg.Aggregate_image.layer_color_map"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image.layer_color_map()</span></code></a> Return the <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> of a layer.</p>
 <p><a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.new" title="geosoft.gxpy.agg.Aggregate_image.new"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.agg.Aggregate_image.new()</span></code></a> Create a new aggregate from a grid.</p>
@@ -536,8 +557,8 @@
 </div>
 <div class="section" id="version-9-1">
 <h2>Version 9.1<a class="headerlink" href="#version-9-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>New Classes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>New Classes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb" title="geosoft.gxpy.gdb.Geosoft_gdb"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb</span></code></a> Class to work with Geosoft databases. This class wraps many of the functions found in</p>
 <p><a class="reference internal" href="geosoft.gxpy.grid.html#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.grid.Grid</span></code></a> Grid and image class.</p>
 <p><a class="reference internal" href="geosoft.gxpy.va.html#geosoft.gxpy.va.GXva" title="geosoft.gxpy.va.GXva"><code class="xref py py-class docutils literal notranslate"><span class="pre">geosoft.gxpy.va.GXva</span></code></a> VA class wrapper.</p>
@@ -551,8 +572,8 @@
 <p><a class="reference internal" href="geosoft.gxpy.va.html#geosoft.gxpy.va.VAException" title="geosoft.gxpy.va.VAException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxpy.va.VAException</span></code></a> Exceptions from <a class="reference internal" href="geosoft.gxpy.va.html#module-geosoft.gxpy.va" title="geosoft.gxpy.va"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.va</span></code></a>.</p>
 <p><a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.VVException" title="geosoft.gxpy.vv.VVException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxpy.vv.VVException</span></code></a> Exceptions from <a class="reference internal" href="geosoft.gxpy.vv.html#module-geosoft.gxpy.vv" title="geosoft.gxpy.vv"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geosoft.gxpy.vv</span></code></a>.</p>
 </div>
-<div class="section" id="id11">
-<h3>New Functions<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>New Functions<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb.channel_details" title="geosoft.gxpy.gdb.Geosoft_gdb.channel_details"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb.channel_details()</span></code></a> Return dictionary of channel details</p>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb.channel_dtype" title="geosoft.gxpy.gdb.Geosoft_gdb.channel_dtype"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb.channel_dtype()</span></code></a> Returns channel numpy dtype</p>
 <p><a class="reference internal" href="geosoft.gxpy.gdb.html#geosoft.gxpy.gdb.Geosoft_gdb.channel_name_symb" title="geosoft.gxpy.gdb.Geosoft_gdb.channel_name_symb"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxpy.gdb.Geosoft_gdb.channel_name_symb()</span></code></a> Return channel name, symbol</p>
@@ -632,29 +653,48 @@
 </div>
 <div class="section" id="geosoft-gxapi-module-history">
 <h1>geosoft.gxapi module history<a class="headerlink" href="#geosoft-gxapi-module-history" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id14">
+<h2>Version 9.9<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>New Functions<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB.non_string_and_non_array_chan_lst" title="geosoft.gxapi.GXDB.non_string_and_non_array_chan_lst"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDB.non_string_and_non_array_chan_lst()</span></code></a> Load a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> with non-string and non-array database channels.</p>
+<p><a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB.rename_line" title="geosoft.gxapi.GXDB.rename_line"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDB.rename_line()</span></code></a> Change the name for a line.</p>
+<p><a class="reference internal" href="GXFFT.html#geosoft.gxapi.GXFFT.add_white_noise" title="geosoft.gxapi.GXFFT.add_white_noise"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXFFT.add_white_noise()</span></code></a> Add white noise to the power spectrum of an FFT object.</p>
+<p><a class="reference internal" href="GXFFT2.html#geosoft.gxapi.GXFFT2.filter_response" title="geosoft.gxapi.GXFFT2.filter_response"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXFFT2.filter_response()</span></code></a> Calculates response for filter(s) defined in control file. Not specific to 2D.</p>
+<p><a class="reference internal" href="GXGU.html#geosoft.gxapi.GXGU.magnetic_tilt_depth" title="geosoft.gxapi.GXGU.magnetic_tilt_depth"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXGU.magnetic_tilt_depth()</span></code></a> Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.</p>
+<p><a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI.dat_file_form_ex" title="geosoft.gxapi.GXGUI.dat_file_form_ex"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXGUI.dat_file_form_ex()</span></code></a> Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.</p>
+<p><a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP.rename_view" title="geosoft.gxapi.GXMAP.rename_view"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMAP.rename_view()</span></code></a> Renames a view in this map.</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.capture_3d_snapshot" title="geosoft.gxapi.GXMVIEW.capture_3d_snapshot"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.capture_3d_snapshot()</span></code></a> Capture current 3D view state to a snapshot.</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_3d_snapshots" title="geosoft.gxapi.GXMVIEW.get_3d_snapshots"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_3d_snapshots()</span></code></a> Get the list of 3D snapshots in a 3D view.</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_plane_surf_info" title="geosoft.gxapi.GXMVIEW.get_plane_surf_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_plane_surf_info()</span></code></a> Get the surface information</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_plane_surface" title="geosoft.gxapi.GXMVIEW.get_plane_surface"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_plane_surface()</span></code></a> Get the surface image of a plane</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.restore_3d_snapshot" title="geosoft.gxapi.GXMVIEW.restore_3d_snapshot"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.restore_3d_snapshot()</span></code></a> Restore 3D view to specific snapshot state.</p>
+<p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.run_python" title="geosoft.gxapi.GXSYS.run_python"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSYS.run_python()</span></code></a> Run a Python GX script with initialization information.</p>
+<p><a class="reference internal" href="GXTC.html#geosoft.gxapi.GXTC.create_ex2" title="geosoft.gxapi.GXTC.create_ex2"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXTC.create_ex2()</span></code></a> Creates a Terrain Correction object with surveytype and topo surface elevation grid</p>
+</div>
+</div>
 <div class="section" id="version-9-8">
 <h2>Version 9.8<a class="headerlink" href="#version-9-8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3>New Functions<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>New Functions<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB.create_symb_lst" title="geosoft.gxapi.GXDB.create_symb_lst"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDB.create_symb_lst()</span></code></a> Create  a <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> object large enough to contain channel names and symbols numbers.</p>
 <p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.connect_with_current_central_instance" title="geosoft.gxapi.GXSYS.connect_with_current_central_instance"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSYS.connect_with_current_central_instance()</span></code></a> Query information necessary to communicate with current Central Instance</p>
 </div>
 </div>
 <div class="section" id="version-9-7-1">
 <h2>Version 9.7.1<a class="headerlink" href="#version-9-7-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>New Functions<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>New Functions<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH.get_template_blob_no_source_resolve" title="geosoft.gxapi.GXDH.get_template_blob_no_source_resolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDH.get_template_blob_no_source_resolve()</span></code></a> Retrieve the import template from the database.</p>
 <p><a class="reference internal" href="GXDXFI.html#geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces" title="geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces()</span></code></a> Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces</p>
 <p><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections" title="geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections()</span></code></a> Compute intersections of a 3D PolyLine with a <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</p>
 <p><a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box" title="geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box()</span></code></a> Checks intersections of a bounding box with a <a class="reference internal" href="GXSURFACEITEM.html#geosoft.gxapi.GXSURFACEITEM" title="geosoft.gxapi.GXSURFACEITEM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACEITEM</span></code></a> Object</p>
-<p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.get_view_service_url" title="geosoft.gxapi.GXSYS.get_view_service_url"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSYS.get_view_service_url()</span></code></a> Get the service URL for View</p>
 </div>
 </div>
 <div class="section" id="version-9-7">
 <h2>Version 9.7<a class="headerlink" href="#version-9-7" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id14">
-<h3>New Functions<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>New Functions<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXContext.get_key_based_product_dirs" title="geosoft.gxapi.GXContext.get_key_based_product_dirs"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXContext.get_key_based_product_dirs()</span></code></a> Gets key product folders based on geosoft.key file and registry</p>
 <p><a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH.convert_oriented_core_dip_dir_for_hole_survey" title="geosoft.gxapi.GXDH.convert_oriented_core_dip_dir_for_hole_survey"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDH.convert_oriented_core_dip_dir_for_hole_survey()</span></code></a> Converted alpha/beta values in oriented cores to dip/dip direction.</p>
 <p><a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH.desurvey_from_to" title="geosoft.gxapi.GXDH.desurvey_from_to"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDH.desurvey_from_to()</span></code></a> Calculate survey locations and depth from a hole survey using from/to values</p>
@@ -699,14 +739,12 @@
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename" title="geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename()</span></code></a> Exports contents of SEG Y file to voxel.</p>
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_decimation" title="geosoft.gxapi.GXSEGYREADER.set_z_decimation"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.set_z_decimation()</span></code></a> Sets Z decimation factor.</p>
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_slice_indices" title="geosoft.gxapi.GXSEGYREADER.set_z_slice_indices"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.set_z_slice_indices()</span></code></a> Which z slices to export to a section grid.</p>
-<p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.get_api_key" title="geosoft.gxapi.GXSYS.get_api_key"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSYS.get_api_key()</span></code></a> Get the API Key if signed in</p>
-<p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.get_view_url" title="geosoft.gxapi.GXSYS.get_view_url"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSYS.get_view_url()</span></code></a> Get the View URL</p>
 </div>
 </div>
-<div class="section" id="id15">
-<h2>Version 9.6<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id16">
-<h3>New Functions<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h2>Version 9.6<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h3>New Functions<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.get_selection_info" title="geosoft.gxapi.GXACQUIRE.get_selection_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXACQUIRE.get_selection_info()</span></code></a> Get some information from existing selection file.</p>
 <p><a class="reference internal" href="GXACQUIRE.html#geosoft.gxapi.GXACQUIRE.selection_tool_force_grid_selection" title="geosoft.gxapi.GXACQUIRE.selection_tool_force_grid_selection"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXACQUIRE.selection_tool_force_grid_selection()</span></code></a> Run the acQuire Selection Tool, but force selection of destination grid.</p>
 <p><a class="reference internal" href="GXARCPY.html#geosoft.gxapi.GXARCPY.add_error" title="geosoft.gxapi.GXARCPY.add_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXARCPY.add_error()</span></code></a> Add error message to output of current script</p>
@@ -740,7 +778,7 @@
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_count" title="geosoft.gxapi.GXSEGYREADER.get_trace_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_count()</span></code></a> Get the number of traces in the SEG Y file</p>
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_at" title="geosoft.gxapi.GXSEGYREADER.get_trace_data_at"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_data_at()</span></code></a> Get the SEG Y trace file data for a particular data type, number of samples, and starting trace</p>
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name" title="geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name()</span></code></a> Get a string, suitable for displaying to the user, describing the type returned by passing the same <code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code> value to <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTraceDataTypeName()</span></code></p>
-<p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name" title="geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name()</span></code></a> Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use <a href="#id17"><span class="problematic" id="id18">`</span></a>GetTraceDataTypeDisplayName() instead.</p>
+<p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name" title="geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name()</span></code></a> Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use <a href="#id21"><span class="problematic" id="id22">`</span></a>GetTraceDataTypeDisplayName() instead.</p>
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_type" title="geosoft.gxapi.GXSEGYREADER.get_trace_data_type"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_data_type()</span></code></a> Get the data type of the trace data. This will match one of the names rfeturned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTraceDataTypeName()</span></code></p>
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_header_at" title="geosoft.gxapi.GXSEGYREADER.get_trace_header_at"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_header_at()</span></code></a> Get the SEG Y trace file header data for a particular starting trace</p>
 <p><a class="reference internal" href="GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration" title="geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration()</span></code></a> Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</p>
@@ -783,16 +821,16 @@
 </div>
 <div class="section" id="version-9-5-1">
 <h2>Version 9.5.1<a class="headerlink" href="#version-9-5-1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id19">
-<h3>New Functions<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>New Functions<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB.get_profile_x_axis_options" title="geosoft.gxapi.GXEDB.get_profile_x_axis_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXEDB.get_profile_x_axis_options()</span></code></a> Get profile X-axis options</p>
 <p><a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB.set_profile_x_axis_options" title="geosoft.gxapi.GXEDB.set_profile_x_axis_options"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXEDB.set_profile_x_axis_options()</span></code></a> Set profile X-axis options</p>
 </div>
 </div>
-<div class="section" id="id20">
-<h2>Version 9.5<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id21">
-<h3>New Functions<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h2>Version 9.5<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id25">
+<h3>New Functions<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH.get_hole_survey_ex" title="geosoft.gxapi.GXDH.get_hole_survey_ex"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDH.get_hole_survey_ex()</span></code></a> Get the Survey information of a Hole.</p>
 <p><a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH.get_hole_survey_from_to" title="geosoft.gxapi.GXDH.get_hole_survey_from_to"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDH.get_hole_survey_from_to()</span></code></a> Get the Survey information of a Hole using From/To database.</p>
 <p><a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.em_tau_trend_window" title="geosoft.gxapi.GXDU.em_tau_trend_window"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDU.em_tau_trend_window()</span></code></a> Automatic fitting EM Tau</p>
@@ -855,10 +893,10 @@
 <p><a class="reference internal" href="GXVOXD.html#geosoft.gxapi.GXVOXD.set_render_mode" title="geosoft.gxapi.GXVOXD.set_render_mode"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXVOXD.set_render_mode()</span></code></a> Get voxel render mode.</p>
 </div>
 </div>
-<div class="section" id="id22">
-<h2>Version 9.4<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id23">
-<h3>New Functions<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id26">
+<h2>Version 9.4<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id27">
+<h3>New Functions<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXARCMAP.html#geosoft.gxapi.GXARCMAP.load_raster_ex" title="geosoft.gxapi.GXARCMAP.load_raster_ex"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXARCMAP.load_raster_ex()</span></code></a> Load a raster file to the current data frame and create associated files</p>
 <p><a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.em_tau_automatic" title="geosoft.gxapi.GXDU.em_tau_automatic"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDU.em_tau_automatic()</span></code></a> Automatic fitting EM Tau</p>
 <p><a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.em_tau_calc" title="geosoft.gxapi.GXDU.em_tau_calc"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDU.em_tau_calc()</span></code></a> Fitting  f(t) = A * e^(-t/Tau) = e^s0 * e^(-s1*t), where s0=lnA, s1=1/Tau</p>
@@ -978,18 +1016,18 @@
 <p><a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.sign_in" title="geosoft.gxapi.GXSYS.sign_in"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXSYS.sign_in()</span></code></a> Sign in via Geosoft Connect</p>
 </div>
 </div>
-<div class="section" id="id24">
-<h2>Version 9.3.1<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id25">
-<h3>New Functions<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id28">
+<h2>Version 9.3.1<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id29">
+<h3>New Functions<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXDU.html#geosoft.gxapi.GXDU.load_gravity_cg6" title="geosoft.gxapi.GXDU.load_gravity_cg6"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDU.load_gravity_cg6()</span></code></a> Load a CG-6 gravity survey file.</p>
 <p><a class="reference internal" href="GXTB.html#geosoft.gxapi.GXTB.set_sort_mode" title="geosoft.gxapi.GXTB.set_sort_mode"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXTB.set_sort_mode()</span></code></a> Set the sort mode of a table.</p>
 </div>
 </div>
-<div class="section" id="id26">
-<h2>Version 9.3<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id27">
-<h3>New Functions<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h2>Version 9.3<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id31">
+<h3>New Functions<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXCSYMB.html#geosoft.gxapi.GXCSYMB.get_itr" title="geosoft.gxapi.GXCSYMB.get_itr"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXCSYMB.get_itr()</span></code></a> Get the <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> of the <a class="reference internal" href="GXCSYMB.html#geosoft.gxapi.GXCSYMB" title="geosoft.gxapi.GXCSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXCSYMB</span></code></a></p>
 <p><a class="reference internal" href="GXDH.html#geosoft.gxapi.GXDH.edit_classification_table_file_gui" title="geosoft.gxapi.GXDH.edit_classification_table_file_gui"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDH.edit_classification_table_file_gui()</span></code></a> Edit a symbol color/pattern CSV file</p>
 <p><a class="reference internal" href="GXE3DV.html#geosoft.gxapi.GXE3DV.get_base_view" title="geosoft.gxapi.GXE3DV.get_base_view"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXE3DV.get_base_view()</span></code></a> Get the current Base <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> (used to draw 2D legends for groups)</p>
@@ -1024,10 +1062,10 @@
 <p><a class="reference internal" href="GXVOXD.html#geosoft.gxapi.GXVOXD.set_thematic_selection" title="geosoft.gxapi.GXVOXD.set_thematic_selection"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXVOXD.set_thematic_selection()</span></code></a> Get a copy of a thematic voxel’s <a class="reference internal" href="GXTPAT.html#geosoft.gxapi.GXTPAT" title="geosoft.gxapi.GXTPAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTPAT</span></code></a> object and a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> containing the current display selections.</p>
 </div>
 </div>
-<div class="section" id="id28">
-<h2>Version 9.2<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id29">
-<h3>New Functions<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id32">
+<h2>Version 9.2<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id33">
+<h3>New Functions<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GX3DV.html#geosoft.gxapi.GX3DV.from_map" title="geosoft.gxapi.GX3DV.from_map"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GX3DV.from_map()</span></code></a> Get an <a class="reference internal" href="GX3DV.html#geosoft.gxapi.GX3DV" title="geosoft.gxapi.GX3DV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GX3DV</span></code></a> from <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAP</span></code></a> handle (e.g. from <a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEMAP.lock</span></code></a> on open geosoft_3dv document in project)</p>
 <p><a class="reference internal" href="GXEDB.html#geosoft.gxapi.GXEDB.get_cur_point" title="geosoft.gxapi.GXEDB.get_cur_point"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXEDB.get_cur_point()</span></code></a> Returns the coordinates of the currently selected point in the database (first value if range selected)</p>
 <p><a class="reference internal" href="GXEMAP.html#geosoft.gxapi.GXEMAP.packed_files" title="geosoft.gxapi.GXEMAP.packed_files"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXEMAP.packed_files()</span></code></a> The number of packed files in the map.</p>
@@ -1037,7 +1075,7 @@
 <p><a class="reference internal" href="GXIP.html#geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel" title="geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel()</span></code></a> Set unique electrodes, along with current mask info.</p>
 <p><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ.set_vcs" title="geosoft.gxapi.GXIPJ.set_vcs"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXIPJ.set_vcs()</span></code></a> Set the Vertical Coordinate System in the <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> name string</p>
 <p><a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP.create_linked_3d_view" title="geosoft.gxapi.GXMAP.create_linked_3d_view"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMAP.create_linked_3d_view()</span></code></a> Create a 3D View in this map that is linked to a <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> in a 3D View file.</p>
-<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_3d_point_of_view" title="geosoft.gxapi.GXMVIEW.get_3d_point_of_view"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_3d_point_of_view()</span></code></a> Get 3D point of view (values are will be <a class="reference internal" href="GXGEOSOFT.html#geosoft.gxapi.rDUMMY" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if view for 2D views)</p>
+<p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_3d_point_of_view" title="geosoft.gxapi.GXMVIEW.get_3d_point_of_view"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_3d_point_of_view()</span></code></a> Get 3D point of view (values are will be <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> if view for 2D views)</p>
 <p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_aggregate" title="geosoft.gxapi.GXMVIEW.get_aggregate"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_aggregate()</span></code></a> Get an existing Aggregate object from the view.</p>
 <p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_col_symbol" title="geosoft.gxapi.GXMVIEW.get_col_symbol"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_col_symbol()</span></code></a> Get an existing colored symbol object from the view.</p>
 <p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.get_datalinkd" title="geosoft.gxapi.GXMVIEW.get_datalinkd"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXMVIEW.get_datalinkd()</span></code></a> Get an existing Data Link Display (<a class="reference internal" href="GXDATALINKD.html#geosoft.gxapi.GXDATALINKD" title="geosoft.gxapi.GXDATALINKD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATALINKD</span></code></a>) object from the view.</p>
@@ -1049,17 +1087,17 @@
 <p><a class="reference internal" href="GXTEST.html#geosoft.gxapi.GXTEST.core_class" title="geosoft.gxapi.GXTEST.core_class"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXTEST.core_class()</span></code></a> Generic Class Test Wrapper</p>
 </div>
 </div>
-<div class="section" id="id30">
-<h2>Version 9.1<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id31">
-<h3>New Classes<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id34">
+<h2>Version 9.1<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id35">
+<h3>New Classes<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXAPIError" title="geosoft.gxapi.GXAPIError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxapi.GXAPIError</span></code></a> A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a> which is raised whenever</p>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXCancel" title="geosoft.gxapi.GXCancel"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxapi.GXCancel</span></code></a> A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SystemExit">SystemExit</a> which is raised when a</p>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXError" title="geosoft.gxapi.GXError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxapi.GXError</span></code></a> A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a> which is raised whenever</p>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXExit" title="geosoft.gxapi.GXExit"><code class="xref py py-exc docutils literal notranslate"><span class="pre">geosoft.gxapi.GXExit</span></code></a> A subclass of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SystemExit">SystemExit</a> which is raised when a</p>
 </div>
-<div class="section" id="id34">
-<h3>New Functions<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id38">
+<h3>New Functions<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXContext.clear_ui_console" title="geosoft.gxapi.GXContext.clear_ui_console"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXContext.clear_ui_console()</span></code></a> Clears the console owned by UI applications. Has no effect on consoles owning standalone scripts.</p>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXContext.create" title="geosoft.gxapi.GXContext.create"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXContext.create()</span></code></a> Creates the GX execution context (will return the current one if it exists).</p>
 <p><a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.GXContext.enable_application_windows" title="geosoft.gxapi.GXContext.enable_application_windows"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXContext.enable_application_windows()</span></code></a> Used by to prevent user interaction while showing modal windows with APIs where it might be hard to use proper window parenting</p>
@@ -1084,8 +1122,8 @@
 </div>
 <div class="section" id="version-9-0">
 <h2>Version 9.0<a class="headerlink" href="#version-9-0" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id35">
-<h3>New Functions<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id39">
+<h3>New Functions<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXDATALINKD.html#geosoft.gxapi.GXDATALINKD.create_arc_lyr_ex" title="geosoft.gxapi.GXDATALINKD.create_arc_lyr_ex"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDATALINKD.create_arc_lyr_ex()</span></code></a> Create an <a class="reference internal" href="GXDATALINKD.html#geosoft.gxapi.GXDATALINKD" title="geosoft.gxapi.GXDATALINKD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATALINKD</span></code></a> object from a ArcGIS LYR file</p>
 <p><a class="reference internal" href="GXDATALINKD.html#geosoft.gxapi.GXDATALINKD.create_arc_lyr_from_tmp_ex" title="geosoft.gxapi.GXDATALINKD.create_arc_lyr_from_tmp_ex"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDATALINKD.create_arc_lyr_from_tmp_ex()</span></code></a> Create an <a class="reference internal" href="GXDATALINKD.html#geosoft.gxapi.GXDATALINKD" title="geosoft.gxapi.GXDATALINKD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATALINKD</span></code></a> object from a temporary ArcGIS LYR file</p>
 <p><a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB.get_line_selection" title="geosoft.gxapi.GXDB.get_line_selection"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDB.get_line_selection()</span></code></a> Get the selection status for a line.</p>
@@ -1153,8 +1191,8 @@
 </div>
 <div class="section" id="version-8-5">
 <h2>Version 8.5<a class="headerlink" href="#version-8-5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id36">
-<h3>New Functions<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id40">
+<h3>New Functions<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="GXDBREAD.html#geosoft.gxapi.GXDBREAD.add_channel" title="geosoft.gxapi.GXDBREAD.add_channel"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDBREAD.add_channel()</span></code></a> Add a data channel to the <a class="reference internal" href="GXDBREAD.html#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object.</p>
 <p><a class="reference internal" href="GXDBREAD.html#geosoft.gxapi.GXDBREAD.create_xy" title="geosoft.gxapi.GXDBREAD.create_xy"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDBREAD.create_xy()</span></code></a> Create a <a class="reference internal" href="GXDBREAD.html#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object for a XY-located data. Add channels using the</p>
 <p><a class="reference internal" href="GXDBREAD.html#geosoft.gxapi.GXDBREAD.create_xyz" title="geosoft.gxapi.GXDBREAD.create_xyz"><code class="xref py py-func docutils literal notranslate"><span class="pre">geosoft.gxapi.GXDBREAD.create_xyz()</span></code></a> Create a <a class="reference internal" href="GXDBREAD.html#geosoft.gxapi.GXDBREAD" title="geosoft.gxapi.GXDBREAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDBREAD</span></code></a> object for a XYZ-located data.</p>
@@ -1197,6 +1235,7 @@
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -1208,13 +1247,14 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxpy module history</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

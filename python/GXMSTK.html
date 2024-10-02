@@ -1,19 +1,19 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GXMSTK class &#8212; Geosoft GX Python API 9.8.0 documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GXMSTK class &#8212; Geosoft GX Python API 9.9.0 documentation</title>
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -30,23 +30,22 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXMSTK class</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -64,146 +63,133 @@
             
   <div class="section" id="gxmstk-class">
 <span id="gxmstk"></span><h1>GXMSTK class<a class="headerlink" href="#gxmstk-class" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="geosoft.gxapi.GXMSTK">
-<em class="property">class </em><code class="descname">GXMSTK</code><span class="sig-paren">(</span><em>handle=0</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">GXMSTK</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK" title="Permalink to this definition">¶</a></dt>
 <dd><p>GXMSTK class.</p>
 <p>Multi-profile stack
 This class is used for storing data of multiple profiles and
 plotting profiles in a map. It is a container of <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> class objects.</p>
 <p>See also:         <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> class.</p>
-<dl class="method">
+<dl class="py method">
+<dt id="geosoft.gxapi.GXMSTK.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.add_stk">
-<code class="descname">add_stk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.add_stk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_stk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.add_stk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.add_stk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and add a <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> object to <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a>, fail if error</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK">GXSTK</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a>, fail if error</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK">GXSTK</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Index to the added <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> object is the last one in <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> container.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.chan_list_vv">
-<code class="descname">chan_list_vv</code><span class="sig-paren">(</span><em>db</em>, <em>num_ch_vv</em>, <em>str_ch_vv</em>, <em>x_ch_vv</em>, <em>prof_ch_vv</em>, <em>prof_ch__un_used_vv</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.chan_list_vv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">chan_list_vv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">num_ch_vv</span></em>, <em class="sig-param"><span class="n">str_ch_vv</span></em>, <em class="sig-param"><span class="n">x_ch_vv</span></em>, <em class="sig-param"><span class="n">prof_ch_vv</span></em>, <em class="sig-param"><span class="n">prof_ch__un_used_vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.chan_list_vv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.chan_list_vv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save channel names in VVs based on channel types</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
-<li><strong>num_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of names of numeric channels</li>
-<li><strong>str_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of name of string channels</li>
-<li><strong>x_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of channel names which can be used for X axis. Must be numeric channels but not <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> channels</li>
-<li><strong>prof_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of profiles with channel names in both <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> and <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a></li>
-<li><strong>prof_ch__un_used_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of profiles with channels in <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> but not in database</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
+<li><p><strong>num_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of names of numeric channels</p></li>
+<li><p><strong>str_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of name of string channels</p></li>
+<li><p><strong>x_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of channel names which can be used for X axis. Must be numeric channels but not <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> channels</p></li>
+<li><p><strong>prof_ch_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of profiles with channel names in both <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> and <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a></p></li>
+<li><p><strong>prof_ch__un_used_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – List of profiles with channels in <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> but not in database</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Terms ‘used’ and ‘unused’ indicate that the a channel name
 in database also ‘in’ and ‘not in’ the <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> object respectively</p>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.create">
-<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.create" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a>, aborts if creation fails</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK">GXMSTK</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a>, aborts if creation fails</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK">GXMSTK</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.delete_stk">
-<code class="descname">delete_stk</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.delete_stk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete_stk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.delete_stk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.delete_stk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete a <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> object</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<em>int</em>) – Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> to delete (0 is first one)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>int</em>) – Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> to delete (0 is first one)</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> 0 is the first one</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.draw_profile">
-<code class="descname">draw_profile</code><span class="sig-paren">(</span><em>db</em>, <em>line</em>, <em>map</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.draw_profile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw_profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">map</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.draw_profile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.draw_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw multiple profiles in map</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</li>
-<li><strong>line</strong> (<em>int</em>) – Database line</li>
-<li><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAP</span></code></a> handle</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database handle</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Database line</p></li>
+<li><p><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – <a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMAP</span></code></a> handle</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.find_stk">
-<code class="descname">find_stk</code><span class="sig-paren">(</span><em>str_val</em>, <em>index</em>, <em>group</em>, <em>x_ch</em>, <em>y_ch</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.find_stk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_stk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str_val</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">x_ch</span></em>, <em class="sig-param"><span class="n">y_ch</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.find_stk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.find_stk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find index of <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> from a string of group names and X/Y channels</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<em>str</em>) – Input string (see notes above). Will be modified on return</li>
-<li><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</li>
-<li><strong>group</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output group name string</li>
-<li><strong>x_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output X channel name string</li>
-<li><strong>y_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output Y channel name string</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – Input string (see notes above). Will be modified on return</p></li>
+<li><p><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</p></li>
+<li><p><strong>group</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output group name string</p></li>
+<li><p><strong>x_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output X channel name string</p></li>
+<li><p><strong>y_ch</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Output Y channel name string</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Format of the input string:</p>
@@ -212,25 +198,21 @@ in database also ‘in’ and ‘not in’ the <a class="reference internal" hre
 X channel name of DIST and Y channel name of MAG.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.find_stk2">
-<code class="descname">find_stk2</code><span class="sig-paren">(</span><em>str_val</em>, <em>index</em>, <em>vv_rtd</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.find_stk2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_stk2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str_val</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">vv_rtd</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.find_stk2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.find_stk2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find index of <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> from a string of group names and X/Y channels</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>str_val</strong> (<em>str</em>) – Input string (see notes above). Will be modified on return</li>
-<li><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</li>
-<li><strong>vv_rtd</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> with names of Group, X channel and Y channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> type must be of STRING</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_val</strong> (<em>str</em>) – Input string (see notes above). Will be modified on return</p></li>
+<li><p><strong>index</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Index to the <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> found, Must be greater than 0 if found, -1 if not found</p></li>
+<li><p><strong>vv_rtd</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> with names of Group, X channel and Y channel <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> type must be of STRING</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Format of the input string:</p>
@@ -239,131 +221,115 @@ X channel name of DIST and Y channel name of MAG.</p>
 X channel name of DIST and Y channel name of MAG.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.get_num_stk">
-<code class="descname">get_num_stk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.get_num_stk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_num_stk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.get_num_stk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.get_num_stk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> objects in a <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> object</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> objects in a <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> object</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> objects in a <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.get_stk">
-<code class="descname">get_stk</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.get_stk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_stk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.get_stk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.get_stk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a specific <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> object from a <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> object
 (Index of 0 gets the first <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> in the <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a>)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<em>int</em>) – Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> to get</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">x     - <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> Object handle</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK">GXSTK</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<em>int</em>) – Index to <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> to get</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>x     - <a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> Object handle</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="GXSTK.html#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK">GXSTK</a></p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.is_null">
-<code class="descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.is_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.is_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if this is a null (undefined) instance, False otherwise.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="classmethod">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.null">
-<em class="property">classmethod </em><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.null" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.null" title="Permalink to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A null <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK">GXMSTK</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK">GXMSTK</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.read_ini">
-<code class="descname">read_ini</code><span class="sig-paren">(</span><em>ra</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.read_ini" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read_ini</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ra</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.read_ini"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.read_ini" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read multiple profiles parameters from an INI file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) – <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXRA</span></code></a> handle to an INI file</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ra</strong> (<a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><em>GXRA</em></a>) – <a class="reference internal" href="GXRA.html#geosoft.gxapi.GXRA" title="geosoft.gxapi.GXRA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXRA</span></code></a> handle to an INI file</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.save_profile">
-<code class="descname">save_profile</code><span class="sig-paren">(</span><em>wa</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.save_profile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">wa</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.save_profile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.save_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save multiple profile INI parameters in a <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> file of INI format</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> handle to an INI file</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – <a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXWA</span></code></a> handle to an INI file</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 5.0.</span></p>
+<p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="geosoft.gxapi.GXMSTK.set_y_axis_direction">
-<code class="descname">set_y_axis_direction</code><span class="sig-paren">(</span><em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXMSTK.set_y_axis_direction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_y_axis_direction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMSTK.html#GXMSTK.set_y_axis_direction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#geosoft.gxapi.GXMSTK.set_y_axis_direction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the Y-axis direction - normal or inverted</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>direction</strong> (<em>int</em>) – Y-axis direction: 0 - normal, 1 - inverted</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>direction</strong> (<em>int</em>) – Y-axis direction: 0 - normal, 1 - inverted</p>
+</dd>
+</dl>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 8.3.</span></p>
+<p><span class="versionmodified added">New in version 8.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -373,6 +339,7 @@ X channel name of DIST and Y channel name of MAG.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -384,13 +351,14 @@ X channel name of DIST and Y channel name of MAG.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.8.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXMSTK class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Geosoft Inc.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

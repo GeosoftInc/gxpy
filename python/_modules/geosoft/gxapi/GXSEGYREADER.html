@@ -1,0 +1,1512 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXSEGYREADER &#8212; Geosoft GX Python API 9.9.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/maki.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSEGYREADER</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXSEGYREADER</h1><div class="highlight"><pre>
+<span></span><span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span> <span class="nn">.GXIPJ</span> <span class="kn">import</span> <span class="n">GXIPJ</span>
+<span class="kn">from</span> <span class="nn">.GXLTB</span> <span class="kn">import</span> <span class="n">GXLTB</span>
+<span class="kn">from</span> <span class="nn">.GXVV</span> <span class="kn">import</span> <span class="n">GXVV</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXSEGYREADER"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER">[docs]</a><span class="k">class</span> <span class="nc">GXSEGYREADER</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEGYREADER</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXSEGYREADER class.</span>
+
+<span class="sd">    Convert 3D SEG Y files to voxel or database.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXSEGYREADER.__init__"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXSEGYREADER</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GXSEGYREADER.null"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.null">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXSEGYREADER &lt;geosoft.gxapi.GXSEGYREADER&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXSEGYREADER &lt;geosoft.gxapi.GXSEGYREADER&gt;`</span>
+<span class="sd">        :rtype:   GXSEGYREADER</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXSEGYREADER</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GXSEGYREADER.is_null"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.is_null">[docs]</a>    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXSEGYREADER.open_file"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.open_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">open_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Opens a 3D SEG Y file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename:  File name</span>
+<span class="sd">        :type  filename:  str</span>
+
+<span class="sd">        :returns:         `GXSEGYREADER &lt;geosoft.gxapi.GXSEGYREADER&gt;` handle, terminates if creation fails.</span>
+<span class="sd">        :rtype:           GXSEGYREADER</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEGYREADER</span><span class="o">.</span><span class="n">_open_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXSEGYREADER</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_is_3d"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_is_3d">[docs]</a>    <span class="k">def</span> <span class="nf">set_is_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_3d</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specify if the input SEG-Y file is 3D or 2D.</span>
+<span class="sd">        </span>
+<span class="sd">        :param is_3d:        True is file is 3D, false for 2D.</span>
+<span class="sd">        :type  is_3d:        bool</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_is_3d</span><span class="p">(</span><span class="n">is_3d</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_is_3d"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_is_3d">[docs]</a>    <span class="k">def</span> <span class="nf">get_is_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns true if the file is 3D false if it is 2D.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:              bool</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_is_3d</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_endianess"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_endianess">[docs]</a>    <span class="k">def</span> <span class="nf">get_endianess</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns true if the file is little endian. false if it is big endian.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:              bool</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_endianess</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_endianess"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_endianess">[docs]</a>    <span class="k">def</span> <span class="nf">set_endianess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_little_endian</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the endianess of the file.</span>
+<span class="sd">        </span>
+<span class="sd">        :param is_little_endian:  True is file is little endian, false for big endian.</span>
+<span class="sd">        :type  is_little_endian:  bool</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_endianess</span><span class="p">(</span><span class="n">is_little_endian</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_xy_units"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_xy_units">[docs]</a>    <span class="k">def</span> <span class="nf">get_xy_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_units</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the currently-specified xy-units.</span>
+<span class="sd">        </span>
+<span class="sd">        :param xy_units:     The name of the units.</span>
+<span class="sd">        :type  xy_units:     str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">xy_units</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_xy_units</span><span class="p">(</span><span class="n">xy_units</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_z_type"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_type">[docs]</a>    <span class="k">def</span> <span class="nf">set_z_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specify if the z-dimension is time or depth.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_type:       Either &quot;DEPTH&quot; or &quot;TIME&quot;.</span>
+<span class="sd">        :type  z_type:       str</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_z_type</span><span class="p">(</span><span class="n">z_type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_z_type"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_z_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_z_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Indicate if the z-dimension is time or depth.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_type:       Either &quot;DEPTH&quot; or &quot;TIME&quot;.</span>
+<span class="sd">        :type  z_type:       str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">z_type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_z_type</span><span class="p">(</span><span class="n">z_type</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_possible_z_units"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_possible_z_units">[docs]</a>    <span class="k">def</span> <span class="nf">get_possible_z_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_units_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a list of the possible values that can be passed to `SetZUnits()`. The values returned by this function depend on what the z-type is set to.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_units_list:  List of possible z-units,separated by newlines</span>
+<span class="sd">        :type  z_units_list:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">z_units_list</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_possible_z_units</span><span class="p">(</span><span class="n">z_units_list</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_z_units"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_z_units">[docs]</a>    <span class="k">def</span> <span class="nf">get_z_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_units</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the currently-specified z-units.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_units:      The name of the z-units.</span>
+<span class="sd">        :type  z_units:      str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">z_units</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_z_units</span><span class="p">(</span><span class="n">z_units</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_z_units"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_units">[docs]</a>    <span class="k">def</span> <span class="nf">set_z_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_units</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the z-units.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_units:      The Z units. Must be one of the strings returned by `GetPossibleZUnits()`.</span>
+<span class="sd">        :type  z_units:      str</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_z_units</span><span class="p">(</span><span class="n">z_units</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_z_offset_units"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_z_offset_units">[docs]</a>    <span class="k">def</span> <span class="nf">get_z_offset_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_units</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the currently-specified units for the z offset.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_units:      List of possible z-units,separated by newlines</span>
+<span class="sd">        :type  z_units:      str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">z_units</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_z_offset_units</span><span class="p">(</span><span class="n">z_units</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_z_offset_units"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_offset_units">[docs]</a>    <span class="k">def</span> <span class="nf">set_z_offset_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_units</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the units that the z-offset is in.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_units:      The Z units. Must be one of the strings returned by `GetPossibleZUnits()`.</span>
+<span class="sd">        :type  z_units:      str</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_z_offset_units</span><span class="p">(</span><span class="n">z_units</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_last_sample_at"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_last_sample_at">[docs]</a>    <span class="k">def</span> <span class="nf">get_last_sample_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the depth of the last sample in the traces, in the units specified by `SetZUnits()`</span>
+<span class="sd">        </span>
+<span class="sd">        :param value:        Out-parameter containing the depth of the last sample in the traces.</span>
+<span class="sd">        :type  value:        float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">value</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_last_sample_at</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.list_binary_header_fields"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.list_binary_header_fields">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">list_binary_header_fields</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the names and offsets of the fields in the binary header.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      GXLTB</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEGYREADER</span><span class="o">.</span><span class="n">_list_binary_header_fields</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXLTB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.list_trace_header_fields"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.list_trace_header_fields">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">list_trace_header_fields</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the names and offsets of the fields in the trace header.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      GXLTB</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEGYREADER</span><span class="o">.</span><span class="n">_list_trace_header_fields</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXLTB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_text_header"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_text_header">[docs]</a>    <span class="k">def</span> <span class="nf">get_text_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the SEG Y file&#39;s text header.</span>
+<span class="sd">        </span>
+<span class="sd">        :param text:         The text header contents.</span>
+<span class="sd">        :type  text:         str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">text</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_text_header</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_binary_header"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_binary_header">[docs]</a>    <span class="k">def</span> <span class="nf">get_binary_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the SEG Y file&#39;s binary header.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:            :class:&#39;LTB&#39; containing three columns: the field name, offset, and value. The value column will be in text form, suitable for display to the end user.</span>
+<span class="sd">        :rtype:              GXLTB</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_binary_header</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">GXLTB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_data_at"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_at">[docs]</a>    <span class="k">def</span> <span class="nf">get_trace_data_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_type_name</span><span class="p">,</span> <span class="n">number_of_samples</span><span class="p">,</span> <span class="n">current_trace</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the SEG Y trace file data for a particular data type, number of samples, and starting trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param data_type_name:     The name of a supported data type.</span>
+<span class="sd">        :param number_of_samples:  The number of samples to return</span>
+<span class="sd">        :param current_trace:      The trace to start at</span>
+<span class="sd">        :param is_big_endian:      1 for big endian, 0 for small</span>
+<span class="sd">        :type  data_type_name:     str</span>
+<span class="sd">        :type  number_of_samples:  int</span>
+<span class="sd">        :type  current_trace:      int</span>
+<span class="sd">        :type  is_big_endian:      int</span>
+
+<span class="sd">        :returns:                  :class:&#39;VV&#39; containing the data from the traces</span>
+<span class="sd">        :rtype:                    GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_trace_data_at</span><span class="p">(</span><span class="n">data_type_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">number_of_samples</span><span class="p">,</span> <span class="n">current_trace</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_header_at"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_header_at">[docs]</a>    <span class="k">def</span> <span class="nf">get_trace_header_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_type_name</span><span class="p">,</span> <span class="n">number_of_samples</span><span class="p">,</span> <span class="n">current_trace</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the SEG Y trace file header data for a particular starting trace</span>
+<span class="sd">        </span>
+<span class="sd">        :param data_type_name:     The name of a supported data type.</span>
+<span class="sd">        :param number_of_samples:  The number of samples to return</span>
+<span class="sd">        :param current_trace:      The trace to start at</span>
+<span class="sd">        :param is_big_endian:      1 for big endian, 0 for small</span>
+<span class="sd">        :type  data_type_name:     str</span>
+<span class="sd">        :type  number_of_samples:  int</span>
+<span class="sd">        :type  current_trace:      int</span>
+<span class="sd">        :type  is_big_endian:      int</span>
+
+<span class="sd">        :returns:                  :class:&#39;VV&#39; containing the data from the trace header</span>
+<span class="sd">        :rtype:                    GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_trace_header_at</span><span class="p">(</span><span class="n">data_type_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">number_of_samples</span><span class="p">,</span> <span class="n">current_trace</span><span class="p">,</span> <span class="n">is_big_endian</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.estimate_number_of_traces"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.estimate_number_of_traces">[docs]</a>    <span class="k">def</span> <span class="nf">estimate_number_of_traces</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_type_name</span><span class="p">,</span> <span class="n">number_of_samples</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of traces that would be in the SEG-Y file, given a trace length and data type.</span>
+<span class="sd">        </span>
+<span class="sd">        :param data_type_name:     The name of a supported data type.</span>
+<span class="sd">        :param number_of_samples:  The number of samples to return</span>
+<span class="sd">        :type  data_type_name:     str</span>
+<span class="sd">        :type  number_of_samples:  int</span>
+<span class="sd">        :rtype:                    int</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_estimate_number_of_traces</span><span class="p">(</span><span class="n">data_type_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">number_of_samples</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_num_trace_data_types"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_num_trace_data_types">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_num_trace_data_types</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the number of supported trace data types.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEGYREADER</span><span class="o">.</span><span class="n">_get_num_trace_data_types</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_data_type_name"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_trace_data_type_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use `GetTraceDataTypeDisplayName() instead.</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Which name to return. Call this function  for each value between 0 and the value returned by `GetNumTraceTypes()` to get a full list of the available types.</span>
+<span class="sd">        :param name:   The name of a supported data type.</span>
+<span class="sd">        :type  index:  int</span>
+<span class="sd">        :type  name:   str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEGYREADER</span><span class="o">.</span><span class="n">_get_trace_data_type_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_data_type_display_name"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_type_display_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_trace_data_type_display_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a string, suitable for displaying to the user, describing the type returned by passing the same `index` value to `GetTraceDataTypeName()`</span>
+<span class="sd">        </span>
+<span class="sd">        :param index:  Which name to return.</span>
+<span class="sd">        :param name:   The display name of a supported data type.</span>
+<span class="sd">        :type  index:  int</span>
+<span class="sd">        :type  name:   str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEGYREADER</span><span class="o">.</span><span class="n">_get_trace_data_type_display_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_data_type"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_data_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_trace_data_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the data type of the trace data. This will match one of the names rfeturned by `GetTraceDataTypeName()`</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:         The name of data type.</span>
+<span class="sd">        :type  name:         str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_trace_data_type</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_trace_data_type"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_trace_data_type">[docs]</a>    <span class="k">def</span> <span class="nf">set_trace_data_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the data type of the trace data. This must match one of the names returned by `GetTraceDataTypeName()`</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:         The name of data type.</span>
+<span class="sd">        :type  name:         str</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_trace_data_type</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_length_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_length_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">get_trace_length_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_header</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</span>
+<span class="sd">        </span>
+<span class="sd">        :param which_header:  Out-parameter indicating which header contains the trace length: &quot;file_header&quot; &quot;trace_header&quot;, or &quot;none&quot;</span>
+<span class="sd">        :param location:      Out-parameter containing the byte offset of the field within the header (if applicable)</span>
+<span class="sd">        :type  which_header:  str_ref</span>
+<span class="sd">        :type  location:      int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">which_header</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">location</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_trace_length_configuration</span><span class="p">(</span><span class="n">which_header</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">location</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_trace_length_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_trace_length_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">set_trace_length_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_header</span><span class="p">,</span> <span class="n">location_or_value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</span>
+<span class="sd">        </span>
+<span class="sd">        :param which_header:       Which header contains the trace length: &quot;file_header&quot;, &quot;trace_header&quot; or &quot;none&quot;</span>
+<span class="sd">        :param location_or_value:  If `which_header` is &quot;file_header&quot; or &quot;trace_header&quot;, then this parameter is the offset of the field containing the trace length. If `which_header` is &quot;none&quot;, then this parameter is the actual trace length.</span>
+<span class="sd">        :type  which_header:       str</span>
+<span class="sd">        :type  location_or_value:  int</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_trace_length_configuration</span><span class="p">(</span><span class="n">which_header</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">location_or_value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_length"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_length">[docs]</a>    <span class="k">def</span> <span class="nf">get_trace_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the number of data samples per trace.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:              int</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_trace_length</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_sample_interval_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_sample_interval_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">get_sample_interval_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_header</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</span>
+<span class="sd">        </span>
+<span class="sd">        :param which_header:  Out-parameter indicating which header contains the trace length: &quot;file_header&quot; &quot;trace_header&quot;, or &quot;none&quot;</span>
+<span class="sd">        :param location:      Out-parameter containing the byte offset of the field within the header (if applicable)</span>
+<span class="sd">        :type  which_header:  str_ref</span>
+<span class="sd">        :type  location:      int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">which_header</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">location</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sample_interval_configuration</span><span class="p">(</span><span class="n">which_header</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">location</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_sample_interval_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_sample_interval_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">set_sample_interval_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_header</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">location_or_value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</span>
+<span class="sd">        </span>
+<span class="sd">        :param which_header:       Which header contains the sample interval: &quot;file_header&quot;, &quot;trace_header&quot; or &quot;none&quot;</span>
+<span class="sd">        :param location:           If `which_header` is &quot;file_header&quot; or &quot;trace_header&quot;, then this parameter is the offset of the field containing the sample interval. If `which_header` is &quot;none&quot;, thenthis parameter is ignored.</span>
+<span class="sd">        :param location_or_value:  If `which_header` is &quot;file_header&quot; or &quot;trace_header&quot;, then this parameter is ignored. If `which_header` is &quot;none&quot;, thenthis parameter is the sample interval.</span>
+<span class="sd">        :type  which_header:       str</span>
+<span class="sd">        :type  location:           int</span>
+<span class="sd">        :type  location_or_value:  float</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_sample_interval_configuration</span><span class="p">(</span><span class="n">which_header</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">location</span><span class="p">,</span> <span class="n">location_or_value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_sample_interval"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_sample_interval">[docs]</a>    <span class="k">def</span> <span class="nf">get_sample_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_interval</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the sample interval of the trace data.</span>
+<span class="sd">        </span>
+<span class="sd">        :param sample_interval:  output parameter for sample interval</span>
+<span class="sd">        :type  sample_interval:  float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sample_interval</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sample_interval</span><span class="p">(</span><span class="n">sample_interval</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_z_offset_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_z_offset_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">get_z_offset_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_header</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</span>
+<span class="sd">        </span>
+<span class="sd">        :param which_header:  Out-parameter indicating which header contains the z offset: &quot;file_header&quot; &quot;trace_header&quot;, or &quot;none&quot;</span>
+<span class="sd">        :param location:      Out-parameter containing the byte offset of the field within the header (if applicable)</span>
+<span class="sd">        :type  which_header:  str_ref</span>
+<span class="sd">        :type  location:      int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">which_header</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">location</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_z_offset_configuration</span><span class="p">(</span><span class="n">which_header</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">location</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_z_offset_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_offset_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">set_z_offset_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_header</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</span>
+<span class="sd">        </span>
+<span class="sd">        :param which_header:  Which header contains the z offset: &quot;file_header&quot;, &quot;trace_header&quot; or &quot;none&quot;</span>
+<span class="sd">        :param location:      If `which_header` is &quot;file_header&quot; or &quot;trace_header&quot;, then this parameter is the offset of the field. If `which_header` is &quot;none&quot;, then this parameter is ignored.</span>
+<span class="sd">        :param value:         If `which_header` is &quot;file_header&quot; or &quot;trace_header&quot;, then this parameter is ignored. If `which_header` is &quot;none&quot;, then this parameter is the z offset.</span>
+<span class="sd">        :type  which_header:  str</span>
+<span class="sd">        :type  location:      int</span>
+<span class="sd">        :type  value:         float</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_z_offset_configuration</span><span class="p">(</span><span class="n">which_header</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">location</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_z_offset"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_z_offset">[docs]</a>    <span class="k">def</span> <span class="nf">get_z_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_offset</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the z-offset (time delay) of the trace data. Positive values correspond to a deeper top-of-trace; negative values to a higher top-of-trace.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_offset:     The z offset/time delay</span>
+<span class="sd">        :type  z_offset:     float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">z_offset</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_z_offset</span><span class="p">(</span><span class="n">z_offset</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.scan_file"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.scan_file">[docs]</a>    <span class="k">def</span> <span class="nf">scan_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Scans the SEG Y file, and attempts to guess the layout.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scan_file</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_field_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_field_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">get_field_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns information on the data in the trace headers.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:            :class:&#39;LTB&#39; containing trace header information</span>
+<span class="sd">        :rtype:              GXLTB</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_field_configuration</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">GXLTB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_field_configuration"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_field_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">set_field_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">configuration</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the interpretation of the fields in the SEG Y file, and specifies which fields should be exported to GDB.</span>
+<span class="sd">        </span>
+<span class="sd">        :param configuration:  `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` following the same format as returned by `GetFieldConfiguration()`.</span>
+<span class="sd">        :type  configuration:  GXLTB</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_field_configuration</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_trace_count"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_trace_count">[docs]</a>    <span class="k">def</span> <span class="nf">get_trace_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of traces in the SEG Y file</span>
+<span class="sd">        </span>
+<span class="sd">        :param count:        Trace count</span>
+<span class="sd">        :type  count:        int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">count</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_trace_count</span><span class="p">(</span><span class="n">count</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.check_sane_inline_crossline"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.check_sane_inline_crossline">[docs]</a>    <span class="k">def</span> <span class="nf">check_sane_inline_crossline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_sane</span><span class="p">,</span> <span class="n">possibly_swapped</span><span class="p">,</span> <span class="n">only_one_line</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if the currently-configured inline and crossline fields seem sensible.</span>
+<span class="sd">        </span>
+<span class="sd">        :param is_sane:           True is inline/crossline values seem sensible.</span>
+<span class="sd">        :param possibly_swapped:  True if it looks like the inline and crossline fields are swapped.</span>
+<span class="sd">        :param only_one_line:     True if it looks like the file only contains one line. This may mean the file is 2D.</span>
+<span class="sd">        :type  is_sane:           bool_ref</span>
+<span class="sd">        :type  possibly_swapped:  bool_ref</span>
+<span class="sd">        :type  only_one_line:     bool_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">is_sane</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">possibly_swapped</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">only_one_line</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_sane_inline_crossline</span><span class="p">(</span><span class="n">is_sane</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">possibly_swapped</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">only_one_line</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_voxel_dimensions"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_voxel_dimensions">[docs]</a>    <span class="k">def</span> <span class="nf">get_voxel_dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the size of the voxel that would be exported with the current configuration.</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:            Voxel size along X</span>
+<span class="sd">        :param y:            Voxel size along Y</span>
+<span class="sd">        :param z:            Voxel size along Z</span>
+<span class="sd">        :type  x:            int_ref</span>
+<span class="sd">        :type  y:            int_ref</span>
+<span class="sd">        :type  z:            int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_voxel_dimensions</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_voxel_cell_size"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_voxel_cell_size">[docs]</a>    <span class="k">def</span> <span class="nf">get_voxel_cell_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the cell size of the voxel that would be exported with the current configuration.</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:            Voxel cell size along X</span>
+<span class="sd">        :param y:            Voxel cell size along Y</span>
+<span class="sd">        :param z:            Voxel cell size along Z</span>
+<span class="sd">        :type  x:            float_ref</span>
+<span class="sd">        :type  y:            float_ref</span>
+<span class="sd">        :type  z:            float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_voxel_cell_size</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_auto_voxel_cell_size_xy"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_auto_voxel_cell_size_xy">[docs]</a>    <span class="k">def</span> <span class="nf">set_auto_voxel_cell_size_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the XY cell size of the voxel that would be exported to the dimensions calculated from the tie points..</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_auto_voxel_cell_size_xy</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_user_voxel_cell_size_xy"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_user_voxel_cell_size_xy">[docs]</a>    <span class="k">def</span> <span class="nf">set_user_voxel_cell_size_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the XY cell size of the voxel that would be exported with the current configuration.</span>
+<span class="sd">        </span>
+<span class="sd">        :param x:            Voxel cell size along X</span>
+<span class="sd">        :param y:            Voxel cell size along Y</span>
+<span class="sd">        :type  x:            float</span>
+<span class="sd">        :type  y:            float</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_user_voxel_cell_size_xy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_georeferencing"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_georeferencing">[docs]</a>    <span class="k">def</span> <span class="nf">get_georeferencing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the georeferencing of the voxel that would be exported with the current configuration.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:              GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_georeferencing</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">GXIPJ</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_georeferencing"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_georeferencing">[docs]</a>    <span class="k">def</span> <span class="nf">set_georeferencing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the georeferencing of the voxel that would be exported with the current configuration.</span>
+<span class="sd">        </span>
+<span class="sd">        :type  ipj:          GXIPJ</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_georeferencing</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_tie_point"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_tie_point">[docs]</a>    <span class="k">def</span> <span class="nf">get_tie_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">in_line</span><span class="p">,</span> <span class="n">cross_line</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return  the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.</span>
+<span class="sd">        </span>
+<span class="sd">        :param i:            Tie point indexl must be 0, 1 or 2.</span>
+<span class="sd">        :param x:            x-coordinate</span>
+<span class="sd">        :param y:            inline-coordinate</span>
+<span class="sd">        :param in_line:      Tie point index.</span>
+<span class="sd">        :param cross_line:   crossline-coordinate</span>
+<span class="sd">        :type  i:            int</span>
+<span class="sd">        :type  x:            float_ref</span>
+<span class="sd">        :type  y:            float_ref</span>
+<span class="sd">        :type  in_line:      int_ref</span>
+<span class="sd">        :type  cross_line:   int_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">in_line</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cross_line</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_tie_point</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">in_line</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cross_line</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_tie_point"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_tie_point">[docs]</a>    <span class="k">def</span> <span class="nf">set_tie_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">in_line</span><span class="p">,</span> <span class="n">cross_line</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.</span>
+<span class="sd">        </span>
+<span class="sd">        :param i:            Tie point index.</span>
+<span class="sd">        :param x:            x-coordinate</span>
+<span class="sd">        :param y:            inline-coordinate</span>
+<span class="sd">        :param in_line:      Tie point index.</span>
+<span class="sd">        :param cross_line:   crossline-coordinate</span>
+<span class="sd">        :type  i:            int</span>
+<span class="sd">        :type  x:            float</span>
+<span class="sd">        :type  y:            float</span>
+<span class="sd">        :type  in_line:      int</span>
+<span class="sd">        :type  cross_line:   int</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_tie_point</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">in_line</span><span class="p">,</span> <span class="n">cross_line</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.recalculate_georeferencing"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.recalculate_georeferencing">[docs]</a>    <span class="k">def</span> <span class="nf">recalculate_georeferencing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recalculate georeferencing; call after configuration has changed.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_recalculate_georeferencing</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.reset_tie_points"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.reset_tie_points">[docs]</a>    <span class="k">def</span> <span class="nf">reset_tie_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Discard user-supplied tie points and auto-choose new ones..</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reset_tie_points</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_inline_and_crossline_azimuths"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_inline_and_crossline_azimuths">[docs]</a>    <span class="k">def</span> <span class="nf">get_inline_and_crossline_azimuths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inline_azimuth</span><span class="p">,</span> <span class="n">crossline_azimuth</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the inline and crossline azimuths, in degrees</span>
+<span class="sd">        </span>
+<span class="sd">        :param inline_azimuth:     Inline azimuth</span>
+<span class="sd">        :param crossline_azimuth:  Crossline azimuth</span>
+<span class="sd">        :type  inline_azimuth:     float_ref</span>
+<span class="sd">        :type  crossline_azimuth:  float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inline_azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">crossline_azimuth</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_inline_and_crossline_azimuths</span><span class="p">(</span><span class="n">inline_azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">crossline_azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.export_voxel_and_database"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.export_voxel_and_database">[docs]</a>    <span class="k">def</span> <span class="nf">export_voxel_and_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voxel_filename</span><span class="p">,</span> <span class="n">gdb_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exports contents of SEG Y file to voxel and/or database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param voxel_filename:  Output voxel file name</span>
+<span class="sd">        :param gdb_filename:    Output database file name</span>
+<span class="sd">        :type  voxel_filename:  str</span>
+<span class="sd">        :type  gdb_filename:    str</span>
+
+<span class="sd">        .. versionadded:: 9.6</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_voxel_and_database</span><span class="p">(</span><span class="n">voxel_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">gdb_filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_gdb_output_filename"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_gdb_output_filename">[docs]</a>    <span class="k">def</span> <span class="nf">set_gdb_output_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exports contents of SEG Y file to a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename:     Output database file name</span>
+<span class="sd">        :type  filename:     str</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_gdb_output_filename</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_voxel_output_filename"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_voxel_output_filename">[docs]</a>    <span class="k">def</span> <span class="nf">set_voxel_output_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exports contents of SEG Y file to voxel.</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename:     Output voxel file name</span>
+<span class="sd">        :type  filename:     str</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_voxel_output_filename</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_section_output_filename"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_section_output_filename">[docs]</a>    <span class="k">def</span> <span class="nf">set_section_output_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exports contents of SEG Y file to a crooked section.</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename:     Output crooked section file name</span>
+<span class="sd">        :type  filename:     str</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_section_output_filename</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_slice_output_prefix"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_slice_output_prefix">[docs]</a>    <span class="k">def</span> <span class="nf">set_slice_output_prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exports inline or crossline slices to a section grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param prefix:       Output section file name prefix</span>
+<span class="sd">        :type  prefix:       str</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_slice_output_prefix</span><span class="p">(</span><span class="n">prefix</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_inline_slice_indices"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_inline_slice_indices">[docs]</a>    <span class="k">def</span> <span class="nf">set_inline_slice_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Which inline slices to export to a section grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param indices:      Which inline values to export.</span>
+<span class="sd">        :type  indices:      GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_inline_slice_indices</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_crossline_slice_indices"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_crossline_slice_indices">[docs]</a>    <span class="k">def</span> <span class="nf">set_crossline_slice_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Which crossline slices to export to a section grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param indices:      Which crossline values to export.</span>
+<span class="sd">        :type  indices:      GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_crossline_slice_indices</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_z_slice_indices"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_slice_indices">[docs]</a>    <span class="k">def</span> <span class="nf">set_z_slice_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Which z slices to export to a section grid.</span>
+<span class="sd">        </span>
+<span class="sd">        :param indices:      Which z values to export.</span>
+<span class="sd">        :type  indices:      GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_z_slice_indices</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_slice_filenames"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_slice_filenames">[docs]</a>    <span class="k">def</span> <span class="nf">get_slice_filenames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a list of the filenames of the XY slices that will be exported.</span>
+<span class="sd">        </span>
+<span class="sd">        :param filename_list:  List of filenames,separated by newlines</span>
+<span class="sd">        :type  filename_list:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filename_list</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_slice_filenames</span><span class="p">(</span><span class="n">filename_list</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_z_decimation"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_z_decimation">[docs]</a>    <span class="k">def</span> <span class="nf">set_z_decimation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets Z decimation factor.</span>
+<span class="sd">        </span>
+<span class="sd">        :param factor:       Decimation factor</span>
+<span class="sd">        :type  factor:       int</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_z_decimation</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_user_z_range"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_user_z_range">[docs]</a>    <span class="k">def</span> <span class="nf">set_user_z_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_min</span><span class="p">,</span> <span class="n">z_max</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets Z-range to clamp to.</span>
+<span class="sd">        </span>
+<span class="sd">        :param z_min:        Z minimum</span>
+<span class="sd">        :param z_max:        Z maximum</span>
+<span class="sd">        :type  z_min:        float</span>
+<span class="sd">        :type  z_max:        float</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_user_z_range</span><span class="p">(</span><span class="n">z_min</span><span class="p">,</span> <span class="n">z_max</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.clear_user_z_range"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.clear_user_z_range">[docs]</a>    <span class="k">def</span> <span class="nf">clear_user_z_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clears Z-range to clamp to, disbling z-clamping.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_user_z_range</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_user_inline_range"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_user_inline_range">[docs]</a>    <span class="k">def</span> <span class="nf">set_user_inline_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inline_min</span><span class="p">,</span> <span class="n">inline_max</span><span class="p">,</span> <span class="n">inline_stride</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets inline-range to clamp to.</span>
+<span class="sd">        </span>
+<span class="sd">        :param inline_min:     inline minimum</span>
+<span class="sd">        :param inline_max:     inline maximum</span>
+<span class="sd">        :param inline_stride:  inline stride</span>
+<span class="sd">        :param factor:         Decimation factor</span>
+<span class="sd">        :type  inline_min:     int</span>
+<span class="sd">        :type  inline_max:     int</span>
+<span class="sd">        :type  inline_stride:  int</span>
+<span class="sd">        :type  factor:         int</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_user_inline_range</span><span class="p">(</span><span class="n">inline_min</span><span class="p">,</span> <span class="n">inline_max</span><span class="p">,</span> <span class="n">inline_stride</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_user_crossline_range"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_user_crossline_range">[docs]</a>    <span class="k">def</span> <span class="nf">set_user_crossline_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">crossline_min</span><span class="p">,</span> <span class="n">crossline_max</span><span class="p">,</span> <span class="n">crossline_stride</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets crossline-range to clamp to.</span>
+<span class="sd">        </span>
+<span class="sd">        :param crossline_min:     crossline minimum</span>
+<span class="sd">        :param crossline_max:     crossline maximum</span>
+<span class="sd">        :param crossline_stride:  crossline stride</span>
+<span class="sd">        :param factor:            Decimation factor</span>
+<span class="sd">        :type  crossline_min:     int</span>
+<span class="sd">        :type  crossline_max:     int</span>
+<span class="sd">        :type  crossline_stride:  int</span>
+<span class="sd">        :type  factor:            int</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_user_crossline_range</span><span class="p">(</span><span class="n">crossline_min</span><span class="p">,</span> <span class="n">crossline_max</span><span class="p">,</span> <span class="n">crossline_stride</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.clear_user_range"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.clear_user_range">[docs]</a>    <span class="k">def</span> <span class="nf">clear_user_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clears inline and crossline ranges to clamp to.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_user_range</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.set_trace_dummy_value"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.set_trace_dummy_value">[docs]</a>    <span class="k">def</span> <span class="nf">set_trace_dummy_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dummy_value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the trace dummy value.</span>
+<span class="sd">        </span>
+<span class="sd">        :param dummy_value:  trace dummy value</span>
+<span class="sd">        :type  dummy_value:  float</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_trace_dummy_value</span><span class="p">(</span><span class="n">dummy_value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.clear_trace_dummy_value"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.clear_trace_dummy_value">[docs]</a>    <span class="k">def</span> <span class="nf">clear_trace_dummy_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Disables the trace dummy value.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_trace_dummy_value</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.get_clip_xy_extents"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.get_clip_xy_extents">[docs]</a>    <span class="k">def</span> <span class="nf">get_clip_xy_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">is_clip_valid</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the X,Y extents to clip the voxel.</span>
+<span class="sd">        </span>
+<span class="sd">        :param is_clip_valid:  is clip area valid</span>
+<span class="sd">        :param x_min:          minimum X value</span>
+<span class="sd">        :param x_max:          maximum X value</span>
+<span class="sd">        :param y_min:          minimum Y value</span>
+<span class="sd">        :param y_max:          maximum Y value</span>
+<span class="sd">        :type  is_clip_valid:  int_ref</span>
+<span class="sd">        :type  x_min:          float_ref</span>
+<span class="sd">        :type  x_max:          float_ref</span>
+<span class="sd">        :type  y_min:          float_ref</span>
+<span class="sd">        :type  y_max:          float_ref</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">is_clip_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_clip_xy_extents</span><span class="p">(</span><span class="n">is_clip_valid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_max</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.add_trace_filter"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.add_trace_filter">[docs]</a>    <span class="k">def</span> <span class="nf">add_trace_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">constraint</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a filter based on trace header fields.</span>
+<span class="sd">        </span>
+<span class="sd">        :param offset:       byte-offset of the field to filter by.</span>
+<span class="sd">        :param value1:       If `constraint` is EQUAL and NOT_EQUAL, this is the value to compare the field to. For IN_RANGE and NOT_IN_RANGE, this is the minimum.</span>
+<span class="sd">        :param value2:       If `constraint` is EQUAL and NOT_EQUAL, this parameter is ignored For IN_RANGE and NOT_IN_RANGE, this is the maximum.</span>
+<span class="sd">        :param constraint:   How the values are compared. Can be &quot;IN_RANGE&quot;, &quot;NOT_IN_RANGE&quot;, &quot;EQUAL&quot; or &quot;NOT_EQUAL&quot;.</span>
+<span class="sd">        :type  offset:       int</span>
+<span class="sd">        :type  value1:       int</span>
+<span class="sd">        :type  value2:       int</span>
+<span class="sd">        :type  constraint:   str</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_trace_filter</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">constraint</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.clear_trace_filters"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.clear_trace_filters">[docs]</a>    <span class="k">def</span> <span class="nf">clear_trace_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove all active trace filters.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clear_trace_filters</span><span class="p">()</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.count_traces_that_pass_filters"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.count_traces_that_pass_filters">[docs]</a>    <span class="k">def</span> <span class="nf">count_traces_that_pass_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Count the number of traces that pass the currently-configured trace filters.</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype:              int</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count_traces_that_pass_filters</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.override_navigation_2d"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.override_navigation_2d">[docs]</a>    <span class="k">def</span> <span class="nf">override_navigation_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shotpoint_coords</span><span class="p">,</span> <span class="n">x_coordinates</span><span class="p">,</span> <span class="n">y_coordinates</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Specify the X/Y coordinates of the traces, instead of using values from the trace headers.</span>
+<span class="sd">        </span>
+<span class="sd">        :param shotpoint_coords:  The shotpoint coordinates, asread from the trace headers.</span>
+<span class="sd">        :param x_coordinates:     The x-coordinates</span>
+<span class="sd">        :param y_coordinates:     The y-coordinates</span>
+<span class="sd">        :type  shotpoint_coords:  GXVV</span>
+<span class="sd">        :type  x_coordinates:     GXVV</span>
+<span class="sd">        :type  y_coordinates:     GXVV</span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_override_navigation_2d</span><span class="p">(</span><span class="n">shotpoint_coords</span><span class="p">,</span> <span class="n">x_coordinates</span><span class="p">,</span> <span class="n">y_coordinates</span><span class="p">)</span></div>
+        
+
+
+
+
+<div class="viewcode-block" id="GXSEGYREADER.export_files"><a class="viewcode-back" href="../../../GXSEGYREADER.html#geosoft.gxapi.GXSEGYREADER.export_files">[docs]</a>    <span class="k">def</span> <span class="nf">export_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exports contents of SEG Y file to voxel and/or database.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 9.7</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_files</span><span class="p">()</span></div></div>
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 9.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSEGYREADER</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

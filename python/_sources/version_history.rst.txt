@@ -2,6 +2,26 @@ geosoft.gxpy module history
 ==========================================
 
   
+Version 9.9
+-----------------
+
+New Classes
+^^^^^^^^^^^
+
+:class:`geosoft.gxpy.view.PlaneReliefSurfaceInfo` Information about a relief surface assigned to a plane. The following properties are represented:
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxpy.map.Map.from_gxapi` Instantiate Map from gxapi instance.
+
+:func:`geosoft.gxpy.view.View.from_gxapi` Instantiate View from gxapi instance.
+
+:func:`geosoft.gxpy.view.View_3d.from_gxapi` Instantiate View_3d from gxapi instance.
+
+
+  
 Version 9.6
 -----------------
 
@@ -896,6 +916,43 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 9.9
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDB.non_string_and_non_array_chan_lst` Load a `GXLST <geosoft.gxapi.GXLST>` with non-string and non-array database channels.
+
+:func:`geosoft.gxapi.GXDB.rename_line` Change the name for a line.
+
+:func:`geosoft.gxapi.GXFFT.add_white_noise` Add white noise to the power spectrum of an FFT object.
+
+:func:`geosoft.gxapi.GXFFT2.filter_response` Calculates response for filter(s) defined in control file. Not specific to 2D.
+
+:func:`geosoft.gxapi.GXGU.magnetic_tilt_depth` Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.
+
+:func:`geosoft.gxapi.GXGUI.dat_file_form_ex` Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.
+
+:func:`geosoft.gxapi.GXMAP.rename_view` Renames a view in this map.
+
+:func:`geosoft.gxapi.GXMVIEW.capture_3d_snapshot` Capture current 3D view state to a snapshot.
+
+:func:`geosoft.gxapi.GXMVIEW.get_3d_snapshots` Get the list of 3D snapshots in a 3D view.
+
+:func:`geosoft.gxapi.GXMVIEW.get_plane_surf_info` Get the surface information
+
+:func:`geosoft.gxapi.GXMVIEW.get_plane_surface` Get the surface image of a plane
+
+:func:`geosoft.gxapi.GXMVIEW.restore_3d_snapshot` Restore 3D view to specific snapshot state.
+
+:func:`geosoft.gxapi.GXSYS.run_python` Run a Python GX script with initialization information.
+
+:func:`geosoft.gxapi.GXTC.create_ex2` Creates a Terrain Correction object with surveytype and topo surface elevation grid
+
+
+  
 Version 9.8
 -----------------
 
@@ -923,8 +980,6 @@ New Functions
 :func:`geosoft.gxapi.GXSURFACEITEM.compute_poly_line_intersections` Compute intersections of a 3D PolyLine with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
 
 :func:`geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box` Checks intersections of a bounding box with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
-
-:func:`geosoft.gxapi.GXSYS.get_view_service_url` Get the service URL for View
 
 
   
@@ -1022,10 +1077,6 @@ New Functions
 :func:`geosoft.gxapi.GXSEGYREADER.set_z_decimation` Sets Z decimation factor.
 
 :func:`geosoft.gxapi.GXSEGYREADER.set_z_slice_indices` Which z slices to export to a section grid.
-
-:func:`geosoft.gxapi.GXSYS.get_api_key` Get the API Key if signed in
-
-:func:`geosoft.gxapi.GXSYS.get_view_url` Get the View URL
 
 
   
