@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.vv submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    <title>geosoft.gxpy.vv submodule &#8212; Geosoft GX Python API 9.3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0',
+        VERSION:     '9.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -108,17 +108,23 @@ data to the same fiducial so that vector-to-vector operations can be performed.<
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.vv.GXvv">
-<em class="property">class </em><code class="descname">GXvv</code><span class="sig-paren">(</span><em>array=None</em>, <em>dtype=None</em>, <em>fid=(0.0</em>, <em>1.0)</em>, <em>unit_of_measure=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descname">GXvv</code><span class="sig-paren">(</span><em>array=None</em>, <em>dtype=None</em>, <em>fid=None</em>, <em>unit_of_measure=None</em>, <em>dim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">collections.abc.Sequence</span></code></p>
 <p>VV class wrapper.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>array</strong> &#8211; array-like, None to create an empty VV</li>
+<li><strong>array</strong> &#8211; array-like, None to create an empty VV. Can have 2 dimensions for float32 or
+float64 data, in which case the second dimension can be 2 or 3 to use Geosoft
+2D and 3D dimensioned types. This can also be another <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">GXvv</span></code></a> instance, in which
+case a copy of the data is made and the dtype, dim, fid an unit_of_measurement
+will default to the source instance.</li>
 <li><strong>dtype</strong> &#8211; numpy data type.  For unicode strings &#8216;U#&#8217;, where # is a string length. If not specified
 the type is taken from first element in array, of if no array the default is &#8216;float&#8217;.</li>
+<li><strong>dim</strong> &#8211; dimension can be 1 (default), 2 (2D) or 3 (3D). Ignored if array is defined as the array
+dimensions will be used.</li>
 <li><strong>fid</strong> &#8211; (start, increment) fiducial</li>
 <li><strong>unit_of_measure</strong> &#8211; unit of measure for the contained data.</li>
 </ul>
@@ -128,7 +134,8 @@ the type is taken from first element in array, of if no array the default is &#8
 <code class="docutils literal"><span class="pre">fid</span></code>         (start, increment) fiducial
 <code class="docutils literal"><span class="pre">length</span></code>      number of elements in the VV
 <code class="docutils literal"><span class="pre">gxtype</span></code>      GX data type
-<code class="docutils literal"><span class="pre">dtype</span></code>       numpy data type</p>
+<code class="docutils literal"><span class="pre">dtype</span></code>       numpy data type
+<code class="docutils literal"><span class="pre">dim</span></code>         dimension</p>
 </td>
 </tr>
 </tbody>
@@ -142,6 +149,15 @@ the type is taken from first element in array, of if no array the default is &#8
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 9.3: </span>added unit_of_measure</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>added string support in __getitem__, and creates from a source <code class="xref py py-obj docutils literal"><span class="pre">GVvv</span></code> instance.</p>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxpy.vv.GXvv.dim">
+<code class="descname">dim</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of elements in the array, 1, 2 or 3.</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.dtype">
 <code class="descname">dtype</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.dtype" title="Permalink to this definition">¶</a></dt>
@@ -157,6 +173,23 @@ the type is taken from first element in array, of if no array the default is &#8
 <dd><p>fid tuple (start,increment), can be set</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.vv.GXvv.fill">
+<code class="descname">fill</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill a vv with a constant value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> &#8211; value to fill</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -201,9 +234,30 @@ the type is taken from first element in array, of if no array the default is &#8
 </dd></dl>
 
 <dl class="attribute">
+<dt id="geosoft.gxpy.vv.GXvv.is_float">
+<code class="descname">is_float</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.is_float" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if a base float type, 32 or 64-bit</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.vv.GXvv.is_float64">
+<code class="descname">is_float64</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.is_float64" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if a base 64-bit float</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.is_int">
 <code class="descname">is_int</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.is_int" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if a base integer type</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.vv.GXvv.is_string">
+<code class="descname">is_string</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.is_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if a base string type</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -227,6 +281,23 @@ the type is taken from first element in array, of if no array the default is &#8
 </div>
 </dd></dl>
 
+<dl class="method">
+<dt id="geosoft.gxpy.vv.GXvv.min_max">
+<code class="descname">min_max</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.min_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the minimum and maximum values as doubles.  Strings are converted if possible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(minimum, maximum), or if all dummy, (None, None)</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="geosoft.gxpy.vv.GXvv.np">
 <code class="descname">np</code><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.np" title="Permalink to this definition">¶</a></dt>
@@ -241,15 +312,15 @@ in another dtype.</p>
 
 <dl class="method">
 <dt id="geosoft.gxpy.vv.GXvv.refid">
-<code class="descname">refid</code><span class="sig-paren">(</span><em>fid</em>, <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.refid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">refid</code><span class="sig-paren">(</span><em>fid</em>, <em>length=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.refid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample VV to a new fiducial and length</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fid</strong> &#8211; (start,incr)</li>
-<li><strong>length</strong> &#8211; length</li>
+<li><strong>fid</strong> &#8211; (start, incr)</li>
+<li><strong>length</strong> &#8211; length, if not specified the length is calculated to the end of the data.</li>
 </ul>
 </td>
 </tr>
@@ -258,19 +329,23 @@ in another dtype.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>added default length calculation</p>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="geosoft.gxpy.vv.GXvv.set_data">
 <code class="descname">set_data</code><span class="sig-paren">(</span><em>data</em>, <em>fid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.GXvv.set_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set vv data from an array.  If the array is float type numpy.nan are</p>
+<dd><p>Set vv data from an iterable, which can be another <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">GXvv</span></code></a> instance.  If the data is float type numpy.nan
+are used to indicate dummy values.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; data array, must be dimension 1</li>
-<li><strong>fid</strong> &#8211; fid tuple (start,increment), default does not change</li>
+<li><strong>data</strong> &#8211; data array of <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">GXvv</span></code></a> instance, will be reshapped to VV dimension</li>
+<li><strong>fid</strong> &#8211; fid tuple (start,increment), default does not change current fid</li>
 </ul>
 </td>
 </tr>
@@ -281,6 +356,9 @@ in another dtype.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 9.3: </span>default fid leaves fid unchanged</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>now accepts <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">GXvv</span></code></a> instance as the source data.</p>
 </div>
 </dd></dl>
 
@@ -302,6 +380,59 @@ in another dtype.</p>
 </div>
 </dd></dl>
 
+<dl class="function">
+<dt id="geosoft.gxpy.vv.np_from_vvset">
+<code class="descname">np_from_vvset</code><span class="sig-paren">(</span><em>vvset</em>, <em>axis=1</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.np_from_vvset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a 2d numpy array from a set of <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">GXvv</span></code></a> instances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>vvset</strong> &#8211; (vv1, vv2, ...) set ot <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instances</li>
+<li><strong>axis</strong> &#8211; axis for the vv, default is 1, such that each vv is a column, <code class="xref py py-obj docutils literal"><span class="pre">axis=0</span></code> for vv to be rows</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">numpy array shaped (max_vv_length, number_of_vv) for <code class="xref py py-obj docutils literal"><span class="pre">axis=1</span></code>, or (number_of_vv, max_vv_length)
+for <code class="xref py py-obj docutils literal"><span class="pre">axis=0</span></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.vv.vvset_from_np">
+<code class="descname">vvset_from_np</code><span class="sig-paren">(</span><em>npd</em>, <em>axis=1</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.vv.vvset_from_np" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a set of <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">GXvv</span></code></a> instances from a 2d numpy array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>npd</strong> &#8211; numpy data array of dimension 2. If the array has higher dimensions it will first
+be reshaped to a 2-dimension array based on the last axis.</li>
+<li><strong>axis</strong> &#8211; axis for the vv, default is 1, such that each columns become vv, <code class="xref py py-obj docutils literal"><span class="pre">axis=0</span></code> for rows to be vv</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[vv0, vv1, vv2, ...] <a class="reference internal" href="#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instances for each column or row (<code class="xref py py-obj docutils literal"><span class="pre">axis=0</span></code>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<p>npd = np.array([[1, 2, 3], [4, 5, 6]])</p>
+<p>returns (vv([1, 4]), vv([2, 5]), vv([3, 6]))</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -316,12 +447,12 @@ in another dtype.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Geosoft Inc.
+        &#169; Copyright 2018, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.geometry submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    <title>geosoft.gxpy.geometry submodule &#8212; Geosoft GX Python API 9.3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0',
+        VERSION:     '9.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,28 +74,31 @@
             
   <div class="section" id="module-geosoft.gxpy.geometry">
 <span id="geosoft-gxpy-geometry-submodule"></span><h1>geosoft.gxpy.geometry submodule<a class="headerlink" href="#module-geosoft.gxpy.geometry" title="Permalink to this headline">¶</a></h1>
-<p>Spatial geometric elements.</p>
+<p>Spatial geometric objects.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col width="14%" />
+<col width="86%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">Geometry</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-obj docutils literal"><span class="pre">Geometry</span></code></a></td>
 <td>base class for all geometries</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a></td>
 <td>(x, y, z) point</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-class docutils literal"><span class="pre">Point2</span></code></a></td>
-<td>pair of <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instances that define a line, or extent</td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a></td>
+<td>pair of <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instances that define a line, or box, etc.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">PPoint</span></code></a></td>
-<td>multiple <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instances</td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal"><span class="pre">PPoint</span></code></a></td>
+<td>multiple <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instances</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Mesh" title="geosoft.gxpy.geometry.Mesh"><code class="xref py py-obj docutils literal"><span class="pre">Mesh</span></code></a></td>
+<td>mesh surface made up of triangular faces defined by verticies</td>
 </tr>
 </tbody>
 </table>
@@ -110,19 +113,55 @@
 </div>
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Geometry">
-<em class="property">class </em><code class="descname">Geometry</code><span class="sig-paren">(</span><em>coordinate_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Geometry</code><span class="sig-paren">(</span><em>coordinate_system=None</em>, <em>name=None</em>, <em>gxobj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Geometry base class for all geometries.</p>
+<p>Geometry base class for all geometries and spatial objects in Geosoft.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>coordinate_system</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance.</li>
+<li><strong>name</strong> &#8211; instance name string</li>
+<li><strong>gxobj</strong> &#8211; optional gxapi instance that can satisfy get_ipj() and/or get_extent()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">coordinate_system:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.name" title="geosoft.gxpy.geometry.Geometry.name"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.name</span></code></a></td>
+<td>name for the geometry</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.coordinate_system" title="geosoft.gxpy.geometry.Geometry.coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.coordinate_system</span></code></a></td>
+<td>spatial coordinate system of the x, y, z locations</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.extent" title="geosoft.gxpy.geometry.Geometry.extent"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.extent</span></code></a></td>
+<td>spatial extent as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.extent_xyz" title="geosoft.gxpy.geometry.Geometry.extent_xyz"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.extent_xyz</span></code></a></td>
+<td>(min_x, min_y, min_z, max_x, max_y, max_z)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.extent_xy" title="geosoft.gxpy.geometry.Geometry.extent_xy"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.extent_xy</span></code></a></td>
+<td>(min_x, min_y, max_x, max_y)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.dimension" title="geosoft.gxpy.geometry.Geometry.dimension"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.dimension</span></code></a></td>
+<td>(dx, dy, dz) dimension</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.dimension_xy" title="geosoft.gxpy.geometry.Geometry.dimension_xy"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.dimension_xy</span></code></a></td>
+<td>(dx, dy) dimension</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.centroid" title="geosoft.gxpy.geometry.Geometry.centroid"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.centroid</span></code></a></td>
+<td>center point as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.centroid_xyz" title="geosoft.gxpy.geometry.Geometry.centroid_xyz"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.centroid_xyz</span></code></a></td>
+<td>(x, y, z) location of the object center</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.geometry.Geometry.centroid_xy" title="geosoft.gxpy.geometry.Geometry.centroid_xy"><code class="xref py py-obj docutils literal"><span class="pre">Geometry.centroid_xy</span></code></a></td>
+<td>(x, y) center</td>
 </tr>
 </tbody>
 </table>
@@ -134,9 +173,105 @@
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
 <dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.centroid">
+<code class="descname">centroid</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.centroid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object centroid as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.centroid_xy">
+<code class="descname">centroid_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.centroid_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal centroid as a tuple (x, y).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.centroid_xyz">
+<code class="descname">centroid_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.centroid_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal centroid as a tuple (x, y, z).</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.geometry.Geometry.coordinate_system">
 <code class="descname">coordinate_system</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.coordinate_system" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance.  Can be set.</p>
+<dd><p><a class="reference internal" href="geosoft.gxpy.coordinate_system.html#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.coordinate_system.Coordinate_system</span></code></a> instance or None.  Can be set.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.dimension">
+<code class="descname">dimension</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object dimensions as tuple (dx, dy, dz)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.dimension_xy">
+<code class="descname">dimension_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.dimension_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal dimension as a tuple (dx, dy).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent">
+<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object extent as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_maximum">
+<code class="descname">extent_maximum</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum geometry extent as <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_maximum_xy">
+<code class="descname">extent_maximum_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_maximum_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum horizontal extent as tuple (max_x, max_y).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_maximum_xyz">
+<code class="descname">extent_maximum_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_maximum_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum geometry extent as tuple (x, y, z).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_minimum">
+<code class="descname">extent_minimum</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum geometry extent as <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_minimum_xy">
+<code class="descname">extent_minimum_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_minimum_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum horizontal extent as tuple (min_x, min_y).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_minimum_xyz">
+<code class="descname">extent_minimum_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_minimum_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum geometry extent as tuple (x, y, z).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_xy">
+<code class="descname">extent_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal extent as a tuple (min_x, min_y, max_x, max_y).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.extent_xyz">
+<code class="descname">extent_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.extent_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object extent as a tuple (xmin, ymin, zmin, xmax, ymax, zmax).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.gxobj">
+<code class="descname">gxobj</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.gxobj" title="Permalink to this definition">¶</a></dt>
+<dd><p>An associated gxapi object, or None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Geometry.name">
+<code class="descname">name</code><a class="headerlink" href="#geosoft.gxpy.geometry.Geometry.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spatial object name.</p>
 </dd></dl>
 
 </dd></dl>
@@ -149,80 +284,160 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="geosoft.gxpy.geometry.Mesh">
+<em class="property">class </em><code class="descname">Mesh</code><span class="sig-paren">(</span><em>mesh</em>, <em>coordinate_system=None</em>, <em>name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">collections.abc.Sequence</span></code></p>
+<p>Mesh - set of triangular faces, which are indexes into verticies.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mesh</strong> &#8211; (faces, verticies) that define a trangulated mesh surface. See below.</li>
+<li><strong>coordinate_system</strong> &#8211; coordinate system or None</li>
+<li><strong>name</strong> &#8211; name for the mesh, defaule is &#8216;_mesh_&#8217;</li>
+<li><strong>kwargs</strong> &#8211; passed to base class <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-obj docutils literal"><span class="pre">Geometry</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A mesh is a set of triangles, where each triangle has three indexes into a set of verticies.
+Verticies are defined as by a set of (x, y, z) locations. Meshes can be represented either
+as two arrays in the form (faces, verticies), or two sets of <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instances
+in the form ((f1vv, f2vv, f3vv), (xvv, yvv, zvv)).  In array form, each array is shaped (-1, 3),
+with faces being an integer array that references vertexes in the float vertex array.</p>
+<p>Operators supported: = + -, where &#8216;+&#8217; can be used to combine two meshes or add a constant offset.</p>
+<p>Iterating yields triangular faces as <a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-obj docutils literal"><span class="pre">PPoint</span></code></a> instances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxpy.geometry</span> <span class="k">as</span> <span class="nn">gxgm</span>
+<span class="kn">import</span> <span class="nn">geosoft.gxpy.vv</span> <span class="k">as</span> <span class="nn">gxvv</span>
+
+<span class="c1"># create from lists</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">verticies</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">gxgm</span><span class="o">.</span><span class="n">Mesh</span><span class="p">((</span><span class="n">faces</span><span class="p">,</span> <span class="n">verticies</span><span class="p">))</span>
+
+<span class="c1"># create from numpy arrays</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">faces</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="n">verticies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">verticies</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">gxgm</span><span class="o">.</span><span class="n">Mesh</span><span class="p">((</span><span class="n">faces</span><span class="p">,</span> <span class="n">verticies</span><span class="p">))</span>
+
+<span class="c1"># create from vv</span>
+<span class="n">f1vv</span><span class="p">,</span> <span class="n">f2vv</span><span class="p">,</span> <span class="n">f3vv</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">vvset_from_np</span><span class="p">(</span><span class="n">faces</span><span class="p">)</span>
+<span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span> <span class="o">=</span> <span class="n">gxvv</span><span class="o">.</span><span class="n">vvset_from_np</span><span class="p">(</span><span class="n">verticies</span><span class="p">)</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">gxgm</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(((</span><span class="n">f1vv</span><span class="p">,</span> <span class="n">f2vv</span><span class="p">,</span> <span class="n">f3vv</span><span class="p">),</span> <span class="p">(</span><span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Mesh.extent">
+<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Volume extent as <a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Mesh.faces">
+<code class="descname">faces</code><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh.faces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Faces as an integer numpy array, shape (n_faces, 3).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.geometry.Mesh.faces_vv">
+<code class="descname">faces_vv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh.faces_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return faces in <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> tuple (f1vv, f2vv, f3vv).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Mesh.length">
+<code class="descname">length</code><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of faces</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.geometry.Mesh.point_array">
+<code class="descname">point_array</code><span class="sig-paren">(</span><em>unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh.point_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return numpy array of face corner locations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>unique</strong> &#8211; True for limit to unique points, otherwise returns all points
+by unwinding each face. If unique the order will not be related to the faces.</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Mesh.verticies">
+<code class="descname">verticies</code><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh.verticies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verticies as a float numpy array, shape (n_verticies, 3).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.geometry.Mesh.verticies_vv">
+<code class="descname">verticies_vv</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Mesh.verticies_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return verticies in <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> tuple (xvv, yvv, zvv).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="geosoft.gxpy.geometry.PPoint">
-<em class="property">class </em><code class="descname">PPoint</code><span class="sig-paren">(</span><em>xyz</em>, <em>z=0.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">PPoint</code><span class="sig-paren">(</span><em>xyz</em>, <em>coordinate_system=None</em>, <em>z=0.0</em>, <em>name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">collections.abc.Sequence</span></code></p>
 <p>Poly-Point class. Basic instance arithmetic and equality testing is supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">xyz:</th><td class="field-body"><p class="first">array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).</p>
-<p>vv data is resampled to match the first vv.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">z:</th><td class="field-body"><p class="first last">constant z value for (x, y) data, ignored for (x, y, z) data</p>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">pp:</th><td class="field-body">np_array shape (n, 3)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">x, y, z:</th><td class="field-body">np_arrays of each ordinate set shape (n,)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">xy:</th><td class="field-body">np_arrays of (x, y) points (n, 2)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">xyz:</th><td class="field-body">same as pp</td>
-</tr>
-</tbody>
-</table>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xyz</strong> &#8211; array-like: (p1, p2, ...), ((x, y), ...), ((x, y, z), ...) or (vv_x, vv_y, [vv_z]).
+vv data is resampled to match the first vv.</li>
+<li><strong>coordinate_system</strong> &#8211; coordinate system or None</li>
+<li><strong>z</strong> &#8211; constant z value for (x, y) data, ignored for (x, y, z) data</li>
+<li><strong>kwargs</strong> &#8211; passed to base class <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-obj docutils literal"><span class="pre">Geometry</span></code></a></li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
+<p>Operators supported: = + - * /</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<dl class="method">
-<dt id="geosoft.gxpy.geometry.PPoint.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>return a copy as a <a class="reference internal" href="#geosoft.gxpy.geometry.PPoint" title="geosoft.gxpy.geometry.PPoint"><code class="xref py py-class docutils literal"><span class="pre">PPoint</span></code></a> instance</p>
-</dd></dl>
-
-<dl class="method">
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>added coordinate_system parameter</p>
+</div>
+<dl class="attribute">
 <dt id="geosoft.gxpy.geometry.PPoint.extent">
-<code class="descname">extent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Volume extent as (<a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>, <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>) for (min, max).</p>
+<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Volume extent as <a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a> for (min, max).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
-</div>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="geosoft.gxpy.geometry.PPoint.extent_xy">
-<code class="descname">extent_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent_xy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns horizontal extent as tuple (xmin, ymin, xmax, ymax)</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.</span></p>
-</div>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="geosoft.gxpy.geometry.PPoint.extent_xyz">
-<code class="descname">extent_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.PPoint.extent_xyz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns 3D extent as tuple (xmin, ymin, zmin, xmax, ymax, zmax)</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 9.3.</span></p>
 </div>
 </dd></dl>
 
@@ -291,51 +506,39 @@
 
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Point">
-<em class="property">class </em><code class="descname">Point</code><span class="sig-paren">(</span><em>p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
+<em class="property">class </em><code class="descname">Point</code><span class="sig-paren">(</span><em>p</em>, <em>coordinate_system=None</em>, <em>name=None</em>, <em>z=0.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">collections.abc.Sequence</span></code></p>
 <p>Spatial location (x,y,z).  Basic instance arithmetic and equality testing is supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">p:</th><td class="field-body"><p class="first">point in one of the following forms:</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> &#8211; <p>point in one of the following forms:</p>
 <p><a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance, returns a copy</p>
-<p>(x, y [,z]) implied z is 0.0 if not provided</p>
-<p class="last">k makes a point (k, k, k)</p>
+<p>(x, y [,z]) implied z is as defined by z=</p>
+<p>k makes a point (k, k, k)</p>
+</li>
+<li><strong>coordinate_system</strong> &#8211; coordinate system or None</li>
+<li><strong>z</strong> &#8211; implied z if len(p) is 2.</li>
+<li><strong>kwargs</strong> &#8211; passed to base class <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-obj docutils literal"><span class="pre">Geometry</span></code></a></li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">x, y, z:</th><td class="field-body">point ordinate values</td>
-</tr>
-<tr class="field-even field"><th class="field-name">xy:</th><td class="field-body">(x, y) tuple</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">xyz:</th><td class="field-body">(x, y, z) tuple</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+<p>Iterates on [x, y, z]</p>
+<p>Operators supported: = + - * /</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
-<dl class="method">
-<dt id="geosoft.gxpy.geometry.Point.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>return a copy as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instance</p>
-</dd></dl>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>added coordinate_system parameter</p>
+</div>
+<dl class="attribute">
+<dt id="geosoft.gxpy.geometry.Point.extent">
+<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point.extent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="geosoft.gxpy.geometry.Point.x">
@@ -371,78 +574,42 @@
 
 <dl class="class">
 <dt id="geosoft.gxpy.geometry.Point2">
-<em class="property">class </em><code class="descname">Point2</code><span class="sig-paren">(</span><em>p</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
+<em class="property">class </em><code class="descname">Point2</code><span class="sig-paren">(</span><em>p</em>, <em>coordinate_system=None</em>, <em>name=None</em>, <em>z=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">collections.abc.Sequence</span></code></p>
 <p>Two points, for a line, or a rectangle, or a cube.  Basic instance arithmetic and equality testing is supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">p:</th><td class="field-body"><p class="first">Points in one of the following forms:</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> &#8211; <p>Points in one of the following forms:</p>
+<p><a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a> makes a copy in the required coordinate system</p>
 <p>(<a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>, <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>)</p>
-<p>((x, y [,z]), (x, y [,z])) implied z is 0 if not specified</p>
+<p>(x, y [, z]) two points at the same location</p>
+<p>((x, y [, z]), (x, y [, z]))</p>
 <p>(x0, y0, x1, y1) implied z is 0</p>
-<p class="last">(x0, y0, z0, x1, y1, z1)</p>
+<p>(x0, y0, z0, x1, y1, z1)</p>
+</li>
+<li><strong>coordinate_system</strong> &#8211; coordinate system or None</li>
+<li><strong>z</strong> &#8211; implied z value when only (x, y) is passed</li>
+<li><strong>kwargs</strong> &#8211; passed to base class <a class="reference internal" href="#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-obj docutils literal"><span class="pre">Geometry</span></code></a></li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Properties:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">p0:</th><td class="field-body">first <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance</td>
-</tr>
-<tr class="field-even field"><th class="field-name">p1:</th><td class="field-body">second <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a> instance</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">x2, y2, z2:</th><td class="field-body">tuple pairs for (x0, x1), (y0, y1), (z0, z1)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">centroid:</th><td class="field-body">center of the two points as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">dimension:</th><td class="field-body">(dx, dy, dz) dimension defines by two points.</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+<p>Iterates on two points [p0, p1].</p>
+<p>Operators supported: = + - * /</p>
+<p>Second operand may be a <a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a> or a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-obj docutils literal"><span class="pre">Point</span></code></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>added coordinate_system parameter</p>
+</div>
 <dl class="attribute">
-<dt id="geosoft.gxpy.geometry.Point2.centroid">
-<code class="descname">centroid</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.centroid" title="Permalink to this definition">¶</a></dt>
-<dd><p>centroid on the line as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point" title="geosoft.gxpy.geometry.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> instance</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="geosoft.gxpy.geometry.Point2.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>return a copy as a <a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-class docutils literal"><span class="pre">Point2</span></code></a> instance</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="geosoft.gxpy.geometry.Point2.dimension">
-<code class="descname">dimension</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.dimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>dimensions as (dx, dy, dz)</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="geosoft.gxpy.geometry.Point2.extent_xy">
-<code class="descname">extent_xy</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.extent_xy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extent as (xmin, ymin, xmax, ymax)</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="geosoft.gxpy.geometry.Point2.extent_xyz">
-<code class="descname">extent_xyz</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.extent_xyz" title="Permalink to this definition">¶</a></dt>
+<dt id="geosoft.gxpy.geometry.Point2.extent">
+<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.geometry.Point2.extent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extent as (xmin, ymin, zmin, xmax, ymax, zmax)</p>
 </dd></dl>
 
@@ -466,6 +633,49 @@
 
 </dd></dl>
 
+<dl class="function">
+<dt id="geosoft.gxpy.geometry.extent_union">
+<code class="descname">extent_union</code><span class="sig-paren">(</span><em>g1</em>, <em>g2</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.extent_union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the spatial union of two spatial objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>g1</strong> &#8211; extent (p0 &lt; p1), returned extent will be in this coordinate system</li>
+<li><strong>g2</strong> &#8211; second object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">Point2</span></code></a> instance in the coordinate system of g1</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.geometry.first_coordinate_system">
+<code class="descname">first_coordinate_system</code><span class="sig-paren">(</span><em>geo_objects</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.geometry.first_coordinate_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first found known coordinate system in the list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geo_objects</strong> &#8211; objects as iterable</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">valid coordinate system or None if none found</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -480,12 +690,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Geosoft Inc.
+        &#169; Copyright 2018, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

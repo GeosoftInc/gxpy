@@ -27,11 +27,15 @@ The following sub-modules organize functions into logical groups.
    geosoft.gxpy.map
    geosoft.gxpy.metadata
    geosoft.gxpy.project
+   geosoft.gxpy.spatialdata
+   geosoft.gxpy.surface
    geosoft.gxpy.system
    geosoft.gxpy.utility
    geosoft.gxpy.va
    geosoft.gxpy.view
    geosoft.gxpy.viewer
+   geosoft.gxpy.vox
+   geosoft.gxpy.vox_display
    geosoft.gxpy.vv
    
 See https://github.com/GeosoftInc/gxpy/tree/master/examples for example scripts that use the Python modules.

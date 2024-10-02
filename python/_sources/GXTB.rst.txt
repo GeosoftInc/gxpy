@@ -25,4 +25,21 @@ TB_SEARCH constants
     
     .. autoattribute:: geosoft.gxapi.TB_SEARCH_LINEAR
 
+
+.. _TB_SORT:
+
+TB_SORT constants
+-----------------------------------------------------------------------
+
+`GXTB <geosoft.gxapi.GXTB>` Sorting mode
+
+.. autodata:: geosoft.gxapi.TB_SORT_UNIQUE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.TB_SORT_UNIQUE
+.. autodata:: geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES
+
 	

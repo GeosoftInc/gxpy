@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GXTB class &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    <title>GXTB class &#8212; Geosoft GX Python API 9.3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0',
+        VERSION:     '9.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -51,6 +51,7 @@
   <ul>
 <li><a class="reference internal" href="#">GXTB class</a><ul>
 <li><a class="reference internal" href="#tb-search-constants">TB_SEARCH constants</a></li>
+<li><a class="reference internal" href="#tb-sort-constants">TB_SORT constants</a></li>
 </ul>
 </li>
 </ul>
@@ -602,6 +603,24 @@ mode provides the best performance with typical data.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="geosoft.gxapi.GXTB.set_sort_mode">
+<code class="descname">set_sort_mode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_sort_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the sort mode of a table.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<em>int</em>) &#8211; <a class="reference internal" href="#tb-sort"><span class="std std-ref">TB_SORT constants</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-GeosoftOpenLicense">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="method">
 <dt id="geosoft.gxapi.GXTB.set_string">
 <code class="descname">set_string</code><span class="sig-paren">(</span><em>row</em>, <em>col</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxapi.GXTB.set_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets a string value into a table element.</p>
@@ -687,6 +706,32 @@ table.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="tb-sort-constants">
+<span id="tb-sort"></span><h2>TB_SORT constants<a class="headerlink" href="#tb-sort-constants" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal"><span class="pre">GXTB</span></code></a> Sorting mode</p>
+<dl class="data">
+<dt id="geosoft.gxapi.TB_SORT_UNIQUE">
+<code class="descname">TB_SORT_UNIQUE</code><a class="headerlink" href="#geosoft.gxapi.TB_SORT_UNIQUE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique values only when sorting.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TB_SORT_UNIQUE</code><em class="property"> = 0</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES">
+<code class="descname">TB_SORT_ALLOW_DUPLICATES</code><a class="headerlink" href="#geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow duplicates when sorting.</p>
+<dl class="attribute">
+<dt>
+<code class="descclassname">gxapi.</code><code class="descname">TB_SORT_ALLOW_DUPLICATES</code><em class="property"> = 1</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -701,12 +746,12 @@ table.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Geosoft Inc.
+        &#169; Copyright 2018, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

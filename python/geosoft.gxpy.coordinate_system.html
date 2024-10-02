@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.coordinate_system submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    <title>geosoft.gxpy.coordinate_system submodule &#8212; Geosoft GX Python API 9.3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0',
+        VERSION:     '9.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -81,17 +81,17 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><table border="1" class="first last docutils">
 <colgroup>
-<col width="35%" />
-<col width="65%" />
+<col width="29%" />
+<col width="71%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
 <td>define a coordinate system</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="geosoft.gxpy.coordinate_system.Coordinate_translate"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_translate</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_translate" title="geosoft.gxpy.coordinate_system.Coordinate_translate"><code class="xref py py-obj docutils literal"><span class="pre">Coordinate_translate</span></code></a></td>
 <td>translate coordinates between coordinate systems</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Wkt" title="geosoft.gxpy.coordinate_system.Wkt"><code class="xref py py-class docutils literal"><span class="pre">Wkt</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Wkt" title="geosoft.gxpy.coordinate_system.Wkt"><code class="xref py py-obj docutils literal"><span class="pre">Wkt</span></code></a></td>
 <td>well-know coordinate system for ESRI interoperability</td>
 </tr>
 </tbody>
@@ -126,12 +126,12 @@ the <a class="reference external" href="http://www.epsg.org/">EPSG Geodetic Regi
 the parameters defined in the GXF stings.  See <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxf" title="geosoft.gxpy.coordinate_system.Coordinate_system.gxf"><code class="xref py py-attr docutils literal"><span class="pre">Coordinate_system.gxf</span></code></a>.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
+<p class="last"><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Regression tests provide usage examples:     
-<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">tests</a></p>
 </div>
 <dl class="exception">
 <dt id="geosoft.gxpy.coordinate_system.CSException">
@@ -160,12 +160,14 @@ system to locate (x, y, z) cartesian coordinates relative to the Earth.</p>
 <li>a dictionary that contains the coordinate system properties (see <strong>Dictionary Structure</strong> below.)</li>
 <li>a JSON string that contains the coordinate system properties</li>
 <li>a list that contains the 5 
-<a class="reference external" href="http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File">GXF coordinate system strings</a>
-(eg: [&#8216;&#8220;WGS 84 / UTM zone 32N [geodetic]&#8221;, &#8220;WGS 84&#8221;, &#8220;UTM zone 32N&#8221;, &#8220;&#8221;, &#8220;&#8221;])</li>
-<li><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</li>
-<li><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a> instance, returns a copy</li>
+<a class="reference external" href="http://www.geosoft.com/resources/goto/GXF-Grid-eXchange-File">GXF coordinate system strings</a>.
+For example: <code class="docutils literal"><span class="pre">['&quot;WGS</span> <span class="pre">84</span> <span class="pre">/</span> <span class="pre">UTM</span> <span class="pre">zone</span> <span class="pre">32N</span> <span class="pre">[geodetic]&quot;,</span> <span class="pre">&quot;WGS</span> <span class="pre">84&quot;,</span> <span class="pre">&quot;UTM</span> <span class="pre">zone</span> <span class="pre">32N&quot;,</span> <span class="pre">&quot;&quot;,</span> <span class="pre">&quot;&quot;]</span></code></li>
+<li><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</li>
+<li><a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">Coordinate_system</span></code></a> instance, returns a copy</li>
+<li>None to create an unknown coordinate system.</li>
 </ul>
-<p>For examples refer to  <a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">coordinate_system tests</a></p>
+<p>For examples refer to
+<a class="reference external" href="https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_coordinate_system.py">tests</a></p>
 </p>
 </td>
 </tr>
@@ -325,7 +327,7 @@ projection is created with an origin at the defined origin point.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.coordinate_system.Coordinate_system.gxipj">
 <code class="descname">gxipj</code><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.gxipj" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</p>
+<dd><p><a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXIPJ</span></code></a> instance</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -355,6 +357,41 @@ projection is created with an origin at the defined origin point.</p>
 <dd><p>JSON formatted coordinate system string.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_system.local">
+<em class="property">classmethod </em><code class="descname">local</code><span class="sig-paren">(</span><em>lon_lat=(0</em>, <em>0)</em>, <em>origin=(0</em>, <em>0)</em>, <em>azimuth=0</em>, <em>elevation=0</em>, <em>datum='WGS 84'</em>, <em>local_datum=None</em>, <em>scale_factor=0.9996</em>, <em>vcs=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_system.local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an ad-hoc local coordinate system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lon_lat</strong> &#8211; (longitude, latitude) of the center</li>
+<li><strong>origin</strong> &#8211; (x, y) to assign to the center</li>
+<li><strong>azimuth</strong> &#8211; local rotation of the system relative to geographic North, in degrees azimuth</li>
+<li><strong>elevation</strong> &#8211; elevation for z = 0.</li>
+<li><strong>datum</strong> &#8211; datum, default is &#8220;WGS 84&#8221;</li>
+<li><strong>local_datum</strong> &#8211; local datum, default will be the default for the specified datum</li>
+<li><strong>scale_factor</strong> &#8211; central scale factor. The default is 0.9996 as the most common map system
+is UTM and thus relative distances in the local system will be similar,
+though not the same, as UTM.</li>
+<li><strong>vcs</strong> &#8211; name for the vertical coordinate system reference, default is unknown</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Local coordinate systems are simple cartesian systems established for a specific purpose without
+complete geodetic control, but for which one knows or can estimate the longitude, latitude of a point
+on the local coordinate system. In this way local coordinates can be located reasonably well relative
+to the Earth and and other Earth-refeerenced data.</p>
+<p>The local system will be constructed as an oblique stereographic projection centered at the system
+origin, which is similar to what one sees when looking at maps in Google maps.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -449,7 +486,7 @@ column ordered and the results are returned column ordered.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>xyz</strong> &#8211; (x, y, z) or irerable</li>
+<li><strong>xyz</strong> &#8211; (x, y, z) or iterable</li>
 <li><strong>column_ordered</strong> &#8211; if xyz is iterable, and this is True, the data is assumed to be
 column ordered and the results are returned column ordered.</li>
 </ul>
@@ -476,9 +513,9 @@ column ordered and the results are returned column ordered.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Params cs_from:</th><td class="field-body">from <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Params cs_from:</th><td class="field-body">from <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Params cs_to:</th><td class="field-body">to <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-class docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Params cs_to:</th><td class="field-body">to <a class="reference internal" href="#geosoft.gxpy.coordinate_system.Coordinate_system" title="geosoft.gxpy.coordinate_system.Coordinate_system"><code class="xref py py-obj docutils literal"><span class="pre">Coordinate_system</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -520,6 +557,31 @@ in which the first 3 columns are coordinates X, Y and Z.</p>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>conversion methods will return results in the same type as the input data.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.coordinate_system.Coordinate_translate.convert_vv">
+<code class="descname">convert_vv</code><span class="sig-paren">(</span><em>xvv</em>, <em>yvv</em>, <em>zvv=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.Coordinate_translate.convert_vv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project vv locations in-place.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xvv</strong> &#8211; x locations as <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instance</li>
+<li><strong>yvv</strong> &#8211; y locations as <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instance</li>
+<li><strong>zvv</strong> &#8211; optional z locations as <a class="reference internal" href="geosoft.gxpy.vv.html#geosoft.gxpy.vv.GXvv" title="geosoft.gxpy.vv.GXvv"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.vv.GXvv</span></code></a> instance</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -752,6 +814,15 @@ in which the first 3 columns are coordinates X, Y and Z.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.coordinate_system.is_known">
+<code class="descname">is_known</code><span class="sig-paren">(</span><em>coordinate_system</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.is_known" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if this is a known coordinate system</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.coordinate_system.list_from_wktsrs">
 <code class="descname">list_from_wktsrs</code><span class="sig-paren">(</span><em>wkt</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.coordinate_system.list_from_wktsrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list from a wkt spatial reference string.</p>
@@ -897,12 +968,12 @@ csv coordinate system table files in the Geosoft Desktop Applications <code clas
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Geosoft Inc.
+        &#169; Copyright 2018, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

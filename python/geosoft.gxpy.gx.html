@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.gx submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    <title>geosoft.gxpy.gx submodule &#8212; Geosoft GX Python API 9.3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0',
+        VERSION:     '9.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -113,7 +113,7 @@ stand-alone Python scripts, or is provided to the script for extensions to Geoso
 
 <dl class="class">
 <dt id="geosoft.gxpy.gx.GXpy">
-<em class="property">class </em><code class="descname">GXpy</code><span class="sig-paren">(</span><em>name='geosoft.gxpy.gx'</em>, <em>version='9.3.0'</em>, <em>parent_window=0</em>, <em>log=None</em>, <em>max_res_heap=10000000</em>, <em>res_stack=6</em>, <em>max_warnings=10</em>, <em>suppress_progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GXpy</code><span class="sig-paren">(</span><em>name='geosoft.gxpy.gx'</em>, <em>version='9.3.1'</em>, <em>parent_window=0</em>, <em>log=None</em>, <em>max_res_heap=10000000</em>, <em>res_stack=6</em>, <em>max_warnings=10</em>, <em>suppress_progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.gx._Singleton</span></code></p>
 <p>Geosoft GX context.  This is a singleton class, so subsequent creation returns an instance
 identical to the initial creation. This also means that initialization arguments are ignored
@@ -164,10 +164,10 @@ call stack to help find the function that created the resources.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">gxapi:</th><td class="field-body">GX context to be used to call geosoft.gxapi methods</td>
 </tr>
-<tr class="field-even field"><th class="field-name">gid:</th><td class="field-body">User&#8217;s Geosoft ID</td>
+<tr class="field-even field"><th class="field-name">tkframe:</th><td class="field-body">tkframe for UI applications.  Will be None if a the context was created from a window
+application.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">global gx:</th><td class="field-body">Global reference to this singleton class instance, None if invalid.  The
-construct geosoft.gxpy.gx.gx can be accessed anywhere.</td>
+<tr class="field-odd field"><th class="field-name">gid:</th><td class="field-body">User&#8217;s Geosoft ID</td>
 </tr>
 <tr class="field-even field"><th class="field-name">current_date:</th><td class="field-body">date at start-up</td>
 </tr>
@@ -185,6 +185,23 @@ construct geosoft.gxpy.gx.gx can be accessed anywhere.</td>
 <tr class="field-odd field"><th class="field-name">folder_temp:</th><td class="field-body">Geosoft temporary folder</td>
 </tr>
 <tr class="field-even field"><th class="field-name">folder_user:</th><td class="field-body">Geosoft Desktop installation &#8216;user&#8217; folder</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Private properties for special use:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">_stale_age:</th><td class="field-body">stale temporary files older than this age (in seconds) will be removed upon loss
+of context.  The default is 24 hours (24*60*60 seconds).</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">__remove_stale_geosoft_temp_files:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">if True, also remove Geosoft temporary files that may heve
+been created by other processes. The default is False, in which case only stale temporary
+files created by geosoft.gxpy processes will be removed.</td>
 </tr>
 </tbody>
 </table>
@@ -219,6 +236,12 @@ construct geosoft.gxpy.gx.gx can be accessed anywhere.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.gx.GXpy.close_log">
+<code class="descname">close_log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.close_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>close logging</p>
 </dd></dl>
 
 <dl class="method">
@@ -321,6 +344,12 @@ Call before returning control to OM.</p>
 <dd><div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 9.2: </span>use <a class="reference internal" href="geosoft.gxpy.utility.html#geosoft.gxpy.utility.folder_workspace" title="geosoft.gxpy.utility.folder_workspace"><code class="xref py py-meth docutils literal"><span class="pre">geosoft.gxpy.utility.folder_workspace()</span></code></a></p>
 </div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.gx.GXpy.gxapi">
+<code class="descname">gxapi</code><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.gxapi" title="Permalink to this definition">¶</a></dt>
+<dd><p>gxapi context for calls to geosoft.gxapi</p>
 </dd></dl>
 
 <dl class="method">
@@ -438,6 +467,12 @@ Call before returning control to OM.</p>
 </div>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="geosoft.gxpy.gx.GXpy.parent_window">
+<code class="descname">parent_window</code><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.parent_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>parent window for this context</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="geosoft.gxpy.gx.GXpy.temp_file">
 <code class="descname">temp_file</code><span class="sig-paren">(</span><em>ext=''</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.temp_file" title="Permalink to this definition">¶</a></dt>
@@ -447,7 +482,7 @@ the instance temporary folder and will be deleted when this GXpy instance is del
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ext</strong> &#8211; optional extension, including &#8221;.&#8221; separator</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ext</strong> &#8211; optional extension</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">uuid-based file name in the instance temporary folder.</td>
 </tr>
@@ -474,6 +509,12 @@ when debugging.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="geosoft.gxpy.gx.GXpy.tkframe">
+<code class="descname">tkframe</code><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.tkframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>tkframe if created fro this context, None if not created</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="geosoft.gxpy.gx.GXpy.version">
 <code class="descname">version</code><a class="headerlink" href="#geosoft.gxpy.gx.GXpy.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>API version description</p>
@@ -485,19 +526,28 @@ when debugging.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="geosoft.gxpy.gx.gx">
+<code class="descname">gx</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.gx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <a class="reference internal" href="#geosoft.gxpy.gx.GXpy" title="geosoft.gxpy.gx.GXpy"><code class="xref py py-obj docutils literal"><span class="pre">GXpy</span></code></a> instance.  Initializes to default state in not initialized.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="geosoft.gxpy.gx.pop_resource">
-<code class="descname">pop_resource</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.pop_resource" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pop_resource</code><span class="sig-paren">(</span><em>res_id</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.gx.pop_resource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pop a tracked resource off the resource stack.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; the resource id returned by <a class="reference internal" href="#geosoft.gxpy.gx.track_resource" title="geosoft.gxpy.gx.track_resource"><code class="xref py py-meth docutils literal"><span class="pre">track_resource()</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>res_id</strong> &#8211; the resource id returned by <a class="reference internal" href="#geosoft.gxpy.gx.track_resource" title="geosoft.gxpy.gx.track_resource"><code class="xref py py-meth docutils literal"><span class="pre">track_resource()</span></code></a></td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 9.3.1: </span>changed id to res_id to avoid built-in shadow</p>
 </div>
 </dd></dl>
 
@@ -543,12 +593,12 @@ stack for each resource and the information you provided.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Geosoft Inc.
+        &#169; Copyright 2018, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

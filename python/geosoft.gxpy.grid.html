@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>geosoft.gxpy.grid submodule &#8212; Geosoft GX Python API 9.3.0 documentation</title>
+    <title>geosoft.gxpy.grid submodule &#8212; Geosoft GX Python API 9.3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/maki.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '9.3.0',
+        VERSION:     '9.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,7 +42,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,7 +74,8 @@
             
   <div class="section" id="module-geosoft.gxpy.grid">
 <span id="geosoft-gxpy-grid-submodule"></span><h1>geosoft.gxpy.grid submodule<a class="headerlink" href="#module-geosoft.gxpy.grid" title="Permalink to this headline">¶</a></h1>
-<p>Geosoft grids and image handling, including all <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a></p>
+<p>Geosoft grids and image handling, including all
+<a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -121,8 +122,8 @@
 
 <dl class="class">
 <dt id="geosoft.gxpy.grid.Grid">
-<em class="property">class </em><code class="descname">Grid</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>dtype=None</em>, <em>mode=None</em>, <em>kx=1</em>, <em>dim=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="descname">Grid</code><span class="sig-paren">(</span><em>file_name=None</em>, <em>dtype=None</em>, <em>mode=None</em>, <em>kx=1</em>, <em>dim=None</em>, <em>overwrite=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Geometry" title="geosoft.gxpy.geometry.Geometry"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxpy.geometry.Geometry</span></code></a></p>
 <p>Grid and image class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -144,7 +145,7 @@
 <td>create a copy</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#geosoft.gxpy.grid.Grid.index_window" title="geosoft.gxpy.grid.Grid.index_window"><code class="xref py py-meth docutils literal"><span class="pre">index_window()</span></code></a></td>
-<td>create a windowed grid based of grid indexes</td>
+<td>create a windowed grid based on grid indexes</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#geosoft.gxpy.grid.Grid.from_data_array" title="geosoft.gxpy.grid.Grid.from_data_array"><code class="xref py py-meth docutils literal"><span class="pre">from_data_array()</span></code></a></td>
 <td>create a new grid from a 2d data array</td>
@@ -213,7 +214,7 @@ For example, the following prints the x, y, z, grid_value of every non-dummy poi
 <li><strong>grd</strong> &#8211; <a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance to save as a new grid, or a grid file name</li>
 <li><strong>file_name</strong> &#8211; name of the new grid (file with optional decorations), default is in memory</li>
 <li><strong>dtype</strong> &#8211; numpy data type, None to use type of the parent grid</li>
-<li><strong>overwrite</strong> &#8211; True to overwrite if the file exists, False to no overwrite.</li>
+<li><strong>overwrite</strong> &#8211; True to overwrite if the file exists, False to not overwrite.</li>
 </ul>
 </td>
 </tr>
@@ -293,6 +294,15 @@ deleted and garbage collection is performed.</p>
 </div>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid.Grid.extent">
+<code class="descname">extent</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid cell extent as <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
 <dl class="method">
 <dt id="geosoft.gxpy.grid.Grid.extent_2d">
 <code class="descname">extent_2d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_2d" title="Permalink to this definition">¶</a></dt>
@@ -311,12 +321,39 @@ deleted and garbage collection is performed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">((min_x, min_y, min_z), (max_x, max_y, max_z))</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(min_x, min_y, min_z, max_x, max_y, max_z)</td>
 </tr>
 </tbody>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid.Grid.extent_cell_2d">
+<code class="descname">extent_cell_2d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_cell_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the 2D cell extent of the grid on the grid plane
+:returns:(min_x, min_y, max_x, max_y)</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid.Grid.extent_cell_3d">
+<code class="descname">extent_cell_3d</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.extent_cell_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the 3D cell extent of the grid in the base coordinate system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(min_x, min_y, min_z, max_x, max_y, max_z)</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -340,7 +377,7 @@ deleted and garbage collection is performed.</p>
 
 <dl class="classmethod">
 <dt id="geosoft.gxpy.grid.Grid.from_data_array">
-<em class="property">classmethod </em><code class="descname">from_data_array</code><span class="sig-paren">(</span><em>data</em>, <em>file_name</em>, <em>properties={}</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.from_data_array" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">from_data_array</code><span class="sig-paren">(</span><em>data</em>, <em>file_name</em>, <em>properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.from_data_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create grid from a 2D numpy array.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -349,6 +386,7 @@ deleted and garbage collection is performed.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>data</strong> &#8211; 2D numpy data array, ot a 2d list.  Must be 2D.</li>
 <li><strong>file_name</strong> &#8211; name of the file</li>
+<li><strong>properties</strong> &#8211; grid properties as a dictionary</li>
 </ul>
 </td>
 </tr>
@@ -397,7 +435,13 @@ as a color int.</p>
 <dl class="attribute">
 <dt id="geosoft.gxpy.grid.Grid.gximg">
 <code class="descname">gximg</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.gximg" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-class docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a> instance handle.</p>
+<dd><p>The <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXIMG</span></code></a> instance handle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid.Grid.gxpg">
+<code class="descname">gxpg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.gxpg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxapi.GXPG</span></code></a> instance for the grid.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -406,6 +450,48 @@ as a color int.</p>
 <dd><p>Geosoft data type for the grid</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid.Grid.image_file">
+<code class="descname">image_file</code><span class="sig-paren">(</span><em>image_file_name=None</em>, <em>image_type='PNG'</em>, <em>pix_width=None</em>, <em>shade=False</em>, <em>color_map=None</em>, <em>contour=None</em>, <em>display_area=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.image_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save as a georeferenced image file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image_file_name</strong> &#8211; image file name. The extension should be consistent with the image_type.
+If not specified a temporary PNG file is created.</li>
+<li><strong>image_type</strong> &#8211; image type, one ot the RASTER_FORMAT constants in <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a>.</li>
+<li><strong>pix_width</strong> &#8211; desired image width in pixels, default is the width of the aggregate base layer</li>
+<li><strong>shade</strong> &#8211; <code class="xref py py-obj docutils literal"><span class="pre">True</span></code> to add shading effect</li>
+<li><strong>color_map</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name,
+default is user&#8217;s default</li>
+<li><strong>contour</strong> &#8211; colour contour interval if colours need to break at exact levels</li>
+<li><strong>display_area</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance, which defines the desired display
+area. The display area coordinate system can be different from the grid.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">image file name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#geosoft.gxpy.grid.image_file" title="geosoft.gxpy.grid.image_file"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.grid.image_file</span></code></a>, which creates an image directly from a grid file.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This method saves the grid as a temporary file from which an aggregate and image are
+created. If the grid already exists as a grid file it is more efficient to call
+<a class="reference internal" href="#geosoft.gxpy.grid.image_file" title="geosoft.gxpy.grid.image_file"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.grid.image_file</span></code></a>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -441,6 +527,12 @@ as a color int.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
 </div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid.Grid.is_color">
+<code class="descname">is_color</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.is_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns True if grid contains colors. is_int will also be True</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -489,8 +581,8 @@ the dictionary items passed will be added to, or replace existing metadata.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file_name</strong> &#8211; <p>name of the grid file, None or &#8216;&#8217; for a memory grid.
-(see <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a>)</p>
+<li><strong>file_name</strong> &#8211; <p>name of the grid file, None or &#8216;&#8217; for a memory grid. See
+<a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/display/GXDEV92/Grid+File+Name+Decorations">supported file formats</a>)</p>
 </li>
 <li><strong>properties</strong> &#8211; dictionary of grid properties, see <a class="reference internal" href="#geosoft.gxpy.grid.Grid.properties" title="geosoft.gxpy.grid.Grid.properties"><code class="xref py py-meth docutils literal"><span class="pre">properties()</span></code></a></li>
 <li><strong>overwrite</strong> &#8211; True to overwrite existing file</li>
@@ -501,6 +593,23 @@ the dictionary items passed will be added to, or replace existing metadata.</p>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="geosoft.gxpy.grid.Grid.np">
+<code class="descname">np</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.Grid.np" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a numpy array of grid values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">numpy array shape (nx, ny) or (nx, ny, 4) containing RGBA bytes in case of color grids</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -635,6 +744,15 @@ degree azimuth, used here.  All horizontal plane angles in the Python gxpy modul
 azimuth for consistency.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geosoft.gxpy.grid.Grid.rotation_cos_sine">
+<code class="descname">rotation_cos_sine</code><a class="headerlink" href="#geosoft.gxpy.grid.Grid.rotation_cos_sine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns grid rotation (cosine, sine).</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -849,7 +967,7 @@ Dummies will be numpy.nan.</p>
 <li><strong>grid_file</strong> &#8211; grid file name</li>
 <li><strong>map_file</strong> &#8211; name of the map file, if <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> a default map is created.</li>
 <li><strong>shade</strong> &#8211; <code class="xref py py-obj docutils literal"><span class="pre">True</span></code> to add shading effect</li>
-<li><strong>color_map</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name, defaut is user&#8217;s default</li>
+<li><strong>color_map</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name, default is user&#8217;s default</li>
 <li><strong>contour</strong> &#8211; colour contour interval if colours need to break at exact levels</li>
 <li><strong>kwargs</strong> &#8211; passed to  <a class="reference internal" href="geosoft.gxpy.agg.html#geosoft.gxpy.agg.Aggregate_image.figure_map" title="geosoft.gxpy.agg.Aggregate_image.figure_map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.agg.Aggregate_image.figure_map</span></code></a> and <a class="reference internal" href="geosoft.gxpy.map.html#geosoft.gxpy.map.Map.new" title="geosoft.gxpy.map.Map.new"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.map.Map.new</span></code></a></li>
 </ul>
@@ -883,14 +1001,15 @@ Dummies will be numpy.nan.</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.grid.grid_bool">
-<code class="descname">grid_bool</code><span class="sig-paren">(</span><em>g1</em>, <em>g2</em>, <em>joinedGrid</em>, <em>opt=1</em>, <em>size=3</em>, <em>olap=1</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.grid_bool" title="Permalink to this definition">¶</a></dt>
+<code class="descname">grid_bool</code><span class="sig-paren">(</span><em>g1</em>, <em>g2</em>, <em>joined_grid</em>, <em>opt=1</em>, <em>size=3</em>, <em>olap=1</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.grid_bool" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>g1</strong><strong>,</strong><strong>g2</strong> &#8211; Grid of grids to merge</li>
-<li><strong>new</strong> &#8211; new output grid, overwritten if it exists</li>
+<li><strong>g1</strong> &#8211; Grids to merge</li>
+<li><strong>g2</strong> &#8211; </li>
+<li><strong>joined_grid</strong> &#8211; joined output grid name, overwritten if it exists</li>
 <li><strong>opt</strong> &#8211; <p>logic to use on overlap points, default 1 (OR):</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -954,7 +1073,7 @@ Dummies will be numpy.nan.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-class docutils literal"><span class="pre">Grid</span></code></a> instance of the merged output grid, must be closed with a call to close().</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#geosoft.gxpy.grid.Grid" title="geosoft.gxpy.grid.Grid"><code class="xref py py-obj docutils literal"><span class="pre">Grid</span></code></a> instance of the merged output grid, must be closed with a call to close().</p>
 </td>
 </tr>
 </tbody>
@@ -966,7 +1085,7 @@ Dummies will be numpy.nan.</p>
 
 <dl class="function">
 <dt id="geosoft.gxpy.grid.grid_mosaic">
-<code class="descname">grid_mosaic</code><span class="sig-paren">(</span><em>mosaic</em>, <em>gridList</em>, <em>typeDecoration=''</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.grid_mosaic" title="Permalink to this definition">¶</a></dt>
+<code class="descname">grid_mosaic</code><span class="sig-paren">(</span><em>mosaic</em>, <em>grid_list</em>, <em>type_decorate=''</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.grid_mosaic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combine a set of grids into a single grid.  Raises an error if the resulting grid is too large.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -974,8 +1093,8 @@ Dummies will be numpy.nan.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>mosaic</strong> &#8211; name of the output grid, returned.  Decorate with &#8216;(HGD)&#8217; to get an HGD</li>
-<li><strong>gridList</strong> &#8211; list of input grid names</li>
-<li><strong>typeDecoration</strong> &#8211; decoration for input grids if not default</li>
+<li><strong>grid_list</strong> &#8211; list of input grid names</li>
+<li><strong>type_decorate</strong> &#8211; decoration for input grids if not default</li>
 <li><strong>report</strong> &#8211; string reporting function, report=print to print progress</li>
 </ul>
 </td>
@@ -987,6 +1106,38 @@ Dummies will be numpy.nan.</p>
 </table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 9.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="geosoft.gxpy.grid.image_file">
+<code class="descname">image_file</code><span class="sig-paren">(</span><em>grid_file</em>, <em>image_file=None</em>, <em>image_type='PNG'</em>, <em>pix_width=None</em>, <em>shade=True</em>, <em>color_map=None</em>, <em>contour=None</em>, <em>display_area=None</em><span class="sig-paren">)</span><a class="headerlink" href="#geosoft.gxpy.grid.image_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a grid file grid as a georeferenced image file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>grid_file</strong> &#8211; grid file name</li>
+<li><strong>image_file</strong> &#8211; image file name. The extension should be consistent with the image_type.
+If not specified a temporary PNG file is created.</li>
+<li><strong>image_type</strong> &#8211; image type, one ot the RASTER_FORMAT constants in <a class="reference internal" href="geosoft.gxpy.map.html#module-geosoft.gxpy.map" title="geosoft.gxpy.map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.map</span></code></a>.</li>
+<li><strong>pix_width</strong> &#8211; desired image width in pixels, default is the width of the aggregate base layer</li>
+<li><strong>shade</strong> &#8211; <code class="xref py py-obj docutils literal"><span class="pre">True</span></code> to add shading effect</li>
+<li><strong>color_map</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.group.html#geosoft.gxpy.group.Color_map" title="geosoft.gxpy.group.Color_map"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.group.Color_map</span></code></a> instance, or a colour ramp file name, default is user&#8217;s default</li>
+<li><strong>contour</strong> &#8211; colour contour interval if colours need to break at exact levels</li>
+<li><strong>display_area</strong> &#8211; <a class="reference internal" href="geosoft.gxpy.geometry.html#geosoft.gxpy.geometry.Point2" title="geosoft.gxpy.geometry.Point2"><code class="xref py py-obj docutils literal"><span class="pre">geosoft.gxpy.geometry.Point2</span></code></a> instance, which defines the desired display
+area. The display area coordinate system can be different from the grid.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">image file name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 9.3.1.</span></p>
 </div>
 </dd></dl>
 
@@ -1021,12 +1172,12 @@ Dummies will be numpy.nan.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 9.3.1 documentation</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Geosoft Inc.
+        &#169; Copyright 2018, Geosoft Inc.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
