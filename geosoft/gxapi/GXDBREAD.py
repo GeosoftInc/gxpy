@@ -163,7 +163,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBREAD.get_chan_array_size>`
-        function to find the number fo columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for 
+        function to find the number of columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for 
         each block served up.
         """
         ret_val = self._get_vv(chan)
