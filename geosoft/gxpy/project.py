@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 """
 Geosoft desktop project interface, which provides access to an active and open Geosoft desktop project.
 
@@ -16,6 +17,7 @@ Geosoft desktop project interface, which provides access to an active and open G
     :DOC_TYPE_VOXI:
     :DOC_TYPE_GMS3D:
     :DOC_TYPE_GMS2D:
+    :DOC_TYPE_GEOSUR:
     :DOC_TYPE_ALL:
 
 .. seealso:: :mod:`geosoft.gxapi.GXPROJ`, :mod:`geosoft.gxapi.GXEDB`, :mod:`geosoft.gxapi.GXEMAP`
@@ -46,6 +48,7 @@ DOC_TYPE_VOXEL = "Voxel"
 DOC_TYPE_VOXI = "VoxelInversion"
 DOC_TYPE_GMS3D = "GMS3D"
 DOC_TYPE_GMS2D = "GMS2D"
+DOC_TYPE_GEOSUR = "Geosurface"
 DOC_TYPE_ALL = "All"
 
 class ProjectException(geosoft.GXRuntimeError):
@@ -154,6 +157,11 @@ class Geosoft_project:
         return self._list_project_docs(DOC_TYPE_GMS2D)
 
     @property
+    def project_geosurfaces(self):
+        """list of geosurfaces in the project"""
+        return self._list_project_docs(DOC_TYPE_GEOSUR)
+
+    @property
     def open_databases(self):
         """list of databases open as a database document"""
         return self._list_open_docs(DOC_TYPE_DATABASE)
@@ -194,6 +202,11 @@ class Geosoft_project:
         return self._list_open_docs(DOC_TYPE_GMS2D)
 
     @property
+    def open_geosurfaces(self):
+        """list of geosurfaces open as a document"""
+        return self._list_open_docs(DOC_TYPE_GEOSUR)
+
+    @property
     def current_database(self):
         """the open database that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_DATABASE)
@@ -232,6 +245,11 @@ class Geosoft_project:
     def current_gmsys_2d(self):
         """the open GM-SYS 2D model that has current (or most recent) focus"""
         return self._current_doc(DOC_TYPE_GMS2D)
+
+    @property
+    def current_geosurface(self):
+        """the open geosurface that has current (or most recent) focus"""
+        return self._current_doc(DOC_TYPE_GEOSUR)
 
     @property
     def menus(self):
@@ -506,6 +524,7 @@ def add_document(doc, type=None, display=True):
             DOC_TYPE_VOXI
             DOC_TYPE_GMS3D
             DOC_TYPE_GMS2D
+            DOC_TYPE_GEOSUR
             DOC_TYPE_ALL
             =================
 
@@ -533,6 +552,8 @@ def add_document(doc, type=None, display=True):
             type = DOC_TYPE_GMS2D
         elif ext == '.geosoft_gmsys3d':
             type = DOC_TYPE_GMS3D
+        elif ext == '.geosoft_surface':
+            type = DOC_TYPE_GEOSUR
         else:
             raise ProjectException('Cannot determine document type for file extension {}'.format(ext))
 

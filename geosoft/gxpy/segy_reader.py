@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 """
 Read SEG-Y files into geosoft databases, grids and voxels.
 :Classes:

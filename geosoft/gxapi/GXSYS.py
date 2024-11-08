@@ -1,3 +1,6 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
@@ -1889,6 +1892,26 @@ class GXSYS(gxapi_cy.WrapSYS):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         ret_val, version.value = gxapi_cy.WrapSYS._check_arc_license_ex(GXContext._get_tls_geo(), version.value.encode())
+        return ret_val
+
+
+
+    @classmethod
+    def check_arc_sdk_license_ex(cls, version):
+        """
+        Check to see if a ESRI ArcGIS Pro SDK and Map SDK license is available, returns type and version of available engine.
+        
+        :param version:  Version String
+        :type  version:  str_ref
+
+        :returns:        :ref:`ARC_SDK_LICENSE`
+        :rtype:          int
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        ret_val, version.value = gxapi_cy.WrapSYS._check_arc_sdk_license_ex(GXContext._get_tls_geo(), version.value.encode())
         return ret_val
 
 

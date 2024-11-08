@@ -1,4 +1,5 @@
-﻿import unittest
+﻿#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+import unittest
 import os
 import time
 import concurrent.futures

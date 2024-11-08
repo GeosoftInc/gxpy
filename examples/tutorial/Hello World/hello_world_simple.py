@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import geosoft.gxpy as gxpy
 
 # a GX context is required, and must be assigned to a variable that persists through the life of execution.

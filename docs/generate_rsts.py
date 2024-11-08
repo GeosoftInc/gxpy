@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import os
 import inspect
 from pkg_resources import parse_version

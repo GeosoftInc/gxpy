@@ -1,3 +1,6 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
@@ -65,6 +68,32 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         **Note:** Needs ArcEngine licence.
         """
         ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr(GXContext._get_tls_geo(), arc_lyr_file.encode())
+        return GXDATALINKD(ret_val)
+
+
+
+    @classmethod
+    def create_arc_lyrx(cls, arc_lyrx_file, arc_srylx_file, root_name):
+        """
+        Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYRX file
+        
+        :param arc_lyrx_file:   Arc LYRX file name
+        :param arc_srylx_file:  Layer Stylx file name
+        :param root_name:       root layer name
+        :type  arc_lyrx_file:   str
+        :type  arc_srylx_file:  str
+        :type  root_name:       str_ref
+
+        :returns:               `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` handle, terminates if creation fails
+        :rtype:                 GXDATALINKD
+
+        .. versionadded:: 2024.1
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Needs ArcGIS Pro SDK and Map SDK licence.
+        """
+        ret_val, root_name.value = gxapi_cy.WrapDATALINKD._create_arc_lyrx(GXContext._get_tls_geo(), arc_lyrx_file.encode(), arc_srylx_file.encode(), root_name.value.encode())
         return GXDATALINKD(ret_val)
 
 

@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import geosoft.gxapi as gxapi
 
 gxc = gxapi.GXContext.create(__name__, '0.1')

@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import geosoft.gxpy.project as gxpj
 import geosoft.gxpy.grid as gxgrd
 import geosoft.gxapi as gxapi

@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 """
 Views, which can be 2D or 3D, contain groups of graphical elements that can be displayed to a user in a Geosoft
 Map viewer or a Geosoft 3D viewer.  Geosoft maps can contain any number of 2D or 3D views.

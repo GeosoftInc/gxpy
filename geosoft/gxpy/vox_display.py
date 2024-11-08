@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 """
 Geosoft vox display handling, which manages the rendering of a `geosoft.gxpy.vox.Vox` in a 3d view.
 

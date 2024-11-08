@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 """
 Table (records, fields) handling, inherits from Pandas (http://pandas.pydata.org/) base class.
 

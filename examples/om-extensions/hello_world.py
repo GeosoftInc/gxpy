@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 # Oasis montaj Python extension to say Hello.
 # To run this extension, select "Settings / Run GX or Python...",
 # then browse to this script file.

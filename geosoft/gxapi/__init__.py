@@ -1,3 +1,6 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 ### extends 'init_empty.py'
 
 ### block Header
@@ -6248,6 +6251,10 @@ FILE_FILTER_DAT = 131
 FILE_FILTER_OMF = 132
 #: 3d survey files  ``*.3dSurvey`  LOCAL
 FILE_FILTER_3DSURVEY = 133
+#: ArcGIS LayerX files  ``*.lyrx``  LOCAL
+FILE_FILTER_ARGIS_LYRX = 134
+#: ArcGIS Stylx files  ``*.stylx``  LOCAL
+FILE_FILTER_ARGIS_STYLX = 135
 
 #
 # FILE_FORM constants

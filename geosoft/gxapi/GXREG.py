@@ -1,3 +1,6 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
@@ -122,6 +125,23 @@ class GXREG(gxapi_cy.WrapREG):
         return GXREG(ret_val)
 
 
+
+
+
+
+    def get_maker_xml(self, parm):
+        """
+        Gets the MAKER handle from the REG object.
+        
+        :param parm:  XML file name
+        :type  parm:  str
+
+        .. versionadded:: 9.7
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._get_maker_xml(parm.encode())
+        
 
 
 

@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 """
 A Geosoft View (:class:`geosoft.gxpy.view.View` or :class:`geosoft.gxpy.view.View_3d`) contains graphical elements as
 `Group` instances. Groups are named and are available to a user in a Geosoft viewer, which allows groups to

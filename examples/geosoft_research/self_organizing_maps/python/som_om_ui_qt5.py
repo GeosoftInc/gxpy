@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 # -*- coding: utf-8 -*-
 
 # From implementation generated from reading ui file 'ui_som_om.ui'

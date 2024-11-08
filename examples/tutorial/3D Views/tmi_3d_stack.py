@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.view as gxview
 import geosoft.gxpy.group as gxgroup

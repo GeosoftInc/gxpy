@@ -945,8 +945,6 @@
     <Compile Include="geosoft\gxpy\tests\test_vox.py" />
     <Compile Include="geosoft\gxpy\tests\test_vox_display.py" />
     <Compile Include="geosoft\gxpy\tests\test_vv.py" />
-    <Compile Include="geosoft\gxpy\tests\vox_assert_test.py" />
-    <Compile Include="geosoft\gxpy\tests\wee_test.py" />
     <Compile Include="geosoft\gxpy\user_input\__init__.py" />
     <Compile Include="geosoft\gxpy\utility.py" />
     <Compile Include="geosoft\gxpy\va.py" />
