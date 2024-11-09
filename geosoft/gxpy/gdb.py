@@ -2067,7 +2067,7 @@ class Geosoft_gdb(gxgeo.Geometry):
     def write_line_vv(self, line, chan_data):
         """
         Write data to multiple channels in a line.  If no channel list is provided it assumes that the
-        data is for all channels from the line, the compliment of read_line().
+        data is for all channels from the line, the complement of read_line().
 
         :param line:        line to write to, name or symbol
         :param chan_data:   numpy array shape (records,channels).  If single dimension, one channel.
@@ -2090,7 +2090,7 @@ class Geosoft_gdb(gxgeo.Geometry):
     def write_line(self, line, data, channels=None, fid=(0.0, 1.0)):
         """
         Write data to a multiple channels in a line.  If no channel list is provided it assumes that the
-        data is for all channels from the line, the compliment of read_line().
+        data is for all channels from the line, the complement of read_line().
 
         :param line:        line to write to, name or symbol
         :param data:        numpy array shape (records,channels).  If single dimension, one channel
