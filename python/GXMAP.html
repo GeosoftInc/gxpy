@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXMAP class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <title>GXMAP class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/documentation_options.js?v=0af83669"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMAP class</a></li> 
       </ul>
     </div>
@@ -57,6 +57,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXMAP.duplicate_view"><code class="docutils literal notranslate"><span class="pre">GXMAP.duplicate_view()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMAP.exist_view"><code class="docutils literal notranslate"><span class="pre">GXMAP.exist_view()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMAP.export_all_in_view"><code class="docutils literal notranslate"><span class="pre">GXMAP.export_all_in_view()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMAP.export_all_in_view2"><code class="docutils literal notranslate"><span class="pre">GXMAP.export_all_in_view2()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMAP.export_all_raster"><code class="docutils literal notranslate"><span class="pre">GXMAP.export_all_raster()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMAP.export_area_in_view"><code class="docutils literal notranslate"><span class="pre">GXMAP.export_area_in_view()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMAP.export_area_raster"><code class="docutils literal notranslate"><span class="pre">GXMAP.export_area_raster()</span></code></a></li>
@@ -107,101 +108,101 @@
 <li><a class="reference internal" href="#geosoft.gxapi.DUPMAP_BLANK"><code class="docutils literal notranslate"><span class="pre">DUPMAP_BLANK</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.DUPMAP_BLANK</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DUPMAP_COPY"><code class="docutils literal notranslate"><span class="pre">DUPMAP_COPY</span></code></a></li>
-<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.DUPMAP_COPY</span></code></a></li>
+<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.DUPMAP_COPY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DUPMAP_COPY_PRE62"><code class="docutils literal notranslate"><span class="pre">DUPMAP_COPY_PRE62</span></code></a></li>
-<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.DUPMAP_COPY_PRE62</span></code></a></li>
+<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.DUPMAP_COPY_PRE62</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#map-export-bits-constants">MAP_EXPORT_BITS constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_32"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_32</span></code></a></li>
-<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_32</span></code></a></li>
+<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_32</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_24"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_24</span></code></a></li>
-<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_24</span></code></a></li>
+<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_24</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY8"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_GREY8</span></code></a></li>
-<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_GREY8</span></code></a></li>
+<li><a class="reference internal" href="#id63"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_GREY8</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_8"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_8</span></code></a></li>
-<li><a class="reference internal" href="#id63"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_8</span></code></a></li>
+<li><a class="reference internal" href="#id64"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_8</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY4"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_GREY4</span></code></a></li>
-<li><a class="reference internal" href="#id64"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_GREY4</span></code></a></li>
+<li><a class="reference internal" href="#id65"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_GREY4</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_4"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_4</span></code></a></li>
-<li><a class="reference internal" href="#id65"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_4</span></code></a></li>
+<li><a class="reference internal" href="#id66"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_4</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY1"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_GREY1</span></code></a></li>
-<li><a class="reference internal" href="#id66"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_GREY1</span></code></a></li>
+<li><a class="reference internal" href="#id67"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_GREY1</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_BITS_DEFAULT"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_BITS_DEFAULT</span></code></a></li>
-<li><a class="reference internal" href="#id67"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#id68"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_BITS_DEFAULT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#map-export-format-constants">MAP_EXPORT_FORMAT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_PLT"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_PLT</span></code></a></li>
-<li><a class="reference internal" href="#id68"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_PLT</span></code></a></li>
+<li><a class="reference internal" href="#id69"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_PLT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_SHP"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_SHP</span></code></a></li>
-<li><a class="reference internal" href="#id69"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_SHP</span></code></a></li>
+<li><a class="reference internal" href="#id70"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_SHP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_DXF12"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_DXF12</span></code></a></li>
-<li><a class="reference internal" href="#id70"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_DXF12</span></code></a></li>
+<li><a class="reference internal" href="#id71"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_DXF12</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_DXF13"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_DXF13</span></code></a></li>
-<li><a class="reference internal" href="#id71"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_DXF13</span></code></a></li>
+<li><a class="reference internal" href="#id72"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_DXF13</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_GTIFF"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_GTIFF</span></code></a></li>
-<li><a class="reference internal" href="#id72"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_GTIFF</span></code></a></li>
+<li><a class="reference internal" href="#id73"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_GTIFF</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_CGTIFF"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_CGTIFF</span></code></a></li>
-<li><a class="reference internal" href="#id73"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_CGTIFF</span></code></a></li>
+<li><a class="reference internal" href="#id74"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_CGTIFF</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_MTIFF"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_MTIFF</span></code></a></li>
-<li><a class="reference internal" href="#id74"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_MTIFF</span></code></a></li>
+<li><a class="reference internal" href="#id75"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_MTIFF</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_ATIFF"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_ATIFF</span></code></a></li>
-<li><a class="reference internal" href="#id75"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_ATIFF</span></code></a></li>
+<li><a class="reference internal" href="#id76"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_ATIFF</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_GEO"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_GEO</span></code></a></li>
-<li><a class="reference internal" href="#id76"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_GEO</span></code></a></li>
+<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_GEO</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_ERM"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_ERM</span></code></a></li>
-<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_ERM</span></code></a></li>
+<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_ERM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_KMZ"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_FORMAT_KMZ</span></code></a></li>
-<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_KMZ</span></code></a></li>
+<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_FORMAT_KMZ</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#map-export-method-constants">MAP_EXPORT_METHOD constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_METHOD_STANDARD"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_METHOD_STANDARD</span></code></a></li>
-<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_METHOD_STANDARD</span></code></a></li>
+<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_METHOD_STANDARD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_METHOD_DIFFUSE"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_METHOD_DIFFUSE</span></code></a></li>
-<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_METHOD_DIFFUSE</span></code></a></li>
+<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_METHOD_DIFFUSE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_METHOD_NONE"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_METHOD_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_METHOD_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_METHOD_NONE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#map-export-raster-format-constants">MAP_EXPORT_RASTER_FORMAT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EMF"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EMF</span></code></a></li>
-<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_EMF</span></code></a></li>
+<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_EMF</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_BMP"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_BMP</span></code></a></li>
-<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_BMP</span></code></a></li>
+<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_BMP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGL</span></code></a></li>
-<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL</span></code></a></li>
+<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEG</span></code></a></li>
-<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG</span></code></a></li>
+<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGH</span></code></a></li>
-<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH</span></code></a></li>
+<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_GIF"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_GIF</span></code></a></li>
-<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_GIF</span></code></a></li>
+<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_GIF</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PCX"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PCX</span></code></a></li>
-<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_PCX</span></code></a></li>
+<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_PCX</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PNG"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PNG</span></code></a></li>
-<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_PNG</span></code></a></li>
+<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_PNG</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EPS"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EPS</span></code></a></li>
-<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_EPS</span></code></a></li>
+<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_EPS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF"><code class="docutils literal notranslate"><span class="pre">MAP_EXPORT_RASTER_FORMAT_TIFF</span></code></a></li>
-<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF</span></code></a></li>
+<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#map-list-mode-constants">MAP_LIST_MODE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_LIST_MODE_ALL"><code class="docutils literal notranslate"><span class="pre">MAP_LIST_MODE_ALL</span></code></a></li>
-<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_LIST_MODE_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_LIST_MODE_ALL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_LIST_MODE_3D"><code class="docutils literal notranslate"><span class="pre">MAP_LIST_MODE_3D</span></code></a></li>
-<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_LIST_MODE_3D</span></code></a></li>
+<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_LIST_MODE_3D</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_LIST_MODE_NOT3D"><code class="docutils literal notranslate"><span class="pre">MAP_LIST_MODE_NOT3D</span></code></a></li>
-<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_LIST_MODE_NOT3D</span></code></a></li>
+<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_LIST_MODE_NOT3D</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#map-open-constants">MAP_OPEN constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_WRITENEW"><code class="docutils literal notranslate"><span class="pre">MAP_WRITENEW</span></code></a></li>
-<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_WRITENEW</span></code></a></li>
+<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_WRITENEW</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MAP_WRITEOLD"><code class="docutils literal notranslate"><span class="pre">MAP_WRITEOLD</span></code></a></li>
-<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_WRITEOLD</span></code></a></li>
+<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.MAP_WRITEOLD</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -499,7 +500,7 @@ Unicode in the core montaj engine that eliminated the need for such a setting an
 greatly increased the number of symbols that can be used. The only caveat
 of the new system is that text may appear corrupted (especially with GFN fonts) in
 versions prior to 6.2 that render maps created in version 6.2 and later.
-The constant <a class="reference internal" href="#id59" title="geosoft.gxapi.DUPMAP_COPY_PRE62"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DUPMAP_COPY_PRE62</span></code></a> provides a way to create maps that can be
+The constant <a class="reference internal" href="#id60" title="geosoft.gxapi.DUPMAP_COPY_PRE62"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DUPMAP_COPY_PRE62</span></code></a> provides a way to create maps that can be
 distributed to versions prior to 6.2.</p>
 </dd></dl>
 
@@ -564,6 +565,33 @@ distributed to versions prior to 6.2.</p>
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 7.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMAP.export_all_in_view2">
+<span class="sig-name descname"><span class="pre">export_all_in_view2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dither</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMAP.html#GXMAP.export_all_in_view2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMAP.export_all_in_view2" title="Link to this definition">¶</a></dt>
+<dd><p>Same as ExportAllInView_MAP, but preset the range in X and Y to export (mm)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – File Name To Export</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View to export coordinates in</p></li>
+<li><p><strong>dpi</strong> (<em>float</em>) – Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)</p></li>
+<li><p><strong>minX</strong> (<em>float</em>) – Base view minimum X (mm)</p></li>
+<li><p><strong>minY</strong> (<em>float</em>) – Base view minimum Y (mm)</p></li>
+<li><p><strong>maxX</strong> (<em>float</em>) – Base view maximum X (mm)</p></li>
+<li><p><strong>maxY</strong> (<em>float</em>) – Base view maximum Y (mm)</p></li>
+<li><p><strong>bits</strong> (<em>int</em>) – <a class="reference internal" href="#map-export-bits"><span class="std std-ref">MAP_EXPORT_BITS constants</span></a></p></li>
+<li><p><strong>dither</strong> (<em>int</em>) – <a class="reference internal" href="#map-export-method"><span class="std std-ref">MAP_EXPORT_METHOD constants</span></a></p></li>
+<li><p><strong>format</strong> (<em>str</em>) – <a class="reference internal" href="#map-export-format"><span class="std std-ref">MAP_EXPORT_FORMAT constants</span></a></p></li>
+<li><p><strong>options</strong> (<em>str</em>) – Extended Options String (format specific)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1430,8 +1458,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">DUPMAP_COPY</span></span><a class="headerlink" href="#geosoft.gxapi.DUPMAP_COPY" title="Link to this definition">¶</a></dt>
 <dd><p>Copy all current contents</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id58">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DUPMAP_COPY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id59">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DUPMAP_COPY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1441,8 +1469,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">DUPMAP_COPY_PRE62</span></span><a class="headerlink" href="#geosoft.gxapi.DUPMAP_COPY_PRE62" title="Link to this definition">¶</a></dt>
 <dd><p>Copy all current contents and save text for pre-6.2 versions.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id59">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DUPMAP_COPY_PRE62</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id60">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DUPMAP_COPY_PRE62</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1456,8 +1484,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_32</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_32" title="Link to this definition">¶</a></dt>
 <dd><p>32 Bit Color (8-bit alpha)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id60">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_32</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id61">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_32</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1467,8 +1495,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_24</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_24" title="Link to this definition">¶</a></dt>
 <dd><p>24 Bit Color</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id61">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_24</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id62">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_24</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1478,8 +1506,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY8</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY8" title="Link to this definition">¶</a></dt>
 <dd><p>8 Bit Gray Scale</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id62">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id63">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1489,8 +1517,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_8</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_8" title="Link to this definition">¶</a></dt>
 <dd><p>8 Bit Color</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id63">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id64">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1500,8 +1528,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY4</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY4" title="Link to this definition">¶</a></dt>
 <dd><p>4 Bit Gray Scale</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id64">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id65">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1511,8 +1539,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_4</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_4" title="Link to this definition">¶</a></dt>
 <dd><p>4 Bit Color</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id65">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id66">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id66" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1522,8 +1550,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY1</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_GREY1" title="Link to this definition">¶</a></dt>
 <dd><p>1 Bit Gray Scale</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id66">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id66" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id67">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_GREY1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id67" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1533,8 +1561,8 @@ file names will end up in the Errors string.</p>
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_DEFAULT</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_BITS_DEFAULT" title="Link to this definition">¶</a></dt>
 <dd><p>Default Resolution</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id67">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id67" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id68">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_BITS_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id68" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1550,8 +1578,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_PLT</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_PLT" title="Link to this definition">¶</a></dt>
 <dd><p>“PLT”    Geosoft Plot (<code class="docutils literal notranslate"><span class="pre">*.plt</span></code>)         Plot</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id68">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_PLT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PLT'</span></em><a class="headerlink" href="#id68" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id69">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_PLT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PLT'</span></em><a class="headerlink" href="#id69" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1561,8 +1589,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_SHP</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_SHP" title="Link to this definition">¶</a></dt>
 <dd><p>“<a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a>”    ArcView Shapfile (<code class="docutils literal notranslate"><span class="pre">*.shp</span></code>)     Plot</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id69">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_SHP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'SHP'</span></em><a class="headerlink" href="#id69" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id70">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_SHP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'SHP'</span></em><a class="headerlink" href="#id70" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1572,8 +1600,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_DXF12</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_DXF12" title="Link to this definition">¶</a></dt>
 <dd><p>“DXF12”  AutoCad12 (<code class="docutils literal notranslate"><span class="pre">*.dxf</span></code>)            Plot</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id70">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_DXF12</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DXF12'</span></em><a class="headerlink" href="#id70" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id71">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_DXF12</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DXF12'</span></em><a class="headerlink" href="#id71" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1583,8 +1611,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_DXF13</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_DXF13" title="Link to this definition">¶</a></dt>
 <dd><p>“DXF13”  AutoCad13 (<code class="docutils literal notranslate"><span class="pre">*.dxf</span></code>)            Plot</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id71">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_DXF13</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DXF13'</span></em><a class="headerlink" href="#id71" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id72">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_DXF13</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DXF13'</span></em><a class="headerlink" href="#id72" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1594,8 +1622,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_GTIFF</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_GTIFF" title="Link to this definition">¶</a></dt>
 <dd><p>“GTIFF”  GeoTIFF (<code class="docutils literal notranslate"><span class="pre">*.tif</span></code>),             Color Image</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id72">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_GTIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GTIFF'</span></em><a class="headerlink" href="#id72" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id73">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_GTIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GTIFF'</span></em><a class="headerlink" href="#id73" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1605,8 +1633,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_CGTIFF</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_CGTIFF" title="Link to this definition">¶</a></dt>
 <dd><p>“CGTIFF”  GeoTIFF Compressed (<code class="docutils literal notranslate"><span class="pre">*.tif</span></code>), Color Image</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id73">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_CGTIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CGTIFF'</span></em><a class="headerlink" href="#id73" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id74">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_CGTIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CGTIFF'</span></em><a class="headerlink" href="#id74" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1616,8 +1644,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_MTIFF</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_MTIFF" title="Link to this definition">¶</a></dt>
 <dd><p>“MTIFF”  MapInfo TIFF (<code class="docutils literal notranslate"><span class="pre">*.tif</span></code>)         Color Image</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id74">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_MTIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MTIFF'</span></em><a class="headerlink" href="#id74" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id75">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_MTIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MTIFF'</span></em><a class="headerlink" href="#id75" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1627,8 +1655,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_ATIFF</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_ATIFF" title="Link to this definition">¶</a></dt>
 <dd><p>“ATIFF”  ArcView TIFF (<code class="docutils literal notranslate"><span class="pre">*.tif</span></code>)         Color Image</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id75">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_ATIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ATIFF'</span></em><a class="headerlink" href="#id75" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id76">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_ATIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ATIFF'</span></em><a class="headerlink" href="#id76" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1638,8 +1666,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_GEO</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_GEO" title="Link to this definition">¶</a></dt>
 <dd><p>“<code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEO</span></code>”    Geosoft COLOR grid (<code class="docutils literal notranslate"><span class="pre">*.grd</span></code>)   Color Image</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id76">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GEO'</span></em><a class="headerlink" href="#id76" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id77">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_GEO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GEO'</span></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1649,8 +1677,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_ERM</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_ERM" title="Link to this definition">¶</a></dt>
 <dd><p>“ERM”    ER Mapper RGB (<code class="docutils literal notranslate"><span class="pre">*.ers</span></code>)        Color Image</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id77">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_ERM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERM'</span></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id78">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_ERM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERM'</span></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1660,8 +1688,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_KMZ</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_FORMAT_KMZ" title="Link to this definition">¶</a></dt>
 <dd><p>“KMZ”    Keyhole Markup (<code class="docutils literal notranslate"><span class="pre">*.kmz</span></code>)       Zipped XML/Image files</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id78">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_KMZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'KMZ'</span></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id79">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_FORMAT_KMZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'KMZ'</span></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1675,8 +1703,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_STANDARD</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_METHOD_STANDARD" title="Link to this definition">¶</a></dt>
 <dd><p>Standard Dither</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id79">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_STANDARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id80">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_STANDARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1686,8 +1714,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_DIFFUSE</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_METHOD_DIFFUSE" title="Link to this definition">¶</a></dt>
 <dd><p>Error Diffusion Dither</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id80">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_DIFFUSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id81">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_DIFFUSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1697,8 +1725,8 @@ Format   Description                  Type
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_METHOD_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>No Dither</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id81">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id82">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_METHOD_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1715,8 +1743,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EMF</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EMF" title="Link to this definition">¶</a></dt>
 <dd><p>“EMF”   Enhanced Metafile (<code class="docutils literal notranslate"><span class="pre">*.emf</span></code>)        Plot</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id82">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EMF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EMF'</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id83">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EMF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EMF'</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1726,8 +1754,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_BMP</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_BMP" title="Link to this definition">¶</a></dt>
 <dd><p>“BMP”   Bitmap (<code class="docutils literal notranslate"><span class="pre">*.bmp</span></code>)                   Color Image     X    X    X    X    X    X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id83">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_BMP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'BMP'</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id84">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_BMP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'BMP'</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1737,8 +1765,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGL</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGL" title="Link to this definition">¶</a></dt>
 <dd><p>“JPEGL” JPEG Low Quality (<code class="docutils literal notranslate"><span class="pre">*.jpg</span></code>)         Color Image                              X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id84">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'JPEGL'</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id85">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'JPEGL'</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1748,8 +1776,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEG</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEG" title="Link to this definition">¶</a></dt>
 <dd><p>“JPEG” JPEG (<code class="docutils literal notranslate"><span class="pre">*.jpg</span></code>)                     Color Image                              X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id85">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'JPEG'</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id86">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'JPEG'</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1759,8 +1787,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGH</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_JPEGH" title="Link to this definition">¶</a></dt>
 <dd><p>“JPEGH” JPEG High Quality (<code class="docutils literal notranslate"><span class="pre">*.jpg</span></code>)        Color Image                              X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id86">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'JPEGH'</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id87">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_JPEGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'JPEGH'</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1770,8 +1798,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_GIF</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_GIF" title="Link to this definition">¶</a></dt>
 <dd><p>“GIF”   GIF (<code class="docutils literal notranslate"><span class="pre">*.gif</span></code>)                      Color Image     X    X    X    X    X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id87">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_GIF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GIF'</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id88">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_GIF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'GIF'</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1781,8 +1809,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PCX</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PCX" title="Link to this definition">¶</a></dt>
 <dd><p>“PCX”   PCX (<code class="docutils literal notranslate"><span class="pre">*.pcx</span></code>)                      Color Image     X    X    X    X    X    X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id88">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PCX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PCX'</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id89">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PCX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PCX'</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1792,8 +1820,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PNG</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_PNG" title="Link to this definition">¶</a></dt>
 <dd><p>“PNG”   PNG (<code class="docutils literal notranslate"><span class="pre">*.png</span></code>)                      Color Image     X    X    X    X    X    X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id89">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PNG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PNG'</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id90">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_PNG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PNG'</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1803,8 +1831,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EPS</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_EPS" title="Link to this definition">¶</a></dt>
 <dd><p>“EPS”   Encasulated PostScript (<code class="docutils literal notranslate"><span class="pre">*.eps</span></code>)   Color Image                    X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id90">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EPS'</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id91">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_EPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EPS'</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1814,8 +1842,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_TIFF</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_EXPORT_RASTER_FORMAT_TIFF" title="Link to this definition">¶</a></dt>
 <dd><p>“TIFF”  TIFF (<code class="docutils literal notranslate"><span class="pre">*.tif</span></code>)                     Color Image     X    X    X    X    X    X</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id91">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_TIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'TIFF'</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id92">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_EXPORT_RASTER_FORMAT_TIFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'TIFF'</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1829,8 +1857,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_LIST_MODE_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_LIST_MODE_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id92">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_LIST_MODE_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id93">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_LIST_MODE_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1840,8 +1868,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_LIST_MODE_3D</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_LIST_MODE_3D" title="Link to this definition">¶</a></dt>
 <dd><p>3d</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id93">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_LIST_MODE_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id94">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_LIST_MODE_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1851,8 +1879,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_LIST_MODE_NOT3D</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_LIST_MODE_NOT3D" title="Link to this definition">¶</a></dt>
 <dd><p>Not3d</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id94">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_LIST_MODE_NOT3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id95">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_LIST_MODE_NOT3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1866,8 +1894,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_WRITENEW</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_WRITENEW" title="Link to this definition">¶</a></dt>
 <dd><p>Map writenew</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id95">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_WRITENEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id96">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_WRITENEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1877,8 +1905,8 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
 <span class="sig-name descname"><span class="pre">MAP_WRITEOLD</span></span><a class="headerlink" href="#geosoft.gxapi.MAP_WRITEOLD" title="Link to this definition">¶</a></dt>
 <dd><p>Map writeold</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id96">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_WRITEOLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id97">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MAP_WRITEOLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1899,7 +1927,7 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMAP class</a></li> 
       </ul>
     </div>

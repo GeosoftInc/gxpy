@@ -625,6 +625,14 @@ File filters
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.FILE_FILTER_3DSURVEY
+.. autodata:: geosoft.gxapi.FILE_FILTER_ARGIS_LYRX
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_ARGIS_LYRX
+.. autodata:: geosoft.gxapi.FILE_FILTER_ARGIS_STYLX
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_ARGIS_STYLX
 
 
 .. _FILE_FORM:
