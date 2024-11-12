@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import os
 import sys
 import geosoft.gxpy.gx as gx

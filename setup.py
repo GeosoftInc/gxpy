@@ -1,4 +1,5 @@
-﻿# coding = utf-8
+﻿#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+# coding = utf-8
 
 import json
 import sys

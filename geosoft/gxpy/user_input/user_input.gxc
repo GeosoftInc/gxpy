@@ -5,22 +5,22 @@ Utility GX to get simple information from a user.
 
 Parameters: 
 
-	USER_INPUT.TITLE 	- Dialog title
-	USER_INPUT.PROMPT 	- Prompt to present to the user
-	USER_INPUT.RESPONSE - default response on start-up, response returned
-	USER_INPUT.FILEMASK - File path masks, \"*.dat\", or \"*.dat;*.grd\"
-	                      \"**\" for multiple file, for example \"**;*.grd\"
+    USER_INPUT.TITLE    - Dialog title
+    USER_INPUT.PROMPT   - Prompt to present to the user
+    USER_INPUT.RESPONSE - default response on start-up, response returned
+    USER_INPUT.FILEMASK - File path masks, \"*.dat\", or \"*.dat;*.grd\"
+                          \"**\" for multiple file, for example \"**;*.grd\"
     USER_INPUT.TYPE     - 0 for string
                           1 for real
-						  2 for int
-						  3 for list
+                          2 for int
+                          3 for list
                           4 colour
                           5 file
                           6 newfile
                           7 oldfile
-						  9 pause
+                          9 pause
                          10 pause, with option to cancel
-	USER_INPUT.LIST		- comma-separated list
+    USER_INPUT.LIST     - comma-separated list
 "
 
 #include <version.gxh>
@@ -32,26 +32,26 @@ RESOURCE = "user_input.gr"
 #include <all.gxh>     // system
 DGW hDGW;
 LST hLST;
-string(STR_DEFAULT_LONG) sStr;
+string(STR_VERY_LONG) sStr;
 int iType;
 
 {
-	iType = iGetInt_SYS("USER_INPUT", "TYPE");
+    iType = iGetInt_SYS("USER_INPUT", "TYPE");
     switch (iType) {
-		case 0:
+        case 0:
             hDGW = Create_DGW("STRING");
             break;
         case 1: 
             hDGW = Create_DGW("REAL"); 
             break;
-		case 2: 
+        case 2: 
             hDGW = Create_DGW("INT"); 
             break;
-		case 3: 
-			hDGW = Create_DGW("LIST");
-			GetString_SYS("USER_INPUT","LIST",sStr);			
-			hLST = GetList_DGW(hDGW, ((DGW_OBJ) 0));
-			ConvertFromCSVString_LST(hLST,sStr);
+        case 3: 
+            hDGW = Create_DGW("LIST");
+            GetString_SYS("USER_INPUT","LIST",sStr);			
+            hLST = GetList_DGW(hDGW, ((DGW_OBJ) 0));
+            ConvertFromCSVString_LST(hLST,sStr);
             break;
         case 4:
             hDGW = Create_DGW("COLOUR");
@@ -77,18 +77,18 @@ int iType;
         default:
             DisplayMessage_SYS("Error","Unrecognized dialog type to user_input.gx");
             Cancel_SYS();
-	}
-	
+    }
+    
     GetString_SYS("USER_INPUT", "TITLE", sStr);
     SetTitle_DGW(hDGW, sStr);
     if (iType <= 8) {
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_LABEL, "USER_INPUT", "PROMPT");
         SetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
     }
-	if (iRunDialogue_DGW(hDGW) != 0) {
-		Destroy_DGW(hDGW);
-		Cancel_SYS();
-	}
+    if (iRunDialogue_DGW(hDGW) != 0) {
+    Destroy_DGW(hDGW);
+        Cancel_SYS();
+    }
     if (iType <= 4)
         GetInfoSYS_DGW(hDGW, ((DGW_OBJ) 0), DGW_TEXT, "USER_INPUT", "RESPONSE");
     else if (iType <= 8)

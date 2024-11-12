@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 '''
 Add a constant value to a channel on all selected lines.
 

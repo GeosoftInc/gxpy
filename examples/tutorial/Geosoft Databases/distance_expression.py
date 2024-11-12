@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import numpy as np
 import math
 import geosoft.gxpy as gxpy

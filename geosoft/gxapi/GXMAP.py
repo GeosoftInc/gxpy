@@ -1,3 +1,6 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
@@ -81,6 +84,43 @@ class GXMAP(gxapi_cy.WrapMAP):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         self._export_all_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, format.encode(), options.encode())
+        
+
+
+
+
+    def export_all_in_view2(self, name, view, dpi, minX, minY, maxX, maxY, bits, dither, format, options):
+        """
+        Same as ExportAllInView_MAP, but preset the range in X and Y to export (mm)
+        
+        :param name:     File Name To Export
+        :param view:     View to export coordinates in
+        :param dpi:      Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)
+        :param minX:     Base view minimum X (mm)
+        :param minY:     Base view minimum Y (mm)
+        :param maxX:     Base view maximum X (mm)
+        :param maxY:     Base view maximum Y (mm)
+        :param bits:     :ref:`MAP_EXPORT_BITS`
+        :param dither:   :ref:`MAP_EXPORT_METHOD`
+        :param format:   :ref:`MAP_EXPORT_FORMAT`
+        :param options:  Extended Options String (format specific)
+        :type  name:     str
+        :type  view:     str
+        :type  dpi:      float
+        :type  minX:     float
+        :type  minY:     float
+        :type  maxX:     float
+        :type  maxY:     float
+        :type  bits:     int
+        :type  dither:   int
+        :type  format:   str
+        :type  options:  str
+
+        .. versionadded:: 2024.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        self._export_all_in_view2(name.encode(), view.encode(), dpi, minX, minY, maxX, maxY, bits, dither, format.encode(), options.encode())
         
 
 

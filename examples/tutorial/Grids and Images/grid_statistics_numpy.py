@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import numpy as np
 import geosoft.gxpy.gx as gx
 import geosoft.gxpy.grid as gxgrid

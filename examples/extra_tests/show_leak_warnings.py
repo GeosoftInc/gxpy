@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 # This sample stand-alone Python script shows a minimal use of the Pythonic gxpy module to
 # create a Geosoft context and say hello to the user.
 # This example can be run stand-alone or as a Oasis montaj extension.

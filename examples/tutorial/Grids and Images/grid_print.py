@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import geosoft.gxpy as gxpy
 gxc = gxpy.gx.GXpy()
 with gxpy.grid.Grid.open('elevation_surfer.grd(SRF;VER=V7)') as grid:

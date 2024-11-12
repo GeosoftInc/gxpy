@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jan  5 10:15:34 2014

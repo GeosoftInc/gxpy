@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 "Makes working with XML feel like you are working with JSON"
 
 try:

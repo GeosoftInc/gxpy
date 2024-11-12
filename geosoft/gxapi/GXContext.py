@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 from . import gxapi_cy
 
 from geosoft.gxapi import GXAPIError, int_ref

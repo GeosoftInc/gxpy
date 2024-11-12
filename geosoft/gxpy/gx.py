@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 """
 GX Context and related methods required for Geosoft Python.
 
@@ -780,10 +781,9 @@ class GXpyContext:
         .. versionadded:: 9.6
         """
 
-        exit_val = gxapi.int_ref()
-        ret = gxapi.GXSYS.run_gx_ex(gx, exit_val)
-        success = ret == 0
-        cancelled = ret == -1
+        exit_val = gxapi.GXSYS.run_gx(gx)
+        success = exit_val == 0
+        cancelled = exit_val == -1
         error_list = []
         warning_list = []
         for i in range(0, gxapi.GXSYS.num_errors_ap()):
@@ -796,7 +796,7 @@ class GXpyContext:
                 error_list.append(err.value)
         gxapi.GXSYS.clear_err_ap()
 
-        return success, cancelled, exit_val.value, error_list, warning_list
+        return success, cancelled, exit_val, error_list, warning_list
 
     def temp_folder(self):
         """

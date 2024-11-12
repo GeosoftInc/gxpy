@@ -1,3 +1,4 @@
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 import geosoft.gxapi as gxapi
 ctx = gxapi.GXContext.create('ian', '0.0', 0, 0)
 user = gxapi.str_ref()

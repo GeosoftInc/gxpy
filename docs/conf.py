@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 # -*- coding: utf-8 -*-
 #
 # Geosoft GX Python API documentation build configuration file, created by
