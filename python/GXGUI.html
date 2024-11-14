@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXGUI class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <title>GXGUI class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/documentation_options.js?v=0af83669"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGUI class</a></li> 
       </ul>
     </div>
@@ -426,110 +426,114 @@
 <li><a class="reference internal" href="#id244"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FILTER_OMF</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_3DSURVEY"><code class="docutils literal notranslate"><span class="pre">FILE_FILTER_3DSURVEY</span></code></a></li>
 <li><a class="reference internal" href="#id249"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FILTER_3DSURVEY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_ARGIS_LYRX"><code class="docutils literal notranslate"><span class="pre">FILE_FILTER_ARGIS_LYRX</span></code></a></li>
+<li><a class="reference internal" href="#id250"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FILTER_ARGIS_LYRX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILE_FILTER_ARGIS_STYLX"><code class="docutils literal notranslate"><span class="pre">FILE_FILTER_ARGIS_STYLX</span></code></a></li>
+<li><a class="reference internal" href="#id251"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FILTER_ARGIS_STYLX</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#file-form-constants">FILE_FORM constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.FILE_FORM_OPEN"><code class="docutils literal notranslate"><span class="pre">FILE_FORM_OPEN</span></code></a></li>
-<li><a class="reference internal" href="#id250"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FORM_OPEN</span></code></a></li>
+<li><a class="reference internal" href="#id252"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FORM_OPEN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.FILE_FORM_SAVE"><code class="docutils literal notranslate"><span class="pre">FILE_FORM_SAVE</span></code></a></li>
-<li><a class="reference internal" href="#id251"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FORM_SAVE</span></code></a></li>
+<li><a class="reference internal" href="#id253"><code class="docutils literal notranslate"><span class="pre">gxapi.FILE_FORM_SAVE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#gs-directory-constants">GS_DIRECTORY constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_NONE"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id252"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id254"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_GEOSOFT"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_GEOSOFT</span></code></a></li>
-<li><a class="reference internal" href="#id253"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GEOSOFT</span></code></a></li>
+<li><a class="reference internal" href="#id255"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GEOSOFT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_BIN"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_BIN</span></code></a></li>
-<li><a class="reference internal" href="#id254"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_BIN</span></code></a></li>
+<li><a class="reference internal" href="#id256"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_BIN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_GER"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_GER</span></code></a></li>
-<li><a class="reference internal" href="#id255"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GER</span></code></a></li>
+<li><a class="reference internal" href="#id257"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GER</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_OMN"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_OMN</span></code></a></li>
-<li><a class="reference internal" href="#id256"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_OMN</span></code></a></li>
+<li><a class="reference internal" href="#id258"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_OMN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_TBL"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_TBL</span></code></a></li>
-<li><a class="reference internal" href="#id257"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_TBL</span></code></a></li>
+<li><a class="reference internal" href="#id259"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_TBL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_FONTS"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_FONTS</span></code></a></li>
-<li><a class="reference internal" href="#id258"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_FONTS</span></code></a></li>
+<li><a class="reference internal" href="#id260"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_FONTS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_GX"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_GX</span></code></a></li>
-<li><a class="reference internal" href="#id259"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GX</span></code></a></li>
+<li><a class="reference internal" href="#id261"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GX</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_GS"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_GS</span></code></a></li>
-<li><a class="reference internal" href="#id260"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GS</span></code></a></li>
+<li><a class="reference internal" href="#id262"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_APPS"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_APPS</span></code></a></li>
-<li><a class="reference internal" href="#id261"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_APPS</span></code></a></li>
+<li><a class="reference internal" href="#id263"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_APPS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_ETC"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_ETC</span></code></a></li>
-<li><a class="reference internal" href="#id262"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_ETC</span></code></a></li>
+<li><a class="reference internal" href="#id264"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_ETC</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_HLP"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_HLP</span></code></a></li>
-<li><a class="reference internal" href="#id263"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_HLP</span></code></a></li>
+<li><a class="reference internal" href="#id265"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_HLP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_GXDEV"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_GXDEV</span></code></a></li>
-<li><a class="reference internal" href="#id264"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GXDEV</span></code></a></li>
+<li><a class="reference internal" href="#id266"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GXDEV</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_COMPONENT</span></code></a></li>
-<li><a class="reference internal" href="#id265"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_COMPONENT</span></code></a></li>
+<li><a class="reference internal" href="#id267"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_COMPONENT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_CSV"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_CSV</span></code></a></li>
-<li><a class="reference internal" href="#id266"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_CSV</span></code></a></li>
+<li><a class="reference internal" href="#id268"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_CSV</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_LIC"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_LIC</span></code></a></li>
-<li><a class="reference internal" href="#id267"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_LIC</span></code></a></li>
+<li><a class="reference internal" href="#id269"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_LIC</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_INI"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_INI</span></code></a></li>
-<li><a class="reference internal" href="#id268"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_INI</span></code></a></li>
+<li><a class="reference internal" href="#id270"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_INI</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_TEMP"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_TEMP</span></code></a></li>
-<li><a class="reference internal" href="#id269"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_TEMP</span></code></a></li>
+<li><a class="reference internal" href="#id271"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_TEMP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_UETC"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_UETC</span></code></a></li>
-<li><a class="reference internal" href="#id270"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_UETC</span></code></a></li>
+<li><a class="reference internal" href="#id272"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_UETC</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_UMAPTEMPLATE"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_UMAPTEMPLATE</span></code></a></li>
-<li><a class="reference internal" href="#id271"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_UMAPTEMPLATE</span></code></a></li>
+<li><a class="reference internal" href="#id273"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_UMAPTEMPLATE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT_SCRIPTS"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_COMPONENT_SCRIPTS</span></code></a></li>
-<li><a class="reference internal" href="#id272"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_COMPONENT_SCRIPTS</span></code></a></li>
+<li><a class="reference internal" href="#id274"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_COMPONENT_SCRIPTS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT_HTML"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_COMPONENT_HTML</span></code></a></li>
-<li><a class="reference internal" href="#id273"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_COMPONENT_HTML</span></code></a></li>
+<li><a class="reference internal" href="#id275"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_COMPONENT_HTML</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_IMG"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_IMG</span></code></a></li>
-<li><a class="reference internal" href="#id274"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_IMG</span></code></a></li>
+<li><a class="reference internal" href="#id276"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_IMG</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_BAR"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_BAR</span></code></a></li>
-<li><a class="reference internal" href="#id275"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_BAR</span></code></a></li>
+<li><a class="reference internal" href="#id277"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_BAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_GXNET"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_GXNET</span></code></a></li>
-<li><a class="reference internal" href="#id276"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GXNET</span></code></a></li>
+<li><a class="reference internal" href="#id278"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_GXNET</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GS_DIRECTORY_MAPTEMPLATE"><code class="docutils literal notranslate"><span class="pre">GS_DIRECTORY_MAPTEMPLATE</span></code></a></li>
-<li><a class="reference internal" href="#id277"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_MAPTEMPLATE</span></code></a></li>
+<li><a class="reference internal" href="#id279"><code class="docutils literal notranslate"><span class="pre">gxapi.GS_DIRECTORY_MAPTEMPLATE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#impch-type-constants">IMPCH_TYPE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.IMPCH_TYPE_DATA"><code class="docutils literal notranslate"><span class="pre">IMPCH_TYPE_DATA</span></code></a></li>
-<li><a class="reference internal" href="#id278"><code class="docutils literal notranslate"><span class="pre">gxapi.IMPCH_TYPE_DATA</span></code></a></li>
+<li><a class="reference internal" href="#id280"><code class="docutils literal notranslate"><span class="pre">gxapi.IMPCH_TYPE_DATA</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.IMPCH_TYPE_ASSAY"><code class="docutils literal notranslate"><span class="pre">IMPCH_TYPE_ASSAY</span></code></a></li>
-<li><a class="reference internal" href="#id279"><code class="docutils literal notranslate"><span class="pre">gxapi.IMPCH_TYPE_ASSAY</span></code></a></li>
+<li><a class="reference internal" href="#id281"><code class="docutils literal notranslate"><span class="pre">gxapi.IMPCH_TYPE_ASSAY</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#window-state-constants">WINDOW_STATE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.WINDOW_RESTORE"><code class="docutils literal notranslate"><span class="pre">WINDOW_RESTORE</span></code></a></li>
-<li><a class="reference internal" href="#id280"><code class="docutils literal notranslate"><span class="pre">gxapi.WINDOW_RESTORE</span></code></a></li>
+<li><a class="reference internal" href="#id282"><code class="docutils literal notranslate"><span class="pre">gxapi.WINDOW_RESTORE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.WINDOW_MINIMIZE"><code class="docutils literal notranslate"><span class="pre">WINDOW_MINIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id281"><code class="docutils literal notranslate"><span class="pre">gxapi.WINDOW_MINIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id283"><code class="docutils literal notranslate"><span class="pre">gxapi.WINDOW_MINIMIZE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.WINDOW_MAXIMIZE"><code class="docutils literal notranslate"><span class="pre">WINDOW_MAXIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id282"><code class="docutils literal notranslate"><span class="pre">gxapi.WINDOW_MAXIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id284"><code class="docutils literal notranslate"><span class="pre">gxapi.WINDOW_MAXIMIZE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#xtool-align-constants">XTOOL_ALIGN constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_LEFT"><code class="docutils literal notranslate"><span class="pre">XTOOL_ALIGN_LEFT</span></code></a></li>
-<li><a class="reference internal" href="#id283"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_LEFT</span></code></a></li>
+<li><a class="reference internal" href="#id285"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_LEFT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_TOP"><code class="docutils literal notranslate"><span class="pre">XTOOL_ALIGN_TOP</span></code></a></li>
-<li><a class="reference internal" href="#id284"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_TOP</span></code></a></li>
+<li><a class="reference internal" href="#id286"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_TOP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_RIGHT"><code class="docutils literal notranslate"><span class="pre">XTOOL_ALIGN_RIGHT</span></code></a></li>
-<li><a class="reference internal" href="#id285"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_RIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id287"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_RIGHT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_BOTTOM"><code class="docutils literal notranslate"><span class="pre">XTOOL_ALIGN_BOTTOM</span></code></a></li>
-<li><a class="reference internal" href="#id286"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_BOTTOM</span></code></a></li>
+<li><a class="reference internal" href="#id288"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_BOTTOM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="docutils literal notranslate"><span class="pre">XTOOL_ALIGN_ANY</span></code></a></li>
-<li><a class="reference internal" href="#id287"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_ANY</span></code></a></li>
+<li><a class="reference internal" href="#id289"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_ALIGN_ANY</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#xtool-dock-constants">XTOOL_DOCK constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_DOCK_TOP"><code class="docutils literal notranslate"><span class="pre">XTOOL_DOCK_TOP</span></code></a></li>
-<li><a class="reference internal" href="#id288"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_TOP</span></code></a></li>
+<li><a class="reference internal" href="#id290"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_TOP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_DOCK_LEFT"><code class="docutils literal notranslate"><span class="pre">XTOOL_DOCK_LEFT</span></code></a></li>
-<li><a class="reference internal" href="#id289"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_LEFT</span></code></a></li>
+<li><a class="reference internal" href="#id291"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_LEFT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_DOCK_RIGHT"><code class="docutils literal notranslate"><span class="pre">XTOOL_DOCK_RIGHT</span></code></a></li>
-<li><a class="reference internal" href="#id290"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_RIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id292"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_RIGHT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_DOCK_BOTTOM"><code class="docutils literal notranslate"><span class="pre">XTOOL_DOCK_BOTTOM</span></code></a></li>
-<li><a class="reference internal" href="#id291"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_BOTTOM</span></code></a></li>
+<li><a class="reference internal" href="#id293"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_BOTTOM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.XTOOL_DOCK_FLOAT"><code class="docutils literal notranslate"><span class="pre">XTOOL_DOCK_FLOAT</span></code></a></li>
-<li><a class="reference internal" href="#id292"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_FLOAT</span></code></a></li>
+<li><a class="reference internal" href="#id294"><code class="docutils literal notranslate"><span class="pre">gxapi.XTOOL_DOCK_FLOAT</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1434,7 +1438,7 @@ e.g. for <a class="reference internal" href="#id94" title="geosoft.gxapi.FILE_FI
 <p>Filter:    “Database (<code class="docutils literal notranslate"><span class="pre">*.gdb</span></code>)”
 Mask:      “<code class="docutils literal notranslate"><span class="pre">*.gdb</span></code>”
 Extension: “gdb”
-Directory: “<a class="reference internal" href="#id252" title="geosoft.gxapi.GS_DIRECTORY_NONE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DIRECTORY_NONE</span></code></a>”</p>
+Directory: “<a class="reference internal" href="#id254" title="geosoft.gxapi.GS_DIRECTORY_NONE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DIRECTORY_NONE</span></code></a>”</p>
 <p>This function is useful for constuction open/save dialog
 file filters, especially in GX.Net functions.</p>
 </dd></dl>
@@ -1456,7 +1460,7 @@ file filters, especially in GX.Net functions.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Works along with the <a class="reference internal" href="#geosoft.gxapi.GXGUI.get_file_filter" title="geosoft.gxapi.GXGUI.get_file_filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_file_filter</span></code></a> function. Note that
-most values of FILE_FILTER_XXX will return <a class="reference internal" href="#id252" title="geosoft.gxapi.GS_DIRECTORY_NONE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DIRECTORY_NONE</span></code></a>,
+most values of FILE_FILTER_XXX will return <a class="reference internal" href="#id254" title="geosoft.gxapi.GS_DIRECTORY_NONE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DIRECTORY_NONE</span></code></a>,
 and give the current workspace directory.</p>
 <p>This function is useful for constuction open/save dialog
 file filters, especially in GX.Net functions.</p>
@@ -2222,7 +2226,7 @@ may change during editing.</p>
 <li><p><strong>dll</strong> (<em>str</em>) – Assembly name</p></li>
 <li><p><strong>func</strong> (<em>str</em>) – Control Class Name</p></li>
 <li><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</p></li>
-<li><p><strong>align</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#id287" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</p></li>
+<li><p><strong>align</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#id289" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</p></li>
 <li><p><strong>dock</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-dock"><span class="std std-ref">XTOOL_DOCK constants</span></a></p></li>
 <li><p><strong>width</strong> (<em>int</em>) – Default width</p></li>
 <li><p><strong>height</strong> (<em>int</em>) – Default height</p></li>
@@ -2266,7 +2270,7 @@ may change during editing.</p>
 <li><p><strong>dll</strong> (<em>str</em>) – DLL name</p></li>
 <li><p><strong>func</strong> (<em>str</em>) – Function Name</p></li>
 <li><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</p></li>
-<li><p><strong>align</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#id287" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</p></li>
+<li><p><strong>align</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#id289" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</p></li>
 <li><p><strong>dock</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-dock"><span class="std std-ref">XTOOL_DOCK constants</span></a></p></li>
 <li><p><strong>width</strong> (<em>int</em>) – Default width</p></li>
 <li><p><strong>height</strong> (<em>int</em>) – Default height</p></li>
@@ -2310,7 +2314,7 @@ may change during editing.</p>
 <li><p><strong>dll</strong> (<em>str</em>) – Assembly name</p></li>
 <li><p><strong>func</strong> (<em>str</em>) – Control Class Name</p></li>
 <li><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – <a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMETA</span></code></a> Handle (holding tool configuration data)</p></li>
-<li><p><strong>align</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#id287" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</p></li>
+<li><p><strong>align</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-align"><span class="std std-ref">XTOOL_ALIGN constants</span></a> (can specify one or more or <a class="reference internal" href="#id289" title="geosoft.gxapi.XTOOL_ALIGN_ANY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XTOOL_ALIGN_ANY</span></code></a>)</p></li>
 <li><p><strong>dock</strong> (<em>int</em>) – <a class="reference internal" href="#xtool-dock"><span class="std std-ref">XTOOL_DOCK constants</span></a></p></li>
 <li><p><strong>width</strong> (<em>int</em>) – Default width</p></li>
 <li><p><strong>height</strong> (<em>int</em>) – Default height</p></li>
@@ -4565,6 +4569,28 @@ allow modification of projections (e.g. the OM Viewer).</p>
 
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FILE_FILTER_ARGIS_LYRX">
+<span class="sig-name descname"><span class="pre">FILE_FILTER_ARGIS_LYRX</span></span><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ARGIS_LYRX" title="Link to this definition">¶</a></dt>
+<dd><p>ArcGIS LayerX files  <code class="docutils literal notranslate"><span class="pre">*.lyrx</span></code>  LOCAL</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id250">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILE_FILTER_ARGIS_LYRX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">134</span></em><a class="headerlink" href="#id250" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.FILE_FILTER_ARGIS_STYLX">
+<span class="sig-name descname"><span class="pre">FILE_FILTER_ARGIS_STYLX</span></span><a class="headerlink" href="#geosoft.gxapi.FILE_FILTER_ARGIS_STYLX" title="Link to this definition">¶</a></dt>
+<dd><p>ArcGIS Stylx files  <code class="docutils literal notranslate"><span class="pre">*.stylx</span></code>  LOCAL</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id251">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILE_FILTER_ARGIS_STYLX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">135</span></em><a class="headerlink" href="#id251" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="file-form-constants">
 <span id="file-form"></span><h2>FILE_FORM constants<a class="headerlink" href="#file-form-constants" title="Link to this heading">¶</a></h2>
@@ -4574,8 +4600,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">FILE_FORM_OPEN</span></span><a class="headerlink" href="#geosoft.gxapi.FILE_FORM_OPEN" title="Link to this definition">¶</a></dt>
 <dd><p>Open a file</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id250">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILE_FORM_OPEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id250" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id252">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILE_FORM_OPEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id252" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4585,8 +4611,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">FILE_FORM_SAVE</span></span><a class="headerlink" href="#geosoft.gxapi.FILE_FORM_SAVE" title="Link to this definition">¶</a></dt>
 <dd><p>Save a file</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id251">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILE_FORM_SAVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id251" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id253">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILE_FORM_SAVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id253" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4600,8 +4626,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id252">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id252" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id254">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id254" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4611,8 +4637,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_GEOSOFT</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GEOSOFT" title="Link to this definition">¶</a></dt>
 <dd><p>Geosoft</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id253">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GEOSOFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id253" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id255">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GEOSOFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id255" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4622,8 +4648,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_BIN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_BIN" title="Link to this definition">¶</a></dt>
 <dd><p>Bin</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id254">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_BIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id254" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id256">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_BIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id256" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4633,8 +4659,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_GER</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GER" title="Link to this definition">¶</a></dt>
 <dd><p>Ger</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id255">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id255" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id257">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id257" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4644,8 +4670,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_OMN</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_OMN" title="Link to this definition">¶</a></dt>
 <dd><p>Omn</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id256">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_OMN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id256" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id258">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_OMN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id258" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4655,8 +4681,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_TBL</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_TBL" title="Link to this definition">¶</a></dt>
 <dd><p>Tbl</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id257">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_TBL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id257" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id259">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_TBL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id259" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4666,8 +4692,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_FONTS</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_FONTS" title="Link to this definition">¶</a></dt>
 <dd><p>Fonts</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id258">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_FONTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id258" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id260">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_FONTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id260" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4677,8 +4703,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_GX</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GX" title="Link to this definition">¶</a></dt>
 <dd><p>Gx</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id259">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id259" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id261">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id261" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4688,8 +4714,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_GS</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GS" title="Link to this definition">¶</a></dt>
 <dd><p>Gs</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id260">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id260" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id262">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id262" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4699,8 +4725,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_APPS</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_APPS" title="Link to this definition">¶</a></dt>
 <dd><p>Apps</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id261">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_APPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id261" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id263">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_APPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id263" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4710,8 +4736,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_ETC</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_ETC" title="Link to this definition">¶</a></dt>
 <dd><p>Etc</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id262">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_ETC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id262" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id264">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_ETC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id264" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4721,8 +4747,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_HLP</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_HLP" title="Link to this definition">¶</a></dt>
 <dd><p>Hlp</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id263">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_HLP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id263" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id265">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_HLP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id265" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4732,8 +4758,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_GXDEV</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GXDEV" title="Link to this definition">¶</a></dt>
 <dd><p>Gxdev</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id264">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GXDEV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#id264" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id266">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GXDEV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#id266" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4743,8 +4769,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT" title="Link to this definition">¶</a></dt>
 <dd><p>Component</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id265">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#id265" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id267">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#id267" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4754,8 +4780,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_CSV</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_CSV" title="Link to this definition">¶</a></dt>
 <dd><p>Csv</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id266">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_CSV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#id266" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id268">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_CSV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#id268" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4765,8 +4791,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_LIC</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_LIC" title="Link to this definition">¶</a></dt>
 <dd><p>Lic</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id267">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_LIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#id267" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id269">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_LIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#id269" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4776,8 +4802,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_INI</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_INI" title="Link to this definition">¶</a></dt>
 <dd><p>Ini</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id268">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_INI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#id268" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id270">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_INI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#id270" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4787,8 +4813,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_TEMP</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_TEMP" title="Link to this definition">¶</a></dt>
 <dd><p>Temp</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id269">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_TEMP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em><a class="headerlink" href="#id269" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id271">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_TEMP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em><a class="headerlink" href="#id271" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4798,8 +4824,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_UETC</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_UETC" title="Link to this definition">¶</a></dt>
 <dd><p>Uetc</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id270">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_UETC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#id270" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id272">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_UETC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#id272" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4809,8 +4835,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_UMAPTEMPLATE</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_UMAPTEMPLATE" title="Link to this definition">¶</a></dt>
 <dd><p>Umaptemplate</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id271">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_UMAPTEMPLATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em><a class="headerlink" href="#id271" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id273">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_UMAPTEMPLATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em><a class="headerlink" href="#id273" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4820,8 +4846,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT_SCRIPTS</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT_SCRIPTS" title="Link to this definition">¶</a></dt>
 <dd><p>Component scripts</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id272">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT_SCRIPTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#id272" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id274">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT_SCRIPTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#id274" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4831,8 +4857,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT_HTML</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_COMPONENT_HTML" title="Link to this definition">¶</a></dt>
 <dd><p>Component html</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id273">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT_HTML</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">51</span></em><a class="headerlink" href="#id273" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id275">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_COMPONENT_HTML</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">51</span></em><a class="headerlink" href="#id275" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4842,8 +4868,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_IMG</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_IMG" title="Link to this definition">¶</a></dt>
 <dd><p>Img</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id274">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_IMG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">52</span></em><a class="headerlink" href="#id274" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id276">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_IMG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">52</span></em><a class="headerlink" href="#id276" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4853,8 +4879,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_BAR</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_BAR" title="Link to this definition">¶</a></dt>
 <dd><p>Bar</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id275">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_BAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">53</span></em><a class="headerlink" href="#id275" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id277">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_BAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">53</span></em><a class="headerlink" href="#id277" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4864,8 +4890,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_GXNET</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_GXNET" title="Link to this definition">¶</a></dt>
 <dd><p>Gxnet</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id276">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GXNET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">54</span></em><a class="headerlink" href="#id276" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id278">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_GXNET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">54</span></em><a class="headerlink" href="#id278" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4875,8 +4901,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">GS_DIRECTORY_MAPTEMPLATE</span></span><a class="headerlink" href="#geosoft.gxapi.GS_DIRECTORY_MAPTEMPLATE" title="Link to this definition">¶</a></dt>
 <dd><p>Maptemplate</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id277">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_MAPTEMPLATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">55</span></em><a class="headerlink" href="#id277" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id279">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GS_DIRECTORY_MAPTEMPLATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">55</span></em><a class="headerlink" href="#id279" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4890,8 +4916,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">IMPCH_TYPE_DATA</span></span><a class="headerlink" href="#geosoft.gxapi.IMPCH_TYPE_DATA" title="Link to this definition">¶</a></dt>
 <dd><p>Data</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id278">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">IMPCH_TYPE_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id278" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id280">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">IMPCH_TYPE_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id280" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4901,8 +4927,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">IMPCH_TYPE_ASSAY</span></span><a class="headerlink" href="#geosoft.gxapi.IMPCH_TYPE_ASSAY" title="Link to this definition">¶</a></dt>
 <dd><p>Assay</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id279">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">IMPCH_TYPE_ASSAY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id279" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id281">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">IMPCH_TYPE_ASSAY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id281" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4916,8 +4942,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">WINDOW_RESTORE</span></span><a class="headerlink" href="#geosoft.gxapi.WINDOW_RESTORE" title="Link to this definition">¶</a></dt>
 <dd><p>Window restore</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id280">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id280" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id282">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id282" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4927,8 +4953,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">WINDOW_MINIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.WINDOW_MINIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Window minimize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id281">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id281" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id283">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id283" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4938,8 +4964,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">WINDOW_MAXIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.WINDOW_MAXIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Window maximize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id282">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id282" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id284">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id284" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4953,8 +4979,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_ALIGN_LEFT</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_LEFT" title="Link to this definition">¶</a></dt>
 <dd><p>Left</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id283">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id283" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id285">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id285" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4964,8 +4990,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_ALIGN_TOP</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_TOP" title="Link to this definition">¶</a></dt>
 <dd><p>Top</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id284">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id284" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id286">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id286" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4975,8 +5001,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_ALIGN_RIGHT</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_RIGHT" title="Link to this definition">¶</a></dt>
 <dd><p>Right</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id285">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id285" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id287">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id287" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4986,8 +5012,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_ALIGN_BOTTOM</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_BOTTOM" title="Link to this definition">¶</a></dt>
 <dd><p>Bottom</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id286">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id286" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id288">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id288" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4997,8 +5023,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_ALIGN_ANY</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_ALIGN_ANY" title="Link to this definition">¶</a></dt>
 <dd><p>Any</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id287">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_ANY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#id287" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id289">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_ALIGN_ANY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#id289" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5012,8 +5038,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_DOCK_TOP</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_TOP" title="Link to this definition">¶</a></dt>
 <dd><p>Top</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id288">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id288" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id290">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id290" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5023,8 +5049,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_DOCK_LEFT</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_LEFT" title="Link to this definition">¶</a></dt>
 <dd><p>Left</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id289">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id289" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id291">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id291" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5034,8 +5060,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_DOCK_RIGHT</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_RIGHT" title="Link to this definition">¶</a></dt>
 <dd><p>Right</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id290">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id290" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id292">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id292" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5045,8 +5071,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_DOCK_BOTTOM</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_BOTTOM" title="Link to this definition">¶</a></dt>
 <dd><p>Bottom</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id291">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id291" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id293">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id293" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5056,8 +5082,8 @@ allow modification of projections (e.g. the OM Viewer).</p>
 <span class="sig-name descname"><span class="pre">XTOOL_DOCK_FLOAT</span></span><a class="headerlink" href="#geosoft.gxapi.XTOOL_DOCK_FLOAT" title="Link to this definition">¶</a></dt>
 <dd><p>Float</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id292">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_FLOAT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id292" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id294">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">XTOOL_DOCK_FLOAT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id294" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -5078,7 +5104,7 @@ allow modification of projections (e.g. the OM Viewer).</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGUI class</a></li> 
       </ul>
     </div>

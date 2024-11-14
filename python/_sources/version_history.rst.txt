@@ -949,6 +949,17 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2024.2
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXMAP.export_all_in_view2` Same as ExportAllInView_MAP, but preset the range in X and Y to export (mm)
+
+
+  
 Version 2024.1
 -----------------
 
@@ -992,6 +1003,8 @@ New Functions
 
 :func:`geosoft.gxapi.GXCSYMB3D.statistics` Add the CSYMB values to a statistics object
 
+:func:`geosoft.gxapi.GXDATALINKD.create_arc_lyrx` Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYRX file
+
 :func:`geosoft.gxapi.GXDU.sample_img_line_lst_ex` Sample an `GXIMG <geosoft.gxapi.GXIMG>` at a specified X and Y, for a `GXLST <geosoft.gxapi.GXLST>` of lines.
 
 :func:`geosoft.gxapi.GXMAP.remove_geosurface` Remove all geosurface groups from a map that are linked to a specific geosurface file.
@@ -1015,6 +1028,8 @@ New Functions
 :func:`geosoft.gxapi.GXPROJ.get_registered_background_script_ex` Retrieve info on a registered OMS script launched from the project
 
 :func:`geosoft.gxapi.GXPROJ.register_background_script_ex` Register an OMS script launched from the project
+
+:func:`geosoft.gxapi.GXSYS.check_arc_sdk_license_ex` Check to see if a ESRI ArcGIS Pro SDK and Map SDK license is available, returns type and version of available engine.
 
 :func:`geosoft.gxapi.GXSYS.dat_list_lst` Returns a LST of Grid/Image types as names and qualifiers as values`GXLST <geosoft.gxapi.GXLST>`
 
@@ -1499,6 +1514,8 @@ New Functions
 :func:`geosoft.gxapi.GXMVIEW.view_group_json` Generate a JSON representation of a Group.
 
 :func:`geosoft.gxapi.GXPROJ.add_grid_document` Adds (and opens) a grid document file in the current project with a particular colour distribution and colour file.
+
+:func:`geosoft.gxapi.GXREG.get_maker_xml` Gets the MAKER handle from the REG object.
 
 :func:`geosoft.gxapi.GXSEGYREADER.add_trace_filter` Add a filter based on trace header fields.
 

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXDATALINKD class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <title>GXDATALINKD class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/documentation_options.js?v=0af83669"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDATALINKD class</a></li> 
       </ul>
     </div>
@@ -44,6 +44,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD.create_arc_lyr_ex"><code class="docutils literal notranslate"><span class="pre">GXDATALINKD.create_arc_lyr_ex()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD.create_arc_lyr_from_tmp"><code class="docutils literal notranslate"><span class="pre">GXDATALINKD.create_arc_lyr_from_tmp()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD.create_arc_lyr_from_tmp_ex"><code class="docutils literal notranslate"><span class="pre">GXDATALINKD.create_arc_lyr_from_tmp_ex()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD.create_arc_lyrx"><code class="docutils literal notranslate"><span class="pre">GXDATALINKD.create_arc_lyrx()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD.create_bing"><code class="docutils literal notranslate"><span class="pre">GXDATALINKD.create_bing()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD.get_extents"><code class="docutils literal notranslate"><span class="pre">GXDATALINKD.get_extents()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD.get_ipj"><code class="docutils literal notranslate"><span class="pre">GXDATALINKD.get_ipj()</span></code></a></li>
@@ -188,6 +189,32 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDATALINKD.create_arc_lyrx">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_arc_lyrx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arc_lyrx_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arc_srylx_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDATALINKD.html#GXDATALINKD.create_arc_lyrx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDATALINKD.create_arc_lyrx" title="Link to this definition">¶</a></dt>
+<dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXDATALINKD" title="geosoft.gxapi.GXDATALINKD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATALINKD</span></code></a> object from a ArcGIS LYRX file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arc_lyrx_file</strong> (<em>str</em>) – Arc LYRX file name</p></li>
+<li><p><strong>arc_srylx_file</strong> (<em>str</em>) – Layer Stylx file name</p></li>
+<li><p><strong>root_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – root layer name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD" title="geosoft.gxapi.GXDATALINKD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATALINKD</span></code></a> handle, terminates if creation fails</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXDATALINKD" title="geosoft.gxapi.GXDATALINKD.GXDATALINKD">GXDATALINKD</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Needs ArcGIS Pro SDK and Map SDK licence.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXDATALINKD.create_bing">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_bing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDATALINKD.html#GXDATALINKD.create_bing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDATALINKD.create_bing" title="Link to this definition">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXDATALINKD" title="geosoft.gxapi.GXDATALINKD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDATALINKD</span></code></a> object for a BING dataset</p>
@@ -288,7 +315,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDATALINKD class</a></li> 
       </ul>
     </div>

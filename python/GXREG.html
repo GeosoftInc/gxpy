@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXREG class &#8212; Geosoft GX Python API 2024.1.0 documentation</title>
+    <title>GXREG class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=9887e882"></script>
+    <script src="_static/documentation_options.js?v=0af83669"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXREG class</a></li> 
       </ul>
     </div>
@@ -48,6 +48,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXREG.get"><code class="docutils literal notranslate"><span class="pre">GXREG.get()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXREG.get_double"><code class="docutils literal notranslate"><span class="pre">GXREG.get_double()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXREG.get_int"><code class="docutils literal notranslate"><span class="pre">GXREG.get_int()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXREG.get_maker_xml"><code class="docutils literal notranslate"><span class="pre">GXREG.get_maker_xml()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXREG.get_one"><code class="docutils literal notranslate"><span class="pre">GXREG.get_one()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXREG.is_null"><code class="docutils literal notranslate"><span class="pre">GXREG.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXREG.load_ini"><code class="docutils literal notranslate"><span class="pre">GXREG.load_ini()</span></code></a></li>
@@ -65,7 +66,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.REG_MERGE_REPLACE"><code class="docutils literal notranslate"><span class="pre">REG_MERGE_REPLACE</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.REG_MERGE_REPLACE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.REG_MERGE_ADD"><code class="docutils literal notranslate"><span class="pre">REG_MERGE_ADD</span></code></a></li>
-<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.REG_MERGE_ADD</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.REG_MERGE_ADD</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -253,6 +254,21 @@ the <a class="reference internal" href="#geosoft.gxapi.GXREG" title="geosoft.gxa
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If parameter is not present in <a class="reference internal" href="#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id4" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a> is returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXREG.get_maker_xml">
+<span class="sig-name descname"><span class="pre">get_maker_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXREG.html#GXREG.get_maker_xml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXREG.get_maker_xml" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the MAKER handle from the REG object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parm</strong> (<em>str</em>) – XML file name</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -468,8 +484,8 @@ or
 <span class="sig-name descname"><span class="pre">REG_MERGE_ADD</span></span><a class="headerlink" href="#geosoft.gxapi.REG_MERGE_ADD" title="Link to this definition">¶</a></dt>
 <dd><p>Only append values</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id17">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">REG_MERGE_ADD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id18">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">REG_MERGE_ADD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -490,7 +506,7 @@ or
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXREG class</a></li> 
       </ul>
     </div>
