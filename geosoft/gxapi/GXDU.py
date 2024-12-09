@@ -2318,28 +2318,30 @@ class GXDU(gxapi_cy.WrapDU):
 
 
     @classmethod
-    def import_aseg_proj(cls, db, templ, file, data, flc, chans, proj, x_ch, y_ch):
+    def import_aseg_proj(cls, db, templ, file, data, flc, chans, proj, x_ch, y_ch, fiducial):
         """
         Import an ASEG-GDF data file (supports projections).
         
-        :param db:     Database
-        :param templ:  Template file name
-        :param file:   Header file name
-        :param data:   Data file name
-        :param flc:    Flight Line Channel name
-        :param chans:  Number of channels to import at one time
-        :param proj:   Projection file name
-        :param x_ch:   Channel pair to associate projection
-        :param y_ch:   Channel pair to associate projection
-        :type  db:     GXDB
-        :type  templ:  str
-        :type  file:   str
-        :type  data:   str
-        :type  flc:    str
-        :type  chans:  int
-        :type  proj:   str
-        :type  x_ch:   str
-        :type  y_ch:   str
+        :param db:        Database
+        :param templ:     Template file name
+        :param file:      Header file name
+        :param data:      Data file name
+        :param flc:       Flight Line Channel name
+        :param chans:     Number of channels to import at one time
+        :param proj:      Projection file name
+        :param x_ch:      Channel pair to associate projection
+        :param y_ch:      Channel pair to associate projection
+        :param fiducial:  Fiducial selection
+        :type  db:        GXDB
+        :type  templ:     str
+        :type  file:      str
+        :type  data:      str
+        :type  flc:       str
+        :type  chans:     int
+        :type  proj:      str
+        :type  x_ch:      str
+        :type  y_ch:      str
+        :type  fiducial:  int
 
         .. versionadded:: 5.0.1
 
@@ -2347,7 +2349,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** This version supports projections
         """
-        gxapi_cy.WrapDU._import_aseg_proj(GXContext._get_tls_geo(), db, templ.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode())
+        gxapi_cy.WrapDU._import_aseg_proj(GXContext._get_tls_geo(), db, templ.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode(), fiducial)
         
 
 
