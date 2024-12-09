@@ -2609,28 +2609,30 @@
 <div class="viewcode-block" id="GXDU.import_aseg_proj">
 <a class="viewcode-back" href="../../../GXDU.html#geosoft.gxapi.GXDU.import_aseg_proj">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">import_aseg_proj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">flc</span><span class="p">,</span> <span class="n">chans</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">import_aseg_proj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">flc</span><span class="p">,</span> <span class="n">chans</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">fiducial</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Import an ASEG-GDF data file (supports projections).</span>
 <span class="sd">        </span>
-<span class="sd">        :param db:     Database</span>
-<span class="sd">        :param templ:  Template file name</span>
-<span class="sd">        :param file:   Header file name</span>
-<span class="sd">        :param data:   Data file name</span>
-<span class="sd">        :param flc:    Flight Line Channel name</span>
-<span class="sd">        :param chans:  Number of channels to import at one time</span>
-<span class="sd">        :param proj:   Projection file name</span>
-<span class="sd">        :param x_ch:   Channel pair to associate projection</span>
-<span class="sd">        :param y_ch:   Channel pair to associate projection</span>
-<span class="sd">        :type  db:     GXDB</span>
-<span class="sd">        :type  templ:  str</span>
-<span class="sd">        :type  file:   str</span>
-<span class="sd">        :type  data:   str</span>
-<span class="sd">        :type  flc:    str</span>
-<span class="sd">        :type  chans:  int</span>
-<span class="sd">        :type  proj:   str</span>
-<span class="sd">        :type  x_ch:   str</span>
-<span class="sd">        :type  y_ch:   str</span>
+<span class="sd">        :param db:        Database</span>
+<span class="sd">        :param templ:     Template file name</span>
+<span class="sd">        :param file:      Header file name</span>
+<span class="sd">        :param data:      Data file name</span>
+<span class="sd">        :param flc:       Flight Line Channel name</span>
+<span class="sd">        :param chans:     Number of channels to import at one time</span>
+<span class="sd">        :param proj:      Projection file name</span>
+<span class="sd">        :param x_ch:      Channel pair to associate projection</span>
+<span class="sd">        :param y_ch:      Channel pair to associate projection</span>
+<span class="sd">        :param fiducial:  Fiducial selection</span>
+<span class="sd">        :type  db:        GXDB</span>
+<span class="sd">        :type  templ:     str</span>
+<span class="sd">        :type  file:      str</span>
+<span class="sd">        :type  data:      str</span>
+<span class="sd">        :type  flc:       str</span>
+<span class="sd">        :type  chans:     int</span>
+<span class="sd">        :type  proj:      str</span>
+<span class="sd">        :type  x_ch:      str</span>
+<span class="sd">        :type  y_ch:      str</span>
+<span class="sd">        :type  fiducial:  int</span>
 
 <span class="sd">        .. versionadded:: 5.0.1</span>
 
@@ -2638,7 +2640,7 @@
 
 <span class="sd">        **Note:** This version supports projections</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_import_aseg_proj</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">flc</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chans</span><span class="p">,</span> <span class="n">proj</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDU</span><span class="o">.</span><span class="n">_import_aseg_proj</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">flc</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chans</span><span class="p">,</span> <span class="n">proj</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fiducial</span><span class="p">)</span></div>
 
         
 
