@@ -32,13 +32,13 @@ import geosoft.gxapi as gxapi
 
 __version__ = geosoft.__version__
 
-# Override np.float_ with np.float64
-if tuple(map(int, np.__version__.split('.')[:2])) >= (1, 24):
-    np.float_ = np.float64
-
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
+
+# Override np.float_ with np.float64 if numpy version >= 2.0
+if tuple(map(int, np.__version__.split('.')[:2])) >= (2, 0):
+    np.float_ = np.float64
 
 # cached lookup tables
 _dummy_map = {}
