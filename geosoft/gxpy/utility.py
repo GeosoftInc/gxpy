@@ -32,6 +32,7 @@ import geosoft.gxapi as gxapi
 
 __version__ = geosoft.__version__
 
+
 def _t(s):
     return geosoft.gxpy.system.translate(s)
 
