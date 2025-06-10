@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXAGG class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXAGG class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXAGG class</a></li> 
       </ul>
     </div>
@@ -49,6 +49,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.is_null"><code class="docutils literal notranslate"><span class="pre">GXAGG.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_img"><code class="docutils literal notranslate"><span class="pre">GXAGG.layer_img()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_img_ex"><code class="docutils literal notranslate"><span class="pre">GXAGG.layer_img_ex()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_pic"><code class="docutils literal notranslate"><span class="pre">GXAGG.layer_pic()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_shade_img"><code class="docutils literal notranslate"><span class="pre">GXAGG.layer_shade_img()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.list_img"><code class="docutils literal notranslate"><span class="pre">GXAGG.list_img()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.null"><code class="docutils literal notranslate"><span class="pre">GXAGG.null()</span></code></a></li>
@@ -56,43 +57,44 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.set_layer_itr"><code class="docutils literal notranslate"><span class="pre">GXAGG.set_layer_itr()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.set_model"><code class="docutils literal notranslate"><span class="pre">GXAGG.set_model()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXAGG.set_render_method"><code class="docutils literal notranslate"><span class="pre">GXAGG.set_render_method()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXAGG.update_thumb"><code class="docutils literal notranslate"><span class="pre">GXAGG.update_thumb()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#agg-layer-zone-constants">AGG_LAYER_ZONE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT"><code class="docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_DEFAULT</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_DEFAULT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_LINEAR"><code class="docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_NORMAL"><code class="docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA"><code class="docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_EQUALAREA</span></code></a></li>
-<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_EQUALAREA</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_EQUALAREA</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_SHADE"><code class="docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_SHADE</span></code></a></li>
-<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_SHADE</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_SHADE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_LOGLINEAR"><code class="docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_LOGLINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_LOGLINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_LOGLINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_LAYER_ZONE_LAST"><code class="docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_LAST</span></code></a></li>
-<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_LAST</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_LAYER_ZONE_LAST</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#agg-model-constants">AGG_MODEL constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_MODEL_HSV"><code class="docutils literal notranslate"><span class="pre">AGG_MODEL_HSV</span></code></a></li>
-<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_MODEL_HSV</span></code></a></li>
+<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_MODEL_HSV</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_MODEL_RGB"><code class="docutils literal notranslate"><span class="pre">AGG_MODEL_RGB</span></code></a></li>
-<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_MODEL_RGB</span></code></a></li>
+<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_MODEL_RGB</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_MODEL_CMY"><code class="docutils literal notranslate"><span class="pre">AGG_MODEL_CMY</span></code></a></li>
-<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_MODEL_CMY</span></code></a></li>
+<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_MODEL_CMY</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#agg-render-constants">AGG_RENDER constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_RENDER_ADD"><code class="docutils literal notranslate"><span class="pre">AGG_RENDER_ADD</span></code></a></li>
-<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_ADD</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_ADD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_RENDER_BLEND"><code class="docutils literal notranslate"><span class="pre">AGG_RENDER_BLEND</span></code></a></li>
-<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_BLEND</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_BLEND</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_RENDER_BLEND_ALL"><code class="docutils literal notranslate"><span class="pre">AGG_RENDER_BLEND_ALL</span></code></a></li>
-<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_BLEND_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_BLEND_ALL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.AGG_RENDER_FADE"><code class="docutils literal notranslate"><span class="pre">AGG_RENDER_FADE</span></code></a></li>
-<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_FADE</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.AGG_RENDER_FADE</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -341,6 +343,30 @@ placed in the aggregate.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXAGG.layer_pic">
+<span class="sig-name descname"><span class="pre">layer_pic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXAGG.html#GXAGG.layer_pic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXAGG.layer_pic" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Add a PIC as a layer in an aggregate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pic</strong> (<em>int</em>) – Note: the PIC object is obsolete</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Temp File name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This function creates a temporary PNG file in the temp directory.
+The name is returned so that you can pack the map and remove the file
+or copy the file elsewhere for later use.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXAGG.layer_shade_img">
 <span class="sig-name descname"><span class="pre">layer_shade_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scl</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXAGG.html#GXAGG.layer_shade_img"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXAGG.layer_shade_img" title="Link to this definition">¶</a></dt>
 <dd><p>Add a shaded image as a layer in an aggregate.</p>
@@ -470,6 +496,27 @@ placed in the aggregate.</p>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXAGG.update_thumb">
+<span class="sig-name descname"><span class="pre">update_thumb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXAGG.html#GXAGG.update_thumb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXAGG.update_thumb" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Update the thumbnail of an <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> from an <a class="reference internal" href="#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXAGG</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> (<em>str</em>) – Name of the grid to update</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – Size of the thumbnail in pixels (64 is typical) the minimum size if 16 (16x16)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
 </dd></dl>
 
 <section id="agg-layer-zone-constants">
@@ -481,7 +528,7 @@ placed in the aggregate.</p>
 <dd><p>If a color table with no color transform is passed
 it will be used with the default zoning
 method of the data, which is usually
-<a class="reference internal" href="#id16" title="geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_EQUALAREA</span></code></a>.</p>
+<a class="reference internal" href="#id18" title="geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_EQUALAREA</span></code></a>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
 <span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
@@ -494,8 +541,8 @@ method of the data, which is usually
 <span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear Distribution</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id14">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id16">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -505,8 +552,8 @@ method of the data, which is usually
 <span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_NORMAL</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_NORMAL" title="Link to this definition">¶</a></dt>
 <dd><p>Normal Distribution</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id15">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id17">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -516,8 +563,8 @@ method of the data, which is usually
 <span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_EQUALAREA</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_EQUALAREA" title="Link to this definition">¶</a></dt>
 <dd><p>Equal Area Distribution</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id16">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_EQUALAREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id18">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_EQUALAREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -525,7 +572,7 @@ method of the data, which is usually
 <dl class="py data">
 <dt class="sig sig-object py" id="geosoft.gxapi.AGG_LAYER_ZONE_SHADE">
 <span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_SHADE</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_SHADE" title="Link to this definition">¶</a></dt>
-<dd><p>If <a class="reference internal" href="#id17" title="geosoft.gxapi.AGG_LAYER_ZONE_SHADE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_SHADE</span></code></a> is specified, a shaded relief
+<dd><p>If <a class="reference internal" href="#id19" title="geosoft.gxapi.AGG_LAYER_ZONE_SHADE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_SHADE</span></code></a> is specified, a shaded relief
 layer is created from the specified grid.  A new grid
 file will also be created to hold the shaded relief
 image data.  This file will have the same name as the
@@ -537,8 +584,8 @@ Shading is always at inclination = declination = 45 deg.
 with default scaling.  If different shading is desired,
 use the <a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_shade_img" title="geosoft.gxapi.GXAGG.layer_shade_img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layer_shade_img</span></code></a> method.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id17">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_SHADE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id19">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_SHADE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -548,8 +595,8 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXAGG.layer_shade_img
 <span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LOGLINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_LAYER_ZONE_LOGLINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Log Linear Distribution</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id18">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id20">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -562,8 +609,8 @@ data will be used if it exists.  If it
 does not exist, the behaviour is the same
 as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE_DEFAULT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AGG_LAYER_ZONE_DEFAULT</span></code></a>.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id19">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id21">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_LAYER_ZONE_LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -577,8 +624,8 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
 <span class="sig-name descname"><span class="pre">AGG_MODEL_HSV</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_HSV" title="Link to this definition">¶</a></dt>
 <dd><p>Hue Saturation Value</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id20">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_MODEL_HSV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id22">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_MODEL_HSV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -588,8 +635,8 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
 <span class="sig-name descname"><span class="pre">AGG_MODEL_RGB</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_RGB" title="Link to this definition">¶</a></dt>
 <dd><p>Red Green Blue</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id21">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_MODEL_RGB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id23">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_MODEL_RGB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -599,8 +646,8 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
 <span class="sig-name descname"><span class="pre">AGG_MODEL_CMY</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_MODEL_CMY" title="Link to this definition">¶</a></dt>
 <dd><p>Cyan Magenta Yellow</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id22">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_MODEL_CMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id24">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_MODEL_CMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -614,8 +661,8 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
 <span class="sig-name descname"><span class="pre">AGG_RENDER_ADD</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_ADD" title="Link to this definition">¶</a></dt>
 <dd><p>Add all the colors together</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id23">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_ADD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id25">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_ADD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -625,8 +672,8 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
 <span class="sig-name descname"><span class="pre">AGG_RENDER_BLEND</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_BLEND" title="Link to this definition">¶</a></dt>
 <dd><p>Adds and divides by the number of non-dummy colors</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id24">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_BLEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id26">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_BLEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -636,8 +683,8 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
 <span class="sig-name descname"><span class="pre">AGG_RENDER_BLEND_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_BLEND_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>Adds and divides by the number of colors</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id25">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_BLEND_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id27">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_BLEND_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -647,8 +694,8 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
 <span class="sig-name descname"><span class="pre">AGG_RENDER_FADE</span></span><a class="headerlink" href="#geosoft.gxapi.AGG_RENDER_FADE" title="Link to this definition">¶</a></dt>
 <dd><p>Multiplies current colors by the input’s colors over 255 (input works as the percentage of color to preserve)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id26">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_FADE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id28">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">AGG_RENDER_FADE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -669,13 +716,13 @@ as <a class="reference internal" href="#id0" title="geosoft.gxapi.AGG_LAYER_ZONE
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXAGG class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

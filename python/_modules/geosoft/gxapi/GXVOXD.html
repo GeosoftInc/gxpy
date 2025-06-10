@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVOXD &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXVOXD &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVOXD</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXVOXD</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -128,6 +128,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vox</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">contour</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a new `GXVOXD &lt;geosoft.gxapi.GXVOXD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vox:      `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` Object</span>
@@ -149,6 +150,7 @@
 <span class="sd">        **Note:** Fails if the `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object is NOT thematic.</span>
 <span class="sd">        (See the `create_thematic &lt;geosoft.gxapi.GXVOXD.create_thematic&gt;` function.)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOXD</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vox</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">zone</span><span class="p">,</span> <span class="n">contour</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVOXD</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -160,6 +162,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_itr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vox</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a new `GXVOXD &lt;geosoft.gxapi.GXVOXD&gt;` with our own `GXITR &lt;geosoft.gxapi.GXITR&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vox:  `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` Object</span>
@@ -177,6 +180,7 @@
 <span class="sd">        **Note:** Fails if the `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object is thematic.</span>
 <span class="sd">        (See the `create_thematic &lt;geosoft.gxapi.GXVOXD.create_thematic&gt;` function.)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOXD</span><span class="o">.</span><span class="n">_create_itr</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vox</span><span class="p">,</span> <span class="n">itr</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVOXD</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -188,6 +192,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_thematic</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vox</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a new `GXVOXD &lt;geosoft.gxapi.GXVOXD&gt;` for a thematic `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vox:  `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` Object</span>
@@ -211,6 +216,7 @@
 
 <span class="sd">        Fails if the `GXVOX &lt;geosoft.gxapi.GXVOX&gt;` object is NOT thematic.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVOXD</span><span class="o">.</span><span class="n">_create_thematic</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vox</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVOXD</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -222,6 +228,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.is_thematic">[docs]</a>
     <span class="k">def</span> <span class="nf">is_thematic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is this a thematic voxel?</span>
 <span class="sd">        </span>
 
@@ -238,6 +245,7 @@
 <span class="sd">        normal numerical operations, such as applying ITRs for display,</span>
 <span class="sd">        are not valid.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_thematic</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -249,6 +257,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.get_thematic_info">[docs]</a>
     <span class="k">def</span> <span class="nf">get_thematic_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tpat</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a copy of a thematic voxel&#39;s `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object and a `GXVV &lt;geosoft.gxapi.GXVV&gt;` containing the current display selections.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tpat:  `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object to get</span>
@@ -260,6 +269,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_thematic_info</span><span class="p">(</span><span class="n">tpat</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -271,6 +281,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.set_thematic_selection">[docs]</a>
     <span class="k">def</span> <span class="nf">set_thematic_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a copy of a thematic voxel&#39;s `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object and a `GXVV &lt;geosoft.gxapi.GXVV&gt;` containing the current display selections.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:    `GXVV &lt;geosoft.gxapi.GXVV&gt;` (int) object to set the current selections to</span>
@@ -280,6 +291,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_thematic_selection</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -293,6 +305,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.get_draw_controls">[docs]</a>
     <span class="k">def</span> <span class="nf">get_draw_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the draw controls</span>
 <span class="sd">        </span>
 <span class="sd">        :param box:    Draw Bounding Box</span>
@@ -316,6 +329,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">box</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">trans</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_draw_controls</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">trans</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -327,6 +341,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.get_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets the file name of the voxel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File name returned</span>
@@ -336,6 +351,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -347,6 +363,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.get_itr">[docs]</a>
     <span class="k">def</span> <span class="nf">get_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the `GXITR &lt;geosoft.gxapi.GXITR&gt;` of the `GXVOXD &lt;geosoft.gxapi.GXVOXD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param itr:   `GXITR &lt;geosoft.gxapi.GXITR&gt;` object</span>
@@ -356,6 +373,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_itr</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span></div>
 
         
@@ -367,6 +385,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.get_shell_controls">[docs]</a>
     <span class="k">def</span> <span class="nf">get_shell_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the shell controls</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:   Min Value (`rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for no limit)</span>
@@ -378,6 +397,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_shell_controls</span><span class="p">(</span><span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -389,6 +409,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.set_draw_controls">[docs]</a>
     <span class="k">def</span> <span class="nf">set_draw_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the draw controls</span>
 <span class="sd">        </span>
 <span class="sd">        :param box:    Draw Bounding Box</span>
@@ -412,6 +433,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_draw_controls</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">)</span></div>
 
         
@@ -423,6 +445,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.set_itr">[docs]</a>
     <span class="k">def</span> <span class="nf">set_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the `GXITR &lt;geosoft.gxapi.GXITR&gt;` of the `GXVOXD &lt;geosoft.gxapi.GXVOXD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param itr:   `GXITR &lt;geosoft.gxapi.GXITR&gt;` object</span>
@@ -432,6 +455,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_itr</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span></div>
 
         
@@ -443,6 +467,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.set_shell_controls">[docs]</a>
     <span class="k">def</span> <span class="nf">set_shell_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the shell controls</span>
 <span class="sd">        </span>
 <span class="sd">        :param min:   Min Value (`rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for no limit)</span>
@@ -454,6 +479,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_shell_controls</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">)</span></div>
 
         
@@ -465,6 +491,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.get_render_mode">[docs]</a>
     <span class="k">def</span> <span class="nf">get_render_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get voxel render mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :param render_mode:  :ref:`VOXELRENDER_MODE`</span>
@@ -474,6 +501,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">render_mode</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_render_mode</span><span class="p">(</span><span class="n">render_mode</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -485,6 +513,7 @@
 <a class="viewcode-back" href="../../../GXVOXD.html#geosoft.gxapi.GXVOXD.set_render_mode">[docs]</a>
     <span class="k">def</span> <span class="nf">set_render_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">render_mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get voxel render mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :param render_mode:  :ref:`VOXELRENDER_MODE`</span>
@@ -494,6 +523,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_render_mode</span><span class="p">(</span><span class="n">render_mode</span><span class="p">)</span></div>
 </div>
 
@@ -526,7 +556,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVOXD</a></li> 
@@ -534,7 +564,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPJ &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXPJ &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPJ</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXPJ</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -131,6 +131,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.clip_ply">[docs]</a>
     <span class="k">def</span> <span class="nf">clip_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_dev</span><span class="p">,</span> <span class="n">pply</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a clip polygon from a projected area.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:    Min X (or Longitude...)</span>
@@ -158,6 +159,7 @@
 <span class="sd">        (180 degrees - maximum deviation).  (i.e. if max. dev = 0,</span>
 <span class="sd">        only co-linear points would be removed).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_clip_ply</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_dev</span><span class="p">,</span> <span class="n">pply</span><span class="p">)</span></div>
 
         
@@ -169,6 +171,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.convert_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">convert_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert VVx/VVy from input projection to output projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  VVx</span>
@@ -182,6 +185,7 @@
 
 <span class="sd">        **Note:** This function is equivalent to `GXVV.project &lt;geosoft.gxapi.GXVV.project&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_vv</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
 
         
@@ -193,6 +197,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.convert_vv3">[docs]</a>
     <span class="k">def</span> <span class="nf">convert_vv3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert VVx/VVy/VVz projections</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  VVx</span>
@@ -208,6 +213,7 @@
 
 <span class="sd">        **Note:** This function is equivalent to `GXVV.project_3d &lt;geosoft.gxapi.GXVV.project_3d&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_convert_vv3</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
 
         
@@ -219,6 +225,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.convert_xy">[docs]</a>
     <span class="k">def</span> <span class="nf">convert_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert X, Y from input projection to output projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:   X  (or Longitude)</span>
@@ -230,6 +237,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_xy</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -241,6 +249,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.convert_xy_from_xyz">[docs]</a>
     <span class="k">def</span> <span class="nf">convert_xy_from_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert X, Y from input projection to output projection, taking Z into account</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:   X  (or Longitude)</span>
@@ -262,6 +271,7 @@
 <span class="sd">        the normal `convert_xy &lt;geosoft.gxapi.GXPJ.convert_xy&gt;` assumes a value of Z=0 internally and calls</span>
 <span class="sd">        `convert_xyz &lt;geosoft.gxapi.GXPJ.convert_xyz&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_xy_from_xyz</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
 
         
@@ -273,6 +283,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.convert_xyz">[docs]</a>
     <span class="k">def</span> <span class="nf">convert_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert X,Y,Z from input projection to output projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:   X  (or Longitude)</span>
@@ -286,6 +297,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_xyz</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -297,6 +309,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method creates a projection object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param input:   Input PRJ file name, &quot;&quot; for geodetic</span>
@@ -311,6 +324,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPJ</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">input</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXPJ</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -322,6 +336,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ipj</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ip_jin</span><span class="p">,</span> <span class="n">ip_jout</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method creates a projection object from IPJs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ip_jin:   Input Projection, (`GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`)0 for long/lat</span>
@@ -340,6 +355,7 @@
 <span class="sd">        system of the source/target, only the long/lat system</span>
 <span class="sd">        can be passed as (`GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`)0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPJ</span><span class="o">.</span><span class="n">_create_ipj</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ip_jin</span><span class="p">,</span> <span class="n">ip_jout</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXPJ</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -351,6 +367,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_rectified</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">scl</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a rectified `GXPJ &lt;geosoft.gxapi.GXPJ&gt;` from lon,lat,rotation</span>
 <span class="sd">        </span>
 <span class="sd">        :param lon:  Longitude  at (X,Y) origin</span>
@@ -381,6 +398,7 @@
 <span class="sd">        projection with central meridian through the center</span>
 <span class="sd">        of the coordinates on a WGS 84 datum.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPJ</span><span class="o">.</span><span class="n">_create_rectified</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">scl</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXPJ</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -394,6 +412,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.elevation">[docs]</a>
     <span class="k">def</span> <span class="nf">elevation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get elevation correction method</span>
 <span class="sd">        </span>
 
@@ -416,6 +435,7 @@
 <span class="sd">        in the \\etc directory.  If the geoid model is missing, this method will</span>
 <span class="sd">        return `PJ_ELEVATION_NONE &lt;geosoft.gxapi.PJ_ELEVATION_NONE&gt;` and elevation coordinates will not be changed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elevation</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -427,6 +447,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.is_input_ll">[docs]</a>
     <span class="k">def</span> <span class="nf">is_input_ll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is the input projection a lat/long.</span>
 <span class="sd">        </span>
 
@@ -438,6 +459,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_input_ll</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -449,6 +471,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.is_output_ll">[docs]</a>
     <span class="k">def</span> <span class="nf">is_output_ll</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is the output projection a lat/long.</span>
 <span class="sd">        </span>
 
@@ -460,6 +483,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_output_ll</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -471,6 +495,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.project_bounding_rectangle">[docs]</a>
     <span class="k">def</span> <span class="nf">project_bounding_rectangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Project a bounding rectangle.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Bounding Region Min X</span>
@@ -493,6 +518,7 @@
 <span class="sd">        projection the resulting bounding region may be slightly</span>
 <span class="sd">        smaller than the true region.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_bounding_rectangle</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -504,6 +530,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.project_bounding_rectangle2">[docs]</a>
     <span class="k">def</span> <span class="nf">project_bounding_rectangle2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">err</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Project a bounding rectangle with error tolerance.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Bounding Region Min X</span>
@@ -525,6 +552,7 @@
 <span class="sd">        rectangle will be limited to an area within which the projection can be</span>
 <span class="sd">        performed to an accuracy better than the specified error tolerance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_bounding_rectangle2</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span></div>
 
         
@@ -536,6 +564,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.project_bounding_rectangle_res">[docs]</a>
     <span class="k">def</span> <span class="nf">project_bounding_rectangle_res</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Project a bounding rectangle with resolution.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Bounding Region Min X</span>
@@ -558,6 +587,7 @@
 <span class="sd">        at the reprojected coordinate system from a given original</span>
 <span class="sd">        resolution.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_bounding_rectangle_res</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -569,6 +599,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.project_bounding_rectangle_res2">[docs]</a>
     <span class="k">def</span> <span class="nf">project_bounding_rectangle_res2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">err</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Project a bounding rectangle with resolution and error tolerance.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Bounding Region Min X</span>
@@ -592,6 +623,7 @@
 <span class="sd">        rectangle will be limited to an area within which the projection can be</span>
 <span class="sd">        performed to an accuracy better than the specified error tolerance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_bounding_rectangle_res2</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span></div>
 
         
@@ -603,6 +635,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.project_limited_bounding_rectangle">[docs]</a>
     <span class="k">def</span> <span class="nf">project_limited_bounding_rectangle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_xl</span><span class="p">,</span> <span class="n">min_yl</span><span class="p">,</span> <span class="n">max_xl</span><span class="p">,</span> <span class="n">max_yl</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Project a bounding rectangle with limits.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_xl:  Output limited bounding region Min X</span>
@@ -635,6 +668,7 @@
 
 <span class="sd">            `project_bounding_rectangle &lt;geosoft.gxapi.GXPJ.project_bounding_rectangle&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_limited_bounding_rectangle</span><span class="p">(</span><span class="n">min_xl</span><span class="p">,</span> <span class="n">min_yl</span><span class="p">,</span> <span class="n">max_xl</span><span class="p">,</span> <span class="n">max_yl</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -646,6 +680,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.setup_ldt">[docs]</a>
     <span class="k">def</span> <span class="nf">setup_ldt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Setup the `GXPJ &lt;geosoft.gxapi.GXPJ&gt;` with LDT check.</span>
 <span class="sd">        </span>
 
@@ -664,6 +699,7 @@
 <span class="sd">        convert both sets back to their original WGS84 coordinates</span>
 <span class="sd">        and combine in WGS84.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup_ldt</span><span class="p">()</span></div>
 
         
@@ -675,6 +711,7 @@
 <a class="viewcode-back" href="../../../GXPJ.html#geosoft.gxapi.GXPJ.project_bounding_volume">[docs]</a>
     <span class="k">def</span> <span class="nf">project_bounding_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Project a bounding volume.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Min X</span>
@@ -694,6 +731,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_bounding_volume</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 </div>
 
@@ -726,7 +764,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPJ</a></li> 
@@ -734,7 +772,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

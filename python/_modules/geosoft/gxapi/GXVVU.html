@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVVU &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXVVU &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVVU</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXVVU</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -130,6 +130,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">average_repeat</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ref_vv</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Average repeat values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ref_vv:  Reference `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -151,6 +152,7 @@
 
 <span class="sd">            `remove_dummy &lt;geosoft.gxapi.GXVVU.remove_dummy&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_average_repeat</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ref_vv</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">)</span></div>
 
         
@@ -162,6 +164,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">average_repeat_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ref_vv</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Average repeat values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ref_vv:  Reference `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -186,6 +189,7 @@
 
 <span class="sd">            `remove_dummy &lt;geosoft.gxapi.GXVVU.remove_dummy&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_average_repeat_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ref_vv</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -197,6 +201,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">average_repeat2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ref_vv1</span><span class="p">,</span> <span class="n">ref_vv2</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Average repeat values based on 2 reference channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ref_vv1:  Reference `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -223,6 +228,7 @@
 
 <span class="sd">            RemoveDummy_VV</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_average_repeat2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ref_vv1</span><span class="p">,</span> <span class="n">ref_vv2</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">)</span></div>
 
         
@@ -234,6 +240,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">average_repeat2_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ref_vv1</span><span class="p">,</span> <span class="n">ref_vv2</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Average repeat values based on 2 reference channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ref_vv1:  Reference `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -261,6 +268,7 @@
 
 <span class="sd">            RemoveDummy_VV</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_average_repeat2_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ref_vv1</span><span class="p">,</span> <span class="n">ref_vv2</span><span class="p">,</span> <span class="n">dat_vv</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -272,6 +280,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">l_min</span><span class="p">,</span> <span class="n">l_max</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Search  numeric value in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param val:    Value to search for.</span>
@@ -289,6 +298,7 @@
 <span class="sd">        **Note:** The `GXVV &lt;geosoft.gxapi.GXVV&gt;` should be sorted.Search comparison is made on double</span>
 <span class="sd">        comparison of the data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">l_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">l_max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_binary_search</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">l_min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">l_max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -300,6 +310,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">box_cox</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">lm</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Run Box-Cox (lambda) Transformation on `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:  [i/o] `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -311,6 +322,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_box_cox</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">lm</span><span class="p">)</span></div>
 
         
@@ -322,6 +334,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">bp_filt</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">pr_sw</span><span class="p">,</span> <span class="n">pr_lw</span><span class="p">,</span> <span class="n">flen</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Band-pass filter to the specified.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:   Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -344,6 +357,7 @@
 
 <span class="sd">        The wavelengths are in fiducials.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_bp_filt</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">pr_sw</span><span class="p">,</span> <span class="n">pr_lw</span><span class="p">,</span> <span class="n">flen</span><span class="p">)</span></div>
 
         
@@ -355,6 +369,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">clip</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">clip</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Clip a `GXVV &lt;geosoft.gxapi.GXVV&gt;` to a range.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:    `GXVV &lt;geosoft.gxapi.GXVV&gt;` to clip</span>
@@ -370,6 +385,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_clip</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">clip</span><span class="p">)</span></div>
 
         
@@ -381,6 +397,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">clip_to_detect_limit</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">det_limit</span><span class="p">,</span> <span class="n">conv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply detection limit clipping of data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:         Input data vv (altered).</span>
@@ -405,7 +422,55 @@
 
 <span class="sd">        This function is identical to `GXCHIMERA.clip_to_detect_limit &lt;geosoft.gxapi.GXCHIMERA.clip_to_detect_limit&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_clip_to_detect_limit</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">det_limit</span><span class="p">,</span> <span class="n">conv</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXVVU.cond_depth_tem">
+<a class="viewcode-back" href="../../../GXVVU.html#geosoft.gxapi.GXVVU.cond_depth_tem">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">cond_depth_tem</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">resp_vv</span><span class="p">,</span> <span class="n">time_vv</span><span class="p">,</span> <span class="n">cond_vv</span><span class="p">,</span> <span class="n">depth_vv</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">min_xvv</span><span class="p">,</span> <span class="n">min_yvv</span><span class="p">,</span> <span class="n">max_xvv</span><span class="p">,</span> <span class="n">max_yvv</span><span class="p">,</span> <span class="n">t_moment</span><span class="p">,</span> <span class="n">r_moment</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Calculate TEM apparent conductivity and depth</span>
+<span class="sd">        </span>
+<span class="sd">        :param resp_vv:   Response channel (microvolts)</span>
+<span class="sd">        :param time_vv:   Time channel (milliseconds)</span>
+<span class="sd">        :param cond_vv:   Conductivity channel (siemen/m)</span>
+<span class="sd">        :param depth_vv:  Depth (m)</span>
+<span class="sd">        :param current:   Transmitter current</span>
+<span class="sd">        :param flag:      Flag  Transmitter defined by moment (0) or by 4 VVs (1) below</span>
+<span class="sd">        :param min_xvv:   Minimum X to define transmitter loop layout (moment)</span>
+<span class="sd">        :param min_yvv:   Minimum Y to define transmitter loop layout (moment)</span>
+<span class="sd">        :param max_xvv:   Maximum X to define transmitter loop layout (moment)</span>
+<span class="sd">        :param max_yvv:   Maximum Y to define transmitter loop layout (moment)</span>
+<span class="sd">        :param t_moment:  Transmitter moment (square meters), dummy if the above flag is 1</span>
+<span class="sd">        :param r_moment:  Receiver moment (square meters)</span>
+<span class="sd">        :param array:     :ref:`TEM_ARRAY`</span>
+<span class="sd">        :type  resp_vv:   GXVV</span>
+<span class="sd">        :type  time_vv:   GXVV</span>
+<span class="sd">        :type  cond_vv:   GXVV</span>
+<span class="sd">        :type  depth_vv:  GXVV</span>
+<span class="sd">        :type  current:   float</span>
+<span class="sd">        :type  flag:      int</span>
+<span class="sd">        :type  min_xvv:   GXVV</span>
+<span class="sd">        :type  min_yvv:   GXVV</span>
+<span class="sd">        :type  max_xvv:   GXVV</span>
+<span class="sd">        :type  max_yvv:   GXVV</span>
+<span class="sd">        :type  t_moment:  float</span>
+<span class="sd">        :type  r_moment:  float</span>
+<span class="sd">        :type  array:     int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_cond_depth_tem</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">resp_vv</span><span class="p">,</span> <span class="n">time_vv</span><span class="p">,</span> <span class="n">cond_vv</span><span class="p">,</span> <span class="n">depth_vv</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">min_xvv</span><span class="p">,</span> <span class="n">min_yvv</span><span class="p">,</span> <span class="n">max_xvv</span><span class="p">,</span> <span class="n">max_yvv</span><span class="p">,</span> <span class="n">t_moment</span><span class="p">,</span> <span class="n">r_moment</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span></div>
 
         
 
@@ -416,6 +481,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">decimate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">decimate</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Decimate a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param decimate:  Decimation factor (must be &gt; 0)</span>
@@ -429,6 +495,7 @@
 <span class="sd">        **Note:** For a decimation factor N, will remove all values except</span>
 <span class="sd">        those with indices equal to MN, where M is an integer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_decimate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">decimate</span><span class="p">)</span></div>
 
         
@@ -440,6 +507,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">deviation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate distance of point locations to a straight line</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -463,6 +531,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_deviation</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span></div>
 
         
@@ -474,6 +543,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a cumulative distance `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:         X `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -495,6 +565,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_distance</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">)</span></div>
 
         
@@ -506,6 +577,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">distance_link_non_dummies</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create distance linking non-dummies `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:         X `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -527,6 +599,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_distance_link_non_dummies</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">)</span></div>
 
         
@@ -538,6 +611,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">distance_non_cumulative</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a non cumulative distance `GXVV &lt;geosoft.gxapi.GXVV&gt;` i.e each</span>
 <span class="sd">        distance element is the distance of the corresponding</span>
 <span class="sd">        (X,Y) element and the previous element.</span>
@@ -563,6 +637,7 @@
 
 <span class="sd">        **Note:** The fist distace element is `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_distance_non_cumulative</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">x_fid_start</span><span class="p">,</span> <span class="n">x_fid_incr</span><span class="p">,</span> <span class="n">y_fid_start</span><span class="p">,</span> <span class="n">y_fid_incr</span><span class="p">)</span></div>
 
         
@@ -574,6 +649,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">distance_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">start_distance</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a cumulative distance `GXVV &lt;geosoft.gxapi.GXVV&gt;` from X, Y and Z VVs</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:            X `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -598,6 +674,7 @@
 <span class="sd">        between the points. No re-sampling is performed.</span>
 <span class="sd">        VVs of any type are supported.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_distance_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">start_distance</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">)</span></div>
 
         
@@ -609,6 +686,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">find_gaps_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">vv_g</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return indices of locations separated from previous locations by more than the input gap distance.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;`,REAL `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -631,6 +709,7 @@
 <span class="sd">        The number of returned indices is one less than the number of line segments.</span>
 <span class="sd">        (So if there are no gaps the returned `GXVV &lt;geosoft.gxapi.GXVV&gt;` has zero length).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_find_gaps_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">vv_g</span><span class="p">)</span></div>
 
         
@@ -642,6 +721,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dummy_range</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">inside</span><span class="p">,</span> <span class="n">incl</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Dummy values inside or outside a range in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:      `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
@@ -666,6 +746,7 @@
 <span class="sd">        range. If it is FALSE, then &lt; or &gt; are used, and dMin and</span>
 <span class="sd">        dMax lie outside the range.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_dummy_range</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">inside</span><span class="p">,</span> <span class="n">incl</span><span class="p">)</span></div>
 
         
@@ -677,6 +758,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dummy_range_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">inside</span><span class="p">,</span> <span class="n">include_min</span><span class="p">,</span> <span class="n">include_max</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Like DummyRangeVVU, with inclusion options for both ends.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:           `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
@@ -703,6 +785,7 @@
 <span class="sd">        range. If it is FALSE, then &lt; or &gt; are used, and dMin and</span>
 <span class="sd">        dMax lie outside the range.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_dummy_range_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">inside</span><span class="p">,</span> <span class="n">include_min</span><span class="p">,</span> <span class="n">include_max</span><span class="p">)</span></div>
 
         
@@ -714,6 +797,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dummy_repeat</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Dummy repeat values in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mode:  :ref:`VVU_DUMMYREPEAT`</span>
@@ -727,6 +811,7 @@
 <span class="sd">        **Note:** Either the first, middle or last point will be left.</span>
 <span class="sd">                          Use `interp &lt;geosoft.gxapi.GXVVU.interp&gt;` to interpolate after if desired.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_dummy_repeat</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -738,6 +823,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dup_stats</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data_vv</span><span class="p">,</span> <span class="n">sample_vv</span><span class="p">,</span> <span class="n">mean_vv</span><span class="p">,</span> <span class="n">diff_vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate means and differences for duplicate sample pairs</span>
 <span class="sd">        </span>
 <span class="sd">        :param data_vv:    Duplicate data `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -762,6 +848,7 @@
 <span class="sd">        for samples out of order, for unmatched values, or when the</span>
 <span class="sd">        sample type does not equal &quot;1&quot; or &quot;2&quot; are set to dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_dup_stats</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">data_vv</span><span class="p">,</span> <span class="n">sample_vv</span><span class="p">,</span> <span class="n">mean_vv</span><span class="p">,</span> <span class="n">diff_vv</span><span class="p">)</span></div>
 
         
@@ -773,6 +860,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">exp_dist</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill with exponentially distributed values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:      `GXVV &lt;geosoft.gxapi.GXVV&gt;` object</span>
@@ -792,6 +880,7 @@
 <span class="sd">        See RAND for a short discription of the</span>
 <span class="sd">        random number generator used.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_exp_dist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></div>
 
         
@@ -803,6 +892,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">flt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply a convolution filter to a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:  Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -816,6 +906,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">flt</span><span class="p">)</span></div>
 
         
@@ -827,6 +918,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">find_string_items</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_source</span><span class="p">,</span> <span class="n">vv_search</span><span class="p">,</span> <span class="n">pis_source_sorted</span><span class="p">,</span> <span class="n">pis_search_sorted</span><span class="p">,</span> <span class="n">pis_case_tolerant</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Searches a `GXVV &lt;geosoft.gxapi.GXVV&gt;` for items in a second `GXVV &lt;geosoft.gxapi.GXVV&gt;`, returns indices of those found.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_source:          String `GXVV &lt;geosoft.gxapi.GXVV&gt;` in which to locate items</span>
@@ -859,6 +951,7 @@
 <span class="sd">        will do so internally. Since the input VVs may already be sorted,</span>
 <span class="sd">        the method will run faster if this stage can be skipped.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_find_string_items</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_source</span><span class="p">,</span> <span class="n">vv_search</span><span class="p">,</span> <span class="n">pis_source_sorted</span><span class="p">,</span> <span class="n">pis_search_sorted</span><span class="p">,</span> <span class="n">pis_case_tolerant</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">)</span></div>
 
         
@@ -870,6 +963,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">fractal_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fractal filter a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:    [i] `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -885,6 +979,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_fractal_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">)</span></div>
 
         
@@ -896,6 +991,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">close_xy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the closest point to an input point (XY).</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X locations</span>
@@ -918,6 +1014,7 @@
 <span class="sd">        Returns the index of the point in the `GXVV &lt;geosoft.gxapi.GXVV&gt;` closest to the</span>
 <span class="sd">        input point.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_close_xy</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -929,6 +1026,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">close_xym</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the closest point to an input point, with mask (XY).</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X locations</span>
@@ -956,6 +1054,7 @@
 <span class="sd">        If no valid points are in the VVs, or all the mask `GXVV &lt;geosoft.gxapi.GXVV&gt;` values</span>
 <span class="sd">        are dummy, the returned index is -1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_close_xym</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -967,6 +1066,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">close_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the closest point to an input point (XYZ).</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X locations</span>
@@ -993,6 +1093,7 @@
 <span class="sd">        Returns the index of the point in the `GXVV &lt;geosoft.gxapi.GXVV&gt;` closest to the</span>
 <span class="sd">        input point.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_close_xyz</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1004,6 +1105,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">close_xyzm</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the closest point to an input point, with mask (XYZ).</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X locations</span>
@@ -1035,6 +1137,7 @@
 <span class="sd">        If no valid points are in the VVs, or all the mask `GXVV &lt;geosoft.gxapi.GXVV&gt;` values</span>
 <span class="sd">        are dummy, the returned index is -1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_close_xyzm</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1046,6 +1149,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dummy_back_tracks</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Dummy all points that keep a `GXVV &lt;geosoft.gxapi.GXVV&gt;` from being monotonically increasing.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
@@ -1061,6 +1165,7 @@
 <span class="sd">        **Note:** The `GXVV &lt;geosoft.gxapi.GXVV&gt;` length remains the same. Any point that is less than or equal to</span>
 <span class="sd">        the previous (valid) point in the `GXVV &lt;geosoft.gxapi.GXVV&gt;` is dummied.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_dummy_back_tracks</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1072,6 +1177,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">find_dummy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the first dummy|non-dummy value in `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:     `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
@@ -1097,6 +1203,7 @@
 <span class="sd">        to largest even if decreasing search order.  To search</span>
 <span class="sd">        entire `GXVV &lt;geosoft.gxapi.GXVV&gt;` range, specify 0,-1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_find_dummy</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1108,6 +1215,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">interp</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Replace all dummies by interpolating from valid data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:      Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1143,6 +1251,7 @@
 <span class="sd">        In all other cases and combinations of the two interpolation</span>
 <span class="sd">        choices, the dummies are left &quot;as is&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_interp</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span></div>
 
         
@@ -1154,6 +1263,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">qc_fill_gaps</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvf</span><span class="p">,</span> <span class="n">vvd</span><span class="p">,</span> <span class="n">dist</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate fill in line segments</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:   Input/output X `GXVV &lt;geosoft.gxapi.GXVV&gt;` on which to operate Required in `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
@@ -1176,6 +1286,7 @@
 
 <span class="sd">        **Note:** The X &amp; Y VVs are returned as the calculated fill in line segments.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_qc_fill_gaps</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvf</span><span class="p">,</span> <span class="n">vvd</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1187,6 +1298,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">search_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Search for a text value in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:              `GXVV &lt;geosoft.gxapi.GXVV&gt;` to search</span>
@@ -1222,6 +1334,7 @@
 
 <span class="sd">            sSearchReplace_VV</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_search_text</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">case_sensitive</span><span class="p">,</span> <span class="n">match</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1233,6 +1346,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Mask dummies in one `GXVV &lt;geosoft.gxapi.GXVV&gt;` onto another.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_d:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` to be masked</span>
@@ -1248,6 +1362,7 @@
 <span class="sd">        The returned length of the `GXVV &lt;geosoft.gxapi.GXVV&gt;` to mask will be the shorter</span>
 <span class="sd">        of the reference `GXVV &lt;geosoft.gxapi.GXVV&gt;` or the mask `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">)</span></div>
 
         
@@ -1259,6 +1374,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">mask_and</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_a</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create mask from logical AND of two VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_a:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` A</span>
@@ -1274,6 +1390,7 @@
 
 <span class="sd">        **Note:** If both values are non-dummies, then result is 1, else dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_mask_and</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_a</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
 
         
@@ -1285,6 +1402,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">mask_or</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_a</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create mask from logical OR of two VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_a:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` A</span>
@@ -1300,6 +1418,7 @@
 
 <span class="sd">        **Note:** If either values is non-dummy, then result is 1, else dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_mask_or</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_a</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
 
         
@@ -1311,6 +1430,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">nl_filt</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">fwid</span><span class="p">,</span> <span class="n">pr_ftol</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Applies a non-linear filter.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:     Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1326,6 +1446,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_nl_filt</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">fwid</span><span class="p">,</span> <span class="n">pr_ftol</span><span class="p">)</span></div>
 
         
@@ -1337,6 +1458,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">noise_check</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_f</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Check on deviation of data from variable background in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:     Input `GXVV &lt;geosoft.gxapi.GXVV&gt;` on which to apply quality control Required in `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
@@ -1359,6 +1481,7 @@
 <span class="sd">        otherwise, it will be 1.</span>
 <span class="sd">        Output `GXVV &lt;geosoft.gxapi.GXVV&gt;` will be 0 if the straight line is vertical.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_noise_check</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_f</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span></div>
 
         
@@ -1370,6 +1493,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">noise_check2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_f</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Like `noise_check &lt;geosoft.gxapi.GXVVU.noise_check&gt;`, but returns maximum deviation at all points.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:     Input `GXVV &lt;geosoft.gxapi.GXVV&gt;` on which to apply quality control Required in `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
@@ -1400,6 +1524,7 @@
 <span class="sd">        The output maximum deviation `GXVV &lt;geosoft.gxapi.GXVV&gt;` contains the maximum deviation at each point</span>
 <span class="sd">        for all the moving line segments that it is a part of.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_noise_check2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_f</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span></div>
 
         
@@ -1411,6 +1536,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">normal_dist</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill with normally (Gaussian) distributed values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:      `GXVV &lt;geosoft.gxapi.GXVV&gt;` object</span>
@@ -1432,6 +1558,7 @@
 <span class="sd">        See RAND for a short discription of the</span>
 <span class="sd">        random number generator used.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_normal_dist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></div>
 
         
@@ -1443,6 +1570,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">offset_circles</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get non-overlapping offset location for circular symbols.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_xi:   Input X locations</span>
@@ -1477,6 +1605,7 @@
 <span class="sd">        pushed to the outside edge and your plot will look like a</span>
 <span class="sd">        hedgehog (it also takes a lot longer!).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_offset_circles</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">)</span></div>
 
         
@@ -1488,6 +1617,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">offset_correct</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">heading</span><span class="p">,</span> <span class="n">v_vxo</span><span class="p">,</span> <span class="n">v_vyo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Correct locations based on heading and fixed offset.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_xi:    Input X</span>
@@ -1533,6 +1663,7 @@
 <span class="sd">            5. For each input point, calculate the bearing using the nearest points</span>
 <span class="sd">               on the smoothed curve</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_offset_correct</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">heading</span><span class="p">,</span> <span class="n">v_vxo</span><span class="p">,</span> <span class="n">v_vyo</span><span class="p">)</span></div>
 
         
@@ -1544,6 +1675,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">offset_correct2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `offset_correct &lt;geosoft.gxapi.GXVVU.offset_correct&gt;`, but for an arbitrary offset angle.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_xi:    Input X</span>
@@ -1563,6 +1695,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_offset_correct2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">)</span></div>
 
         
@@ -1574,6 +1707,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">offset_correct3</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `offset_correct2 &lt;geosoft.gxapi.GXVVU.offset_correct2&gt;`, but specify smoothing interval.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_xi:     Input X</span>
@@ -1597,6 +1731,7 @@
 
 <span class="sd">        **Note:** See the algorithm note #2 above for the default smoothing interval.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_offset_correct3</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">)</span></div>
 
         
@@ -1608,6 +1743,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">offset_correct_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_zi</span><span class="p">,</span> <span class="n">x_off</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="n">z_off</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">v_vxo</span><span class="p">,</span> <span class="n">v_vyo</span><span class="p">,</span> <span class="n">v_vzo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Correct locations based on heading and fixed offset.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_xi:     Input X</span>
@@ -1661,6 +1797,7 @@
 <span class="sd">            5. For each input point, calculate the bearing using the nearest points</span>
 <span class="sd">               on the smoothed curve</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_offset_correct_xyz</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_zi</span><span class="p">,</span> <span class="n">x_off</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="n">z_off</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">v_vxo</span><span class="p">,</span> <span class="n">v_vyo</span><span class="p">,</span> <span class="n">v_vzo</span><span class="p">)</span></div>
 
         
@@ -1672,6 +1809,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">offset_rectangles</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get non-overlapping offset location for rectangular symbols.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_xi:   Input X locations</span>
@@ -1710,6 +1848,7 @@
 <span class="sd">        pushed to the outside edge and your plot will look like a</span>
 <span class="sd">        hedgehog (it also takes a lot longer!).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_offset_rectangles</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">)</span></div>
 
         
@@ -1721,6 +1860,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pick_peak</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">pr_tol</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find peaks in a `GXVV &lt;geosoft.gxapi.GXVV&gt;` - method one.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:    Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1747,6 +1887,7 @@
 <span class="sd">        Use `filter &lt;geosoft.gxapi.GXVVU.filter&gt;` to apply a Laplace filter</span>
 <span class="sd">        &quot;-0.5,1.0,-0.5&quot; to make curvature data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_pick_peak</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">pr_tol</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span></div>
 
         
@@ -1758,6 +1899,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pick_peak2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">pr_base_lvl</span><span class="p">,</span> <span class="n">pr_ampl</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find peaks in a `GXVV &lt;geosoft.gxapi.GXVV&gt;` - method two.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:         Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1781,6 +1923,7 @@
 <span class="sd">        A `GXVV &lt;geosoft.gxapi.GXVV&gt;` may have to be pre-filtered before finding</span>
 <span class="sd">        the peak values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_pick_peak2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">pr_base_lvl</span><span class="p">,</span> <span class="n">pr_ampl</span><span class="p">)</span></div>
 
         
@@ -1792,6 +1935,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pick_peak3</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">pr_base_lvl</span><span class="p">,</span> <span class="n">pr_ampl</span><span class="p">,</span> <span class="n">v_vind</span><span class="p">,</span> <span class="n">v_vamp</span><span class="p">,</span> <span class="n">v_vwid</span><span class="p">,</span> <span class="n">v_vhawid</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find peaks in a `GXVV &lt;geosoft.gxapi.GXVV&gt;` - method two, returning width and half-amplitude widths.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:         [i] data `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1827,6 +1971,7 @@
 <span class="sd">        The returned VVs are packed; no dummies. Instead the</span>
 <span class="sd">        indicies of the peak locations are returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_pick_peak3</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">pr_base_lvl</span><span class="p">,</span> <span class="n">pr_ampl</span><span class="p">,</span> <span class="n">v_vind</span><span class="p">,</span> <span class="n">v_vamp</span><span class="p">,</span> <span class="n">v_vwid</span><span class="p">,</span> <span class="n">v_vhawid</span><span class="p">)</span></div>
 
         
@@ -1838,6 +1983,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">poly_fill</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with values from an n&#39;th order polynomial, integral x.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_d:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` with output data. (Preset length)</span>
@@ -1859,6 +2005,7 @@
 
 <span class="sd">            `trend &lt;geosoft.gxapi.GXVVU.trend&gt;`, `trend2 &lt;geosoft.gxapi.GXVVU.trend2&gt;`, `poly_fill2 &lt;geosoft.gxapi.GXVVU.poly_fill2&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_poly_fill</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
 
         
@@ -1870,6 +2017,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">poly_fill2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with values from an n&#39;th order polynomial, specified X</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` with x spacing (input)</span>
@@ -1892,6 +2040,7 @@
 
 <span class="sd">            `trend &lt;geosoft.gxapi.GXVVU.trend&gt;`, `trend2 &lt;geosoft.gxapi.GXVVU.trend2&gt;`, `poly_fill &lt;geosoft.gxapi.GXVVU.poly_fill&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_poly_fill2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
 
         
@@ -1903,6 +2052,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">polygon_mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Mask a `GXVV &lt;geosoft.gxapi.GXVV&gt;` using XY data and a polygon.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1922,6 +2072,7 @@
 
 <span class="sd">        **Note:** The VVs have to be the same length</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_polygon_mask</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span></div>
 
         
@@ -1933,6 +2084,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">prune</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_p</span><span class="p">,</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Prune values from a `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on reference `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_p:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` to prune</span>
@@ -1950,6 +2102,7 @@
 <span class="sd">        that are either dummy or non-dummy in the reference</span>
 <span class="sd">        `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_prune</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_p</span><span class="p">,</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span></div>
 
         
@@ -1961,6 +2114,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">qc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">v_vf</span><span class="p">,</span> <span class="n">nominal</span><span class="p">,</span> <span class="n">max_tol</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">qc</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Quality control on deviation of data from norm in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:     Input `GXVV &lt;geosoft.gxapi.GXVV&gt;` on which to apply quality control Required in `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
@@ -2010,6 +2164,7 @@
 <span class="sd">         -3        The input data failed on above two tests</span>
 <span class="sd">        =========  ==============================================================</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_qc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">v_vf</span><span class="p">,</span> <span class="n">nominal</span><span class="p">,</span> <span class="n">max_tol</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">qc</span><span class="p">)</span></div>
 
         
@@ -2021,6 +2176,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">qc2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">v_vf</span><span class="p">,</span> <span class="n">vv_drape</span><span class="p">,</span> <span class="n">max_tol</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">qc</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Quality control on deviation of data from norm in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:      Input `GXVV &lt;geosoft.gxapi.GXVV&gt;` on which to apply quality control Required in `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` or `GS_FLOAT &lt;geosoft.gxapi.GS_FLOAT&gt;`</span>
@@ -2070,6 +2226,7 @@
 <span class="sd">         -3        The input data failed on above two tests</span>
 <span class="sd">        =========  ==============================================================</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_qc2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">v_vf</span><span class="p">,</span> <span class="n">vv_drape</span><span class="p">,</span> <span class="n">max_tol</span><span class="p">,</span> <span class="n">all_tol</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">qc</span><span class="p">)</span></div>
 
         
@@ -2081,6 +2238,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">range_vector_mag</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the range of hypotenuse values of two VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv1:  First `GXVV &lt;geosoft.gxapi.GXVV&gt;` (X)</span>
@@ -2099,6 +2257,7 @@
 <span class="sd">        **Note:** For each value in the VVs, finds sqrt(dV1*dV1 + dV2*dV2)</span>
 <span class="sd">        and returns the min and max values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_range_vector_mag</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -2110,6 +2269,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">regress</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">slp</span><span class="p">,</span> <span class="n">intercept</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate linear regression through data</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:       X data</span>
@@ -2125,6 +2285,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">slp</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">intercept</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_regress</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">slp</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">intercept</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -2136,6 +2297,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">rel_var_dup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data_vv</span><span class="p">,</span> <span class="n">sample_vv</span><span class="p">,</span> <span class="n">rel_var</span><span class="p">,</span> <span class="n">num_dup</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Estimate relative variance of duplicate sample pairs from a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param data_vv:    Data `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2162,6 +2324,7 @@
 <span class="sd">        Samples out of order, unmatched pairs, or when the</span>
 <span class="sd">        sample type does not equal &quot;1&quot; or &quot;2&quot; are ignored.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">rel_var</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dup</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_rel_var_dup</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">data_vv</span><span class="p">,</span> <span class="n">sample_vv</span><span class="p">,</span> <span class="n">rel_var</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_dup</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -2173,6 +2336,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_dummy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove dummy values from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :type  vv:  GXVV</span>
@@ -2181,6 +2345,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_remove_dummy</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -2192,6 +2357,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_dummy2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove dummy values from 2 VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv1:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` object</span>
@@ -2206,6 +2372,7 @@
 <span class="sd">        **Note:** Removes all indices where either `GXVV &lt;geosoft.gxapi.GXVV&gt;` has a dummy, or is</span>
 <span class="sd">        not defined (due to length differences).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_remove_dummy2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">)</span></div>
 
         
@@ -2217,6 +2384,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_dummy3</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="n">vv3</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove dummy values from 3 VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv1:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` object</span>
@@ -2233,6 +2401,7 @@
 <span class="sd">        **Note:** Removes all indices where any `GXVV &lt;geosoft.gxapi.GXVV&gt;` has a dummy, or is</span>
 <span class="sd">        not defined (due to length differences).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_remove_dummy3</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="n">vv3</span><span class="p">)</span></div>
 
         
@@ -2244,6 +2413,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_dummy4</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="n">vv3</span><span class="p">,</span> <span class="n">vv4</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove dummy values from 4 VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv1:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` object</span>
@@ -2262,6 +2432,7 @@
 <span class="sd">        **Note:** Removes all indices where any `GXVV &lt;geosoft.gxapi.GXVV&gt;` has a dummy, or is</span>
 <span class="sd">        not defined (due to length differences).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_remove_dummy4</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="n">vv3</span><span class="p">,</span> <span class="n">vv4</span><span class="p">)</span></div>
 
         
@@ -2273,6 +2444,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_dup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data_vv</span><span class="p">,</span> <span class="n">sample_vv</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove/average duplicate sample pairs from a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param data_vv:    Data `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2294,6 +2466,7 @@
 <span class="sd">        Results for samples out of order, for unmatched pairs, or when the</span>
 <span class="sd">        sample type does not equal &quot;1&quot; or &quot;2&quot; remain unchanged.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_remove_dup</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">data_vv</span><span class="p">,</span> <span class="n">sample_vv</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span></div>
 
         
@@ -2305,6 +2478,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_xy_dup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">xy_dup</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove/average duplicate samples with the same (X, Y).</span>
 <span class="sd">        </span>
 <span class="sd">        :param xvv:     X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2327,6 +2501,7 @@
 <span class="sd">        duplicates.</span>
 <span class="sd">        The Z `GXVV &lt;geosoft.gxapi.GXVV&gt;` can be set to NULL on input, in which case it is ignored.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_remove_xy_dup</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">zvv</span><span class="p">,</span> <span class="n">xy_dup</span><span class="p">)</span></div>
 
         
@@ -2338,6 +2513,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_xy_dup_index</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">index_vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove duplicate samples with the same (X, Y) and update index.</span>
 <span class="sd">        </span>
 <span class="sd">        :param xvv:       X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2356,6 +2532,7 @@
 <span class="sd">        updated accordingly .i.e if  (X,Y) location of Index[0] == Index[1]</span>
 <span class="sd">        Index[1] is removed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_remove_xy_dup_index</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">index_vv</span><span class="p">)</span></div>
 
         
@@ -2367,6 +2544,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">rolling_stats</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">stat</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">shrink</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate a statistic in a rolling window.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_i:    Input `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2421,6 +2599,7 @@
 <span class="sd">        number of occurrences, then the smallest of these values is</span>
 <span class="sd">        returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_rolling_stats</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">stat</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">shrink</span><span class="p">)</span></div>
 
         
@@ -2432,6 +2611,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">search_replace</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">rpl</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Search and replace numeric values in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param val:  Value to replace</span>
@@ -2451,6 +2631,7 @@
 
 <span class="sd">            SearchReplaceText_VV</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_search_replace</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">rpl</span><span class="p">)</span></div>
 
         
@@ -2462,6 +2643,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">search_replace_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">decimal</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">rpl</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Search and replace text values in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param format:   String format for numeric `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2487,6 +2669,7 @@
 
 <span class="sd">            SearchReplace_VV</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_search_replace_text</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">decimal</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rpl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -2498,6 +2681,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">search_replace_text_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">decimal</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">rpl</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Search and replace text values in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`, count items changed.</span>
 <span class="sd">        </span>
 <span class="sd">        :param format:   String format for numeric `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2525,6 +2709,7 @@
 
 <span class="sd">            SearchReplaceText_VV</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">items</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_search_replace_text_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">decimal</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rpl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">,</span> <span class="n">items</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -2536,6 +2721,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">spline</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Spline a Y `GXVV &lt;geosoft.gxapi.GXVV&gt;` onto an X `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:    X (no dummies)</span>
@@ -2561,6 +2747,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_spline</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">gap</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -2572,6 +2759,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">spline2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_x2</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Spline a Y `GXVV &lt;geosoft.gxapi.GXVV&gt;` onto an X `GXVV &lt;geosoft.gxapi.GXVV&gt;`. Uses specified values of X in X2</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:   X (no dummies)</span>
@@ -2589,6 +2777,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_spline2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_x2</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -2600,6 +2789,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tokenize_to_values</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Tokenize a string based on any characters.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` to place values in</span>
@@ -2616,6 +2806,7 @@
 
 <span class="sd">        **Note:** Parses a series of space, tab or comma-delimited values to a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_tokenize_to_values</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2627,6 +2818,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Translate values in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param base:  Base</span>
@@ -2641,6 +2833,7 @@
 
 <span class="sd">        **Note:** (new `GXVV &lt;geosoft.gxapi.GXVV&gt;`) = ((old `GXVV &lt;geosoft.gxapi.GXVV&gt;`) + base) * scale</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">)</span></div>
 
         
@@ -2652,6 +2845,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">trend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate an n&#39;th order best-fit polynomial, integral x.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_d:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` with input data</span>
@@ -2678,6 +2872,7 @@
 
 <span class="sd">            `poly_fill &lt;geosoft.gxapi.GXVVU.poly_fill&gt;`, `trend2 &lt;geosoft.gxapi.GXVVU.trend2&gt;`, `poly_fill2 &lt;geosoft.gxapi.GXVVU.poly_fill2&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_trend</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
 
         
@@ -2689,6 +2884,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">trend2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate an n&#39;th order best-fit polynomial, specified X</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` with x spacing (input)</span>
@@ -2717,6 +2913,7 @@
 
 <span class="sd">            `poly_fill &lt;geosoft.gxapi.GXVVU.poly_fill&gt;`, `trend2 &lt;geosoft.gxapi.GXVVU.trend2&gt;`, `poly_fill2 &lt;geosoft.gxapi.GXVVU.poly_fill2&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_trend2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
 
         
@@ -2728,6 +2925,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">uniform_dist</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill with uniformly distributed values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:      `GXVV &lt;geosoft.gxapi.GXVV&gt;` object</span>
@@ -2749,7 +2947,61 @@
 <span class="sd">        See rand.gxh for a short discription of the</span>
 <span class="sd">        random number generator used.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_uniform_dist</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<span class="c1"># Deprecated</span>
+
+
+<div class="viewcode-block" id="GXVVU.offset_correct4">
+<a class="viewcode-back" href="../../../GXVVU.html#geosoft.gxapi.GXVVU.offset_correct4">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">offset_correct4</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_zi</span><span class="p">,</span> <span class="n">zoffset</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">vv_roll</span><span class="p">,</span> <span class="n">vv_pitch</span><span class="p">,</span> <span class="n">vv_yaw</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">,</span> <span class="n">vv_zo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Same as `offset_correct3 &lt;geosoft.gxapi.GXVVU.offset_correct3&gt;`, but specify roll, pitch, yaw and Z.</span>
+<span class="sd">        </span>
+<span class="sd">        :param vv_xi:     Input X</span>
+<span class="sd">        :param vv_yi:     Input Y</span>
+<span class="sd">        :param vv_zi:     Input Z</span>
+<span class="sd">        :param zoffset:   ZOffset distance</span>
+<span class="sd">        :param dist:      XYOffset distance</span>
+<span class="sd">        :param azimuth:   XYOffset azimuth (degrees clockwise from straight ahead)</span>
+<span class="sd">        :param interval:  Averaging interval - `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for default</span>
+<span class="sd">        :param vv_roll:   Roll</span>
+<span class="sd">        :param vv_pitch:  Pitch</span>
+<span class="sd">        :param vv_yaw:    Yaw</span>
+<span class="sd">        :param vv_xo:     Output X</span>
+<span class="sd">        :param vv_yo:     Output Y</span>
+<span class="sd">        :param vv_zo:     Output Z</span>
+<span class="sd">        :type  vv_xi:     GXVV</span>
+<span class="sd">        :type  vv_yi:     GXVV</span>
+<span class="sd">        :type  vv_zi:     GXVV</span>
+<span class="sd">        :type  zoffset:   float</span>
+<span class="sd">        :type  dist:      float</span>
+<span class="sd">        :type  azimuth:   float</span>
+<span class="sd">        :type  interval:  float</span>
+<span class="sd">        :type  vv_roll:   GXVV</span>
+<span class="sd">        :type  vv_pitch:  GXVV</span>
+<span class="sd">        :type  vv_yaw:    GXVV</span>
+<span class="sd">        :type  vv_xo:     GXVV</span>
+<span class="sd">        :type  vv_yo:     GXVV</span>
+<span class="sd">        :type  vv_zo:     GXVV</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Add roll, pitch, yaw correction.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVVU</span><span class="o">.</span><span class="n">_offset_correct4</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_zi</span><span class="p">,</span> <span class="n">zoffset</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">vv_roll</span><span class="p">,</span> <span class="n">vv_pitch</span><span class="p">,</span> <span class="n">vv_yaw</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">,</span> <span class="n">vv_zo</span><span class="p">)</span></div>
 </div>
 
         
@@ -2781,7 +3033,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVVU</a></li> 
@@ -2789,7 +3041,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

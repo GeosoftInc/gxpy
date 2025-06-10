@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXVVU class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXVVU class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVVU class</a></li> 
       </ul>
     </div>
@@ -53,6 +53,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.close_xym"><code class="docutils literal notranslate"><span class="pre">GXVVU.close_xym()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.close_xyz"><code class="docutils literal notranslate"><span class="pre">GXVVU.close_xyz()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.close_xyzm"><code class="docutils literal notranslate"><span class="pre">GXVVU.close_xyzm()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVVU.cond_depth_tem"><code class="docutils literal notranslate"><span class="pre">GXVVU.cond_depth_tem()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.decimate"><code class="docutils literal notranslate"><span class="pre">GXVVU.decimate()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.deviation"><code class="docutils literal notranslate"><span class="pre">GXVVU.deviation()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.distance"><code class="docutils literal notranslate"><span class="pre">GXVVU.distance()</span></code></a></li>
@@ -84,6 +85,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.offset_correct"><code class="docutils literal notranslate"><span class="pre">GXVVU.offset_correct()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.offset_correct2"><code class="docutils literal notranslate"><span class="pre">GXVVU.offset_correct2()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.offset_correct3"><code class="docutils literal notranslate"><span class="pre">GXVVU.offset_correct3()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVVU.offset_correct4"><code class="docutils literal notranslate"><span class="pre">GXVVU.offset_correct4()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.offset_correct_xyz"><code class="docutils literal notranslate"><span class="pre">GXVVU.offset_correct_xyz()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.offset_rectangles"><code class="docutils literal notranslate"><span class="pre">GXVVU.offset_rectangles()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVVU.pick_peak"><code class="docutils literal notranslate"><span class="pre">GXVVU.pick_peak()</span></code></a></li>
@@ -124,153 +126,153 @@
 <li><a class="reference internal" href="#geosoft.gxapi.QC_CRITERION_1"><code class="docutils literal notranslate"><span class="pre">QC_CRITERION_1</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.QC_CRITERION_1</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.QC_CRITERION_2"><code class="docutils literal notranslate"><span class="pre">QC_CRITERION_2</span></code></a></li>
-<li><a class="reference internal" href="#id75"><code class="docutils literal notranslate"><span class="pre">gxapi.QC_CRITERION_2</span></code></a></li>
+<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">gxapi.QC_CRITERION_2</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.QC_CRITERION_12"><code class="docutils literal notranslate"><span class="pre">QC_CRITERION_12</span></code></a></li>
-<li><a class="reference internal" href="#id76"><code class="docutils literal notranslate"><span class="pre">gxapi.QC_CRITERION_12</span></code></a></li>
+<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">gxapi.QC_CRITERION_12</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#tem-array-constants">TEM_ARRAY constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.TEM_ARRAY_VERTICALSOUNDING"><code class="docutils literal notranslate"><span class="pre">TEM_ARRAY_VERTICALSOUNDING</span></code></a></li>
-<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">gxapi.TEM_ARRAY_VERTICALSOUNDING</span></code></a></li>
+<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">gxapi.TEM_ARRAY_VERTICALSOUNDING</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.TEM_ARRAY_PROFILING"><code class="docutils literal notranslate"><span class="pre">TEM_ARRAY_PROFILING</span></code></a></li>
-<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">gxapi.TEM_ARRAY_PROFILING</span></code></a></li>
+<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.TEM_ARRAY_PROFILING</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.TEM_ARRAY_BOREHOLE"><code class="docutils literal notranslate"><span class="pre">TEM_ARRAY_BOREHOLE</span></code></a></li>
-<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">gxapi.TEM_ARRAY_BOREHOLE</span></code></a></li>
+<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.TEM_ARRAY_BOREHOLE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vv-dup-constants">VV_DUP constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VV_DUP_AVERAGE"><code class="docutils literal notranslate"><span class="pre">VV_DUP_AVERAGE</span></code></a></li>
-<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_AVERAGE</span></code></a></li>
+<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_AVERAGE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VV_DUP_1"><code class="docutils literal notranslate"><span class="pre">VV_DUP_1</span></code></a></li>
-<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_1</span></code></a></li>
+<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_1</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VV_DUP_2"><code class="docutils literal notranslate"><span class="pre">VV_DUP_2</span></code></a></li>
-<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_2</span></code></a></li>
+<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_2</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VV_DUP_DUMMY"><code class="docutils literal notranslate"><span class="pre">VV_DUP_DUMMY</span></code></a></li>
-<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_DUMMY</span></code></a></li>
+<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_DUMMY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VV_DUP_SAMPLE"><code class="docutils literal notranslate"><span class="pre">VV_DUP_SAMPLE</span></code></a></li>
-<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_SAMPLE</span></code></a></li>
+<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_DUP_SAMPLE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vv-xydup-constants">VV_XYDUP constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VV_XYDUP_AVERAGE"><code class="docutils literal notranslate"><span class="pre">VV_XYDUP_AVERAGE</span></code></a></li>
-<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_XYDUP_AVERAGE</span></code></a></li>
+<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_XYDUP_AVERAGE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VV_XYDUP_SUM"><code class="docutils literal notranslate"><span class="pre">VV_XYDUP_SUM</span></code></a></li>
-<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_XYDUP_SUM</span></code></a></li>
+<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.VV_XYDUP_SUM</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-case-constants">VVU_CASE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_CASE_TOLERANT"><code class="docutils literal notranslate"><span class="pre">VVU_CASE_TOLERANT</span></code></a></li>
-<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CASE_TOLERANT</span></code></a></li>
+<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CASE_TOLERANT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_CASE_SENSITIVE"><code class="docutils literal notranslate"><span class="pre">VVU_CASE_SENSITIVE</span></code></a></li>
-<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CASE_SENSITIVE</span></code></a></li>
+<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CASE_SENSITIVE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-clip-constants">VVU_CLIP constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_CLIP_DUMMY"><code class="docutils literal notranslate"><span class="pre">VVU_CLIP_DUMMY</span></code></a></li>
-<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CLIP_DUMMY</span></code></a></li>
+<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CLIP_DUMMY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_CLIP_LIMIT"><code class="docutils literal notranslate"><span class="pre">VVU_CLIP_LIMIT</span></code></a></li>
-<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CLIP_LIMIT</span></code></a></li>
+<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_CLIP_LIMIT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-dummyrepeat-constants">VVU_DUMMYREPEAT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_DUMMYREPEAT_FIRST"><code class="docutils literal notranslate"><span class="pre">VVU_DUMMYREPEAT_FIRST</span></code></a></li>
-<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_DUMMYREPEAT_FIRST</span></code></a></li>
+<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_DUMMYREPEAT_FIRST</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_DUMMYREPEAT_LAST"><code class="docutils literal notranslate"><span class="pre">VVU_DUMMYREPEAT_LAST</span></code></a></li>
-<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_DUMMYREPEAT_LAST</span></code></a></li>
+<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_DUMMYREPEAT_LAST</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_DUMMYREPEAT_MIDDLE"><code class="docutils literal notranslate"><span class="pre">VVU_DUMMYREPEAT_MIDDLE</span></code></a></li>
-<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_DUMMYREPEAT_MIDDLE</span></code></a></li>
+<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_DUMMYREPEAT_MIDDLE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-interp-constants">VVU_INTERP constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_NEAREST"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_NEAREST</span></code></a></li>
-<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_NEAREST</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_LINEAR"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_CUBIC"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_CUBIC</span></code></a></li>
-<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_CUBIC</span></code></a></li>
+<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_CUBIC</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_AKIMA"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_AKIMA</span></code></a></li>
-<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_AKIMA</span></code></a></li>
+<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_AKIMA</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_PREDICT"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_PREDICT</span></code></a></li>
-<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_PREDICT</span></code></a></li>
+<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_PREDICT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-interp-edge-constants">VVU_INTERP_EDGE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_EDGE_NONE"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_EDGE_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_EDGE_SAME"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_EDGE_SAME</span></code></a></li>
-<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_SAME</span></code></a></li>
+<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_SAME</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_EDGE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_EDGE_NEAREST</span></code></a></li>
-<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_NEAREST</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_INTERP_EDGE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VVU_INTERP_EDGE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_INTERP_EDGE_LINEAR</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-line-constants">VVU_LINE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.LINE_2_POINTS"><code class="docutils literal notranslate"><span class="pre">LINE_2_POINTS</span></code></a></li>
-<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.LINE_2_POINTS</span></code></a></li>
+<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.LINE_2_POINTS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.LINE_POINT_AZIMUTH"><code class="docutils literal notranslate"><span class="pre">LINE_POINT_AZIMUTH</span></code></a></li>
-<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.LINE_POINT_AZIMUTH</span></code></a></li>
+<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.LINE_POINT_AZIMUTH</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-mask-constants">VVU_MASK constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MASK_INSIDE"><code class="docutils literal notranslate"><span class="pre">VVU_MASK_INSIDE</span></code></a></li>
-<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MASK_INSIDE</span></code></a></li>
+<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MASK_INSIDE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MASK_OUTSIDE"><code class="docutils literal notranslate"><span class="pre">VVU_MASK_OUTSIDE</span></code></a></li>
-<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MASK_OUTSIDE</span></code></a></li>
+<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MASK_OUTSIDE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-match-constants">VVU_MATCH constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MATCH_FULL_STRINGS"><code class="docutils literal notranslate"><span class="pre">VVU_MATCH_FULL_STRINGS</span></code></a></li>
-<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MATCH_FULL_STRINGS</span></code></a></li>
+<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MATCH_FULL_STRINGS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MATCH_INPUT_LENGTH"><code class="docutils literal notranslate"><span class="pre">VVU_MATCH_INPUT_LENGTH</span></code></a></li>
-<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MATCH_INPUT_LENGTH</span></code></a></li>
+<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MATCH_INPUT_LENGTH</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-mode-constants">VVU_MODE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MODE_MEAN"><code class="docutils literal notranslate"><span class="pre">VVU_MODE_MEAN</span></code></a></li>
-<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MEAN</span></code></a></li>
+<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MEAN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MODE_MEDIAN"><code class="docutils literal notranslate"><span class="pre">VVU_MODE_MEDIAN</span></code></a></li>
-<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MEDIAN</span></code></a></li>
+<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MEDIAN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MODE_MAXIMUM"><code class="docutils literal notranslate"><span class="pre">VVU_MODE_MAXIMUM</span></code></a></li>
-<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MAXIMUM</span></code></a></li>
+<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MAXIMUM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_MODE_MINIMUM"><code class="docutils literal notranslate"><span class="pre">VVU_MODE_MINIMUM</span></code></a></li>
-<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MINIMUM</span></code></a></li>
+<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_MODE_MINIMUM</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-offset-constants">VVU_OFFSET constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_OFFSET_FORWARD"><code class="docutils literal notranslate"><span class="pre">VVU_OFFSET_FORWARD</span></code></a></li>
-<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_FORWARD</span></code></a></li>
+<li><a class="reference internal" href="#id115"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_FORWARD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_OFFSET_BACKWARD"><code class="docutils literal notranslate"><span class="pre">VVU_OFFSET_BACKWARD</span></code></a></li>
-<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_BACKWARD</span></code></a></li>
+<li><a class="reference internal" href="#id116"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_BACKWARD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_OFFSET_RIGHT"><code class="docutils literal notranslate"><span class="pre">VVU_OFFSET_RIGHT</span></code></a></li>
-<li><a class="reference internal" href="#id115"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_RIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id117"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_RIGHT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_OFFSET_LEFT"><code class="docutils literal notranslate"><span class="pre">VVU_OFFSET_LEFT</span></code></a></li>
-<li><a class="reference internal" href="#id116"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_LEFT</span></code></a></li>
+<li><a class="reference internal" href="#id118"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_OFFSET_LEFT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-prune-constants">VVU_PRUNE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_PRUNE_DUMMY"><code class="docutils literal notranslate"><span class="pre">VVU_PRUNE_DUMMY</span></code></a></li>
-<li><a class="reference internal" href="#id117"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_PRUNE_DUMMY</span></code></a></li>
+<li><a class="reference internal" href="#id119"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_PRUNE_DUMMY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_PRUNE_VALID"><code class="docutils literal notranslate"><span class="pre">VVU_PRUNE_VALID</span></code></a></li>
-<li><a class="reference internal" href="#id118"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_PRUNE_VALID</span></code></a></li>
+<li><a class="reference internal" href="#id120"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_PRUNE_VALID</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-spl-constants">VVU_SPL constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_SPL_LINEAR"><code class="docutils literal notranslate"><span class="pre">VVU_SPL_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id119"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id121"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_SPL_CUBIC"><code class="docutils literal notranslate"><span class="pre">VVU_SPL_CUBIC</span></code></a></li>
-<li><a class="reference internal" href="#id120"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_CUBIC</span></code></a></li>
+<li><a class="reference internal" href="#id122"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_CUBIC</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_SPL_AKIMA"><code class="docutils literal notranslate"><span class="pre">VVU_SPL_AKIMA</span></code></a></li>
-<li><a class="reference internal" href="#id121"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_AKIMA</span></code></a></li>
+<li><a class="reference internal" href="#id123"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_AKIMA</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_SPL_NEAREST"><code class="docutils literal notranslate"><span class="pre">VVU_SPL_NEAREST</span></code></a></li>
-<li><a class="reference internal" href="#id122"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#id124"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SPL_NEAREST</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vvu-srchrepl-case-constants">VVU_SRCHREPL_CASE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_SRCHREPL_CASE_TOLERANT"><code class="docutils literal notranslate"><span class="pre">VVU_SRCHREPL_CASE_TOLERANT</span></code></a></li>
-<li><a class="reference internal" href="#id123"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SRCHREPL_CASE_TOLERANT</span></code></a></li>
+<li><a class="reference internal" href="#id125"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SRCHREPL_CASE_TOLERANT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VVU_SRCHREPL_CASE_SENSITIVE"><code class="docutils literal notranslate"><span class="pre">VVU_SRCHREPL_CASE_SENSITIVE</span></code></a></li>
-<li><a class="reference internal" href="#id124"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SRCHREPL_CASE_SENSITIVE</span></code></a></li>
+<li><a class="reference internal" href="#id126"><code class="docutils literal notranslate"><span class="pre">gxapi.VVU_SRCHREPL_CASE_SENSITIVE</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -675,6 +677,38 @@ input point.
 This skips points where the mask value is dummy.
 If no valid points are in the VVs, or all the mask <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> values
 are dummy, the returned index is -1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVVU.cond_depth_tem">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cond_depth_tem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resp_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cond_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_xvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_yvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_xvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_yvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVVU.html#GXVVU.cond_depth_tem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVVU.cond_depth_tem" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Calculate TEM apparent conductivity and depth</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resp_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Response channel (microvolts)</p></li>
+<li><p><strong>time_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Time channel (milliseconds)</p></li>
+<li><p><strong>cond_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Conductivity channel (siemen/m)</p></li>
+<li><p><strong>depth_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Depth (m)</p></li>
+<li><p><strong>current</strong> (<em>float</em>) – Transmitter current</p></li>
+<li><p><strong>flag</strong> (<em>int</em>) – Flag  Transmitter defined by moment (0) or by 4 VVs (1) below</p></li>
+<li><p><strong>min_xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Minimum X to define transmitter loop layout (moment)</p></li>
+<li><p><strong>min_yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Minimum Y to define transmitter loop layout (moment)</p></li>
+<li><p><strong>max_xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Maximum X to define transmitter loop layout (moment)</p></li>
+<li><p><strong>max_yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Maximum Y to define transmitter loop layout (moment)</p></li>
+<li><p><strong>t_moment</strong> (<em>float</em>) – Transmitter moment (square meters), dummy if the above flag is 1</p></li>
+<li><p><strong>r_moment</strong> (<em>float</em>) – Receiver moment (square meters)</p></li>
+<li><p><strong>array</strong> (<em>int</em>) – <a class="reference internal" href="#tem-array"><span class="std std-ref">TEM_ARRAY constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1450,6 +1484,39 @@ on the smoothed curve</p></li>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See the algorithm note #2 above for the default smoothing interval.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVVU.offset_correct4">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">offset_correct4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_zi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoffset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">azimuth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_roll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_pitch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_zo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVVU.html#GXVVU.offset_correct4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVVU.offset_correct4" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Same as <a class="reference internal" href="#geosoft.gxapi.GXVVU.offset_correct3" title="geosoft.gxapi.GXVVU.offset_correct3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">offset_correct3</span></code></a>, but specify roll, pitch, yaw and Z.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_xi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input X</p></li>
+<li><p><strong>vv_yi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Y</p></li>
+<li><p><strong>vv_zi</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input Z</p></li>
+<li><p><strong>zoffset</strong> (<em>float</em>) – ZOffset distance</p></li>
+<li><p><strong>dist</strong> (<em>float</em>) – XYOffset distance</p></li>
+<li><p><strong>azimuth</strong> (<em>float</em>) – XYOffset azimuth (degrees clockwise from straight ahead)</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – Averaging interval - <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> for default</p></li>
+<li><p><strong>vv_roll</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Roll</p></li>
+<li><p><strong>vv_pitch</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Pitch</p></li>
+<li><p><strong>vv_yaw</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Yaw</p></li>
+<li><p><strong>vv_xo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output X</p></li>
+<li><p><strong>vv_yo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Y</p></li>
+<li><p><strong>vv_zo</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Z</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Add roll, pitch, yaw correction.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2256,7 +2323,7 @@ of the data.</p>
 of the data. Returns index of first item matching
 the input string.
 If start index is -1 or dummy, then full <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is searched.
-Use <a class="reference internal" href="#id108" title="geosoft.gxapi.VVU_MATCH_INPUT_LENGTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VVU_MATCH_INPUT_LENGTH</span></code></a> to match the first part of a string.
+Use <a class="reference internal" href="#id110" title="geosoft.gxapi.VVU_MATCH_INPUT_LENGTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VVU_MATCH_INPUT_LENGTH</span></code></a> to match the first part of a string.
 This is also recommended for matching numerical values, since
 the displayed value in the database may not be the same as the
 stored value.</p>
@@ -2462,8 +2529,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">QC_CRITERION_2</span></span><a class="headerlink" href="#geosoft.gxapi.QC_CRITERION_2" title="Link to this definition">¶</a></dt>
 <dd><p>2</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id75">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">QC_CRITERION_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id75" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id77">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">QC_CRITERION_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2473,8 +2540,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">QC_CRITERION_12</span></span><a class="headerlink" href="#geosoft.gxapi.QC_CRITERION_12" title="Link to this definition">¶</a></dt>
 <dd><p>12</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id76">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">QC_CRITERION_12</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id76" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id78">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">QC_CRITERION_12</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2488,8 +2555,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">TEM_ARRAY_VERTICALSOUNDING</span></span><a class="headerlink" href="#geosoft.gxapi.TEM_ARRAY_VERTICALSOUNDING" title="Link to this definition">¶</a></dt>
 <dd><p>Verticalsounding</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id77">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TEM_ARRAY_VERTICALSOUNDING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id79">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TEM_ARRAY_VERTICALSOUNDING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2499,8 +2566,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">TEM_ARRAY_PROFILING</span></span><a class="headerlink" href="#geosoft.gxapi.TEM_ARRAY_PROFILING" title="Link to this definition">¶</a></dt>
 <dd><p>Profiling</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id78">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TEM_ARRAY_PROFILING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id80">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TEM_ARRAY_PROFILING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2510,8 +2577,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">TEM_ARRAY_BOREHOLE</span></span><a class="headerlink" href="#geosoft.gxapi.TEM_ARRAY_BOREHOLE" title="Link to this definition">¶</a></dt>
 <dd><p>Borehole</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id79">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TEM_ARRAY_BOREHOLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id81">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TEM_ARRAY_BOREHOLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2523,10 +2590,10 @@ random number generator used.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="geosoft.gxapi.VV_DUP_AVERAGE">
 <span class="sig-name descname"><span class="pre">VV_DUP_AVERAGE</span></span><a class="headerlink" href="#geosoft.gxapi.VV_DUP_AVERAGE" title="Link to this definition">¶</a></dt>
-<dd><p>Average numeric values (for strings, same as <a class="reference internal" href="#id81" title="geosoft.gxapi.VV_DUP_1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_DUP_1</span></code></a>)</p>
+<dd><p>Average numeric values (for strings, same as <a class="reference internal" href="#id83" title="geosoft.gxapi.VV_DUP_1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_DUP_1</span></code></a>)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id80">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_AVERAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id82">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_AVERAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2536,8 +2603,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VV_DUP_1</span></span><a class="headerlink" href="#geosoft.gxapi.VV_DUP_1" title="Link to this definition">¶</a></dt>
 <dd><p>Use first value of the pair</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id81">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id83">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2547,8 +2614,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VV_DUP_2</span></span><a class="headerlink" href="#geosoft.gxapi.VV_DUP_2" title="Link to this definition">¶</a></dt>
 <dd><p>Use second value of the pair</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id82">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id84">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2558,8 +2625,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VV_DUP_DUMMY</span></span><a class="headerlink" href="#geosoft.gxapi.VV_DUP_DUMMY" title="Link to this definition">¶</a></dt>
 <dd><p>Set to dummy</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id83">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id85">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2569,8 +2636,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VV_DUP_SAMPLE</span></span><a class="headerlink" href="#geosoft.gxapi.VV_DUP_SAMPLE" title="Link to this definition">¶</a></dt>
 <dd><p>Set to “3” (cannot use with string data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id84">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_SAMPLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id86">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_DUP_SAMPLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2584,8 +2651,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VV_XYDUP_AVERAGE</span></span><a class="headerlink" href="#geosoft.gxapi.VV_XYDUP_AVERAGE" title="Link to this definition">¶</a></dt>
 <dd><p>Average</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id85">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_XYDUP_AVERAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id87">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_XYDUP_AVERAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2595,8 +2662,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VV_XYDUP_SUM</span></span><a class="headerlink" href="#geosoft.gxapi.VV_XYDUP_SUM" title="Link to this definition">¶</a></dt>
 <dd><p>Sum</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id86">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_XYDUP_SUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id88">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VV_XYDUP_SUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2610,8 +2677,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_CASE_TOLERANT</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_CASE_TOLERANT" title="Link to this definition">¶</a></dt>
 <dd><p>Tolerant</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id87">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CASE_TOLERANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id89">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CASE_TOLERANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2621,8 +2688,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_CASE_SENSITIVE</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_CASE_SENSITIVE" title="Link to this definition">¶</a></dt>
 <dd><p>Sensitive</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id88">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CASE_SENSITIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id90">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CASE_SENSITIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2636,8 +2703,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_CLIP_DUMMY</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_CLIP_DUMMY" title="Link to this definition">¶</a></dt>
 <dd><p>Clip replaces clipped values with a dummy.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id89">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CLIP_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id91">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CLIP_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2647,8 +2714,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_CLIP_LIMIT</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_CLIP_LIMIT" title="Link to this definition">¶</a></dt>
 <dd><p>Clip replaces clipped values with the limit.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id90">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CLIP_LIMIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id92">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_CLIP_LIMIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2662,8 +2729,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_FIRST</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_DUMMYREPEAT_FIRST" title="Link to this definition">¶</a></dt>
 <dd><p>Dummies all but first point.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id91">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id93">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2673,8 +2740,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_LAST</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_DUMMYREPEAT_LAST" title="Link to this definition">¶</a></dt>
 <dd><p>Dummies all but last point.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id92">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id94">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_LAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2684,8 +2751,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_MIDDLE</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_DUMMYREPEAT_MIDDLE" title="Link to this definition">¶</a></dt>
 <dd><p>Dummies all but middle point.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id93">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_MIDDLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id95">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_DUMMYREPEAT_MIDDLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2699,8 +2766,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_NEAREST</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_NEAREST" title="Link to this definition">¶</a></dt>
 <dd><p>Nearest</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id94">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id96">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2710,8 +2777,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id95">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id97">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2721,8 +2788,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_CUBIC</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_CUBIC" title="Link to this definition">¶</a></dt>
 <dd><p>Cubic</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id96">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_CUBIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id98">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_CUBIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2732,8 +2799,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_AKIMA</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_AKIMA" title="Link to this definition">¶</a></dt>
 <dd><p>Akima</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id97">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_AKIMA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id99">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_AKIMA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2743,8 +2810,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_PREDICT</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_PREDICT" title="Link to this definition">¶</a></dt>
 <dd><p>Predict</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id98">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_PREDICT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id100">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_PREDICT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2758,8 +2825,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_EDGE_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id99">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id101">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2769,8 +2836,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_SAME</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_EDGE_SAME" title="Link to this definition">¶</a></dt>
 <dd><p>Same</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id100">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_SAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id102">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_SAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2780,8 +2847,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_NEAREST</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_EDGE_NEAREST" title="Link to this definition">¶</a></dt>
 <dd><p>Nearest</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id101">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id103">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2791,8 +2858,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_INTERP_EDGE_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id102">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id104">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_INTERP_EDGE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2806,8 +2873,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">LINE_2_POINTS</span></span><a class="headerlink" href="#geosoft.gxapi.LINE_2_POINTS" title="Link to this definition">¶</a></dt>
 <dd><p>Line 2 points</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id103">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LINE_2_POINTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id105">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LINE_2_POINTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2817,8 +2884,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">LINE_POINT_AZIMUTH</span></span><a class="headerlink" href="#geosoft.gxapi.LINE_POINT_AZIMUTH" title="Link to this definition">¶</a></dt>
 <dd><p>Line point azimuth</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id104">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LINE_POINT_AZIMUTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id106">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LINE_POINT_AZIMUTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2832,8 +2899,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MASK_INSIDE</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MASK_INSIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Mask <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is set to dummy at locations inside the <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id105">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MASK_INSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id107">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MASK_INSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2843,8 +2910,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MASK_OUTSIDE</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MASK_OUTSIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Mask <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> is set to dummy at locations outside the <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id106">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MASK_OUTSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id108">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MASK_OUTSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2858,8 +2925,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MATCH_FULL_STRINGS</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MATCH_FULL_STRINGS" title="Link to this definition">¶</a></dt>
 <dd><p>Entire string</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id107">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MATCH_FULL_STRINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id109">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MATCH_FULL_STRINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2869,8 +2936,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MATCH_INPUT_LENGTH</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MATCH_INPUT_LENGTH" title="Link to this definition">¶</a></dt>
 <dd><p>Match the first part of a string.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id108">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MATCH_INPUT_LENGTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id110">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MATCH_INPUT_LENGTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2884,8 +2951,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MODE_MEAN</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MODE_MEAN" title="Link to this definition">¶</a></dt>
 <dd><p>Mean</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id109">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id111">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2895,8 +2962,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MODE_MEDIAN</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MODE_MEDIAN" title="Link to this definition">¶</a></dt>
 <dd><p>Median</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id110">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MEDIAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id112">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MEDIAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2906,8 +2973,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MODE_MAXIMUM</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MODE_MAXIMUM" title="Link to this definition">¶</a></dt>
 <dd><p>Maximum</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id111">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MAXIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id113">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MAXIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2917,8 +2984,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_MODE_MINIMUM</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_MODE_MINIMUM" title="Link to this definition">¶</a></dt>
 <dd><p>Minimum</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id112">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id114">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_MODE_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2932,8 +2999,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_OFFSET_FORWARD</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_OFFSET_FORWARD" title="Link to this definition">¶</a></dt>
 <dd><p>Forward</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id113">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_FORWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id115">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_FORWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id115" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2943,8 +3010,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_OFFSET_BACKWARD</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_OFFSET_BACKWARD" title="Link to this definition">¶</a></dt>
 <dd><p>Backward</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id114">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_BACKWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id116">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_BACKWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id116" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2954,8 +3021,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_OFFSET_RIGHT</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_OFFSET_RIGHT" title="Link to this definition">¶</a></dt>
 <dd><p>Right</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id115">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id115" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id117">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id117" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2965,8 +3032,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_OFFSET_LEFT</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_OFFSET_LEFT" title="Link to this definition">¶</a></dt>
 <dd><p>Left</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id116">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id116" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id118">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_OFFSET_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id118" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2980,8 +3047,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_PRUNE_DUMMY</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_PRUNE_DUMMY" title="Link to this definition">¶</a></dt>
 <dd><p>0</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id117">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_PRUNE_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id117" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id119">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_PRUNE_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id119" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2991,8 +3058,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_PRUNE_VALID</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_PRUNE_VALID" title="Link to this definition">¶</a></dt>
 <dd><p>1</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id118">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_PRUNE_VALID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id118" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id120">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_PRUNE_VALID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id120" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3006,8 +3073,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_SPL_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_SPL_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id119">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id119" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id121">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id121" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3017,8 +3084,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_SPL_CUBIC</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_SPL_CUBIC" title="Link to this definition">¶</a></dt>
 <dd><p>Cubic</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id120">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_CUBIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id120" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id122">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_CUBIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id122" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3028,8 +3095,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_SPL_AKIMA</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_SPL_AKIMA" title="Link to this definition">¶</a></dt>
 <dd><p>Akima</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id121">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_AKIMA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id121" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id123">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_AKIMA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id123" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3039,8 +3106,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_SPL_NEAREST</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_SPL_NEAREST" title="Link to this definition">¶</a></dt>
 <dd><p>Nearest</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id122">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id122" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id124">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SPL_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id124" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3054,8 +3121,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_SRCHREPL_CASE_TOLERANT</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_SRCHREPL_CASE_TOLERANT" title="Link to this definition">¶</a></dt>
 <dd><p>Tolerant</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id123">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SRCHREPL_CASE_TOLERANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id123" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id125">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SRCHREPL_CASE_TOLERANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id125" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3065,8 +3132,8 @@ random number generator used.</p>
 <span class="sig-name descname"><span class="pre">VVU_SRCHREPL_CASE_SENSITIVE</span></span><a class="headerlink" href="#geosoft.gxapi.VVU_SRCHREPL_CASE_SENSITIVE" title="Link to this definition">¶</a></dt>
 <dd><p>Sensitive</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id124">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SRCHREPL_CASE_SENSITIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id124" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id126">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VVU_SRCHREPL_CASE_SENSITIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id126" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -3087,13 +3154,13 @@ random number generator used.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVVU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

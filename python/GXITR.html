@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXITR class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXITR class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXITR class</a></li> 
       </ul>
     </div>
@@ -58,6 +58,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.get_data_limits"><code class="docutils literal notranslate"><span class="pre">GXITR.get_data_limits()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.get_name"><code class="docutils literal notranslate"><span class="pre">GXITR.get_name()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.get_reg"><code class="docutils literal notranslate"><span class="pre">GXITR.get_reg()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXITR.get_shade"><code class="docutils literal notranslate"><span class="pre">GXITR.get_shade()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.get_size"><code class="docutils literal notranslate"><span class="pre">GXITR.get_size()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.get_zone_active"><code class="docutils literal notranslate"><span class="pre">GXITR.get_zone_active()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.get_zone_base_color"><code class="docutils literal notranslate"><span class="pre">GXITR.get_zone_base_color()</span></code></a></li>
@@ -80,6 +81,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.set_color_model"><code class="docutils literal notranslate"><span class="pre">GXITR.set_color_model()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.set_data_limits"><code class="docutils literal notranslate"><span class="pre">GXITR.set_data_limits()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.set_name"><code class="docutils literal notranslate"><span class="pre">GXITR.set_name()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXITR.set_shade"><code class="docutils literal notranslate"><span class="pre">GXITR.set_shade()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.set_size"><code class="docutils literal notranslate"><span class="pre">GXITR.set_size()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.set_zone_active"><code class="docutils literal notranslate"><span class="pre">GXITR.set_zone_active()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXITR.set_zone_base_color"><code class="docutils literal notranslate"><span class="pre">GXITR.set_zone_base_color()</span></code></a></li>
@@ -92,48 +94,48 @@
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_HSV"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_HSV</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_HSV</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_RGB"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_RGB</span></code></a></li>
-<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_RGB</span></code></a></li>
+<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_RGB</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_CMY"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_CMY</span></code></a></li>
-<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_CMY</span></code></a></li>
+<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_CMY</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#itr-power-constants">ITR_POWER constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_POWER_10"><code class="docutils literal notranslate"><span class="pre">ITR_POWER_10</span></code></a></li>
-<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_POWER_10</span></code></a></li>
+<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_POWER_10</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_POWER_EXP"><code class="docutils literal notranslate"><span class="pre">ITR_POWER_EXP</span></code></a></li>
-<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_POWER_EXP</span></code></a></li>
+<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_POWER_EXP</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#itr-zone-constants">ITR_ZONE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_DEFAULT"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_DEFAULT</span></code></a></li>
-<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_DEFAULT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_LINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_NORMAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_EQUALAREA"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_EQUALAREA</span></code></a></li>
-<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_EQUALAREA</span></code></a></li>
+<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_EQUALAREA</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_SHADE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_SHADE</span></code></a></li>
-<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_SHADE</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_SHADE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_LOGLINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_LOGLINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_LOGLINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_LOGLINEAR</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#itr-zone-model-constants">ITR_ZONE_MODEL constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NOZONE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></code></a></li>
-<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NOZONE</span></code></a></li>
+<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NOZONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NONE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_LINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NORMAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_EQUAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></code></a></li>
-<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_EQUAL</span></code></a></li>
+<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_EQUAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_MODEL_LOGLIN"><code class="docutils literal notranslate"><span class="pre">ITR_MODEL_LOGLIN</span></code></a></li>
-<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_MODEL_LOGLIN</span></code></a></li>
+<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_MODEL_LOGLIN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_LOGLIN"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></code></a></li>
-<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_LOGLIN</span></code></a></li>
+<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_LOGLIN</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -331,7 +333,7 @@ is 0 (no color).</p>
 <p><span class="versionmodified added">New in version 5.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> The <a class="reference internal" href="#id48" title="geosoft.gxapi.ITR_ZONE_DEFAULT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_DEFAULT</span></code></a> model will ask the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> to provide
+<p><strong>Note:</strong> The <a class="reference internal" href="#id50" title="geosoft.gxapi.ITR_ZONE_DEFAULT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_DEFAULT</span></code></a> model will ask the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> to provide
 a model if it can.</p>
 <p>If a shaded relief model is selected, a shaded image
 will be created and a shaded image file will be created with
@@ -390,7 +392,7 @@ added to the name part of the grid.</p>
 <dd><p>Return the user-defined global default color method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>One of <a class="reference internal" href="#id51" title="geosoft.gxapi.ITR_ZONE_EQUALAREA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_EQUALAREA</span></code></a>, <a class="reference internal" href="#id49" title="geosoft.gxapi.ITR_ZONE_LINEAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_LINEAR</span></code></a>, <a class="reference internal" href="#id50" title="geosoft.gxapi.ITR_ZONE_NORMAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_NORMAL</span></code></a> or <a class="reference internal" href="#id53" title="geosoft.gxapi.ITR_ZONE_LOGLINEAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_LOGLINEAR</span></code></a></p>
+<dd class="field-odd"><p>One of <a class="reference internal" href="#id53" title="geosoft.gxapi.ITR_ZONE_EQUALAREA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_EQUALAREA</span></code></a>, <a class="reference internal" href="#id51" title="geosoft.gxapi.ITR_ZONE_LINEAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_LINEAR</span></code></a>, <a class="reference internal" href="#id52" title="geosoft.gxapi.ITR_ZONE_NORMAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_NORMAL</span></code></a> or <a class="reference internal" href="#id55" title="geosoft.gxapi.ITR_ZONE_LOGLINEAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_LOGLINEAR</span></code></a></p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
@@ -572,6 +574,32 @@ those cases dummy values will be returned.</p>
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXITR.get_shade">
+<span class="sig-name descname"><span class="pre">get_shade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inclination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.get_shade"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.get_shade" title="Link to this definition">¶</a></dt>
+<dd><p>Get the shading parameters of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inclination</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Shading inclination - DUMMY if not defined</p></li>
+<li><p><strong>declination</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Shading declination - DUMMY if not defined</p></li>
+<li><p><strong>scale</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Shading scale - DUMMY if not defined</p></li>
+<li><p><strong>origin</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Origin returned - empty if not defined</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns 1 if shading is enabled and defined, 0 otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -974,6 +1002,26 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXITR.set_shade">
+<span class="sig-name descname"><span class="pre">set_shade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inclination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.set_shade"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.set_shade" title="Link to this definition">¶</a></dt>
+<dd><p>Set the shading parameters of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inclination</strong> (<em>float</em>) – Shading inclination</p></li>
+<li><p><strong>declination</strong> (<em>float</em>) – Shading declination</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – Shading scale</p></li>
+<li><p><strong>origin</strong> (<em>str</em>) – Origin returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.set_size">
 <span class="sig-name descname"><span class="pre">set_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zones</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.set_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.set_size" title="Link to this definition">¶</a></dt>
 <dd><p>Set the number of zones in an <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a></p>
@@ -1123,8 +1171,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_RGB</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_COLOR_MODEL_RGB" title="Link to this definition">¶</a></dt>
 <dd><p>Rgb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id44">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_RGB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id46">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_RGB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1134,8 +1182,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_CMY</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_COLOR_MODEL_CMY" title="Link to this definition">¶</a></dt>
 <dd><p>Cmy</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id45">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_CMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id47">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_CMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1149,8 +1197,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_POWER_10</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_POWER_10" title="Link to this definition">¶</a></dt>
 <dd><p>Power of 10</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id46">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_10</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id48">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_10</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1160,8 +1208,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_POWER_EXP</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_POWER_EXP" title="Link to this definition">¶</a></dt>
 <dd><p>Exponential</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id47">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_EXP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id49">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_EXP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1175,8 +1223,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_DEFAULT</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_DEFAULT" title="Link to this definition">¶</a></dt>
 <dd><p>Default</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id48">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id50">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1186,8 +1234,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id49">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id51">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1197,8 +1245,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_NORMAL</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_NORMAL" title="Link to this definition">¶</a></dt>
 <dd><p>Normal</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id50">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id52">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1208,8 +1256,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_EQUALAREA</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_EQUALAREA" title="Link to this definition">¶</a></dt>
 <dd><p>Equalarea</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id51">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_EQUALAREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id53">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_EQUALAREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1219,8 +1267,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_SHADE</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_SHADE" title="Link to this definition">¶</a></dt>
 <dd><p>Shade</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id52">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_SHADE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id54">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_SHADE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1230,8 +1278,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_LOGLINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_LOGLINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Loglinear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id53">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id55">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1245,8 +1293,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_MODEL_NOZONE" title="Link to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> has no numeric zones defined (e.g. from a TBL file)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id54">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id56">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1256,8 +1304,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_MODEL_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>There is no specific zone model defined.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id55">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id57">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1267,8 +1315,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_MODEL_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a linear transform.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id56">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id58">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1278,8 +1326,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_MODEL_NORMAL" title="Link to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a normal distribution transform.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id57">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id59">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1289,8 +1337,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_MODEL_EQUAL" title="Link to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with an equal area transform.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id58">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id60">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1300,8 +1348,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_MODEL_LOGLIN</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_MODEL_LOGLIN" title="Link to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a log-linear transform.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id59">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_MODEL_LOGLIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id61">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_MODEL_LOGLIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1311,8 +1359,8 @@ specification accurately reflects the actual ranges.</p>
 <span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></span><a class="headerlink" href="#geosoft.gxapi.ITR_ZONE_MODEL_LOGLIN" title="Link to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a log-linear transform.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id60">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id62">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1333,13 +1381,13 @@ specification accurately reflects the actual ranges.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXITR class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

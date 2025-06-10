@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDAT &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXDAT &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDAT</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXDAT</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -137,6 +137,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">,</span> <span class="n">z_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a handle to a database `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Handle to database which `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` is connected with</span>
@@ -155,6 +156,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDAT</span><span class="o">.</span><span class="n">_create_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXDAT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -166,6 +168,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_xgd</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a handle to a grid file `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of grid file to associate `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` with</span>
@@ -180,6 +183,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDAT</span><span class="o">.</span><span class="n">_create_xgd</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXDAT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -193,6 +197,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">interface_name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Put available `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` filters and qualifiers in a `GXLST &lt;geosoft.gxapi.GXLST&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:             `GXLST &lt;geosoft.gxapi.GXLST&gt;` object to populate</span>
@@ -212,6 +217,7 @@
 <span class="sd">        in the &quot;Name&quot; of the `GXLST &lt;geosoft.gxapi.GXLST&gt;`, while the file qualifiers are stored in</span>
 <span class="sd">        the &quot;Value&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDAT</span><span class="o">.</span><span class="n">_get_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="n">interface_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">flags</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -223,6 +229,7 @@
 <a class="viewcode-back" href="../../../GXDAT.html#geosoft.gxapi.GXDAT.range_xyz">[docs]</a>
     <span class="k">def</span> <span class="nf">range_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">,</span> <span class="n">num_non_dummy</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Determine the range in X, Y and Z in the `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` source</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:          Minimum X (`rMAX &lt;geosoft.gxapi.rMAX&gt;` if none)</span>
@@ -246,6 +253,7 @@
 
 <span class="sd">        **Note:** Terminates if unable to open an RPT `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` interface.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_non_dummy</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_range_xyz</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num_non_dummy</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 </div>
 
@@ -278,7 +286,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDAT</a></li> 
@@ -286,7 +294,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXLST class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXLST class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXLST class</a></li> 
       </ul>
     </div>
@@ -63,6 +63,9 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXLST.is_null"><code class="docutils literal notranslate"><span class="pre">GXLST.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXLST.load_csv"><code class="docutils literal notranslate"><span class="pre">GXLST.load_csv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXLST.load_file"><code class="docutils literal notranslate"><span class="pre">GXLST.load_file()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLST.load_proj"><code class="docutils literal notranslate"><span class="pre">GXLST.load_proj()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLST.load_proj_codes"><code class="docutils literal notranslate"><span class="pre">GXLST.load_proj_codes()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXLST.make_reg"><code class="docutils literal notranslate"><span class="pre">GXLST.make_reg()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXLST.null"><code class="docutils literal notranslate"><span class="pre">GXLST.null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXLST.resource"><code class="docutils literal notranslate"><span class="pre">GXLST.resource()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXLST.save_file"><code class="docutils literal notranslate"><span class="pre">GXLST.save_file()</span></code></a></li>
@@ -77,7 +80,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.LST_ITEM_NAME"><code class="docutils literal notranslate"><span class="pre">LST_ITEM_NAME</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.LST_ITEM_NAME</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.LST_ITEM_VALUE"><code class="docutils literal notranslate"><span class="pre">LST_ITEM_VALUE</span></code></a></li>
-<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.LST_ITEM_VALUE</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.LST_ITEM_VALUE</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -629,6 +632,81 @@ empty.  Not finding a file is not an error.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLST.load_proj">
+<span class="sig-name descname"><span class="pre">load_proj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLST.html#GXLST.load_proj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLST.load_proj" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Sets up a list with datum codes and their associated
+descriptions read from a projection datum file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – Name of the projection datum file (<code class="docutils literal notranslate"><span class="pre">*.DTM</span></code> file)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - Ok
+1 - Error</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Was based on the old Mapproj.dtm file. Superseded by the current
+projection engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLST.load_proj_codes">
+<span class="sig-name descname"><span class="pre">load_proj_codes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLST.html#GXLST.load_proj_codes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLST.load_proj_codes" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Sets up a list with datum codes read from a projection
+datum file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – Name of the projection datum file (<code class="docutils literal notranslate"><span class="pre">*.DTM</span></code> file)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - Ok
+1 - Error</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Was based on the old Mapproj.dtm file. Superseded by the current
+projection engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXLST.make_reg">
+<span class="sig-name descname"><span class="pre">make_reg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLST.html#GXLST.make_reg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLST.make_reg" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Make an <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> from a <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Group name in the reg</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Was not correctly implemented or used</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXLST.null">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXLST.html#GXLST.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXLST.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a></p>
@@ -802,8 +880,8 @@ Item matches are case-tolerant.</p>
 <span class="sig-name descname"><span class="pre">LST_ITEM_VALUE</span></span><a class="headerlink" href="#geosoft.gxapi.LST_ITEM_VALUE" title="Link to this definition">¶</a></dt>
 <dd><p>Access the “Value” part of the <a class="reference internal" href="#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> item.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id29">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LST_ITEM_VALUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id32">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LST_ITEM_VALUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -824,13 +902,13 @@ Item matches are case-tolerant.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXLST class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDBWRITE &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXDBWRITE &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDBWRITE</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXDBWRITE</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXDB</span> <span class="kn">import</span> <span class="n">GXDB</span>
@@ -134,6 +134,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXDBWRITE &lt;geosoft.gxapi.GXDBWRITE&gt;` object</span>
 <span class="sd">        Add channels using the `add_channel &lt;geosoft.gxapi.GXDBWRITE.add_channel&gt;` method.channel.</span>
 <span class="sd">        </span>
@@ -147,6 +148,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDBWRITE</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXDBWRITE</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -158,6 +160,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_xy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXDBWRITE &lt;geosoft.gxapi.GXDBWRITE&gt;` object for a XY-located data. Add channels using the</span>
 <span class="sd">        `add_channel &lt;geosoft.gxapi.GXDBWRITE.add_channel&gt;` method.</span>
 <span class="sd">        </span>
@@ -171,6 +174,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDBWRITE</span><span class="o">.</span><span class="n">_create_xy</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXDBWRITE</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -182,6 +186,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXDBWRITE &lt;geosoft.gxapi.GXDBWRITE&gt;` object for a XYZ-located data.</span>
 <span class="sd">        Add channels using the `add_channel &lt;geosoft.gxapi.GXDBWRITE.add_channel&gt;` method.channel</span>
 <span class="sd">        </span>
@@ -195,6 +200,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDBWRITE</span><span class="o">.</span><span class="n">_create_xyz</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXDBWRITE</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -208,6 +214,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.add_channel">[docs]</a>
     <span class="k">def</span> <span class="nf">add_channel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add a data channel to the `GXDBWRITE &lt;geosoft.gxapi.GXDBWRITE&gt;` object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:     Channel handle (does not need to be locked, but can be.)</span>
@@ -220,6 +227,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_channel</span><span class="p">(</span><span class="n">chan</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -235,6 +243,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.get_db">[docs]</a>
     <span class="k">def</span> <span class="nf">get_db</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the output `GXDB &lt;geosoft.gxapi.GXDB&gt;` handle from the `GXDBWRITE &lt;geosoft.gxapi.GXDBWRITE&gt;` object.</span>
 <span class="sd">        </span>
 
@@ -245,6 +254,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_db</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -256,6 +266,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.get_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle for a channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:     Index of channel to access.</span>
@@ -269,8 +280,9 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
 <span class="sd">        **Note:** Call only for single-column (regular) channels. You can call the `get_chan_array_size &lt;geosoft.gxapi.GXDBWRITE.get_chan_array_size&gt;`</span>
-<span class="sd">        function to find the number fo columns in a given channel. The `GXVV &lt;geosoft.gxapi.GXVV&gt;` is filled anew for each block served up.</span>
+<span class="sd">        function to find the number of columns in a given channel. The `GXVV &lt;geosoft.gxapi.GXVV&gt;` is filled anew for each block served up.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_vv</span><span class="p">(</span><span class="n">chan</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -282,6 +294,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.get_va">[docs]</a>
     <span class="k">def</span> <span class="nf">get_va</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the `GXVA &lt;geosoft.gxapi.GXVA&gt;` handle for an array channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:     Index of channel to access.</span>
@@ -295,9 +308,10 @@
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
 <span class="sd">        **Note:** Call only for array (multi-column) channels. You can call the `get_chan_array_size &lt;geosoft.gxapi.GXDBWRITE.get_chan_array_size&gt;`</span>
-<span class="sd">        function to find the number fo columns in a given channel, or you can call `GXVA.col &lt;geosoft.gxapi.GXVA.col&gt;` on the returned `GXVA &lt;geosoft.gxapi.GXVA&gt;` handle.</span>
+<span class="sd">        function to find the number of columns in a given channel, or you can call `GXVA.col &lt;geosoft.gxapi.GXVA.col&gt;` on the returned `GXVA &lt;geosoft.gxapi.GXVA&gt;` handle.</span>
 <span class="sd">        The `GXVA &lt;geosoft.gxapi.GXVA&gt;` is filled anew for each block served up.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_va</span><span class="p">(</span><span class="n">chan</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -309,6 +323,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.get_v_vx">[docs]</a>
     <span class="k">def</span> <span class="nf">get_v_vx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the X channel `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
 <span class="sd">        </span>
 
@@ -322,6 +337,7 @@
 <span class="sd">        **Note:** Only available for the CreateXY or CreateXYZ methods.</span>
 <span class="sd">        The `GXVV &lt;geosoft.gxapi.GXVV&gt;` is filled anew for each block served up.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_v_vx</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -333,6 +349,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.get_v_vy">[docs]</a>
     <span class="k">def</span> <span class="nf">get_v_vy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the Y channel `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
 <span class="sd">        </span>
 
@@ -346,6 +363,7 @@
 <span class="sd">        **Note:** Only available for the CreateXY or CreateXYZ methods.</span>
 <span class="sd">        The `GXVV &lt;geosoft.gxapi.GXVV&gt;` is filled anew for each block served up.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_v_vy</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -357,6 +375,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.get_v_vz">[docs]</a>
     <span class="k">def</span> <span class="nf">get_v_vz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the Z channel `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
 <span class="sd">        </span>
 
@@ -371,6 +390,7 @@
 <span class="sd">        The `GXVV &lt;geosoft.gxapi.GXVV&gt;` is filled anew for each block served up.</span>
 <span class="sd">        If the Z channel is an array channel, the returned `GXVV &lt;geosoft.gxapi.GXVV&gt;` is the &quot;base&quot; `GXVV &lt;geosoft.gxapi.GXVV&gt;` of the `GXVA &lt;geosoft.gxapi.GXVA&gt;` and contains all items sequentially.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_v_vz</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -382,6 +402,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.get_chan_array_size">[docs]</a>
     <span class="k">def</span> <span class="nf">get_chan_array_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the number of columns of data in a channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:     Index of channel to access.</span>
@@ -398,6 +419,7 @@
 <span class="sd">        This function should be called to determine whether to use `get_vv &lt;geosoft.gxapi.GXDBWRITE.get_vv&gt;` or `get_va &lt;geosoft.gxapi.GXDBWRITE.get_va&gt;` to access data</span>
 <span class="sd">        for a channel.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_chan_array_size</span><span class="p">(</span><span class="n">chan</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -413,6 +435,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.add_block">[docs]</a>
     <span class="k">def</span> <span class="nf">add_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add the current block of data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param line:     Line</span>
@@ -424,6 +447,7 @@
 
 <span class="sd">        **Note:** First, set up the data for each channel by copying values into the individual channel VVs and VAs.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_block</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></div>
 
         
@@ -435,6 +459,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.commit">[docs]</a>
     <span class="k">def</span> <span class="nf">commit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Commit remaining data to the database.</span>
 <span class="sd">        </span>
 
@@ -442,6 +467,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_commit</span><span class="p">()</span></div>
 
         
@@ -453,6 +479,7 @@
 <a class="viewcode-back" href="../../../GXDBWRITE.html#geosoft.gxapi.GXDBWRITE.test_func">[docs]</a>
     <span class="k">def</span> <span class="nf">test_func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Temporary test function.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ra:       `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle to text file to import.</span>
@@ -464,6 +491,7 @@
 
 <span class="sd">        **Note:** Designed to import the &quot;Massive.xyz&quot; file, which has data in the format &quot;X Y Z Data&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_test_func</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span></div>
 </div>
 
@@ -496,7 +524,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDBWRITE</a></li> 
@@ -504,7 +532,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

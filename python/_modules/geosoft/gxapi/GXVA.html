@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVA &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXVA &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVA</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXVA</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXVV</span> <span class="kn">import</span> <span class="n">GXVV</span>
@@ -75,8 +75,6 @@
 
 <span class="c1">### block Header</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy_extend</span>
 <span class="c1">### endblock Header</span>
 
 <span class="c1">### block ClassImplementation</span>
@@ -142,6 +140,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_array">[docs]</a>
     <span class="k">def</span> <span class="nf">get_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get an array of data from a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param start_row:  Starting Row</span>
@@ -161,6 +160,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_array</span><span class="p">(</span><span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">)</span></div>
 
         
@@ -172,6 +172,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_array">[docs]</a>
     <span class="k">def</span> <span class="nf">set_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a range of data in an array</span>
 <span class="sd">        </span>
 <span class="sd">        :param start_row:  Starting Row</span>
@@ -191,6 +192,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_array</span><span class="p">(</span><span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">)</span></div>
 
         
@@ -202,6 +204,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.add_elevations_vv_to_depths">[docs]</a>
     <span class="k">def</span> <span class="nf">add_elevations_vv_to_depths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">negative_depths</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add one `GXVV &lt;geosoft.gxapi.GXVV&gt;` value to each row of the `GXVA &lt;geosoft.gxapi.GXVA&gt;`, output true elevation.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:               Elevations to add</span>
@@ -217,6 +220,7 @@
 <span class="sd">        the same fid in a depths `GXVA &lt;geosoft.gxapi.GXVA&gt;`. Includes an option for negative depths down</span>
 <span class="sd">        (e.g. a relative level).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_elevations_vv_to_depths</span><span class="p">(</span><span class="n">vv</span><span class="p">,</span> <span class="n">negative_depths</span><span class="p">)</span></div>
 
         
@@ -228,6 +232,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.append">[docs]</a>
     <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v_aa</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Appends VAs</span>
 <span class="sd">        </span>
 <span class="sd">        :param v_aa:  `GXVA &lt;geosoft.gxapi.GXVA&gt;` to append</span>
@@ -240,6 +245,7 @@
 <span class="sd">        **Note:** If the VAs have different numbers of columns, the smaller number</span>
 <span class="sd">        is used in the copy operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_append</span><span class="p">(</span><span class="n">v_aa</span><span class="p">)</span></div>
 
         
@@ -251,6 +257,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.average">[docs]</a>
     <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">rc</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Average elements in a `GXVA &lt;geosoft.gxapi.GXVA&gt;` by row or column</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:  `GXVV &lt;geosoft.gxapi.GXVV&gt;` in which to place average results</span>
@@ -268,6 +275,7 @@
 
 <span class="sd">        Dummies are not included in the average.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_average</span><span class="p">(</span><span class="n">vv</span><span class="p">,</span> <span class="n">rc</span><span class="p">)</span></div>
 
         
@@ -279,6 +287,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.copy">[docs]</a>
     <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v_as</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Copy one `GXVA &lt;geosoft.gxapi.GXVA&gt;` to another.</span>
 <span class="sd">        </span>
 <span class="sd">        :param v_as:  source</span>
@@ -288,6 +297,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">v_as</span><span class="p">)</span></div>
 
         
@@ -299,6 +309,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.copy2">[docs]</a>
     <span class="k">def</span> <span class="nf">copy2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_row</span><span class="p">,</span> <span class="n">d_col</span><span class="p">,</span> <span class="n">v_as</span><span class="p">,</span> <span class="n">s_row</span><span class="p">,</span> <span class="n">s_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Copy part of a vector into part of another vector.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d_row:  Destination start row</span>
@@ -326,6 +337,7 @@
 <span class="sd">        2. All `GXVA &lt;geosoft.gxapi.GXVA&gt;` types are supported and will be converted using</span>
 <span class="sd">        Convert_GS if necessary.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy2</span><span class="p">(</span><span class="n">d_row</span><span class="p">,</span> <span class="n">d_col</span><span class="p">,</span> <span class="n">v_as</span><span class="p">,</span> <span class="n">s_row</span><span class="p">,</span> <span class="n">s_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span></div>
 
         
@@ -337,6 +349,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GEO_VAR`</span>
@@ -353,6 +366,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVA</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -364,6 +378,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ext</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXVA &lt;geosoft.gxapi.GXVA&gt;`, using one of the :ref:`GS_TYPES` special data types.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  :ref:`GS_TYPES`</span>
@@ -382,6 +397,7 @@
 
 <span class="sd">        **Note:** See `GXVV.create &lt;geosoft.gxapi.GXVV.create&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVA</span><span class="o">.</span><span class="n">_create_ext</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -393,6 +409,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXVA &lt;geosoft.gxapi.GXVA&gt;` using the data in a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` with the data</span>
@@ -411,6 +428,7 @@
 
 <span class="sd">        **Note:** See `GXVV.create &lt;geosoft.gxapi.GXVV.create&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVA</span><span class="o">.</span><span class="n">_create_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXVA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -424,6 +442,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_full_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_full_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the full `GXVV &lt;geosoft.gxapi.GXVV&gt;` from the `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 
@@ -439,6 +458,7 @@
 <span class="sd">        of the call.  If a new `GXVA &lt;geosoft.gxapi.GXVA&gt;` is read, you must call GetFull_VV_VA</span>
 <span class="sd">        to get the new fid in the `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_full_vv</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -450,6 +470,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no</span><span class="p">,</span> <span class="n">row_col</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a row or column of data as a `GXVV &lt;geosoft.gxapi.GXVV&gt;` from an array.</span>
 <span class="sd">        </span>
 <span class="sd">        :param no:       Row or Column # (0 is first)</span>
@@ -463,6 +484,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_vv</span><span class="p">(</span><span class="n">no</span><span class="p">,</span> <span class="n">row_col</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -474,6 +496,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.col">[docs]</a>
     <span class="k">def</span> <span class="nf">col</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return number of columns in `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        </span>
 
@@ -486,6 +509,7 @@
 
 <span class="sd">        **Note:** `len &lt;geosoft.gxapi.GXVA.len&gt;` returns the number of rows.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_col</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -497,6 +521,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_int">[docs]</a>
     <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get an integer element from a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row</span>
@@ -515,6 +540,7 @@
 <span class="sd">        **Note:** Type conversions are performed if necessary.  Dummy values</span>
 <span class="sd">        are converted to &quot;*&quot; string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_int</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -526,6 +552,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_string">[docs]</a>
     <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a string element from a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:      Row</span>
@@ -545,6 +572,7 @@
 <span class="sd">        Type conversions are performed if necessary.  Dummy values</span>
 <span class="sd">        are converted to &quot;*&quot; string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -556,6 +584,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.len">[docs]</a>
     <span class="k">def</span> <span class="nf">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return length (number of rows) in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 
@@ -568,6 +597,7 @@
 
 <span class="sd">        **Note:** `col &lt;geosoft.gxapi.GXVA.col&gt;` returns the number of columns.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_len</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -579,6 +609,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">index_order</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">va</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Reorder a `GXVA &lt;geosoft.gxapi.GXVA&gt;` based on an index `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:  Index `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type INT</span>
@@ -593,6 +624,7 @@
 <span class="sd">        **Note:** Given a row index `GXVV &lt;geosoft.gxapi.GXVV&gt;` (of type INT), this method reorders a</span>
 <span class="sd">        `GXVA &lt;geosoft.gxapi.GXVA&gt;`. Please make sure that the index holds valid information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVA</span><span class="o">.</span><span class="n">_index_order</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">va</span><span class="p">)</span></div>
 
         
@@ -604,6 +636,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.lookup_index">[docs]</a>
     <span class="k">def</span> <span class="nf">lookup_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvi</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Lookup a `GXVA &lt;geosoft.gxapi.GXVA&gt;` from another `GXVA &lt;geosoft.gxapi.GXVA&gt;` using an index `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvi:  Index `GXVV &lt;geosoft.gxapi.GXVV&gt;` of REAL</span>
@@ -619,6 +652,7 @@
 <span class="sd">        at the whole integer value and the next whole integer, dummy</span>
 <span class="sd">        if outside the `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_lookup_index</span><span class="p">(</span><span class="n">vvi</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span></div>
 
         
@@ -630,6 +664,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.range">[docs]</a>
     <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">startRow</span><span class="p">,</span> <span class="n">startCol</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Computes the minimum and maximum range of the data, in doubles,</span>
 <span class="sd">        in a vector while ignoring dummies, for a range of columns and rows.</span>
 <span class="sd">        </span>
@@ -650,6 +685,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_range</span><span class="p">(</span><span class="n">startRow</span><span class="p">,</span> <span class="n">startCol</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -661,6 +697,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.range_double">[docs]</a>
     <span class="k">def</span> <span class="nf">range_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Computes the minimum and maximum range of the data, in doubles,</span>
 <span class="sd">        in a vector while ignoring dummies.</span>
 <span class="sd">        </span>
@@ -673,6 +710,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_range_double</span><span class="p">(</span><span class="nb">min</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">max</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -684,6 +722,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.range_columns">[docs]</a>
     <span class="k">def</span> <span class="nf">range_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">startRow</span><span class="p">,</span> <span class="n">startCol</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">minimums</span><span class="p">,</span> <span class="n">maximums</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Computes the minimum and maximum range of the data for individual columns, in doubles,</span>
 <span class="sd">        for a range of columns and rows.</span>
 <span class="sd">        </span>
@@ -704,6 +743,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_range_columns</span><span class="p">(</span><span class="n">startRow</span><span class="p">,</span> <span class="n">startCol</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">minimums</span><span class="p">,</span> <span class="n">maximums</span><span class="p">)</span></div>
 
         
@@ -715,6 +755,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.re_fid">[docs]</a>
     <span class="k">def</span> <span class="nf">re_fid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Re-sample a `GXVA &lt;geosoft.gxapi.GXVA&gt;` to a new fid start/icrement</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:   New fid start</span>
@@ -728,6 +769,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_re_fid</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span></div>
 
         
@@ -739,6 +781,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.reverse">[docs]</a>
     <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Reverses the order of the rows in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 
@@ -746,6 +789,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_reverse</span><span class="p">()</span></div>
 
         
@@ -757,6 +801,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_fid_incr">[docs]</a>
     <span class="k">def</span> <span class="nf">get_fid_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets the Fiducial increment from a `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        </span>
 
@@ -767,6 +812,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fid_incr</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -778,6 +824,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_fid_start">[docs]</a>
     <span class="k">def</span> <span class="nf">get_fid_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets the Fiducial start from a `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        </span>
 
@@ -788,6 +835,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fid_start</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -799,6 +847,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.get_double">[docs]</a>
     <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a real element from a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row</span>
@@ -817,6 +866,7 @@
 <span class="sd">        **Note:** Type conversions are performed if necessary.  Dummy values</span>
 <span class="sd">        are converted to &quot;*&quot; string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -828,6 +878,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_fid_incr">[docs]</a>
     <span class="k">def</span> <span class="nf">set_fid_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets the Fiducial increment of a `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param incr:  New increment</span>
@@ -837,6 +888,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_fid_incr</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span></div>
 
         
@@ -848,6 +900,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_fid_start">[docs]</a>
     <span class="k">def</span> <span class="nf">set_fid_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets the Fiducial start of a `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  New start</span>
@@ -857,6 +910,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_fid_start</span><span class="p">(</span><span class="n">start</span><span class="p">)</span></div>
 
         
@@ -868,6 +922,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_int">[docs]</a>
     <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set an integer element in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:    Row</span>
@@ -885,6 +940,7 @@
 <span class="sd">        If the element is &gt; current `GXVA &lt;geosoft.gxapi.GXVA&gt;` length, the `GXVA &lt;geosoft.gxapi.GXVA&gt;` length is</span>
 <span class="sd">        increased.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
         
@@ -896,6 +952,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_int_n">[docs]</a>
     <span class="k">def</span> <span class="nf">set_int_n</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set N rows of integer elements in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Start row index (&gt;= 0)</span>
@@ -913,6 +970,7 @@
 <span class="sd">        If the element row index is &gt;= current `GXVA &lt;geosoft.gxapi.GXVA&gt;` length, the `GXVA &lt;geosoft.gxapi.GXVA&gt;` length is</span>
 <span class="sd">        increased.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int_n</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
         
@@ -924,6 +982,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_ln">[docs]</a>
     <span class="k">def</span> <span class="nf">set_ln</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the length (number of rows) of the `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param rows:  Length</span>
@@ -936,6 +995,7 @@
 <span class="sd">        **Note:** The number of columns in a `GXVA &lt;geosoft.gxapi.GXVA&gt;` is fixed, and cannot be</span>
 <span class="sd">        altered once the `GXVA &lt;geosoft.gxapi.GXVA&gt;` is created.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_ln</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span></div>
 
         
@@ -947,6 +1007,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_double">[docs]</a>
     <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a real element in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:    Row</span>
@@ -964,6 +1025,7 @@
 <span class="sd">        If the element is &gt; current `GXVA &lt;geosoft.gxapi.GXVA&gt;` length, the `GXVA &lt;geosoft.gxapi.GXVA&gt;` length is</span>
 <span class="sd">        increased.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
         
@@ -975,6 +1037,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_string">[docs]</a>
     <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a string element in a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:    Row</span>
@@ -992,6 +1055,7 @@
 <span class="sd">        If the element is &gt; current `GXVA &lt;geosoft.gxapi.GXVA&gt;` length, the `GXVA &lt;geosoft.gxapi.GXVA&gt;` length is</span>
 <span class="sd">        increased.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1003,6 +1067,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.set_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">set_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no</span><span class="p">,</span> <span class="n">row_col</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a row or column of data in an array from a `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param no:       Row or Column # (0 is first)</span>
@@ -1016,6 +1081,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_vv</span><span class="p">(</span><span class="n">no</span><span class="p">,</span> <span class="n">row_col</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -1027,6 +1093,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.trans">[docs]</a>
     <span class="k">def</span> <span class="nf">trans</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Translate (`GXVA &lt;geosoft.gxapi.GXVA&gt;` + base ) * mult</span>
 <span class="sd">        </span>
 <span class="sd">        :param base:  Base value</span>
@@ -1040,6 +1107,7 @@
 
 <span class="sd">        **Note:** Supports all `GXVA &lt;geosoft.gxapi.GXVA&gt;` types using an internal double `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_trans</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">mult</span><span class="p">)</span></div>
 
         
@@ -1051,6 +1119,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.window">[docs]</a>
     <span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Window a `GXVA &lt;geosoft.gxapi.GXVA&gt;` to a `GXVV &lt;geosoft.gxapi.GXVV&gt;` based in intergral frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  First element in the window</span>
@@ -1069,6 +1138,7 @@
 <span class="sd">        values in the window.</span>
 <span class="sd">        If any values are dummy, the result will be dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_window</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -1080,6 +1150,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.window2">[docs]</a>
     <span class="k">def</span> <span class="nf">window2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Window a `GXVA &lt;geosoft.gxapi.GXVA&gt;` to a `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on fractional frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Start point (from 0.0)</span>
@@ -1098,6 +1169,7 @@
 <span class="sd">        values in the window.</span>
 <span class="sd">        If any values are dummy, the result will be dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_window2</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -1109,6 +1181,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.check_for_repeating">[docs]</a>
     <span class="k">def</span> <span class="nf">check_for_repeating</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_t</span><span class="p">,</span> <span class="n">subtract_vv</span><span class="p">,</span> <span class="n">vv_sub</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Window a `GXVA &lt;geosoft.gxapi.GXVA&gt;` to a `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on fractional frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_t:         Items to test for repeats (length equal to the number of columns in the `GXVA &lt;geosoft.gxapi.GXVA&gt;`)</span>
@@ -1133,6 +1206,7 @@
 <span class="sd">        have been offset with topography on each row.</span>
 <span class="sd">        An absolute tolerance can be specified to ignore numerical noise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_for_repeating</span><span class="p">(</span><span class="n">vv_t</span><span class="p">,</span> <span class="n">subtract_vv</span><span class="p">,</span> <span class="n">vv_sub</span><span class="p">,</span> <span class="n">tol</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1144,6 +1218,7 @@
 <a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.check_for_repeating2">[docs]</a>
     <span class="k">def</span> <span class="nf">check_for_repeating2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_t</span><span class="p">,</span> <span class="n">subtract_vv</span><span class="p">,</span> <span class="n">vv_sub</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">bad_row</span><span class="p">,</span> <span class="n">bad_col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Window a `GXVA &lt;geosoft.gxapi.GXVA&gt;` to a `GXVV &lt;geosoft.gxapi.GXVV&gt;` based on fractional frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_t:         Items to test for repeats (length equal to the number of columns in the `GXVA &lt;geosoft.gxapi.GXVA&gt;`)</span>
@@ -1173,8 +1248,10 @@
 <span class="sd">        An absolute tolerance can be specified to ignore numerical noise.</span>
 <span class="sd">        This version returns the row and column index of first mismatch.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">bad_row</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bad_col</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_for_repeating2</span><span class="p">(</span><span class="n">vv_t</span><span class="p">,</span> <span class="n">subtract_vv</span><span class="p">,</span> <span class="n">vv_sub</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">bad_row</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bad_col</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
+</div>
 
 
 
@@ -1184,25 +1261,6 @@
 <span class="c1">### endblock ClassImplementation</span>
 <span class="c1">### block ClassExtend</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
-    <span class="k">def</span> <span class="nf">get_array_np</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">start_col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">np_dtype</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">)):</span>
-        <span class="kn">from</span> <span class="nn">.GXNumpy</span> <span class="kn">import</span> <span class="n">gs_from_np</span>
-        <span class="n">gs_type</span> <span class="o">=</span> <span class="n">gs_from_np</span><span class="p">(</span><span class="n">np_dtype</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_data_array</span><span class="p">(</span><span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">set_array_np</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">start_col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">np_array</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
-        <span class="kn">from</span> <span class="nn">.GXNumpy</span> <span class="kn">import</span> <span class="n">gs_from_np</span>
-        <span class="n">gs_type</span> <span class="o">=</span> <span class="n">gs_from_np</span><span class="p">(</span><span class="n">np_array</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">np_array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">GXAPIError</span><span class="p">(</span><span class="s2">&quot;Only 2D Numpy arrays supported for this method&quot;</span><span class="p">);</span>
-        <span class="n">rows</span> <span class="o">=</span> <span class="n">np_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-        <span class="n">columns</span> <span class="o">=</span> <span class="n">np_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">np_array</span><span class="o">.</span><span class="n">flags</span><span class="p">[</span><span class="s1">&#39;C_CONTIGUOUS&#39;</span><span class="p">]:</span>
-            <span class="n">np_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_array</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">np_array</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">tobytes</span><span class="p">(),</span> <span class="n">gs_type</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">get_data_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">start_col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">gxapi_cy_extend</span><span class="o">.</span><span class="n">GXMemMethods</span><span class="o">.</span><span class="n">get_array_data_va</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_internal_p</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">(),</span> <span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">)</span></div>
-
 <span class="c1">### endblock ClassExtend</span>
 
 
@@ -1223,7 +1281,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVA</a></li> 
@@ -1231,7 +1289,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXEDB &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXEDB &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDB</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXEDB</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXDB</span> <span class="kn">import</span> <span class="n">GXDB</span>
@@ -138,6 +138,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.apply_formula_internal">[docs]</a>
     <span class="k">def</span> <span class="nf">apply_formula_internal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">formula</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply a formula to selected cells of the</span>
 <span class="sd">        current line. (Do not use this wrapper if you</span>
 <span class="sd">        want to apply a formula across multiple lines)</span>
@@ -166,6 +167,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_apply_formula_internal</span><span class="p">(</span><span class="n">formula</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -177,6 +179,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the Current Edited Database.</span>
 <span class="sd">        </span>
 
@@ -189,6 +192,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -200,6 +204,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the Current Edited Database.</span>
 <span class="sd">        </span>
 
@@ -215,6 +220,7 @@
 <span class="sd">        **Note:** This function acts just like `current &lt;geosoft.gxapi.GXEDB.current&gt;` except that the document is not activated (brought to foreground) and no</span>
 <span class="sd">        guarantee is given about which document is currently active.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_current_no_activate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -226,6 +232,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_if_exists</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the Current Edited Database.</span>
 <span class="sd">        </span>
 
@@ -239,6 +246,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_current_if_exists</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -250,6 +258,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.del_line0">[docs]</a>
     <span class="k">def</span> <span class="nf">del_line0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Delete Line 0.</span>
 <span class="sd">        </span>
 
@@ -261,6 +270,7 @@
 
 <span class="sd">        **Note:** Deletes an empty line 0 from the database.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_del_line0</span><span class="p">()</span></div>
 
         
@@ -274,6 +284,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.destroy_view">[docs]</a>
     <span class="k">def</span> <span class="nf">destroy_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unload_flag</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Removes the view from the workspace.</span>
 <span class="sd">        </span>
 <span class="sd">        :param unload_flag:  :ref:`EDB_REMOVE`</span>
@@ -291,6 +302,7 @@
 <span class="sd">        unloaded and optionally saved depending on the :ref:`EDB_REMOVE`</span>
 <span class="sd">        parameter.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_destroy_view</span><span class="p">(</span><span class="n">unload_flag</span><span class="p">)</span></div>
 
         
@@ -302,6 +314,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_chan_symb">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_chan_symb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the currently marked channel symbol.</span>
 <span class="sd">        </span>
 
@@ -315,6 +328,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_chan_symb</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -326,6 +340,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_line_symb">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_line_symb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get current line symbol.</span>
 <span class="sd">        </span>
 
@@ -339,6 +354,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_line_symb</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -350,6 +366,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_displ_fid_range">[docs]</a>
     <span class="k">def</span> <span class="nf">get_displ_fid_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return the displayed fiducial start index &amp; number of cells</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Fiducial start</span>
@@ -363,6 +380,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_displ_fid_range</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -374,6 +392,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_point">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of the currently selected point in the database (first value if range selected)</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:    X coordinate (dummy if no selection or if no X channel defined)</span>
@@ -389,6 +408,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_point</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -400,6 +420,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_fid_range">[docs]</a>
     <span class="k">def</span> <span class="nf">get_fid_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns currently displayed fid range</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Fiducial start</span>
@@ -415,6 +436,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">incr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_fid_range</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">incr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -426,6 +448,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_next_line_symb">[docs]</a>
     <span class="k">def</span> <span class="nf">get_next_line_symb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the next line symbol.</span>
 <span class="sd">        </span>
 
@@ -439,6 +462,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_next_line_symb</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -450,6 +474,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_prev_line_symb">[docs]</a>
     <span class="k">def</span> <span class="nf">get_prev_line_symb</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the previous line symbol.</span>
 <span class="sd">        </span>
 
@@ -463,6 +488,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_prev_line_symb</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -474,6 +500,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_x_axis_options">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_x_axis_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rescale_x</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile X-axis options</span>
 <span class="sd">        </span>
 <span class="sd">        :param rescale_x:  Auto rescale X-axis</span>
@@ -489,6 +516,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">rescale_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lines</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">interval</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_x_axis_options</span><span class="p">(</span><span class="n">rescale_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lines</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">interval</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -500,6 +528,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_x_axis_options">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_x_axis_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rescale_x</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set profile X-axis options</span>
 <span class="sd">        </span>
 <span class="sd">        :param rescale_x:  Auto rescale X-axis</span>
@@ -515,6 +544,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_x_axis_options</span><span class="p">(</span><span class="n">rescale_x</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">interval</span><span class="p">)</span></div>
 
         
@@ -526,6 +556,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_range_x">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_range_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">ph_chan_x</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile X range and X channel</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:      Minimum x</span>
@@ -541,6 +572,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ph_chan_x</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_range_x</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ph_chan_x</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -552,6 +584,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_range_y">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_range_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">scl</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile Y range and display option</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -571,6 +604,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">scl</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_range_y</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">scl</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -582,6 +616,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_split">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile split for 3 windows.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d1:   Split d1 (profile window 0 height / entire profile window height)</span>
@@ -595,6 +630,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">d1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d2</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_split</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d2</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -606,6 +642,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_split5">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_split5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">d4</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile split for 5 windows.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d1:   Split d1 (profile window 0 height / entire profile window height)</span>
@@ -623,6 +660,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">d1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d4</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_split5</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d4</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -634,6 +672,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_split_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_split_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile window splits.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:   Split `GXVV &lt;geosoft.gxapi.GXVV&gt;` (REAL) (profile window heights / entire profile window height)</span>
@@ -654,6 +693,7 @@
 <span class="sd">        profile windows. To get/set the fraction of the total database window</span>
 <span class="sd">        devoted to the profiles, use the `set_split &lt;geosoft.gxapi.GXEDB.set_split&gt;` and `get_split &lt;geosoft.gxapi.GXEDB.get_split&gt;` functions.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_split_vv</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -665,6 +705,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_vertical_grid_lines">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_vertical_grid_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile grid vertical line info.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:      Vertical grid lines?</span>
@@ -678,6 +719,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">interval</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_vertical_grid_lines</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">interval</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -689,6 +731,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_window">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get profile window size</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -704,6 +747,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_window</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -715,6 +759,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.goto_column">[docs]</a>
     <span class="k">def</span> <span class="nf">goto_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Move the channel marker to a specific column.</span>
 <span class="sd">        </span>
 <span class="sd">        :param col:  Channel column number, 0 is first -1 for first column without data</span>
@@ -726,6 +771,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_goto_column</span><span class="p">(</span><span class="n">col</span><span class="p">)</span></div>
 
         
@@ -737,6 +783,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.goto_elem">[docs]</a>
     <span class="k">def</span> <span class="nf">goto_elem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Goto an element in the current line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param elem:  Element number</span>
@@ -748,6 +795,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_goto_elem</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span></div>
 
         
@@ -759,6 +807,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.goto_line">[docs]</a>
     <span class="k">def</span> <span class="nf">goto_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line_symb</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Goto to a line symbol in the editor.</span>
 <span class="sd">        </span>
 <span class="sd">        :param line_symb:  Line symbol to goto to</span>
@@ -770,6 +819,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_goto_line</span><span class="p">(</span><span class="n">line_symb</span><span class="p">)</span></div>
 
         
@@ -781,6 +831,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.histogram">[docs]</a>
     <span class="k">def</span> <span class="nf">histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create histogram stats.</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:     `GXST &lt;geosoft.gxapi.GXST&gt;` handle to update</span>
@@ -798,6 +849,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_histogram</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span></div>
 
         
@@ -809,6 +861,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.all_chan_list">[docs]</a>
     <span class="k">def</span> <span class="nf">all_chan_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of the all channels but in the way they are displayed.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` (INT) in which to place the list.</span>
@@ -833,6 +886,7 @@
 
 <span class="sd">            `disp_chan_list &lt;geosoft.gxapi.GXEDB.disp_chan_list&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_chan_list</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -844,6 +898,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.channels">[docs]</a>
     <span class="k">def</span> <span class="nf">channels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns number of displayed channels</span>
 <span class="sd">        </span>
 
@@ -856,6 +911,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -867,6 +923,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.disp_chan_list">[docs]</a>
     <span class="k">def</span> <span class="nf">disp_chan_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of the displayed channel symbols.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` (INT) in which to place the list.</span>
@@ -891,6 +948,7 @@
 
 <span class="sd">            `disp_chan_lst &lt;geosoft.gxapi.GXEDB.disp_chan_lst&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_disp_chan_list</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -902,6 +960,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.disp_chan_lst">[docs]</a>
     <span class="k">def</span> <span class="nf">disp_chan_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of the displayed channel names.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  `GXLST &lt;geosoft.gxapi.GXLST&gt;` object</span>
@@ -927,6 +986,7 @@
 
 <span class="sd">            `disp_chan_list &lt;geosoft.gxapi.GXEDB.disp_chan_list&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_disp_chan_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -938,6 +998,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.disp_class_chan_lst">[docs]</a>
     <span class="k">def</span> <span class="nf">disp_class_chan_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">class_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of the displayed channels in a given channel class.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:         `GXLST &lt;geosoft.gxapi.GXLST&gt;` object</span>
@@ -968,6 +1029,7 @@
 
 <span class="sd">            `disp_chan_list &lt;geosoft.gxapi.GXEDB.disp_chan_list&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_disp_class_chan_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">class_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -979,6 +1041,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.find_channel_column">[docs]</a>
     <span class="k">def</span> <span class="nf">find_channel_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the column that contains a channel</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:  Channel</span>
@@ -994,6 +1057,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_channel_column</span><span class="p">(</span><span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1005,6 +1069,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.find_nearest">[docs]</a>
     <span class="k">def</span> <span class="nf">find_nearest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the nearest point on the current line based</span>
 <span class="sd">        on X,Y and Z and their projection.</span>
 <span class="sd">        </span>
@@ -1027,6 +1092,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_nearest</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ipj</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1038,6 +1104,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_chan">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_chan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get current channel name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Where to put the name</span>
@@ -1051,6 +1118,7 @@
 
 <span class="sd">        **Note:** Returns &quot;&quot; if mark not currently in a channel.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_chan</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1062,6 +1130,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_fid_string">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_fid_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the currently selected value</span>
 <span class="sd">        at the current fid (if available).</span>
 <span class="sd">        </span>
@@ -1074,6 +1143,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_fid_string</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1085,6 +1155,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_line">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get current line name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Where to put the name</span>
@@ -1096,6 +1167,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">str_val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_line</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1107,6 +1179,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_mark">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_mark</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">inc</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the current data mark info.</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Start fiducial</span>
@@ -1126,6 +1199,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">inc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_mark</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">inc</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1137,6 +1211,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_current_selection">[docs]</a>
     <span class="k">def</span> <span class="nf">get_current_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">fid</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get current selection information.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database name</span>
@@ -1160,6 +1235,7 @@
 <span class="sd">        &quot;[None]&quot;  if no values are selected</span>
 <span class="sd">        &quot;10 to 20&quot;  giving the range of values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">db</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">fid</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_current_selection</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1171,6 +1247,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_databases_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load the file names of open databases into a `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   `GXLST &lt;geosoft.gxapi.GXLST&gt;` to load</span>
@@ -1188,6 +1265,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_get_databases_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1199,6 +1277,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_mark_chan_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_mark_chan_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get channel data for the current mark.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:    `GXVV &lt;geosoft.gxapi.GXVV&gt;` in which to place the data.</span>
@@ -1223,6 +1302,7 @@
 
 <span class="sd">        The `GXVV &lt;geosoft.gxapi.GXVV&gt;` will be resized to the length of the data</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_mark_chan_vv</span><span class="p">(</span><span class="n">vv</span><span class="p">,</span> <span class="n">chan</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1234,6 +1314,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_mark_chan_va">[docs]</a>
     <span class="k">def</span> <span class="nf">get_mark_chan_va</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get channel data for the current mark.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:    `GXVA &lt;geosoft.gxapi.GXVA&gt;` in which to place the data.</span>
@@ -1258,6 +1339,7 @@
 
 <span class="sd">        The `GXVA &lt;geosoft.gxapi.GXVA&gt;` will be resized to the length of the data</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_mark_chan_va</span><span class="p">(</span><span class="n">vv</span><span class="p">,</span> <span class="n">chan</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1269,6 +1351,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the name of the database object of this `GXEDB &lt;geosoft.gxapi.GXEDB&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name returned</span>
@@ -1280,6 +1363,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1291,6 +1375,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_parm_int">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_parm_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get integer profile parameter</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -1309,6 +1394,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_parm_int</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1320,6 +1406,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_window_state">[docs]</a>
     <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve the current state of the database window</span>
 <span class="sd">        </span>
 
@@ -1332,6 +1419,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_state</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1343,6 +1431,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">have_current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if any database is currently loaded</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:      bool</span>
@@ -1353,6 +1442,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_have_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1364,6 +1454,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.is_locked">[docs]</a>
     <span class="k">def</span> <span class="nf">is_locked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if the database locked</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:      bool</span>
@@ -1374,6 +1465,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_locked</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1385,6 +1477,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">loaded</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if a specific database is loaded.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Database name</span>
@@ -1397,6 +1490,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_loaded</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1408,6 +1502,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.profile_open">[docs]</a>
     <span class="k">def</span> <span class="nf">profile_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return TRUE or FALSE if profile window is open</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number: 0 is the top window 1 is the middle window 2 is the bottom window</span>
@@ -1426,6 +1521,7 @@
 <span class="sd">        **Note:** This functions will return FALSE if requested window</span>
 <span class="sd">        is not supported in current version of Oasis montaj.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_profile_open</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1437,6 +1533,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.read_only">[docs]</a>
     <span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if a database is currently opened in a read-only mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:      bool</span>
@@ -1447,6 +1544,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_only</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1458,6 +1556,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_window_position">[docs]</a>
     <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -1479,6 +1578,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_position</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1490,6 +1590,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_window_position">[docs]</a>
     <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -1511,6 +1612,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_position</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">)</span></div>
 
         
@@ -1522,6 +1624,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.show_profile_name">[docs]</a>
     <span class="k">def</span> <span class="nf">show_profile_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Show a profile in the profile window</span>
 <span class="sd">        </span>
 <span class="sd">        :param state:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -1540,6 +1643,7 @@
 
 <span class="sd">        **Note:** If the symbol is not loaded, it will be loaded.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_show_profile_name</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1551,6 +1655,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.profile_shown">[docs]</a>
     <span class="k">def</span> <span class="nf">profile_shown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return index of first profile window in which a profile is shown</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:  Name of the channel</span>
@@ -1567,6 +1672,7 @@
 
 <span class="sd">        **Note:** Returns -1 if channel profile is not loaded.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_profile_shown</span><span class="p">(</span><span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1578,6 +1684,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_window_y_axis_direction">[docs]</a>
     <span class="k">def</span> <span class="nf">get_window_y_axis_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the y-axis direction for a window</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -1592,6 +1699,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_y_axis_direction</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1603,6 +1711,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.window_profiles">[docs]</a>
     <span class="k">def</span> <span class="nf">window_profiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get number of profiles in a window</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -1617,6 +1726,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_window_profiles</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1628,6 +1738,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.launch_histogram">[docs]</a>
     <span class="k">def</span> <span class="nf">launch_histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Launch histogram tool on a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:  First chan name</span>
@@ -1641,6 +1752,7 @@
 
 <span class="sd">            `GXCHIMERA.launch_histogram &lt;geosoft.gxapi.GXCHIMERA.launch_histogram&gt;` in chimera.gxh</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_launch_histogram</span><span class="p">(</span><span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1652,6 +1764,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.launch_scatter">[docs]</a>
     <span class="k">def</span> <span class="nf">launch_scatter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Launch scatter tool on a database.</span>
 <span class="sd">        </span>
 
@@ -1671,6 +1784,7 @@
 
 <span class="sd">            `GXCHIMERA.launch_scatter &lt;geosoft.gxapi.GXCHIMERA.launch_scatter&gt;` in chimera.gxh</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_launch_scatter</span><span class="p">()</span></div>
 
         
@@ -1682,6 +1796,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads a list of databases into the workspace</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  List of databases (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -1705,6 +1820,7 @@
 <span class="sd">        All other files in the list are assumed to be in the same</span>
 <span class="sd">        directory as the first file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1716,6 +1832,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads documents into the workspace</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  List of documents (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -1734,6 +1851,7 @@
 <span class="sd">        **Note:** This function acts just like `load &lt;geosoft.gxapi.GXEDB.load&gt;` except that the document(s) is not activated (brought to foreground) and no</span>
 <span class="sd">        guarantee is given about which document is currently active.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_no_activate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1745,6 +1863,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.load_all_chans">[docs]</a>
     <span class="k">def</span> <span class="nf">load_all_chans</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load all channels into current database</span>
 <span class="sd">        </span>
 
@@ -1754,6 +1873,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_all_chans</span><span class="p">()</span></div>
 
         
@@ -1765,6 +1885,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.load_chan">[docs]</a>
     <span class="k">def</span> <span class="nf">load_chan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a channel into current database</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:  Channel name</span>
@@ -1779,6 +1900,7 @@
 <span class="sd">        **Note:** If the channel does not exist, or if channel is already</span>
 <span class="sd">        loaded nothing happens.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_chan</span><span class="p">(</span><span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1790,6 +1912,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_new</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads a database into the workspace, flags as new.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Database to load.</span>
@@ -1808,6 +1931,7 @@
 <span class="sd">        an internal flag such that if on closing the user chooses</span>
 <span class="sd">        not to save changes, the database is deleted.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_new</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1819,6 +1943,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_pass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads a database into the editor with login and password.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:      Name of database to load</span>
@@ -1842,6 +1967,7 @@
 <span class="sd">        If the database is already loaded, it simply becomes</span>
 <span class="sd">        the current database.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_pass</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">login</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1853,6 +1979,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_with_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load an `GXEDB &lt;geosoft.gxapi.GXEDB&gt;` with the view from a current `GXEDB &lt;geosoft.gxapi.GXEDB&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Source `GXDB &lt;geosoft.gxapi.GXDB&gt;` name</span>
@@ -1873,6 +2000,7 @@
 <span class="sd">        dbsubset to create a new database with the same</span>
 <span class="sd">        view as previously.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_with_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p2</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1884,6 +2012,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.lock">[docs]</a>
     <span class="k">def</span> <span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method locks the Edited Database.</span>
 <span class="sd">        </span>
 
@@ -1896,6 +2025,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1907,6 +2037,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.make_current">[docs]</a>
     <span class="k">def</span> <span class="nf">make_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Makes this `GXEDB &lt;geosoft.gxapi.GXEDB&gt;` object the current active object to the user.</span>
 <span class="sd">        </span>
 
@@ -1916,6 +2047,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_current</span><span class="p">()</span></div>
 
         
@@ -1927,6 +2059,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.remove_profile">[docs]</a>
     <span class="k">def</span> <span class="nf">remove_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove a profile from the profile window</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -1940,6 +2073,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_remove_profile</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">)</span></div>
 
         
@@ -1951,6 +2085,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_cur_fid">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_fid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the currently selected fiducial if</span>
 <span class="sd">        the user is selecting a fiducial. If not, it returns</span>
 <span class="sd">        a dummy.</span>
@@ -1966,6 +2101,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_fid</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1977,6 +2113,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_profile_parm_double">[docs]</a>
     <span class="k">def</span> <span class="nf">get_profile_parm_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get real profile parameter</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -1995,6 +2132,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_profile_parm_double</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2006,6 +2144,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_split">[docs]</a>
     <span class="k">def</span> <span class="nf">get_split</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get split ratio between spreadsheet and profile sections.</span>
 <span class="sd">        </span>
 
@@ -2019,6 +2158,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_split</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2030,6 +2170,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.run_channel_maker">[docs]</a>
     <span class="k">def</span> <span class="nf">run_channel_maker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Run the maker for a single channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:  Channel name</span>
@@ -2044,6 +2185,7 @@
 <span class="sd">        **Note:** Skips channels without makers; will not return an</span>
 <span class="sd">        error if the channel does not exist.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_run_channel_maker</span><span class="p">(</span><span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2055,6 +2197,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.run_channel_makers">[docs]</a>
     <span class="k">def</span> <span class="nf">run_channel_makers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Recreate channels with makers.</span>
 <span class="sd">        </span>
 
@@ -2066,6 +2209,7 @@
 
 <span class="sd">        **Note:** Skips channels without makers.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_run_channel_makers</span><span class="p">()</span></div>
 
         
@@ -2077,6 +2221,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_cur_line">[docs]</a>
     <span class="k">def</span> <span class="nf">set_cur_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the current line name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param line:  Line name</span>
@@ -2088,6 +2233,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_cur_line</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2099,6 +2245,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_cur_line_no_message">[docs]</a>
     <span class="k">def</span> <span class="nf">set_cur_line_no_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set Line but do not send a message.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Line name</span>
@@ -2110,6 +2257,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_cur_line_no_message</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2121,6 +2269,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_cur_mark">[docs]</a>
     <span class="k">def</span> <span class="nf">set_cur_mark</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the current mark.</span>
 <span class="sd">        </span>
 <span class="sd">        :param start:  Start fiducial</span>
@@ -2134,6 +2283,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_cur_mark</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></div>
 
         
@@ -2145,6 +2295,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_parm_i">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_parm_i</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set integer profile parameter</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -2162,6 +2313,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_parm_i</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
         
@@ -2173,6 +2325,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_parm_r">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_parm_r</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set real profile parameter</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -2190,6 +2343,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_parm_r</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">parm</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
         
@@ -2201,6 +2355,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_range_x">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_range_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set profile X range and X channel</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  Minimum x, `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for data minimum</span>
@@ -2216,6 +2371,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_range_x</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">)</span></div>
 
         
@@ -2227,6 +2383,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_range_y">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_range_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">scl</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set profile Y range and display option</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -2249,6 +2406,7 @@
 <span class="sd">        **Note:** If channel is not loaded or displayed, it will</span>
 <span class="sd">        loaded and/or displayed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_range_y</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">prof</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">scl</span><span class="p">)</span></div>
 
         
@@ -2260,6 +2418,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.profile_rescale_all">[docs]</a>
     <span class="k">def</span> <span class="nf">profile_rescale_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Rescale all profiles in a selected window in both X and Y, based on current scaling selections</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, see `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -2271,6 +2430,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_profile_rescale_all</span><span class="p">(</span><span class="n">window</span><span class="p">)</span></div>
 
         
@@ -2282,6 +2442,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_split">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set profile split for 3 windows.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d1:   Split d1 (profile window 0 height / entire profile window height)</span>
@@ -2295,6 +2456,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_split</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span></div>
 
         
@@ -2306,6 +2468,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_split5">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_split5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">d4</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set profile split for 5 windows.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d1:   Split d1 (profile window 0 height / entire profile window height)</span>
@@ -2323,6 +2486,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_split5</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">,</span> <span class="n">d4</span><span class="p">)</span></div>
 
         
@@ -2334,6 +2498,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_profile_split_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">set_profile_split_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set profile splits</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:   Split `GXVV &lt;geosoft.gxapi.GXVV&gt;` (REAL) (relative sizes of each profile window)</span>
@@ -2352,6 +2517,7 @@
 <span class="sd">        `GXVV &lt;geosoft.gxapi.GXVV&gt;` values beyond the maximum number of displayable</span>
 <span class="sd">        profiles (`MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`) are ignored.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_profile_split_vv</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -2363,6 +2529,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_split">[docs]</a>
     <span class="k">def</span> <span class="nf">set_split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set split ratio between spreadsheet and profile sections.</span>
 <span class="sd">        </span>
 <span class="sd">        :param d:    Split d (0.0 &lt;= d &lt;= 1.0).</span>
@@ -2377,6 +2544,7 @@
 <span class="sd">        **Note:** d = (spreadsheet window height/</span>
 <span class="sd">        (spreadsheet window height + entire profile window height))</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_split</span><span class="p">(</span><span class="n">d</span><span class="p">)</span></div>
 
         
@@ -2388,6 +2556,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_window_state">[docs]</a>
     <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Changes the state of the database window</span>
 <span class="sd">        </span>
 <span class="sd">        :param state:  :ref:`EDB_WINDOW_STATE`</span>
@@ -2399,6 +2568,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span></div>
 
         
@@ -2410,6 +2580,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.show_profile">[docs]</a>
     <span class="k">def</span> <span class="nf">show_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">symb</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Show a profile in the profile window</span>
 <span class="sd">        </span>
 <span class="sd">        :param window:  Profile window number (0 to `MAX_PROF_WND &lt;geosoft.gxapi.MAX_PROF_WND&gt;`-1, -1 to plot to the currently selected profile window. See `profile_open &lt;geosoft.gxapi.GXEDB.profile_open&gt;`)</span>
@@ -2425,6 +2596,7 @@
 
 <span class="sd">        **Note:** If the symbol is not loaded, it will be loaded.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_show_profile</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">symb</span><span class="p">)</span></div>
 
         
@@ -2436,6 +2608,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.statistics">[docs]</a>
     <span class="k">def</span> <span class="nf">statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add all currently selected data to the `GXST &lt;geosoft.gxapi.GXST&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:   `GXST &lt;geosoft.gxapi.GXST&gt;` handle to update</span>
@@ -2449,6 +2622,7 @@
 
 <span class="sd">        **Note:** Use `histogram &lt;geosoft.gxapi.GXEDB.histogram&gt;` to get median or histogram.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_statistics</span><span class="p">(</span><span class="n">st</span><span class="p">)</span></div>
 
         
@@ -2460,6 +2634,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unloads an edited database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of database to unload</span>
@@ -2474,6 +2649,7 @@
 <span class="sd">        **Note:** If the database is not loaded, nothing happens.</span>
 <span class="sd">        Same as `un_load_verify &lt;geosoft.gxapi.GXEDB.un_load_verify&gt;` with FALSE to prompt save.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_un_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2485,6 +2661,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_all</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unloads all opened databases</span>
 <span class="sd">        </span>
 
@@ -2494,6 +2671,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_un_load_all</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
 
         
@@ -2505,6 +2683,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.un_load_all_chans">[docs]</a>
     <span class="k">def</span> <span class="nf">un_load_all_chans</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unload all channels into current database</span>
 <span class="sd">        </span>
 
@@ -2514,6 +2693,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_un_load_all_chans</span><span class="p">()</span></div>
 
         
@@ -2525,6 +2705,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.un_load_chan">[docs]</a>
     <span class="k">def</span> <span class="nf">un_load_chan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unload a channel into current database</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:  Channel name</span>
@@ -2539,6 +2720,7 @@
 <span class="sd">        **Note:** If the channel does not exist, or if channel is already</span>
 <span class="sd">        loaded nothing happens.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_un_load_chan</span><span class="p">(</span><span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2550,6 +2732,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_discard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unloads a database in the workspace, discards changes.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of database to unload</span>
@@ -2563,6 +2746,7 @@
 
 <span class="sd">        **Note:** If the database is not loaded, nothing happens.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_un_load_discard</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2574,6 +2758,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_verify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unloads an edited database, optional prompt to save.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:    Name of database to unload</span>
@@ -2593,6 +2778,7 @@
 <span class="sd">        EDB_UNLOAD_MULTIPROMPT is now obsolete and</span>
 <span class="sd">        is equivalent to `EDB_UNLOAD_SINGLE_PROMPT &lt;geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_un_load_verify</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prompt</span><span class="p">)</span></div>
 
         
@@ -2604,6 +2790,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.un_lock">[docs]</a>
     <span class="k">def</span> <span class="nf">un_lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method unlocks the Edited Database.</span>
 <span class="sd">        </span>
 
@@ -2613,6 +2800,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_un_lock</span><span class="p">()</span></div>
 
         
@@ -2628,6 +2816,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db_file</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Version of `load &lt;geosoft.gxapi.GXEDB.load&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db_file:  Database filename</span>
@@ -2641,6 +2830,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">window</span><span class="p">)</span></div>
 
         
@@ -2652,6 +2842,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_new_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db_file</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Version of `load_new &lt;geosoft.gxapi.GXEDB.load_new&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db_file:  Database filename</span>
@@ -2665,6 +2856,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_new_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">window</span><span class="p">)</span></div>
 
         
@@ -2676,6 +2868,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_pass_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db_file</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Version of `load_pass &lt;geosoft.gxapi.GXEDB.load_pass&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db_file:   Database filename</span>
@@ -2693,6 +2886,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_pass_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">user</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">window</span><span class="p">)</span></div>
 
         
@@ -2704,6 +2898,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_with_view_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db_file</span><span class="p">,</span> <span class="n">edb</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Version of `load_with_view &lt;geosoft.gxapi.GXEDB.load_with_view&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db_file:  Database filename</span>
@@ -2719,6 +2914,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_load_with_view_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">edb</span><span class="p">,</span> <span class="n">window</span><span class="p">)</span></div>
 
         
@@ -2726,7 +2922,180 @@
 
 
 
-<span class="c1"># Obsolete</span>
+<span class="c1"># Deprecated</span>
+
+
+<div class="viewcode-block" id="GXEDB.no_load">
+<a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.no_load">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">no_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Makes a database the Edited Database without loading it.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Single databases to &quot;not&quot; load</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     Handle to current edited database</span>
+<span class="sd">        :rtype:       GXEDB</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEDB</span><span class="o">.</span><span class="n">_no_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXEDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXEDB.read_data_view_bf">
+<a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.read_data_view_bf">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_data_view_bf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line_group</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Retrieve view info from the database via a `GXBF &lt;geosoft.gxapi.GXBF&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param line_group:  Line or group symbol</span>
+<span class="sd">        :param bf:          `GXBF &lt;geosoft.gxapi.GXBF&gt;` (returned)</span>
+<span class="sd">        :type  line_group:  int</span>
+<span class="sd">        :type  bf:          GXBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Returns info on loaded channels and profiles for a given line.</span>
+<span class="sd">        You can use `NULLSYMB &lt;geosoft.gxapi.NULLSYMB&gt;` to get the line view info from normal lines,</span>
+<span class="sd">        since the info is the same for all &quot;regular&quot; lines.</span>
+<span class="sd">        A typical usage would be to call `read_data_view_bf &lt;geosoft.gxapi.GXEDB.read_data_view_bf&gt;` to get view</span>
+<span class="sd">        info from one database, and then call `write_data_view_bf &lt;geosoft.gxapi.GXEDB.write_data_view_bf&gt;` to</span>
+<span class="sd">        load this information into another database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_data_view_bf</span><span class="p">(</span><span class="n">line_group</span><span class="p">,</span> <span class="n">bf</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDB.write_data_view_bf">
+<a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.write_data_view_bf">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_data_view_bf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line_group</span><span class="p">,</span> <span class="n">bf</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Write the View info from a `GXBF &lt;geosoft.gxapi.GXBF&gt;` into the database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param line_group:  Line or group symbol</span>
+<span class="sd">        :param bf:          `GXBF &lt;geosoft.gxapi.GXBF&gt;` (input)</span>
+<span class="sd">        :type  line_group:  int</span>
+<span class="sd">        :type  bf:          GXBF</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Set info on loaded channels and profiles for a given line.</span>
+<span class="sd">        You can use `NULLSYMB &lt;geosoft.gxapi.NULLSYMB&gt;` to get the line view info from normal lines,</span>
+<span class="sd">        since the info is the same for all &quot;regular&quot; lines.</span>
+<span class="sd">        A typical usage would be to call `read_data_view_bf &lt;geosoft.gxapi.GXEDB.read_data_view_bf&gt;` to get view</span>
+<span class="sd">        info from one database, and then call `write_data_view_bf &lt;geosoft.gxapi.GXEDB.write_data_view_bf&gt;` to</span>
+<span class="sd">        load this information into another database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_data_view_bf</span><span class="p">(</span><span class="n">line_group</span><span class="p">,</span> <span class="n">bf</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDB.set_window_area">
+<a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.set_window_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_window_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None Use SetWindowPosition_EDB, which includes multi-monitor support. </span>
+<span class="sd">        Set the location of the database window within the frame.</span>
+<span class="sd">        </span>
+<span class="sd">        :param x_min:  X Min</span>
+<span class="sd">        :param y_min:  Y Min</span>
+<span class="sd">        :param x_max:  X Max</span>
+<span class="sd">        :param y_max:  Y Max</span>
+<span class="sd">        :type  x_min:  int</span>
+<span class="sd">        :type  y_min:  int</span>
+<span class="sd">        :type  x_max:  int</span>
+<span class="sd">        :type  y_max:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The Coordinates are pixels with 0,0 being the bottom</span>
+<span class="sd">        left corner Oasis montaj frame window.</span>
+
+<span class="sd">        if the max values are equal or less than the min values</span>
+<span class="sd">        the window will be mimimized. If any Min values are `iMIN &lt;geosoft.gxapi.iMIN&gt;`</span>
+<span class="sd">        or any Max values are `iMAX &lt;geosoft.gxapi.iMAX&gt;`, the window is maximized.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, Use SetWindowPosition_EDB, which includes multi-monitor support.&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_area</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEDB.get_window_area">
+<a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.get_window_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_window_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None Use GetWindowPosition_EDB, which includes multi-monitor support. </span>
+<span class="sd">        Get the location of the database window within the frame.</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:  X Min returned</span>
+<span class="sd">        :param min_y:  Y Min returned</span>
+<span class="sd">        :param max_x:  X Max returned</span>
+<span class="sd">        :param max_y:  Y Max returned</span>
+<span class="sd">        :type  min_x:  int_ref</span>
+<span class="sd">        :type  min_y:  int_ref</span>
+<span class="sd">        :type  max_x:  int_ref</span>
+<span class="sd">        :type  max_y:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The Coordinates are pixels with 0,0 being the bottom</span>
+<span class="sd">        left corner Oasis montaj frame window.</span>
+
+<span class="sd">        If the window is minimized, the max values will be</span>
+<span class="sd">        equal to the min values. If the window is maximized</span>
+<span class="sd">        X Min and Y min will be `iMIN &lt;geosoft.gxapi.iMIN&gt;` and X max and Y max</span>
+<span class="sd">        will be `iMAX &lt;geosoft.gxapi.iMAX&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, Use GetWindowPosition_EDB, which includes multi-monitor support.&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_area</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+        
+
 
 
 
@@ -2734,6 +3103,7 @@
 <a class="viewcode-back" href="../../../GXEDB.html#geosoft.gxapi.GXEDB.load_channel_after">[docs]</a>
     <span class="k">def</span> <span class="nf">load_channel_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan_to_move</span><span class="p">,</span> <span class="n">chan_to_move_after</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads the channel after specified channel</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan_to_move:        Channel name</span>
@@ -2750,6 +3120,7 @@
 <span class="sd">        **Note:** If the channel to locate does not exist it will load the channel in the default location.</span>
 <span class="sd">        If the channel to be loaded is already loaded, no changes will be made.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_channel_after</span><span class="p">(</span><span class="n">chan_to_move</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan_to_move_after</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
@@ -2782,7 +3153,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEDB</a></li> 
@@ -2790,7 +3161,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

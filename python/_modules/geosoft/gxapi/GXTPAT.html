@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXTPAT &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXTPAT &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTPAT</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXTPAT</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -160,6 +160,7 @@
 <a class="viewcode-back" href="../../../GXTPAT.html#geosoft.gxapi.GXTPAT.add_color">[docs]</a>
     <span class="k">def</span> <span class="nf">add_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">descr</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add a new color to the list</span>
 <span class="sd">        </span>
 <span class="sd">        :param code:   Code (required - CASE SENSITIVE)</span>
@@ -177,6 +178,7 @@
 
 <span class="sd">        **Note:** The new code must be unique; not in the existing list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_color</span><span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">label</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">descr</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">color</span><span class="p">)</span></div>
 
         
@@ -188,6 +190,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates an empty thematic pattern object.</span>
 <span class="sd">        </span>
 
@@ -198,6 +201,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTPAT</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXTPAT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -211,6 +215,7 @@
 <a class="viewcode-back" href="../../../GXTPAT.html#geosoft.gxapi.GXTPAT.code">[docs]</a>
     <span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the index of a given thematic pattern</span>
 <span class="sd">        </span>
 <span class="sd">        :param code:  Pattern code (case sensitive)</span>
@@ -223,6 +228,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_code</span><span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -234,6 +240,7 @@
 <a class="viewcode-back" href="../../../GXTPAT.html#geosoft.gxapi.GXTPAT.get_solid_pattern">[docs]</a>
     <span class="k">def</span> <span class="nf">get_solid_pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">descr</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get solid pattern info from the `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:  Index</span>
@@ -254,6 +261,7 @@
 <span class="sd">        **Note:** Returns the solid color, pattern foreground color, or symbol</span>
 <span class="sd">        color, along with the code, label and description.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">code</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">descr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_solid_pattern</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">code</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">descr</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">color</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -265,6 +273,7 @@
 <a class="viewcode-back" href="../../../GXTPAT.html#geosoft.gxapi.GXTPAT.size">[docs]</a>
     <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the number of rows (items) in the `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` object.</span>
 <span class="sd">        </span>
 
@@ -275,6 +284,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -286,6 +296,7 @@
 <a class="viewcode-back" href="../../../GXTPAT.html#geosoft.gxapi.GXTPAT.load_csv">[docs]</a>
     <span class="k">def</span> <span class="nf">load_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load thematic patterns from a CSV file</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  Thematic Pattern file name</span>
@@ -321,6 +332,7 @@
 <span class="sd">        SYMBROT         Symbol rotation</span>
 <span class="sd">        SYMBSCL         Additional scaling factor applied to the current size</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_csv</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -332,6 +344,7 @@
 <a class="viewcode-back" href="../../../GXTPAT.html#geosoft.gxapi.GXTPAT.setup_translation_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">setup_translation_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ltb</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">vv_values</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Initializes a `GXVV &lt;geosoft.gxapi.GXVV&gt;` used to map `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` indices to output values</span>
 <span class="sd">        </span>
 <span class="sd">        :param ltb:        Table containing `GXTPAT &lt;geosoft.gxapi.GXTPAT&gt;` codes as the key</span>
@@ -350,6 +363,7 @@
 <span class="sd">        `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` oject was created (see ltb.h).</span>
 <span class="sd">        The `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` field values are converted to the output `GXVV &lt;geosoft.gxapi.GXVV&gt;` type.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_setup_translation_vv</span><span class="p">(</span><span class="n">ltb</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">vv_values</span><span class="p">)</span></div>
 </div>
 
@@ -382,7 +396,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTPAT</a></li> 
@@ -390,7 +404,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

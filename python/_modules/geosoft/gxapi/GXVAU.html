@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVAU &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXVAU &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVAU</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXVAU</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -124,11 +124,59 @@
 <span class="c1"># Miscellaneous</span>
 
 
+<div class="viewcode-block" id="GXVAU.cond_depth_tem">
+<a class="viewcode-back" href="../../../GXVAU.html#geosoft.gxapi.GXVAU.cond_depth_tem">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">cond_depth_tem</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">resp_va</span><span class="p">,</span> <span class="n">time_va</span><span class="p">,</span> <span class="n">cond_va</span><span class="p">,</span> <span class="n">depth_va</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">min_xvv</span><span class="p">,</span> <span class="n">min_yvv</span><span class="p">,</span> <span class="n">max_xvv</span><span class="p">,</span> <span class="n">max_yvv</span><span class="p">,</span> <span class="n">t_moment</span><span class="p">,</span> <span class="n">r_moment</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Calculate TEM apparent conductivity and depth</span>
+<span class="sd">        </span>
+<span class="sd">        :param resp_va:   Response channel (microvolts)</span>
+<span class="sd">        :param time_va:   Time channel (milliseconds)</span>
+<span class="sd">        :param cond_va:   Conductivity channel (siemen/m)</span>
+<span class="sd">        :param depth_va:  Depth (m)</span>
+<span class="sd">        :param current:   Transmitter current</span>
+<span class="sd">        :param flag:      Flag  Transmitter defined by moment (0) or by 4 VVs (1) below</span>
+<span class="sd">        :param min_xvv:   Minimum X to define transmitter loop layout (moment)</span>
+<span class="sd">        :param min_yvv:   Minimum Y to define transmitter loop layout (moment)</span>
+<span class="sd">        :param max_xvv:   Maximum X to define transmitter loop layout (moment)</span>
+<span class="sd">        :param max_yvv:   Maximum Y to define transmitter loop layout (moment)</span>
+<span class="sd">        :param t_moment:  Transmitter moment (square meters), dummy if the above flag is 1</span>
+<span class="sd">        :param r_moment:  Receiver moment (square meters)</span>
+<span class="sd">        :param array:     :ref:`TEM_ARRAY`</span>
+<span class="sd">        :type  resp_va:   GXVA</span>
+<span class="sd">        :type  time_va:   GXVA</span>
+<span class="sd">        :type  cond_va:   GXVA</span>
+<span class="sd">        :type  depth_va:  GXVA</span>
+<span class="sd">        :type  current:   float</span>
+<span class="sd">        :type  flag:      int</span>
+<span class="sd">        :type  min_xvv:   GXVV</span>
+<span class="sd">        :type  min_yvv:   GXVV</span>
+<span class="sd">        :type  max_xvv:   GXVV</span>
+<span class="sd">        :type  max_yvv:   GXVV</span>
+<span class="sd">        :type  t_moment:  float</span>
+<span class="sd">        :type  r_moment:  float</span>
+<span class="sd">        :type  array:     int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVAU</span><span class="o">.</span><span class="n">_cond_depth_tem</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">resp_va</span><span class="p">,</span> <span class="n">time_va</span><span class="p">,</span> <span class="n">cond_va</span><span class="p">,</span> <span class="n">depth_va</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">min_xvv</span><span class="p">,</span> <span class="n">min_yvv</span><span class="p">,</span> <span class="n">max_xvv</span><span class="p">,</span> <span class="n">max_yvv</span><span class="p">,</span> <span class="n">t_moment</span><span class="p">,</span> <span class="n">r_moment</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span></div>
+
+        
+
+
+
 <div class="viewcode-block" id="GXVAU.prune">
 <a class="viewcode-back" href="../../../GXVAU.html#geosoft.gxapi.GXVAU.prune">[docs]</a>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">prune</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v_ap</span><span class="p">,</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Prune values from a `GXVA &lt;geosoft.gxapi.GXVA&gt;` based on reference `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param v_ap:  `GXVA &lt;geosoft.gxapi.GXVA&gt;` to prune</span>
@@ -146,7 +194,37 @@
 <span class="sd">        that are either dummy or non-dummy in the reference</span>
 <span class="sd">        `GXVA &lt;geosoft.gxapi.GXVA&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVAU</span><span class="o">.</span><span class="n">_prune</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">v_ap</span><span class="p">,</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXVAU.section_cond_tem">
+<a class="viewcode-back" href="../../../GXVAU.html#geosoft.gxapi.GXVAU.section_cond_tem">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">section_cond_tem</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cond_va</span><span class="p">,</span> <span class="n">depth_va</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">out_vv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Derive TEM apparent conductivity section at given depth</span>
+<span class="sd">        </span>
+<span class="sd">        :param cond_va:   Conductivity `GXVA &lt;geosoft.gxapi.GXVA&gt;`,`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
+<span class="sd">        :param depth_va:  Depth `GXVA &lt;geosoft.gxapi.GXVA&gt;`,`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
+<span class="sd">        :param section:   Depth derive TEM section (same unit as Depth `GXVA &lt;geosoft.gxapi.GXVA&gt;`)</span>
+<span class="sd">        :param out_vv:    Returned conductivity at given depth,`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
+<span class="sd">        :type  cond_va:   GXVA</span>
+<span class="sd">        :type  depth_va:  GXVA</span>
+<span class="sd">        :type  section:   float</span>
+<span class="sd">        :type  out_vv:    GXVV</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVAU</span><span class="o">.</span><span class="n">_section_cond_tem</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">cond_va</span><span class="p">,</span> <span class="n">depth_va</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">out_vv</span><span class="p">)</span></div>
 
         
 
@@ -157,6 +235,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">total_vector</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xva</span><span class="p">,</span> <span class="n">yva</span><span class="p">,</span> <span class="n">zva</span><span class="p">,</span> <span class="n">tva</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate total vector for X,Y and Z components</span>
 <span class="sd">        </span>
 <span class="sd">        :param xva:  X Component object</span>
@@ -172,6 +251,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapVAU</span><span class="o">.</span><span class="n">_total_vector</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">xva</span><span class="p">,</span> <span class="n">yva</span><span class="p">,</span> <span class="n">zva</span><span class="p">,</span> <span class="n">tva</span><span class="p">)</span></div>
 </div>
 
@@ -204,7 +284,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVAU</a></li> 
@@ -212,7 +292,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

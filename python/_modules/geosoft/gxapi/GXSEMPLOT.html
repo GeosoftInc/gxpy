@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXSEMPLOT &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXSEMPLOT &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSEMPLOT</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXSEMPLOT</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -128,6 +128,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">apply_filter_to_mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">mineral</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply the filter to the mask channel</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -151,6 +152,7 @@
 <span class="sd">        the actions of the filter. Those values passing get 1, those</span>
 <span class="sd">        failing get 0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_apply_filter_to_mask</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="nb">filter</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -162,6 +164,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">convert_dummies</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert dummies to zero values for assay channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database handle</span>
@@ -179,6 +182,7 @@
 <span class="sd">        &quot;no&quot;, then all ASSAY class channels will have dummy values</span>
 <span class="sd">        converted to 0.0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_convert_dummies</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span></div>
 
         
@@ -190,6 +194,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_groups</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Group data by anomaly or string channel - Interactive.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       Database handle</span>
@@ -201,6 +206,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_create_groups</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -212,6 +218,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">default_groups</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Group data by selected anomalies.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database handle</span>
@@ -221,6 +228,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_default_groups</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span></div>
 
         
@@ -232,6 +240,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">edit_map_plot_parameters</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Alter parameters in an XYplot Triplot map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -254,6 +263,7 @@
 <span class="sd">        based on the new settings. Note that the selection of data</span>
 <span class="sd">        in the current `GXDB &lt;geosoft.gxapi.GXDB&gt;` is used to replot the map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_edit_map_plot_parameters</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -265,6 +275,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">edit_plot_components</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set group names and channels to plot in a template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database handle</span>
@@ -283,6 +294,7 @@
 <span class="sd">        The altered template will be output to the user\\etc directory with</span>
 <span class="sd">        the file extension &quot;semtemplate&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_edit_plot_components</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -294,6 +306,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">edit_plot_parameters</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set TriPlot parameters in a template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database handle</span>
@@ -312,6 +325,7 @@
 <span class="sd">        The altered template will be output to the user\\etc directory with</span>
 <span class="sd">        the file extension &quot;semtemplate&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_edit_plot_parameters</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -323,6 +337,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_overlay</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">overlay</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">plot_type</span><span class="p">,</span> <span class="n">x_stage</span><span class="p">,</span> <span class="n">x_oxide</span><span class="p">,</span> <span class="n">y_stage</span><span class="p">,</span> <span class="n">y_oxide</span><span class="p">,</span> <span class="n">z_stage</span><span class="p">,</span> <span class="n">z_oxide</span><span class="p">,</span> <span class="n">extension</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create overlay map and file from a group.</span>
 <span class="sd">        </span>
 <span class="sd">        :param overlay:    Overlay file name</span>
@@ -357,6 +372,7 @@
 <span class="sd">        **Note:** The group is written to a new map, and an overlay file</span>
 <span class="sd">        is created which points to this map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_export_overlay</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">overlay</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">plot_type</span><span class="p">,</span> <span class="n">x_stage</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_oxide</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_stage</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_oxide</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_stage</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_oxide</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">extension</span><span class="p">)</span></div>
 
         
@@ -368,6 +384,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">new_db</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">mineral</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a &quot;View&quot; database</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Original raw data database</span>
@@ -389,6 +406,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_export_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">new_db</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -400,6 +418,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_view2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">new_db</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">mineral</span><span class="p">,</span> <span class="n">export_extra</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a &quot;View&quot; database, with channel selection</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:            Original raw data database</span>
@@ -423,6 +442,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_export_view2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">new_db</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">export_extra</span><span class="p">)</span></div>
 
         
@@ -434,6 +454,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">filter_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a `GXLST &lt;geosoft.gxapi.GXLST&gt;` with existing `GXSEMPLOT &lt;geosoft.gxapi.GXSEMPLOT&gt;` filters</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  `GXLST &lt;geosoft.gxapi.GXLST&gt;` to fill.</span>
@@ -450,6 +471,7 @@
 <span class="sd">        as the value.</span>
 <span class="sd">        The `GXLST &lt;geosoft.gxapi.GXLST&gt;` is cleared first.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_filter_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -461,6 +483,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">filter_mineral_pos_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">mineral</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Filter raw data by position and mineral values</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -483,6 +506,7 @@
 <span class="sd">        NO DATA IS REMOVED.</span>
 <span class="sd">        Works on all selected lines of data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_filter_mineral_pos_data</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pos</span><span class="p">)</span></div>
 
         
@@ -494,6 +518,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_associated_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the associated channels for this group in a `GXLST &lt;geosoft.gxapi.GXLST&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database handle</span>
@@ -507,6 +532,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_get_associated_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -518,6 +544,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_current_mineral_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve `GXLST &lt;geosoft.gxapi.GXLST&gt;` of minerals in selected lines.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -534,6 +561,7 @@
 <span class="sd">        **Note:** If the mineral channel name is not specified, it returns</span>
 <span class="sd">        just the &quot;X&quot; (Unknown) item.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_get_current_mineral_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -545,6 +573,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_current_position_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve `GXLST &lt;geosoft.gxapi.GXLST&gt;` of positions in selected lines.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database handle</span>
@@ -556,6 +585,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_get_current_position_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -567,6 +597,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_full_mineral_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve `GXLST &lt;geosoft.gxapi.GXLST&gt;` of all minerals in Semplot_Minerals.csv</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  `GXLST &lt;geosoft.gxapi.GXLST&gt;` object</span>
@@ -576,6 +607,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_get_full_mineral_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -587,6 +619,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_full_position_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve `GXLST &lt;geosoft.gxapi.GXLST&gt;` of all possible mineral positions.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  `GXLST &lt;geosoft.gxapi.GXLST&gt;` object</span>
@@ -596,6 +629,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_get_full_position_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -607,6 +641,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_grouping_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get list of items to group symbols by.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database handle</span>
@@ -624,6 +659,7 @@
 <span class="sd">        elements. (The list can include the mineral).</span>
 <span class="sd">        Channel symbol is the `GXLST &lt;geosoft.gxapi.GXLST&gt;` value (except for the first item - &quot;Anomaly&quot;)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_get_grouping_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -635,6 +671,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ascii_template</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        : Generate ASCII import template automatically</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Data file name</span>
@@ -650,6 +687,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_create_ascii_template</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -661,6 +699,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_database_template</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Generate database import template automatically</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Data file name</span>
@@ -676,6 +715,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_create_database_template</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -687,6 +727,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">edit_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">mineral</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Edit and create filter on channel values</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -726,6 +767,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_edit_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="nb">filter</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -737,6 +779,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_mineral_channel_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve the mineral channel name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -753,6 +796,7 @@
 <span class="sd">        channel found. If still not found, returns a</span>
 <span class="sd">        blank string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">mineral_ch</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_get_mineral_channel_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -764,6 +808,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_ascii_wizard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">anomaly</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Generate a `GXSEMPLOT &lt;geosoft.gxapi.GXSEMPLOT&gt;` ASCII import template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     Data file name</span>
@@ -780,6 +825,7 @@
 <span class="sd">        **Note:** If the anomaly name is not included, then</span>
 <span class="sd">        the input data must have an &quot;Anom_Name&quot; field.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">anomaly</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_import_ascii_wizard</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -791,6 +837,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_database_odbc</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">connection</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Generate a template file for importing ODBC databases.</span>
 <span class="sd">        </span>
 <span class="sd">        :param connection:  Connection string (input and returned)</span>
@@ -802,6 +849,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">connection</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_import_database_odbc</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">connection</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -813,6 +861,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_bin</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">templ</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">flight</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Import blocked binary or archive ASCII data</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:      Database</span>
@@ -850,6 +899,7 @@
 
 <span class="sd">            `GXDU.lab_template &lt;geosoft.gxapi.GXDU.lab_template&gt;` in du.gxh</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_import_bin</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">flight</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span></div>
 
         
@@ -861,6 +911,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_database_ado</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Generate a template file for importing semplot databases.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Data file name</span>
@@ -872,6 +923,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_import_database_ado</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -883,6 +935,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">init_group_symbols_used</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Initializes memory of symbols used in plotting.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database handle</span>
@@ -896,6 +949,7 @@
 <span class="sd">        Plotting one or more legends - symbols are accumulated.</span>
 <span class="sd">        `plot_symbol_legend &lt;geosoft.gxapi.GXSEMPLOT.plot_symbol_legend&gt;` uses this information to create a legend.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_init_group_symbols_used</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span></div>
 
         
@@ -907,6 +961,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">template_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">templ</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a new XYPlot or TriPlot template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param templ:  Template name</span>
@@ -921,6 +976,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_template_type</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -932,6 +988,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">view_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Test to see if a view is an XYPlot or Triplot view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:   Input map object</span>
@@ -953,6 +1010,7 @@
 <span class="sd">        If the view does not appear to be an XYPlot or a TriPlot view,</span>
 <span class="sd">        the function returns `SEMPLOT_PLOT_UNKNOWN &lt;geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_view_type</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -964,6 +1022,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">mineral_id</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">min_ch</span><span class="p">,</span> <span class="n">res_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Identify minerals from the oxide channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:      Database</span>
@@ -987,6 +1046,7 @@
 <span class="sd">        as a percent of the total) is less than or equal to the</span>
 <span class="sd">        input value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_mineral_id</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">min_ch</span><span class="p">,</span> <span class="n">res_ch</span><span class="p">)</span></div>
 
         
@@ -998,6 +1058,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">new_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a new selection filter.</span>
 <span class="sd">        </span>
 <span class="sd">        :param filter:  New filter name</span>
@@ -1011,6 +1072,7 @@
 
 <span class="sd">        **Note:** Creates a new, empty filter file in the user\\etc directory</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_new_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">filter</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1022,6 +1084,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">new_template</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">templ</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a new XYPlot or TriPlot template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param templ:  New template name</span>
@@ -1046,6 +1109,7 @@
 <span class="sd">        an XYPlot template as a model for a TriPlot, and vica-verca, with</span>
 <span class="sd">        few complications.  (e.g. needing to define a &quot;Z&quot; component)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_new_template</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1057,6 +1121,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">overlay_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">extension</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a list with the available plot overlay names</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:        Input `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
@@ -1073,6 +1138,7 @@
 <span class="sd">        **Note:** Looks first in user\\etc, then in \\etc.</span>
 <span class="sd">        See :ref:`SEMPLOT_EXT` definitions above for which files to look for.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_overlay_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="n">extension</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -1084,6 +1150,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">map_mode</span><span class="p">,</span> <span class="n">plot_symb</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot an XYPlot or TriPlot based on the template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -1116,6 +1183,7 @@
 <span class="sd">        Call `init_group_symbols_used &lt;geosoft.gxapi.GXSEMPLOT.init_group_symbols_used&gt;` prior to this function</span>
 <span class="sd">        to reset recording of the symbols used in plotting (for legends etc).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">templ</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">map_mode</span><span class="p">,</span> <span class="n">plot_symb</span><span class="p">)</span></div>
 
         
@@ -1127,6 +1195,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">plot_symbol_legend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">symb_size</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a symbol legend in a view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         Database handle</span>
@@ -1153,6 +1222,7 @@
 <span class="sd">        recovered by this function to make the legend at the</span>
 <span class="sd">        specified location.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_plot_symbol_legend</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">symb_size</span><span class="p">)</span></div>
 
         
@@ -1164,6 +1234,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">prop_symb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">symb</span><span class="p">,</span> <span class="n">wt</span><span class="p">,</span> <span class="n">line_col</span><span class="p">,</span> <span class="n">fill_col</span><span class="p">,</span> <span class="n">legend</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a proportional symbol plot.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -1203,6 +1274,7 @@
 
 <span class="sd">        **Note:** Replots map using proportional symbols</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_prop_symb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">symb</span><span class="p">,</span> <span class="n">wt</span><span class="p">,</span> <span class="n">line_col</span><span class="p">,</span> <span class="n">fill_col</span><span class="p">,</span> <span class="n">legend</span><span class="p">)</span></div>
 
         
@@ -1214,6 +1286,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">replot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Replot an existing `GXSEMPLOT &lt;geosoft.gxapi.GXSEMPLOT&gt;` plot based on current data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -1240,6 +1313,7 @@
 <span class="sd">        Call `init_group_symbols_used &lt;geosoft.gxapi.GXSEMPLOT.init_group_symbols_used&gt;` prior to this function</span>
 <span class="sd">        to reset recording of the symbols used in plotting (for legends etc).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_replot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1251,6 +1325,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">re_plot_symbol_legend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mview</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Replot a symbol legend in a view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database handle</span>
@@ -1266,6 +1341,7 @@
 <span class="sd">        created legend, and if it finds that info, replots the Legend,</span>
 <span class="sd">        using the current data, group key etc.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_re_plot_symbol_legend</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mview</span><span class="p">)</span></div>
 
         
@@ -1277,6 +1353,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">reset_groups</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Re-group data using current settings.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       Database handle</span>
@@ -1288,6 +1365,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_reset_groups</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1299,6 +1377,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">reset_used_channel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the &quot;Plotted&quot; channel to dummies</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database handle</span>
@@ -1316,6 +1395,7 @@
 <span class="sd">        If the &quot;Plotted&quot; channel does not exist, it is created, associated,</span>
 <span class="sd">        loaded, and filled with dummies.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_reset_used_channel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span></div>
 
         
@@ -1327,6 +1407,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">select_poly</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Select data from a polygonal area on a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -1346,6 +1427,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_select_poly</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pply</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -1357,6 +1439,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_channel_order</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets preset channel order.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database handle</span>
@@ -1385,6 +1468,7 @@
 
 <span class="sd">        Channel order is set for all &quot;RawData&quot; groups.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_set_channel_order</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -1396,6 +1480,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_channel_units</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set units for oxides (%) and elements (ppm)</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database handle</span>
@@ -1410,6 +1495,7 @@
 <span class="sd">        Trace elements are identified from the periodic table of the</span>
 <span class="sd">        elements, except for &quot;Y&quot;, if it is the current Y channel.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_set_channel_units</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span></div>
 
         
@@ -1421,6 +1507,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_itr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Put `GXITR &lt;geosoft.gxapi.GXITR&gt;` into a channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database handle</span>
@@ -1433,6 +1520,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_set_itr</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">itr</span><span class="p">)</span></div>
 
         
@@ -1444,6 +1532,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">,</span> <span class="n">mineral</span><span class="p">,</span> <span class="n">selected</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the mask channel ON or OFF.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -1463,6 +1552,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_set_mask</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mask_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mineral</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">selected</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
 
         
@@ -1474,6 +1564,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sort_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">anomaly</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sort data by Sample No, Grain and Position</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       Database handle</span>
@@ -1487,6 +1578,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_sort_data</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">anomaly</span><span class="p">)</span></div>
 
         
@@ -1498,6 +1590,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">template_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a list with the available plot template names</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   Input `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
@@ -1514,6 +1607,7 @@
 <span class="sd">        (New-style templates with the &quot;semtemplate&quot; extentsion have the</span>
 <span class="sd">        plot type &quot;triplot&quot; or &quot;xyplot&quot; inside them.)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_template_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -1525,6 +1619,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tile_windows</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Tile currently maximimized windows.</span>
 <span class="sd">        </span>
 
@@ -1532,6 +1627,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_tile_windows</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
 
         
@@ -1543,6 +1639,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">total_oxides</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculate the total oxides channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          Database handle</span>
@@ -1559,6 +1656,7 @@
 <span class="sd">        require a mineral for their identification. If none is provided,</span>
 <span class="sd">        mineral &quot;X&quot; (unknown) is assumed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSEMPLOT</span><span class="o">.</span><span class="n">_total_oxides</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">mineral_ch</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
@@ -1591,7 +1689,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSEMPLOT</a></li> 
@@ -1599,7 +1697,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

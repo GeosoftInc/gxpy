@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMISC &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXMISC &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMISC</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXMISC</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -129,6 +129,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">convert_cg3to_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cg3</span><span class="p">,</span> <span class="n">raw</span><span class="p">,</span> <span class="n">tide_corr_opt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert a CG3 dump to RAW format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param cg3:            Name of the CG3 file</span>
@@ -142,6 +143,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMISC</span><span class="o">.</span><span class="n">_convert_cg3to_raw</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">cg3</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">raw</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tide_corr_opt</span><span class="p">)</span></div>
 
         
@@ -153,6 +155,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">convert_cg5to_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cg5</span><span class="p">,</span> <span class="n">raw</span><span class="p">,</span> <span class="n">tide_corr_opt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert a CG5 dump to RAW format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param cg5:            Name of the CG5 file</span>
@@ -166,6 +169,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMISC</span><span class="o">.</span><span class="n">_convert_cg5to_raw</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">cg5</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">raw</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tide_corr_opt</span><span class="p">)</span></div>
 
         
@@ -177,6 +181,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">ukoa2_tbl</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ukoa</span><span class="p">,</span> <span class="n">alias</span><span class="p">,</span> <span class="n">tbl</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert a UKOA file to a location TBL file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ukoa:   Name of the UKOA file</span>
@@ -200,7 +205,68 @@
 <span class="sd">        = Y:double</span>
 <span class="sd">        = Elevation:double</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMISC</span><span class="o">.</span><span class="n">_ukoa2_tbl</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ukoa</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">alias</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tbl</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<span class="c1"># Deprecated</span>
+
+
+<div class="viewcode-block" id="GXMISC.cg3to_raw">
+<a class="viewcode-back" href="../../../GXMISC.html#geosoft.gxapi.GXMISC.cg3to_raw">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">cg3to_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cg3</span><span class="p">,</span> <span class="n">raw</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Convert a CG3 dump to RAW format.</span>
+<span class="sd">        </span>
+<span class="sd">        :param cg3:  Name of the CG3 file</span>
+<span class="sd">        :param raw:  Name of the RAW file</span>
+<span class="sd">        :type  cg3:  str</span>
+<span class="sd">        :type  raw:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** REPLACED BY: `convert_cg3to_raw &lt;geosoft.gxapi.GXMISC.convert_cg3to_raw&gt;`.</span>
+<span class="sd">        or supporting tide correction info in the CG3 file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMISC</span><span class="o">.</span><span class="n">_cg3to_raw</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">cg3</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">raw</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXMISC.cg5to_raw">
+<a class="viewcode-back" href="../../../GXMISC.html#geosoft.gxapi.GXMISC.cg5to_raw">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">cg5to_raw</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cg5</span><span class="p">,</span> <span class="n">raw</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Convert a CG5 dump to RAW format.</span>
+<span class="sd">        </span>
+<span class="sd">        :param cg5:  Name of the CG5 file</span>
+<span class="sd">        :param raw:  Name of the RAW file</span>
+<span class="sd">        :type  cg5:  str</span>
+<span class="sd">        :type  raw:  str</span>
+
+<span class="sd">        .. versionadded:: 5.1.8</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** REPLACED BY: `convert_cg5to_raw &lt;geosoft.gxapi.GXMISC.convert_cg5to_raw&gt;`.</span>
+<span class="sd">        for supporting tide correction info in the CG5 file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMISC</span><span class="o">.</span><span class="n">_cg5to_raw</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">cg5</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">raw</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
         
@@ -232,7 +298,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMISC</a></li> 
@@ -240,7 +306,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

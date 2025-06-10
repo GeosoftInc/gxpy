@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXEDB class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXEDB class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEDB class</a></li> 
       </ul>
     </div>
@@ -81,6 +81,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_window"><code class="docutils literal notranslate"><span class="pre">GXEDB.get_profile_window()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.get_profile_x_axis_options"><code class="docutils literal notranslate"><span class="pre">GXEDB.get_profile_x_axis_options()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.get_split"><code class="docutils literal notranslate"><span class="pre">GXEDB.get_split()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEDB.get_window_area"><code class="docutils literal notranslate"><span class="pre">GXEDB.get_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.get_window_position"><code class="docutils literal notranslate"><span class="pre">GXEDB.get_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.get_window_state"><code class="docutils literal notranslate"><span class="pre">GXEDB.get_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.get_window_y_axis_direction"><code class="docutils literal notranslate"><span class="pre">GXEDB.get_window_y_axis_direction()</span></code></a></li>
@@ -108,10 +109,12 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.loaded"><code class="docutils literal notranslate"><span class="pre">GXEDB.loaded()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.lock"><code class="docutils literal notranslate"><span class="pre">GXEDB.lock()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.make_current"><code class="docutils literal notranslate"><span class="pre">GXEDB.make_current()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEDB.no_load"><code class="docutils literal notranslate"><span class="pre">GXEDB.no_load()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.null"><code class="docutils literal notranslate"><span class="pre">GXEDB.null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_open"><code class="docutils literal notranslate"><span class="pre">GXEDB.profile_open()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_rescale_all"><code class="docutils literal notranslate"><span class="pre">GXEDB.profile_rescale_all()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.profile_shown"><code class="docutils literal notranslate"><span class="pre">GXEDB.profile_shown()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEDB.read_data_view_bf"><code class="docutils literal notranslate"><span class="pre">GXEDB.read_data_view_bf()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.read_only"><code class="docutils literal notranslate"><span class="pre">GXEDB.read_only()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.remove_profile"><code class="docutils literal notranslate"><span class="pre">GXEDB.remove_profile()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.run_channel_maker"><code class="docutils literal notranslate"><span class="pre">GXEDB.run_channel_maker()</span></code></a></li>
@@ -128,6 +131,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.set_profile_split_vv"><code class="docutils literal notranslate"><span class="pre">GXEDB.set_profile_split_vv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.set_profile_x_axis_options"><code class="docutils literal notranslate"><span class="pre">GXEDB.set_profile_x_axis_options()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.set_split"><code class="docutils literal notranslate"><span class="pre">GXEDB.set_split()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEDB.set_window_area"><code class="docutils literal notranslate"><span class="pre">GXEDB.set_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.set_window_position"><code class="docutils literal notranslate"><span class="pre">GXEDB.set_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.set_window_state"><code class="docutils literal notranslate"><span class="pre">GXEDB.set_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.show_profile"><code class="docutils literal notranslate"><span class="pre">GXEDB.show_profile()</span></code></a></li>
@@ -141,6 +145,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.un_load_verify"><code class="docutils literal notranslate"><span class="pre">GXEDB.un_load_verify()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.un_lock"><code class="docutils literal notranslate"><span class="pre">GXEDB.un_lock()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDB.window_profiles"><code class="docutils literal notranslate"><span class="pre">GXEDB.window_profiles()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEDB.write_data_view_bf"><code class="docutils literal notranslate"><span class="pre">GXEDB.write_data_view_bf()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#max-prof-wnd-constants">MAX_PROF_WND constants</a><ul>
@@ -150,98 +155,98 @@
 </li>
 <li><a class="reference internal" href="#edb-path-constants">EDB_PATH constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PATH_FULL"><code class="docutils literal notranslate"><span class="pre">EDB_PATH_FULL</span></code></a></li>
-<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_FULL</span></code></a></li>
+<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_FULL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PATH_DIR"><code class="docutils literal notranslate"><span class="pre">EDB_PATH_DIR</span></code></a></li>
-<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_DIR</span></code></a></li>
+<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_DIR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PATH_NAME_EXT"><code class="docutils literal notranslate"><span class="pre">EDB_PATH_NAME_EXT</span></code></a></li>
-<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_NAME_EXT</span></code></a></li>
+<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_NAME_EXT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PATH_NAME"><code class="docutils literal notranslate"><span class="pre">EDB_PATH_NAME</span></code></a></li>
-<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_NAME</span></code></a></li>
+<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PATH_NAME</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edb-prof-constants">EDB_PROF constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_CHANNEL"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_CHANNEL</span></code></a></li>
-<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_CHANNEL</span></code></a></li>
+<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_CHANNEL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_LINE_STYLE"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_LINE_STYLE</span></code></a></li>
-<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_LINE_STYLE</span></code></a></li>
+<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_LINE_STYLE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_LINE_WEIGHT"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_LINE_WEIGHT</span></code></a></li>
-<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_LINE_WEIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_LINE_WEIGHT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_SYMBOL"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_SYMBOL</span></code></a></li>
-<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SYMBOL</span></code></a></li>
+<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SYMBOL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_SYMBOL_WEIGHT"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_SYMBOL_WEIGHT</span></code></a></li>
-<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SYMBOL_WEIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SYMBOL_WEIGHT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_COLOR"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_COLOR</span></code></a></li>
-<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_COLOR</span></code></a></li>
+<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_COLOR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_WRAP"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_WRAP</span></code></a></li>
-<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_WRAP</span></code></a></li>
+<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_WRAP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_BREAK_ON_DUMMY"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_BREAK_ON_DUMMY</span></code></a></li>
-<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_BREAK_ON_DUMMY</span></code></a></li>
+<li><a class="reference internal" href="#id115"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_BREAK_ON_DUMMY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_GRID_LINE"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_GRID_LINE</span></code></a></li>
-<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_GRID_LINE</span></code></a></li>
+<li><a class="reference internal" href="#id116"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_GRID_LINE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_R_GRID_LINE_INTERVAL"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_R_GRID_LINE_INTERVAL</span></code></a></li>
-<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_R_GRID_LINE_INTERVAL</span></code></a></li>
+<li><a class="reference internal" href="#id117"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_R_GRID_LINE_INTERVAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_LOG"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_LOG</span></code></a></li>
-<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_LOG</span></code></a></li>
+<li><a class="reference internal" href="#id118"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_LOG</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_R_LOG_MINIMUM"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_R_LOG_MINIMUM</span></code></a></li>
-<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_R_LOG_MINIMUM</span></code></a></li>
+<li><a class="reference internal" href="#id119"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_R_LOG_MINIMUM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_SAMESCALE"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_SAMESCALE</span></code></a></li>
-<li><a class="reference internal" href="#id115"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SAMESCALE</span></code></a></li>
+<li><a class="reference internal" href="#id120"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SAMESCALE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_SOURCELINE"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_SOURCELINE</span></code></a></li>
-<li><a class="reference internal" href="#id116"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SOURCELINE</span></code></a></li>
+<li><a class="reference internal" href="#id121"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SOURCELINE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_SCALEOPTION"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_SCALEOPTION</span></code></a></li>
-<li><a class="reference internal" href="#id117"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SCALEOPTION</span></code></a></li>
+<li><a class="reference internal" href="#id122"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SCALEOPTION</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROF_I_SAMERANGE"><code class="docutils literal notranslate"><span class="pre">EDB_PROF_I_SAMERANGE</span></code></a></li>
-<li><a class="reference internal" href="#id118"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SAMERANGE</span></code></a></li>
+<li><a class="reference internal" href="#id123"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROF_I_SAMERANGE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edb-profile-scale-constants">EDB_PROFILE_SCALE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROFILE_SCALE_LINEAR"><code class="docutils literal notranslate"><span class="pre">EDB_PROFILE_SCALE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id119"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROFILE_SCALE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id124"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROFILE_SCALE_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROFILE_SCALE_LOG"><code class="docutils literal notranslate"><span class="pre">EDB_PROFILE_SCALE_LOG</span></code></a></li>
-<li><a class="reference internal" href="#id120"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROFILE_SCALE_LOG</span></code></a></li>
+<li><a class="reference internal" href="#id125"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROFILE_SCALE_LOG</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_PROFILE_SCALE_LOGLINEAR"><code class="docutils literal notranslate"><span class="pre">EDB_PROFILE_SCALE_LOGLINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id121"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROFILE_SCALE_LOGLINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id126"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_PROFILE_SCALE_LOGLINEAR</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edb-remove-constants">EDB_REMOVE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_REMOVE_SAVE"><code class="docutils literal notranslate"><span class="pre">EDB_REMOVE_SAVE</span></code></a></li>
-<li><a class="reference internal" href="#id122"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_REMOVE_SAVE</span></code></a></li>
+<li><a class="reference internal" href="#id127"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_REMOVE_SAVE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_REMOVE_PROMPT"><code class="docutils literal notranslate"><span class="pre">EDB_REMOVE_PROMPT</span></code></a></li>
-<li><a class="reference internal" href="#id123"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_REMOVE_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id128"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_REMOVE_PROMPT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_REMOVE_DISCARD"><code class="docutils literal notranslate"><span class="pre">EDB_REMOVE_DISCARD</span></code></a></li>
-<li><a class="reference internal" href="#id124"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_REMOVE_DISCARD</span></code></a></li>
+<li><a class="reference internal" href="#id129"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_REMOVE_DISCARD</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edb-unload-constants">EDB_UNLOAD constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_UNLOAD_NO_PROMPT"><code class="docutils literal notranslate"><span class="pre">EDB_UNLOAD_NO_PROMPT</span></code></a></li>
-<li><a class="reference internal" href="#id125"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_UNLOAD_NO_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id130"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_UNLOAD_NO_PROMPT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT"><code class="docutils literal notranslate"><span class="pre">EDB_UNLOAD_SINGLE_PROMPT</span></code></a></li>
-<li><a class="reference internal" href="#id126"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_UNLOAD_SINGLE_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id131"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_UNLOAD_SINGLE_PROMPT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_UNLOAD_MULTI_PROMPT"><code class="docutils literal notranslate"><span class="pre">EDB_UNLOAD_MULTI_PROMPT</span></code></a></li>
-<li><a class="reference internal" href="#id127"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_UNLOAD_MULTI_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id132"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_UNLOAD_MULTI_PROMPT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edb-window-position-constants">EDB_WINDOW_POSITION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_WINDOW_POSITION_DOCKED"><code class="docutils literal notranslate"><span class="pre">EDB_WINDOW_POSITION_DOCKED</span></code></a></li>
-<li><a class="reference internal" href="#id128"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_POSITION_DOCKED</span></code></a></li>
+<li><a class="reference internal" href="#id133"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_POSITION_DOCKED</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_WINDOW_POSITION_FLOATING"><code class="docutils literal notranslate"><span class="pre">EDB_WINDOW_POSITION_FLOATING</span></code></a></li>
-<li><a class="reference internal" href="#id129"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_POSITION_FLOATING</span></code></a></li>
+<li><a class="reference internal" href="#id134"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_POSITION_FLOATING</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edb-window-state-constants">EDB_WINDOW_STATE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_WINDOW_RESTORE"><code class="docutils literal notranslate"><span class="pre">EDB_WINDOW_RESTORE</span></code></a></li>
-<li><a class="reference internal" href="#id130"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_RESTORE</span></code></a></li>
+<li><a class="reference internal" href="#id135"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_RESTORE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_WINDOW_MINIMIZE"><code class="docutils literal notranslate"><span class="pre">EDB_WINDOW_MINIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id131"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_MINIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id136"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_MINIMIZE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_WINDOW_MAXIMIZE"><code class="docutils literal notranslate"><span class="pre">EDB_WINDOW_MAXIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id132"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_MAXIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id137"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_WINDOW_MAXIMIZE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edb-yaxis-direction-constants">EDB_YAXIS_DIRECTION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_YAXIS_NORMAL"><code class="docutils literal notranslate"><span class="pre">EDB_YAXIS_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#id133"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_YAXIS_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#id138"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_YAXIS_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDB_YAXIS_INVERTED"><code class="docutils literal notranslate"><span class="pre">EDB_YAXIS_INVERTED</span></code></a></li>
-<li><a class="reference internal" href="#id134"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_YAXIS_INVERTED</span></code></a></li>
+<li><a class="reference internal" href="#id139"><code class="docutils literal notranslate"><span class="pre">gxapi.EDB_YAXIS_INVERTED</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -636,7 +641,7 @@ on X,Y and Z and their projection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Currently channel symbol.
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if the mark is not in a channel.</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if the mark is not in a channel.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
@@ -711,7 +716,7 @@ at the current fid (if available).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Currently displayed line symbol.
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no line displayed.</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no line displayed.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
@@ -947,7 +952,7 @@ from any channel, loaded or not.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The next line symbol of currently displayed line.
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no line displayed.</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no line displayed.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
@@ -967,7 +972,7 @@ from any channel, loaded or not.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The previous line symbol of currently displayed line.
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no line displayed.</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no line displayed.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
@@ -1041,7 +1046,7 @@ from any channel, loaded or not.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Minimum x</p></li>
 <li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Maximum x</p></li>
-<li><p><strong>ph_chan_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X axis channel, <a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if none</p></li>
+<li><p><strong>ph_chan_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X axis channel, <a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if none</p></li>
 </ul>
 </dd>
 </dl>
@@ -1214,6 +1219,36 @@ devoted to the profiles, use the <a class="reference internal" href="#geosoft.gx
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEDB.get_window_area">
+<span class="sig-name descname"><span class="pre">get_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDB.html#GXEDB.get_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDB.get_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>Use GetWindowPosition_EDB, which includes multi-monitor support. </p>
+</div>
+<p>Get the location of the database window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Min returned</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Min returned</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Max returned</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Max returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>If the window is minimized, the max values will be
+equal to the min values. If the window is maximized
+X Min and Y min will be <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> and X max and Y max
+will be <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1748,6 +1783,31 @@ view as previously.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEDB.no_load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">no_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDB.html#GXEDB.no_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDB.no_load" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Makes a database the Edited Database without loading it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Single databases to “not” load</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Handle to current edited database</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB.GXEDB">GXEDB</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEDB.null">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDB.html#GXEDB.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDB.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEDB" title="geosoft.gxapi.GXEDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEDB</span></code></a></p>
@@ -1823,6 +1883,34 @@ is not supported in current version of Oasis montaj.</p>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> Returns -1 if channel profile is not loaded.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEDB.read_data_view_bf">
+<span class="sig-name descname"><span class="pre">read_data_view_bf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDB.html#GXEDB.read_data_view_bf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDB.read_data_view_bf" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Retrieve view info from the database via a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line_group</strong> (<em>int</em>) – Line or group symbol</p></li>
+<li><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> (returned)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Returns info on loaded channels and profiles for a given line.
+You can use <a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> to get the line view info from normal lines,
+since the info is the same for all “regular” lines.
+A typical usage would be to call <a class="reference internal" href="#geosoft.gxapi.GXEDB.read_data_view_bf" title="geosoft.gxapi.GXEDB.read_data_view_bf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_data_view_bf</span></code></a> to get view
+info from one database, and then call <a class="reference internal" href="#geosoft.gxapi.GXEDB.write_data_view_bf" title="geosoft.gxapi.GXEDB.write_data_view_bf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_data_view_bf</span></code></a> to
+load this information into another database.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1992,7 +2080,7 @@ error if the channel does not exist.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min_x</strong> (<em>float</em>) – Minimum x, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> for data minimum</p></li>
 <li><p><strong>max_x</strong> (<em>float</em>) – Maximum x, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> for data maximum</p></li>
-<li><p><strong>x_ch</strong> (<em>int</em>) – X axis channel, <a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> to use fids</p></li>
+<li><p><strong>x_ch</strong> (<em>int</em>) – X axis channel, <a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> to use fids</p></li>
 </ul>
 </dd>
 </dl>
@@ -2124,6 +2212,35 @@ profiles (<a class="reference internal" href="#id0" title="geosoft.gxapi.MAX_PRO
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> d = (spreadsheet window height/
 (spreadsheet window height + entire profile window height))</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEDB.set_window_area">
+<span class="sig-name descname"><span class="pre">set_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDB.html#GXEDB.set_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDB.set_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>Use SetWindowPosition_EDB, which includes multi-monitor support. </p>
+</div>
+<p>Set the location of the database window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_min</strong> (<em>int</em>) – X Min</p></li>
+<li><p><strong>y_min</strong> (<em>int</em>) – Y Min</p></li>
+<li><p><strong>x_max</strong> (<em>int</em>) – X Max</p></li>
+<li><p><strong>y_max</strong> (<em>int</em>) – Y Max</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>if the max values are equal or less than the min values
+the window will be mimimized. If any Min values are <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a>
+or any Max values are <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>, the window is maximized.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2322,9 +2439,9 @@ loaded nothing happens.</p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> If the database is not loaded, nothing happens.
 The user can be prompted to save before unloading.
-If <a class="reference internal" href="#id125" title="geosoft.gxapi.EDB_UNLOAD_NO_PROMPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EDB_UNLOAD_NO_PROMPT</span></code></a>, data is always saved.
+If <a class="reference internal" href="#id130" title="geosoft.gxapi.EDB_UNLOAD_NO_PROMPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EDB_UNLOAD_NO_PROMPT</span></code></a>, data is always saved.
 EDB_UNLOAD_MULTIPROMPT is now obsolete and
-is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EDB_UNLOAD_SINGLE_PROMPT</span></code></a>.</p>
+is equivalent to <a class="reference internal" href="#id131" title="geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EDB_UNLOAD_SINGLE_PROMPT</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2360,6 +2477,34 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEDB.write_data_view_bf">
+<span class="sig-name descname"><span class="pre">write_data_view_bf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDB.html#GXEDB.write_data_view_bf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDB.write_data_view_bf" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Write the View info from a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> into the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line_group</strong> (<em>int</em>) – Line or group symbol</p></li>
+<li><p><strong>bf</strong> (<a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><em>GXBF</em></a>) – <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> (input)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Set info on loaded channels and profiles for a given line.
+You can use <a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> to get the line view info from normal lines,
+since the info is the same for all “regular” lines.
+A typical usage would be to call <a class="reference internal" href="#geosoft.gxapi.GXEDB.read_data_view_bf" title="geosoft.gxapi.GXEDB.read_data_view_bf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_data_view_bf</span></code></a> to get view
+info from one database, and then call <a class="reference internal" href="#geosoft.gxapi.GXEDB.write_data_view_bf" title="geosoft.gxapi.GXEDB.write_data_view_bf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_data_view_bf</span></code></a> to
+load this information into another database.</p>
+</dd></dl>
+
 </dd></dl>
 
 <section id="max-prof-wnd-constants">
@@ -2385,8 +2530,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PATH_FULL</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PATH_FULL" title="Link to this definition">¶</a></dt>
 <dd><p>d:\directory\file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id99">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_FULL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id104">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_FULL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2396,8 +2541,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PATH_DIR</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PATH_DIR" title="Link to this definition">¶</a></dt>
 <dd><p>\directory\file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id100">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id105">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2407,8 +2552,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PATH_NAME_EXT</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PATH_NAME_EXT" title="Link to this definition">¶</a></dt>
 <dd><p>File.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id101">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id106">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2418,8 +2563,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PATH_NAME</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PATH_NAME" title="Link to this definition">¶</a></dt>
 <dd><p>File</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id102">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id107">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2433,8 +2578,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_CHANNEL</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_CHANNEL" title="Link to this definition">¶</a></dt>
 <dd><p>DB_SYMB</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id103">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_CHANNEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id108">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_CHANNEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2447,8 +2592,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 2 - long dash
 3 - short dash</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id104">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_LINE_STYLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id109">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_LINE_STYLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2461,8 +2606,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 2 - medium
 3 - heavy</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id105">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_LINE_WEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id110">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_LINE_WEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2478,8 +2623,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 5 - x
 6 - +</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id106">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SYMBOL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id111">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SYMBOL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2490,8 +2635,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <dd><p>0 - normal
 1 - large</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id107">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SYMBOL_WEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id112">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SYMBOL_WEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2501,8 +2646,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_COLOR</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_COLOR" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a> Color Value</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id108">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_COLOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id113">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_COLOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2512,8 +2657,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_WRAP</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_WRAP" title="Link to this definition">¶</a></dt>
 <dd><p>0-no, 1-yes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id109">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_WRAP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id114">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_WRAP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2523,8 +2668,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_BREAK_ON_DUMMY</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_BREAK_ON_DUMMY" title="Link to this definition">¶</a></dt>
 <dd><p>0-no, 1-yes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id110">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_BREAK_ON_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id115">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_BREAK_ON_DUMMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id115" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2534,8 +2679,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_GRID_LINE</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_GRID_LINE" title="Link to this definition">¶</a></dt>
 <dd><p>0-no, 1-yes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id111">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_GRID_LINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id116">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_GRID_LINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id116" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2545,8 +2690,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_R_GRID_LINE_INTERVAL</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_R_GRID_LINE_INTERVAL" title="Link to this definition">¶</a></dt>
 <dd><p>0-no, 1-yes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id112">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_R_GRID_LINE_INTERVAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id117">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_R_GRID_LINE_INTERVAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id117" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2556,8 +2701,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_LOG</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_LOG" title="Link to this definition">¶</a></dt>
 <dd><p>0-Linear, 1-Log, 2-LogLinear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id113">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id118">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id118" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2567,8 +2712,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_R_LOG_MINIMUM</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_R_LOG_MINIMUM" title="Link to this definition">¶</a></dt>
 <dd><p>Minimum Value</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id114">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_R_LOG_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id119">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_R_LOG_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#id119" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2578,8 +2723,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_SAMESCALE</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_SAMESCALE" title="Link to this definition">¶</a></dt>
 <dd><p>0-no, 1-yes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id115">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SAMESCALE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#id115" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id120">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SAMESCALE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#id120" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2591,8 +2736,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 -1 - previous line
 -2 - next line</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id116">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SOURCELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#id116" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id121">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SOURCELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#id121" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2604,8 +2749,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 1 - fix the range
 2 - fix the scale, center the range</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id117">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SCALEOPTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#id117" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id122">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SCALEOPTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#id122" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2615,8 +2760,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROF_I_SAMERANGE</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROF_I_SAMERANGE" title="Link to this definition">¶</a></dt>
 <dd><p>0-no, 1-yes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id118">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SAMERANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#id118" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id123">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROF_I_SAMERANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#id123" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2630,8 +2775,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROFILE_SCALE_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id119">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id119" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id124">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id124" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2641,8 +2786,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LOG</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROFILE_SCALE_LOG" title="Link to this definition">¶</a></dt>
 <dd><p>Log</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id120">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id120" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id125">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id125" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2652,8 +2797,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LOGLINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_PROFILE_SCALE_LOGLINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Loglinear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id121">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id121" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id126">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_PROFILE_SCALE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id126" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2667,8 +2812,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_REMOVE_SAVE</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_REMOVE_SAVE" title="Link to this definition">¶</a></dt>
 <dd><p>Save</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id122">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_REMOVE_SAVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id122" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id127">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_REMOVE_SAVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id127" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2678,8 +2823,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_REMOVE_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_REMOVE_PROMPT" title="Link to this definition">¶</a></dt>
 <dd><p>Prompt</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id123">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_REMOVE_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id123" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id128">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_REMOVE_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id128" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2689,8 +2834,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_REMOVE_DISCARD</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_REMOVE_DISCARD" title="Link to this definition">¶</a></dt>
 <dd><p>Discard</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id124">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_REMOVE_DISCARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id124" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id129">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_REMOVE_DISCARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id129" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2704,8 +2849,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_UNLOAD_NO_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_UNLOAD_NO_PROMPT" title="Link to this definition">¶</a></dt>
 <dd><p>No prompt</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id125">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_UNLOAD_NO_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id125" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id130">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_UNLOAD_NO_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id130" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2715,8 +2860,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_UNLOAD_SINGLE_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT" title="Link to this definition">¶</a></dt>
 <dd><p>Single prompt</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id126">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_UNLOAD_SINGLE_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id126" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id131">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_UNLOAD_SINGLE_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id131" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2726,8 +2871,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_UNLOAD_MULTI_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_UNLOAD_MULTI_PROMPT" title="Link to this definition">¶</a></dt>
 <dd><p>Obsolete</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id127">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_UNLOAD_MULTI_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id127" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id132">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_UNLOAD_MULTI_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id132" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2741,8 +2886,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_WINDOW_POSITION_DOCKED</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_WINDOW_POSITION_DOCKED" title="Link to this definition">¶</a></dt>
 <dd><p>Docked</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id128">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id128" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id133">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id133" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2752,8 +2897,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_WINDOW_POSITION_FLOATING</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_WINDOW_POSITION_FLOATING" title="Link to this definition">¶</a></dt>
 <dd><p>Floating</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id129">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id129" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id134">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id134" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2767,8 +2912,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_WINDOW_RESTORE</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_WINDOW_RESTORE" title="Link to this definition">¶</a></dt>
 <dd><p>Edb window restore</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id130">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id130" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id135">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id135" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2778,8 +2923,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_WINDOW_MINIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_WINDOW_MINIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Edb window minimize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id131">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id131" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id136">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id136" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2789,8 +2934,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_WINDOW_MAXIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_WINDOW_MAXIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Edb window maximize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id132">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id132" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id137">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id137" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2804,8 +2949,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_YAXIS_NORMAL</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_YAXIS_NORMAL" title="Link to this definition">¶</a></dt>
 <dd><p>Edb yaxis normal</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id133">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_YAXIS_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id133" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id138">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_YAXIS_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id138" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2815,8 +2960,8 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
 <span class="sig-name descname"><span class="pre">EDB_YAXIS_INVERTED</span></span><a class="headerlink" href="#geosoft.gxapi.EDB_YAXIS_INVERTED" title="Link to this definition">¶</a></dt>
 <dd><p>Edb yaxis inverted</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id134">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_YAXIS_INVERTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id134" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id139">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDB_YAXIS_INVERTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id139" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2837,13 +2982,13 @@ is equivalent to <a class="reference internal" href="#id126" title="geosoft.gxap
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEDB class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

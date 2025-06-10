@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXWA &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXWA &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXWA</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXWA</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -128,6 +128,7 @@
 <a class="viewcode-back" href="../../../GXWA.html#geosoft.gxapi.GXWA.puts">[docs]</a>
     <span class="k">def</span> <span class="nf">puts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Writes a string to the file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  String to write</span>
@@ -137,6 +138,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_puts</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -148,6 +150,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">append</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates an ASCII file to write to.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:    Name of the File</span>
@@ -164,6 +167,7 @@
 
 <span class="sd">        **Note:** ANSI Encoding is assumed, See `create_ex &lt;geosoft.gxapi.GXWA.create_ex&gt;` to override this.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapWA</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">append</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXWA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -175,6 +179,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">append</span><span class="p">,</span> <span class="n">encode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates an ASCII file to write to.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:    Name of the File</span>
@@ -196,6 +201,7 @@
 <span class="sd">        montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants</span>
 <span class="sd">        were introduce that controls how text are written to files on disk with the `GXWA &lt;geosoft.gxapi.GXWA&gt;` class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapWA</span><span class="o">.</span><span class="n">_create_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">append</span><span class="p">,</span> <span class="n">encode</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXWA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -207,6 +213,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_sbf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">sbf</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">append</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates an ASCII file to write to in an `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param sbf:     Storage</span>
@@ -225,6 +232,7 @@
 
 <span class="sd">        **Note:** See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex &lt;geosoft.gxapi.GXWA.create_sbf_ex&gt;` to override this.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapWA</span><span class="o">.</span><span class="n">_create_sbf</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">sbf</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">append</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXWA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -236,6 +244,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_sbf_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">sbf</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">append</span><span class="p">,</span> <span class="n">encode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates an ASCII file to write to in an `GXSBF &lt;geosoft.gxapi.GXSBF&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param sbf:     Storage</span>
@@ -260,6 +269,7 @@
 <span class="sd">        montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants</span>
 <span class="sd">        were introduce that controls how text are written to files on disk with the `GXWA &lt;geosoft.gxapi.GXWA&gt;` class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapWA</span><span class="o">.</span><span class="n">_create_sbf_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">sbf</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">append</span><span class="p">,</span> <span class="n">encode</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXWA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -273,6 +283,7 @@
 <a class="viewcode-back" href="../../../GXWA.html#geosoft.gxapi.GXWA.new_line">[docs]</a>
     <span class="k">def</span> <span class="nf">new_line</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Forces a new line in the `GXWA &lt;geosoft.gxapi.GXWA&gt;` object.</span>
 <span class="sd">        </span>
 
@@ -280,6 +291,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_new_line</span><span class="p">()</span></div>
 </div>
 
@@ -312,7 +324,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXWA</a></li> 
@@ -320,7 +332,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

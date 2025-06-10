@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXSHP &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXSHP &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSHP</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXSHP</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -134,6 +134,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.append_item">[docs]</a>
     <span class="k">def</span> <span class="nf">append_item</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Append the current item and data to an old `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object.</span>
 <span class="sd">        </span>
 
@@ -145,6 +146,7 @@
 <span class="sd">        `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` geometry and data files. (If no data fields have been</span>
 <span class="sd">        defined, then the data file is not written).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_append_item</span><span class="p">()</span></div>
 
         
@@ -156,6 +158,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a new `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File name</span>
@@ -188,6 +191,7 @@
 <span class="sd">        `SHP_GEOM_TYPE_ARCZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_ARCZ&gt;`      `set_arc_z &lt;geosoft.gxapi.GXSHP.set_arc_z&gt;`</span>
 <span class="sd">        `SHP_GEOM_TYPE_POLYGONZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ&gt;`  `set_polygon_z &lt;geosoft.gxapi.GXSHP.set_polygon_z&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSHP</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXSHP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -201,6 +205,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.add_int_field">[docs]</a>
     <span class="k">def</span> <span class="nf">add_int_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add an INT type data field to a shape file</span>
 <span class="sd">        </span>
 <span class="sd">        :param field:  Field name</span>
@@ -216,6 +221,7 @@
 <span class="sd">        **Note:** The returned field index should be used with the SetXXX_SHP</span>
 <span class="sd">        functions to set individual data values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_int_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -227,6 +233,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.add_double_field">[docs]</a>
     <span class="k">def</span> <span class="nf">add_double_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add a REAL type data field to a shape file</span>
 <span class="sd">        </span>
 <span class="sd">        :param field:  Field name</span>
@@ -244,6 +251,7 @@
 <span class="sd">        **Note:** The returned field index should be used with the SetXXX_SHP</span>
 <span class="sd">        functions to set individual data values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_double_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">dec</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -255,6 +263,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.add_string_field">[docs]</a>
     <span class="k">def</span> <span class="nf">add_string_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add a string type data field to a shape file</span>
 <span class="sd">        </span>
 <span class="sd">        :param field:  Field name</span>
@@ -272,6 +281,7 @@
 <span class="sd">        **Note:** The returned field index should be used with the SetXXX_SHP</span>
 <span class="sd">        functions to set individual data values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_string_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">width</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -283,6 +293,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.find_field">[docs]</a>
     <span class="k">def</span> <span class="nf">find_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the index for a data field.</span>
 <span class="sd">        </span>
 <span class="sd">        :param field:  Field name</span>
@@ -295,6 +306,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -306,6 +318,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.max_id_num">[docs]</a>
     <span class="k">def</span> <span class="nf">max_id_num</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the max ID number.</span>
 <span class="sd">        </span>
 
@@ -316,6 +329,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_id_num</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -327,6 +341,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.num_fields">[docs]</a>
     <span class="k">def</span> <span class="nf">num_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the field number.</span>
 <span class="sd">        </span>
 
@@ -337,6 +352,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_fields</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -348,6 +364,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.num_records">[docs]</a>
     <span class="k">def</span> <span class="nf">num_records</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the record number.</span>
 <span class="sd">        </span>
 
@@ -358,6 +375,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_records</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -369,6 +387,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.type">[docs]</a>
     <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object&#39;s geometry type.</span>
 <span class="sd">        </span>
 
@@ -379,6 +398,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -390,6 +410,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Open an old `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File name</span>
@@ -402,6 +423,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapSHP</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXSHP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -413,6 +435,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_arc">[docs]</a>
     <span class="k">def</span> <span class="nf">set_arc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write an XY arc (polyline) item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X locations</span>
@@ -426,6 +449,7 @@
 
 <span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARC &lt;geosoft.gxapi.SHP_GEOM_TYPE_ARC&gt;` files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_arc</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
 
         
@@ -437,6 +461,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_arc_z">[docs]</a>
     <span class="k">def</span> <span class="nf">set_arc_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write an XYZ arc (polyline) item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X locations</span>
@@ -452,6 +477,7 @@
 
 <span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARCZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_ARCZ&gt;` files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_arc_z</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
 
         
@@ -463,6 +489,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_int">[docs]</a>
     <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a data value to a int.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:  Data field index</span>
@@ -476,6 +503,7 @@
 
 <span class="sd">        **Note:** The input value is converted to the field&#39;s data type.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
 
         
@@ -487,6 +515,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_ipj">[docs]</a>
     <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` object&#39;s projection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:  Input `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`</span>
@@ -503,6 +532,7 @@
 <span class="sd">        This function should be called BEFORE the first</span>
 <span class="sd">        object is written.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
 
         
@@ -514,6 +544,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_point">[docs]</a>
     <span class="k">def</span> <span class="nf">set_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write an XY point item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:    X location</span>
@@ -527,6 +558,7 @@
 
 <span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINT &lt;geosoft.gxapi.SHP_GEOM_TYPE_POINT&gt;` files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
 
         
@@ -538,6 +570,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_point_z">[docs]</a>
     <span class="k">def</span> <span class="nf">set_point_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write an XYZ point item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:    X location</span>
@@ -553,6 +586,7 @@
 
 <span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINTZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_POINTZ&gt;` files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_point_z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
 
         
@@ -564,6 +598,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_polygon">[docs]</a>
     <span class="k">def</span> <span class="nf">set_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write an XY polygon item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:       X locations</span>
@@ -579,6 +614,7 @@
 
 <span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGON &lt;geosoft.gxapi.SHP_GEOM_TYPE_POLYGON&gt;` files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_polygon</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">)</span></div>
 
         
@@ -590,6 +626,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_polygon_z">[docs]</a>
     <span class="k">def</span> <span class="nf">set_polygon_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write an XYZ polygon item.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:       X locations</span>
@@ -607,6 +644,7 @@
 
 <span class="sd">        **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ &lt;geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ&gt;` files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_polygon_z</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">inclusive</span><span class="p">)</span></div>
 
         
@@ -618,6 +656,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_double">[docs]</a>
     <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a data value to a real.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:  Data field index</span>
@@ -631,6 +670,7 @@
 
 <span class="sd">        **Note:** The input value is converted to the field&#39;s data type.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
 
         
@@ -642,6 +682,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.set_string">[docs]</a>
     <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">str_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a data value to a string.</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:    Data field index</span>
@@ -655,6 +696,7 @@
 
 <span class="sd">        **Note:** The input string is converted to the field&#39;s data type.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -666,6 +708,7 @@
 <a class="viewcode-back" href="../../../GXSHP.html#geosoft.gxapi.GXSHP.write_item">[docs]</a>
     <span class="k">def</span> <span class="nf">write_item</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Output the current item and data.</span>
 <span class="sd">        </span>
 
@@ -677,6 +720,7 @@
 <span class="sd">        `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` geometry and data files. (If no data fields have been</span>
 <span class="sd">        defined, then the data file is not written).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_item</span><span class="p">()</span></div>
 </div>
 
@@ -709,7 +753,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXSHP</a></li> 
@@ -717,7 +761,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

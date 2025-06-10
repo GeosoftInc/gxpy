@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXRGRD class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXRGRD class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXRGRD class</a></li> 
       </ul>
     </div>
@@ -43,7 +43,6 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.clear"><code class="docutils literal notranslate"><span class="pre">GXRGRD.clear()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.create"><code class="docutils literal notranslate"><span class="pre">GXRGRD.create()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.create_img"><code class="docutils literal notranslate"><span class="pre">GXRGRD.create_img()</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.default"><code class="docutils literal notranslate"><span class="pre">GXRGRD.default()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.is_null"><code class="docutils literal notranslate"><span class="pre">GXRGRD.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.load_parms"><code class="docutils literal notranslate"><span class="pre">GXRGRD.load_parms()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.null"><code class="docutils literal notranslate"><span class="pre">GXRGRD.null()</span></code></a></li>
@@ -53,6 +52,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.run_list"><code class="docutils literal notranslate"><span class="pre">GXRGRD.run_list()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.run_vv"><code class="docutils literal notranslate"><span class="pre">GXRGRD.run_vv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.save_parms"><code class="docutils literal notranslate"><span class="pre">GXRGRD.save_parms()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRGRD.set_default"><code class="docutils literal notranslate"><span class="pre">GXRGRD.set_default()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -161,30 +161,6 @@ control file parameters into the <a class="reference internal" href="#geosoft.gx
 <p><strong>Note:</strong> If the grid file name is defined, the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> is tied to a new output file.
 If the grid file name is not defined, the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> is memory-based; not
 tied to a file.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="geosoft.gxapi.GXRGRD.default">
-<span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zchan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_dat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRGRD.html#GXRGRD.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRGRD.default" title="Link to this definition">¶</a></dt>
-<dd><p>Set the defaults.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>zchan</strong> (<em>str</em>) – Name of Z Channel to perfrom gridding on</p></li>
-<li><p><strong>in_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Handle to source <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a> object (from database)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>0 OK, 1 Error.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.1.</span></p>
-</div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -391,6 +367,30 @@ its control file.</p>
 created. Otherwise, the old file will be overwritten.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRGRD.set_default">
+<span class="sig-name descname"><span class="pre">set_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zchan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_dat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRGRD.html#GXRGRD.set_default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRGRD.set_default" title="Link to this definition">¶</a></dt>
+<dd><p>Set the defaults.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zchan</strong> (<em>str</em>) – Name of Z Channel to perfrom gridding on</p></li>
+<li><p><strong>in_dat</strong> (<a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><em>GXDAT</em></a>) – Handle to source <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a> object (from database)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 OK, 1 Error.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.0.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -408,13 +408,13 @@ created. Otherwise, the old file will be overwritten.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXRGRD class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

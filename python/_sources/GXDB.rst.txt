@@ -569,6 +569,10 @@ Array channel base coordinate type
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS
+.. autodata:: geosoft.gxapi.DB_ARRAY_BASETYPE_ENERGIES
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DB_ARRAY_BASETYPE_ENERGIES
 
 
 .. _NULLSYMB:

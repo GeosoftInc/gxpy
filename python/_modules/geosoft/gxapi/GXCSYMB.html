@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXCSYMB &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXCSYMB &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXCSYMB</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXCSYMB</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -131,6 +131,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_angle">[docs]</a>
     <span class="k">def</span> <span class="nf">set_angle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the symbol angle.</span>
 <span class="sd">        </span>
 <span class="sd">        :param angle:  Symbol angle</span>
@@ -140,6 +141,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_angle</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span></div>
 
         
@@ -151,6 +153,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_base">[docs]</a>
     <span class="k">def</span> <span class="nf">set_base</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set base value to subtract from Z values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param base:   Symbol Base</span>
@@ -160,6 +163,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_base</span><span class="p">(</span><span class="n">base</span><span class="p">)</span></div>
 
         
@@ -171,6 +175,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_dynamic_col">[docs]</a>
     <span class="k">def</span> <span class="nf">set_dynamic_col</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">att</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Associate symbol edge or fill colors with Z data</span>
 <span class="sd">        and color transform.</span>
 <span class="sd">        </span>
@@ -185,6 +190,7 @@
 <span class="sd">        reestablishes the symbol color association with their Z data</span>
 <span class="sd">        values and color transform.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_dynamic_col</span><span class="p">(</span><span class="n">att</span><span class="p">)</span></div>
 
         
@@ -196,6 +202,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_fixed">[docs]</a>
     <span class="k">def</span> <span class="nf">set_fixed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fixed</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set symbol sizing to fixed (or proportionate)</span>
 <span class="sd">        </span>
 <span class="sd">        :param fixed:  TRUE  = Fixed symbol sizing FALSE = Proportionate sizing</span>
@@ -205,6 +212,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_fixed</span><span class="p">(</span><span class="n">fixed</span><span class="p">)</span></div>
 
         
@@ -216,6 +224,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_number">[docs]</a>
     <span class="k">def</span> <span class="nf">set_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the symbol number.</span>
 <span class="sd">        </span>
 <span class="sd">        :param number:  Symbol number (0x1-0x1ffff)</span>
@@ -232,6 +241,7 @@
 <span class="sd">        It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char &lt;geosoft.gxapi.GXUNC.is_valid_utf16_char&gt;`. The high 16-bits are reserved</span>
 <span class="sd">        for future use. Also see: `GXUNC.valid_symbol &lt;geosoft.gxapi.GXUNC.valid_symbol&gt;` and `GXUNC.validate_symbols &lt;geosoft.gxapi.GXUNC.validate_symbols&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_number</span><span class="p">(</span><span class="n">number</span><span class="p">)</span></div>
 
         
@@ -243,6 +253,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_scale">[docs]</a>
     <span class="k">def</span> <span class="nf">set_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the symbol scale.</span>
 <span class="sd">        </span>
 <span class="sd">        :param scale:  Symbol scale (&gt; 0.0)</span>
@@ -252,6 +263,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span></div>
 
         
@@ -263,6 +275,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.add_data">[docs]</a>
     <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add x,y,z data to a color symbol object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` for X data</span>
@@ -276,6 +289,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_data</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
 
         
@@ -287,6 +301,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXCSYMB &lt;geosoft.gxapi.GXCSYMB&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param itr:  ZON, `GXAGG &lt;geosoft.gxapi.GXAGG&gt;`, or `GXITR &lt;geosoft.gxapi.GXITR&gt;` file name</span>
@@ -299,6 +314,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCSYMB</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">itr</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXCSYMB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -312,6 +328,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.get_itr">[docs]</a>
     <span class="k">def</span> <span class="nf">get_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the `GXITR &lt;geosoft.gxapi.GXITR&gt;` of the `GXCSYMB &lt;geosoft.gxapi.GXCSYMB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param itr:    `GXITR &lt;geosoft.gxapi.GXITR&gt;` object</span>
@@ -321,6 +338,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_itr</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span></div>
 
         
@@ -332,6 +350,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_font">[docs]</a>
     <span class="k">def</span> <span class="nf">set_font</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">geo_font</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">italic</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the symbol font name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param font:      Font name</span>
@@ -347,6 +366,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_font</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">geo_font</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">italic</span><span class="p">)</span></div>
 
         
@@ -358,6 +378,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.set_static_col">[docs]</a>
     <span class="k">def</span> <span class="nf">set_static_col</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">att</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a static color for the symbol edge or fill.</span>
 <span class="sd">        </span>
 <span class="sd">        :param col:    Color value</span>
@@ -373,6 +394,7 @@
 <span class="sd">        By default, both edge and fill colors vary according to their</span>
 <span class="sd">        Z data values and a color transform.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_static_col</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">att</span><span class="p">)</span></div>
 
         
@@ -384,6 +406,7 @@
 <a class="viewcode-back" href="../../../GXCSYMB.html#geosoft.gxapi.GXCSYMB.get_stat">[docs]</a>
     <span class="k">def</span> <span class="nf">get_stat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the `GXST &lt;geosoft.gxapi.GXST&gt;` of the `GXCSYMB &lt;geosoft.gxapi.GXCSYMB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param st:     `GXST &lt;geosoft.gxapi.GXST&gt;` object</span>
@@ -393,6 +416,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_stat</span><span class="p">(</span><span class="n">st</span><span class="p">)</span></div>
 </div>
 
@@ -425,7 +449,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXCSYMB</a></li> 
@@ -433,7 +457,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

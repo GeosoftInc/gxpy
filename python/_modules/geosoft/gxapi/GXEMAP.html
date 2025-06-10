@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXEMAP &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXEMAP &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEMAP</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXEMAP</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXE3DV</span> <span class="kn">import</span> <span class="n">GXE3DV</span>
@@ -183,6 +183,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.drop_map_clip_data">[docs]</a>
     <span class="k">def</span> <span class="nf">drop_map_clip_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hglobal</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Drop Map clipboard data on this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param hglobal:  Handle to Global Clipboard data</span>
@@ -194,6 +195,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_drop_map_clip_data</span><span class="p">(</span><span class="n">hglobal</span><span class="p">)</span></div>
 
         
@@ -205,6 +207,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.drag_drop_enabled">[docs]</a>
     <span class="k">def</span> <span class="nf">drag_drop_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if drag-and-drop enabled for the map</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -215,6 +218,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_drag_drop_enabled</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -226,6 +230,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_drag_drop_enabled">[docs]</a>
     <span class="k">def</span> <span class="nf">set_drag_drop_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set whether drag-and-drop is enabled for the map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param enable:  Enables/disables drag-and-drop</span>
@@ -237,6 +242,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_drag_drop_enabled</span><span class="p">(</span><span class="n">enable</span><span class="p">)</span></div>
 
         
@@ -252,6 +258,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.copy_to_clip">[docs]</a>
     <span class="k">def</span> <span class="nf">copy_to_clip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Copy entire map to clipboard.</span>
 <span class="sd">        </span>
 
@@ -269,6 +276,7 @@
 <span class="sd">            4. Entire map as a Geosoft View (go to view mode and hit paste). The coordinates are placed</span>
 <span class="sd">               in the current view coordinates.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy_to_clip</span><span class="p">()</span></div>
 
         
@@ -280,6 +288,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_line">[docs]</a>
     <span class="k">def</span> <span class="nf">draw_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Draws a line on the current map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X1</span>
@@ -303,6 +312,7 @@
 <span class="sd">        screen refresh.  This function is for you to provide</span>
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_line</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
 
         
@@ -314,6 +324,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_rect">[docs]</a>
     <span class="k">def</span> <span class="nf">draw_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Draws a rect on the current map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X1</span>
@@ -337,6 +348,7 @@
 <span class="sd">        screen refresh.  This function is for you to provide</span>
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_rect</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
 
         
@@ -348,6 +360,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_rect_3d">[docs]</a>
     <span class="k">def</span> <span class="nf">draw_rect_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">pix</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a square symbol on a section view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X - True X location</span>
@@ -371,6 +384,7 @@
 <span class="sd">        screen refresh.  This function is for you to provide</span>
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_rect_3d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">pix</span><span class="p">)</span></div>
 
         
@@ -382,6 +396,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.draw_ply">[docs]</a>
     <span class="k">def</span> <span class="nf">draw_ply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polygon</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Draws a polygon on the current map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param polygon:  `GXPLY &lt;geosoft.gxapi.GXPLY&gt;` Object</span>
@@ -399,6 +414,7 @@
 <span class="sd">        screen refresh.  This function is for you to provide</span>
 <span class="sd">        interactive screen feedback to your user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_ply</span><span class="p">(</span><span class="n">polygon</span><span class="p">)</span></div>
 
         
@@ -410,6 +426,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_display_area">[docs]</a>
     <span class="k">def</span> <span class="nf">get_display_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the area you are currently looking at.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min returned</span>
@@ -430,6 +447,7 @@
 <span class="sd">        **Note:** Coordinates are based on the current view units.</span>
 <span class="sd">        For 3D views this will return the full map extents.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_display_area</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -441,6 +459,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_display_area_raw">[docs]</a>
     <span class="k">def</span> <span class="nf">get_display_area_raw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the area you are currently looking at in raw map units</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min returned</span>
@@ -461,6 +480,7 @@
 <span class="sd">        **Note:** Coordinates are in millimeters.</span>
 <span class="sd">        For 3D views this will return the full map extents.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_display_area_raw</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -472,6 +492,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_map_layout_props">[docs]</a>
     <span class="k">def</span> <span class="nf">get_map_layout_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the base layout view properties.</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap_to_grid:  Snap to grid</span>
@@ -500,6 +521,7 @@
 <span class="sd">        **Note:** This affects the display units and other related properties for the base</span>
 <span class="sd">        view of a map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">snap_to_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">snap_dist</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_rulers</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_units</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_red</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_green</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_blue</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_map_layout_props</span><span class="p">(</span><span class="n">snap_to_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">snap_dist</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_grid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_rulers</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">view_units</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_red</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_green</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">grid_blue</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -511,6 +533,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_map_snap">[docs]</a>
     <span class="k">def</span> <span class="nf">get_map_snap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get current snapping distance in MM</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap:  Snap value in MM (returned)</span>
@@ -522,6 +545,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">snap</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_map_snap</span><span class="p">(</span><span class="n">snap</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -533,6 +557,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_window_state">[docs]</a>
     <span class="k">def</span> <span class="nf">get_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve the current state of the map window</span>
 <span class="sd">        </span>
 
@@ -545,6 +570,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_state</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -556,6 +582,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_display_area">[docs]</a>
     <span class="k">def</span> <span class="nf">set_display_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the area you wish to see.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min</span>
@@ -576,6 +603,7 @@
 <span class="sd">        **Note:** Coordinates are based on the current view user units.</span>
 <span class="sd">        The map is immediatly redrawn.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_display_area</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
 
         
@@ -587,6 +615,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_map_layout_props">[docs]</a>
     <span class="k">def</span> <span class="nf">set_map_layout_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the base layout view properties.</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap_to_grid:  Snap to grid</span>
@@ -615,6 +644,7 @@
 <span class="sd">        **Note:** This affects the display units and other related properties for the base</span>
 <span class="sd">        view of a map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_map_layout_props</span><span class="p">(</span><span class="n">snap_to_grid</span><span class="p">,</span> <span class="n">snap_dist</span><span class="p">,</span> <span class="n">view_grid</span><span class="p">,</span> <span class="n">view_rulers</span><span class="p">,</span> <span class="n">view_units</span><span class="p">,</span> <span class="n">grid_red</span><span class="p">,</span> <span class="n">grid_green</span><span class="p">,</span> <span class="n">grid_blue</span><span class="p">)</span></div>
 
         
@@ -626,6 +656,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_map_snap">[docs]</a>
     <span class="k">def</span> <span class="nf">set_map_snap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snap</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set current snapping distance in MM</span>
 <span class="sd">        </span>
 <span class="sd">        :param snap:  Snap value in MM</span>
@@ -637,6 +668,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_map_snap</span><span class="p">(</span><span class="n">snap</span><span class="p">)</span></div>
 
         
@@ -648,6 +680,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_window_state">[docs]</a>
     <span class="k">def</span> <span class="nf">set_window_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Changes the state of the map window</span>
 <span class="sd">        </span>
 <span class="sd">        :param state:  :ref:`EMAP_WINDOW_STATE`</span>
@@ -659,6 +692,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span></div>
 
         
@@ -674,6 +708,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.packed_files">[docs]</a>
     <span class="k">def</span> <span class="nf">packed_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        The number of packed files in the map.</span>
 <span class="sd">        </span>
 
@@ -686,6 +721,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packed_files</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -697,6 +733,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.activate_group">[docs]</a>
     <span class="k">def</span> <span class="nf">activate_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_group</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Activates a group and associated tools.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view_group:  &quot;View/Group&quot;</span>
@@ -714,6 +751,7 @@
 <span class="sd">        image color tool. Be sure to pass a combined name containing</span>
 <span class="sd">        both the view name and the group separated by a &quot;/&quot; or &quot;\\&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_activate_group</span><span class="p">(</span><span class="n">view_group</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -725,6 +763,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.activate_view">[docs]</a>
     <span class="k">def</span> <span class="nf">activate_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Activates a view and associated tools.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  &quot;View&quot;</span>
@@ -736,6 +775,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_activate_view</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -747,6 +787,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the Current Edited map.</span>
 <span class="sd">        </span>
 
@@ -759,6 +800,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -770,6 +812,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the Current Edited map.</span>
 <span class="sd">        </span>
 
@@ -785,6 +828,7 @@
 <span class="sd">        **Note:** This function acts just like `current &lt;geosoft.gxapi.GXEMAP.current&gt;` except that the document is not activated (brought to foreground) and no</span>
 <span class="sd">        guarantee is given about which document is currently active.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_current_no_activate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -796,6 +840,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_if_exists</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the Current Edited map.</span>
 <span class="sd">        </span>
 
@@ -809,7 +854,39 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_current_if_exists</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.current_allow_cancel_on_browse">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.current_allow_cancel_on_browse">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">current_allow_cancel_on_browse</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        This method returns the Current Edited map, with special behaviour</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` Object. If there is no current map,</span>
+<span class="sd">                  the user is prompted for a map. If the user cancels from the browse, 0 is return.</span>
+<span class="sd">        :rtype:      GXEMAP</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** If there is no current Current map, and the user cancels out of the</span>
+<span class="sd">        browse for map dialog&quot;, then 0 is returned, which needs to be handled, </span>
+<span class="sd">        otherwise the current map is returned.</span>
+<span class="sd">        Normally (for Current_EMAP), the GX will be terminated on Cancel from the browse dialog.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_current_allow_cancel_on_browse</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
 
@@ -822,6 +899,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.destroy_view">[docs]</a>
     <span class="k">def</span> <span class="nf">destroy_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unload_flag</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Removes the view from the workspace.</span>
 <span class="sd">        </span>
 <span class="sd">        :param unload_flag:  :ref:`EMAP_REMOVE`</span>
@@ -839,6 +917,7 @@
 <span class="sd">        unloaded and optionally saved depending on the :ref:`EMAP_REMOVE`</span>
 <span class="sd">        parameter.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_destroy_view</span><span class="p">(</span><span class="n">unload_flag</span><span class="p">)</span></div>
 
         
@@ -850,6 +929,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.font_lst">[docs]</a>
     <span class="k">def</span> <span class="nf">font_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">which</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        List all Windows and geosoft fonts.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:    List Object</span>
@@ -867,6 +947,7 @@
 <span class="sd">        and `EMAP_FONT_TT &lt;geosoft.gxapi.EMAP_FONT_TT&gt;`, then `EMAP_FONT_GFN &lt;geosoft.gxapi.EMAP_FONT_GFN&gt;`, or vice-versa to</span>
 <span class="sd">        change order of listing.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_font_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">which</span><span class="p">)</span></div>
 
         
@@ -878,6 +959,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.change_current_view">[docs]</a>
     <span class="k">def</span> <span class="nf">change_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Change the current working view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  View name</span>
@@ -896,6 +978,7 @@
 <span class="sd">        Unlike `set_current_view &lt;geosoft.gxapi.GXEMAP.set_current_view&gt;` this function&#39;s action</span>
 <span class="sd">        survive the GX finishing.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_change_current_view</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -907,6 +990,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.create_group_snapshot">[docs]</a>
     <span class="k">def</span> <span class="nf">create_group_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads an `GXLST &lt;geosoft.gxapi.GXLST&gt;` with the current view/group names</span>
 <span class="sd">        existing in a map. Typically used to track group</span>
 <span class="sd">        changes that are about to occur.</span>
@@ -924,6 +1008,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_group_snapshot</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -935,6 +1020,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_3d_view_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_3d_view_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the name of a 3D view if the current view is 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name returned</span>
@@ -946,6 +1032,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_3d_view_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -957,6 +1044,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_current_group">[docs]</a>
     <span class="k">def</span> <span class="nf">get_current_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the current group name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param group:  Returned group name</span>
@@ -970,6 +1058,7 @@
 
 <span class="sd">        **Note:** This function operates on the current map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">group</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_current_group</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -981,6 +1070,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_current_view">[docs]</a>
     <span class="k">def</span> <span class="nf">get_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the current view name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  Returned view name</span>
@@ -994,6 +1084,7 @@
 
 <span class="sd">        **Note:** This function operates on the current map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">view</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_current_view</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1005,6 +1096,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_maps_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load the file names of open maps into a `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   `GXLST &lt;geosoft.gxapi.GXLST&gt;` to load</span>
@@ -1022,6 +1114,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_get_maps_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1033,6 +1126,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the name of the map object of this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name returned</span>
@@ -1044,6 +1138,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1055,6 +1150,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">have_current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns whether a current map is loaded</span>
 <span class="sd">        </span>
 
@@ -1068,6 +1164,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_have_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1079,6 +1176,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">i_get_specified_map_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find a loaded map that has a setting in its reg.</span>
 <span class="sd">        </span>
 <span class="sd">        :param field:  `GXREG &lt;geosoft.gxapi.GXREG&gt;` field name</span>
@@ -1098,6 +1196,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_i_get_specified_map_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1109,6 +1208,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_grid">[docs]</a>
     <span class="k">def</span> <span class="nf">is_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is the map a grid map?</span>
 <span class="sd">        </span>
 
@@ -1121,6 +1221,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_grid</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1132,6 +1233,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">reload_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Reloads a grid document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Source file name</span>
@@ -1145,6 +1247,7 @@
 
 <span class="sd">        **Note:** Use this method to reload (if loaded) a grid document if the file on disk changed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_reload_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1156,6 +1259,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_3d_view">[docs]</a>
     <span class="k">def</span> <span class="nf">is_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is the current view a 3D view.</span>
 <span class="sd">        </span>
 
@@ -1168,6 +1272,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_3d_view</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1179,6 +1284,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_e_3dv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_e_3dv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get an `GXE3DV &lt;geosoft.gxapi.GXE3DV&gt;` from the `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`</span>
 <span class="sd">        </span>
 
@@ -1191,6 +1297,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_e_3dv</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXE3DV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1202,6 +1309,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.is_locked">[docs]</a>
     <span class="k">def</span> <span class="nf">is_locked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if map is locked</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -1212,6 +1320,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_locked</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1223,6 +1332,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">loaded</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns 1 if a map is loaded .</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Map name</span>
@@ -1237,6 +1347,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_loaded</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1248,6 +1359,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.read_only">[docs]</a>
     <span class="k">def</span> <span class="nf">read_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if a map is currently opened in a read-only mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       bool</span>
@@ -1258,6 +1370,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_only</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1269,6 +1382,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_window_position">[docs]</a>
     <span class="k">def</span> <span class="nf">get_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -1290,6 +1404,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_position</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">is_floating</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1301,6 +1416,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_window_position">[docs]</a>
     <span class="k">def</span> <span class="nf">set_window_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the map window&#39;s position and dock state</span>
 <span class="sd">        </span>
 <span class="sd">        :param left:         Window left position</span>
@@ -1322,6 +1438,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_position</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">is_floating</span><span class="p">)</span></div>
 
         
@@ -1333,6 +1450,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.doubleize_group_snapshot">[docs]</a>
     <span class="k">def</span> <span class="nf">doubleize_group_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        The `GXLST &lt;geosoft.gxapi.GXLST&gt;` passed in must contain View\\Group strings in</span>
 <span class="sd">        the Name field only. The function will compare with</span>
 <span class="sd">        a more current `GXLST &lt;geosoft.gxapi.GXLST&gt;` and zoom the map to the new entry.</span>
@@ -1353,6 +1471,7 @@
 <span class="sd">        **Note:** Typically this function is used in conjunction with</span>
 <span class="sd">        CreateSnapshot_EMAP.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_doubleize_group_snapshot</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1364,6 +1483,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_current_view">[docs]</a>
     <span class="k">def</span> <span class="nf">set_current_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the current working view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  View name</span>
@@ -1383,6 +1503,7 @@
 <span class="sd">        GX. As soon as the GX terminates the view will revert</span>
 <span class="sd">        to the original one.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_current_view</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1394,6 +1515,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_view_ipj">[docs]</a>
     <span class="k">def</span> <span class="nf">get_view_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a view&#39;s `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:  View name</span>
@@ -1411,6 +1533,7 @@
 <span class="sd">        without having to call `lock &lt;geosoft.gxapi.GXEMAP.lock&gt;`. This could be an expensive operation</span>
 <span class="sd">        that cause undesirable UX.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_view_ipj</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">)</span></div>
 
         
@@ -1422,6 +1545,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads maps into the editor.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  List of maps (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -1444,6 +1568,7 @@
 <span class="sd">        All other files in the list are assumed to be in the same</span>
 <span class="sd">        directory as the first file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1455,6 +1580,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_no_activate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads documents into the workspace</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  List of documents (&#39;;&#39; or &#39;|&#39; delimited) to load.</span>
@@ -1473,6 +1599,7 @@
 <span class="sd">        **Note:** This function acts just like `load &lt;geosoft.gxapi.GXEMAP.load&gt;` except that the document(s) is not activated (brought to foreground) and no</span>
 <span class="sd">        guarantee is given about which document is currently active.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load_no_activate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1484,6 +1611,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_with_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load an `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` with the view from a current `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Source Map name</span>
@@ -1504,6 +1632,7 @@
 <span class="sd">        dbsubset to create a new database with the same</span>
 <span class="sd">        view as previously.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load_with_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p2</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1515,6 +1644,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.lock">[docs]</a>
     <span class="k">def</span> <span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method locks the Edited map.</span>
 <span class="sd">        </span>
 
@@ -1529,6 +1659,7 @@
 
 <span class="sd">        **Note:** The Redraw flag is set to `EMAP_REDRAW_YES &lt;geosoft.gxapi.EMAP_REDRAW_YES&gt;` when this functions is called.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1540,6 +1671,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.make_current">[docs]</a>
     <span class="k">def</span> <span class="nf">make_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Makes this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` object the current active object to the user.</span>
 <span class="sd">        </span>
 
@@ -1549,6 +1681,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_current</span><span class="p">()</span></div>
 
         
@@ -1560,6 +1693,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.print_">[docs]</a>
     <span class="k">def</span> <span class="nf">print_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entire_map</span><span class="p">,</span> <span class="n">scale_to_fit</span><span class="p">,</span> <span class="n">print_to_file</span><span class="p">,</span> <span class="n">all_pages</span><span class="p">,</span> <span class="n">centre</span><span class="p">,</span> <span class="n">copies</span><span class="p">,</span> <span class="n">first_page</span><span class="p">,</span> <span class="n">last_page</span><span class="p">,</span> <span class="n">scale_factor</span><span class="p">,</span> <span class="n">overlap_size</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Print the current map to current printer.</span>
 <span class="sd">        </span>
 <span class="sd">        :param entire_map:     lEntireMap  (0 or 1)</span>
@@ -1595,6 +1729,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_print_</span><span class="p">(</span><span class="n">entire_map</span><span class="p">,</span> <span class="n">scale_to_fit</span><span class="p">,</span> <span class="n">print_to_file</span><span class="p">,</span> <span class="n">all_pages</span><span class="p">,</span> <span class="n">centre</span><span class="p">,</span> <span class="n">copies</span><span class="p">,</span> <span class="n">first_page</span><span class="p">,</span> <span class="n">last_page</span><span class="p">,</span> <span class="n">scale_factor</span><span class="p">,</span> <span class="n">overlap_size</span><span class="p">,</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1606,6 +1741,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.redraw">[docs]</a>
     <span class="k">def</span> <span class="nf">redraw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Redraw the map immediately.</span>
 <span class="sd">        </span>
 
@@ -1617,6 +1753,7 @@
 
 <span class="sd">        **Note:** Redraws the map immediately. Map must not be locked.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_redraw</span><span class="p">()</span></div>
 
         
@@ -1628,6 +1765,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.select_group">[docs]</a>
     <span class="k">def</span> <span class="nf">select_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_group</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Select a group.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view_group:  &quot;View/Group&quot;</span>
@@ -1639,6 +1777,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_select_group</span><span class="p">(</span><span class="n">view_group</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1650,6 +1789,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_redraw_flag">[docs]</a>
     <span class="k">def</span> <span class="nf">set_redraw_flag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">redraw</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the redraw flag.</span>
 <span class="sd">        </span>
 <span class="sd">        :param redraw:  :ref:`EMAP_REDRAW`</span>
@@ -1671,6 +1811,7 @@
 <span class="sd">        to querying information from the map. And then end with a call to</span>
 <span class="sd">        `un_lock &lt;geosoft.gxapi.GXEMAP.un_lock&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_redraw_flag</span><span class="p">(</span><span class="n">redraw</span><span class="p">)</span></div>
 
         
@@ -1682,6 +1823,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unloads a `GXMAP &lt;geosoft.gxapi.GXMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of the map to unload</span>
@@ -1696,6 +1838,7 @@
 <span class="sd">        **Note:** If the `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` is not loaded, nothing happens.</span>
 <span class="sd">        Same as `un_load_verify &lt;geosoft.gxapi.GXEMAP.un_load_verify&gt;` with FALSE to prompt save.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_un_load</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1707,6 +1850,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_all</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unloads all opened maps</span>
 <span class="sd">        </span>
 
@@ -1716,6 +1860,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_un_load_all</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
 
         
@@ -1727,6 +1872,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">un_load_verify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Unloads an edited map, optional prompt to save.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:    Name of map to unload</span>
@@ -1743,6 +1889,7 @@
 <span class="sd">        **Note:** If the map is not loaded, nothing happens.</span>
 <span class="sd">        If &quot;FALSE&quot;, map is saved without a prompt.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_un_load_verify</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prompt</span><span class="p">)</span></div>
 
         
@@ -1754,6 +1901,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.un_lock">[docs]</a>
     <span class="k">def</span> <span class="nf">un_lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method unlocks the Edited map.</span>
 <span class="sd">        </span>
 
@@ -1763,6 +1911,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_un_lock</span><span class="p">()</span></div>
 
         
@@ -1778,6 +1927,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cur_point">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of the currently selected point in view coordinates</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in current user units.</span>
@@ -1791,6 +1941,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_point</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1802,6 +1953,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cur_point_mm">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cur_point_mm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of the currently selected point in mm on map</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in map mm</span>
@@ -1815,6 +1967,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cur_point_mm</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1826,6 +1979,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cursor">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cursor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of the last known cursor location</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in current view user units</span>
@@ -1839,6 +1993,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cursor</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1850,6 +2005,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_cursor_mm">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cursor_mm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of the last known cursor location in mm on map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X coordinate in map mm</span>
@@ -1863,6 +2019,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cursor_mm</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1874,6 +2031,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize">[docs]</a>
     <span class="k">def</span> <span class="nf">digitize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">digits</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">delim</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Digitise points from the current map and place in a `GXWA &lt;geosoft.gxapi.GXWA&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param wa:       `GXWA &lt;geosoft.gxapi.GXWA&gt;` in which to write digitized points</span>
@@ -1912,6 +2070,7 @@
 
 <span class="sd">        Locations are in the current view user units</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_digitize</span><span class="p">(</span><span class="n">wa</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">digits</span><span class="p">,</span> <span class="n">prompt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">prefix</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">delim</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">newline</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1923,6 +2082,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize2">[docs]</a>
     <span class="k">def</span> <span class="nf">digitize2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Digitise points from the current map and place in VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:      Real X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -1959,6 +2119,7 @@
 
 <span class="sd">        Locations are in the current view user units</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_digitize2</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">newline</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1970,6 +2131,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize_peaks">[docs]</a>
     <span class="k">def</span> <span class="nf">digitize_peaks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Digitise points from the current map and place in VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:      Real X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2002,6 +2164,7 @@
 <span class="sd">        a higher value, it will just take the first one and continue, and this method will</span>
 <span class="sd">        stall on flat areas as well (since no surrounding point is larger).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_digitize_peaks</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">newline</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2013,6 +2176,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.digitize_polygon">[docs]</a>
     <span class="k">def</span> <span class="nf">digitize_polygon</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pixel_radius</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as iDigitze2_EMAP, but automatically close polygons.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vvx:           Real X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -2046,6 +2210,7 @@
 <span class="sd">        the polygon is assumed to be closed, and the operation is the same as</span>
 <span class="sd">        the RMB &quot;done&quot; command, and the process returns 0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_digitize_polygon</span><span class="p">(</span><span class="n">vvx</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">vvz</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">prompt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">newline</span><span class="p">,</span> <span class="n">pixel_radius</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2057,6 +2222,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_box">[docs]</a>
     <span class="k">def</span> <span class="nf">get_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of a user selected box.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2080,6 +2246,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_box</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2091,6 +2258,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_box2">[docs]</a>
     <span class="k">def</span> <span class="nf">get_box2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">y4</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of a user selected box in a warped view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2128,6 +2296,7 @@
 <span class="sd">        function returns the exact coordinates of all four corners, calculated</span>
 <span class="sd">        from the pixel locations.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_box2</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y3</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x4</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y4</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2139,6 +2308,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_grid">[docs]</a>
     <span class="k">def</span> <span class="nf">get_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x_len</span><span class="p">,</span> <span class="n">y_len</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Position and size a grid on a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2179,6 +2349,7 @@
 <span class="sd">        The coordinates are returned in the current User projection</span>
 <span class="sd">        (See `GXMVIEW.get_user_ipj &lt;geosoft.gxapi.GXMVIEW.get_user_ipj&gt;` and `GXMVIEW.set_user_ipj &lt;geosoft.gxapi.GXMVIEW.set_user_ipj&gt;`.)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">angle</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_len</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_len</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_grid</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">angle</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_len</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_len</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2190,6 +2361,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line">[docs]</a>
     <span class="k">def</span> <span class="nf">get_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the end points of a line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2216,6 +2388,7 @@
 <span class="sd">        **Note:** The coordinates are returned in the current User projection</span>
 <span class="sd">        (See `GXMVIEW.get_user_ipj &lt;geosoft.gxapi.GXMVIEW.get_user_ipj&gt;` and `GXMVIEW.set_user_ipj &lt;geosoft.gxapi.GXMVIEW.set_user_ipj&gt;`.)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_line</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2227,6 +2400,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">get_line_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the end points of a line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2254,6 +2428,7 @@
 <span class="sd">        **Note:** The coordinates are returned in the current User projection</span>
 <span class="sd">        (See `GXMVIEW.get_user_ipj &lt;geosoft.gxapi.GXMVIEW.get_user_ipj&gt;` and `GXMVIEW.set_user_ipj &lt;geosoft.gxapi.GXMVIEW.set_user_ipj&gt;`.)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_line_ex</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2265,6 +2440,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_line_xyz">[docs]</a>
     <span class="k">def</span> <span class="nf">get_line_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the end points of a line in X,Y and Z</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2298,6 +2474,7 @@
 <span class="sd">        This is useful for digitizing a line in an oriented view and getting</span>
 <span class="sd">        the true coordinates in (X, Y, Z) at the selected point on the view plane.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_line_xyz</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2309,6 +2486,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point">[docs]</a>
     <span class="k">def</span> <span class="nf">get_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of a user selected point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2334,6 +2512,7 @@
 
 <span class="sd">            iTrackPoint, GetCurPoint, GetCursor</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_point</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2345,6 +2524,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">get_point_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of a user selected point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2372,6 +2552,7 @@
 
 <span class="sd">            iTrackPoint, GetCurPoint, GetCursor</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_point_ex</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2383,6 +2564,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_point_3d">[docs]</a>
     <span class="k">def</span> <span class="nf">get_point_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of a user selected point.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2412,6 +2594,7 @@
 
 <span class="sd">            iTrackPoint, GetCurPoint, GetCursor</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_point_3d</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2423,6 +2606,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_poly_line">[docs]</a>
     <span class="k">def</span> <span class="nf">get_poly_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns a polyline.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2445,6 +2629,7 @@
 <span class="sd">        **Note:** The coordinates are returned in the current User projection</span>
 <span class="sd">        (See `GXMVIEW.get_user_ipj &lt;geosoft.gxapi.GXMVIEW.get_user_ipj&gt;` and `GXMVIEW.set_user_ipj &lt;geosoft.gxapi.GXMVIEW.set_user_ipj&gt;`.)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_poly_line</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2456,6 +2641,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_poly_line_xyz">[docs]</a>
     <span class="k">def</span> <span class="nf">get_poly_line_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns a polyline.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2482,6 +2668,7 @@
 <span class="sd">        of the method X, Y and Z (depth) are returned. Initially created</span>
 <span class="sd">        to deal with crooked sections.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_poly_line_xyz</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2493,6 +2680,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_rect">[docs]</a>
     <span class="k">def</span> <span class="nf">get_rect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the coordinates of a user selected box starting at a corner.</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  User prompt string</span>
@@ -2533,6 +2721,7 @@
 <span class="sd">        max values. What appears to be a rectangle as seen on the map is not</span>
 <span class="sd">        necessarily a rectangle in the User coordinates.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_rect</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2544,6 +2733,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.track_point">[docs]</a>
     <span class="k">def</span> <span class="nf">track_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get point without prompt or cursor change with tracking</span>
 <span class="sd">        </span>
 <span class="sd">        :param flags:  :ref:`EMAP_TRACK`</span>
@@ -2563,6 +2753,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_track_point</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2578,6 +2769,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_aoi_area">[docs]</a>
     <span class="k">def</span> <span class="nf">get_aoi_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the area of interest.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min returned</span>
@@ -2597,6 +2789,7 @@
 
 <span class="sd">        **Note:** Coordinates are based on the current view units.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_aoi_area</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -2608,6 +2801,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_aoi_area">[docs]</a>
     <span class="k">def</span> <span class="nf">set_aoi_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the area of interest.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:  X Min</span>
@@ -2628,6 +2822,7 @@
 <span class="sd">        **Note:** Coordinates are based on the current view user units.</span>
 <span class="sd">        The map is immediatly redrawn.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_aoi_area</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
 
         
@@ -2639,6 +2834,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_viewport_mode">[docs]</a>
     <span class="k">def</span> <span class="nf">set_viewport_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the viewport mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mode:  :ref:`EMAP_VIEWPORT`</span>
@@ -2654,6 +2850,7 @@
 <span class="sd">        with Get/Set AOIArea. If this is used inside montaj it is important to set or provide</span>
 <span class="sd">        for a method to set the map mode back to normal as this is not exposed in the interface.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_viewport_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -2669,6 +2866,7 @@
 <a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_selected_vertices">[docs]</a>
     <span class="k">def</span> <span class="nf">get_selected_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the verticies of selected object</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X `GXVV &lt;geosoft.gxapi.GXVV&gt;` Handle</span>
@@ -2684,6 +2882,7 @@
 
 <span class="sd">        **Note:** Works only in Vertex Edit Mode</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_selected_vertices</span><span class="p">(</span><span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">)</span></div>
 
         
@@ -2699,6 +2898,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_virtual</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Makes this `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` object the current active object to the user.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of map to create a virtual `GXEMAP &lt;geosoft.gxapi.GXEMAP&gt;` from</span>
@@ -2713,6 +2913,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_create_virtual</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXEMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -2728,6 +2929,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">map_file</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Version of `load &lt;geosoft.gxapi.GXEMAP.load&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map_file:  Map filename</span>
@@ -2741,6 +2943,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">map_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">window</span><span class="p">)</span></div>
 
         
@@ -2752,6 +2955,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_with_view_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">map_file</span><span class="p">,</span> <span class="n">emap</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Version of `GXEDB.load_with_view &lt;geosoft.gxapi.GXEDB.load_with_view&gt;` that can be used to load a database via subclassing into a Windows control.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map_file:  Map filename</span>
@@ -2767,7 +2971,331 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEMAP</span><span class="o">.</span><span class="n">_load_with_view_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">map_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">emap</span><span class="p">,</span> <span class="n">window</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<span class="c1"># Deprecated</span>
+
+
+
+<div class="viewcode-block" id="GXEMAP.export_all_in_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.export_all_in_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_all_in_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">pix_size</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Export the entire Map in view units to an external format.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      File Name To Export</span>
+<span class="sd">        :param view:      View to export coordinates in</span>
+<span class="sd">        :param pix_size:  Resolution in view units of one pixel</span>
+<span class="sd">        :param format:    EMAP_EXPORT_FORMAT</span>
+<span class="sd">        :param options:   Extended Options String (format specific)</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  view:      str</span>
+<span class="sd">        :type  pix_size:  float</span>
+<span class="sd">        :type  format:    str</span>
+<span class="sd">        :type  options:   str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Uses 24 bit color</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_all_in_view</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pix_size</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.export_all_in_view2">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.export_all_in_view2">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_all_in_view2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Same as above with color depth set.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      File Name To Export</span>
+<span class="sd">        :param view:      View to export coordinates in</span>
+<span class="sd">        :param pix_size:  Resolution in view units of one pixel</span>
+<span class="sd">        :param bits:      EMAP_EXPORT_BITS</span>
+<span class="sd">        :param dither:    EMAP_EXPORT_METHOD</span>
+<span class="sd">        :param format:    EMAP_EXPORT_FORMAT</span>
+<span class="sd">        :param options:   Extended Options String (format specific)</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  view:      str</span>
+<span class="sd">        :type  pix_size:  float</span>
+<span class="sd">        :type  bits:      int</span>
+<span class="sd">        :type  dither:    int</span>
+<span class="sd">        :type  format:    str</span>
+<span class="sd">        :type  options:   str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_all_in_view2</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.export_all_raster">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.export_all_raster">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_all_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Export the entire Map to an external format without units.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     File Name To Export</span>
+<span class="sd">        :param size_x:   Number of Pixels in X (X or Y should be specified the other )</span>
+<span class="sd">        :param size_y:   Number of Pixels in Y (should be 0 and computed by export)</span>
+<span class="sd">        :param bits:     EMAP_EXPORT_BITS</span>
+<span class="sd">        :param dither:   EMAP_EXPORT_METHOD</span>
+<span class="sd">        :param format:   EMAP_EXPORT_RASTER_FORMAT</span>
+<span class="sd">        :param options:  Extended Options String (format specific)</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  size_x:   float</span>
+<span class="sd">        :type  size_y:   float</span>
+<span class="sd">        :type  bits:     int</span>
+<span class="sd">        :type  dither:   int</span>
+<span class="sd">        :type  format:   str</span>
+<span class="sd">        :type  options:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_all_raster</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.export_area_in_view">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.export_area_in_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_area_in_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Export an area of a Map in view units to an external format.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      File Name To Export</span>
+<span class="sd">        :param view:      View to export coordinates in</span>
+<span class="sd">        :param pix_size:  Resolution in view units of one pixel</span>
+<span class="sd">        :param min_x:     Area To Export Min X location in view units</span>
+<span class="sd">        :param min_y:     Area To Export Min Y location in view units</span>
+<span class="sd">        :param max_x:     Area To Export Max X location in view units</span>
+<span class="sd">        :param max_y:     Area To Export Max Y location in view units</span>
+<span class="sd">        :param format:    EMAP_EXPORT_FORMAT</span>
+<span class="sd">        :param options:   Extended Options String (format specific)</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  view:      str</span>
+<span class="sd">        :type  pix_size:  float</span>
+<span class="sd">        :type  min_x:     float</span>
+<span class="sd">        :type  min_y:     float</span>
+<span class="sd">        :type  max_x:     float</span>
+<span class="sd">        :type  max_y:     float</span>
+<span class="sd">        :type  format:    str</span>
+<span class="sd">        :type  options:   str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** Uses 24 bit color</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_area_in_view</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.export_area_in_view2">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.export_area_in_view2">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_area_in_view2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Same as above with color depth set.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:      File Name To Export</span>
+<span class="sd">        :param view:      View to export coordinates in</span>
+<span class="sd">        :param pix_size:  Resolution in view units of one pixel</span>
+<span class="sd">        :param bits:      EMAP_EXPORT_BITS</span>
+<span class="sd">        :param dither:    EMAP_EXPORT_METHOD</span>
+<span class="sd">        :param min_x:     Area To Export Min X location in view units</span>
+<span class="sd">        :param min_y:     Area To Export Min Y location in view units</span>
+<span class="sd">        :param max_x:     Area To Export Max X location in view units</span>
+<span class="sd">        :param max_y:     Area To Export Max Y location in view units</span>
+<span class="sd">        :param format:    EMAP_EXPORT_FORMAT</span>
+<span class="sd">        :param options:   Extended Options String (format specific)</span>
+<span class="sd">        :type  name:      str</span>
+<span class="sd">        :type  view:      str</span>
+<span class="sd">        :type  pix_size:  float</span>
+<span class="sd">        :type  bits:      int</span>
+<span class="sd">        :type  dither:    int</span>
+<span class="sd">        :type  min_x:     float</span>
+<span class="sd">        :type  min_y:     float</span>
+<span class="sd">        :type  max_x:     float</span>
+<span class="sd">        :type  max_y:     float</span>
+<span class="sd">        :type  format:    str</span>
+<span class="sd">        :type  options:   str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_area_in_view2</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.export_area_raster">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.export_area_raster">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_area_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Export an area of a Map to an external plot format.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:     File Name To Export</span>
+<span class="sd">        :param min_x:    Area To Export Min X location in mm</span>
+<span class="sd">        :param min_y:    Area To Export Min Y location in mm</span>
+<span class="sd">        :param max_x:    Area To Export Max X location in mm</span>
+<span class="sd">        :param max_y:    Area To Export Max Y location in mm</span>
+<span class="sd">        :param size_x:   Number of Pixels in X (X or Y should be specified the other )</span>
+<span class="sd">        :param size_y:   Number of Pixels in Y (should be 0 and computed by export)</span>
+<span class="sd">        :param bits:     EMAP_EXPORT_BITS</span>
+<span class="sd">        :param dither:   EMAP_EXPORT_METHOD</span>
+<span class="sd">        :param format:   EMAP_EXPORT_RASTER_FORMAT</span>
+<span class="sd">        :param options:  Extended Options String (format specific)</span>
+<span class="sd">        :type  name:     str</span>
+<span class="sd">        :type  min_x:    float</span>
+<span class="sd">        :type  min_y:    float</span>
+<span class="sd">        :type  max_x:    float</span>
+<span class="sd">        :type  max_y:    float</span>
+<span class="sd">        :type  size_x:   float</span>
+<span class="sd">        :type  size_y:   float</span>
+<span class="sd">        :type  bits:     int</span>
+<span class="sd">        :type  dither:   int</span>
+<span class="sd">        :type  format:   str</span>
+<span class="sd">        :type  options:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_area_raster</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.get_window_area">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.get_window_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_window_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Get the location of the map window within the frame.</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:  X Min returned</span>
+<span class="sd">        :param min_y:  Y Min returned</span>
+<span class="sd">        :param max_x:  X Max returned</span>
+<span class="sd">        :param max_y:  Y Max returned</span>
+<span class="sd">        :type  min_x:  int_ref</span>
+<span class="sd">        :type  min_y:  int_ref</span>
+<span class="sd">        :type  max_x:  int_ref</span>
+<span class="sd">        :type  max_y:  int_ref</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The Coordinates are pixels with 0,0 being the bottom</span>
+<span class="sd">        left corner Oasis montaj frame window.</span>
+
+<span class="sd">        If the window is minimized, the max values will be</span>
+<span class="sd">        equal to the min values. If the window is maximized</span>
+<span class="sd">        X Min and Y min will be `iMIN &lt;geosoft.gxapi.iMIN&gt;` and X max and Y max</span>
+<span class="sd">        will be `iMAX &lt;geosoft.gxapi.iMAX&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_window_area</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEMAP.set_window_area">
+<a class="viewcode-back" href="../../../GXEMAP.html#geosoft.gxapi.GXEMAP.set_window_area">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_window_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Set the location of the map window within the frame.</span>
+<span class="sd">        </span>
+<span class="sd">        :param min_x:  X Min</span>
+<span class="sd">        :param min_y:  Y Min</span>
+<span class="sd">        :param max_x:  X Max</span>
+<span class="sd">        :param max_y:  Y Max</span>
+<span class="sd">        :type  min_x:  int</span>
+<span class="sd">        :type  min_y:  int</span>
+<span class="sd">        :type  max_x:  int</span>
+<span class="sd">        :type  max_y:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The Coordinates are pixels with 0,0 being the bottom</span>
+<span class="sd">        left corner Oasis montaj frame window.</span>
+
+<span class="sd">        if the max values are equal or less than the min values</span>
+<span class="sd">        the window will be mimimized. If any Min values are `iMIN &lt;geosoft.gxapi.iMIN&gt;`</span>
+<span class="sd">        or any Max values are `iMAX &lt;geosoft.gxapi.iMAX&gt;`, the window is maximized.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_window_area</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
 </div>
 
         
@@ -2799,7 +3327,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEMAP</a></li> 
@@ -2807,7 +3335,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

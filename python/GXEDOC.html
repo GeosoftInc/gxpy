@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXEDOC class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXEDOC class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEDOC class</a></li> 
       </ul>
     </div>
@@ -47,6 +47,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.current_no_activate"><code class="docutils literal notranslate"><span class="pre">GXEDOC.current_no_activate()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.get_documents_lst"><code class="docutils literal notranslate"><span class="pre">GXEDOC.get_documents_lst()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.get_name"><code class="docutils literal notranslate"><span class="pre">GXEDOC.get_name()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.get_window_area"><code class="docutils literal notranslate"><span class="pre">GXEDOC.get_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.get_window_position"><code class="docutils literal notranslate"><span class="pre">GXEDOC.get_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.get_window_state"><code class="docutils literal notranslate"><span class="pre">GXEDOC.get_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.have_current"><code class="docutils literal notranslate"><span class="pre">GXEDOC.have_current()</span></code></a></li>
@@ -58,6 +59,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.null"><code class="docutils literal notranslate"><span class="pre">GXEDOC.null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.read_only"><code class="docutils literal notranslate"><span class="pre">GXEDOC.read_only()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.save"><code class="docutils literal notranslate"><span class="pre">GXEDOC.save()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.set_window_area"><code class="docutils literal notranslate"><span class="pre">GXEDOC.set_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.set_window_position"><code class="docutils literal notranslate"><span class="pre">GXEDOC.set_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.set_window_state"><code class="docutils literal notranslate"><span class="pre">GXEDOC.set_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEDOC.sync"><code class="docutils literal notranslate"><span class="pre">GXEDOC.sync()</span></code></a></li>
@@ -72,61 +74,61 @@
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_PATH_FULL"><code class="docutils literal notranslate"><span class="pre">EDOC_PATH_FULL</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_PATH_FULL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_PATH_DIR"><code class="docutils literal notranslate"><span class="pre">EDOC_PATH_DIR</span></code></a></li>
-<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_PATH_DIR</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_PATH_DIR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_PATH_NAME_EXT"><code class="docutils literal notranslate"><span class="pre">EDOC_PATH_NAME_EXT</span></code></a></li>
-<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_PATH_NAME_EXT</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_PATH_NAME_EXT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_PATH_NAME"><code class="docutils literal notranslate"><span class="pre">EDOC_PATH_NAME</span></code></a></li>
-<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_PATH_NAME</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_PATH_NAME</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edoc-type-constants">EDOC_TYPE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_TYPE_GMS3D"><code class="docutils literal notranslate"><span class="pre">EDOC_TYPE_GMS3D</span></code></a></li>
-<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_GMS3D</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_GMS3D</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_TYPE_VOXEL"><code class="docutils literal notranslate"><span class="pre">EDOC_TYPE_VOXEL</span></code></a></li>
-<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_VOXEL</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_VOXEL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_TYPE_VOXEL_INVERSION"><code class="docutils literal notranslate"><span class="pre">EDOC_TYPE_VOXEL_INVERSION</span></code></a></li>
-<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_VOXEL_INVERSION</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_VOXEL_INVERSION</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_TYPE_GMS2D"><code class="docutils literal notranslate"><span class="pre">EDOC_TYPE_GMS2D</span></code></a></li>
-<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_GMS2D</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_GMS2D</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_TYPE_GEOSURFACE"><code class="docutils literal notranslate"><span class="pre">EDOC_TYPE_GEOSURFACE</span></code></a></li>
-<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_GEOSURFACE</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_TYPE_GEOSURFACE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edoc-unload-constants">EDOC_UNLOAD constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT"><code class="docutils literal notranslate"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></code></a></li>
-<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_UNLOAD_NO_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_UNLOAD_NO_PROMPT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_UNLOAD_PROMPT"><code class="docutils literal notranslate"><span class="pre">EDOC_UNLOAD_PROMPT</span></code></a></li>
-<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_UNLOAD_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_UNLOAD_PROMPT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edoc-window-position-constants">EDOC_WINDOW_POSITION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_WINDOW_POSITION_DOCKED"><code class="docutils literal notranslate"><span class="pre">EDOC_WINDOW_POSITION_DOCKED</span></code></a></li>
-<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_POSITION_DOCKED</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_POSITION_DOCKED</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_WINDOW_POSITION_FLOATING"><code class="docutils literal notranslate"><span class="pre">EDOC_WINDOW_POSITION_FLOATING</span></code></a></li>
-<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_POSITION_FLOATING</span></code></a></li>
+<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_POSITION_FLOATING</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#edoc-window-state-constants">EDOC_WINDOW_STATE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_WINDOW_RESTORE"><code class="docutils literal notranslate"><span class="pre">EDOC_WINDOW_RESTORE</span></code></a></li>
-<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_RESTORE</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_RESTORE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_WINDOW_MINIMIZE"><code class="docutils literal notranslate"><span class="pre">EDOC_WINDOW_MINIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_MINIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_MINIMIZE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EDOC_WINDOW_MAXIMIZE"><code class="docutils literal notranslate"><span class="pre">EDOC_WINDOW_MAXIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_MAXIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.EDOC_WINDOW_MAXIMIZE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#gms3d-modeltype-constants">GMS3D_MODELTYPE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.GMS3D_MODELTYPE_DEPTH"><code class="docutils literal notranslate"><span class="pre">GMS3D_MODELTYPE_DEPTH</span></code></a></li>
-<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS3D_MODELTYPE_DEPTH</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS3D_MODELTYPE_DEPTH</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GMS3D_MODELTYPE_TIME"><code class="docutils literal notranslate"><span class="pre">GMS3D_MODELTYPE_TIME</span></code></a></li>
-<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS3D_MODELTYPE_TIME</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS3D_MODELTYPE_TIME</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#gms2d-modeltype-constants">GMS2D_MODELTYPE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.GMS2D_MODELTYPE_DEPTH"><code class="docutils literal notranslate"><span class="pre">GMS2D_MODELTYPE_DEPTH</span></code></a></li>
-<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS2D_MODELTYPE_DEPTH</span></code></a></li>
+<li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS2D_MODELTYPE_DEPTH</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GMS2D_MODELTYPE_TIME"><code class="docutils literal notranslate"><span class="pre">GMS2D_MODELTYPE_TIME</span></code></a></li>
-<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS2D_MODELTYPE_TIME</span></code></a></li>
+<li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.GMS2D_MODELTYPE_TIME</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -335,6 +337,36 @@ The <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="g
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEDOC.get_window_area">
+<span class="sig-name descname"><span class="pre">get_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDOC.html#GXEDOC.get_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDOC.get_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>Use GetWindowPosition_EDOC, which includes multi-monitor support. </p>
+</div>
+<p>Get the location of the document window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Min returned</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Min returned</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Max returned</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Max returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>If the window is minimized, the max values will be
+equal to the min values. If the window is maximized
+X Min and Y min will be <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> and X max and Y max
+will be <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -551,6 +583,35 @@ document in the list.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEDOC.set_window_area">
+<span class="sig-name descname"><span class="pre">set_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDOC.html#GXEDOC.set_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDOC.set_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>Use GetWindowPosition_EDOC, which includes multi-monitor support. </p>
+</div>
+<p>Set the location of the document window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<em>int</em>) – X Min</p></li>
+<li><p><strong>min_y</strong> (<em>int</em>) – Y Min</p></li>
+<li><p><strong>max_x</strong> (<em>int</em>) – X Max</p></li>
+<li><p><strong>max_y</strong> (<em>int</em>) – Y Max</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>if the max values are equal or less than the min values
+the window will be mimimized. If any Min values are <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a>
+or any Max values are <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>, the window is maximized.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEDOC.set_window_position">
 <span class="sig-name descname"><span class="pre">set_window_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_floating</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEDOC.html#GXEDOC.set_window_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEDOC.set_window_position" title="Link to this definition">¶</a></dt>
 <dd><p>Get the map window’s position and dock state</p>
@@ -696,7 +757,7 @@ Same as <a class="reference internal" href="#geosoft.gxapi.GXEDOC.un_load_verify
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> If the document is not loaded, nothing happens.
 The user can be prompted to save before unloading.
-If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></code></a>, data is always saved.</p>
+If <a class="reference internal" href="#id33" title="geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></code></a>, data is always saved.</p>
 </dd></dl>
 
 </dd></dl>
@@ -720,8 +781,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_PATH_DIR</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_PATH_DIR" title="Link to this definition">¶</a></dt>
 <dd><p>\directory\file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id23">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id25">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -731,8 +792,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_PATH_NAME_EXT</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_PATH_NAME_EXT" title="Link to this definition">¶</a></dt>
 <dd><p>file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id24">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id26">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -742,8 +803,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_PATH_NAME</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_PATH_NAME" title="Link to this definition">¶</a></dt>
 <dd><p>file</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id25">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id27">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -757,8 +818,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_TYPE_GMS3D</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_TYPE_GMS3D" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGMSYS</span></code></a> 3D Model</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id26">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_GMS3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id28">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_GMS3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -768,8 +829,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_TYPE_VOXEL</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_TYPE_VOXEL" title="Link to this definition">¶</a></dt>
 <dd><p>Voxel</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id27">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_VOXEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id29">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_VOXEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -779,8 +840,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_TYPE_VOXEL_INVERSION</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_TYPE_VOXEL_INVERSION" title="Link to this definition">¶</a></dt>
 <dd><p>Voxel Inversion</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id28">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_VOXEL_INVERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id30">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_VOXEL_INVERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -790,8 +851,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_TYPE_GMS2D</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_TYPE_GMS2D" title="Link to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="GXGMSYS.html#geosoft.gxapi.GXGMSYS" title="geosoft.gxapi.GXGMSYS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGMSYS</span></code></a> 2D Model</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id29">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_GMS2D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id31">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_GMS2D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -801,8 +862,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_TYPE_GEOSURFACE</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_TYPE_GEOSURFACE" title="Link to this definition">¶</a></dt>
 <dd><p>Geosurface</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id30">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_GEOSURFACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id32">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_TYPE_GEOSURFACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -816,8 +877,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT" title="Link to this definition">¶</a></dt>
 <dd><p>No prompt</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id31">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id33">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_UNLOAD_NO_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -827,8 +888,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_UNLOAD_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_UNLOAD_PROMPT" title="Link to this definition">¶</a></dt>
 <dd><p>Prompt</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id32">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_UNLOAD_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id34">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_UNLOAD_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -842,8 +903,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_WINDOW_POSITION_DOCKED</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_WINDOW_POSITION_DOCKED" title="Link to this definition">¶</a></dt>
 <dd><p>Docked</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id33">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id35">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -853,8 +914,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_WINDOW_POSITION_FLOATING</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_WINDOW_POSITION_FLOATING" title="Link to this definition">¶</a></dt>
 <dd><p>Floating</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id34">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id36">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -868,8 +929,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_WINDOW_RESTORE</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_WINDOW_RESTORE" title="Link to this definition">¶</a></dt>
 <dd><p>Edoc window restore</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id35">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id37">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -879,8 +940,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_WINDOW_MINIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_WINDOW_MINIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Edoc window minimize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id36">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id38">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -890,8 +951,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">EDOC_WINDOW_MAXIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EDOC_WINDOW_MAXIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Edoc window maximize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id37">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id39">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EDOC_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -905,8 +966,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">GMS3D_MODELTYPE_DEPTH</span></span><a class="headerlink" href="#geosoft.gxapi.GMS3D_MODELTYPE_DEPTH" title="Link to this definition">¶</a></dt>
 <dd><p>Depth Model</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id38">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS3D_MODELTYPE_DEPTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id40">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS3D_MODELTYPE_DEPTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -916,8 +977,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">GMS3D_MODELTYPE_TIME</span></span><a class="headerlink" href="#geosoft.gxapi.GMS3D_MODELTYPE_TIME" title="Link to this definition">¶</a></dt>
 <dd><p>Time Model</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id39">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS3D_MODELTYPE_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id41">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS3D_MODELTYPE_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -931,8 +992,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">GMS2D_MODELTYPE_DEPTH</span></span><a class="headerlink" href="#geosoft.gxapi.GMS2D_MODELTYPE_DEPTH" title="Link to this definition">¶</a></dt>
 <dd><p>Depth Model</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id40">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS2D_MODELTYPE_DEPTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id42">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS2D_MODELTYPE_DEPTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -942,8 +1003,8 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
 <span class="sig-name descname"><span class="pre">GMS2D_MODELTYPE_TIME</span></span><a class="headerlink" href="#geosoft.gxapi.GMS2D_MODELTYPE_TIME" title="Link to this definition">¶</a></dt>
 <dd><p>Time Model</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id41">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS2D_MODELTYPE_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id43">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GMS2D_MODELTYPE_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -964,13 +1025,13 @@ If <a class="reference internal" href="#id31" title="geosoft.gxapi.EDOC_UNLOAD_N
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEDOC class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

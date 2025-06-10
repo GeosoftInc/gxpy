@@ -46,6 +46,7 @@ These are the low-level library classes and functions that make up the GX API.
    GXEMAP
    GXEMAPTEMPLATE
    GXEUL3
+   GXEVOOBJMETA
    GXEXP
    GXEXT
    GXFFT

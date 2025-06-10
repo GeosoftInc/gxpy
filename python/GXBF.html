@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXBF class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXBF class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXBF class</a></li> 
       </ul>
     </div>
@@ -41,6 +41,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF"><code class="docutils literal notranslate"><span class="pre">GXBF</span></code></a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.__init__"><code class="docutils literal notranslate"><span class="pre">GXBF.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.ch_size"><code class="docutils literal notranslate"><span class="pre">GXBF.ch_size()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXBF.check_file_unc"><code class="docutils literal notranslate"><span class="pre">GXBF.check_file_unc()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.copy"><code class="docutils literal notranslate"><span class="pre">GXBF.copy()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.crc"><code class="docutils literal notranslate"><span class="pre">GXBF.crc()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.create"><code class="docutils literal notranslate"><span class="pre">GXBF.create()</span></code></a></li>
@@ -52,6 +53,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.read_binary_string"><code class="docutils literal notranslate"><span class="pre">GXBF.read_binary_string()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.read_double"><code class="docutils literal notranslate"><span class="pre">GXBF.read_double()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.read_int"><code class="docutils literal notranslate"><span class="pre">GXBF.read_int()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXBF.read_string"><code class="docutils literal notranslate"><span class="pre">GXBF.read_string()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.read_vv"><code class="docutils literal notranslate"><span class="pre">GXBF.read_vv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.seek"><code class="docutils literal notranslate"><span class="pre">GXBF.seek()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.set_destroy_status"><code class="docutils literal notranslate"><span class="pre">GXBF.set_destroy_status()</span></code></a></li>
@@ -59,8 +61,10 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.tell"><code class="docutils literal notranslate"><span class="pre">GXBF.tell()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.write_binary_string"><code class="docutils literal notranslate"><span class="pre">GXBF.write_binary_string()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.write_data_null"><code class="docutils literal notranslate"><span class="pre">GXBF.write_data_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXBF.write_data_string"><code class="docutils literal notranslate"><span class="pre">GXBF.write_data_string()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.write_double"><code class="docutils literal notranslate"><span class="pre">GXBF.write_double()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.write_int"><code class="docutils literal notranslate"><span class="pre">GXBF.write_int()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXBF.write_string"><code class="docutils literal notranslate"><span class="pre">GXBF.write_string()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXBF.write_vv"><code class="docutils literal notranslate"><span class="pre">GXBF.write_vv()</span></code></a></li>
 </ul>
 </li>
@@ -68,41 +72,41 @@
 <li><a class="reference internal" href="#geosoft.gxapi.BF_BYTEORDER_LSB"><code class="docutils literal notranslate"><span class="pre">BF_BYTEORDER_LSB</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_BYTEORDER_LSB</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_BYTEORDER_MSB"><code class="docutils literal notranslate"><span class="pre">BF_BYTEORDER_MSB</span></code></a></li>
-<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_BYTEORDER_MSB</span></code></a></li>
+<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_BYTEORDER_MSB</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#bf-close-constants">BF_CLOSE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_KEEP"><code class="docutils literal notranslate"><span class="pre">BF_KEEP</span></code></a></li>
-<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_KEEP</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_KEEP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_DELETE"><code class="docutils literal notranslate"><span class="pre">BF_DELETE</span></code></a></li>
-<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_DELETE</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_DELETE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#bf-encode-constants">BF_ENCODE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_ENCODE_ANSI"><code class="docutils literal notranslate"><span class="pre">BF_ENCODE_ANSI</span></code></a></li>
-<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_ENCODE_ANSI</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_ENCODE_ANSI</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_ENCODE_UTF8"><code class="docutils literal notranslate"><span class="pre">BF_ENCODE_UTF8</span></code></a></li>
-<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_ENCODE_UTF8</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_ENCODE_UTF8</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#bf-open-mode-constants">BF_OPEN_MODE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_READ"><code class="docutils literal notranslate"><span class="pre">BF_READ</span></code></a></li>
-<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READ</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_READWRITE_NEW"><code class="docutils literal notranslate"><span class="pre">BF_READWRITE_NEW</span></code></a></li>
-<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READWRITE_NEW</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READWRITE_NEW</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_READWRITE_OLD"><code class="docutils literal notranslate"><span class="pre">BF_READWRITE_OLD</span></code></a></li>
-<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READWRITE_OLD</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READWRITE_OLD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_READWRITE_APP"><code class="docutils literal notranslate"><span class="pre">BF_READWRITE_APP</span></code></a></li>
-<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READWRITE_APP</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_READWRITE_APP</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#bf-seek-constants">BF_SEEK constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_SEEK_START"><code class="docutils literal notranslate"><span class="pre">BF_SEEK_START</span></code></a></li>
-<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_SEEK_START</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_SEEK_START</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_SEEK_CURRENT"><code class="docutils literal notranslate"><span class="pre">BF_SEEK_CURRENT</span></code></a></li>
-<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_SEEK_CURRENT</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_SEEK_CURRENT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BF_SEEK_EOF"><code class="docutils literal notranslate"><span class="pre">BF_SEEK_EOF</span></code></a></li>
-<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_SEEK_EOF</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.BF_SEEK_EOF</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -163,6 +167,28 @@ files and writing to files.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXBF.check_file_unc">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_file_unc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXBF.html#GXBF.check_file_unc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXBF.check_file_unc" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Check if this is UNICODE file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – File name to open (”” is a temporary file)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Was not implemented.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -401,6 +427,35 @@ in the native byte order of the reading/writing computer.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXBF.read_string">
+<span class="sig-name descname"><span class="pre">read_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXBF.html#GXBF.read_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXBF.read_string" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Reads string data from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></p></li>
+<li><p><strong>data</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Data</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> If the data source may be in byte order different from that
+required by the reader, you can add the source byte-order
+to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a> elelment type.  The byte order will be swapped
+if required.  For example, to write out a real number 3.5
+with Most-Significant_Byte first (Mortorola) convention:</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_double</span></code>,3.5).</p>
+<p>If a byte order is not specified, the source is assumed to be
+in the native byte order of the reading/writing computer.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXBF.read_vv">
 <span class="sig-name descname"><span class="pre">read_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXBF.html#GXBF.read_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXBF.read_vv" title="Link to this definition">¶</a></dt>
 <dd><p>Read data to a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> from current position in <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
@@ -526,6 +581,24 @@ a read-only file.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXBF.write_data_string">
+<span class="sig-name descname"><span class="pre">write_data_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXBF.html#GXBF.write_data_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXBF.write_data_string" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Writes a string of bytes to <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>str</em>) – Data string to write (no nulls)</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXBF.write_double">
 <span class="sig-name descname"><span class="pre">write_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXBF.html#GXBF.write_double"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXBF.write_double" title="Link to this definition">¶</a></dt>
 <dd><p>Writes real to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
@@ -556,6 +629,31 @@ in the native byte order of the writing computer.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></p></li>
 <li><p><strong>data</strong> (<em>int</em>) – Data</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> See comments on byte order for the Read.. functions if you
+want to enforce a certain byte order.</p>
+<p>If a byte order is not specified, the data is written
+in the native byte order of the writing computer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXBF.write_string">
+<span class="sig-name descname"><span class="pre">write_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXBF.html#GXBF.write_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXBF.write_string" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Writes string to the <a class="reference internal" href="#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> and <a class="reference internal" href="#bf-byteorder"><span class="std std-ref">BF_BYTEORDER constants</span></a></p></li>
+<li><p><strong>p3</strong> (<em>str</em>) – Data</p></li>
 </ul>
 </dd>
 </dl>
@@ -612,8 +710,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_BYTEORDER_MSB</span></span><a class="headerlink" href="#geosoft.gxapi.BF_BYTEORDER_MSB" title="Link to this definition">¶</a></dt>
 <dd><p>Most significant byte first (Mororola, Sun)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id20">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_BYTEORDER_MSB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">512</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id24">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_BYTEORDER_MSB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">512</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -627,8 +725,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_KEEP</span></span><a class="headerlink" href="#geosoft.gxapi.BF_KEEP" title="Link to this definition">¶</a></dt>
 <dd><p>Bf keep</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id21">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_KEEP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id25">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_KEEP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -638,8 +736,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_DELETE</span></span><a class="headerlink" href="#geosoft.gxapi.BF_DELETE" title="Link to this definition">¶</a></dt>
 <dd><p>Bf delete</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id22">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_DELETE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id26">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_DELETE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -653,8 +751,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_ENCODE_ANSI</span></span><a class="headerlink" href="#geosoft.gxapi.BF_ENCODE_ANSI" title="Link to this definition">¶</a></dt>
 <dd><p>String is stored as ANSI code page</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id23">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_ENCODE_ANSI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id27">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_ENCODE_ANSI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -664,8 +762,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_ENCODE_UTF8</span></span><a class="headerlink" href="#geosoft.gxapi.BF_ENCODE_UTF8" title="Link to this definition">¶</a></dt>
 <dd><p>String is stored as <a class="reference internal" href="GXUNC.html#utf8"><span class="std std-ref">UTF8 constants</span></a></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id24">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_ENCODE_UTF8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id28">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_ENCODE_UTF8</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -679,8 +777,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_READ</span></span><a class="headerlink" href="#geosoft.gxapi.BF_READ" title="Link to this definition">¶</a></dt>
 <dd><p>Read only</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id25">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id29">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -690,8 +788,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_READWRITE_NEW</span></span><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_NEW" title="Link to this definition">¶</a></dt>
 <dd><p>Erases existing file</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id26">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READWRITE_NEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id30">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READWRITE_NEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -701,8 +799,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_READWRITE_OLD</span></span><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_OLD" title="Link to this definition">¶</a></dt>
 <dd><p>File must pre-exist</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id27">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READWRITE_OLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id31">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READWRITE_OLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -712,8 +810,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_READWRITE_APP</span></span><a class="headerlink" href="#geosoft.gxapi.BF_READWRITE_APP" title="Link to this definition">¶</a></dt>
 <dd><p>Open and append onto pre-existing file (cannot be read from)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id28">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READWRITE_APP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id32">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_READWRITE_APP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -727,8 +825,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_SEEK_START</span></span><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_START" title="Link to this definition">¶</a></dt>
 <dd><p>Start</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id29">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_SEEK_START</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id33">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_SEEK_START</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -738,8 +836,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_SEEK_CURRENT</span></span><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_CURRENT" title="Link to this definition">¶</a></dt>
 <dd><p>Current</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id30">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_SEEK_CURRENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id34">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_SEEK_CURRENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -749,8 +847,8 @@ in the native byte order of the writing computer.</p>
 <span class="sig-name descname"><span class="pre">BF_SEEK_EOF</span></span><a class="headerlink" href="#geosoft.gxapi.BF_SEEK_EOF" title="Link to this definition">¶</a></dt>
 <dd><p>Eof</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id31">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_SEEK_EOF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id35">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BF_SEEK_EOF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -771,13 +869,13 @@ in the native byte order of the writing computer.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXBF class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

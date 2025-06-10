@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXPGU class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXPGU class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPGU class</a></li> 
       </ul>
     </div>
@@ -44,6 +44,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.bool_mask"><code class="docutils literal notranslate"><span class="pre">GXPGU.bool_mask()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.correlation_matrix"><code class="docutils literal notranslate"><span class="pre">GXPGU.correlation_matrix()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.correlation_matrix2"><code class="docutils literal notranslate"><span class="pre">GXPGU.correlation_matrix2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_grid"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_grid()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_gridding_db"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_gridding_db()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_gridding_db2"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_gridding_db2()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.direct_gridding_db_3d"><code class="docutils literal notranslate"><span class="pre">GXPGU.direct_gridding_db_3d()</span></code></a></li>
@@ -54,6 +55,8 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_db_3d"><code class="docutils literal notranslate"><span class="pre">GXPGU.dw_gridding_db_3d()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.dw_gridding_vv"><code class="docutils literal notranslate"><span class="pre">GXPGU.dw_gridding_vv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.expand"><code class="docutils literal notranslate"><span class="pre">GXPGU.expand()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.fft2_filter"><code class="docutils literal notranslate"><span class="pre">GXPGU.fft2_filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPGU.fft2_trans"><code class="docutils literal notranslate"><span class="pre">GXPGU.fft2_trans()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.fill"><code class="docutils literal notranslate"><span class="pre">GXPGU.fill()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.fill_value"><code class="docutils literal notranslate"><span class="pre">GXPGU.fill_value()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPGU.filt_sym"><code class="docutils literal notranslate"><span class="pre">GXPGU.filt_sym()</span></code></a></li>
@@ -92,58 +95,58 @@
 <li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_ONESIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_ONESIDE</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_ONESIDE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_TWOSIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_TWOSIDE</span></code></a></li>
-<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_TWOSIDE</span></code></a></li>
+<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_TWOSIDE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_THREESIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_THREESIDE</span></code></a></li>
-<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_THREESIDE</span></code></a></li>
+<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_THREESIDE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BLAKEY_TEST_FOURSIDE"><code class="docutils literal notranslate"><span class="pre">BLAKEY_TEST_FOURSIDE</span></code></a></li>
-<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_FOURSIDE</span></code></a></li>
+<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.BLAKEY_TEST_FOURSIDE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pgu-corr-constants">PGU_CORR constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_CORR_SIMPLE"><code class="docutils literal notranslate"><span class="pre">PGU_CORR_SIMPLE</span></code></a></li>
-<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_CORR_SIMPLE</span></code></a></li>
+<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_CORR_SIMPLE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_CORR_PEARSON"><code class="docutils literal notranslate"><span class="pre">PGU_CORR_PEARSON</span></code></a></li>
-<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_CORR_PEARSON</span></code></a></li>
+<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_CORR_PEARSON</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pgu-directgrid-constants">PGU_DIRECTGRID constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_MINIMUM"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_MINIMUM</span></code></a></li>
-<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MINIMUM</span></code></a></li>
+<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MINIMUM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_MAXIMUM</span></code></a></li>
-<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MAXIMUM</span></code></a></li>
+<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MAXIMUM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_MEAN"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_MEAN</span></code></a></li>
-<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MEAN</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_MEAN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_DIRECTGRID_ITEMS"><code class="docutils literal notranslate"><span class="pre">PGU_DIRECTGRID_ITEMS</span></code></a></li>
-<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_ITEMS</span></code></a></li>
+<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_DIRECTGRID_ITEMS</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pgu-direction-constants">PGU_DIRECTION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_FORWARD"><code class="docutils literal notranslate"><span class="pre">PGU_FORWARD</span></code></a></li>
-<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_FORWARD</span></code></a></li>
+<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_FORWARD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_BACKWARD"><code class="docutils literal notranslate"><span class="pre">PGU_BACKWARD</span></code></a></li>
-<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_BACKWARD</span></code></a></li>
+<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_BACKWARD</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pgu-trans-constants">PGU_TRANS constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_TRANS_NONE"><code class="docutils literal notranslate"><span class="pre">PGU_TRANS_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_TRANS_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_TRANS_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_TRANS_LOG"><code class="docutils literal notranslate"><span class="pre">PGU_TRANS_LOG</span></code></a></li>
-<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_TRANS_LOG</span></code></a></li>
+<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_TRANS_LOG</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pgu-interp-order-constants">PGU_INTERP_ORDER constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_XYZ"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_XYZ</span></code></a></li>
-<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_XYZ</span></code></a></li>
+<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_XYZ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_XZY"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_XZY</span></code></a></li>
-<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_XZY</span></code></a></li>
+<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_XZY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_YXZ"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_YXZ</span></code></a></li>
-<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_YXZ</span></code></a></li>
+<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_YXZ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_YZX"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_YZX</span></code></a></li>
-<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_YZX</span></code></a></li>
+<li><a class="reference internal" href="#id63"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_YZX</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZXY"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_ZXY</span></code></a></li>
-<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_ZXY</span></code></a></li>
+<li><a class="reference internal" href="#id64"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_ZXY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZYX"><code class="docutils literal notranslate"><span class="pre">PGU_INTERP_ORDER_ZYX</span></code></a></li>
-<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_ZYX</span></code></a></li>
+<li><a class="reference internal" href="#id65"><code class="docutils literal notranslate"><span class="pre">gxapi.PGU_INTERP_ORDER_ZYX</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -265,6 +268,40 @@ The elements take on values from 0 (orthogonal) to 1 (parallel).</p>
 <p><span class="versionmodified added">New in version 5.1.8.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.direct_grid">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_vx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_vy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_vz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.direct_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.direct_grid" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>Use DirectGridding_PGU </p>
+</div>
+<p>Direct-gridding method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Input grid</p></li>
+<li><p><strong>xo</strong> (<em>float</em>) – X origin of grid</p></li>
+<li><p><strong>yo</strong> (<em>float</em>) – Y origin of grid</p></li>
+<li><p><strong>dx</strong> (<em>float</em>) – X cell size</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – Y cell size</p></li>
+<li><p><strong>rot</strong> (<em>float</em>) – Rotation angle (degrees CCW).</p></li>
+<li><p><strong>v_vx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X locations of values</p></li>
+<li><p><strong>v_vy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y locations of values</p></li>
+<li><p><strong>v_vz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z values to grid</p></li>
+<li><p><strong>wt</strong> (<em>float</em>) – Power weighting for averaging (set to 0 for straight average)</p></li>
+<li><p><strong>slope</strong> (<em>float</em>) – Slope weighting for averaging (set to 0 for pure power-law weighting)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Grid cells take on the averaged values inside their bounds.</p>
+<p>Weighting can be controlled using the power and slope properties;</p>
+<p>weighting = 1 / (distance^wtpower + 1/slope) where distance is in
+units of grid cells (X dimenstion). Default is 0.0,</p>
 </dd></dl>
 
 <dl class="py method">
@@ -543,6 +580,52 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> 3D pagers are expanded in X,Y direction the number of slices(Z) is unchanged .</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.fft2_filter">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fft2_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">con_fil</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_dy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_rot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.fft2_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.fft2_filter" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Carry out a fourier transform filter on a pager object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
+<li><p><strong>con_fil</strong> (<em>str</em>) – sConFil - <a class="reference internal" href="GXFFT.html#geosoft.gxapi.GXFFT" title="geosoft.gxapi.GXFFT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXFFT</span></code></a> filter control file</p></li>
+<li><p><strong>tr</strong> (<a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><em>GXTR</em></a>) – <a class="reference internal" href="GXTR.html#geosoft.gxapi.GXTR" title="geosoft.gxapi.GXTR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTR</span></code></a> obj</p></li>
+<li><p><strong>d_dx</strong> (<em>float</em>) – rDx - X increment</p></li>
+<li><p><strong>d_dy</strong> (<em>float</em>) – rDy - Y increment</p></li>
+<li><p><strong>d_rot</strong> (<em>float</em>) – rRot- Rotation degree</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPGU.fft2_trans">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fft2_trans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPGU.html#GXPGU.fft2_trans"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPGU.fft2_trans" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Carry out a fourier transform on a pager object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – Pager obj</p></li>
+<li><p><strong>option</strong> (<em>int</em>) – Option: 0 - forward transform, 1 - invers transform</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -962,7 +1045,7 @@ of the correlation matrix. The loadings are the eigenvectors, ordered
 by descending eigenvalues, scaled by the square root of the
 eigenvalues. The returned pager must be sized the same as the
 input pager.
-Correlations are performed using “<a class="reference internal" href="#id47" title="geosoft.gxapi.PGU_CORR_SIMPLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PGU_CORR_SIMPLE</span></code></a>”, so if you want
+Correlations are performed using “<a class="reference internal" href="#id50" title="geosoft.gxapi.PGU_CORR_SIMPLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PGU_CORR_SIMPLE</span></code></a>”, so if you want
 Pearson correlations, or wish to use a modified correlation matrix,
 use <a class="reference internal" href="#geosoft.gxapi.GXPGU.pc_loadings2" title="geosoft.gxapi.GXPGU.pc_loadings2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pc_loadings2</span></code></a> and input the correlation matrix directly.</p>
 </dd></dl>
@@ -1357,8 +1440,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">BLAKEY_TEST_TWOSIDE</span></span><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_TWOSIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Twoside</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id44">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_TWOSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id47">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_TWOSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1368,8 +1451,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">BLAKEY_TEST_THREESIDE</span></span><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_THREESIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Threeside</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id45">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_THREESIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id48">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_THREESIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1379,8 +1462,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">BLAKEY_TEST_FOURSIDE</span></span><a class="headerlink" href="#geosoft.gxapi.BLAKEY_TEST_FOURSIDE" title="Link to this definition">¶</a></dt>
 <dd><p>Fourside</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id46">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_FOURSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id49">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BLAKEY_TEST_FOURSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1394,8 +1477,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">PGU_CORR_SIMPLE</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_CORR_SIMPLE" title="Link to this definition">¶</a></dt>
 <dd><p>Simple correlation</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id47">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_CORR_SIMPLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id50">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_CORR_SIMPLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1405,8 +1488,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">PGU_CORR_PEARSON</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_CORR_PEARSON" title="Link to this definition">¶</a></dt>
 <dd><p>Pearson’s correlation (normalized to standard deviations)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id48">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_CORR_PEARSON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id51">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_CORR_PEARSON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1420,8 +1503,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MINIMUM</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MINIMUM" title="Link to this definition">¶</a></dt>
 <dd><p>Select the minimum value found in each cell</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id49">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id52">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1431,8 +1514,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MAXIMUM</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MAXIMUM" title="Link to this definition">¶</a></dt>
 <dd><p>Select the maximum value found in each cell</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id50">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MAXIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id53">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MAXIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1442,8 +1525,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MEAN</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_MEAN" title="Link to this definition">¶</a></dt>
 <dd><p>Select the mean of all values found in each cell</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id51">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id54">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1453,8 +1536,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_ITEMS</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_DIRECTGRID_ITEMS" title="Link to this definition">¶</a></dt>
 <dd><p>The number of valid (non-dummy) items found in each cell</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id52">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_ITEMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id55">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_DIRECTGRID_ITEMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1469,8 +1552,8 @@ SetupTranslateToNumericVV_TPAT.</p>
 <dd><p>Forward direction: Removes mean and standard deviation,
 storing the values in the VVs.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id53">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_FORWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id56">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_FORWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1481,8 +1564,8 @@ storing the values in the VVs.</p>
 <dd><p>Backward direction: Applies mean and standard deviation
 values in the VVs to the data.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id54">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_BACKWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id57">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_BACKWARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1496,8 +1579,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_TRANS_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_TRANS_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id55">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_TRANS_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id58">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_TRANS_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1507,8 +1590,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_TRANS_LOG</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_TRANS_LOG" title="Link to this definition">¶</a></dt>
 <dd><p>Log</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id56">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_TRANS_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id59">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_TRANS_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1522,8 +1605,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XYZ</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_XYZ" title="Link to this definition">¶</a></dt>
 <dd><p>Xyz</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id57">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id60">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1533,8 +1616,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XZY</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_XZY" title="Link to this definition">¶</a></dt>
 <dd><p>Xzy</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id58">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XZY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id61">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_XZY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1544,8 +1627,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YXZ</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_YXZ" title="Link to this definition">¶</a></dt>
 <dd><p>Yxz</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id59">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YXZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id62">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YXZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1555,8 +1638,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YZX</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_YZX" title="Link to this definition">¶</a></dt>
 <dd><p>Yzx</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id60">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YZX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id63">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_YZX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1566,8 +1649,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZXY</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZXY" title="Link to this definition">¶</a></dt>
 <dd><p>Zxy</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id61">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZXY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id64">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZXY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1577,8 +1660,8 @@ values in the VVs to the data.</p>
 <span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZYX</span></span><a class="headerlink" href="#geosoft.gxapi.PGU_INTERP_ORDER_ZYX" title="Link to this definition">¶</a></dt>
 <dd><p>Zyx</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id62">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZYX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id65">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PGU_INTERP_ORDER_ZYX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1599,13 +1682,13 @@ values in the VVs to the data.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPGU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

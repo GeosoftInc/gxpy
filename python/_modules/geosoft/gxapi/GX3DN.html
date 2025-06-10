@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GX3DN &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GX3DN &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GX3DN</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GX3DN</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -131,6 +131,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.copy">[docs]</a>
     <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Copy one `GX3DN &lt;geosoft.gxapi.GX3DN&gt;` object to another.</span>
 <span class="sd">        </span>
 <span class="sd">        :param source:  Source `GX3DN &lt;geosoft.gxapi.GX3DN&gt;` to Copy from</span>
@@ -140,6 +141,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy</span><span class="p">(</span><span class="n">source</span><span class="p">)</span></div>
 
         
@@ -151,6 +153,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates a `GX3DN &lt;geosoft.gxapi.GX3DN&gt;`.</span>
 <span class="sd">        </span>
 
@@ -161,6 +164,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">Wrap3DN</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GX3DN</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -174,6 +178,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.get_point_of_view">[docs]</a>
     <span class="k">def</span> <span class="nf">get_point_of_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">declination</span><span class="p">,</span> <span class="n">inclination</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get location of the point we are looking from</span>
 <span class="sd">        </span>
 <span class="sd">        :param distance:     Distance from center relative to longest grid dimension (which is 1.0)</span>
@@ -187,6 +192,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">distance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">declination</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">inclination</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_point_of_view</span><span class="p">(</span><span class="n">distance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">declination</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">inclination</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -198,6 +204,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.get_scale">[docs]</a>
     <span class="k">def</span> <span class="nf">get_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the axis relative scales.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X Scale</span>
@@ -211,6 +218,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_scale</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -222,6 +230,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.get_axis_color">[docs]</a>
     <span class="k">def</span> <span class="nf">get_axis_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the Axis draw color</span>
 <span class="sd">        </span>
 
@@ -232,6 +241,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_color</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -243,6 +253,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.get_axis_font">[docs]</a>
     <span class="k">def</span> <span class="nf">get_axis_font</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the Axis font</span>
 <span class="sd">        </span>
 <span class="sd">        :param font:  Font name</span>
@@ -252,6 +263,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">font</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_font</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -263,6 +275,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.get_background_color">[docs]</a>
     <span class="k">def</span> <span class="nf">get_background_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the window background color</span>
 <span class="sd">        </span>
 
@@ -273,6 +286,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_background_color</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -284,6 +298,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.get_render_controls">[docs]</a>
     <span class="k">def</span> <span class="nf">get_render_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">label_x</span><span class="p">,</span> <span class="n">label_y</span><span class="p">,</span> <span class="n">label_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the rendering controls</span>
 <span class="sd">        </span>
 <span class="sd">        :param box:      Render Bounding Box (0 or 1)</span>
@@ -301,6 +316,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">box</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_render_controls</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">axis</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">label_x</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">label_y</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">label_z</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -312,6 +328,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.get_shading">[docs]</a>
     <span class="k">def</span> <span class="nf">get_shading</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the shading control on or off</span>
 <span class="sd">        </span>
 
@@ -322,6 +339,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_shading</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -333,6 +351,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.set_axis_color">[docs]</a>
     <span class="k">def</span> <span class="nf">set_axis_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the Axis draw color</span>
 <span class="sd">        </span>
 <span class="sd">        :param color:  Axis Color</span>
@@ -342,6 +361,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_axis_color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span></div>
 
         
@@ -353,6 +373,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.set_axis_font">[docs]</a>
     <span class="k">def</span> <span class="nf">set_axis_font</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the Axis font</span>
 <span class="sd">        </span>
 <span class="sd">        :param font:  Font name</span>
@@ -362,6 +383,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_axis_font</span><span class="p">(</span><span class="n">font</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -373,6 +395,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.set_background_color">[docs]</a>
     <span class="k">def</span> <span class="nf">set_background_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the window background color</span>
 <span class="sd">        </span>
 <span class="sd">        :param color:  Background Color</span>
@@ -382,6 +405,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_background_color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span></div>
 
         
@@ -393,6 +417,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.set_point_of_view">[docs]</a>
     <span class="k">def</span> <span class="nf">set_point_of_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">declination</span><span class="p">,</span> <span class="n">inclination</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set location of the point we are looking from</span>
 <span class="sd">        </span>
 <span class="sd">        :param distance:     Distance from center relative to longest grid dimension (which is 1.0)</span>
@@ -406,6 +431,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_point_of_view</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">declination</span><span class="p">,</span> <span class="n">inclination</span><span class="p">)</span></div>
 
         
@@ -417,6 +443,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.set_render_controls">[docs]</a>
     <span class="k">def</span> <span class="nf">set_render_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">label_x</span><span class="p">,</span> <span class="n">label_y</span><span class="p">,</span> <span class="n">label_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the rendering controls</span>
 <span class="sd">        </span>
 <span class="sd">        :param box:      Render Bounding Box (0 or 1)</span>
@@ -434,6 +461,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_render_controls</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">label_x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">label_y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">label_z</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -445,6 +473,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.set_scale">[docs]</a>
     <span class="k">def</span> <span class="nf">set_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the axis relative scales.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:     X Scale (default 1.0)</span>
@@ -465,6 +494,7 @@
 <span class="sd">        to 5,5,5 is the same as 1,1,1. This is typically used</span>
 <span class="sd">        to exaggerate one scale such as Z (1,1,5).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_scale</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span></div>
 
         
@@ -476,6 +506,7 @@
 <a class="viewcode-back" href="../../../GX3DN.html#geosoft.gxapi.GX3DN.set_shading">[docs]</a>
     <span class="k">def</span> <span class="nf">set_shading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shading</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the shading control on or off</span>
 <span class="sd">        </span>
 <span class="sd">        :param shading:  0: Off, 1:  On.</span>
@@ -485,6 +516,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_shading</span><span class="p">(</span><span class="n">shading</span><span class="p">)</span></div>
 </div>
 
@@ -517,7 +549,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GX3DN</a></li> 
@@ -525,7 +557,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

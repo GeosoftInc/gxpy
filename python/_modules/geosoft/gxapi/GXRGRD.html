@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXRGRD &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXRGRD &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXRGRD</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXRGRD</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXIMG</span> <span class="kn">import</span> <span class="n">GXIMG</span>
@@ -131,6 +131,7 @@
 <a class="viewcode-back" href="../../../GXRGRD.html#geosoft.gxapi.GXRGRD.clear">[docs]</a>
     <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Clears all the parameters in a `GXRGRD &lt;geosoft.gxapi.GXRGRD&gt;` object</span>
 <span class="sd">        </span>
 
@@ -140,6 +141,7 @@
 
 <span class="sd">        **Note:** DLL name `clear &lt;geosoft.gxapi.GXRGRD.clear&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear</span><span class="p">()</span></div>
 
         
@@ -151,6 +153,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a handle to a Rangrid object</span>
 <span class="sd">        </span>
 
@@ -166,6 +169,7 @@
 <span class="sd">        to execute. Use the LoadParms_RGRD method to get the</span>
 <span class="sd">        control file parameters into the `GXRGRD &lt;geosoft.gxapi.GXRGRD&gt;` object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRGRD</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXRGRD</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -177,6 +181,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_img</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Run Rangrid directly on XYZ `GXVV &lt;geosoft.gxapi.GXVV&gt;` data, output to an `GXIMG &lt;geosoft.gxapi.GXIMG&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X data (any numeric `GXVV &lt;geosoft.gxapi.GXVV&gt;` type)</span>
@@ -203,6 +208,7 @@
 <span class="sd">        If the grid file name is not defined, the `GXIMG &lt;geosoft.gxapi.GXIMG&gt;` is memory-based; not</span>
 <span class="sd">        tied to a file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRGRD</span><span class="o">.</span><span class="n">_create_img</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXIMG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -212,10 +218,11 @@
 
 
 
-<div class="viewcode-block" id="GXRGRD.default">
-<a class="viewcode-back" href="../../../GXRGRD.html#geosoft.gxapi.GXRGRD.default">[docs]</a>
-    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zchan</span><span class="p">,</span> <span class="n">in_dat</span><span class="p">):</span>
+<div class="viewcode-block" id="GXRGRD.set_default">
+<a class="viewcode-back" href="../../../GXRGRD.html#geosoft.gxapi.GXRGRD.set_default">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zchan</span><span class="p">,</span> <span class="n">in_dat</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the defaults.</span>
 <span class="sd">        </span>
 <span class="sd">        :param zchan:   Name of Z Channel to perfrom gridding on</span>
@@ -230,7 +237,8 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default</span><span class="p">(</span><span class="n">zchan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">in_dat</span><span class="p">)</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_default</span><span class="p">(</span><span class="n">zchan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">in_dat</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
 
@@ -241,6 +249,7 @@
 <a class="viewcode-back" href="../../../GXRGRD.html#geosoft.gxapi.GXRGRD.load_parms">[docs]</a>
     <span class="k">def</span> <span class="nf">load_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieves a Rangrid object&#39;s control parameters from a file,</span>
 <span class="sd">        or sets the parameters to default if the file doesn&#39;t exist.</span>
 <span class="sd">        </span>
@@ -260,6 +269,7 @@
 <span class="sd">        Otherwise, the control file&#39;s settings are retrieved from</span>
 <span class="sd">        the file and loaded into the `GXRGRD &lt;geosoft.gxapi.GXRGRD&gt;` object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_parms</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -271,6 +281,7 @@
 <a class="viewcode-back" href="../../../GXRGRD.html#geosoft.gxapi.GXRGRD.run">[docs]</a>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_dat</span><span class="p">,</span> <span class="n">out_dat</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Executes the Rangrid program, using the input channel and</span>
 <span class="sd">        output file parameters.</span>
 <span class="sd">        </span>
@@ -286,6 +297,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">(</span><span class="n">in_dat</span><span class="p">,</span> <span class="n">out_dat</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -297,6 +309,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">run2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Executes the Rangrid program directly on a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Handle to a database</span>
@@ -319,6 +332,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRGRD</span><span class="o">.</span><span class="n">_run2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -330,6 +344,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">run3</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grd</span><span class="p">,</span> <span class="n">log</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Executes the Rangrid program directly on a database. Specify log file</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Handle to a database</span>
@@ -354,6 +369,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRGRD</span><span class="o">.</span><span class="n">_run3</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -365,6 +381,7 @@
 <a class="viewcode-back" href="../../../GXRGRD.html#geosoft.gxapi.GXRGRD.save_parms">[docs]</a>
     <span class="k">def</span> <span class="nf">save_parms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Puts the Rangrid object&#39;s control parameters back into</span>
 <span class="sd">        its control file.</span>
 <span class="sd">        </span>
@@ -381,6 +398,7 @@
 <span class="sd">        **Note:** If the control file did not previously exist, it will be</span>
 <span class="sd">        created. Otherwise, the old file will be overwritten.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_parms</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -392,6 +410,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">run_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Executes the Rangrid program directly on input data VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_x:  X data</span>
@@ -411,6 +430,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRGRD</span><span class="o">.</span><span class="n">_run_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -422,6 +442,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">run_list</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dbs</span><span class="p">,</span> <span class="n">zch</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="p">,</span> <span class="n">grd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Executes the Rangrid program from a list of databases.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dbs:  List of databases (using | separator)</span>
@@ -439,6 +460,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRGRD</span><span class="o">.</span><span class="n">_run_list</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">dbs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">zch</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">ctl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
@@ -471,7 +493,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXRGRD</a></li> 
@@ -479,7 +501,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

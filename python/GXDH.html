@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXDH class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXDH class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDH class</a></li> 
       </ul>
     </div>
@@ -78,6 +78,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.flush_select"><code class="docutils literal notranslate"><span class="pre">GXDH.flush_select()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.from_to_data_lst"><code class="docutils literal notranslate"><span class="pre">GXDH.from_to_data_lst()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_chan_code_info"><code class="docutils literal notranslate"><span class="pre">GXDH.get_chan_code_info()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_channel_type"><code class="docutils literal notranslate"><span class="pre">GXDH.get_channel_type()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_collar_table_db"><code class="docutils literal notranslate"><span class="pre">GXDH.get_collar_table_db()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_data_type"><code class="docutils literal notranslate"><span class="pre">GXDH.get_data_type()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_databases_sorted_vv"><code class="docutils literal notranslate"><span class="pre">GXDH.get_databases_sorted_vv()</span></code></a></li>
@@ -99,6 +100,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_reg"><code class="docutils literal notranslate"><span class="pre">GXDH.get_reg()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_section_id"><code class="docutils literal notranslate"><span class="pre">GXDH.get_section_id()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_selected_holes_vv"><code class="docutils literal notranslate"><span class="pre">GXDH.get_selected_holes_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_shp_names_vv"><code class="docutils literal notranslate"><span class="pre">GXDH.get_shp_names_vv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_table_default_chan_lst"><code class="docutils literal notranslate"><span class="pre">GXDH.get_table_default_chan_lst()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_template_blob"><code class="docutils literal notranslate"><span class="pre">GXDH.get_template_blob()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.get_template_blob_no_source_resolve"><code class="docutils literal notranslate"><span class="pre">GXDH.get_template_blob_no_source_resolve()</span></code></a></li>
@@ -126,6 +128,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.import2"><code class="docutils literal notranslate"><span class="pre">GXDH.import2()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.import_las"><code class="docutils literal notranslate"><span class="pre">GXDH.import_las()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.is_esri"><code class="docutils literal notranslate"><span class="pre">GXDH.is_esri()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDH.is_multi_db"><code class="docutils literal notranslate"><span class="pre">GXDH.is_multi_db()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.is_null"><code class="docutils literal notranslate"><span class="pre">GXDH.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.litho_grid_3d"><code class="docutils literal notranslate"><span class="pre">GXDH.litho_grid_3d()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.load_data_parameters_ini"><code class="docutils literal notranslate"><span class="pre">GXDH.load_data_parameters_ini()</span></code></a></li>
@@ -177,8 +180,10 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.qa_point_data"><code class="docutils literal notranslate"><span class="pre">GXDH.qa_point_data()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.qa_write_unregistered_holes"><code class="docutils literal notranslate"><span class="pre">GXDH.qa_write_unregistered_holes()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.re_survey_east_north"><code class="docutils literal notranslate"><span class="pre">GXDH.re_survey_east_north()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDH.re_survey_location_general"><code class="docutils literal notranslate"><span class="pre">GXDH.re_survey_location_general()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.re_survey_pol_fit"><code class="docutils literal notranslate"><span class="pre">GXDH.re_survey_pol_fit()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.re_survey_rad_curve"><code class="docutils literal notranslate"><span class="pre">GXDH.re_survey_rad_curve()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDH.re_survey_rad_curve_locations"><code class="docutils literal notranslate"><span class="pre">GXDH.re_survey_rad_curve_locations()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.re_survey_straight"><code class="docutils literal notranslate"><span class="pre">GXDH.re_survey_straight()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.re_survey_straight_seg"><code class="docutils literal notranslate"><span class="pre">GXDH.re_survey_straight_seg()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDH.replot_holes"><code class="docutils literal notranslate"><span class="pre">GXDH.replot_holes()</span></code></a></li>
@@ -218,154 +223,154 @@
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DEFAULT_ROCKCODE_FILE"><code class="docutils literal notranslate"><span class="pre">DH_DEFAULT_ROCKCODE_FILE</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFAULT_ROCKCODE_FILE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DEFAULT_STRUCTURECODE_FILE"><code class="docutils literal notranslate"><span class="pre">DH_DEFAULT_STRUCTURECODE_FILE</span></code></a></li>
-<li><a class="reference internal" href="#id169"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFAULT_STRUCTURECODE_FILE</span></code></a></li>
+<li><a class="reference internal" href="#id174"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFAULT_STRUCTURECODE_FILE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#str-dh-holes-constants">STR_DH_HOLES constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.STR_DH_HOLES"><code class="docutils literal notranslate"><span class="pre">STR_DH_HOLES</span></code></a></li>
-<li><a class="reference internal" href="#id170"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_DH_HOLES</span></code></a></li>
+<li><a class="reference internal" href="#id175"><code class="docutils literal notranslate"><span class="pre">gxapi.STR_DH_HOLES</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-comp-choice-constants">DH_COMP_CHOICE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMP_DONE"><code class="docutils literal notranslate"><span class="pre">DH_COMP_DONE</span></code></a></li>
-<li><a class="reference internal" href="#id171"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_DONE</span></code></a></li>
+<li><a class="reference internal" href="#id176"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_DONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMP_CANCEL"><code class="docutils literal notranslate"><span class="pre">DH_COMP_CANCEL</span></code></a></li>
-<li><a class="reference internal" href="#id172"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_CANCEL</span></code></a></li>
+<li><a class="reference internal" href="#id177"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_CANCEL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMP_SELECT"><code class="docutils literal notranslate"><span class="pre">DH_COMP_SELECT</span></code></a></li>
-<li><a class="reference internal" href="#id173"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_SELECT</span></code></a></li>
+<li><a class="reference internal" href="#id178"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_SELECT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMP_REFRESH"><code class="docutils literal notranslate"><span class="pre">DH_COMP_REFRESH</span></code></a></li>
-<li><a class="reference internal" href="#id174"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_REFRESH</span></code></a></li>
+<li><a class="reference internal" href="#id179"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMP_REFRESH</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-compstdb-holsel-constants">DH_COMPSTDB_HOLSEL constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMPSTDB_HOLSEL_ALL"><code class="docutils literal notranslate"><span class="pre">DH_COMPSTDB_HOLSEL_ALL</span></code></a></li>
-<li><a class="reference internal" href="#id175"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_HOLSEL_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id180"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_HOLSEL_ALL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMPSTDB_HOLSEL_SELECTED"><code class="docutils literal notranslate"><span class="pre">DH_COMPSTDB_HOLSEL_SELECTED</span></code></a></li>
-<li><a class="reference internal" href="#id176"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_HOLSEL_SELECTED</span></code></a></li>
+<li><a class="reference internal" href="#id181"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_HOLSEL_SELECTED</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-compstdb-intsel-constants">DH_COMPSTDB_INTSEL constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_FIXED"><code class="docutils literal notranslate"><span class="pre">DH_COMPSTDB_INTSEL_FIXED</span></code></a></li>
-<li><a class="reference internal" href="#id177"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_FIXED</span></code></a></li>
+<li><a class="reference internal" href="#id182"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_FIXED</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_LITHOLOGY"><code class="docutils literal notranslate"><span class="pre">DH_COMPSTDB_INTSEL_LITHOLOGY</span></code></a></li>
-<li><a class="reference internal" href="#id178"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_LITHOLOGY</span></code></a></li>
+<li><a class="reference internal" href="#id183"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_LITHOLOGY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_BESTFITLITH"><code class="docutils literal notranslate"><span class="pre">DH_COMPSTDB_INTSEL_BESTFITLITH</span></code></a></li>
-<li><a class="reference internal" href="#id179"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_BESTFITLITH</span></code></a></li>
+<li><a class="reference internal" href="#id184"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_BESTFITLITH</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_INTFILE"><code class="docutils literal notranslate"><span class="pre">DH_COMPSTDB_INTSEL_INTFILE</span></code></a></li>
-<li><a class="reference internal" href="#id180"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_INTFILE</span></code></a></li>
+<li><a class="reference internal" href="#id185"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_COMPSTDB_INTSEL_INTFILE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-data-constants">DH_DATA constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DATA_DIPAZIMUTH"><code class="docutils literal notranslate"><span class="pre">DH_DATA_DIPAZIMUTH</span></code></a></li>
-<li><a class="reference internal" href="#id181"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_DIPAZIMUTH</span></code></a></li>
+<li><a class="reference internal" href="#id186"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_DIPAZIMUTH</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DATA_EASTNORTH"><code class="docutils literal notranslate"><span class="pre">DH_DATA_EASTNORTH</span></code></a></li>
-<li><a class="reference internal" href="#id182"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_EASTNORTH</span></code></a></li>
+<li><a class="reference internal" href="#id187"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_EASTNORTH</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DATA_FROMTO"><code class="docutils literal notranslate"><span class="pre">DH_DATA_FROMTO</span></code></a></li>
-<li><a class="reference internal" href="#id183"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_FROMTO</span></code></a></li>
+<li><a class="reference internal" href="#id188"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_FROMTO</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DATA_POINT"><code class="docutils literal notranslate"><span class="pre">DH_DATA_POINT</span></code></a></li>
-<li><a class="reference internal" href="#id184"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_POINT</span></code></a></li>
+<li><a class="reference internal" href="#id189"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_POINT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DATA_COLLAR"><code class="docutils literal notranslate"><span class="pre">DH_DATA_COLLAR</span></code></a></li>
-<li><a class="reference internal" href="#id185"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_COLLAR</span></code></a></li>
+<li><a class="reference internal" href="#id190"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_COLLAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DATA_UNKNOWN"><code class="docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a></li>
-<li><a class="reference internal" href="#id186"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_UNKNOWN</span></code></a></li>
+<li><a class="reference internal" href="#id191"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DATA_UNKNOWN</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-define-plan-constants">DH_DEFINE_PLAN constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DEFINE_PLAN"><code class="docutils literal notranslate"><span class="pre">DH_DEFINE_PLAN</span></code></a></li>
-<li><a class="reference internal" href="#id187"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_PLAN</span></code></a></li>
+<li><a class="reference internal" href="#id192"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_PLAN</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-define-sect-constants">DH_DEFINE_SECT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DEFINE_SECT_NS"><code class="docutils literal notranslate"><span class="pre">DH_DEFINE_SECT_NS</span></code></a></li>
-<li><a class="reference internal" href="#id188"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_SECT_NS</span></code></a></li>
+<li><a class="reference internal" href="#id193"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_SECT_NS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DEFINE_SECT_EW"><code class="docutils literal notranslate"><span class="pre">DH_DEFINE_SECT_EW</span></code></a></li>
-<li><a class="reference internal" href="#id189"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_SECT_EW</span></code></a></li>
+<li><a class="reference internal" href="#id194"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_SECT_EW</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DEFINE_SECT_ANGLED"><code class="docutils literal notranslate"><span class="pre">DH_DEFINE_SECT_ANGLED</span></code></a></li>
-<li><a class="reference internal" href="#id190"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_SECT_ANGLED</span></code></a></li>
+<li><a class="reference internal" href="#id195"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DEFINE_SECT_ANGLED</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-exp-constants">DH_EXP constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_EXP_CSV"><code class="docutils literal notranslate"><span class="pre">DH_EXP_CSV</span></code></a></li>
-<li><a class="reference internal" href="#id191"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_CSV</span></code></a></li>
+<li><a class="reference internal" href="#id196"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_CSV</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_EXP_ASCII"><code class="docutils literal notranslate"><span class="pre">DH_EXP_ASCII</span></code></a></li>
-<li><a class="reference internal" href="#id192"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_ASCII</span></code></a></li>
+<li><a class="reference internal" href="#id197"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_ASCII</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_EXP_ACCESS"><code class="docutils literal notranslate"><span class="pre">DH_EXP_ACCESS</span></code></a></li>
-<li><a class="reference internal" href="#id193"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_ACCESS</span></code></a></li>
+<li><a class="reference internal" href="#id198"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_ACCESS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_EXP_SHP"><code class="docutils literal notranslate"><span class="pre">DH_EXP_SHP</span></code></a></li>
-<li><a class="reference internal" href="#id194"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_SHP</span></code></a></li>
+<li><a class="reference internal" href="#id199"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_SHP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_EXP_SURPAC"><code class="docutils literal notranslate"><span class="pre">DH_EXP_SURPAC</span></code></a></li>
-<li><a class="reference internal" href="#id195"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_SURPAC</span></code></a></li>
+<li><a class="reference internal" href="#id200"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_SURPAC</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_EXP_SHP_TRACES"><code class="docutils literal notranslate"><span class="pre">DH_EXP_SHP_TRACES</span></code></a></li>
-<li><a class="reference internal" href="#id196"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_SHP_TRACES</span></code></a></li>
+<li><a class="reference internal" href="#id201"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_EXP_SHP_TRACES</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-holes-constants">DH_HOLES constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_HOLES_ALL"><code class="docutils literal notranslate"><span class="pre">DH_HOLES_ALL</span></code></a></li>
-<li><a class="reference internal" href="#id197"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_HOLES_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id202"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_HOLES_ALL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_HOLES_SELECTED"><code class="docutils literal notranslate"><span class="pre">DH_HOLES_SELECTED</span></code></a></li>
-<li><a class="reference internal" href="#id198"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_HOLES_SELECTED</span></code></a></li>
+<li><a class="reference internal" href="#id203"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_HOLES_SELECTED</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-mask-constants">DH_MASK constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_MASK_APPEND"><code class="docutils literal notranslate"><span class="pre">DH_MASK_APPEND</span></code></a></li>
-<li><a class="reference internal" href="#id199"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_MASK_APPEND</span></code></a></li>
+<li><a class="reference internal" href="#id204"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_MASK_APPEND</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_MASK_NEW"><code class="docutils literal notranslate"><span class="pre">DH_MASK_NEW</span></code></a></li>
-<li><a class="reference internal" href="#id200"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_MASK_NEW</span></code></a></li>
+<li><a class="reference internal" href="#id205"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_MASK_NEW</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-plot-constants">DH_PLOT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_PLAN"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_PLAN</span></code></a></li>
-<li><a class="reference internal" href="#id201"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_PLAN</span></code></a></li>
+<li><a class="reference internal" href="#id206"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_PLAN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_SECTION"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_SECTION</span></code></a></li>
-<li><a class="reference internal" href="#id202"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION</span></code></a></li>
+<li><a class="reference internal" href="#id207"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_STRIPLOG"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_STRIPLOG</span></code></a></li>
-<li><a class="reference internal" href="#id203"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_STRIPLOG</span></code></a></li>
+<li><a class="reference internal" href="#id208"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_STRIPLOG</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_HOLE_TRACES"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_HOLE_TRACES</span></code></a></li>
-<li><a class="reference internal" href="#id204"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_HOLE_TRACES</span></code></a></li>
+<li><a class="reference internal" href="#id209"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_HOLE_TRACES</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_3D"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_3D</span></code></a></li>
-<li><a class="reference internal" href="#id205"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_3D</span></code></a></li>
+<li><a class="reference internal" href="#id210"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_3D</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_SECTION_STACK"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_SECTION_STACK</span></code></a></li>
-<li><a class="reference internal" href="#id206"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION_STACK</span></code></a></li>
+<li><a class="reference internal" href="#id211"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION_STACK</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_SECTION_FENCE"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_SECTION_FENCE</span></code></a></li>
-<li><a class="reference internal" href="#id207"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION_FENCE</span></code></a></li>
+<li><a class="reference internal" href="#id212"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION_FENCE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_PLOT_SECTION_CROOKED"><code class="docutils literal notranslate"><span class="pre">DH_PLOT_SECTION_CROOKED</span></code></a></li>
-<li><a class="reference internal" href="#id208"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION_CROOKED</span></code></a></li>
+<li><a class="reference internal" href="#id213"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_PLOT_SECTION_CROOKED</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-sect-page-constants">DH_SECT_PAGE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_SECT_PAGE_SECTION"><code class="docutils literal notranslate"><span class="pre">DH_SECT_PAGE_SECTION</span></code></a></li>
-<li><a class="reference internal" href="#id209"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SECT_PAGE_SECTION</span></code></a></li>
+<li><a class="reference internal" href="#id214"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SECT_PAGE_SECTION</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-surface-constants">DH_SURFACE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_SURFACE_FIRST_LAYER_FROM"><code class="docutils literal notranslate"><span class="pre">DH_SURFACE_FIRST_LAYER_FROM</span></code></a></li>
-<li><a class="reference internal" href="#id210"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_FIRST_LAYER_FROM</span></code></a></li>
+<li><a class="reference internal" href="#id215"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_FIRST_LAYER_FROM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_SURFACE_FIRST_LAYER_TO"><code class="docutils literal notranslate"><span class="pre">DH_SURFACE_FIRST_LAYER_TO</span></code></a></li>
-<li><a class="reference internal" href="#id211"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_FIRST_LAYER_TO</span></code></a></li>
+<li><a class="reference internal" href="#id216"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_FIRST_LAYER_TO</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_SURFACE_SECOND_LAYER_FROM"><code class="docutils literal notranslate"><span class="pre">DH_SURFACE_SECOND_LAYER_FROM</span></code></a></li>
-<li><a class="reference internal" href="#id212"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_SECOND_LAYER_FROM</span></code></a></li>
+<li><a class="reference internal" href="#id217"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_SECOND_LAYER_FROM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_SURFACE_SECOND_LAYER_TO"><code class="docutils literal notranslate"><span class="pre">DH_SURFACE_SECOND_LAYER_TO</span></code></a></li>
-<li><a class="reference internal" href="#id213"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_SECOND_LAYER_TO</span></code></a></li>
+<li><a class="reference internal" href="#id218"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_SECOND_LAYER_TO</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_SURFACE_LAST_LAYER_FROM"><code class="docutils literal notranslate"><span class="pre">DH_SURFACE_LAST_LAYER_FROM</span></code></a></li>
-<li><a class="reference internal" href="#id214"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_LAST_LAYER_FROM</span></code></a></li>
+<li><a class="reference internal" href="#id219"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_LAST_LAYER_FROM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_SURFACE_LAST_LAYER_TO"><code class="docutils literal notranslate"><span class="pre">DH_SURFACE_LAST_LAYER_TO</span></code></a></li>
-<li><a class="reference internal" href="#id215"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_LAST_LAYER_TO</span></code></a></li>
+<li><a class="reference internal" href="#id220"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_SURFACE_LAST_LAYER_TO</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dip-convention-constants">DIP_CONVENTION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DIP_CONVENTION_NEGATIVE"><code class="docutils literal notranslate"><span class="pre">DIP_CONVENTION_NEGATIVE</span></code></a></li>
-<li><a class="reference internal" href="#id216"><code class="docutils literal notranslate"><span class="pre">gxapi.DIP_CONVENTION_NEGATIVE</span></code></a></li>
+<li><a class="reference internal" href="#id221"><code class="docutils literal notranslate"><span class="pre">gxapi.DIP_CONVENTION_NEGATIVE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DIP_CONVENTION_POSITIVE"><code class="docutils literal notranslate"><span class="pre">DIP_CONVENTION_POSITIVE</span></code></a></li>
-<li><a class="reference internal" href="#id217"><code class="docutils literal notranslate"><span class="pre">gxapi.DIP_CONVENTION_POSITIVE</span></code></a></li>
+<li><a class="reference internal" href="#id222"><code class="docutils literal notranslate"><span class="pre">gxapi.DIP_CONVENTION_POSITIVE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dh-desurvey-constants">DH_DESURVEY constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DESURVEY_RAD_CURVE"><code class="docutils literal notranslate"><span class="pre">DH_DESURVEY_RAD_CURVE</span></code></a></li>
-<li><a class="reference internal" href="#id218"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DESURVEY_RAD_CURVE</span></code></a></li>
+<li><a class="reference internal" href="#id223"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DESURVEY_RAD_CURVE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DESURVEY_POLYNOMIAL"><code class="docutils literal notranslate"><span class="pre">DH_DESURVEY_POLYNOMIAL</span></code></a></li>
-<li><a class="reference internal" href="#id219"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DESURVEY_POLYNOMIAL</span></code></a></li>
+<li><a class="reference internal" href="#id224"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DESURVEY_POLYNOMIAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG"><code class="docutils literal notranslate"><span class="pre">DH_DESURVEY_STRAIGHT_SEG</span></code></a></li>
-<li><a class="reference internal" href="#id220"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DESURVEY_STRAIGHT_SEG</span></code></a></li>
+<li><a class="reference internal" href="#id225"><code class="docutils literal notranslate"><span class="pre">gxapi.DH_DESURVEY_STRAIGHT_SEG</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -409,7 +414,7 @@ data files. For detailed information on Drill Hole data,
 see the documentation for Wholeplot.</p>
 <p><strong>Note:</strong></p>
 <dl class="simple">
-<dt>The <a class="reference internal" href="#geosoft.gxapi.GXDH" title="geosoft.gxapi.GXDH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDH</span></code></a> class has some defines not used by any functions.</dt><dd><p><a class="reference internal" href="#id187" title="geosoft.gxapi.DH_DEFINE_PLAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DEFINE_PLAN</span></code></a>
+<dt>The <a class="reference internal" href="#geosoft.gxapi.GXDH" title="geosoft.gxapi.GXDH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDH</span></code></a> class has some defines not used by any functions.</dt><dd><p><a class="reference internal" href="#id192" title="geosoft.gxapi.DH_DEFINE_PLAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DEFINE_PLAN</span></code></a>
 <a class="reference internal" href="#dh-define-sect"><span class="std std-ref">DH_DEFINE_SECT constants</span></a></p>
 </dd>
 </dl>
@@ -488,7 +493,7 @@ If the survey info already exists, does nothing.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 <p><strong>Note:</strong> Assay dataset name is given as <a class="reference internal" href="GXLST.html#id0" title="geosoft.gxapi.LST_ITEM_NAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LST_ITEM_NAME</span></code></a>
-Assay dataset number is given as <a class="reference internal" href="GXLST.html#id29" title="geosoft.gxapi.LST_ITEM_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LST_ITEM_VALUE</span></code></a>
+Assay dataset number is given as <a class="reference internal" href="GXLST.html#id32" title="geosoft.gxapi.LST_ITEM_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LST_ITEM_VALUE</span></code></a>
 Returns an empty <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> if no datasets.</p>
 </dd></dl>
 
@@ -1237,6 +1242,31 @@ the “Au” channel in the “Tutorial_Assay.gdb” database.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDH.get_channel_type">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_channel_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.get_channel_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.get_channel_type" title="Link to this definition">¶</a></dt>
+<dd><p>Get the drill hole channel type based on input channel name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_name</strong> (<em>str</em>) – Name of the channel</p></li>
+<li><p><strong>database_type</strong> (<em>int</em>) – one of 0:DH_DATA_DIPAZIMUTH, 2:DH_DATA_FROMTO, 3:DH_DATA_POINT, 4:DH_DATA_COLLAR</p></li>
+<li><p><strong>class_name</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – class name buffer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>-1 if no type is found, otherwise &gt; 0</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXDH.get_collar_table_db">
 <span class="sig-name descname"><span class="pre">get_collar_table_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.get_collar_table_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.get_collar_table_db" title="Link to this definition">¶</a></dt>
 <dd><p>Get the name of the database containing the collar table.</p>
@@ -1267,7 +1297,7 @@ the “Au” channel in the “Tutorial_Assay.gdb” database.</p>
 <p><span class="versionmodified added">New in version 5.1.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
-<p><strong>Note:</strong> Returns <a class="reference internal" href="#id186" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a> if it can’t determine the type.</p>
+<p><strong>Note:</strong> Returns <a class="reference internal" href="#id191" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a> if it can’t determine the type.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1655,6 +1685,27 @@ dip and dip/dir channels are written to the same database.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDH.get_shp_names_vv">
+<span class="sig-name descname"><span class="pre">get_shp_names_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.get_shp_names_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.get_shp_names_vv" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Get generated <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> file names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vv_n</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a> names (string type <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>)</p></li>
+<li><p><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Corresponding data frame for each <a class="reference internal" href="GXSHP.html#geosoft.gxapi.GXSHP" title="geosoft.gxapi.GXSHP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSHP</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXDH.get_table_default_chan_lst">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_table_default_chan_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.get_table_default_chan_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.get_table_default_chan_lst" title="Link to this definition">¶</a></dt>
 <dd><p>Return list of default channels by collar/assay/survey table type.</p>
@@ -1746,7 +1797,7 @@ database with a call to the DHIMPORT.GX.</p>
 <li><p><strong>templ</strong> (<em>str</em>) – Template name</p></li>
 <li><p><strong>data_type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#dh-data"><span class="std std-ref">DH_DATA constants</span></a></p></li>
 <li><p><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – File name (blank for ODBC, or undefined).</p></li>
-<li><p><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Table name (blank for <a class="reference internal" href="#id186" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a>, or undefined).</p></li>
+<li><p><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Table name (blank for <a class="reference internal" href="#id191" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a>, or undefined).</p></li>
 </ul>
 </dd>
 </dl>
@@ -1766,11 +1817,11 @@ is not defined.
 The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
 is the name of the Wholeplot database table; e.g. Project_Assay.gdb
 in the above case. The DRILLTABLE is only included in the template
-for <a class="reference internal" href="#id183" title="geosoft.gxapi.DH_DATA_FROMTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_FROMTO</span></code></a> and <a class="reference internal" href="#id184" title="geosoft.gxapi.DH_DATA_POINT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_POINT</span></code></a>, but this function will
+for <a class="reference internal" href="#id188" title="geosoft.gxapi.DH_DATA_FROMTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_FROMTO</span></code></a> and <a class="reference internal" href="#id189" title="geosoft.gxapi.DH_DATA_POINT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_POINT</span></code></a>, but this function will
 return the appropriate table names (e.g. Collar, Survey, ENSurvey)
 for the other types.
 If the DRILLTYPE is NOT found in the template, a value of
-<a class="reference internal" href="#id186" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a> is returned for the data type; likely an indication that this
+<a class="reference internal" href="#id191" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a> is returned for the data type; likely an indication that this
 is not a new-style template produced by Wholeplot.</p>
 </dd></dl>
 
@@ -1784,7 +1835,7 @@ is not a new-style template produced by Wholeplot.</p>
 <li><p><strong>templ</strong> (<em>str</em>) – Template name</p></li>
 <li><p><strong>data_type</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – <a class="reference internal" href="#dh-data"><span class="std std-ref">DH_DATA constants</span></a></p></li>
 <li><p><strong>file</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – File name (blank for ODBC, or undefined).</p></li>
-<li><p><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Table name (blank for <a class="reference internal" href="#id186" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a>, or undefined).</p></li>
+<li><p><strong>table</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – Table name (blank for <a class="reference internal" href="#id191" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a>, or undefined).</p></li>
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – Channel list (returned)</p></li>
 </ul>
 </dd>
@@ -1805,11 +1856,11 @@ is not defined.
 The DRILLTYPE is one of DH_DATA_XXX, and the DRILLTABLE
 is the name of the Wholeplot database table; e.g. Project_Assay.gdb
 in the above case. The DRILLTABLE is only included in the template
-for <a class="reference internal" href="#id183" title="geosoft.gxapi.DH_DATA_FROMTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_FROMTO</span></code></a> and <a class="reference internal" href="#id184" title="geosoft.gxapi.DH_DATA_POINT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_POINT</span></code></a>, but this function will
+for <a class="reference internal" href="#id188" title="geosoft.gxapi.DH_DATA_FROMTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_FROMTO</span></code></a> and <a class="reference internal" href="#id189" title="geosoft.gxapi.DH_DATA_POINT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_POINT</span></code></a>, but this function will
 return the appropriate table names (e.g. Collar, Survey, ENSurvey)
 for the other types.
 If the DRILLTYPE is NOT found in the template, a value of
-<a class="reference internal" href="#id186" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a> is returned for the data type; likely an indication that this
+<a class="reference internal" href="#id191" title="geosoft.gxapi.DH_DATA_UNKNOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_DATA_UNKNOWN</span></code></a> is returned for the data type; likely an indication that this
 is not a new-style template produced by Wholeplot.
 This version also returns a list of the channels in the template checks can be made to
 see if the import will exceed the database channel limit.</p>
@@ -1942,7 +1993,7 @@ ocate (an) intersection point with the input DEM grid.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>x - DB_SYMB
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no survey data for this hole (no error registered)</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no survey data for this hole (no error registered)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
@@ -1982,7 +2033,7 @@ ocate (an) intersection point with the input DEM grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>x - DB_SYMB
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no collar table (no error registered)</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no collar table (no error registered)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
@@ -2025,7 +2076,7 @@ ocate (an) intersection point with the input DEM grid.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>x - DB_SYMB
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no Dip-Azimuth survey data for this hole (no error registered)</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no Dip-Azimuth survey data for this hole (no error registered)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
@@ -2068,7 +2119,7 @@ ocate (an) intersection point with the input DEM grid.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>x - DB_SYMB
-<a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no EN survey data for this hole (no error registered)</p>
+<a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a> if no EN survey data for this hole (no error registered)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
@@ -2273,6 +2324,29 @@ without the project name and underscore, e.g. for
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDH.is_multi_db">
+<span class="sig-name descname"><span class="pre">is_multi_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.is_multi_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.is_multi_db" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>As of v6.3.0, old single-database Wholeplot GDBs cannot
+be opened, so this check is deprecated. The function now always
+returns TRUE (1).</p>
+</div>
+<p>Is this a (new-style) multi-database Wholeplot project?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1 if it is a new-style Wholeplot database.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXDH.is_null">
 <span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.is_null" title="Link to this definition">¶</a></dt>
 <dd><p>Check if this is a null (undefined) instance</p>
@@ -2396,8 +2470,8 @@ settings to individual INI files (eg. cu.ini).</p>
 <p><strong>Note:</strong> Data values inside the polygon area, and within the slice thickness
 have their mask channel values set to 1.
 If the specified mask channel does not exist, it is created.
-<a class="reference internal" href="#id200" title="geosoft.gxapi.DH_MASK_NEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_MASK_NEW</span></code></a> — Mask is created new for each selected hole
-<a class="reference internal" href="#id199" title="geosoft.gxapi.DH_MASK_APPEND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_MASK_APPEND</span></code></a> — Current selection is added to previous.</p>
+<a class="reference internal" href="#id205" title="geosoft.gxapi.DH_MASK_NEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_MASK_NEW</span></code></a> — Mask is created new for each selected hole
+<a class="reference internal" href="#id204" title="geosoft.gxapi.DH_MASK_APPEND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_MASK_APPEND</span></code></a> — Current selection is added to previous.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2536,7 +2610,7 @@ If the specified mask channel does not exist, it is created.
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ini</strong> (<em>str</em>) – Job Name</p></li>
-<li><p><strong>plot_type</strong> (<em>int</em>) – <a class="reference internal" href="#dh-plot"><span class="std std-ref">DH_PLOT constants</span></a> One of <a class="reference internal" href="#id201" title="geosoft.gxapi.DH_PLOT_PLAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_PLAN</span></code></a> or <a class="reference internal" href="#id202" title="geosoft.gxapi.DH_PLOT_SECTION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION</span></code></a></p></li>
+<li><p><strong>plot_type</strong> (<em>int</em>) – <a class="reference internal" href="#dh-plot"><span class="std std-ref">DH_PLOT constants</span></a> One of <a class="reference internal" href="#id206" title="geosoft.gxapi.DH_PLOT_PLAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_PLAN</span></code></a> or <a class="reference internal" href="#id207" title="geosoft.gxapi.DH_PLOT_SECTION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION</span></code></a></p></li>
 <li><p><strong>page</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Page to open <a class="reference internal" href="GXGUI.html#geosoft.gxapi.GXGUI" title="geosoft.gxapi.GXGUI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGUI</span></code></a> on</p></li>
 </ul>
 </dd>
@@ -2552,7 +2626,7 @@ If the specified mask channel does not exist, it is created.
 <p><span class="versionmodified added">New in version 8.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
-<p><strong>Note:</strong> Currently supports <a class="reference internal" href="#id201" title="geosoft.gxapi.DH_PLOT_PLAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_PLAN</span></code></a> and <a class="reference internal" href="#id202" title="geosoft.gxapi.DH_PLOT_SECTION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION</span></code></a></p>
+<p><strong>Note:</strong> Currently supports <a class="reference internal" href="#id206" title="geosoft.gxapi.DH_PLOT_PLAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_PLAN</span></code></a> and <a class="reference internal" href="#id207" title="geosoft.gxapi.DH_PLOT_SECTION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION</span></code></a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3025,7 +3099,7 @@ The DH3DHOLES GX uses the default 3D map parameter file
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>job</strong> (<em>str</em>) – Parameter (INI) name</p></li>
-<li><p><strong>plot_type</strong> (<em>int</em>) – <a class="reference internal" href="#dh-plot"><span class="std std-ref">DH_PLOT constants</span></a> Section plot type (<a class="reference internal" href="#id202" title="geosoft.gxapi.DH_PLOT_SECTION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION</span></code></a> or <a class="reference internal" href="#id208" title="geosoft.gxapi.DH_PLOT_SECTION_CROOKED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION_CROOKED</span></code></a></p></li>
+<li><p><strong>plot_type</strong> (<em>int</em>) – <a class="reference internal" href="#dh-plot"><span class="std std-ref">DH_PLOT constants</span></a> Section plot type (<a class="reference internal" href="#id207" title="geosoft.gxapi.DH_PLOT_SECTION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION</span></code></a> or <a class="reference internal" href="#id213" title="geosoft.gxapi.DH_PLOT_SECTION_CROOKED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DH_PLOT_SECTION_CROOKED</span></code></a></p></li>
 <li><p><strong>view</strong> (<em>str</em>) – View name</p></li>
 </ul>
 </dd>
@@ -3430,6 +3504,43 @@ and returns depths for each point</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDH.re_survey_location_general">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">re_survey_location_general</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hole</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_dip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_az</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">east</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">north</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_pol_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip_conv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.re_survey_location_general"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.re_survey_location_general" title="Link to this definition">¶</a></dt>
+<dd><p>Call a resurveying method based on the input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hole</strong> (<em>str</em>) – Hole ID (used for error messages)</p></li>
+<li><p><strong>vv_dip</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Dip</p></li>
+<li><p><strong>vv_az</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Azimuth</p></li>
+<li><p><strong>vv_depth</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Depth</p></li>
+<li><p><strong>east</strong> (<em>float</em>) – Collar X (easting) (depth = 0)</p></li>
+<li><p><strong>north</strong> (<em>float</em>) – Collar Y (northing)(depth = 0)</p></li>
+<li><p><strong>elev</strong> (<em>float</em>) – Collar Z (elevation) (depth = 0)</p></li>
+<li><p><strong>top</strong> (<em>float</em>) – Minimum hole depth to start output values</p></li>
+<li><p><strong>bot</strong> (<em>float</em>) – Maximum hole depth for output values</p></li>
+<li><p><strong>survey_pol_order</strong> (<em>int</em>) – Survey polygon order</p></li>
+<li><p><strong>res_type</strong> (<em>int</em>) – <span class="xref std std-ref">RESURVEY_TYPE</span></p></li>
+<li><p><strong>dip_conv</strong> (<em>int</em>) – <a class="reference internal" href="#dip-convention"><span class="std std-ref">DIP_CONVENTION constants</span></a></p></li>
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X (Easting) - Output</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y (Northin) - Output</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z (Elevation) - Output</p></li>
+<li><p><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Depths - Output</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2026.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Uses the Radius of curvature method to calculate (X, Y, Z)
+locations down the hole from azimuth, dip, depth values.
+The collar is assumed to be at zero depth, and depth is the
+measure distance down the hole (even if it’s horizontal).
+A negative dip convention means vertical down is -90 degrees.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXDH.re_survey_pol_fit">
 <span class="sig-name descname"><span class="pre">re_survey_pol_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hole</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_dip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_az</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">east</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">north</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip_conv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.re_survey_pol_fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.re_survey_pol_fit" title="Link to this definition">¶</a></dt>
 <dd><p>Use the polynomial fit resurveying method.</p>
@@ -3496,6 +3607,41 @@ the number of input points.</p>
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.1.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Uses the Radius of curvature method to calculate (X, Y, Z)
+locations down the hole from azimuth, dip, depth values.
+The collar is assumed to be at zero depth, and depth is the
+measure distance down the hole (even if it’s horizontal).
+A negative dip convention means vertical down is -90 degrees.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDH.re_survey_rad_curve_locations">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">re_survey_rad_curve_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hole</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_dip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_az</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">east</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">north</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip_conv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDH.html#GXDH.re_survey_rad_curve_locations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDH.re_survey_rad_curve_locations" title="Link to this definition">¶</a></dt>
+<dd><p>Use radius of curvature resurveying method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hole</strong> (<em>str</em>) – Hole ID (used for error messages)</p></li>
+<li><p><strong>vv_dip</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Dip</p></li>
+<li><p><strong>vv_az</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Azimuth</p></li>
+<li><p><strong>vv_depth</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Depth</p></li>
+<li><p><strong>east</strong> (<em>float</em>) – Collar X (easting) (depth = 0)</p></li>
+<li><p><strong>north</strong> (<em>float</em>) – Collar Y (northing)(depth = 0)</p></li>
+<li><p><strong>elev</strong> (<em>float</em>) – Collar Z (elevation) (depth = 0)</p></li>
+<li><p><strong>top</strong> (<em>float</em>) – Minimum hole depth to start output values</p></li>
+<li><p><strong>bot</strong> (<em>float</em>) – Maximum hole depth for output values</p></li>
+<li><p><strong>dip_conv</strong> (<em>int</em>) – <a class="reference internal" href="#dip-convention"><span class="std std-ref">DIP_CONVENTION constants</span></a></p></li>
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X (Easting) - Output</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y (Northin) - Output</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z (Elevation) - Output</p></li>
+<li><p><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Depths - Output</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 <p><strong>Note:</strong> Uses the Radius of curvature method to calculate (X, Y, Z)
@@ -4229,8 +4375,8 @@ section definitions, hole trace parameters etc…)</p>
 <span class="sig-name descname"><span class="pre">DH_DEFAULT_STRUCTURECODE_FILE</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DEFAULT_STRUCTURECODE_FILE" title="Link to this definition">¶</a></dt>
 <dd><p>Dh default structurecode file</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id169">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFAULT_STRUCTURECODE_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'structcodes.csv'</span></em><a class="headerlink" href="#id169" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id174">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFAULT_STRUCTURECODE_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'structcodes.csv'</span></em><a class="headerlink" href="#id174" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4246,8 +4392,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">STR_DH_HOLES</span></span><a class="headerlink" href="#geosoft.gxapi.STR_DH_HOLES" title="Link to this definition">¶</a></dt>
 <dd><p>Str dh holes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id170">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_DH_HOLES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1048576</span></em><a class="headerlink" href="#id170" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id175">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STR_DH_HOLES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1048576</span></em><a class="headerlink" href="#id175" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4261,8 +4407,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMP_DONE</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMP_DONE" title="Link to this definition">¶</a></dt>
 <dd><p>User is done</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id171">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_DONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id171" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id176">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_DONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id176" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4272,8 +4418,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMP_CANCEL</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMP_CANCEL" title="Link to this definition">¶</a></dt>
 <dd><p>User canceled</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id172">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_CANCEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id172" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id177">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_CANCEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id177" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4283,8 +4429,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMP_SELECT</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMP_SELECT" title="Link to this definition">¶</a></dt>
 <dd><p>User chose to select an interval interactively</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id173">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_SELECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id173" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id178">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_SELECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id178" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4294,8 +4440,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMP_REFRESH</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMP_REFRESH" title="Link to this definition">¶</a></dt>
 <dd><p>User chose to refresh</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id174">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_REFRESH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id174" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id179">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMP_REFRESH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id179" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4309,8 +4455,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMPSTDB_HOLSEL_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMPSTDB_HOLSEL_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id175">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_HOLSEL_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id175" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id180">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_HOLSEL_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id180" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4320,8 +4466,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMPSTDB_HOLSEL_SELECTED</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMPSTDB_HOLSEL_SELECTED" title="Link to this definition">¶</a></dt>
 <dd><p>Selected</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id176">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_HOLSEL_SELECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id176" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id181">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_HOLSEL_SELECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id181" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4335,8 +4481,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_FIXED</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_FIXED" title="Link to this definition">¶</a></dt>
 <dd><p>Fixed</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id177">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_FIXED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id177" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id182">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_FIXED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id182" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4346,8 +4492,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_LITHOLOGY</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_LITHOLOGY" title="Link to this definition">¶</a></dt>
 <dd><p>Lithology</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id178">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_LITHOLOGY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id178" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id183">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_LITHOLOGY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id183" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4357,8 +4503,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_BESTFITLITH</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_BESTFITLITH" title="Link to this definition">¶</a></dt>
 <dd><p>Bestfitlith</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id179">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_BESTFITLITH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id179" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id184">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_BESTFITLITH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id184" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4368,8 +4514,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_INTFILE</span></span><a class="headerlink" href="#geosoft.gxapi.DH_COMPSTDB_INTSEL_INTFILE" title="Link to this definition">¶</a></dt>
 <dd><p>Intfile</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id180">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_INTFILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id180" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id185">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_COMPSTDB_INTSEL_INTFILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id185" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4383,8 +4529,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DATA_DIPAZIMUTH</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DATA_DIPAZIMUTH" title="Link to this definition">¶</a></dt>
 <dd><p>Dipazimuth</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id181">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_DIPAZIMUTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id181" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id186">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_DIPAZIMUTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id186" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4394,8 +4540,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DATA_EASTNORTH</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DATA_EASTNORTH" title="Link to this definition">¶</a></dt>
 <dd><p>Eastnorth</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id182">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_EASTNORTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id182" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id187">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_EASTNORTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id187" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4405,8 +4551,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DATA_FROMTO</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DATA_FROMTO" title="Link to this definition">¶</a></dt>
 <dd><p>Fromto</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id183">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_FROMTO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id183" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id188">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_FROMTO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id188" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4416,8 +4562,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DATA_POINT</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DATA_POINT" title="Link to this definition">¶</a></dt>
 <dd><p>Point</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id184">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_POINT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id184" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id189">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_POINT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id189" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4427,8 +4573,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DATA_COLLAR</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DATA_COLLAR" title="Link to this definition">¶</a></dt>
 <dd><p>Collar</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id185">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_COLLAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id185" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id190">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_COLLAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id190" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4438,8 +4584,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DATA_UNKNOWN</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DATA_UNKNOWN" title="Link to this definition">¶</a></dt>
 <dd><p>The type is not known</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id186">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#id186" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id191">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DATA_UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#id191" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4453,8 +4599,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DEFINE_PLAN</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DEFINE_PLAN" title="Link to this definition">¶</a></dt>
 <dd><p>Dh define plan</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id187">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_PLAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id187" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id192">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_PLAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id192" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4468,8 +4614,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_NS</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DEFINE_SECT_NS" title="Link to this definition">¶</a></dt>
 <dd><p>Ns</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id188">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_NS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id188" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id193">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_NS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id193" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4479,8 +4625,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_EW</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DEFINE_SECT_EW" title="Link to this definition">¶</a></dt>
 <dd><p>Ew</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id189">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_EW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id189" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id194">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_EW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id194" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4490,8 +4636,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_ANGLED</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DEFINE_SECT_ANGLED" title="Link to this definition">¶</a></dt>
 <dd><p>Angled</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id190">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_ANGLED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id190" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id195">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DEFINE_SECT_ANGLED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id195" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4505,8 +4651,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_EXP_CSV</span></span><a class="headerlink" href="#geosoft.gxapi.DH_EXP_CSV" title="Link to this definition">¶</a></dt>
 <dd><p>Csv</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id191">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_CSV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id191" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id196">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_CSV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id196" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4516,8 +4662,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_EXP_ASCII</span></span><a class="headerlink" href="#geosoft.gxapi.DH_EXP_ASCII" title="Link to this definition">¶</a></dt>
 <dd><p>Ascii</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id192">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_ASCII</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id192" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id197">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_ASCII</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id197" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4527,8 +4673,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_EXP_ACCESS</span></span><a class="headerlink" href="#geosoft.gxapi.DH_EXP_ACCESS" title="Link to this definition">¶</a></dt>
 <dd><p>Access</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id193">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_ACCESS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id193" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id198">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_ACCESS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id198" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4538,8 +4684,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_EXP_SHP</span></span><a class="headerlink" href="#geosoft.gxapi.DH_EXP_SHP" title="Link to this definition">¶</a></dt>
 <dd><p>Collars as points</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id194">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_SHP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id194" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id199">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_SHP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id199" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4549,8 +4695,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_EXP_SURPAC</span></span><a class="headerlink" href="#geosoft.gxapi.DH_EXP_SURPAC" title="Link to this definition">¶</a></dt>
 <dd><p>To Surpace Geological database (special format ACCESS)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id195">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_SURPAC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id195" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id200">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_SURPAC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id200" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4560,8 +4706,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_EXP_SHP_TRACES</span></span><a class="headerlink" href="#geosoft.gxapi.DH_EXP_SHP_TRACES" title="Link to this definition">¶</a></dt>
 <dd><p>Hole traces as polylines</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id196">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_SHP_TRACES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id196" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id201">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_EXP_SHP_TRACES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id201" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4575,8 +4721,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_HOLES_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.DH_HOLES_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>All</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id197">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_HOLES_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id197" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id202">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_HOLES_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id202" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4586,8 +4732,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_HOLES_SELECTED</span></span><a class="headerlink" href="#geosoft.gxapi.DH_HOLES_SELECTED" title="Link to this definition">¶</a></dt>
 <dd><p>Selected</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id198">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_HOLES_SELECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id198" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id203">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_HOLES_SELECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id203" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4601,8 +4747,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_MASK_APPEND</span></span><a class="headerlink" href="#geosoft.gxapi.DH_MASK_APPEND" title="Link to this definition">¶</a></dt>
 <dd><p>Append</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id199">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_MASK_APPEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id199" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id204">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_MASK_APPEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id204" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4612,8 +4758,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_MASK_NEW</span></span><a class="headerlink" href="#geosoft.gxapi.DH_MASK_NEW" title="Link to this definition">¶</a></dt>
 <dd><p>New</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id200">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_MASK_NEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id200" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id205">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_MASK_NEW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id205" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4627,8 +4773,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_PLAN</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_PLAN" title="Link to this definition">¶</a></dt>
 <dd><p>Plan</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id201">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_PLAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id201" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id206">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_PLAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id206" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4638,8 +4784,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_SECTION</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_SECTION" title="Link to this definition">¶</a></dt>
 <dd><p>Section</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id202">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id202" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id207">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id207" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4649,8 +4795,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_STRIPLOG</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_STRIPLOG" title="Link to this definition">¶</a></dt>
 <dd><p>Striplog</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id203">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_STRIPLOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id203" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id208">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_STRIPLOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id208" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4660,8 +4806,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_HOLE_TRACES</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_HOLE_TRACES" title="Link to this definition">¶</a></dt>
 <dd><p>Hole traces</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id204">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_HOLE_TRACES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id204" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id209">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_HOLE_TRACES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id209" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4671,8 +4817,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_3D</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_3D" title="Link to this definition">¶</a></dt>
 <dd><p>3d</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id205">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id205" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id210">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id210" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4682,8 +4828,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_STACK</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_SECTION_STACK" title="Link to this definition">¶</a></dt>
 <dd><p>Section stack</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id206">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_STACK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id206" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id211">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_STACK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id211" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4693,8 +4839,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_FENCE</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_SECTION_FENCE" title="Link to this definition">¶</a></dt>
 <dd><p>Section fence</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id207">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_FENCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id207" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id212">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_FENCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id212" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4704,8 +4850,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_CROOKED</span></span><a class="headerlink" href="#geosoft.gxapi.DH_PLOT_SECTION_CROOKED" title="Link to this definition">¶</a></dt>
 <dd><p>Section crooked</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id208">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_CROOKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id208" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id213">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_PLOT_SECTION_CROOKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id213" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4719,8 +4865,8 @@ selection tool. This should be big enough for 65,000 16-character hole names!</p
 <span class="sig-name descname"><span class="pre">DH_SECT_PAGE_SECTION</span></span><a class="headerlink" href="#geosoft.gxapi.DH_SECT_PAGE_SECTION" title="Link to this definition">¶</a></dt>
 <dd><p>Section</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id209">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SECT_PAGE_SECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id209" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id214">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SECT_PAGE_SECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id214" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4735,8 +4881,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_SURFACE_FIRST_LAYER_FROM</span></span><a class="headerlink" href="#geosoft.gxapi.DH_SURFACE_FIRST_LAYER_FROM" title="Link to this definition">¶</a></dt>
 <dd><p>First layer from</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id210">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_FIRST_LAYER_FROM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id210" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id215">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_FIRST_LAYER_FROM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id215" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4746,8 +4892,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_SURFACE_FIRST_LAYER_TO</span></span><a class="headerlink" href="#geosoft.gxapi.DH_SURFACE_FIRST_LAYER_TO" title="Link to this definition">¶</a></dt>
 <dd><p>First layer to</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id211">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_FIRST_LAYER_TO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id211" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id216">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_FIRST_LAYER_TO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id216" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4757,8 +4903,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_SURFACE_SECOND_LAYER_FROM</span></span><a class="headerlink" href="#geosoft.gxapi.DH_SURFACE_SECOND_LAYER_FROM" title="Link to this definition">¶</a></dt>
 <dd><p>Second layer from</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id212">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_SECOND_LAYER_FROM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id212" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id217">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_SECOND_LAYER_FROM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id217" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4768,8 +4914,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_SURFACE_SECOND_LAYER_TO</span></span><a class="headerlink" href="#geosoft.gxapi.DH_SURFACE_SECOND_LAYER_TO" title="Link to this definition">¶</a></dt>
 <dd><p>Second layer to</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id213">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_SECOND_LAYER_TO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id213" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id218">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_SECOND_LAYER_TO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id218" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4779,8 +4925,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_SURFACE_LAST_LAYER_FROM</span></span><a class="headerlink" href="#geosoft.gxapi.DH_SURFACE_LAST_LAYER_FROM" title="Link to this definition">¶</a></dt>
 <dd><p>Last layer from</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id214">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_LAST_LAYER_FROM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id214" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id219">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_LAST_LAYER_FROM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id219" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4790,8 +4936,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_SURFACE_LAST_LAYER_TO</span></span><a class="headerlink" href="#geosoft.gxapi.DH_SURFACE_LAST_LAYER_TO" title="Link to this definition">¶</a></dt>
 <dd><p>Last layer to</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id215">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_LAST_LAYER_TO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id215" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id220">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_SURFACE_LAST_LAYER_TO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id220" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4805,8 +4951,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DIP_CONVENTION_NEGATIVE</span></span><a class="headerlink" href="#geosoft.gxapi.DIP_CONVENTION_NEGATIVE" title="Link to this definition">¶</a></dt>
 <dd><p>Negative</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id216">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIP_CONVENTION_NEGATIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id216" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id221">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIP_CONVENTION_NEGATIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id221" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4816,8 +4962,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DIP_CONVENTION_POSITIVE</span></span><a class="headerlink" href="#geosoft.gxapi.DIP_CONVENTION_POSITIVE" title="Link to this definition">¶</a></dt>
 <dd><p>Positive</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id217">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIP_CONVENTION_POSITIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id217" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id222">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIP_CONVENTION_POSITIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id222" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4831,8 +4977,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_DESURVEY_RAD_CURVE</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DESURVEY_RAD_CURVE" title="Link to this definition">¶</a></dt>
 <dd><p>Rad curve</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id218">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DESURVEY_RAD_CURVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id218" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id223">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DESURVEY_RAD_CURVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id223" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4842,8 +4988,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_DESURVEY_POLYNOMIAL</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DESURVEY_POLYNOMIAL" title="Link to this definition">¶</a></dt>
 <dd><p>Polynomial</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id219">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DESURVEY_POLYNOMIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id219" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id224">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DESURVEY_POLYNOMIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id224" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4853,8 +4999,8 @@ top or bottom surfaces.</p>
 <span class="sig-name descname"><span class="pre">DH_DESURVEY_STRAIGHT_SEG</span></span><a class="headerlink" href="#geosoft.gxapi.DH_DESURVEY_STRAIGHT_SEG" title="Link to this definition">¶</a></dt>
 <dd><p>Straight seg</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id220">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DESURVEY_STRAIGHT_SEG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id220" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id225">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DH_DESURVEY_STRAIGHT_SEG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id225" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -4875,13 +5021,13 @@ top or bottom surfaces.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDH class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

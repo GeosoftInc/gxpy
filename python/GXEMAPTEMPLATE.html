@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXEMAPTEMPLATE class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXEMAPTEMPLATE class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEMAPTEMPLATE class</a></li> 
       </ul>
     </div>
@@ -54,6 +54,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_point"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.get_point()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_rect"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.get_rect()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_template_layout_props"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.get_template_layout_props()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_area"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.get_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_position"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.get_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_state"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.get_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.have_current"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.have_current()</span></code></a></li>
@@ -71,6 +72,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_drag_drop_enabled"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.set_drag_drop_enabled()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_item_selection"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.set_item_selection()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_template_layout_props"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.set_template_layout_props()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_area"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.set_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_position"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.set_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_state"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.set_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAPTEMPLATE.track_point"><code class="docutils literal notranslate"><span class="pre">GXEMAPTEMPLATE.track_point()</span></code></a></li>
@@ -84,36 +86,36 @@
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_FULL"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_PATH_FULL</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_PATH_FULL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_DIR"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_PATH_DIR</span></code></a></li>
-<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_PATH_DIR</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_PATH_DIR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_NAME_EXT"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_PATH_NAME_EXT</span></code></a></li>
-<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_PATH_NAME_EXT</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_PATH_NAME_EXT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_NAME"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_PATH_NAME</span></code></a></li>
-<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_PATH_NAME</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_PATH_NAME</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emaptemplate-track-constants">EMAPTEMPLATE_TRACK constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_ERASE"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_TRACK_ERASE</span></code></a></li>
-<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_TRACK_ERASE</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_TRACK_ERASE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_RMENU"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_TRACK_RMENU</span></code></a></li>
-<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_TRACK_RMENU</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_TRACK_RMENU</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_CYCLE"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_TRACK_CYCLE</span></code></a></li>
-<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_TRACK_CYCLE</span></code></a></li>
+<li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_TRACK_CYCLE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emaptemplate-window-position-constants">EMAPTEMPLATE_WINDOW_POSITION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_DOCKED"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_DOCKED</span></code></a></li>
-<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_POSITION_DOCKED</span></code></a></li>
+<li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_POSITION_DOCKED</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_FLOATING"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_FLOATING</span></code></a></li>
-<li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_POSITION_FLOATING</span></code></a></li>
+<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_POSITION_FLOATING</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emaptemplate-window-state-constants">EMAPTEMPLATE_WINDOW_STATE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_RESTORE"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_WINDOW_RESTORE</span></code></a></li>
-<li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_RESTORE</span></code></a></li>
+<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_RESTORE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_MINIMIZE"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_WINDOW_MINIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_MINIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_MINIMIZE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_MAXIMIZE"><code class="docutils literal notranslate"><span class="pre">EMAPTEMPLATE_WINDOW_MAXIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_MAXIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAPTEMPLATE_WINDOW_MAXIMIZE</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -525,6 +527,36 @@ view of a map.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAPTEMPLATE.get_window_area">
+<span class="sig-name descname"><span class="pre">get_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAPTEMPLATE.html#GXEMAPTEMPLATE.get_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Get the location of the map window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Min returned</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Min returned</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Max returned</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Max returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>If the window is minimized, the max values will be
+equal to the min values. If the window is maximized
+X Min and Y min will be <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> and X max and Y max
+will be <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEMAPTEMPLATE.get_window_position">
 <span class="sig-name descname"><span class="pre">get_window_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_floating</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAPTEMPLATE.html#GXEMAPTEMPLATE.get_window_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.get_window_position" title="Link to this definition">¶</a></dt>
 <dd><p>Get the map window’s position and dock state</p>
@@ -861,6 +893,35 @@ view of a map.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAPTEMPLATE.set_window_area">
+<span class="sig-name descname"><span class="pre">set_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAPTEMPLATE.html#GXEMAPTEMPLATE.set_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Set the location of the map window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<em>int</em>) – X Min</p></li>
+<li><p><strong>min_y</strong> (<em>int</em>) – Y Min</p></li>
+<li><p><strong>max_x</strong> (<em>int</em>) – X Max</p></li>
+<li><p><strong>max_y</strong> (<em>int</em>) – Y Max</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>if the max values are equal or less than the min values
+the window will be mimimized. If any Min values are <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a>
+or any Max values are <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>, the window is maximized.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEMAPTEMPLATE.set_window_position">
 <span class="sig-name descname"><span class="pre">set_window_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_floating</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAPTEMPLATE.html#GXEMAPTEMPLATE.set_window_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAPTEMPLATE.set_window_position" title="Link to this definition">¶</a></dt>
 <dd><p>Get the map window’s position and dock state</p>
@@ -1008,8 +1069,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_DIR</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_DIR" title="Link to this definition">¶</a></dt>
 <dd><p>\directory\file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id35">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id37">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1019,8 +1080,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_NAME_EXT</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_NAME_EXT" title="Link to this definition">¶</a></dt>
 <dd><p>file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id36">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id38">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1030,8 +1091,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_NAME</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_PATH_NAME" title="Link to this definition">¶</a></dt>
 <dd><p>file</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id37">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id39">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1045,8 +1106,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_ERASE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_ERASE" title="Link to this definition">¶</a></dt>
 <dd><p>Erase Object after you return?</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id38">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_ERASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id40">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_ERASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1056,8 +1117,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_RMENU</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_RMENU" title="Link to this definition">¶</a></dt>
 <dd><p>Allow use of right-menu</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id39">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_RMENU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id41">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_RMENU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1067,8 +1128,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_CYCLE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_TRACK_CYCLE" title="Link to this definition">¶</a></dt>
 <dd><p>If user holds down left-mouse, will return many times</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id40">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_CYCLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id42">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_TRACK_CYCLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1082,8 +1143,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_DOCKED</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_DOCKED" title="Link to this definition">¶</a></dt>
 <dd><p>Docked</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id41">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id43">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1093,8 +1154,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_FLOATING</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_POSITION_FLOATING" title="Link to this definition">¶</a></dt>
 <dd><p>Floating</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id42">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id44">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1108,8 +1169,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_RESTORE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_RESTORE" title="Link to this definition">¶</a></dt>
 <dd><p>Emaptemplate window restore</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id43">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id45">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1119,8 +1180,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_MINIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_MINIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Emaptemplate window minimize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id44">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id46">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1130,8 +1191,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_MAXIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAPTEMPLATE_WINDOW_MAXIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Emaptemplate window maximize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id45">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id47">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAPTEMPLATE_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1152,13 +1213,13 @@ If “FALSE”, map is saved without a prompt.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEMAPTEMPLATE class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

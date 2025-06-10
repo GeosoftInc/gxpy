@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXVOX class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXVOX class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVOX class</a></li> 
       </ul>
     </div>
@@ -63,7 +63,10 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.export_xml"><code class="docutils literal notranslate"><span class="pre">GXVOX.export_xml()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.export_xyz"><code class="docutils literal notranslate"><span class="pre">GXVOX.export_xyz()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.filter"><code class="docutils literal notranslate"><span class="pre">GXVOX.filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVOX.generate_constant_value"><code class="docutils literal notranslate"><span class="pre">GXVOX.generate_constant_value()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVOX.generate_constant_value_vv"><code class="docutils literal notranslate"><span class="pre">GXVOX.generate_constant_value_vv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.generate_db"><code class="docutils literal notranslate"><span class="pre">GXVOX.generate_db()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVOX.generate_from_grid"><code class="docutils literal notranslate"><span class="pre">GXVOX.generate_from_grid()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.generate_gocad"><code class="docutils literal notranslate"><span class="pre">GXVOX.generate_gocad()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.generate_oriented_gocad"><code class="docutils literal notranslate"><span class="pre">GXVOX.generate_oriented_gocad()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.generate_pg"><code class="docutils literal notranslate"><span class="pre">GXVOX.generate_pg()</span></code></a></li>
@@ -105,6 +108,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.re_grid"><code class="docutils literal notranslate"><span class="pre">GXVOX.re_grid()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.resample_pg"><code class="docutils literal notranslate"><span class="pre">GXVOX.resample_pg()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.rescale_cell_sizes"><code class="docutils literal notranslate"><span class="pre">GXVOX.rescale_cell_sizes()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVOX.sample"><code class="docutils literal notranslate"><span class="pre">GXVOX.sample()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.sample_cdi"><code class="docutils literal notranslate"><span class="pre">GXVOX.sample_cdi()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.sample_cdi_to_topography"><code class="docutils literal notranslate"><span class="pre">GXVOX.sample_cdi_to_topography()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVOX.sample_vv"><code class="docutils literal notranslate"><span class="pre">GXVOX.sample_vv()</span></code></a></li>
@@ -129,88 +133,88 @@
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_DIR_XY"><code class="docutils literal notranslate"><span class="pre">VOX_DIR_XY</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_DIR_XY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_DIR_XZ"><code class="docutils literal notranslate"><span class="pre">VOX_DIR_XZ</span></code></a></li>
-<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_DIR_XZ</span></code></a></li>
+<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_DIR_XZ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_DIR_YZ"><code class="docutils literal notranslate"><span class="pre">VOX_DIR_YZ</span></code></a></li>
-<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_DIR_YZ</span></code></a></li>
+<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_DIR_YZ</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vox-direction-constants">VOX_DIRECTION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_3D_DIR_XYZ"><code class="docutils literal notranslate"><span class="pre">VOX_3D_DIR_XYZ</span></code></a></li>
-<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_XYZ</span></code></a></li>
+<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_XYZ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_3D_DIR_YXZ"><code class="docutils literal notranslate"><span class="pre">VOX_3D_DIR_YXZ</span></code></a></li>
-<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_YXZ</span></code></a></li>
+<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_YXZ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_3D_DIR_XZY"><code class="docutils literal notranslate"><span class="pre">VOX_3D_DIR_XZY</span></code></a></li>
-<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_XZY</span></code></a></li>
+<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_XZY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_3D_DIR_YZX"><code class="docutils literal notranslate"><span class="pre">VOX_3D_DIR_YZX</span></code></a></li>
-<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_YZX</span></code></a></li>
+<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_YZX</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_3D_DIR_ZXY"><code class="docutils literal notranslate"><span class="pre">VOX_3D_DIR_ZXY</span></code></a></li>
-<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_ZXY</span></code></a></li>
+<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_ZXY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_3D_DIR_ZYX"><code class="docutils literal notranslate"><span class="pre">VOX_3D_DIR_ZYX</span></code></a></li>
-<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_ZYX</span></code></a></li>
+<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_3D_DIR_ZYX</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vox-filter3d-constants">VOX_FILTER3D constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_FILTER3D_FILE"><code class="docutils literal notranslate"><span class="pre">VOX_FILTER3D_FILE</span></code></a></li>
-<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_FILE</span></code></a></li>
+<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_FILE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_FILTER3D_SMOOTHING"><code class="docutils literal notranslate"><span class="pre">VOX_FILTER3D_SMOOTHING</span></code></a></li>
-<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_SMOOTHING</span></code></a></li>
+<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_SMOOTHING</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_FILTER3D_LAPLACE"><code class="docutils literal notranslate"><span class="pre">VOX_FILTER3D_LAPLACE</span></code></a></li>
-<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_LAPLACE</span></code></a></li>
+<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_LAPLACE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_FILTER3D_X_GRADIENT"><code class="docutils literal notranslate"><span class="pre">VOX_FILTER3D_X_GRADIENT</span></code></a></li>
-<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_X_GRADIENT</span></code></a></li>
+<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_X_GRADIENT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_FILTER3D_Y_GRADIENT"><code class="docutils literal notranslate"><span class="pre">VOX_FILTER3D_Y_GRADIENT</span></code></a></li>
-<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_Y_GRADIENT</span></code></a></li>
+<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_Y_GRADIENT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_FILTER3D_Z_GRADIENT"><code class="docutils literal notranslate"><span class="pre">VOX_FILTER3D_Z_GRADIENT</span></code></a></li>
-<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_Z_GRADIENT</span></code></a></li>
+<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_Z_GRADIENT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_FILTER3D_TOTAL_GRADIENT"><code class="docutils literal notranslate"><span class="pre">VOX_FILTER3D_TOTAL_GRADIENT</span></code></a></li>
-<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_TOTAL_GRADIENT</span></code></a></li>
+<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_FILTER3D_TOTAL_GRADIENT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vox-gocad-orientation-constants">VOX_GOCAD_ORIENTATION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL"><code class="docutils literal notranslate"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED"><code class="docutils literal notranslate"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED</span></code></a></li>
-<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED</span></code></a></li>
+<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST"><code class="docutils literal notranslate"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></code></a></li>
-<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></code></a></li>
+<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST"><code class="docutils literal notranslate"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></code></a></li>
-<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></code></a></li>
+<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vox-grid-logopt-constants">VOX_GRID_LOGOPT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LINEAR"><code class="docutils literal notranslate"><span class="pre">VOX_GRID_LOGOPT_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOG_SAVELINEAR"><code class="docutils literal notranslate"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOG_SAVELINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOG_SAVELINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR"><code class="docutils literal notranslate"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOG_SAVELOG"><code class="docutils literal notranslate"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELOG</span></code></a></li>
-<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOG_SAVELOG</span></code></a></li>
+<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOG_SAVELOG</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG"><code class="docutils literal notranslate"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG</span></code></a></li>
-<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG</span></code></a></li>
+<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vox-origin-constants">VOX_ORIGIN constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_ORIGIN_BOTTOM"><code class="docutils literal notranslate"><span class="pre">VOX_ORIGIN_BOTTOM</span></code></a></li>
-<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_ORIGIN_BOTTOM</span></code></a></li>
+<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_ORIGIN_BOTTOM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_ORIGIN_TOP"><code class="docutils literal notranslate"><span class="pre">VOX_ORIGIN_TOP</span></code></a></li>
-<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_ORIGIN_TOP</span></code></a></li>
+<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_ORIGIN_TOP</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vox-slice-mode-constants">VOX_SLICE_MODE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_SLICE_MODE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VOX_SLICE_MODE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_SLICE_MODE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_SLICE_MODE_LINEAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_SLICE_MODE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VOX_SLICE_MODE_NEAREST</span></code></a></li>
-<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_SLICE_MODE_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_SLICE_MODE_NEAREST</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#vox-vectorvox-import-constants">VOX_VECTORVOX_IMPORT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_VECTORVOX_XYZ"><code class="docutils literal notranslate"><span class="pre">VOX_VECTORVOX_XYZ</span></code></a></li>
-<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_VECTORVOX_XYZ</span></code></a></li>
+<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_VECTORVOX_XYZ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a></li>
-<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_VECTORVOX_UVW</span></code></a></li>
+<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_VECTORVOX_UVW</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VOX_VECTORVOX_AID"><code class="docutils literal notranslate"><span class="pre">VOX_VECTORVOX_AID</span></code></a></li>
-<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_VECTORVOX_AID</span></code></a></li>
+<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.VOX_VECTORVOX_AID</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -749,7 +753,7 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filter</strong> (<em>int</em>) – <a class="reference internal" href="#vox-filter3d"><span class="std std-ref">VOX_FILTER3D constants</span></a></p></li>
-<li><p><strong>filter_file</strong> (<em>str</em>) – Filter file, if filter is <a class="reference internal" href="#id88" title="geosoft.gxapi.VOX_FILTER3D_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_FILTER3D_FILE</span></code></a></p></li>
+<li><p><strong>filter_file</strong> (<em>str</em>) – Filter file, if filter is <a class="reference internal" href="#id92" title="geosoft.gxapi.VOX_FILTER3D_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_FILTER3D_FILE</span></code></a></p></li>
 <li><p><strong>n_passes</strong> (<em>int</em>) – Number of filter passes</p></li>
 <li><p><strong>interpolate_dummies</strong> (<em>int</em>) – (1: interpolate dummies)</p></li>
 <li><p><strong>output_vox</strong> (<em>str</em>) – Output voxel file name.</p></li>
@@ -760,6 +764,81 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 <p><span class="versionmodified added">New in version 7.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVOX.generate_constant_value">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_constant_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_count_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_count_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_count_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOX.html#GXVOX.generate_constant_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOX.generate_constant_value" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Generate a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> with a constant value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></p></li>
+<li><p><strong>value</strong> (<em>float</em>) – Value to use</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
+<li><p><strong>ox</strong> (<em>float</em>) – Origin X</p></li>
+<li><p><strong>oy</strong> (<em>float</em>) – Origin Y</p></li>
+<li><p><strong>oz</strong> (<em>float</em>) – Origin Z</p></li>
+<li><p><strong>cx</strong> (<em>float</em>) – Cell Size X</p></li>
+<li><p><strong>cy</strong> (<em>float</em>) – Cell Size Y</p></li>
+<li><p><strong>cz</strong> (<em>float</em>) – Cell Size Z</p></li>
+<li><p><strong>cell_count_x</strong> (<em>int</em>) – Cell Count X</p></li>
+<li><p><strong>cell_count_y</strong> (<em>int</em>) – Cell Count Y</p></li>
+<li><p><strong>cell_count_z</strong> (<em>int</em>) – Cell Count Z</p></li>
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</p></li>
+<li><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Metadata</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX.GXVOX">GXVOX</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVOX.generate_constant_value_vv">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_constant_value_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOX.html#GXVOX.generate_constant_value_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOX.generate_constant_value_vv" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Generate a <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> with a constant value, cells sizes passed in VVs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></p></li>
+<li><p><strong>value</strong> (<em>float</em>) – The Value to use</p></li>
+<li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
+<li><p><strong>ox</strong> (<em>float</em>) – Origin X</p></li>
+<li><p><strong>oy</strong> (<em>float</em>) – Origin Y</p></li>
+<li><p><strong>oz</strong> (<em>float</em>) – Origin Z</p></li>
+<li><p><strong>cx</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes X</p></li>
+<li><p><strong>cy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Y</p></li>
+<li><p><strong>cz</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Cell Sizes Z</p></li>
+<li><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – Projection</p></li>
+<li><p><strong>meta</strong> (<a class="reference internal" href="GXMETA.html#geosoft.gxapi.GXMETA" title="geosoft.gxapi.GXMETA"><em>GXMETA</em></a>) – Metadata</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX.GXVOX">GXVOX</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -779,6 +858,33 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 <p><span class="versionmodified added">New in version 6.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVOX.generate_from_grid">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_from_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vox_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constantValue</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOX.html#GXVOX.generate_from_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOX.generate_from_grid" title="Link to this definition">¶</a></dt>
+<dd><p>Create a single-layer VOX object from a grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid_name</strong> (<em>str</em>) – Input Grid File Name</p></li>
+<li><p><strong>vox_name</strong> (<em>str</em>) – Output Voxel File Name</p></li>
+<li><p><strong>constantValue</strong> (<em>float</em>) – Constant value for output voxel if NOT DUMMY</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> handle, terminates if creation fails</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX.GXVOX">GXVOX</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Data type, cell sizes and projection are defined from the input grid; values set to the input grid values,
+or to the input “constant” value if it is not dummy.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -938,8 +1044,8 @@ LOG_NEGATIVE: One of <code class="xref py py-obj docutils literal notranslate"><
 <li><p><strong>symb_x</strong> (<em>int</em>) – Symbol to import X, U or Amplitude data from</p></li>
 <li><p><strong>symb_y</strong> (<em>int</em>) – Symbol to import Y, V or Inclination data from</p></li>
 <li><p><strong>symb_z</strong> (<em>int</em>) – Symbol to import Z, W or Declination data from</p></li>
-<li><p><strong>inc</strong> (<em>float</em>) – Inclination value for <a class="reference internal" href="#id109" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-90° to 90°)</p></li>
-<li><p><strong>dec</strong> (<em>float</em>) – Declination value for <a class="reference internal" href="#id109" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-180° to 180°)</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – Inclination value for <a class="reference internal" href="#id113" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-90° to 90°)</p></li>
+<li><p><strong>dec</strong> (<em>float</em>) – Declination value for <a class="reference internal" href="#id113" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-180° to 180°)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1850,6 +1956,31 @@ its projection’s units.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVOX.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOX.html#GXVOX.sample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOX.sample" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Sample the Voxel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pg</strong> (<a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><em>GXPG</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> <a class="reference internal" href="GXPG.html#geosoft.gxapi.GXPG" title="geosoft.gxapi.GXPG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPG</span></code></a> Data</p></li>
+<li><p><strong>vv_x</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> X Location     (must be a DOUBLE)</p></li>
+<li><p><strong>vv_y</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> Y Location     (must be a DOUBLE)</p></li>
+<li><p><strong>vv_z</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> Z Location     (must be a DOUBLE)</p></li>
+<li><p><strong>vv_d</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> Data Returned  (must be a DOUBLE)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Never properly implemented. Use <a class="reference internal" href="GXVOXE.html#geosoft.gxapi.GXVOXE.profile" title="geosoft.gxapi.GXVOXE.profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXE.profile</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVOX.sample_cdi">
 <span class="sig-name descname"><span class="pre">sample_cdi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_depths_down</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topo_ch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_ch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOX.html#GXVOX.sample_cdi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOX.sample_cdi" title="Link to this definition">¶</a></dt>
 <dd><p>Sample a voxel at locations/elevations in a CDI database.</p>
@@ -1862,7 +1993,7 @@ its projection’s units.</p>
 <li><p><strong>y_ch</strong> (<em>int</em>) – Y channel handle</p></li>
 <li><p><strong>elev_ch</strong> (<em>int</em>) – Depth array channel handle</p></li>
 <li><p><strong>negative_depths_down</strong> (<em>int</em>) – Depths sign: 0 - positive down, 1 - negative down</p></li>
-<li><p><strong>topo_ch</strong> (<em>int</em>) – Elevation channel handle (can be <a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a>)</p></li>
+<li><p><strong>topo_ch</strong> (<em>int</em>) – Elevation channel handle (can be <a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a>)</p></li>
 <li><p><strong>mode</strong> (<em>int</em>) – Interpolation mode: 0 - linear, 1 - nearest</p></li>
 <li><p><strong>out_ch</strong> (<em>str</em>) – Output channel name</p></li>
 </ul>
@@ -2272,8 +2403,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_DIR_XZ</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_DIR_XZ" title="Link to this definition">¶</a></dt>
 <dd><p>X/Z Plane (Middle)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id80">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_DIR_XZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id84">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_DIR_XZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2283,8 +2414,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_DIR_YZ</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_DIR_YZ" title="Link to this definition">¶</a></dt>
 <dd><p>Y/Z Plane (Slowest)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id81">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_DIR_YZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id85">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_DIR_YZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2298,8 +2429,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_3D_DIR_XYZ</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_3D_DIR_XYZ" title="Link to this definition">¶</a></dt>
 <dd><p>XYZ</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id82">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id86">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2309,8 +2440,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_3D_DIR_YXZ</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_3D_DIR_YXZ" title="Link to this definition">¶</a></dt>
 <dd><p>YXZ</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id83">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_YXZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id87">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_YXZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2320,8 +2451,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_3D_DIR_XZY</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_3D_DIR_XZY" title="Link to this definition">¶</a></dt>
 <dd><p>XZY</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id84">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_XZY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id88">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_XZY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2331,8 +2462,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_3D_DIR_YZX</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_3D_DIR_YZX" title="Link to this definition">¶</a></dt>
 <dd><p>YZX</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id85">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_YZX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id89">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_YZX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2342,8 +2473,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_3D_DIR_ZXY</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_3D_DIR_ZXY" title="Link to this definition">¶</a></dt>
 <dd><p>ZXY</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id86">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_ZXY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id90">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_ZXY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2353,8 +2484,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_3D_DIR_ZYX</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_3D_DIR_ZYX" title="Link to this definition">¶</a></dt>
 <dd><p>ZYX</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id87">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_ZYX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id91">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_3D_DIR_ZYX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2368,8 +2499,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_FILTER3D_FILE</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_FILTER3D_FILE" title="Link to this definition">¶</a></dt>
 <dd><p>Specify a file containing the 27-point filter</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id88">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id92">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2379,8 +2510,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_FILTER3D_SMOOTHING</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_FILTER3D_SMOOTHING" title="Link to this definition">¶</a></dt>
 <dd><p>Smoothing filter</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id89">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_SMOOTHING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id93">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_SMOOTHING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2390,8 +2521,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_FILTER3D_LAPLACE</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_FILTER3D_LAPLACE" title="Link to this definition">¶</a></dt>
 <dd><p>Laplace filter</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id90">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_LAPLACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id94">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_LAPLACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2401,8 +2532,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_FILTER3D_X_GRADIENT</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_FILTER3D_X_GRADIENT" title="Link to this definition">¶</a></dt>
 <dd><p>X-Gradient filter</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id91">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_X_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id95">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_X_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2412,8 +2543,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_FILTER3D_Y_GRADIENT</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_FILTER3D_Y_GRADIENT" title="Link to this definition">¶</a></dt>
 <dd><p>Y-Gradient filter</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id92">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_Y_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id96">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_Y_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2423,8 +2554,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_FILTER3D_Z_GRADIENT</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_FILTER3D_Z_GRADIENT" title="Link to this definition">¶</a></dt>
 <dd><p>Z-Gradient filter</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id93">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_Z_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id97">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_Z_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2434,8 +2565,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_FILTER3D_TOTAL_GRADIENT</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_FILTER3D_TOTAL_GRADIENT" title="Link to this definition">¶</a></dt>
 <dd><p>Total-Gradient filter</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id94">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_TOTAL_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id98">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_FILTER3D_TOTAL_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2449,8 +2580,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL" title="Link to this definition">¶</a></dt>
 <dd><p>Normal</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id95">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id99">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2460,8 +2591,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED" title="Link to this definition">¶</a></dt>
 <dd><p>Inverted (Z)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id96">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id100">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2471,8 +2602,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST" title="Link to this definition">¶</a></dt>
 <dd><p>Normal (ZFirst)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id97">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id101">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2482,8 +2613,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST" title="Link to this definition">¶</a></dt>
 <dd><p>Inverted (Z) (ZFirst)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id98">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id102">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2497,8 +2628,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id99">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id103">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2508,8 +2639,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOG_SAVELINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Log, save as linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id100">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id104">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2519,8 +2650,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Log-linear, save as linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id101">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-2</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id105">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-2</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2530,8 +2661,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELOG</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOG_SAVELOG" title="Link to this definition">¶</a></dt>
 <dd><p>Log, save as log</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id102">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id106">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOG_SAVELOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2541,8 +2672,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG" title="Link to this definition">¶</a></dt>
 <dd><p>Log-linear, save as log</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id103">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id107">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_GRID_LOGOPT_LOGLINEAR_SAVELOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2556,8 +2687,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_ORIGIN_BOTTOM</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_ORIGIN_BOTTOM" title="Link to this definition">¶</a></dt>
 <dd><p>Bottom corner (standard Geosoft)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id104">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_ORIGIN_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id108">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_ORIGIN_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2567,8 +2698,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_ORIGIN_TOP</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_ORIGIN_TOP" title="Link to this definition">¶</a></dt>
 <dd><p>Top corner</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id105">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_ORIGIN_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id109">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_ORIGIN_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2582,8 +2713,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_SLICE_MODE_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_SLICE_MODE_LINEAR" title="Link to this definition">¶</a></dt>
 <dd><p>Linear</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id106">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_SLICE_MODE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id110">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_SLICE_MODE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2593,8 +2724,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_SLICE_MODE_NEAREST</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_SLICE_MODE_NEAREST" title="Link to this definition">¶</a></dt>
 <dd><p>Nearest</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id107">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_SLICE_MODE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id111">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_SLICE_MODE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2608,8 +2739,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_VECTORVOX_XYZ</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_VECTORVOX_XYZ" title="Link to this definition">¶</a></dt>
 <dd><p>X, Y and Z</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id108">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_VECTORVOX_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id112">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_VECTORVOX_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2619,8 +2750,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_VECTORVOX_UVW</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_VECTORVOX_UVW" title="Link to this definition">¶</a></dt>
 <dd><p>U, V and W</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id109">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_VECTORVOX_UVW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id113">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_VECTORVOX_UVW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2630,8 +2761,8 @@ The output can be clipped to the non-dummied cells.</p>
 <span class="sig-name descname"><span class="pre">VOX_VECTORVOX_AID</span></span><a class="headerlink" href="#geosoft.gxapi.VOX_VECTORVOX_AID" title="Link to this definition">¶</a></dt>
 <dd><p>Amplitude, Inclination and Declination</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id110">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_VECTORVOX_AID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id114">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOX_VECTORVOX_AID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2652,13 +2783,13 @@ The output can be clipped to the non-dummied cells.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVOX class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

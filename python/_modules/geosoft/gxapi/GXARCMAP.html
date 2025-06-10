@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXARCMAP &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXARCMAP &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCMAP</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXARCMAP</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -129,6 +129,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">change_size</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Changes the custom page size of the ArcGIS Map document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:  X Size (mm)</span>
@@ -140,6 +141,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_change_size</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
 
         
@@ -151,6 +153,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">display_in_3d_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Display a file in 3D view</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File Name</span>
@@ -160,6 +163,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_display_in_3d_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -171,6 +175,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_feature_layer_by_name_to_3d_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mxd_file</span><span class="p">,</span> <span class="n">dataframe_name</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports the shapes from a feature layer of the ArcMap document to a 3D File.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mxd_file:        `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` filename</span>
@@ -186,6 +191,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_export_feature_layer_by_name_to_3d_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mxd_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">dataframe_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -197,6 +203,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_selected_feature_layer_to_3d_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports the shapes from the currently selected feature layer (if any) in ArcMap to a 3D file (only on oriented frames i.e. sections).</span>
 <span class="sd">        </span>
 <span class="sd">        :param output_file:  Output file name</span>
@@ -206,6 +213,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_export_selected_feature_layer_to_3d_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">output_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -217,6 +225,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_current_document_info</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mxd</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get some info on the current `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` in ArcMap and selected layer (if any)</span>
 <span class="sd">        </span>
 <span class="sd">        :param mxd:    `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` filename</span>
@@ -230,6 +239,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">mxd</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_get_current_document_info</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mxd</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -241,6 +251,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_selected_layer_info</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">layer_number</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the name info on the specified selected layer</span>
 <span class="sd">        </span>
 <span class="sd">        :param layer_number:  Selected layer number</span>
@@ -254,6 +265,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">layer</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_get_selected_layer_info</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">layer_number</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -265,6 +277,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_number_of_selected_layers</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the number of selected layers in the TOC</span>
 
 <span class="sd">        Returns									 The number of layers selected.</span>
@@ -275,6 +288,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_get_number_of_selected_layers</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -284,6 +298,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">extra_csv</span><span class="p">,</span> <span class="n">layer_tag</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads a Geosoft map into the ArcMap document.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:        Map File Name</span>
@@ -313,6 +328,7 @@
 <span class="sd">         VIEWMATCH   -  View to match with in associated map (used for grouping logic)</span>
 <span class="sd">         ZONEFILE    -  Used for type RASTER</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_map</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">extra_csv</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer_tag</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">flags</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span>
 
@@ -323,6 +339,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_map_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">extra_csv</span><span class="p">,</span> <span class="n">layer_tag</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads a Geosoft map into the ArcMap document, specifying which View to use as Data view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:        Map File Name</span>
@@ -354,6 +371,7 @@
 <span class="sd">         VIEWMATCH   -  View to match with in associated map (used for grouping logic)</span>
 <span class="sd">         ZONEFILE    -  Used for type RASTER</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_map_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">extra_csv</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer_tag</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">flags</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -363,6 +381,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_shape</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">delete_existing</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a shape file into ArcMap.</span>
 <span class="sd">        </span>
 <span class="sd">        :param shp:              Shape file to load</span>
@@ -377,6 +396,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_shape</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">shp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">delete_existing</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span>
 
@@ -387,6 +407,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_spf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">num_shp</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load all the shape files generated by importing a SPF into ArcMap.</span>
 <span class="sd">        </span>
 <span class="sd">        :param shp:      List of shape files to load</span>
@@ -401,6 +422,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_spf</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">shp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">num_shp</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -412,6 +434,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_lyr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a LYR file to the current data frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File Name</span>
@@ -421,6 +444,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_lyr</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -432,6 +456,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">extra_csv</span><span class="p">,</span> <span class="n">layer_tag</span><span class="p">,</span> <span class="n">fit</span><span class="p">,</span> <span class="n">activate</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads a Geosoft map into the current ArcMap document</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:        Map File Name</span>
@@ -462,6 +487,7 @@
 <span class="sd">            VIEWMATCH   -  View to match with in associated map (used for grouping logic)</span>
 <span class="sd">            ZONEFILE    -  Used for type RASTER</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_map</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">extra_csv</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer_tag</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fit</span><span class="p">,</span> <span class="n">activate</span><span class="p">,</span> <span class="n">prefix</span><span class="p">)</span></div>
 
         
@@ -473,6 +499,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_map_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="nb">all</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a Geosoft Map as a layer into the current data frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:    Map File Name</span>
@@ -488,6 +515,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_map_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">all</span><span class="p">)</span></div>
 
         
@@ -499,6 +527,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_raster</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a raster file to the current data frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File Name</span>
@@ -511,6 +540,7 @@
 <span class="sd">        **Note:** Loads any file type recognized as &quot;raster&quot; formats by ARC `GXGIS &lt;geosoft.gxapi.GXGIS&gt;`.</span>
 <span class="sd">        This includes geosoft GRD files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_raster</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -522,6 +552,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_raster_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a raster file to the current data frame and create associated files</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  File Name</span>
@@ -534,6 +565,7 @@
 <span class="sd">        **Note:** Loads any file type recognized as &quot;raster&quot; formats by ARC `GXGIS &lt;geosoft.gxapi.GXGIS&gt;`.</span>
 <span class="sd">        This includes geosoft GRD files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_raster_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -545,6 +577,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">load_shape</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">layer_prefix</span><span class="p">,</span> <span class="n">layer_suffix</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` file to the current data frame</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:          File Name</span>
@@ -562,6 +595,7 @@
 
 <span class="sd">        Prefix_NAME_Suffix</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_load_shape</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer_prefix</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer_suffix</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -573,6 +607,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">map_view_to_shape</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">shp</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create `GXSHP &lt;geosoft.gxapi.GXSHP&gt;` file(s) from a Geosoft Map view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:   Map File Name</span>
@@ -595,6 +630,7 @@
 <span class="sd">              NAME_ln.shp    (line or arc objects)</span>
 <span class="sd">              NAME_pg.shp    (polygon objects)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_map_view_to_shape</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">shp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -606,6 +642,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">query_size</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Query the page size in mm of the entire map page.</span>
 <span class="sd">        </span>
 <span class="sd">        :param x:  X Size (mm)</span>
@@ -617,6 +654,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_query_size</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -628,6 +666,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">show_layer_by_name_in_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mxd_file</span><span class="p">,</span> <span class="n">dataframe_name</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Shows a layer in ArcMap in a 3D view in an `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param mxd_file:        `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` filename</span>
@@ -641,6 +680,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_show_layer_by_name_in_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mxd_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">dataframe_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">layer_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -652,6 +692,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">show_selected_layers_in_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Shows the selected layers in ArcMap in a 3D view</span>
 <span class="sd">        </span>
 
@@ -659,6 +700,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_show_selected_layers_in_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span></div>
 
         
@@ -670,6 +712,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_ipj_for_predefined_esri_gcs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">esri_gcs_code</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fills an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` with a predefined ESRI GCS</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:            `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to fill</span>
@@ -681,6 +724,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_get_ipj_for_predefined_esri_gcs</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">esri_gcs_code</span><span class="p">)</span></div>
 
         
@@ -692,6 +736,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_ipj_for_predefined_esri_pcs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">esri_pcs_code</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fills an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` with a predefined ESRI PCS</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:            `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to fill</span>
@@ -703,6 +748,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCMAP</span><span class="o">.</span><span class="n">_get_ipj_for_predefined_esri_pcs</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">esri_pcs_code</span><span class="p">)</span></div>
 </div>
 
@@ -735,7 +781,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCMAP</a></li> 
@@ -743,7 +789,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

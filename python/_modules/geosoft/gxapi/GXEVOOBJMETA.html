@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXEVOOBJMETA &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEVOOBJMETA</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXEVOOBJMETA</h1><div class="highlight"><pre>
+<span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
+<span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXEVOOBJMETA">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA">[docs]</a>
+<span class="k">class</span> <span class="nc">GXEVOOBJMETA</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEVOOBJMETA</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXEVOOBJMETA class.</span>
+
+<span class="sd">    The `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;` class is used to create Evo object metadata including object uuid, object path,</span>
+<span class="sd">    version id, created at, created by, etag, workspace id, modified at, modified by and bounding box properties.</span>
+
+<span class="sd">    **Note:**</span>
+
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXEVOOBJMETA.__init__">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXEVOOBJMETA</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.null">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.null">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;`</span>
+<span class="sd">        :rtype:   GXEVOOBJMETA</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXEVOOBJMETA</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.is_null">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.create_default">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.create_default">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_default</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Create an empty `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;` object.</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;` object</span>
+<span class="sd">        :rtype:      GXEVOOBJMETA</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEVOOBJMETA</span><span class="o">.</span><span class="n">_create_default</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXEVOOBJMETA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.create">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.create">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">metadata</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Create an `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;` object.</span>
+<span class="sd">        </span>
+<span class="sd">        :param metadata:  Evo object metadata in JSON string, refer to H_EVOOBJMETA or annotations for Seequent.Evo.Client.Api.Core.GeoscienceObjectMetadata</span>
+<span class="sd">        :type  metadata:  str</span>
+
+<span class="sd">        :returns:         `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;` object</span>
+<span class="sd">        :rtype:           GXEVOOBJMETA</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapEVOOBJMETA</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">metadata</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXEVOOBJMETA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.get_workspace_id">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.get_workspace_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_workspace_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">workspace_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Return the Evo workspace Id.</span>
+<span class="sd">        </span>
+<span class="sd">        :param workspace_id:  workspace id</span>
+<span class="sd">        :type  workspace_id:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">workspace_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_workspace_id</span><span class="p">(</span><span class="n">workspace_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.get_object_id">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.get_object_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_object_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Return the Evo object Id.</span>
+<span class="sd">        </span>
+<span class="sd">        :param object_id:  object id</span>
+<span class="sd">        :type  object_id:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">object_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_object_id</span><span class="p">(</span><span class="n">object_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.get_modified_at">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.get_modified_at">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_modified_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modified_at</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Return the Evo object modified at.</span>
+<span class="sd">        </span>
+<span class="sd">        :param modified_at:  modified at</span>
+<span class="sd">        :type  modified_at:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">modified_at</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_modified_at</span><span class="p">(</span><span class="n">modified_at</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXEVOOBJMETA.get_bounding_box">
+<a class="viewcode-back" href="../../../GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA.get_bounding_box">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounding_box</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Get Evo object bounding box in JSON string.</span>
+<span class="sd">        </span>
+<span class="sd">        :param bounding_box:  JSON string for bounding box, refer to H_EVOBOUNDINGBOX or annotations for Seequent.Evo.Client.Api.Core.Goose.Model.BoundingBox</span>
+<span class="sd">        :type  bounding_box:  str_ref</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">bounding_box</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_bounding_box</span><span class="p">(</span><span class="n">bounding_box</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXEVOOBJMETA</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

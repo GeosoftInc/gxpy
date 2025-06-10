@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXVAU class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXVAU class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVAU class</a></li> 
       </ul>
     </div>
@@ -40,9 +40,11 @@
 <li><a class="reference internal" href="#">GXVAU class</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVAU"><code class="docutils literal notranslate"><span class="pre">GXVAU</span></code></a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVAU.__init__"><code class="docutils literal notranslate"><span class="pre">GXVAU.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU.cond_depth_tem"><code class="docutils literal notranslate"><span class="pre">GXVAU.cond_depth_tem()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVAU.is_null"><code class="docutils literal notranslate"><span class="pre">GXVAU.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVAU.null"><code class="docutils literal notranslate"><span class="pre">GXVAU.null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVAU.prune"><code class="docutils literal notranslate"><span class="pre">GXVAU.prune()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVAU.section_cond_tem"><code class="docutils literal notranslate"><span class="pre">GXVAU.section_cond_tem()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVAU.total_vector"><code class="docutils literal notranslate"><span class="pre">GXVAU.total_vector()</span></code></a></li>
 </ul>
 </li>
@@ -50,7 +52,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.VAU_PRUNE_DUMMY"><code class="docutils literal notranslate"><span class="pre">VAU_PRUNE_DUMMY</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.VAU_PRUNE_DUMMY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VAU_PRUNE_VALID"><code class="docutils literal notranslate"><span class="pre">VAU_PRUNE_VALID</span></code></a></li>
-<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">gxapi.VAU_PRUNE_VALID</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">gxapi.VAU_PRUNE_VALID</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -95,6 +97,38 @@ data stored in <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA"
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.cond_depth_tem">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cond_depth_tem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resp_va</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_va</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cond_va</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_va</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_xvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_yvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_xvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_yvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.cond_depth_tem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.cond_depth_tem" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Calculate TEM apparent conductivity and depth</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resp_va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Response channel (microvolts)</p></li>
+<li><p><strong>time_va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Time channel (milliseconds)</p></li>
+<li><p><strong>cond_va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Conductivity channel (siemen/m)</p></li>
+<li><p><strong>depth_va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Depth (m)</p></li>
+<li><p><strong>current</strong> (<em>float</em>) – Transmitter current</p></li>
+<li><p><strong>flag</strong> (<em>int</em>) – Flag  Transmitter defined by moment (0) or by 4 VVs (1) below</p></li>
+<li><p><strong>min_xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Minimum X to define transmitter loop layout (moment)</p></li>
+<li><p><strong>min_yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Minimum Y to define transmitter loop layout (moment)</p></li>
+<li><p><strong>max_xvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Maximum X to define transmitter loop layout (moment)</p></li>
+<li><p><strong>max_yvv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Maximum Y to define transmitter loop layout (moment)</p></li>
+<li><p><strong>t_moment</strong> (<em>float</em>) – Transmitter moment (square meters), dummy if the above flag is 1</p></li>
+<li><p><strong>r_moment</strong> (<em>float</em>) – Receiver moment (square meters)</p></li>
+<li><p><strong>array</strong> (<em>int</em>) – <a class="reference internal" href="GXVVU.html#tem-array"><span class="std std-ref">TEM_ARRAY constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.is_null">
@@ -147,6 +181,29 @@ that are either dummy or non-dummy in the reference
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.section_cond_tem">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">section_cond_tem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond_va</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_va</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.section_cond_tem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.section_cond_tem" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Derive TEM apparent conductivity section at given depth</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond_va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Conductivity <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>,`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</p></li>
+<li><p><strong>depth_va</strong> (<a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><em>GXVA</em></a>) – Depth <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>,`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</p></li>
+<li><p><strong>section</strong> (<em>float</em>) – Depth derive TEM section (same unit as Depth <a class="reference internal" href="GXVA.html#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>)</p></li>
+<li><p><strong>out_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Returned conductivity at given depth,`GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVAU.total_vector">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">total_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xva</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yva</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zva</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tva</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVAU.html#GXVAU.total_vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVAU.total_vector" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate total vector for X,Y and Z components</p>
@@ -187,8 +244,8 @@ that are either dummy or non-dummy in the reference
 <span class="sig-name descname"><span class="pre">VAU_PRUNE_VALID</span></span><a class="headerlink" href="#geosoft.gxapi.VAU_PRUNE_VALID" title="Link to this definition">¶</a></dt>
 <dd><p>Valid</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VAU_PRUNE_VALID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VAU_PRUNE_VALID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -209,13 +266,13 @@ that are either dummy or non-dummy in the reference
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVAU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

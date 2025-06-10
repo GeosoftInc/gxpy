@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXMULTIGRID3DUTIL class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXMULTIGRID3DUTIL class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMULTIGRID3DUTIL class</a></li> 
       </ul>
     </div>
@@ -70,6 +70,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.export_to_xyz"><code class="docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL.export_to_xyz()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.extract_dem"><code class="docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL.extract_dem()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.filter"><code class="docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL.filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf"><code class="docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL.generate_rbf()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_extents"><code class="docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL.get_data_extents()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_ground_extents"><code class="docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL.get_data_ground_extents()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.get_gocad_location"><code class="docutils literal notranslate"><span class="pre">GXMULTIGRID3DUTIL.get_gocad_location()</span></code></a></li>
@@ -98,7 +99,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.RBFKERNEL_DISTANCE"><code class="docutils literal notranslate"><span class="pre">RBFKERNEL_DISTANCE</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.RBFKERNEL_DISTANCE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.RBFKERNEL_MULTIQUADRATIC"><code class="docutils literal notranslate"><span class="pre">RBFKERNEL_MULTIQUADRATIC</span></code></a></li>
-<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.RBFKERNEL_MULTIQUADRATIC</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.RBFKERNEL_MULTIQUADRATIC</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -825,7 +826,7 @@
 <li><p><strong>input_file</strong> (<em>str</em>) – Name of the input grid3d</p></li>
 <li><p><strong>output_file</strong> (<em>str</em>) – Name of the output grid3d</p></li>
 <li><p><strong>filter</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#filter3d"><span class="std std-ref">FILTER3D constants</span></a></p></li>
-<li><p><strong>filter_file</strong> (<em>str</em>) – Filter file, if filter is <a class="reference internal" href="GXVOX.html#id88" title="geosoft.gxapi.VOX_FILTER3D_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_FILTER3D_FILE</span></code></a></p></li>
+<li><p><strong>filter_file</strong> (<em>str</em>) – Filter file, if filter is <a class="reference internal" href="GXVOX.html#id92" title="geosoft.gxapi.VOX_FILTER3D_FILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_FILTER3D_FILE</span></code></a></p></li>
 <li><p><strong>n_passes</strong> (<em>int</em>) – Number of filter passes</p></li>
 <li><p><strong>interpolate_dummies</strong> (<em>int</em>) – (1: interpolate dummies)</p></li>
 </ul>
@@ -833,6 +834,34 @@
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 9.4.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_rbf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iterations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_epsilon</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3DUTIL.html#GXMULTIGRID3DUTIL.generate_rbf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 9.6: </span>Removed.</p>
+</div>
+<p>Creates a VOXEL from an database using RBF.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Handle to a database</p></li>
+<li><p><strong>output_file</strong> (<em>str</em>) – Name of the output grid3d</p></li>
+<li><p><strong>data_channel</strong> (<em>str</em>) – Channel to grid`</p></li>
+<li><p><strong>cell_size</strong> (<em>float</em>) – Cell size</p></li>
+<li><p><strong>error_tolerance</strong> (<em>float</em>) – Error Tolerance</p></li>
+<li><p><strong>max_iterations</strong> (<em>int</em>) – Maximum number of iterations (&gt;0)</p></li>
+<li><p><strong>desample</strong> (<em>int</em>) – Desample data (1) or use as is (0)</p></li>
+<li><p><strong>kernel</strong> (<em>int</em>) – <a class="reference internal" href="#rbfkernel"><span class="std std-ref">RBFKERNEL constants</span></a></p></li>
+<li><p><strong>kernel_epsilon</strong> (<em>float</em>) – Kernel Epsilon</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 9.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -935,10 +964,10 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <li><p><strong>cell_size_z</strong> (<em>float</em>) – Voxel cell size Z</p></li>
 <li><p><strong>method</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#multigrid3d-directgrid-method"><span class="std std-ref">MULTIGRID3D_DIRECTGRID_METHOD constants</span></a></p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
-<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
 </ul>
 </dd>
 </dl>
@@ -967,16 +996,16 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <li><p><strong>cell_size_y</strong> (<em>float</em>) – Voxel cell size Y</p></li>
 <li><p><strong>cell_size_z</strong> (<em>float</em>) – Voxel cell size Z</p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
-<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
 <li><p><strong>weight_power</strong> (<em>float</em>) – Weight Power (default 2)</p></li>
 <li><p><strong>weight_slope</strong> (<em>float</em>) – Weight Slope (default 1)</p></li>
 <li><p><strong>search_radius</strong> (<em>float</em>) – Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))</p></li>
 <li><p><strong>blanking_distance</strong> (<em>float</em>) – Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))</p></li>
 <li><p><strong>log</strong> (<em>int</em>) – Apply log transform to input data before gridding (0:No (default), 1:Yes)</p></li>
-<li><p><strong>log_base</strong> (<em>float</em>) – One of <a class="reference internal" href="GXVV.html#id84" title="geosoft.gxapi.VV_LOG_BASE_10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_BASE_10</span></code></a> (default) or :const:<a href="#id33"><span class="problematic" id="id34">`</span></a>VV_LOG_BASE_E</p></li>
+<li><p><strong>log_base</strong> (<em>float</em>) – One of <a class="reference internal" href="GXVV.html#id84" title="geosoft.gxapi.VV_LOG_BASE_10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_BASE_10</span></code></a> (default) or :const:<a href="#id34"><span class="problematic" id="id35">`</span></a>VV_LOG_BASE_E</p></li>
 <li><p><strong>log_negative</strong> (<em>int</em>) – One of <code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_NO</span></code> (default) or <code class="xref py py-obj docutils literal notranslate"><span class="pre">VV_LOG_NEGATIVE_YES</span></code></p></li>
 </ul>
 </dd>
@@ -1021,10 +1050,10 @@ at least one data point are set to dummy.</p>
 <li><p><strong>sill</strong> (<em>float</em>) – Sill</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
-<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
 </ul>
 </dd>
 </dl>
@@ -1063,10 +1092,10 @@ at least one data point are set to dummy.</p>
 <li><p><strong>down_dip_weight</strong> (<em>float</em>) – Dip Plane Weight</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
-<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
 </ul>
 </dd>
 </dl>
@@ -1100,10 +1129,10 @@ at least one data point are set to dummy.</p>
 <li><p><strong>sill</strong> (<em>float</em>) – Sill</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
-<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
 </ul>
 </dd>
 </dl>
@@ -1182,7 +1211,7 @@ at least one data point are set to dummy.</p>
 <li><p><strong>name</strong> (<em>str</em>) – Name of output <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a></p></li>
 <li><p><strong>header</strong> (<em>str</em>) – Name of GOCAD Voxel file</p></li>
 <li><p><strong>property</strong> (<em>str</em>) – Propert name to import</p></li>
-<li><p><strong>orientation</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#gocad-orientation"><span class="std std-ref">GOCAD_ORIENTATION constants</span></a> OBSOLETE as of 9.7. The UVW axes and ZPOSITIVE values are read from the <a href="#id42"><span class="problematic" id="id43">*</span></a>.vo header and are handled on import automatically. By default ZPOSITIVE Elevation is assumed</p></li>
+<li><p><strong>orientation</strong> (<em>int</em>) – <a class="reference internal" href="GXMULTIGRID3D.html#gocad-orientation"><span class="std std-ref">GOCAD_ORIENTATION constants</span></a> OBSOLETE as of 9.7. The UVW axes and ZPOSITIVE values are read from the <a href="#id43"><span class="problematic" id="id44">*</span></a>.vo header and are handled on import automatically. By default ZPOSITIVE Elevation is assumed</p></li>
 </ul>
 </dd>
 </dl>
@@ -1226,8 +1255,8 @@ at least one data point are set to dummy.</p>
 <li><p><strong>symb_x</strong> (<em>int</em>) – Symbol to import X, U or Amplitude data from</p></li>
 <li><p><strong>symb_y</strong> (<em>int</em>) – Symbol to import Y, V or Inclination data from</p></li>
 <li><p><strong>symb_z</strong> (<em>int</em>) – Symbol to import Z, W or Declination data from</p></li>
-<li><p><strong>inc</strong> (<em>float</em>) – Inclination value for <a class="reference internal" href="GXVOX.html#id109" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-90° to 90°)</p></li>
-<li><p><strong>dec</strong> (<em>float</em>) – Declination value for <a class="reference internal" href="GXVOX.html#id109" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-180° to 180°)</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – Inclination value for <a class="reference internal" href="GXVOX.html#id113" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-90° to 90°)</p></li>
+<li><p><strong>dec</strong> (<em>float</em>) – Declination value for <a class="reference internal" href="GXVOX.html#id113" title="geosoft.gxapi.VOX_VECTORVOX_UVW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOX_VECTORVOX_UVW</span></code></a> (-180° to 180°)</p></li>
 </ul>
 </dd>
 </dl>
@@ -1320,10 +1349,10 @@ at least one data point are set to dummy.</p>
 <li><p><strong>cell_size</strong> (<em>float</em>) – Cell size (DUMMY for default)</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
-<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
 </ul>
 </dd>
 </dl>
@@ -1410,10 +1439,10 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <li><p><strong>min_log</strong> (<em>float</em>) – Minimum log</p></li>
 <li><p><strong>type</strong> (<em>int</em>) – <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a></p></li>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database</p></li>
-<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
-<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id254" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>x_channel</strong> (<em>int</em>) – X channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>y_channel</strong> (<em>int</em>) – Y channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>z_channel</strong> (<em>int</em>) – Z channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
+<li><p><strong>data_channel</strong> (<em>int</em>) – Data channel [<a class="reference internal" href="GXDB.html#id269" title="geosoft.gxapi.DB_LOCK_READONLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_LOCK_READONLY</span></code></a>]</p></li>
 </ul>
 </dd>
 </dl>
@@ -1458,8 +1487,8 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
 <span class="sig-name descname"><span class="pre">RBFKERNEL_MULTIQUADRATIC</span></span><a class="headerlink" href="#geosoft.gxapi.RBFKERNEL_MULTIQUADRATIC" title="Link to this definition">¶</a></dt>
 <dd><p>Multiquadratic</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id53">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">RBFKERNEL_MULTIQUADRATIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id54">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">RBFKERNEL_MULTIQUADRATIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1480,13 +1509,13 @@ basic parameters are entered directly. Optional parameters are passed via a <a c
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMULTIGRID3DUTIL class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

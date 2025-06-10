@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMAPTEMPLATE &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXMAPTEMPLATE &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMAPTEMPLATE</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXMAPTEMPLATE</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -130,6 +130,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.get_tmp_copy">[docs]</a>
     <span class="k">def</span> <span class="nf">get_tmp_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a temporary XML file for manipulation of the map template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tmp:          Returned temporary map template file name</span>
@@ -142,6 +143,7 @@
 <span class="sd">        **Note:** After manipulating contents the object may be updated by a call to</span>
 <span class="sd">        the UpdateFromTmpCopy method.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">tmp</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_tmp_copy</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -153,6 +155,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.update_from_tmp_copy">[docs]</a>
     <span class="k">def</span> <span class="nf">update_from_tmp_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Update the object contents from a temporary XML file that may have bee manipulated externally.</span>
 <span class="sd">        </span>
 <span class="sd">        :param tmp:          Temporary map template file name</span>
@@ -167,6 +170,7 @@
 <span class="sd">        will restore the contents to that of the original file. The temporary file is not deleted</span>
 <span class="sd">        and should be to not leak file resources.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_from_tmp_copy</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -182,6 +186,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.commit">[docs]</a>
     <span class="k">def</span> <span class="nf">commit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Commit any changes to the map template to disk</span>
 <span class="sd">        </span>
 
@@ -189,6 +194,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_commit</span><span class="p">()</span></div>
 
         
@@ -200,6 +206,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXMAPTEMPLATE &lt;geosoft.gxapi.GXMAPTEMPLATE&gt;` from an existing file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Map Template file name</span>
@@ -220,6 +227,7 @@
 <span class="sd">        file in the &lt;geosoft&gt;\\maptemplate or &lt;geosoftuser&gt;\\maptemplate folders. A base file</span>
 <span class="sd">        in the user folder will override any in the Geosoft install dir.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMAPTEMPLATE</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">base</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXMAPTEMPLATE</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -233,6 +241,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.discard">[docs]</a>
     <span class="k">def</span> <span class="nf">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Discard all changes made to the map template and reload from disk.</span>
 <span class="sd">        </span>
 
@@ -240,6 +249,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_discard</span><span class="p">()</span></div>
 
         
@@ -251,6 +261,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.get_file_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the file name of the map template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:         Returned map template file name</span>
@@ -260,6 +271,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -275,6 +287,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.create_map">[docs]</a>
     <span class="k">def</span> <span class="nf">create_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a map from the map template</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:          New map file name (if it exists it will be overwritten)</span>
@@ -286,6 +299,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_create_map</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -301,6 +315,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.refresh">[docs]</a>
     <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Refresh the map template with any newly saved items</span>
 <span class="sd">        </span>
 
@@ -308,6 +323,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_refresh</span><span class="p">()</span></div>
 
         
@@ -319,6 +335,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.render_preview">[docs]</a>
     <span class="k">def</span> <span class="nf">render_preview</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a preview of the map template onto a</span>
 <span class="sd">        Windows DC handle</span>
 <span class="sd">        </span>
@@ -337,6 +354,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_render_preview</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">)</span></div>
 
         
@@ -348,6 +366,7 @@
 <a class="viewcode-back" href="../../../GXMAPTEMPLATE.html#geosoft.gxapi.GXMAPTEMPLATE.render_preview_map_production">[docs]</a>
     <span class="k">def</span> <span class="nf">render_preview_map_production</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">top</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Render a preview for map sheet production purposes</span>
 <span class="sd">        </span>
 <span class="sd">        :param hdc:          DC Handle (pass 0 to just query the Data view pixel location)</span>
@@ -369,6 +388,7 @@
 <span class="sd">        by passing a null DC handle. This help to plot the view contents</span>
 <span class="sd">        preview from another location.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render_preview_map_production</span><span class="p">(</span><span class="n">hdc</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bottom</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">top</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -384,6 +404,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_media_size</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">full_page_width</span><span class="p">,</span> <span class="n">full_page_height</span><span class="p">,</span> <span class="n">plot_width</span><span class="p">,</span> <span class="n">plot_height</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get full width, full height, plot width and plot height in cm for a specific media or template name</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:              Page size name</span>
@@ -406,6 +427,7 @@
 <span class="sd">        the sizes of the associated media name are returned.</span>
 <span class="sd">        If a template is specified, the orientation is taken into account for the media.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">full_page_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">full_page_height</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMAPTEMPLATE</span><span class="o">.</span><span class="n">_get_media_size</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">full_page_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">full_page_height</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 </div>
 
@@ -438,7 +460,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMAPTEMPLATE</a></li> 
@@ -446,7 +468,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXCHIMERA class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXCHIMERA class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXCHIMERA class</a></li> 
       </ul>
     </div>
@@ -53,6 +53,8 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.fixed_symbol_tri_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.fixed_symbol_tri_plot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.get_expression_data_vv"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.get_expression_data_vv()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.get_lithogeochem_data"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.get_lithogeochem_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.get_string_classified_symbols"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.get_string_classified_symbols()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.get_string_classified_symbols_index"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.get_string_classified_symbols_index()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.get_transform"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.get_transform()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.is_acquire_chan"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.is_acquire_chan()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.is_element"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.is_element()</span></code></a></li>
@@ -66,17 +68,22 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.ordered_channel_lst"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.ordered_channel_lst()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.pie_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.pie_plot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.pie_plot2"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.pie_plot2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.plot_string_classified_symbols_legend"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.plot_string_classified_symbols_legend()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.plot_string_classified_symbols_legend_from_class_file"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.plot_string_classified_symbols_legend_from_class_file()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.rose_plot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.rose_plot2"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.rose_plot2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.scatter"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.scatter()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.scatter2"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.scatter2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.scatter3"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.scatter3()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.set_lithogeochem_data"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.set_lithogeochem_data()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.stacked_bar_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.stacked_bar_plot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.standard"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.standard()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.standard_view"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.standard_view()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.string_classified_scatter_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.string_classified_scatter_plot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.string_classified_tri_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.string_classified_tri_plot()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.tri_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.tri_plot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.tri_plot2"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.tri_plot2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.tri_plot3"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.tri_plot3()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.zone_coloured_scatter_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.zone_coloured_scatter_plot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.zone_coloured_tri_plot"><code class="docutils literal notranslate"><span class="pre">GXCHIMERA.zone_coloured_tri_plot()</span></code></a></li>
 </ul>
@@ -88,11 +95,11 @@
 </li>
 <li><a class="reference internal" href="#chimera-plot-constants">CHIMERA_PLOT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.CHIMERA_PLOT_ROSE"><code class="docutils literal notranslate"><span class="pre">CHIMERA_PLOT_ROSE</span></code></a></li>
-<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.CHIMERA_PLOT_ROSE</span></code></a></li>
+<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.CHIMERA_PLOT_ROSE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.CHIMERA_PLOT_PIE"><code class="docutils literal notranslate"><span class="pre">CHIMERA_PLOT_PIE</span></code></a></li>
-<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.CHIMERA_PLOT_PIE</span></code></a></li>
+<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.CHIMERA_PLOT_PIE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.CHIMERA_PLOT_BAR"><code class="docutils literal notranslate"><span class="pre">CHIMERA_PLOT_BAR</span></code></a></li>
-<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.CHIMERA_PLOT_BAR</span></code></a></li>
+<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.CHIMERA_PLOT_BAR</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -507,7 +514,7 @@ with the calculated expression values.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – [i] database handle</p></li>
 <li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – [i] channels of data to get</p></li>
-<li><p><strong>m_ch</strong> (<em>int</em>) – [i] mask channel (can be <a class="reference internal" href="GXDB.html#id274" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a>)</p></li>
+<li><p><strong>m_ch</strong> (<em>int</em>) – [i] mask channel (can be <a class="reference internal" href="GXDB.html#id290" title="geosoft.gxapi.NULLSYMB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NULLSYMB</span></code></a>)</p></li>
 <li><p><strong>vv_trans</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] transforms to apply</p></li>
 <li><p><strong>remove_dummy_rows</strong> (<em>int</em>) – [i] remove dummy rows?</p></li>
 <li><p><strong>vv_dummy</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – [i] dummy row if this channel value is dummy (0:No, 1:Yes)? Effective only if “remove dummy rows” value is TRUE</p></li>
@@ -539,6 +546,57 @@ channel is a dummy.</p>
 0 - Raw Transform
 1 - Log transform: base e with log min = CHIMERA_LOG_MIN
 2 - Lambda transform</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.get_string_classified_symbols">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_string_classified_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.get_string_classified_symbols"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.get_string_classified_symbols" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2024.2: </span>Use GetStringClassifiedSymbolsFromClassFile_CHIMERA. </p>
+</div>
+<p>Get symbol numbers and colors based on a classification <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol indices  (INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>)</p></li>
+<li><p><strong>p2</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol numbers (returned) (INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>)</p></li>
+<li><p><strong>p3</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol colors (returned) (INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>)</p></li>
+<li><p><strong>p4</strong> (<em>int</em>) – (TRUE/FALSE) Set Unclassified symbol color to C_ANY_NONE?</p></li>
+<li><p><strong>p5</strong> (<em>int</em>) – (TRUE/FALSE) Set Unassigned symbol color to C_ANY_NONE?</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Scatter and Triplots now use class files.
+Up to 42 different symbols are defined.
+Index 0 is returned for unclassified strings “”
+Index 1 is returned for unassigned strings (only the
+first 40 different classes get their own unique symbol/color.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.get_string_classified_symbols_index">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_string_classified_symbols_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices_vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.get_string_classified_symbols_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.get_string_classified_symbols_index" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2024.2: </span>Use GetStringClassifiedSymbolsIndexFromClassFile_CHIMERA. </p>
+</div>
+<p>Get symbol indices based on a classification <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>class_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Classification channel (string type)</p></li>
+<li><p><strong>indices_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol indices (returned) (INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Scatter and Triplots now use class files.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -877,6 +935,40 @@ slice, counted in degrees counter-clockwise from horizontal
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.plot_string_classified_symbols_legend">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plot_string_classified_symbols_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.plot_string_classified_symbols_legend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.plot_string_classified_symbols_legend" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2024.2: </span>Use PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA. </p>
+</div>
+<p>Plot legend for the string classified symbols.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – Map view object</p></li>
+<li><p><strong>p2</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>p3</strong> (<em>float</em>) – Left side X location</p></li>
+<li><p><strong>p4</strong> (<em>float</em>) – Bottom Y bound</p></li>
+<li><p><strong>p5</strong> (<em>float</em>) – Top Y bound</p></li>
+<li><p><strong>p6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Strings (string <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>)</p></li>
+<li><p><strong>p7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol indices  (INT <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>) 0-41</p></li>
+<li><p><strong>p8</strong> (<em>int</em>) – Plot Unclassified symbol?</p></li>
+<li><p><strong>p9</strong> (<em>int</em>) – Plot Unassigned symbol?</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> Scatter and Triplots now use class files.
+Up to 42 different symbols are defined.
+Duplicate symbol indices are removed.
+Index 0 is returned for unclassified strings “”
+Index 1 is returned for unassigned strings (only the
+first 40 different classes get their own unique symbol/color.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.plot_string_classified_symbols_legend_from_class_file">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plot_string_classified_symbols_legend_from_class_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.plot_string_classified_symbols_legend_from_class_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.plot_string_classified_symbols_legend_from_class_file" title="Link to this definition">¶</a></dt>
 <dd><p>Plot legend for the string classified symbols</p>
@@ -969,6 +1061,56 @@ slice, counted in degrees counter-clockwise from horizontal
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.scatter">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p19</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p23</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p26</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p27</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p28</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p29</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.scatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.scatter" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Plot the scatter plot on a map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>p2</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>p3</strong> (<em>float</em>) – X location (bottom left corner of color boxes)</p></li>
+<li><p><strong>p4</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>p5</strong> (<em>float</em>) – Box width</p></li>
+<li><p><strong>p6</strong> (<em>float</em>) – Box height</p></li>
+<li><p><strong>p7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel</p></li>
+<li><p><strong>p8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel</p></li>
+<li><p><strong>p9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel</p></li>
+<li><p><strong>p10</strong> (<em>str</em>) – Horizontal channel name</p></li>
+<li><p><strong>p11</strong> (<em>str</em>) – Vertical channel name</p></li>
+<li><p><strong>p12</strong> (<em>str</em>) – Mask channel name</p></li>
+<li><p><strong>p13</strong> (<em>str</em>) – Horizontal channel units</p></li>
+<li><p><strong>p14</strong> (<em>str</em>) – Vertical channel units</p></li>
+<li><p><strong>p15</strong> (<em>float</em>) – Min. Horizontal value</p></li>
+<li><p><strong>p16</strong> (<em>float</em>) – Max. Horizontal value</p></li>
+<li><p><strong>p17</strong> (<em>float</em>) – Min. Vertical value</p></li>
+<li><p><strong>p18</strong> (<em>float</em>) – Max. Vertical value</p></li>
+<li><p><strong>p19</strong> (<em>float</em>) – Min. Horizontal range value</p></li>
+<li><p><strong>p20</strong> (<em>float</em>) – Max. Horizontal range value</p></li>
+<li><p><strong>p21</strong> (<em>float</em>) – Min. Vertical range value</p></li>
+<li><p><strong>p22</strong> (<em>float</em>) – Max. Vertical range value</p></li>
+<li><p><strong>p23</strong> (<em>int</em>) – Use Min Horz. Range selection?</p></li>
+<li><p><strong>p24</strong> (<em>int</em>) – Use Max Horz. Range selection?</p></li>
+<li><p><strong>p25</strong> (<em>int</em>) – Use Min Vert. Range selection?</p></li>
+<li><p><strong>p26</strong> (<em>int</em>) – Use Max Vert. Range selection?</p></li>
+<li><p><strong>p27</strong> (<em>int</em>) – Use linear horizontal axis scaling?</p></li>
+<li><p><strong>p28</strong> (<em>int</em>) – Use linear vertical axis scaling?</p></li>
+<li><p><strong>p29</strong> (<em>int</em>) – Symbol size (0: small, 1: medium, 2: large)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> The view scaling is not altered with any projection. The base view
+is best as the input.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.scatter2">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scatter2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horz_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_font</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_num_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_siz_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_col_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annot_style</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_chan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_chan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_hr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_hr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_vr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_vr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_scaling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_scaling</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.scatter2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.scatter2" title="Link to this definition">¶</a></dt>
 <dd><p>Plot the scatter plot on a map using symbol number, size and color VVs.</p>
@@ -1015,6 +1157,64 @@ slice, counted in degrees counter-clockwise from horizontal
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 <p><strong>Note:</strong> The view scaling is not altered with any projection. The base view
 is best as the input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.scatter3">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scatter3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p19</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p23</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p26</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p27</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p28</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p29</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.scatter3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.scatter3" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2024.2: </span>Replaced by Scatter4_CHIMERA. </p>
+</div>
+<p>Like <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.scatter2" title="geosoft.gxapi.GXCHIMERA.scatter2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter2</span></code></a>, but passes Line-Fid info, more options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>p2</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>p3</strong> (<em>float</em>) – X location (bottom left corner of box)</p></li>
+<li><p><strong>p4</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>p5</strong> (<em>float</em>) – Box width</p></li>
+<li><p><strong>p6</strong> (<em>float</em>) – Box height</p></li>
+<li><p><strong>p7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel</p></li>
+<li><p><strong>p8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel</p></li>
+<li><p><strong>p9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel</p></li>
+<li><p><strong>p10</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</p></li>
+<li><p><strong>p11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol numbers</p></li>
+<li><p><strong>p12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol sizes</p></li>
+<li><p><strong>p13</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors if symbol number or color == 0, do not plot</p></li>
+<li><p><strong>p14</strong> (<em>int</em>) – Mask color; overrides symbol color. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</p></li>
+<li><p><strong>p15</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</p></li>
+<li><p><strong>p16</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</p></li>
+<li><p><strong>p17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</p></li>
+<li><p><strong>p18</strong> (<em>int</em>) – Annotation style 0 - outside, 1 - inside</p></li>
+<li><p><strong>p19</strong> (<em>str</em>) – Horizontal channel name</p></li>
+<li><p><strong>p20</strong> (<em>str</em>) – Vertical channel name</p></li>
+<li><p><strong>p21</strong> (<em>str</em>) – Horizontal channel units</p></li>
+<li><p><strong>p22</strong> (<em>str</em>) – Vertical channel units</p></li>
+<li><p><strong>p23</strong> (<em>float</em>) – Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> for default</p></li>
+<li><p><strong>p24</strong> (<em>float</em>) – Max. Horizontal value</p></li>
+<li><p><strong>p25</strong> (<em>float</em>) – Min. Vertical value</p></li>
+<li><p><strong>p26</strong> (<em>float</em>) – Max. Vertical value</p></li>
+<li><p><strong>p27</strong> (<em>int</em>) – Horizontal axis scaling: 0 - linear, 1 - log</p></li>
+<li><p><strong>p28</strong> (<em>int</em>) – Vertical axis scaling</p></li>
+<li><p><strong>p29</strong> (<em>str</em>) – Plot overlay (”” for none)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+<p><strong>Note:</strong> - As of v6.3, the plotted data is put in its own view. The Line-Fid
+values are passed in to enable Line-Fid linking.
+- Optional Mask symbol colors
+- Optional overlay. (See <a class="reference internal" href="GXSEMPLOT.html#geosoft.gxapi.GXSEMPLOT" title="geosoft.gxapi.GXSEMPLOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSEMPLOT</span></code></a> class).
+- If the classified symbols are used, unique symbols (up to 266) are
+given to the different classes. An “Unassigned” symbol is plotted
+for blank or classes above 266.
+- The view is given a user-projection and so should not be re-used
+for other purposes (like the base view for the <a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.scatter" title="geosoft.gxapi.GXCHIMERA.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a> and
+<a class="reference internal" href="#geosoft.gxapi.GXCHIMERA.scatter2" title="geosoft.gxapi.GXCHIMERA.scatter2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter2</span></code></a> functions can be).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1238,6 +1438,55 @@ Optional database linking.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.tri_plot">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tri_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p19</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p23</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p26</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p27</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p28</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p29</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p30</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.tri_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.tri_plot" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Plot the TriPlot on a map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>p2</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>p3</strong> (<em>float</em>) – X location (bottom left corner of color boxes)</p></li>
+<li><p><strong>p4</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>p5</strong> (<em>float</em>) – Box width</p></li>
+<li><p><strong>p6</strong> (<em>float</em>) – Box height</p></li>
+<li><p><strong>p7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X channel</p></li>
+<li><p><strong>p8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y channel</p></li>
+<li><p><strong>p9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z channel</p></li>
+<li><p><strong>p10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel</p></li>
+<li><p><strong>p11</strong> (<em>str</em>) – X channel name</p></li>
+<li><p><strong>p12</strong> (<em>str</em>) – Y channel name</p></li>
+<li><p><strong>p13</strong> (<em>str</em>) – Z channel name</p></li>
+<li><p><strong>p14</strong> (<em>str</em>) – Mask channel name</p></li>
+<li><p><strong>p15</strong> (<em>float</em>) – Min. X range value</p></li>
+<li><p><strong>p16</strong> (<em>float</em>) – Max. X range value</p></li>
+<li><p><strong>p17</strong> (<em>float</em>) – Min. Y range value</p></li>
+<li><p><strong>p18</strong> (<em>float</em>) – Max. Y range value</p></li>
+<li><p><strong>p19</strong> (<em>float</em>) – Min. Z range value</p></li>
+<li><p><strong>p20</strong> (<em>float</em>) – Max. Z range value</p></li>
+<li><p><strong>p21</strong> (<em>int</em>) – Use Min X Range selection?</p></li>
+<li><p><strong>p22</strong> (<em>int</em>) – Use Max X Range selection?</p></li>
+<li><p><strong>p23</strong> (<em>int</em>) – Use Min Y Range selection?</p></li>
+<li><p><strong>p24</strong> (<em>int</em>) – Use Max Y Range selection?</p></li>
+<li><p><strong>p25</strong> (<em>int</em>) – Use Min Z Range selection?</p></li>
+<li><p><strong>p26</strong> (<em>int</em>) – Use Max Z Range selection?</p></li>
+<li><p><strong>p27</strong> (<em>int</em>) – Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</p></li>
+<li><p><strong>p28</strong> (<em>float</em>) – Tic Increment (in percent)</p></li>
+<li><p><strong>p29</strong> (<em>float</em>) – Grid increment (in percent)</p></li>
+<li><p><strong>p30</strong> (<em>int</em>) – Symbol size (0: small, 1: medium, 2: large)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.7.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.tri_plot2">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tri_plot2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_font</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_num_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_siz_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym_col_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_chan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_chan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_chan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_xr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_xr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_yr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_yr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_zr_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_zr_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_inc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.tri_plot2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.tri_plot2" title="Link to this definition">¶</a></dt>
 <dd><p>Plot the TriPlot on a map using symbol number, size and color VVs.</p>
@@ -1288,6 +1537,49 @@ mask = dummy are plotted first, then overwritten with the non-masked
 values, so you don’t get “good” points being covered up by masked values.
 The view scaling is not altered with any projection. The base view
 is best as the input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXCHIMERA.tri_plot3">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tri_plot3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p19</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p23</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p24</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXCHIMERA.html#GXCHIMERA.tri_plot3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXCHIMERA.tri_plot3" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>TriPlot to its own view, with Line-Fid info.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>p2</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>p3</strong> (<em>float</em>) – X location (bottom left corner of box)</p></li>
+<li><p><strong>p4</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>p5</strong> (<em>float</em>) – Triangle side length</p></li>
+<li><p><strong>p6</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – X channel</p></li>
+<li><p><strong>p7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Y channel</p></li>
+<li><p><strong>p8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Z channel</p></li>
+<li><p><strong>p9</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel</p></li>
+<li><p><strong>p10</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</p></li>
+<li><p><strong>p11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol numbers</p></li>
+<li><p><strong>p12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol sizes</p></li>
+<li><p><strong>p13</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol colors  if symbol number or color == 0, do not plot</p></li>
+<li><p><strong>p14</strong> (<em>int</em>) – Mask color; overrides symbol color. Pass an empty string to <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW.color" title="geosoft.gxapi.GXMVIEW.color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW.color</span></code></a> for no plot.</p></li>
+<li><p><strong>p15</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – Database (source of data)</p></li>
+<li><p><strong>p16</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Line handles for data</p></li>
+<li><p><strong>p17</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Fid values for data</p></li>
+<li><p><strong>p18</strong> (<em>str</em>) – X channel name</p></li>
+<li><p><strong>p19</strong> (<em>str</em>) – Y channel name</p></li>
+<li><p><strong>p20</strong> (<em>str</em>) – Z channel name</p></li>
+<li><p><strong>p21</strong> (<em>int</em>) – Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</p></li>
+<li><p><strong>p22</strong> (<em>float</em>) – Tic Increment (in percent)</p></li>
+<li><p><strong>p23</strong> (<em>float</em>) – Grid increment (in percent)</p></li>
+<li><p><strong>p24</strong> (<em>str</em>) – Plot overlay (”” for none)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 6.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1416,8 +1708,8 @@ Optional database linking.</p>
 <span class="sig-name descname"><span class="pre">CHIMERA_PLOT_ROSE</span></span><a class="headerlink" href="#geosoft.gxapi.CHIMERA_PLOT_ROSE" title="Link to this definition">¶</a></dt>
 <dd><p>Rose</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id37">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CHIMERA_PLOT_ROSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id44">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CHIMERA_PLOT_ROSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1427,8 +1719,8 @@ Optional database linking.</p>
 <span class="sig-name descname"><span class="pre">CHIMERA_PLOT_PIE</span></span><a class="headerlink" href="#geosoft.gxapi.CHIMERA_PLOT_PIE" title="Link to this definition">¶</a></dt>
 <dd><p>Pie</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id38">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CHIMERA_PLOT_PIE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id45">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CHIMERA_PLOT_PIE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1438,8 +1730,8 @@ Optional database linking.</p>
 <span class="sig-name descname"><span class="pre">CHIMERA_PLOT_BAR</span></span><a class="headerlink" href="#geosoft.gxapi.CHIMERA_PLOT_BAR" title="Link to this definition">¶</a></dt>
 <dd><p>Bar</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id39">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CHIMERA_PLOT_BAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id46">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">CHIMERA_PLOT_BAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1460,13 +1752,13 @@ Optional database linking.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXCHIMERA class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

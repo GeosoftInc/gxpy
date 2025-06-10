@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXPROJ class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXPROJ class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPROJ class</a></li> 
       </ul>
     </div>
@@ -51,8 +51,10 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_central_project_information"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_central_project_information()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_command_environment"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_command_environment()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_default_project_path"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_default_project_path()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_document_evo_object_metadata"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_document_evo_object_metadata()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_name"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_name()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_num_registered_background_scripts"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_num_registered_background_scripts()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_numeric_voxel_itr"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_numeric_voxel_itr()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_registered_background_script"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_registered_background_script()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_registered_background_script_ex"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_registered_background_script_ex()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.get_server_and_project_guid"><code class="docutils literal notranslate"><span class="pre">GXPROJ.get_server_and_project_guid()</span></code></a></li>
@@ -70,40 +72,42 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.save_document_view"><code class="docutils literal notranslate"><span class="pre">GXPROJ.save_document_view()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.set_central_project_information"><code class="docutils literal notranslate"><span class="pre">GXPROJ.set_central_project_information()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.set_default_project_path"><code class="docutils literal notranslate"><span class="pre">GXPROJ.set_default_project_path()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.set_document_evo_object_metadata"><code class="docutils literal notranslate"><span class="pre">GXPROJ.set_document_evo_object_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXPROJ.set_numeric_voxel_itr"><code class="docutils literal notranslate"><span class="pre">GXPROJ.set_numeric_voxel_itr()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#command-env-constants">COMMAND_ENV constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.COMMAND_ENV_NORMAL"><code class="docutils literal notranslate"><span class="pre">COMMAND_ENV_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.COMMAND_ENV_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.COMMAND_ENV_IN3DVIEWER"><code class="docutils literal notranslate"><span class="pre">COMMAND_ENV_IN3DVIEWER</span></code></a></li>
-<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.COMMAND_ENV_IN3DVIEWER</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.COMMAND_ENV_IN3DVIEWER</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#tool-type-constants">TOOL_TYPE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.TOOL_TYPE_DEFAULT"><code class="docutils literal notranslate"><span class="pre">TOOL_TYPE_DEFAULT</span></code></a></li>
-<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.TOOL_TYPE_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.TOOL_TYPE_DEFAULT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.TOOL_TYPE_AUXILIARY"><code class="docutils literal notranslate"><span class="pre">TOOL_TYPE_AUXILIARY</span></code></a></li>
-<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.TOOL_TYPE_AUXILIARY</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.TOOL_TYPE_AUXILIARY</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.TOOL_TYPE_ALL"><code class="docutils literal notranslate"><span class="pre">TOOL_TYPE_ALL</span></code></a></li>
-<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.TOOL_TYPE_ALL</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.TOOL_TYPE_ALL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#proj-display-constants">PROJ_DISPLAY constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.PROJ_DISPLAY_NO"><code class="docutils literal notranslate"><span class="pre">PROJ_DISPLAY_NO</span></code></a></li>
-<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_DISPLAY_NO</span></code></a></li>
+<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_DISPLAY_NO</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PROJ_DISPLAY_YES"><code class="docutils literal notranslate"><span class="pre">PROJ_DISPLAY_YES</span></code></a></li>
-<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_DISPLAY_YES</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_DISPLAY_YES</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PROJ_DISPLAY_ALWAYS"><code class="docutils literal notranslate"><span class="pre">PROJ_DISPLAY_ALWAYS</span></code></a></li>
-<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_DISPLAY_ALWAYS</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_DISPLAY_ALWAYS</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#proj-oms-constants">PROJ_OMS constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.PROJ_OMS_NAME_SIZE"><code class="docutils literal notranslate"><span class="pre">PROJ_OMS_NAME_SIZE</span></code></a></li>
-<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_OMS_NAME_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_OMS_NAME_SIZE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PROJ_OMS_DATETIME_SIZE"><code class="docutils literal notranslate"><span class="pre">PROJ_OMS_DATETIME_SIZE</span></code></a></li>
-<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_OMS_DATETIME_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_OMS_DATETIME_SIZE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.PROJ_OMS_PROCESSID_SIZE"><code class="docutils literal notranslate"><span class="pre">PROJ_OMS_PROCESSID_SIZE</span></code></a></li>
-<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_OMS_PROCESSID_SIZE</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.PROJ_OMS_PROCESSID_SIZE</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -462,6 +466,33 @@ in geogxguigxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.coreinc
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPROJ.get_document_evo_object_metadata">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_document_evo_object_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_document_evo_object_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_document_evo_object_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Get Evo object metadata associated with the document from project metadata</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Document full path including name without qualifiers</p></li>
+<li><p><strong>metadata</strong> (<a class="reference internal" href="GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><em>GXEVOOBJMETA</em></a>) – <a class="reference internal" href="GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> Handle</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - Ok
+1 - Can not find object metadata for the document</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPROJ.get_name">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_name" title="Link to this definition">¶</a></dt>
 <dd><p>Return the name of the project file.</p>
@@ -496,6 +527,33 @@ in geogxguigxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.coreinc
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> Allows the project to track the progress/failure/success of scripts launched in the background</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPROJ.get_numeric_voxel_itr">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_numeric_voxel_itr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.get_numeric_voxel_itr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.get_numeric_voxel_itr" title="Link to this definition">¶</a></dt>
+<dd><p>Get a numeric voxel document’s ITR from project metadata</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Document name</p></li>
+<li><p><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> Handle</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - Ok
+1 - Can not find ITR from the document</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong></p>
 </dd></dl>
 
 <dl class="py method">
@@ -927,6 +985,60 @@ All</p>
 <p><strong>Note:</strong> Set default project folder.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPROJ.set_document_evo_object_metadata">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_document_evo_object_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.set_document_evo_object_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.set_document_evo_object_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Set evo object metadata associated with the document into project metadata</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Document full path including name without qualifiers</p></li>
+<li><p><strong>metadata</strong> (<a class="reference internal" href="GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><em>GXEVOOBJMETA</em></a>) – <a class="reference internal" href="GXEVOOBJMETA.html#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> Handle</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - Ok
+1 - Error</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXPROJ.set_numeric_voxel_itr">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_numeric_voxel_itr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPROJ.html#GXPROJ.set_numeric_voxel_itr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPROJ.set_numeric_voxel_itr" title="Link to this definition">¶</a></dt>
+<dd><p>Set a numeric voxel document’s ITR into project metadata</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Document name</p></li>
+<li><p><strong>itr</strong> (<a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><em>GXITR</em></a>) – <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> Handle</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 - Ok
+1 - Error</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2024.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong></p>
+</dd></dl>
+
 </dd></dl>
 
 <section id="command-env-constants">
@@ -948,8 +1060,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">COMMAND_ENV_IN3DVIEWER</span></span><a class="headerlink" href="#geosoft.gxapi.COMMAND_ENV_IN3DVIEWER" title="Link to this definition">¶</a></dt>
 <dd><p>Executing from inside 3D Viewer</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id28">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COMMAND_ENV_IN3DVIEWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id32">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COMMAND_ENV_IN3DVIEWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -963,8 +1075,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">TOOL_TYPE_DEFAULT</span></span><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_DEFAULT" title="Link to this definition">¶</a></dt>
 <dd><p>Geosoft created default tools</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id29">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TOOL_TYPE_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id33">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TOOL_TYPE_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -974,8 +1086,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">TOOL_TYPE_AUXILIARY</span></span><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_AUXILIARY" title="Link to this definition">¶</a></dt>
 <dd><p>Auxiliary tools (including custom XTools)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id30">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TOOL_TYPE_AUXILIARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id34">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TOOL_TYPE_AUXILIARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -985,8 +1097,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">TOOL_TYPE_ALL</span></span><a class="headerlink" href="#geosoft.gxapi.TOOL_TYPE_ALL" title="Link to this definition">¶</a></dt>
 <dd><p>All tools</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id31">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TOOL_TYPE_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id35">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TOOL_TYPE_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1000,8 +1112,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">PROJ_DISPLAY_NO</span></span><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_NO" title="Link to this definition">¶</a></dt>
 <dd><p>Do not display the object</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id32">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_DISPLAY_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id36">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_DISPLAY_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1011,8 +1123,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">PROJ_DISPLAY_YES</span></span><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_YES" title="Link to this definition">¶</a></dt>
 <dd><p>Display the object unless user set option not to</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id33">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_DISPLAY_YES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id37">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_DISPLAY_YES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1022,8 +1134,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">PROJ_DISPLAY_ALWAYS</span></span><a class="headerlink" href="#geosoft.gxapi.PROJ_DISPLAY_ALWAYS" title="Link to this definition">¶</a></dt>
 <dd><p>Always display the object</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id34">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_DISPLAY_ALWAYS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id38">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_DISPLAY_ALWAYS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1037,8 +1149,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">PROJ_OMS_NAME_SIZE</span></span><a class="headerlink" href="#geosoft.gxapi.PROJ_OMS_NAME_SIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Buffer size for script primary and secondary names</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id35">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_OMS_NAME_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id39">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_OMS_NAME_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1048,8 +1160,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">PROJ_OMS_DATETIME_SIZE</span></span><a class="headerlink" href="#geosoft.gxapi.PROJ_OMS_DATETIME_SIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Buffer size for the date/time string</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id36">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_OMS_DATETIME_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id40">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_OMS_DATETIME_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1059,8 +1171,8 @@ All</p>
 <span class="sig-name descname"><span class="pre">PROJ_OMS_PROCESSID_SIZE</span></span><a class="headerlink" href="#geosoft.gxapi.PROJ_OMS_PROCESSID_SIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Buffer size for process ID</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id37">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_OMS_PROCESSID_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id41">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PROJ_OMS_PROCESSID_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1081,13 +1193,13 @@ All</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPROJ class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

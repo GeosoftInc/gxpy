@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXEMAP class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXEMAP class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEMAP class</a></li> 
       </ul>
     </div>
@@ -47,6 +47,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.create_group_snapshot"><code class="docutils literal notranslate"><span class="pre">GXEMAP.create_group_snapshot()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.create_virtual"><code class="docutils literal notranslate"><span class="pre">GXEMAP.create_virtual()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.current"><code class="docutils literal notranslate"><span class="pre">GXEMAP.current()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.current_allow_cancel_on_browse"><code class="docutils literal notranslate"><span class="pre">GXEMAP.current_allow_cancel_on_browse()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.current_if_exists"><code class="docutils literal notranslate"><span class="pre">GXEMAP.current_if_exists()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.current_no_activate"><code class="docutils literal notranslate"><span class="pre">GXEMAP.current_no_activate()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.destroy_view"><code class="docutils literal notranslate"><span class="pre">GXEMAP.destroy_view()</span></code></a></li>
@@ -61,6 +62,12 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.draw_rect"><code class="docutils literal notranslate"><span class="pre">GXEMAP.draw_rect()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.draw_rect_3d"><code class="docutils literal notranslate"><span class="pre">GXEMAP.draw_rect_3d()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.drop_map_clip_data"><code class="docutils literal notranslate"><span class="pre">GXEMAP.drop_map_clip_data()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.export_all_in_view"><code class="docutils literal notranslate"><span class="pre">GXEMAP.export_all_in_view()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.export_all_in_view2"><code class="docutils literal notranslate"><span class="pre">GXEMAP.export_all_in_view2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.export_all_raster"><code class="docutils literal notranslate"><span class="pre">GXEMAP.export_all_raster()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.export_area_in_view"><code class="docutils literal notranslate"><span class="pre">GXEMAP.export_area_in_view()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.export_area_in_view2"><code class="docutils literal notranslate"><span class="pre">GXEMAP.export_area_in_view2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.export_area_raster"><code class="docutils literal notranslate"><span class="pre">GXEMAP.export_area_raster()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.font_lst"><code class="docutils literal notranslate"><span class="pre">GXEMAP.font_lst()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_3d_view_name"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_3d_view_name()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_aoi_area"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_aoi_area()</span></code></a></li>
@@ -91,6 +98,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_rect"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_rect()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_selected_vertices"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_selected_vertices()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_view_ipj"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_view_ipj()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_window_area"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_window_position"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.get_window_state"><code class="docutils literal notranslate"><span class="pre">GXEMAP.get_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.have_current"><code class="docutils literal notranslate"><span class="pre">GXEMAP.have_current()</span></code></a></li>
@@ -122,6 +130,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_map_snap"><code class="docutils literal notranslate"><span class="pre">GXEMAP.set_map_snap()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="docutils literal notranslate"><span class="pre">GXEMAP.set_redraw_flag()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_viewport_mode"><code class="docutils literal notranslate"><span class="pre">GXEMAP.set_viewport_mode()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_window_area"><code class="docutils literal notranslate"><span class="pre">GXEMAP.set_window_area()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_window_position"><code class="docutils literal notranslate"><span class="pre">GXEMAP.set_window_position()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_window_state"><code class="docutils literal notranslate"><span class="pre">GXEMAP.set_window_state()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEMAP.track_point"><code class="docutils literal notranslate"><span class="pre">GXEMAP.track_point()</span></code></a></li>
@@ -135,77 +144,77 @@
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_FONT_TT"><code class="docutils literal notranslate"><span class="pre">EMAP_FONT_TT</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_FONT_TT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_FONT_GFN"><code class="docutils literal notranslate"><span class="pre">EMAP_FONT_GFN</span></code></a></li>
-<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_FONT_GFN</span></code></a></li>
+<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_FONT_GFN</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emap-path-constants">EMAP_PATH constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_PATH_FULL"><code class="docutils literal notranslate"><span class="pre">EMAP_PATH_FULL</span></code></a></li>
-<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_FULL</span></code></a></li>
+<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_FULL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_PATH_DIR"><code class="docutils literal notranslate"><span class="pre">EMAP_PATH_DIR</span></code></a></li>
-<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_DIR</span></code></a></li>
+<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_DIR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_PATH_NAME_EXT"><code class="docutils literal notranslate"><span class="pre">EMAP_PATH_NAME_EXT</span></code></a></li>
-<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_NAME_EXT</span></code></a></li>
+<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_NAME_EXT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_PATH_NAME"><code class="docutils literal notranslate"><span class="pre">EMAP_PATH_NAME</span></code></a></li>
-<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_NAME</span></code></a></li>
+<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_PATH_NAME</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emap-redraw-constants">EMAP_REDRAW constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_REDRAW_NO"><code class="docutils literal notranslate"><span class="pre">EMAP_REDRAW_NO</span></code></a></li>
-<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REDRAW_NO</span></code></a></li>
+<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REDRAW_NO</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_REDRAW_YES"><code class="docutils literal notranslate"><span class="pre">EMAP_REDRAW_YES</span></code></a></li>
-<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REDRAW_YES</span></code></a></li>
+<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REDRAW_YES</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emap-remove-constants">EMAP_REMOVE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_REMOVE_SAVE"><code class="docutils literal notranslate"><span class="pre">EMAP_REMOVE_SAVE</span></code></a></li>
-<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REMOVE_SAVE</span></code></a></li>
+<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REMOVE_SAVE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_REMOVE_PROMPT"><code class="docutils literal notranslate"><span class="pre">EMAP_REMOVE_PROMPT</span></code></a></li>
-<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REMOVE_PROMPT</span></code></a></li>
+<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REMOVE_PROMPT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_REMOVE_DISCARD"><code class="docutils literal notranslate"><span class="pre">EMAP_REMOVE_DISCARD</span></code></a></li>
-<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REMOVE_DISCARD</span></code></a></li>
+<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_REMOVE_DISCARD</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emap-track-constants">EMAP_TRACK constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_TRACK_ERASE"><code class="docutils literal notranslate"><span class="pre">EMAP_TRACK_ERASE</span></code></a></li>
-<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_TRACK_ERASE</span></code></a></li>
+<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_TRACK_ERASE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_TRACK_RMENU"><code class="docutils literal notranslate"><span class="pre">EMAP_TRACK_RMENU</span></code></a></li>
-<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_TRACK_RMENU</span></code></a></li>
+<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_TRACK_RMENU</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_TRACK_CYCLE"><code class="docutils literal notranslate"><span class="pre">EMAP_TRACK_CYCLE</span></code></a></li>
-<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_TRACK_CYCLE</span></code></a></li>
+<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_TRACK_CYCLE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emap-viewport-constants">EMAP_VIEWPORT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_VIEWPORT_NORMAL"><code class="docutils literal notranslate"><span class="pre">EMAP_VIEWPORT_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_VIEWPORT_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_VIEWPORT_NORMAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_VIEWPORT_BROWSEZOOM"><code class="docutils literal notranslate"><span class="pre">EMAP_VIEWPORT_BROWSEZOOM</span></code></a></li>
-<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_VIEWPORT_BROWSEZOOM</span></code></a></li>
+<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_VIEWPORT_BROWSEZOOM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_VIEWPORT_BROWSEAOI"><code class="docutils literal notranslate"><span class="pre">EMAP_VIEWPORT_BROWSEAOI</span></code></a></li>
-<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_VIEWPORT_BROWSEAOI</span></code></a></li>
+<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_VIEWPORT_BROWSEAOI</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emap-window-position-constants">EMAP_WINDOW_POSITION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_WINDOW_POSITION_DOCKED"><code class="docutils literal notranslate"><span class="pre">EMAP_WINDOW_POSITION_DOCKED</span></code></a></li>
-<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_POSITION_DOCKED</span></code></a></li>
+<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_POSITION_DOCKED</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_WINDOW_POSITION_FLOATING"><code class="docutils literal notranslate"><span class="pre">EMAP_WINDOW_POSITION_FLOATING</span></code></a></li>
-<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_POSITION_FLOATING</span></code></a></li>
+<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_POSITION_FLOATING</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#emap-window-state-constants">EMAP_WINDOW_STATE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_WINDOW_RESTORE"><code class="docutils literal notranslate"><span class="pre">EMAP_WINDOW_RESTORE</span></code></a></li>
-<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_RESTORE</span></code></a></li>
+<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_RESTORE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_WINDOW_MINIMIZE"><code class="docutils literal notranslate"><span class="pre">EMAP_WINDOW_MINIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_MINIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id115"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_MINIMIZE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMAP_WINDOW_MAXIMIZE"><code class="docutils literal notranslate"><span class="pre">EMAP_WINDOW_MAXIMIZE</span></code></a></li>
-<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_MAXIMIZE</span></code></a></li>
+<li><a class="reference internal" href="#id116"><code class="docutils literal notranslate"><span class="pre">gxapi.EMAP_WINDOW_MAXIMIZE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#layout-view-units-constants">LAYOUT_VIEW_UNITS constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_VIEW_MM"><code class="docutils literal notranslate"><span class="pre">LAYOUT_VIEW_MM</span></code></a></li>
-<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_VIEW_MM</span></code></a></li>
+<li><a class="reference internal" href="#id117"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_VIEW_MM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_VIEW_CM"><code class="docutils literal notranslate"><span class="pre">LAYOUT_VIEW_CM</span></code></a></li>
-<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_VIEW_CM</span></code></a></li>
+<li><a class="reference internal" href="#id118"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_VIEW_CM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.LAYOUT_VIEW_IN"><code class="docutils literal notranslate"><span class="pre">LAYOUT_VIEW_IN</span></code></a></li>
-<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_VIEW_IN</span></code></a></li>
+<li><a class="reference internal" href="#id119"><code class="docutils literal notranslate"><span class="pre">gxapi.LAYOUT_VIEW_IN</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -263,7 +272,7 @@ map to redraw immediately use <a class="reference internal" href="#geosoft.gxapi
 <li><p>If the final GX calls <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel_" title="geosoft.gxapi.GXSYS.cancel_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSYS.cancel_</span></code></a>, the map redraw is not done. If you
 need to force a redraw when the user hits cancel use the <a class="reference internal" href="#geosoft.gxapi.GXEMAP.redraw" title="geosoft.gxapi.GXEMAP.redraw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">redraw</span></code></a> function.</p></li>
 <li><dl class="simple">
-<dt>You can set the redraw flag to <a class="reference internal" href="#id93" title="geosoft.gxapi.EMAP_REDRAW_YES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_YES</span></code></a> or <a class="reference internal" href="#id92" title="geosoft.gxapi.EMAP_REDRAW_NO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_NO</span></code></a> at any</dt><dd><p>time using <a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_redraw_flag</span></code></a>. This flag will only be looked at, when
+<dt>You can set the redraw flag to <a class="reference internal" href="#id102" title="geosoft.gxapi.EMAP_REDRAW_YES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_YES</span></code></a> or <a class="reference internal" href="#id101" title="geosoft.gxapi.EMAP_REDRAW_NO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_NO</span></code></a> at any</dt><dd><p>time using <a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_redraw_flag</span></code></a>. This flag will only be looked at, when
 the last call to <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">un_lock</span></code></a> occurs and is ignored on a <a class="reference internal" href="GXSYS.html#geosoft.gxapi.GXSYS.cancel_" title="geosoft.gxapi.GXSYS.cancel_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSYS.cancel_</span></code></a>.</p>
 </dd>
 </dl>
@@ -452,6 +461,30 @@ changes that are about to occur.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.current_allow_cancel_on_browse">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_allow_cancel_on_browse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.current_allow_cancel_on_browse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.current_allow_cancel_on_browse" title="Link to this definition">¶</a></dt>
+<dd><p>This method returns the Current Edited map, with special behaviour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEMAP</span></code></a> Object. If there is no current map,
+the user is prompted for a map. If the user cancels from the browse, 0 is return.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXEMAP" title="geosoft.gxapi.GXEMAP.GXEMAP">GXEMAP</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> If there is no current Current map, and the user cancels out of the
+browse for map dialog”, then 0 is returned, which needs to be handled, 
+otherwise the current map is returned.
+Normally (for Current_EMAP), the GX will be terminated on Cancel from the browse dialog.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -822,6 +855,178 @@ interactive screen feedback to your user.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.export_all_in_view">
+<span class="sig-name descname"><span class="pre">export_all_in_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pix_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.export_all_in_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.export_all_in_view" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Export the entire Map in view units to an external format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – File Name To Export</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View to export coordinates in</p></li>
+<li><p><strong>pix_size</strong> (<em>float</em>) – Resolution in view units of one pixel</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – EMAP_EXPORT_FORMAT</p></li>
+<li><p><strong>options</strong> (<em>str</em>) – Extended Options String (format specific)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Uses 24 bit color</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.export_all_in_view2">
+<span class="sig-name descname"><span class="pre">export_all_in_view2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pix_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dither</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.export_all_in_view2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.export_all_in_view2" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Same as above with color depth set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – File Name To Export</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View to export coordinates in</p></li>
+<li><p><strong>pix_size</strong> (<em>float</em>) – Resolution in view units of one pixel</p></li>
+<li><p><strong>bits</strong> (<em>int</em>) – EMAP_EXPORT_BITS</p></li>
+<li><p><strong>dither</strong> (<em>int</em>) – EMAP_EXPORT_METHOD</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – EMAP_EXPORT_FORMAT</p></li>
+<li><p><strong>options</strong> (<em>str</em>) – Extended Options String (format specific)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.export_all_raster">
+<span class="sig-name descname"><span class="pre">export_all_raster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dither</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.export_all_raster"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.export_all_raster" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Export the entire Map to an external format without units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – File Name To Export</p></li>
+<li><p><strong>size_x</strong> (<em>float</em>) – Number of Pixels in X (X or Y should be specified the other )</p></li>
+<li><p><strong>size_y</strong> (<em>float</em>) – Number of Pixels in Y (should be 0 and computed by export)</p></li>
+<li><p><strong>bits</strong> (<em>int</em>) – EMAP_EXPORT_BITS</p></li>
+<li><p><strong>dither</strong> (<em>int</em>) – EMAP_EXPORT_METHOD</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – EMAP_EXPORT_RASTER_FORMAT</p></li>
+<li><p><strong>options</strong> (<em>str</em>) – Extended Options String (format specific)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.export_area_in_view">
+<span class="sig-name descname"><span class="pre">export_area_in_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pix_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.export_area_in_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.export_area_in_view" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Export an area of a Map in view units to an external format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – File Name To Export</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View to export coordinates in</p></li>
+<li><p><strong>pix_size</strong> (<em>float</em>) – Resolution in view units of one pixel</p></li>
+<li><p><strong>min_x</strong> (<em>float</em>) – Area To Export Min X location in view units</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – Area To Export Min Y location in view units</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – Area To Export Max X location in view units</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – Area To Export Max Y location in view units</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – EMAP_EXPORT_FORMAT</p></li>
+<li><p><strong>options</strong> (<em>str</em>) – Extended Options String (format specific)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> Uses 24 bit color</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.export_area_in_view2">
+<span class="sig-name descname"><span class="pre">export_area_in_view2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pix_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dither</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.export_area_in_view2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.export_area_in_view2" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Same as above with color depth set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – File Name To Export</p></li>
+<li><p><strong>view</strong> (<em>str</em>) – View to export coordinates in</p></li>
+<li><p><strong>pix_size</strong> (<em>float</em>) – Resolution in view units of one pixel</p></li>
+<li><p><strong>bits</strong> (<em>int</em>) – EMAP_EXPORT_BITS</p></li>
+<li><p><strong>dither</strong> (<em>int</em>) – EMAP_EXPORT_METHOD</p></li>
+<li><p><strong>min_x</strong> (<em>float</em>) – Area To Export Min X location in view units</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – Area To Export Min Y location in view units</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – Area To Export Max X location in view units</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – Area To Export Max Y location in view units</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – EMAP_EXPORT_FORMAT</p></li>
+<li><p><strong>options</strong> (<em>str</em>) – Extended Options String (format specific)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.export_area_raster">
+<span class="sig-name descname"><span class="pre">export_area_raster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dither</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.export_area_raster"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.export_area_raster" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Export an area of a Map to an external plot format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – File Name To Export</p></li>
+<li><p><strong>min_x</strong> (<em>float</em>) – Area To Export Min X location in mm</p></li>
+<li><p><strong>min_y</strong> (<em>float</em>) – Area To Export Min Y location in mm</p></li>
+<li><p><strong>max_x</strong> (<em>float</em>) – Area To Export Max X location in mm</p></li>
+<li><p><strong>max_y</strong> (<em>float</em>) – Area To Export Max Y location in mm</p></li>
+<li><p><strong>size_x</strong> (<em>float</em>) – Number of Pixels in X (X or Y should be specified the other )</p></li>
+<li><p><strong>size_y</strong> (<em>float</em>) – Number of Pixels in Y (should be 0 and computed by export)</p></li>
+<li><p><strong>bits</strong> (<em>int</em>) – EMAP_EXPORT_BITS</p></li>
+<li><p><strong>dither</strong> (<em>int</em>) – EMAP_EXPORT_METHOD</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – EMAP_EXPORT_RASTER_FORMAT</p></li>
+<li><p><strong>options</strong> (<em>str</em>) – Extended Options String (format specific)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.font_lst">
 <span class="sig-name descname"><span class="pre">font_lst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.font_lst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.font_lst" title="Link to this definition">¶</a></dt>
 <dd><p>List all Windows and geosoft fonts.</p>
@@ -839,7 +1044,7 @@ interactive screen feedback to your user.</p>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
 <p><strong>Note:</strong> To get TT and GFN fonts, call twice with the same list
-and <a class="reference internal" href="#id0" title="geosoft.gxapi.EMAP_FONT_TT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_FONT_TT</span></code></a>, then <a class="reference internal" href="#id87" title="geosoft.gxapi.EMAP_FONT_GFN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_FONT_GFN</span></code></a>, or vice-versa to
+and <a class="reference internal" href="#id0" title="geosoft.gxapi.EMAP_FONT_TT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_FONT_TT</span></code></a>, then <a class="reference internal" href="#id96" title="geosoft.gxapi.EMAP_FONT_GFN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_FONT_GFN</span></code></a>, or vice-versa to
 change order of listing.</p>
 </dd></dl>
 
@@ -1599,6 +1804,36 @@ that cause undesirable UX.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.get_window_area">
+<span class="sig-name descname"><span class="pre">get_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.get_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Get the location of the map window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Min returned</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Min returned</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – X Max returned</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.int_ref" title="geosoft.gxapi.int_ref"><em>int_ref</em></a>) – Y Max returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>If the window is minimized, the max values will be
+equal to the min values. If the window is maximized
+X Min and Y min will be <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a> and X max and Y max
+will be <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.get_window_position">
 <span class="sig-name descname"><span class="pre">get_window_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_floating</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.get_window_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.get_window_position" title="Link to this definition">¶</a></dt>
 <dd><p>Get the map window’s position and dock state</p>
@@ -1913,7 +2148,7 @@ view as previously.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
-<p><strong>Note:</strong> The Redraw flag is set to <a class="reference internal" href="#id93" title="geosoft.gxapi.EMAP_REDRAW_YES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_YES</span></code></a> when this functions is called.</p>
+<p><strong>Note:</strong> The Redraw flag is set to <a class="reference internal" href="#id102" title="geosoft.gxapi.EMAP_REDRAW_YES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_YES</span></code></a> when this functions is called.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2201,7 +2436,7 @@ the map, which normally occurs after the last <a class="reference internal" href
 call, in cases where it is known that no changes are being
 made to the map.</p>
 <p>Typical usage would be to call <a class="reference internal" href="#geosoft.gxapi.GXEMAP.lock" title="geosoft.gxapi.GXEMAP.lock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lock</span></code></a> followed by
-<a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_redraw_flag</span></code></a> (with <a class="reference internal" href="#id92" title="geosoft.gxapi.EMAP_REDRAW_NO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_NO</span></code></a>) prior
+<a class="reference internal" href="#geosoft.gxapi.GXEMAP.set_redraw_flag" title="geosoft.gxapi.GXEMAP.set_redraw_flag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_redraw_flag</span></code></a> (with <a class="reference internal" href="#id101" title="geosoft.gxapi.EMAP_REDRAW_NO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMAP_REDRAW_NO</span></code></a>) prior
 to querying information from the map. And then end with a call to
 <a class="reference internal" href="#geosoft.gxapi.GXEMAP.un_lock" title="geosoft.gxapi.GXEMAP.un_lock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">un_lock</span></code></a>.</p>
 </dd></dl>
@@ -2223,6 +2458,35 @@ to querying information from the map. And then end with a call to
 <p><strong>Note:</strong> This is handy for using a map to define an area of interest. Use in conjunction
 with Get/Set AOIArea. If this is used inside montaj it is important to set or provide
 for a method to set the map mode back to normal as this is not exposed in the interface.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEMAP.set_window_area">
+<span class="sig-name descname"><span class="pre">set_window_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEMAP.html#GXEMAP.set_window_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEMAP.set_window_area" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Set the location of the map window within the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<em>int</em>) – X Min</p></li>
+<li><p><strong>min_y</strong> (<em>int</em>) – Y Min</p></li>
+<li><p><strong>max_x</strong> (<em>int</em>) – X Max</p></li>
+<li><p><strong>max_y</strong> (<em>int</em>) – Y Max</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Limitations:</strong> May not be available while executing a command line program.</p>
+<p><strong>Note:</strong> The Coordinates are pixels with 0,0 being the bottom
+left corner Oasis montaj frame window.</p>
+<p>if the max values are equal or less than the min values
+the window will be mimimized. If any Min values are <a class="reference internal" href="GXGEOSOFT.html#id38" title="geosoft.gxapi.iMIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMIN</span></code></a>
+or any Max values are <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.gxapi.iMAX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iMAX</span></code></a>, the window is maximized.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2373,8 +2637,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_FONT_GFN</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_FONT_GFN" title="Link to this definition">¶</a></dt>
 <dd><p>Gfn</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id87">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_FONT_GFN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id96">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_FONT_GFN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2388,8 +2652,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_PATH_FULL</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_PATH_FULL" title="Link to this definition">¶</a></dt>
 <dd><p>d:\directory\file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id88">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_FULL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id97">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_FULL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2399,8 +2663,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_PATH_DIR</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_PATH_DIR" title="Link to this definition">¶</a></dt>
 <dd><p>\directory\file.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id89">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id98">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_DIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2410,8 +2674,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_PATH_NAME_EXT</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_PATH_NAME_EXT" title="Link to this definition">¶</a></dt>
 <dd><p>File.gdb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id90">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id99">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_NAME_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2421,8 +2685,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_PATH_NAME</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_PATH_NAME" title="Link to this definition">¶</a></dt>
 <dd><p>File</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id91">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id100">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_PATH_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2436,8 +2700,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_REDRAW_NO</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_REDRAW_NO" title="Link to this definition">¶</a></dt>
 <dd><p>No</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id92">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REDRAW_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id101">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REDRAW_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2447,8 +2711,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_REDRAW_YES</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_REDRAW_YES" title="Link to this definition">¶</a></dt>
 <dd><p>Yes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id93">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REDRAW_YES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id102">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REDRAW_YES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2462,8 +2726,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_REMOVE_SAVE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_REMOVE_SAVE" title="Link to this definition">¶</a></dt>
 <dd><p>Save</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id94">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REMOVE_SAVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id103">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REMOVE_SAVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2473,8 +2737,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_REMOVE_PROMPT</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_REMOVE_PROMPT" title="Link to this definition">¶</a></dt>
 <dd><p>Prompt</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id95">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REMOVE_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id104">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REMOVE_PROMPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2484,8 +2748,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_REMOVE_DISCARD</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_REMOVE_DISCARD" title="Link to this definition">¶</a></dt>
 <dd><p>Discard</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id96">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REMOVE_DISCARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id105">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_REMOVE_DISCARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2499,8 +2763,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_TRACK_ERASE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_TRACK_ERASE" title="Link to this definition">¶</a></dt>
 <dd><p>Erase Object after you return?</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id97">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_TRACK_ERASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id106">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_TRACK_ERASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2510,8 +2774,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_TRACK_RMENU</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_TRACK_RMENU" title="Link to this definition">¶</a></dt>
 <dd><p>Allow use of right-menu</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id98">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_TRACK_RMENU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id107">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_TRACK_RMENU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2521,8 +2785,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_TRACK_CYCLE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_TRACK_CYCLE" title="Link to this definition">¶</a></dt>
 <dd><p>If user holds down left-mouse, will return many times</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id99">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_TRACK_CYCLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id108">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_TRACK_CYCLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2536,8 +2800,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_NORMAL</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_VIEWPORT_NORMAL" title="Link to this definition">¶</a></dt>
 <dd><p>Normal map usage</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id100">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id109">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2547,8 +2811,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_BROWSEZOOM</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_VIEWPORT_BROWSEZOOM" title="Link to this definition">¶</a></dt>
 <dd><p>Zoom Mode</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id101">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_BROWSEZOOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id110">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_BROWSEZOOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2558,8 +2822,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_BROWSEAOI</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_VIEWPORT_BROWSEAOI" title="Link to this definition">¶</a></dt>
 <dd><p>Change Area Of Interest Mode</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id102">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_BROWSEAOI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id111">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_VIEWPORT_BROWSEAOI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2573,8 +2837,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_WINDOW_POSITION_DOCKED</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_WINDOW_POSITION_DOCKED" title="Link to this definition">¶</a></dt>
 <dd><p>Docked</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id103">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id112">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_POSITION_DOCKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2584,8 +2848,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_WINDOW_POSITION_FLOATING</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_WINDOW_POSITION_FLOATING" title="Link to this definition">¶</a></dt>
 <dd><p>Floating</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id104">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id113">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_POSITION_FLOATING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2599,8 +2863,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_WINDOW_RESTORE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_WINDOW_RESTORE" title="Link to this definition">¶</a></dt>
 <dd><p>Emap window restore</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id105">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id114">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_RESTORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2610,8 +2874,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_WINDOW_MINIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_WINDOW_MINIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Emap window minimize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id106">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id115">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_MINIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id115" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2621,8 +2885,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">EMAP_WINDOW_MAXIMIZE</span></span><a class="headerlink" href="#geosoft.gxapi.EMAP_WINDOW_MAXIMIZE" title="Link to this definition">¶</a></dt>
 <dd><p>Emap window maximize</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id107">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id116">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMAP_WINDOW_MAXIMIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id116" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2636,8 +2900,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">LAYOUT_VIEW_MM</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_VIEW_MM" title="Link to this definition">¶</a></dt>
 <dd><p>Millimeters</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id108">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_VIEW_MM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id117">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_VIEW_MM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id117" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2647,8 +2911,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">LAYOUT_VIEW_CM</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_VIEW_CM" title="Link to this definition">¶</a></dt>
 <dd><p>Centimeters</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id109">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_VIEW_CM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id118">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_VIEW_CM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id118" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2658,8 +2922,8 @@ If “FALSE”, map is saved without a prompt.</p>
 <span class="sig-name descname"><span class="pre">LAYOUT_VIEW_IN</span></span><a class="headerlink" href="#geosoft.gxapi.LAYOUT_VIEW_IN" title="Link to this definition">¶</a></dt>
 <dd><p>Inches</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id110">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_VIEW_IN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id119">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">LAYOUT_VIEW_IN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id119" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2680,13 +2944,13 @@ If “FALSE”, map is saved without a prompt.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEMAP class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

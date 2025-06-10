@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMAP &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXMAP &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMAP</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXMAP</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXLPT</span> <span class="kn">import</span> <span class="n">GXLPT</span>
@@ -135,6 +135,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.export_all_in_view">[docs]</a>
     <span class="k">def</span> <span class="nf">export_all_in_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:      File Name To Export</span>
@@ -158,6 +159,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_all_in_view</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -169,6 +171,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.export_all_in_view2">[docs]</a>
     <span class="k">def</span> <span class="nf">export_all_in_view2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">minX</span><span class="p">,</span> <span class="n">minY</span><span class="p">,</span> <span class="n">maxX</span><span class="p">,</span> <span class="n">maxY</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as ExportAllInView_MAP, but preset the range in X and Y to export (mm)</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     File Name To Export</span>
@@ -198,6 +201,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_all_in_view2</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">minX</span><span class="p">,</span> <span class="n">minY</span><span class="p">,</span> <span class="n">maxX</span><span class="p">,</span> <span class="n">maxY</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -209,6 +213,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.export_all_raster">[docs]</a>
     <span class="k">def</span> <span class="nf">export_all_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export the entire map to map to a non-geo raster format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     File Name To Export</span>
@@ -234,6 +239,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_all_raster</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -245,6 +251,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.export_area_in_view">[docs]</a>
     <span class="k">def</span> <span class="nf">export_area_in_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export an area of a map in view units to an external format</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:      File Name To Export</span>
@@ -276,6 +283,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_area_in_view</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pix_size</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -287,6 +295,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.export_area_raster">[docs]</a>
     <span class="k">def</span> <span class="nf">export_area_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export an area of a map to a non-geo raster format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     File Name To Export</span>
@@ -320,6 +329,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_area_raster</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">dither</span><span class="p">,</span> <span class="nb">format</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">options</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -331,6 +341,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.rename_view">[docs]</a>
     <span class="k">def</span> <span class="nf">rename_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Renames a view in this map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param current_name:  Name of view to rename)</span>
@@ -342,6 +353,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_rename_view</span><span class="p">(</span><span class="n">current_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">new_name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -353,6 +365,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.render_bitmap">[docs]</a>
     <span class="k">def</span> <span class="nf">render_bitmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">max_res</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Render a map to a bitmap.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:     View we exporting units in</span>
@@ -374,6 +387,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_render_bitmap</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">max_res</span><span class="p">)</span></div>
 
         
@@ -385,6 +399,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.render_view_bitmap">[docs]</a>
     <span class="k">def</span> <span class="nf">render_view_bitmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">max_res</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Render a map view to a bitmap.</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:     `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;` object</span>
@@ -408,6 +423,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_render_view_bitmap</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">max_res</span><span class="p">)</span></div>
 
         
@@ -423,6 +439,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.create_linked_3d_view">[docs]</a>
     <span class="k">def</span> <span class="nf">create_linked_3d_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">view_name</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a 3D View in this map that is linked to a `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;` in a 3D View file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:      `GX3DV &lt;geosoft.gxapi.GX3DV&gt;`&#39;s 3D `GXMVIEW &lt;geosoft.gxapi.GXMVIEW&gt;`</span>
@@ -442,6 +459,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_create_linked_3d_view</span><span class="p">(</span><span class="n">mview</span><span class="p">,</span> <span class="n">view_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span></div>
 
         
@@ -457,6 +475,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.agg_list">[docs]</a>
     <span class="k">def</span> <span class="nf">agg_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">optn</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of all aggregates in this map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   List to hold the views (allow up to 96 characters)</span>
@@ -475,6 +494,7 @@
 
 <span class="sd">            `GXLST &lt;geosoft.gxapi.GXLST&gt;` class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_agg_list</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">optn</span><span class="p">)</span></div>
 
         
@@ -486,6 +506,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.agg_list_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">agg_list_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">optn</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of aggregates in this map based on a mode</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   List to hold the views (allow up to 96 characters)</span>
@@ -506,6 +527,7 @@
 
 <span class="sd">            `GXLST &lt;geosoft.gxapi.GXLST&gt;` class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_agg_list_ex</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">optn</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -517,6 +539,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.clean">[docs]</a>
     <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Clean up empty groups in all views in map.</span>
 <span class="sd">        </span>
 
@@ -524,6 +547,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">()</span></div>
 
         
@@ -535,6 +559,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.delete_empty_groups">[docs]</a>
     <span class="k">def</span> <span class="nf">delete_empty_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove empty groups in the map, do not delete empty views.</span>
 <span class="sd">        </span>
 
@@ -542,6 +567,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_delete_empty_groups</span><span class="p">()</span></div>
 
         
@@ -553,6 +579,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.commit">[docs]</a>
     <span class="k">def</span> <span class="nf">commit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Commit any changes to a map.</span>
 <span class="sd">        </span>
 
@@ -560,6 +587,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_commit</span><span class="p">()</span></div>
 
         
@@ -571,6 +599,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.copy_map_to_view">[docs]</a>
     <span class="k">def</span> <span class="nf">copy_map_to_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest_map</span><span class="p">,</span> <span class="n">dest_view</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Copy entire map into one view in output map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param dest_map:   Destination `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` name</span>
@@ -582,6 +611,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_copy_map_to_view</span><span class="p">(</span><span class="n">dest_map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">dest_view</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -593,6 +623,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.crc_map">[docs]</a>
     <span class="k">def</span> <span class="nf">crc_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">crc</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Generate an XML CRC of a `GXMAP &lt;geosoft.gxapi.GXMAP&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param crc:   CRC returned</span>
@@ -604,6 +635,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">crc</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crc_map</span><span class="p">(</span><span class="n">crc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -615,6 +647,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a `GXMAP &lt;geosoft.gxapi.GXMAP&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` file name</span>
@@ -629,6 +662,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMAP</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -640,6 +674,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method returns the Current map opened.</span>
 <span class="sd">        </span>
 
@@ -655,6 +690,7 @@
 <span class="sd">        **Note:** If there is no current map, and running interactively,</span>
 <span class="sd">        the user is prompted to open a map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMAP</span><span class="o">.</span><span class="n">_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXMAP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -666,6 +702,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.delete_view">[docs]</a>
     <span class="k">def</span> <span class="nf">delete_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Deletes a view in this map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  View Name to delete</span>
@@ -677,6 +714,7 @@
 
 <span class="sd">        **Note:** If the view does not exist, nothing happens.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_delete_view</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -690,6 +728,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.discard">[docs]</a>
     <span class="k">def</span> <span class="nf">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Discard all changes made to the map.</span>
 <span class="sd">        </span>
 
@@ -697,6 +736,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_discard</span><span class="p">()</span></div>
 
         
@@ -708,6 +748,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.dup_map">[docs]</a>
     <span class="k">def</span> <span class="nf">dup_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ma_pd</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Duplicate copy of current map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ma_pd:    Destination `GXMAP &lt;geosoft.gxapi.GXMAP&gt;` object</span>
@@ -728,6 +769,7 @@
 <span class="sd">        The constant `DUPMAP_COPY_PRE62 &lt;geosoft.gxapi.DUPMAP_COPY_PRE62&gt;` provides a way to create maps that can be</span>
 <span class="sd">        distributed to versions prior to 6.2.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_dup_map</span><span class="p">(</span><span class="n">ma_pd</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></div>
 
         
@@ -739,6 +781,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_lpt">[docs]</a>
     <span class="k">def</span> <span class="nf">get_lpt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the `GXLPT &lt;geosoft.gxapi.GXLPT&gt;` Object of a `GXMAP &lt;geosoft.gxapi.GXMAP&gt;`.</span>
 <span class="sd">        </span>
 
@@ -749,6 +792,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_lpt</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXLPT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -760,6 +804,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_map_size">[docs]</a>
     <span class="k">def</span> <span class="nf">get_map_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the size of the Map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param xmin:  X minimum in mm</span>
@@ -775,6 +820,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">xmin</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ymin</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xmax</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ymax</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_map_size</span><span class="p">(</span><span class="n">xmin</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ymin</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">xmax</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ymax</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -786,6 +832,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_meta">[docs]</a>
     <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the map&#39;s `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`</span>
 <span class="sd">        </span>
 
@@ -798,6 +845,7 @@
 
 <span class="sd">        **Note:** If the map has no `GXMETA &lt;geosoft.gxapi.GXMETA&gt;`, an empty `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` will be created.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_meta</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXMETA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -809,6 +857,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_reg">[docs]</a>
     <span class="k">def</span> <span class="nf">get_reg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the map&#39;s `GXREG &lt;geosoft.gxapi.GXREG&gt;`</span>
 <span class="sd">        </span>
 
@@ -821,6 +870,7 @@
 
 <span class="sd">        **Note:** If the map has no `GXREG &lt;geosoft.gxapi.GXREG&gt;`, an empty `GXREG &lt;geosoft.gxapi.GXREG&gt;` will be created.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_reg</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXREG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -832,6 +882,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.group_list">[docs]</a>
     <span class="k">def</span> <span class="nf">group_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of all views/groups in this map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  List to hold the view/groups.  Names may be up to 2080 characters in length.</span>
@@ -850,6 +901,7 @@
 <span class="sd">            `GXLST &lt;geosoft.gxapi.GXLST&gt;` class.</span>
 <span class="sd">            `GXMVIEW.list_groups &lt;geosoft.gxapi.GXMVIEW.list_groups&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_group_list</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -861,6 +913,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.group_list_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">group_list_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of views/groups in this map for this mode</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   List to hold the views.  View names may be up to 2080 characters in length.</span>
@@ -876,6 +929,7 @@
 
 <span class="sd">            `GXLST &lt;geosoft.gxapi.GXLST&gt;` class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_group_list_ex</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -887,6 +941,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.duplicate_view">[docs]</a>
     <span class="k">def</span> <span class="nf">duplicate_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">n_view</span><span class="p">,</span> <span class="n">copy</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Duplicate an entire view</span>
 <span class="sd">        </span>
 <span class="sd">        :param view:    Name of view to duplicate</span>
@@ -900,6 +955,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">n_view</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_duplicate_view</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">n_view</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">copy</span><span class="p">)</span></div>
 
         
@@ -911,6 +967,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.exist_view">[docs]</a>
     <span class="k">def</span> <span class="nf">exist_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks to see if a view exists.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  View name</span>
@@ -924,6 +981,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exist_view</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -935,6 +993,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_class_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_class_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cl</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a class name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param cl:    Class</span>
@@ -958,6 +1017,7 @@
 <span class="sd">        If a name is not set, the class name is set and</span>
 <span class="sd">        returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_class_name</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -969,6 +1029,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_file_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the name of the map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Returned map file name</span>
@@ -978,6 +1039,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -989,6 +1051,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_map_name">[docs]</a>
     <span class="k">def</span> <span class="nf">get_map_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the Map Name of the Map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Returned map name</span>
@@ -998,6 +1061,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_map_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1009,6 +1073,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.packed_files">[docs]</a>
     <span class="k">def</span> <span class="nf">packed_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        The number of packed files in the current map.</span>
 <span class="sd">        </span>
 
@@ -1019,6 +1084,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_packed_files</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1030,6 +1096,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.un_pack_files_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">un_pack_files_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">errors</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        UnPack all files from map to workspace.</span>
 <span class="sd">        </span>
 <span class="sd">        :param force:   (0 - Produce errors, 1 - Force overwrites)</span>
@@ -1046,6 +1113,7 @@
 <span class="sd">        stop if any files are going to be overwritting. These</span>
 <span class="sd">        file names will end up in the Errors string.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">errors</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_un_pack_files_ex</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1057,6 +1125,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.un_pack_files_to_folder">[docs]</a>
     <span class="k">def</span> <span class="nf">un_pack_files_to_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">errors</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        UnPack all files from map to workspace.</span>
 <span class="sd">        </span>
 <span class="sd">        :param force:   (0 - Produce errors, 1 - Force overwrites)</span>
@@ -1070,6 +1139,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">errors</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_un_pack_files_to_folder</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">errors</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1081,6 +1151,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.pack_files">[docs]</a>
     <span class="k">def</span> <span class="nf">pack_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Pack all files in the map so that it can be mailed.</span>
 <span class="sd">        </span>
 
@@ -1088,6 +1159,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_pack_files</span><span class="p">()</span></div>
 
         
@@ -1099,6 +1171,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.render">[docs]</a>
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Render a map to file/device.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Plot file/device</span>
@@ -1108,6 +1181,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_render</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1119,6 +1193,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.remove_grid">[docs]</a>
     <span class="k">def</span> <span class="nf">remove_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">removed</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove references to a grid from a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:     grid file name to remove</span>
@@ -1136,6 +1211,7 @@
 <span class="sd">        This is name-dependent, and will not work if a user has renamed the color bar</span>
 <span class="sd">        or grid histogram.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">removed</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_grid</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">removed</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1147,6 +1223,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.remove_geosurface">[docs]</a>
     <span class="k">def</span> <span class="nf">remove_geosurface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">removed</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove all geosurface groups from a map that are linked to a specific geosurface file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param surface:  geosurface file name to remove</span>
@@ -1158,6 +1235,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">removed</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_geosurface</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">removed</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1169,6 +1247,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.remove_voxel">[docs]</a>
     <span class="k">def</span> <span class="nf">remove_voxel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">removed</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove all voxel groups from a map that are linked to a specific voxel file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param surface:  voxel file name to remove</span>
@@ -1180,6 +1259,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">removed</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_voxel</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">removed</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1191,6 +1271,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.repair_broken_grid_links">[docs]</a>
     <span class="k">def</span> <span class="nf">repair_broken_grid_links</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">repaired</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Replaces/repairs references to a grid inside a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:      new grid file name path (must resolve to an existing file)</span>
@@ -1208,6 +1289,7 @@
 <span class="sd">        The replacement path must resolve to an existing grid, and if possible will be</span>
 <span class="sd">        stored as a relative path to the map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">repaired</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repair_broken_grid_links</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">repaired</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1219,6 +1301,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.repair_broken_geosurface_links">[docs]</a>
     <span class="k">def</span> <span class="nf">repair_broken_geosurface_links</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">repaired</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Replaces/repairs references to a geosurface inside a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param surface:   new geosurface file name path (must resolve to an existing file)</span>
@@ -1236,6 +1319,7 @@
 <span class="sd">        The replacement path must resolve to an existing geosurface, and if possible will be</span>
 <span class="sd">        stored as a relative path to the map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">repaired</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repair_broken_geosurface_links</span><span class="p">(</span><span class="n">surface</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">repaired</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1247,6 +1331,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.repair_broken_voxel_links">[docs]</a>
     <span class="k">def</span> <span class="nf">repair_broken_voxel_links</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">repaired</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Replaces/repairs references to a Geosoft Voxel inside a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param voxel:     new voxel file name path (must resolve to an existing file)</span>
@@ -1264,6 +1349,7 @@
 <span class="sd">        The replacement path must resolve to an existing voxel, and if possible will be</span>
 <span class="sd">        stored as a relative path to the map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">repaired</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repair_broken_voxel_links</span><span class="p">(</span><span class="n">voxel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">repaired</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1275,6 +1361,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.resize_all">[docs]</a>
     <span class="k">def</span> <span class="nf">resize_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Resize a map to the extents of all views.</span>
 <span class="sd">        </span>
 
@@ -1285,6 +1372,7 @@
 <span class="sd">        **Note:** This is the same as `resize_all_ex &lt;geosoft.gxapi.GXMAP.resize_all_ex&gt;` with</span>
 <span class="sd">        `MVIEW_EXTENT_CLIP &lt;geosoft.gxapi.MVIEW_EXTENT_CLIP&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_resize_all</span><span class="p">()</span></div>
 
         
@@ -1296,6 +1384,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.resize_all_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">resize_all_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ext</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        `resize_all &lt;geosoft.gxapi.GXMAP.resize_all&gt;` with selection of view extent type selection.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ext:  :ref:`MVIEW_EXTENT`</span>
@@ -1308,6 +1397,7 @@
 <span class="sd">        **Note:** `MVIEW_EXTENT_VISIBLE &lt;geosoft.gxapi.MVIEW_EXTENT_VISIBLE&gt;` gives a more &quot;reasonable&quot; map size, and won&#39;t</span>
 <span class="sd">        clip off labels outside a graph window.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_resize_all_ex</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span></div>
 
         
@@ -1319,6 +1409,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_map_scale">[docs]</a>
     <span class="k">def</span> <span class="nf">get_map_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the current map scale</span>
 <span class="sd">        </span>
 
@@ -1338,6 +1429,7 @@
 
 <span class="sd">        All views must be closed, or open read-only.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_map_scale</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1349,6 +1441,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.save_as_mxd">[docs]</a>
     <span class="k">def</span> <span class="nf">save_as_mxd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mxd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Save as ArcGIS `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param mxd:  Geosoft map file name</span>
@@ -1358,6 +1451,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_as_mxd</span><span class="p">(</span><span class="n">mxd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1369,6 +1463,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.set_class_name">[docs]</a>
     <span class="k">def</span> <span class="nf">set_class_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cl</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set a class name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param cl:    Class</span>
@@ -1392,6 +1487,7 @@
 <span class="sd">        If a name is not set, the class name is set and</span>
 <span class="sd">        returned.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_class_name</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1403,6 +1499,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.set_current">[docs]</a>
     <span class="k">def</span> <span class="nf">set_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets the current map to this map.</span>
 <span class="sd">        </span>
 
@@ -1412,6 +1509,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_current</span><span class="p">()</span></div>
 
         
@@ -1423,6 +1521,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.set_map_name">[docs]</a>
     <span class="k">def</span> <span class="nf">set_map_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the Map Name of the Map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Map Name</span>
@@ -1432,6 +1531,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_map_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1443,6 +1543,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.set_map_scale">[docs]</a>
     <span class="k">def</span> <span class="nf">set_map_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the current map scale</span>
 <span class="sd">        </span>
 <span class="sd">        :param scale:  New map scale (must be &gt; 0).</span>
@@ -1455,6 +1556,7 @@
 <span class="sd">        **Note:** All views in the map will be resized for the new</span>
 <span class="sd">        map scale.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_map_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span></div>
 
         
@@ -1466,6 +1568,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.set_map_size">[docs]</a>
     <span class="k">def</span> <span class="nf">set_map_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the size of the Map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param xmin:  X minimum in mm</span>
@@ -1490,6 +1593,7 @@
 
 <span class="sd">            SetSizeViews_MAP</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_map_size</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">)</span></div>
 
         
@@ -1501,6 +1605,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.set_meta">[docs]</a>
     <span class="k">def</span> <span class="nf">set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write a `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param meta:  `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` to write to map</span>
@@ -1510,6 +1615,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_meta</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span></div>
 
         
@@ -1521,6 +1627,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.set_reg">[docs]</a>
     <span class="k">def</span> <span class="nf">set_reg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write a `GXREG &lt;geosoft.gxapi.GXREG&gt;` to a map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param reg:  `GXREG &lt;geosoft.gxapi.GXREG&gt;` to write to map</span>
@@ -1530,6 +1637,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_reg</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span></div>
 
         
@@ -1541,6 +1649,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sync</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Syncronize the Metadata</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:  Geosoft map file name</span>
@@ -1550,6 +1659,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMAP</span><span class="o">.</span><span class="n">_sync</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1561,6 +1671,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.un_pack_files">[docs]</a>
     <span class="k">def</span> <span class="nf">un_pack_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        UnPack all files from map to workspace.</span>
 <span class="sd">        </span>
 
@@ -1568,6 +1679,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_un_pack_files</span><span class="p">()</span></div>
 
         
@@ -1579,6 +1691,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.view_list">[docs]</a>
     <span class="k">def</span> <span class="nf">view_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of all views in this map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  List to hold the views.  View names may be up to 2080 characters in length.</span>
@@ -1592,6 +1705,7 @@
 
 <span class="sd">            `GXLST &lt;geosoft.gxapi.GXLST&gt;` class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_view_list</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -1603,6 +1717,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.view_list_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">view_list_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of views of certain types in this map</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:   List to hold the views.  View names may be up to 2080 characters in length.</span>
@@ -1614,6 +1729,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_view_list_ex</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -1625,6 +1741,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.get_data_proj">[docs]</a>
     <span class="k">def</span> <span class="nf">get_data_proj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the projection type of the Data view of a map.</span>
 <span class="sd">        </span>
 
@@ -1635,6 +1752,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_proj</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1646,6 +1764,7 @@
 <a class="viewcode-back" href="../../../GXMAP.html#geosoft.gxapi.GXMAP.dataset_file_path_list">[docs]</a>
     <span class="k">def</span> <span class="nf">dataset_file_path_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a list of all dataset file paths in this map.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  List to hold the paths.  Paths may be up to 2080 characters in length.</span>
@@ -1659,6 +1778,7 @@
 
 <span class="sd">            `GXLST &lt;geosoft.gxapi.GXLST&gt;` class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_file_path_list</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
 </div>
 
@@ -1691,7 +1811,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMAP</a></li> 
@@ -1699,7 +1819,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXCHIMERA &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXCHIMERA &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXCHIMERA</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXCHIMERA</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -128,6 +128,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">bar_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="p">,</span> <span class="n">offset_group</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a Bar plot of up to 8 channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:         View object to plot to</span>
@@ -161,6 +162,7 @@
 <span class="sd">        Plots a bar plot with the center of the &quot;X&quot; axis at the symbol location.</span>
 <span class="sd">        See the note on offset symbols in `rose_plot &lt;geosoft.gxapi.GXCHIMERA.rose_plot&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_bar_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">offset_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span></div>
 
         
@@ -172,6 +174,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">categorize_by_value</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Transform values to the index of input data ranges.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_r:  Input range minima</span>
@@ -195,6 +198,7 @@
 <span class="sd">        else if(V) &gt;= M1) N = 1</span>
 <span class="sd">        else N = 0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_categorize_by_value</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">)</span></div>
 
         
@@ -206,6 +210,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">categorize_by_value_det_limit</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">det_limit</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Transform values to the index of input data ranges, with detection limit.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv_r:       Input range minima</span>
@@ -225,6 +230,7 @@
 <span class="sd">        input value is less than the detection limit,</span>
 <span class="sd">        the output value is set to zero.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_categorize_by_value_det_limit</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv_r</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">det_limit</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">)</span></div>
 
         
@@ -236,6 +242,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">clip_to_detect_limit</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">det_limit</span><span class="p">,</span> <span class="n">conv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply detection limit clipping of data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:         Input data vv (altered).</span>
@@ -258,6 +265,7 @@
 <span class="sd">           `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`, then values less than the detection limit are converted to</span>
 <span class="sd">           one-half the detection limit.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_clip_to_detect_limit</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">det_limit</span><span class="p">,</span> <span class="n">conv</span><span class="p">)</span></div>
 
         
@@ -269,6 +277,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">draw_circle_offset_markers</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">,</span> <span class="n">off_size</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plots location marker and joining line for circle offset symbols</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:     View</span>
@@ -290,6 +299,7 @@
 
 <span class="sd">        **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_draw_circle_offset_markers</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">,</span> <span class="n">off_size</span><span class="p">)</span></div>
 
         
@@ -301,6 +311,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">draw_rectangle_offset_markers</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">,</span> <span class="n">off_size</span><span class="p">,</span> <span class="n">x_size</span><span class="p">,</span> <span class="n">y_size</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plots location marker and joining line for rectangle offset symbols</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:     View</span>
@@ -326,6 +337,7 @@
 
 <span class="sd">        **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_draw_rectangle_offset_markers</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv_xi</span><span class="p">,</span> <span class="n">vv_yi</span><span class="p">,</span> <span class="n">vv_xo</span><span class="p">,</span> <span class="n">vv_yo</span><span class="p">,</span> <span class="n">off_size</span><span class="p">,</span> <span class="n">x_size</span><span class="p">,</span> <span class="n">y_size</span><span class="p">)</span></div>
 
         
@@ -337,6 +349,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">duplicate_chem</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">det_lim</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">vv_tol</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot an ASSAY Duplicate result in a graph window.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:    View</span>
@@ -368,6 +381,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_duplicate_chem</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">det_lim</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">vv_tol</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">unit</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span></div>
 
         
@@ -379,6 +393,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">duplicate_chem_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">det_lim</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">vv_tol</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_fid</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot an ASSAY Duplicate result in a new view.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:      Map</span>
@@ -419,6 +434,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_duplicate_chem_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">det_lim</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">vv_tol</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">unit</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_fid</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -430,6 +446,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_expression_data_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">stage</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">gvv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get data from a line using a channel expression.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database</span>
@@ -453,6 +470,7 @@
 <span class="sd">        are stored in the input INI. Returns a `GXVV &lt;geosoft.gxapi.GXVV&gt;` for the given line</span>
 <span class="sd">        with the calculated expression values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_get_expression_data_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">stage</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">exp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ini</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">)</span></div>
 
         
@@ -464,6 +482,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_lithogeochem_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">m_ch</span><span class="p">,</span> <span class="n">vv_trans</span><span class="p">,</span> <span class="n">remove_dummy_rows</span><span class="p">,</span> <span class="n">vv_dummy</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_n</span><span class="p">,</span> <span class="n">vv_used</span><span class="p">,</span> <span class="n">vv_index</span><span class="p">,</span> <span class="n">vv_fids</span><span class="p">,</span> <span class="n">vv_fidi</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get all rows of non-dummy data in a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:                 [i] database handle</span>
@@ -515,6 +534,7 @@
 <span class="sd">        1 - Log transform: base e with log min = CHIMERA_LOG_MIN</span>
 <span class="sd">        2 - Lambda transform</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_get_lithogeochem_data</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">m_ch</span><span class="p">,</span> <span class="n">vv_trans</span><span class="p">,</span> <span class="n">remove_dummy_rows</span><span class="p">,</span> <span class="n">vv_dummy</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_n</span><span class="p">,</span> <span class="n">vv_used</span><span class="p">,</span> <span class="n">vv_index</span><span class="p">,</span> <span class="n">vv_fids</span><span class="p">,</span> <span class="n">vv_fidi</span><span class="p">)</span></div>
 
         
@@ -526,6 +546,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_transform</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">trans_opt</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">lda</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get channel transform options and lambda values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         `GXDB &lt;geosoft.gxapi.GXDB&gt;` handle</span>
@@ -553,6 +574,7 @@
 <span class="sd">        1 - Log transform: base e with log min = CHIMERA_LOG_MIN</span>
 <span class="sd">        2 - Lambda transform</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">trans</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lda</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_get_transform</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">trans_opt</span><span class="p">,</span> <span class="n">trans</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lda</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -564,6 +586,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">is_acquire_chan</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_chan</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">oxide</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is this channel in acQuire format (e.g. &quot;Ag_ppm_4AWR&quot;)</span>
 <span class="sd">        </span>
 <span class="sd">        :param input_chan:  String to test</span>
@@ -587,6 +610,7 @@
 <span class="sd">        extracts the channel name, and units from an acQuire-formatted</span>
 <span class="sd">        channel name.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">units</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">factor</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">oxide</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_is_acquire_chan</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">input_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">units</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">factor</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">oxide</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -598,6 +622,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">is_element</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Tests a string to see if it is an element symbol</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:            String to test</span>
@@ -613,6 +638,7 @@
 <span class="sd">        **Note:** Suggested use - testing to see if a channel name is an</span>
 <span class="sd">        element so that the &quot;ASSAY&quot; class can be set.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_is_element</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">case_sensitive</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -624,6 +650,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_histogram</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Launch histogram tool on a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database name</span>
@@ -639,6 +666,7 @@
 <span class="sd">        This function supercedes `GXEDB.launch_histogram &lt;geosoft.gxapi.GXEDB.launch_histogram&gt;`, (which now</span>
 <span class="sd">        just gets the name of the `GXEDB &lt;geosoft.gxapi.GXEDB&gt;` and calls this function).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_launch_histogram</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -650,6 +678,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_probability</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Launch probability tool on a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database name</span>
@@ -663,6 +692,7 @@
 
 <span class="sd">        **Note:** The database should be a currently open database.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_launch_probability</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -674,6 +704,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_scatter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Launch scatter tool on a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database name</span>
@@ -701,6 +732,7 @@
 <span class="sd">        This function supercedes `GXEDB.launch_scatter &lt;geosoft.gxapi.GXEDB.launch_scatter&gt;`, (which now</span>
 <span class="sd">        just gets the name of the `GXEDB &lt;geosoft.gxapi.GXEDB&gt;` and calls this function).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_launch_scatter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -712,6 +744,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">launch_triplot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Launch Triplot tool on a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database name</span>
@@ -739,6 +772,7 @@
 
 <span class="sd">        The database should be a currently open database.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_launch_triplot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -750,6 +784,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">mask_chan_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a `GXLST &lt;geosoft.gxapi.GXLST&gt;` with mask channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   hDB - Database Object</span>
@@ -769,6 +804,7 @@
 <span class="sd">        This function has been duplicated by `GXDB.mask_chan_lst &lt;geosoft.gxapi.GXDB.mask_chan_lst&gt;`, which</span>
 <span class="sd">        is safe to use in applications which do not have `GXCHIMERA &lt;geosoft.gxapi.GXCHIMERA&gt;` loaded.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_mask_chan_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -780,6 +816,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">ordered_channel_lst</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a list with the channels in the preferred order.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   hDB - Database Object</span>
@@ -801,6 +838,7 @@
 <span class="sd">        otherwise, get all the database channels. (This allows you to pass in</span>
 <span class="sd">        the currently displayed channels and only reload those).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_ordered_channel_lst</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -812,6 +850,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pie_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="p">,</span> <span class="n">offset_group</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a Pie plot of up to 8 channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:         View object to plot to</span>
@@ -846,6 +885,7 @@
 <span class="sd">        is given by the percent contribution of each constituent.</span>
 <span class="sd">        See the note on offset symbols in `rose_plot &lt;geosoft.gxapi.GXCHIMERA.rose_plot&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_pie_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">offset_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span></div>
 
         
@@ -857,6 +897,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pie_plot2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="p">,</span> <span class="n">offset_group</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `pie_plot &lt;geosoft.gxapi.GXCHIMERA.pie_plot&gt;`, with a starting angle.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:         View object to plot to</span>
@@ -892,6 +933,7 @@
 <span class="sd">        slice, counted in degrees counter-clockwise from horizontal</span>
 <span class="sd">        (3 o&#39;clock). Zero degrees gives the same plot as `pie_plot &lt;geosoft.gxapi.GXCHIMERA.pie_plot&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_pie_plot2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">offset_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">)</span></div>
 
         
@@ -903,6 +945,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">plot_string_classified_symbols_legend_from_class_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">class_file</span><span class="p">,</span> <span class="n">index_vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot legend for the string classified symbols</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:       Map view object</span>
@@ -926,6 +969,7 @@
 
 <span class="sd">        **Note:** Plot in a legend the classes in the class file found in the input class indices.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_plot_string_classified_symbols_legend_from_class_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">class_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">index_vv</span><span class="p">)</span></div>
 
         
@@ -937,6 +981,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">atomic_weight</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return the atomic weight of a particular element.</span>
 <span class="sd">        </span>
 <span class="sd">        :param element:  Element name (case insensitive)</span>
@@ -952,6 +997,7 @@
 <span class="sd">        **Note:** If the input string is not an element symbol (elements in the range</span>
 <span class="sd">        1-92, &quot;H&quot; to &quot;U&quot;), then returns a dummy (`GS_R8DM &lt;geosoft.gxapi.GS_R8DM&gt;`).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_atomic_weight</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">element</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -963,6 +1009,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">rose_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="p">,</span> <span class="n">offset_group</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a Rose plot of up to 8 channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:         View object to plot to</span>
@@ -1004,6 +1051,7 @@
 <span class="sd">        pushed to the outside edge and your plot will look like a</span>
 <span class="sd">        hedgehog (it also takes a lot longer!).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_rose_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">offset_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">)</span></div>
 
         
@@ -1015,6 +1063,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">rose_plot2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="p">,</span> <span class="n">offset_group</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `rose_plot &lt;geosoft.gxapi.GXCHIMERA.rose_plot&gt;`, with a starting angle.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:         View object to plot to</span>
@@ -1048,6 +1097,7 @@
 <span class="sd">        slice, counted in degrees counter-clockwise from horizontal</span>
 <span class="sd">        (3 o&#39;clock). Zero degrees gives the same plot as `rose_plot &lt;geosoft.gxapi.GXCHIMERA.rose_plot&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_rose_plot2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">offset_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">)</span></div>
 
         
@@ -1059,6 +1109,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">scatter2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">horz_vv</span><span class="p">,</span> <span class="n">vert_vv</span><span class="p">,</span> <span class="n">sym_font</span><span class="p">,</span> <span class="n">sym_num_vv</span><span class="p">,</span> <span class="n">sym_siz_vv</span><span class="p">,</span> <span class="n">sym_col_vv</span><span class="p">,</span> <span class="n">annot_style</span><span class="p">,</span> <span class="n">h_chan</span><span class="p">,</span> <span class="n">v_chan</span><span class="p">,</span> <span class="n">h_units</span><span class="p">,</span> <span class="n">v_units</span><span class="p">,</span> <span class="n">h_min</span><span class="p">,</span> <span class="n">h_max</span><span class="p">,</span> <span class="n">v_min</span><span class="p">,</span> <span class="n">v_max</span><span class="p">,</span> <span class="n">hr_min</span><span class="p">,</span> <span class="n">hr_max</span><span class="p">,</span> <span class="n">vr_min</span><span class="p">,</span> <span class="n">vr_max</span><span class="p">,</span> <span class="n">use_hr_min</span><span class="p">,</span> <span class="n">use_hr_max</span><span class="p">,</span> <span class="n">use_vr_min</span><span class="p">,</span> <span class="n">use_vr_max</span><span class="p">,</span> <span class="n">h_scaling</span><span class="p">,</span> <span class="n">v_scaling</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot the scatter plot on a map using symbol number, size and color VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:        View</span>
@@ -1131,6 +1182,7 @@
 <span class="sd">        **Note:** The view scaling is not altered with any projection. The base view</span>
 <span class="sd">        is best as the input.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_scatter2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">horz_vv</span><span class="p">,</span> <span class="n">vert_vv</span><span class="p">,</span> <span class="n">sym_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">sym_num_vv</span><span class="p">,</span> <span class="n">sym_siz_vv</span><span class="p">,</span> <span class="n">sym_col_vv</span><span class="p">,</span> <span class="n">annot_style</span><span class="p">,</span> <span class="n">h_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">v_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">h_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">v_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">h_min</span><span class="p">,</span> <span class="n">h_max</span><span class="p">,</span> <span class="n">v_min</span><span class="p">,</span> <span class="n">v_max</span><span class="p">,</span> <span class="n">hr_min</span><span class="p">,</span> <span class="n">hr_max</span><span class="p">,</span> <span class="n">vr_min</span><span class="p">,</span> <span class="n">vr_max</span><span class="p">,</span> <span class="n">use_hr_min</span><span class="p">,</span> <span class="n">use_hr_max</span><span class="p">,</span> <span class="n">use_vr_min</span><span class="p">,</span> <span class="n">use_vr_max</span><span class="p">,</span> <span class="n">h_scaling</span><span class="p">,</span> <span class="n">v_scaling</span><span class="p">)</span></div>
 
         
@@ -1142,6 +1194,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">fixed_symbol_scatter_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">symbol_font</span><span class="p">,</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">annotn</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">x_units</span><span class="p">,</span> <span class="n">y_units</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">x_lin</span><span class="p">,</span> <span class="n">y_lin</span><span class="p">,</span> <span class="n">overlay</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a scatter plot using a single fixed symbol.</span>
 <span class="sd">        Optional data masking with masking Color.</span>
 <span class="sd">        Optional database linking.</span>
@@ -1215,6 +1268,7 @@
 
 <span class="sd">        **Note:** Plot a scatter plot using a single fixed symbol.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_fixed_symbol_scatter_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">symbol_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">annotn</span><span class="p">,</span> <span class="n">x_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">x_lin</span><span class="p">,</span> <span class="n">y_lin</span><span class="p">,</span> <span class="n">overlay</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1226,6 +1280,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">zone_coloured_scatter_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">zone_data_vv</span><span class="p">,</span> <span class="n">zone_file</span><span class="p">,</span> <span class="n">symbol_font</span><span class="p">,</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">fix_edge_color</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">annotn</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">x_units</span><span class="p">,</span> <span class="n">y_units</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">x_lin</span><span class="p">,</span> <span class="n">y_lin</span><span class="p">,</span> <span class="n">overlay</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a scatter plot using colors based on a zone file.</span>
 <span class="sd">        Optional data masking with masking color.</span>
 <span class="sd">        Optional database linking.</span>
@@ -1305,6 +1360,7 @@
 
 <span class="sd">        **Note:** Plot a scatter plot using colors based on a zone file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_zone_coloured_scatter_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">zone_data_vv</span><span class="p">,</span> <span class="n">zone_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">fix_edge_color</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">annotn</span><span class="p">,</span> <span class="n">x_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">x_lin</span><span class="p">,</span> <span class="n">y_lin</span><span class="p">,</span> <span class="n">overlay</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1316,6 +1372,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">string_classified_scatter_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">class_vv</span><span class="p">,</span> <span class="n">class_file</span><span class="p">,</span> <span class="n">symbol_size_override</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">annotn</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">x_units</span><span class="p">,</span> <span class="n">y_units</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">x_lin</span><span class="p">,</span> <span class="n">y_lin</span><span class="p">,</span> <span class="n">overlay</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a scatter plot using symbols based on a symbol class file.</span>
 <span class="sd">        Optional data masking with masking color.</span>
 <span class="sd">        Optional database linking.</span>
@@ -1383,6 +1440,7 @@
 
 <span class="sd">        **Note:** Plot a scatter plot using symbols based on a symbol class file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_string_classified_scatter_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">class_vv</span><span class="p">,</span> <span class="n">class_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_size_override</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">annotn</span><span class="p">,</span> <span class="n">x_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_units</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">x_lin</span><span class="p">,</span> <span class="n">y_lin</span><span class="p">,</span> <span class="n">overlay</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1394,6 +1452,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_lithogeochem_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_n</span><span class="p">,</span> <span class="n">vv_used</span><span class="p">,</span> <span class="n">vv_index</span><span class="p">,</span> <span class="n">vv_fids</span><span class="p">,</span> <span class="n">vv_fidi</span><span class="p">,</span> <span class="n">vv_dummy</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set data back into a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        [i] database handle</span>
@@ -1435,6 +1494,7 @@
 <span class="sd">        New channel types will be set using the data `GXVV &lt;geosoft.gxapi.GXVV&gt;` type.</span>
 <span class="sd">        Any metadata (CLASS, display formats) should be set separately.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_set_lithogeochem_data</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_n</span><span class="p">,</span> <span class="n">vv_used</span><span class="p">,</span> <span class="n">vv_index</span><span class="p">,</span> <span class="n">vv_fids</span><span class="p">,</span> <span class="n">vv_fidi</span><span class="p">,</span> <span class="n">vv_dummy</span><span class="p">)</span></div>
 
         
@@ -1446,6 +1506,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">stacked_bar_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="p">,</span> <span class="n">offset_group</span><span class="p">,</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a Bar plot of up to 8 channels, bars stacked on each other.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:         View object to plot to</span>
@@ -1479,6 +1540,7 @@
 <span class="sd">        Plots a bar plot with the center of the &quot;X&quot; axis at the symbol location.</span>
 <span class="sd">        See the note on offset symbols in `rose_plot &lt;geosoft.gxapi.GXCHIMERA.rose_plot&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_stacked_bar_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">data_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">offset_group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xvv</span><span class="p">,</span> <span class="n">yvv</span><span class="p">,</span> <span class="n">dvv</span><span class="p">,</span> <span class="n">cvv</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">offset_size</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span></div>
 
         
@@ -1490,6 +1552,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">standard</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot ASSAY Standard result in a graph window.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:  View</span>
@@ -1524,6 +1587,7 @@
 <span class="sd">        **Note:** If the tolerance is `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;`, then the minimum and maximum</span>
 <span class="sd">        values are used, and must be specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_standard</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">unit</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span></div>
 
         
@@ -1535,6 +1599,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">standard_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_fid</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot ASSAY Standard result in a graph window.</span>
 <span class="sd">        </span>
 <span class="sd">        :param map:      Map</span>
@@ -1579,6 +1644,7 @@
 
 <span class="sd">        **Note:** Same as `standard &lt;geosoft.gxapi.GXCHIMERA.standard&gt;` but plot in a new view.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_standard_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">map</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">vvy</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">unit</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xs</span><span class="p">,</span> <span class="n">vvx</span><span class="p">,</span> <span class="n">vv_line</span><span class="p">,</span> <span class="n">vv_fid</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1590,6 +1656,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tri_plot2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">sym_font</span><span class="p">,</span> <span class="n">sym_num_vv</span><span class="p">,</span> <span class="n">sym_siz_vv</span><span class="p">,</span> <span class="n">sym_col_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">z_chan</span><span class="p">,</span> <span class="n">xr_min</span><span class="p">,</span> <span class="n">xr_max</span><span class="p">,</span> <span class="n">yr_min</span><span class="p">,</span> <span class="n">yr_max</span><span class="p">,</span> <span class="n">zr_min</span><span class="p">,</span> <span class="n">zr_max</span><span class="p">,</span> <span class="n">use_xr_min</span><span class="p">,</span> <span class="n">use_xr_max</span><span class="p">,</span> <span class="n">use_yr_min</span><span class="p">,</span> <span class="n">use_yr_max</span><span class="p">,</span> <span class="n">use_zr_min</span><span class="p">,</span> <span class="n">use_zr_max</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot the TriPlot on a map using symbol number, size and color VVs.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mview:       View</span>
@@ -1667,6 +1734,7 @@
 <span class="sd">        The view scaling is not altered with any projection. The base view</span>
 <span class="sd">        is best as the input.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_tri_plot2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">sym_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">sym_num_vv</span><span class="p">,</span> <span class="n">sym_siz_vv</span><span class="p">,</span> <span class="n">sym_col_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">xr_min</span><span class="p">,</span> <span class="n">xr_max</span><span class="p">,</span> <span class="n">yr_min</span><span class="p">,</span> <span class="n">yr_max</span><span class="p">,</span> <span class="n">zr_min</span><span class="p">,</span> <span class="n">zr_max</span><span class="p">,</span> <span class="n">use_xr_min</span><span class="p">,</span> <span class="n">use_xr_max</span><span class="p">,</span> <span class="n">use_yr_min</span><span class="p">,</span> <span class="n">use_yr_max</span><span class="p">,</span> <span class="n">use_zr_min</span><span class="p">,</span> <span class="n">use_zr_max</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">)</span></div>
 
         
@@ -1678,6 +1746,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">fixed_symbol_tri_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">symbol_font</span><span class="p">,</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">z_chan</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">,</span> <span class="n">overlay</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a tri-plot using a single fixed symbol.</span>
 <span class="sd">        Optional data masking with masking color.</span>
 <span class="sd">        Optional database linking.</span>
@@ -1741,6 +1810,7 @@
 
 <span class="sd">        **Note:** Plot a tri plot using a single fixed symbol.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_fixed_symbol_tri_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">symbol_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">,</span> <span class="n">overlay</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1752,6 +1822,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">zone_coloured_tri_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">zone_data_vv</span><span class="p">,</span> <span class="n">zone_file</span><span class="p">,</span> <span class="n">symbol_font</span><span class="p">,</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">fix_edge_color</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">z_chan</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">,</span> <span class="n">overlay</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a tri-plot using colors based on a zone file.</span>
 <span class="sd">        Optional data masking with masking color.</span>
 <span class="sd">        Optional database linking.</span>
@@ -1821,6 +1892,7 @@
 
 <span class="sd">        **Note:** Plot a tri plot using colors based on a zone file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_zone_coloured_tri_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">zone_data_vv</span><span class="p">,</span> <span class="n">zone_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_font</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_number</span><span class="p">,</span> <span class="n">symbol_size</span><span class="p">,</span> <span class="n">symbol_angle</span><span class="p">,</span> <span class="n">symbol_color</span><span class="p">,</span> <span class="n">symbol_fill</span><span class="p">,</span> <span class="n">fix_edge_color</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">,</span> <span class="n">overlay</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1832,6 +1904,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">string_classified_tri_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">class_vv</span><span class="p">,</span> <span class="n">class_file</span><span class="p">,</span> <span class="n">symbol_size_override</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="p">,</span> <span class="n">y_chan</span><span class="p">,</span> <span class="n">z_chan</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">,</span> <span class="n">overlay</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Plot a tri-plot using symbols based on a symbol class file.</span>
 <span class="sd">        Optional data masking with masking color.</span>
 <span class="sd">        Optional database linking.</span>
@@ -1889,7 +1962,444 @@
 
 <span class="sd">        **Note:** Plot a tri-plot using symbols based on a symbol class file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_string_classified_tri_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mview</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">x_vv</span><span class="p">,</span> <span class="n">y_vv</span><span class="p">,</span> <span class="n">z_vv</span><span class="p">,</span> <span class="n">m_vv</span><span class="p">,</span> <span class="n">mask_col</span><span class="p">,</span> <span class="n">class_vv</span><span class="p">,</span> <span class="n">class_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">symbol_size_override</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_vv</span><span class="p">,</span> <span class="n">fid_vv</span><span class="p">,</span> <span class="n">x_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grid</span><span class="p">,</span> <span class="n">tic</span><span class="p">,</span> <span class="n">grid_inc</span><span class="p">,</span> <span class="n">overlay</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<span class="c1"># Deprecated</span>
+
+
+<div class="viewcode-block" id="GXCHIMERA.get_string_classified_symbols_index">
+<a class="viewcode-back" href="../../../GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.get_string_classified_symbols_index">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_string_classified_symbols_index</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">class_vv</span><span class="p">,</span> <span class="n">indices_vv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: 2024.2 Use GetStringClassifiedSymbolsIndexFromClassFile_CHIMERA. </span>
+<span class="sd">        Get symbol indices based on a classification `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param class_vv:    Classification channel (string type)</span>
+<span class="sd">        :param indices_vv:  Symbol indices (returned) (INT `GXVV &lt;geosoft.gxapi.GXVV&gt;`)</span>
+<span class="sd">        :type  class_vv:    GXVV</span>
+<span class="sd">        :type  indices_vv:  GXVV</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Scatter and Triplots now use class files.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since 2024.2, Use GetStringClassifiedSymbolsIndexFromClassFile_CHIMERA.&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_get_string_classified_symbols_index</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">class_vv</span><span class="p">,</span> <span class="n">indices_vv</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXCHIMERA.get_string_classified_symbols">
+<a class="viewcode-back" href="../../../GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.get_string_classified_symbols">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_string_classified_symbols</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: 2024.2 Use GetStringClassifiedSymbolsFromClassFile_CHIMERA. </span>
+<span class="sd">        Get symbol numbers and colors based on a classification `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p1:  Symbol indices  (INT `GXVV &lt;geosoft.gxapi.GXVV&gt;`)</span>
+<span class="sd">        :param p2:  Symbol numbers (returned) (INT `GXVV &lt;geosoft.gxapi.GXVV&gt;`)</span>
+<span class="sd">        :param p3:  Symbol colors (returned) (INT `GXVV &lt;geosoft.gxapi.GXVV&gt;`)</span>
+<span class="sd">        :param p4:  (TRUE/FALSE) Set Unclassified symbol color to C_ANY_NONE?</span>
+<span class="sd">        :param p5:  (TRUE/FALSE) Set Unassigned symbol color to C_ANY_NONE?</span>
+<span class="sd">        :type  p1:  GXVV</span>
+<span class="sd">        :type  p2:  GXVV</span>
+<span class="sd">        :type  p3:  GXVV</span>
+<span class="sd">        :type  p4:  int</span>
+<span class="sd">        :type  p5:  int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Scatter and Triplots now use class files.</span>
+<span class="sd">        Up to 42 different symbols are defined.</span>
+<span class="sd">        Index 0 is returned for unclassified strings &quot;&quot;</span>
+<span class="sd">        Index 1 is returned for unassigned strings (only the</span>
+<span class="sd">        first 40 different classes get their own unique symbol/color.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since 2024.2, Use GetStringClassifiedSymbolsFromClassFile_CHIMERA.&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_get_string_classified_symbols</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXCHIMERA.plot_string_classified_symbols_legend">
+<a class="viewcode-back" href="../../../GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.plot_string_classified_symbols_legend">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">plot_string_classified_symbols_legend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: 2024.2 Use PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA. </span>
+<span class="sd">        Plot legend for the string classified symbols.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p1:  Map view object</span>
+<span class="sd">        :param p2:  Title</span>
+<span class="sd">        :param p3:  Left side X location</span>
+<span class="sd">        :param p4:  Bottom Y bound</span>
+<span class="sd">        :param p5:  Top Y bound</span>
+<span class="sd">        :param p6:  Strings (string `GXVV &lt;geosoft.gxapi.GXVV&gt;`)</span>
+<span class="sd">        :param p7:  Symbol indices  (INT `GXVV &lt;geosoft.gxapi.GXVV&gt;`) 0-41</span>
+<span class="sd">        :param p8:  Plot Unclassified symbol?</span>
+<span class="sd">        :param p9:  Plot Unassigned symbol?</span>
+<span class="sd">        :type  p1:  GXMVIEW</span>
+<span class="sd">        :type  p2:  str</span>
+<span class="sd">        :type  p3:  float</span>
+<span class="sd">        :type  p4:  float</span>
+<span class="sd">        :type  p5:  float</span>
+<span class="sd">        :type  p6:  GXVV</span>
+<span class="sd">        :type  p7:  GXVV</span>
+<span class="sd">        :type  p8:  int</span>
+<span class="sd">        :type  p9:  int</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Scatter and Triplots now use class files.</span>
+<span class="sd">        Up to 42 different symbols are defined.</span>
+<span class="sd">        Duplicate symbol indices are removed.</span>
+<span class="sd">        Index 0 is returned for unclassified strings &quot;&quot;</span>
+<span class="sd">        Index 1 is returned for unassigned strings (only the</span>
+<span class="sd">        first 40 different classes get their own unique symbol/color.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since 2024.2, Use PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA.&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_plot_string_classified_symbols_legend</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXCHIMERA.scatter">
+<a class="viewcode-back" href="../../../GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.scatter">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">scatter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="p">,</span> <span class="n">p11</span><span class="p">,</span> <span class="n">p12</span><span class="p">,</span> <span class="n">p13</span><span class="p">,</span> <span class="n">p14</span><span class="p">,</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="p">,</span> <span class="n">p19</span><span class="p">,</span> <span class="n">p20</span><span class="p">,</span> <span class="n">p21</span><span class="p">,</span> <span class="n">p22</span><span class="p">,</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="p">,</span> <span class="n">p25</span><span class="p">,</span> <span class="n">p26</span><span class="p">,</span> <span class="n">p27</span><span class="p">,</span> <span class="n">p28</span><span class="p">,</span> <span class="n">p29</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Plot the scatter plot on a map.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p1:   View</span>
+<span class="sd">        :param p2:   Title</span>
+<span class="sd">        :param p3:   X location (bottom left corner of color boxes)</span>
+<span class="sd">        :param p4:   Y location</span>
+<span class="sd">        :param p5:   Box width</span>
+<span class="sd">        :param p6:   Box height</span>
+<span class="sd">        :param p7:   Horizontal channel</span>
+<span class="sd">        :param p8:   Vertical channel</span>
+<span class="sd">        :param p9:   Mask channel</span>
+<span class="sd">        :param p10:  Horizontal channel name</span>
+<span class="sd">        :param p11:  Vertical channel name</span>
+<span class="sd">        :param p12:  Mask channel name</span>
+<span class="sd">        :param p13:  Horizontal channel units</span>
+<span class="sd">        :param p14:  Vertical channel units</span>
+<span class="sd">        :param p15:  Min. Horizontal value</span>
+<span class="sd">        :param p16:  Max. Horizontal value</span>
+<span class="sd">        :param p17:  Min. Vertical value</span>
+<span class="sd">        :param p18:  Max. Vertical value</span>
+<span class="sd">        :param p19:  Min. Horizontal range value</span>
+<span class="sd">        :param p20:  Max. Horizontal range value</span>
+<span class="sd">        :param p21:  Min. Vertical range value</span>
+<span class="sd">        :param p22:  Max. Vertical range value</span>
+<span class="sd">        :param p23:  Use Min Horz. Range selection?</span>
+<span class="sd">        :param p24:  Use Max Horz. Range selection?</span>
+<span class="sd">        :param p25:  Use Min Vert. Range selection?</span>
+<span class="sd">        :param p26:  Use Max Vert. Range selection?</span>
+<span class="sd">        :param p27:  Use linear horizontal axis scaling?</span>
+<span class="sd">        :param p28:  Use linear vertical axis scaling?</span>
+<span class="sd">        :param p29:  Symbol size (0: small, 1: medium, 2: large)</span>
+<span class="sd">        :type  p1:   GXMVIEW</span>
+<span class="sd">        :type  p2:   str</span>
+<span class="sd">        :type  p3:   float</span>
+<span class="sd">        :type  p4:   float</span>
+<span class="sd">        :type  p5:   float</span>
+<span class="sd">        :type  p6:   float</span>
+<span class="sd">        :type  p7:   GXVV</span>
+<span class="sd">        :type  p8:   GXVV</span>
+<span class="sd">        :type  p9:   GXVV</span>
+<span class="sd">        :type  p10:  str</span>
+<span class="sd">        :type  p11:  str</span>
+<span class="sd">        :type  p12:  str</span>
+<span class="sd">        :type  p13:  str</span>
+<span class="sd">        :type  p14:  str</span>
+<span class="sd">        :type  p15:  float</span>
+<span class="sd">        :type  p16:  float</span>
+<span class="sd">        :type  p17:  float</span>
+<span class="sd">        :type  p18:  float</span>
+<span class="sd">        :type  p19:  float</span>
+<span class="sd">        :type  p20:  float</span>
+<span class="sd">        :type  p21:  float</span>
+<span class="sd">        :type  p22:  float</span>
+<span class="sd">        :type  p23:  int</span>
+<span class="sd">        :type  p24:  int</span>
+<span class="sd">        :type  p25:  int</span>
+<span class="sd">        :type  p26:  int</span>
+<span class="sd">        :type  p27:  int</span>
+<span class="sd">        :type  p28:  int</span>
+<span class="sd">        :type  p29:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0.7</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The view scaling is not altered with any projection. The base view</span>
+<span class="sd">        is best as the input.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_scatter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p11</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p12</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p13</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p14</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="p">,</span> <span class="n">p19</span><span class="p">,</span> <span class="n">p20</span><span class="p">,</span> <span class="n">p21</span><span class="p">,</span> <span class="n">p22</span><span class="p">,</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="p">,</span> <span class="n">p25</span><span class="p">,</span> <span class="n">p26</span><span class="p">,</span> <span class="n">p27</span><span class="p">,</span> <span class="n">p28</span><span class="p">,</span> <span class="n">p29</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXCHIMERA.scatter3">
+<a class="viewcode-back" href="../../../GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.scatter3">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">scatter3</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="p">,</span> <span class="n">p11</span><span class="p">,</span> <span class="n">p12</span><span class="p">,</span> <span class="n">p13</span><span class="p">,</span> <span class="n">p14</span><span class="p">,</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="p">,</span> <span class="n">p19</span><span class="p">,</span> <span class="n">p20</span><span class="p">,</span> <span class="n">p21</span><span class="p">,</span> <span class="n">p22</span><span class="p">,</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="p">,</span> <span class="n">p25</span><span class="p">,</span> <span class="n">p26</span><span class="p">,</span> <span class="n">p27</span><span class="p">,</span> <span class="n">p28</span><span class="p">,</span> <span class="n">p29</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: 2024.2 Replaced by Scatter4_CHIMERA. </span>
+<span class="sd">        Like `scatter2 &lt;geosoft.gxapi.GXCHIMERA.scatter2&gt;`, but passes Line-Fid info, more options.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p1:   View</span>
+<span class="sd">        :param p2:   Title</span>
+<span class="sd">        :param p3:   X location (bottom left corner of box)</span>
+<span class="sd">        :param p4:   Y location</span>
+<span class="sd">        :param p5:   Box width</span>
+<span class="sd">        :param p6:   Box height</span>
+<span class="sd">        :param p7:   Horizontal channel</span>
+<span class="sd">        :param p8:   Vertical channel</span>
+<span class="sd">        :param p9:   Mask channel</span>
+<span class="sd">        :param p10:  Decorated font name, &quot;&quot; for default symbol font (normally symbols.gfn)</span>
+<span class="sd">        :param p11:  Symbol numbers</span>
+<span class="sd">        :param p12:  Symbol sizes</span>
+<span class="sd">        :param p13:  Colors if symbol number or color == 0, do not plot</span>
+<span class="sd">        :param p14:  Mask color; overrides symbol color. Pass an empty string to `GXMVIEW.color &lt;geosoft.gxapi.GXMVIEW.color&gt;` for no plot.</span>
+<span class="sd">        :param p15:  Database (source of data)</span>
+<span class="sd">        :param p16:  Line handles for data</span>
+<span class="sd">        :param p17:  Fid values for data</span>
+<span class="sd">        :param p18:  Annotation style 0 - outside, 1 - inside</span>
+<span class="sd">        :param p19:  Horizontal channel name</span>
+<span class="sd">        :param p20:  Vertical channel name</span>
+<span class="sd">        :param p21:  Horizontal channel units</span>
+<span class="sd">        :param p22:  Vertical channel units</span>
+<span class="sd">        :param p23:  Min. Horizontal value, `rDUMMY &lt;geosoft.gxapi.rDUMMY&gt;` for default</span>
+<span class="sd">        :param p24:  Max. Horizontal value</span>
+<span class="sd">        :param p25:  Min. Vertical value</span>
+<span class="sd">        :param p26:  Max. Vertical value</span>
+<span class="sd">        :param p27:  Horizontal axis scaling: 0 - linear, 1 - log</span>
+<span class="sd">        :param p28:  Vertical axis scaling</span>
+<span class="sd">        :param p29:  Plot overlay (&quot;&quot; for none)</span>
+<span class="sd">        :type  p1:   GXMVIEW</span>
+<span class="sd">        :type  p2:   str</span>
+<span class="sd">        :type  p3:   float</span>
+<span class="sd">        :type  p4:   float</span>
+<span class="sd">        :type  p5:   float</span>
+<span class="sd">        :type  p6:   float</span>
+<span class="sd">        :type  p7:   GXVV</span>
+<span class="sd">        :type  p8:   GXVV</span>
+<span class="sd">        :type  p9:   GXVV</span>
+<span class="sd">        :type  p10:  str</span>
+<span class="sd">        :type  p11:  GXVV</span>
+<span class="sd">        :type  p12:  GXVV</span>
+<span class="sd">        :type  p13:  GXVV</span>
+<span class="sd">        :type  p14:  int</span>
+<span class="sd">        :type  p15:  GXDB</span>
+<span class="sd">        :type  p16:  GXVV</span>
+<span class="sd">        :type  p17:  GXVV</span>
+<span class="sd">        :type  p18:  int</span>
+<span class="sd">        :type  p19:  str</span>
+<span class="sd">        :type  p20:  str</span>
+<span class="sd">        :type  p21:  str</span>
+<span class="sd">        :type  p22:  str</span>
+<span class="sd">        :type  p23:  float</span>
+<span class="sd">        :type  p24:  float</span>
+<span class="sd">        :type  p25:  float</span>
+<span class="sd">        :type  p26:  float</span>
+<span class="sd">        :type  p27:  int</span>
+<span class="sd">        :type  p28:  int</span>
+<span class="sd">        :type  p29:  str</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** - As of v6.3, the plotted data is put in its own view. The Line-Fid</span>
+<span class="sd">        values are passed in to enable Line-Fid linking.</span>
+<span class="sd">        - Optional Mask symbol colors</span>
+<span class="sd">        - Optional overlay. (See `GXSEMPLOT &lt;geosoft.gxapi.GXSEMPLOT&gt;` class).</span>
+<span class="sd">        - If the classified symbols are used, unique symbols (up to 266) are</span>
+<span class="sd">        given to the different classes. An &quot;Unassigned&quot; symbol is plotted</span>
+<span class="sd">        for blank or classes above 266.</span>
+<span class="sd">        - The view is given a user-projection and so should not be re-used</span>
+<span class="sd">        for other purposes (like the base view for the `scatter &lt;geosoft.gxapi.GXCHIMERA.scatter&gt;` and</span>
+<span class="sd">        `scatter2 &lt;geosoft.gxapi.GXCHIMERA.scatter2&gt;` functions can be).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since 2024.2, Replaced by Scatter4_CHIMERA.&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_scatter3</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p11</span><span class="p">,</span> <span class="n">p12</span><span class="p">,</span> <span class="n">p13</span><span class="p">,</span> <span class="n">p14</span><span class="p">,</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="p">,</span> <span class="n">p19</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p20</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p21</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p22</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="p">,</span> <span class="n">p25</span><span class="p">,</span> <span class="n">p26</span><span class="p">,</span> <span class="n">p27</span><span class="p">,</span> <span class="n">p28</span><span class="p">,</span> <span class="n">p29</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXCHIMERA.tri_plot">
+<a class="viewcode-back" href="../../../GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.tri_plot">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">tri_plot</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="p">,</span> <span class="n">p11</span><span class="p">,</span> <span class="n">p12</span><span class="p">,</span> <span class="n">p13</span><span class="p">,</span> <span class="n">p14</span><span class="p">,</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="p">,</span> <span class="n">p19</span><span class="p">,</span> <span class="n">p20</span><span class="p">,</span> <span class="n">p21</span><span class="p">,</span> <span class="n">p22</span><span class="p">,</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="p">,</span> <span class="n">p25</span><span class="p">,</span> <span class="n">p26</span><span class="p">,</span> <span class="n">p27</span><span class="p">,</span> <span class="n">p28</span><span class="p">,</span> <span class="n">p29</span><span class="p">,</span> <span class="n">p30</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Plot the TriPlot on a map.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p1:   View</span>
+<span class="sd">        :param p2:   Title</span>
+<span class="sd">        :param p3:   X location (bottom left corner of color boxes)</span>
+<span class="sd">        :param p4:   Y location</span>
+<span class="sd">        :param p5:   Box width</span>
+<span class="sd">        :param p6:   Box height</span>
+<span class="sd">        :param p7:   X channel</span>
+<span class="sd">        :param p8:   Y channel</span>
+<span class="sd">        :param p9:   Z channel</span>
+<span class="sd">        :param p10:  Mask channel</span>
+<span class="sd">        :param p11:  X channel name</span>
+<span class="sd">        :param p12:  Y channel name</span>
+<span class="sd">        :param p13:  Z channel name</span>
+<span class="sd">        :param p14:  Mask channel name</span>
+<span class="sd">        :param p15:  Min. X range value</span>
+<span class="sd">        :param p16:  Max. X range value</span>
+<span class="sd">        :param p17:  Min. Y range value</span>
+<span class="sd">        :param p18:  Max. Y range value</span>
+<span class="sd">        :param p19:  Min. Z range value</span>
+<span class="sd">        :param p20:  Max. Z range value</span>
+<span class="sd">        :param p21:  Use Min X Range selection?</span>
+<span class="sd">        :param p22:  Use Max X Range selection?</span>
+<span class="sd">        :param p23:  Use Min Y Range selection?</span>
+<span class="sd">        :param p24:  Use Max Y Range selection?</span>
+<span class="sd">        :param p25:  Use Min Z Range selection?</span>
+<span class="sd">        :param p26:  Use Max Z Range selection?</span>
+<span class="sd">        :param p27:  Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</span>
+<span class="sd">        :param p28:  Tic Increment (in percent)</span>
+<span class="sd">        :param p29:  Grid increment (in percent)</span>
+<span class="sd">        :param p30:  Symbol size (0: small, 1: medium, 2: large)</span>
+<span class="sd">        :type  p1:   GXMVIEW</span>
+<span class="sd">        :type  p2:   str</span>
+<span class="sd">        :type  p3:   float</span>
+<span class="sd">        :type  p4:   float</span>
+<span class="sd">        :type  p5:   float</span>
+<span class="sd">        :type  p6:   float</span>
+<span class="sd">        :type  p7:   GXVV</span>
+<span class="sd">        :type  p8:   GXVV</span>
+<span class="sd">        :type  p9:   GXVV</span>
+<span class="sd">        :type  p10:  GXVV</span>
+<span class="sd">        :type  p11:  str</span>
+<span class="sd">        :type  p12:  str</span>
+<span class="sd">        :type  p13:  str</span>
+<span class="sd">        :type  p14:  str</span>
+<span class="sd">        :type  p15:  float</span>
+<span class="sd">        :type  p16:  float</span>
+<span class="sd">        :type  p17:  float</span>
+<span class="sd">        :type  p18:  float</span>
+<span class="sd">        :type  p19:  float</span>
+<span class="sd">        :type  p20:  float</span>
+<span class="sd">        :type  p21:  int</span>
+<span class="sd">        :type  p22:  int</span>
+<span class="sd">        :type  p23:  int</span>
+<span class="sd">        :type  p24:  int</span>
+<span class="sd">        :type  p25:  int</span>
+<span class="sd">        :type  p26:  int</span>
+<span class="sd">        :type  p27:  int</span>
+<span class="sd">        :type  p28:  float</span>
+<span class="sd">        :type  p29:  float</span>
+<span class="sd">        :type  p30:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0.7</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_tri_plot</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="p">,</span> <span class="n">p11</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p12</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p13</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p14</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="p">,</span> <span class="n">p19</span><span class="p">,</span> <span class="n">p20</span><span class="p">,</span> <span class="n">p21</span><span class="p">,</span> <span class="n">p22</span><span class="p">,</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="p">,</span> <span class="n">p25</span><span class="p">,</span> <span class="n">p26</span><span class="p">,</span> <span class="n">p27</span><span class="p">,</span> <span class="n">p28</span><span class="p">,</span> <span class="n">p29</span><span class="p">,</span> <span class="n">p30</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXCHIMERA.tri_plot3">
+<a class="viewcode-back" href="../../../GXCHIMERA.html#geosoft.gxapi.GXCHIMERA.tri_plot3">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">tri_plot3</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="p">,</span> <span class="n">p11</span><span class="p">,</span> <span class="n">p12</span><span class="p">,</span> <span class="n">p13</span><span class="p">,</span> <span class="n">p14</span><span class="p">,</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="p">,</span> <span class="n">p19</span><span class="p">,</span> <span class="n">p20</span><span class="p">,</span> <span class="n">p21</span><span class="p">,</span> <span class="n">p22</span><span class="p">,</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        TriPlot to its own view, with Line-Fid info.</span>
+<span class="sd">        </span>
+<span class="sd">        :param p1:   View</span>
+<span class="sd">        :param p2:   Title</span>
+<span class="sd">        :param p3:   X location (bottom left corner of box)</span>
+<span class="sd">        :param p4:   Y location</span>
+<span class="sd">        :param p5:   Triangle side length</span>
+<span class="sd">        :param p6:   X channel</span>
+<span class="sd">        :param p7:   Y channel</span>
+<span class="sd">        :param p8:   Z channel</span>
+<span class="sd">        :param p9:   Mask channel</span>
+<span class="sd">        :param p10:  Decorated font name, &quot;&quot; for default symbol font (normally symbols.gfn)</span>
+<span class="sd">        :param p11:  Symbol numbers</span>
+<span class="sd">        :param p12:  Symbol sizes</span>
+<span class="sd">        :param p13:  Symbol colors  if symbol number or color == 0, do not plot</span>
+<span class="sd">        :param p14:  Mask color; overrides symbol color. Pass an empty string to `GXMVIEW.color &lt;geosoft.gxapi.GXMVIEW.color&gt;` for no plot.</span>
+<span class="sd">        :param p15:  Database (source of data)</span>
+<span class="sd">        :param p16:  Line handles for data</span>
+<span class="sd">        :param p17:  Fid values for data</span>
+<span class="sd">        :param p18:  X channel name</span>
+<span class="sd">        :param p19:  Y channel name</span>
+<span class="sd">        :param p20:  Z channel name</span>
+<span class="sd">        :param p21:  Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).</span>
+<span class="sd">        :param p22:  Tic Increment (in percent)</span>
+<span class="sd">        :param p23:  Grid increment (in percent)</span>
+<span class="sd">        :param p24:  Plot overlay (&quot;&quot; for none)</span>
+<span class="sd">        :type  p1:   GXMVIEW</span>
+<span class="sd">        :type  p2:   str</span>
+<span class="sd">        :type  p3:   float</span>
+<span class="sd">        :type  p4:   float</span>
+<span class="sd">        :type  p5:   float</span>
+<span class="sd">        :type  p6:   GXVV</span>
+<span class="sd">        :type  p7:   GXVV</span>
+<span class="sd">        :type  p8:   GXVV</span>
+<span class="sd">        :type  p9:   GXVV</span>
+<span class="sd">        :type  p10:  str</span>
+<span class="sd">        :type  p11:  GXVV</span>
+<span class="sd">        :type  p12:  GXVV</span>
+<span class="sd">        :type  p13:  GXVV</span>
+<span class="sd">        :type  p14:  int</span>
+<span class="sd">        :type  p15:  GXDB</span>
+<span class="sd">        :type  p16:  GXVV</span>
+<span class="sd">        :type  p17:  GXVV</span>
+<span class="sd">        :type  p18:  str</span>
+<span class="sd">        :type  p19:  str</span>
+<span class="sd">        :type  p20:  str</span>
+<span class="sd">        :type  p21:  int</span>
+<span class="sd">        :type  p22:  float</span>
+<span class="sd">        :type  p23:  float</span>
+<span class="sd">        :type  p24:  str</span>
+
+<span class="sd">        .. versionadded:: 6.3</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapCHIMERA</span><span class="o">.</span><span class="n">_tri_plot3</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p5</span><span class="p">,</span> <span class="n">p6</span><span class="p">,</span> <span class="n">p7</span><span class="p">,</span> <span class="n">p8</span><span class="p">,</span> <span class="n">p9</span><span class="p">,</span> <span class="n">p10</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p11</span><span class="p">,</span> <span class="n">p12</span><span class="p">,</span> <span class="n">p13</span><span class="p">,</span> <span class="n">p14</span><span class="p">,</span> <span class="n">p15</span><span class="p">,</span> <span class="n">p16</span><span class="p">,</span> <span class="n">p17</span><span class="p">,</span> <span class="n">p18</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p19</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p20</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">p21</span><span class="p">,</span> <span class="n">p22</span><span class="p">,</span> <span class="n">p23</span><span class="p">,</span> <span class="n">p24</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
         
@@ -1921,7 +2431,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXCHIMERA</a></li> 
@@ -1929,7 +2439,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

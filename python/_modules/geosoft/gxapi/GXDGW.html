@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDGW &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXDGW &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDGW</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXDGW</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXLST</span> <span class="kn">import</span> <span class="n">GXLST</span>
@@ -165,6 +165,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method creates a Dialog window from a specified</span>
 <span class="sd">        resource. The Resource is loaded into memory but not displayed.</span>
 <span class="sd">        </span>
@@ -180,6 +181,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDGW</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXDGW</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -193,6 +195,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.get_info_meta">[docs]</a>
     <span class="k">def</span> <span class="nf">get_info_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">dlg_obj_type</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">meta_obj</span><span class="p">,</span> <span class="n">meta_attrib</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Copies the Dialog information to a `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` attribute.</span>
 <span class="sd">        </span>
 <span class="sd">        :param obj:           Dialog Object</span>
@@ -211,6 +214,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_info_meta</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dlg_obj_type</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">meta_obj</span><span class="p">,</span> <span class="n">meta_attrib</span><span class="p">)</span></div>
 
         
@@ -222,6 +226,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.get_info_sys">[docs]</a>
     <span class="k">def</span> <span class="nf">get_info_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method uses the information in a Dialog box to</span>
 <span class="sd">        set a `GXSYS &lt;geosoft.gxapi.GXSYS&gt;` variable.</span>
 <span class="sd">        </span>
@@ -240,6 +245,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_info_sys</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -251,6 +257,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.get_list">[docs]</a>
     <span class="k">def</span> <span class="nf">get_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method retrieves the list (`GXLST &lt;geosoft.gxapi.GXLST&gt;`) object associated</span>
 <span class="sd">        with a Dialog object.</span>
 <span class="sd">        </span>
@@ -266,6 +273,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_list</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXLST</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -277,6 +285,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.gt_info">[docs]</a>
     <span class="k">def</span> <span class="nf">gt_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">buff</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method fills the specified string with the text from</span>
 <span class="sd">        the text object specified.</span>
 <span class="sd">        </span>
@@ -293,6 +302,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">buff</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gt_info</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -304,6 +314,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.run_dialogue">[docs]</a>
     <span class="k">def</span> <span class="nf">run_dialogue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method runs the Dialog window.</span>
 <span class="sd">        </span>
 
@@ -316,6 +327,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_dialogue</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -327,6 +339,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.set_info">[docs]</a>
     <span class="k">def</span> <span class="nf">set_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">buff</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method sets the string of a text object. If the string</span>
 <span class="sd">        is too long it will be truncated.</span>
 <span class="sd">        </span>
@@ -343,6 +356,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_info</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">buff</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -354,6 +368,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.set_info_meta">[docs]</a>
     <span class="k">def</span> <span class="nf">set_info_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">dlg_obj_type</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">meta_obj</span><span class="p">,</span> <span class="n">meta_attrib</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This sets a text object to the text found in a `GXMETA &lt;geosoft.gxapi.GXMETA&gt;` attribute.</span>
 <span class="sd">        </span>
 <span class="sd">        :param obj:           Dialog Object</span>
@@ -372,6 +387,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_info_meta</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dlg_obj_type</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">meta_obj</span><span class="p">,</span> <span class="n">meta_attrib</span><span class="p">)</span></div>
 
         
@@ -383,6 +399,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.set_info_sys">[docs]</a>
     <span class="k">def</span> <span class="nf">set_info_sys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This sets a text object to the text found in a system</span>
 <span class="sd">        parameter variable. If the variable has not been set,</span>
 <span class="sd">        the text is not set.</span>
@@ -402,6 +419,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_info_sys</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -413,6 +431,7 @@
 <a class="viewcode-back" href="../../../GXDGW.html#geosoft.gxapi.GXDGW.set_title">[docs]</a>
     <span class="k">def</span> <span class="nf">set_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Changes the title of the dialog.</span>
 <span class="sd">        </span>
 <span class="sd">        :param title:  Title to set</span>
@@ -439,6 +458,7 @@
 <span class="sd">        special font specified using the MONTAJ.GX_TITLE_FONT parameter noted</span>
 <span class="sd">        above in &quot;Setting Fonts in GX dialogs.&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_title</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
@@ -471,7 +491,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDGW</a></li> 
@@ -479,7 +499,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

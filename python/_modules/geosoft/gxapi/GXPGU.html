@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPGU &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXPGU &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPGU</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXPGU</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -129,6 +129,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">bool_mask</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">ref_fil</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply reference file boolean mask to pager</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:       Pager obj</span>
@@ -140,6 +141,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_bool_mask</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">ref_fil</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -151,6 +153,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">,</span> <span class="n">ex_pcnt</span><span class="p">,</span> <span class="n">ex_shp</span><span class="p">,</span> <span class="n">ex_x</span><span class="p">,</span> <span class="n">ex_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Expand a pager by filling the dummies for expanded edges</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_i:     Original pager obj</span>
@@ -172,6 +175,7 @@
 
 <span class="sd">        **Note:** 3D pagers are expanded in X,Y direction the number of slices(Z) is unchanged .</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_expand</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">,</span> <span class="n">ex_pcnt</span><span class="p">,</span> <span class="n">ex_shp</span><span class="p">,</span> <span class="n">ex_x</span><span class="p">,</span> <span class="n">ex_y</span><span class="p">)</span></div>
 
         
@@ -183,6 +187,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">fill</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">fl_roll_wt</span><span class="p">,</span> <span class="n">fl_roll_base</span><span class="p">,</span> <span class="n">fl_roll_dist</span><span class="p">,</span> <span class="n">fl_mxf</span><span class="p">,</span> <span class="n">fl_mxp</span><span class="p">,</span> <span class="n">fl_amp_lmt</span><span class="p">,</span> <span class="n">fl_edge_lmt</span><span class="p">,</span> <span class="n">fl_edge_wid</span><span class="p">,</span> <span class="n">fl_npass</span><span class="p">,</span> <span class="n">ref_fil</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Replace all dummies in a pager by predict values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:            Pager obj</span>
@@ -212,6 +217,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_fill</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">fl_roll_wt</span><span class="p">,</span> <span class="n">fl_roll_base</span><span class="p">,</span> <span class="n">fl_roll_dist</span><span class="p">,</span> <span class="n">fl_mxf</span><span class="p">,</span> <span class="n">fl_mxp</span><span class="p">,</span> <span class="n">fl_amp_lmt</span><span class="p">,</span> <span class="n">fl_edge_lmt</span><span class="p">,</span> <span class="n">fl_edge_wid</span><span class="p">,</span> <span class="n">fl_npass</span><span class="p">,</span> <span class="n">ref_fil</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -223,6 +229,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">fill_value</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set all values in a pager to a single value.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:     Pager obj</span>
@@ -234,6 +241,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_fill_value</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
         
@@ -245,6 +253,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">filt_sym</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">npass</span><span class="p">,</span> <span class="n">usefile</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply 5x5, 7x7 or 9X9 symmetric convolution filter to a `GXPG &lt;geosoft.gxapi.GXPG&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:       Pager obj</span>
@@ -264,6 +273,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_filt_sym</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">npass</span><span class="p">,</span> <span class="n">usefile</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">size</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -275,6 +285,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">filt_sym5</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">npass</span><span class="p">,</span> <span class="n">usefile</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apply 5x5 symmetric convolution filter to a `GXPG &lt;geosoft.gxapi.GXPG&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:       Pager obj</span>
@@ -292,6 +303,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_filt_sym5</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">npass</span><span class="p">,</span> <span class="n">usefile</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -303,6 +315,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">grid_peak</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">nlmt</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Pick grid peaks.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:  Grid file name</span>
@@ -325,6 +338,7 @@
 <span class="sd">        point will be picked if its grid value is greater than</span>
 <span class="sd">        the value of one or more of its four neighouring points.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_grid_peak</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">nlmt</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
 
         
@@ -336,6 +350,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dw_gridding_dat</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        `dw_gridding_dat &lt;geosoft.gxapi.GXPGU.dw_gridding_dat&gt;`     Inverse-distance weighting gridding method, `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` version.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:   Input grid</span>
@@ -351,6 +366,7 @@
 
 <span class="sd">        **Note:** See the notes for `dw_gridding_db &lt;geosoft.gxapi.GXPGU.dw_gridding_db&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_dw_gridding_dat</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
 
         
@@ -362,6 +378,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dw_gridding_dat_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        `dw_gridding_dat_3d &lt;geosoft.gxapi.GXPGU.dw_gridding_dat_3d&gt;`     Inverse-distance weighting gridding method, `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` version, 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:   Input 3D `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
@@ -377,6 +394,7 @@
 
 <span class="sd">        **Note:** See the notes for `dw_gridding_db_3d &lt;geosoft.gxapi.GXPGU.dw_gridding_db_3d&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_dw_gridding_dat_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">dat</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
 
         
@@ -388,6 +406,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dw_gridding_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        `dw_gridding_db &lt;geosoft.gxapi.GXPGU.dw_gridding_db&gt;`     Inverse-distance weighting gridding method, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:   Input grid</span>
@@ -427,6 +446,7 @@
 <span class="sd">        LOG_BASE: One of `VV_LOG_BASE_10 &lt;geosoft.gxapi.VV_LOG_BASE_10&gt;` (default) or `VV_LOG_BASE_E &lt;geosoft.gxapi.VV_LOG_BASE_E&gt;`</span>
 <span class="sd">        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO &lt;geosoft.gxapi.VV_LOG_NEGATIVE_NO&gt;` (default) or `VV_LOG_NEGATIVE_YES &lt;geosoft.gxapi.VV_LOG_NEGATIVE_YES&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_dw_gridding_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
 
         
@@ -438,6 +458,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dw_gridding_db_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        `dw_gridding_db_3d &lt;geosoft.gxapi.GXPGU.dw_gridding_db_3d&gt;`     Inverse-distance weighting gridding method, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version, 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:    Input 3D `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
@@ -479,6 +500,7 @@
 <span class="sd">        LOG_BASE: One of `VV_LOG_BASE_10 &lt;geosoft.gxapi.VV_LOG_BASE_10&gt;` (default) or `VV_LOG_BASE_E &lt;geosoft.gxapi.VV_LOG_BASE_E&gt;`</span>
 <span class="sd">        LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO &lt;geosoft.gxapi.VV_LOG_NEGATIVE_NO&gt;` (default) or `VV_LOG_NEGATIVE_YES &lt;geosoft.gxapi.VV_LOG_NEGATIVE_YES&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_dw_gridding_db_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
 
         
@@ -490,6 +512,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">dw_gridding_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">reg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        `dw_gridding_vv &lt;geosoft.gxapi.GXPGU.dw_gridding_vv&gt;`     Inverse-distance weighting gridding method, `GXVV &lt;geosoft.gxapi.GXVV&gt;` version.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:    Input grid</span>
@@ -509,6 +532,7 @@
 
 <span class="sd">        **Note:** See the notes for `dw_gridding_db &lt;geosoft.gxapi.GXPGU.dw_gridding_db&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_dw_gridding_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">reg</span><span class="p">)</span></div>
 
         
@@ -520,6 +544,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">numeric_to_thematic</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        `numeric_to_thematic &lt;geosoft.gxapi.GXPGU.numeric_to_thematic&gt;`    Set index values in a pager based on a numeric pager with translation `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 
 <span class="sd">        Returns			  Nothing</span>
@@ -548,6 +573,7 @@
 <span class="sd">        The INDEX of the closest range is then inserted into the output `GXPG &lt;geosoft.gxapi.GXPG&gt;`, so</span>
 <span class="sd">        it can be used in a thematic voxel (for instance).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_numeric_to_thematic</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">)</span></div>
 
         
@@ -559,6 +585,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">peakedness</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">pkness</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find all peaks in peakedneess grid pager</span>
 <span class="sd">        </span>
 <span class="sd">        :param grid:    Grid file name</span>
@@ -576,6 +603,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_peakedness</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pkness</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_y</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
 
         
@@ -587,6 +615,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">peakedness_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">grdi</span><span class="p">,</span> <span class="n">grdo</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">percent_lesser</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create peakedneess grid from input grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param grdi:            Input grid file name</span>
@@ -618,6 +647,7 @@
 <span class="sd">        value range for anomalies. For example the 1 mV anomaly could quite possibly have</span>
 <span class="sd">        the same representation as the 100 mV anomaly using this function.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_peakedness_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">grdi</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">grdo</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">radius</span><span class="p">,</span> <span class="n">percent_lesser</span><span class="p">)</span></div>
 
         
@@ -629,6 +659,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">ref_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">ref_fil</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a reference file (boolean mask flag) from pager.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:       `GXPG &lt;geosoft.gxapi.GXPG&gt;` object</span>
@@ -649,6 +680,7 @@
 <span class="sd">        The reference file is used in various operations where it is</span>
 <span class="sd">        necessary to mask some output to the original defined cells.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_ref_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">ref_fil</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -660,6 +692,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">save_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Writes a `GXPG &lt;geosoft.gxapi.GXPG&gt;` to an image file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:    Input `GXPG &lt;geosoft.gxapi.GXPG&gt;` object</span>
@@ -687,6 +720,7 @@
 
 <span class="sd">        **Note:** The trend object and projection are optional.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_save_file</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">ipj</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -698,6 +732,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">thematic_to_numeric</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set numeric values in a pager based on an index pager with translation `GXVV &lt;geosoft.gxapi.GXVV&gt;`.</span>
 
 <span class="sd">        Returns			  Nothing</span>
@@ -721,6 +756,7 @@
 <span class="sd">        object, and you provide a numeric mapping `GXVV &lt;geosoft.gxapi.GXVV&gt;`, calculated using</span>
 <span class="sd">        SetupTranslateToNumericVV_TPAT.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_thematic_to_numeric</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">)</span></div>
 
         
@@ -732,6 +768,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">trend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">tr_opt</span><span class="p">,</span> <span class="n">tr_pt_bs</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Trend remove or replace back in pager</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_i:      Original pager obj</span>
@@ -757,6 +794,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_trend</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">tr_opt</span><span class="p">,</span> <span class="n">tr_pt_bs</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span></div>
 
         
@@ -772,6 +810,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">add_scalar</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add a scalar value to a pager</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:      Pager</span>
@@ -785,6 +824,7 @@
 
 <span class="sd">        **Note:** Only available for FLOAT or DOUBLE pagers</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_add_scalar</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">scalar</span><span class="p">)</span></div>
 
         
@@ -796,6 +836,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">multiply_scalar</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Multiply a scalar value and a pager</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:      Pager</span>
@@ -809,6 +850,7 @@
 
 <span class="sd">        **Note:** Only available for FLOAT or DOUBLE pagers</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_multiply_scalar</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">scalar</span><span class="p">)</span></div>
 
         
@@ -824,6 +866,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">correlation_matrix</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find the correlations between columns in a matrix</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_u:  Input matrix</span>
@@ -840,6 +883,7 @@
 <span class="sd">        dot products of the columns of the input matrix with themselves.</span>
 <span class="sd">        The elements take on values from 0 (orthogonal) to 1 (parallel).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_correlation_matrix</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">)</span></div>
 
         
@@ -851,6 +895,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">correlation_matrix2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">corr</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `correlation_matrix &lt;geosoft.gxapi.GXPGU.correlation_matrix&gt;`, but select correlation type.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_u:  Input matrix</span>
@@ -864,6 +909,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_correlation_matrix2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">corr</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">)</span></div>
 
         
@@ -875,6 +921,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">invert_matrix</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Inverts a square matrix using LU decomp. and back-substitution</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_i:  Input matrix</span>
@@ -891,6 +938,7 @@
 <span class="sd">        input pager remains unchanged).</span>
 <span class="sd">        Pagers and VVs must be type `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_invert_matrix</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">)</span></div>
 
         
@@ -902,6 +950,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">jacobi</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">pg_eigen</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find eigenvalues, eigenvectors of a real symmetric matrix.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_i:      Input Pager</span>
@@ -918,6 +967,7 @@
 <span class="sd">        **Note:** The number of rows must equal the number of columns.</span>
 <span class="sd">        Eienvalues, vectors are sorted in descending order.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_jacobi</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">pg_eigen</span><span class="p">)</span></div>
 
         
@@ -929,6 +979,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">lu_back_sub</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_a</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_sol</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Solve a linear system using LU decomposition and back-substitution.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_a:    LU decomposition of A</span>
@@ -951,6 +1002,7 @@
 <span class="sd">        Pagers and VVs must be type `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` except for the permutation vector,</span>
 <span class="sd">        which should be INT</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_lu_back_sub</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_a</span><span class="p">,</span> <span class="n">vv_i</span><span class="p">,</span> <span class="n">vv_b</span><span class="p">,</span> <span class="n">vv_sol</span><span class="p">)</span></div>
 
         
@@ -962,6 +1014,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">lu_decomp</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">,</span> <span class="n">vv_perm</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Perform an LU decomposition on a square pager.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_i:     Input</span>
@@ -986,6 +1039,7 @@
 <span class="sd">        `lu_back_sub &lt;geosoft.gxapi.GXPGU.lu_back_sub&gt;`.</span>
 <span class="sd">        Pagers must be type `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;` and the permutation vector type INT</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_lu_decomp</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">,</span> <span class="n">vv_perm</span><span class="p">)</span></div>
 
         
@@ -997,6 +1051,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">matrix_mult</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">transpose_u</span><span class="p">,</span> <span class="n">pg_v</span><span class="p">,</span> <span class="n">transpose</span><span class="p">,</span> <span class="n">pg_uv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Multiply two pagers as if they were matrices.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_u:         Matrix U</span>
@@ -1021,6 +1076,7 @@
 <span class="sd">        Assertions if: Matrices are not expected sizes</span>
 <span class="sd">        Dummies are treated as 0 values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_matrix_mult</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">transpose_u</span><span class="p">,</span> <span class="n">pg_v</span><span class="p">,</span> <span class="n">transpose</span><span class="p">,</span> <span class="n">pg_uv</span><span class="p">)</span></div>
 
         
@@ -1032,6 +1088,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">matrix_vector_mult</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Multiply a `GXVV &lt;geosoft.gxapi.GXVV&gt;` by a pager like a matrix*vector multiply.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_u:  Matrix U</span>
@@ -1056,6 +1113,7 @@
 
 <span class="sd">        Dummies are treated as 0 values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_matrix_vector_mult</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_o</span><span class="p">)</span></div>
 
         
@@ -1067,6 +1125,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sv_decompose</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_a</span><span class="p">,</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">vv_w</span><span class="p">,</span> <span class="n">pg_v</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Do a singular value decomposition on a matrix stored as a `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_a:  Input A matrix, M data (rows), N variables (columns)</span>
@@ -1097,6 +1156,7 @@
 <span class="sd">             V is not N by N. (Taken from #columns in A).</span>
 <span class="sd">             PGs, VV are not `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_sv_decompose</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_a</span><span class="p">,</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">vv_w</span><span class="p">,</span> <span class="n">pg_v</span><span class="p">)</span></div>
 
         
@@ -1108,6 +1168,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sv_recompose</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">vv_w</span><span class="p">,</span> <span class="n">pg_v</span><span class="p">,</span> <span class="n">min_w</span><span class="p">,</span> <span class="n">pg_a</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Reconstitute the original matrix from an SVD.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_u:   U matrix</span>
@@ -1141,6 +1202,7 @@
 
 <span class="sd">        Dummies are treated as 0 values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_sv_recompose</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_u</span><span class="p">,</span> <span class="n">vv_w</span><span class="p">,</span> <span class="n">pg_v</span><span class="p">,</span> <span class="n">min_w</span><span class="p">,</span> <span class="n">pg_a</span><span class="p">)</span></div>
 
         
@@ -1156,6 +1218,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_communality</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Determines principal component communalities.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_i:  Input pager of the principal components</span>
@@ -1171,6 +1234,7 @@
 <span class="sd">        values in each row)</span>
 <span class="sd">        Pagers and VVs must be type `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_communality</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">vv_c</span><span class="p">)</span></div>
 
         
@@ -1182,6 +1246,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_loadings</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_x</span><span class="p">,</span> <span class="n">pg_loadings</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Compute the principal component loadings from the standardized data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_x:         Standardized data matrix (M by N)</span>
@@ -1204,6 +1269,7 @@
 <span class="sd">        Pearson correlations, or wish to use a modified correlation matrix,</span>
 <span class="sd">        use `pc_loadings2 &lt;geosoft.gxapi.GXPGU.pc_loadings2&gt;` and input the correlation matrix directly.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_loadings</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_x</span><span class="p">,</span> <span class="n">pg_loadings</span><span class="p">)</span></div>
 
         
@@ -1215,6 +1281,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_loadings2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_c</span><span class="p">,</span> <span class="n">pg_loadings</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as PCLoading_PGU, but input correlation matrix.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_c:         Correllation matrix (N by N)</span>
@@ -1228,6 +1295,7 @@
 
 <span class="sd">        **Note:** See `pc_loadings &lt;geosoft.gxapi.GXPGU.pc_loadings&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_loadings2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_c</span><span class="p">,</span> <span class="n">pg_loadings</span><span class="p">)</span></div>
 
         
@@ -1239,6 +1307,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_scores</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_x</span><span class="p">,</span> <span class="n">pg_loadings</span><span class="p">,</span> <span class="n">pg_scores</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Compute the principal component scores from the standardized data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_x:         Standardized data matrix  (M by N)</span>
@@ -1260,6 +1329,7 @@
 <span class="sd">        `pc_loadings &lt;geosoft.gxapi.GXPGU.pc_loadings&gt;`.</span>
 <span class="sd">        Pagers and VVs must be type `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_scores</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_x</span><span class="p">,</span> <span class="n">pg_loadings</span><span class="p">,</span> <span class="n">pg_scores</span><span class="p">)</span></div>
 
         
@@ -1271,6 +1341,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_standardize</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove/Replace mean and standard deviation</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:    Matrix to standardize</span>
@@ -1288,6 +1359,7 @@
 
 <span class="sd">        **Note:** Works on columns of the `GXPG &lt;geosoft.gxapi.GXPG&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_standardize</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span></div>
 
         
@@ -1299,6 +1371,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_standardize2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_mask</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Remove/Replace mean and standard deviation, subset values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:       Matrix to standardize</span>
@@ -1322,6 +1395,7 @@
 <span class="sd">        The rows where the mask is dummy are not included</span>
 <span class="sd">        in the calculation, but ALL the values are standardized.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_standardize2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_mask</span><span class="p">,</span> <span class="n">vv_m</span><span class="p">,</span> <span class="n">vv_s</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span></div>
 
         
@@ -1333,6 +1407,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_transform</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_f</span><span class="p">,</span> <span class="n">vv_t</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Transform/De-transform data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:    Matrix to transform</span>
@@ -1360,6 +1435,7 @@
 <span class="sd">        transform, data values greater than the maximum values are set</span>
 <span class="sd">        to the maximum.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_transform</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_d</span><span class="p">,</span> <span class="n">vv_f</span><span class="p">,</span> <span class="n">vv_t</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span></div>
 
         
@@ -1371,6 +1447,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">pc_varimax</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Perform the Kaiser Varimax transformation on pr. comp. loadings</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg_i:  Principal component loadings (input) (N by M, M&lt;=N)</span>
@@ -1388,6 +1465,7 @@
 <span class="sd">        near the extremities or near the origin.</span>
 <span class="sd">        Pagers must be type `GS_DOUBLE &lt;geosoft.gxapi.GS_DOUBLE&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_pc_varimax</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg_i</span><span class="p">,</span> <span class="n">pg_o</span><span class="p">)</span></div>
 
         
@@ -1403,6 +1481,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">maximum_terrain_steepness</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">annular_size</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Compute the Maximum Steepness of a topography Pager</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:            Topography Pager</span>
@@ -1424,6 +1503,7 @@
 <span class="sd">        processed.</span>
 <span class="sd">        The wrapper was created for testing and development purposes.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_maximum_terrain_steepness</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">annular_size</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1431,7 +1511,115 @@
 
 
 
-<span class="c1"># Obsolete</span>
+<span class="c1"># Deprecated</span>
+
+
+<div class="viewcode-block" id="GXPGU.direct_grid">
+<a class="viewcode-back" href="../../../GXPGU.html#geosoft.gxapi.GXPGU.direct_grid">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">direct_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">,</span> <span class="n">wt</span><span class="p">,</span> <span class="n">slope</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None Use DirectGridding_PGU </span>
+<span class="sd">        Direct-gridding method.</span>
+<span class="sd">        </span>
+<span class="sd">        :param pg:     Input grid</span>
+<span class="sd">        :param xo:     X origin of grid</span>
+<span class="sd">        :param yo:     Y origin of grid</span>
+<span class="sd">        :param dx:     X cell size</span>
+<span class="sd">        :param dy:     Y cell size</span>
+<span class="sd">        :param rot:    Rotation angle (degrees CCW).</span>
+<span class="sd">        :param v_vx:   X locations of values</span>
+<span class="sd">        :param v_vy:   Y locations of values</span>
+<span class="sd">        :param v_vz:   Z values to grid</span>
+<span class="sd">        :param wt:     Power weighting for averaging (set to 0 for straight average)</span>
+<span class="sd">        :param slope:  Slope weighting for averaging (set to 0 for pure power-law weighting)</span>
+<span class="sd">        :type  pg:     GXPG</span>
+<span class="sd">        :type  xo:     float</span>
+<span class="sd">        :type  yo:     float</span>
+<span class="sd">        :type  dx:     float</span>
+<span class="sd">        :type  dy:     float</span>
+<span class="sd">        :type  rot:    float</span>
+<span class="sd">        :type  v_vx:   GXVV</span>
+<span class="sd">        :type  v_vy:   GXVV</span>
+<span class="sd">        :type  v_vz:   GXVV</span>
+<span class="sd">        :type  wt:     float</span>
+<span class="sd">        :type  slope:  float</span>
+
+<span class="sd">        .. versionadded:: 7.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Grid cells take on the averaged values inside their bounds.</span>
+
+<span class="sd">        Weighting can be controlled using the power and slope properties;</span>
+
+<span class="sd">        weighting = 1 / (distance^wtpower + 1/slope) where distance is in</span>
+<span class="sd">        units of grid cells (X dimenstion). Default is 0.0,</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, Use DirectGridding_PGU&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_direct_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">,</span> <span class="n">wt</span><span class="p">,</span> <span class="n">slope</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXPGU.fft2_filter">
+<a class="viewcode-back" href="../../../GXPGU.html#geosoft.gxapi.GXPGU.fft2_filter">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">fft2_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">con_fil</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">d_dx</span><span class="p">,</span> <span class="n">d_dy</span><span class="p">,</span> <span class="n">d_rot</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Carry out a fourier transform filter on a pager object</span>
+<span class="sd">        </span>
+<span class="sd">        :param pg:       Pager obj</span>
+<span class="sd">        :param con_fil:  sConFil - `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` filter control file</span>
+<span class="sd">        :param tr:       `GXTR &lt;geosoft.gxapi.GXTR&gt;` obj</span>
+<span class="sd">        :param d_dx:     rDx - X increment</span>
+<span class="sd">        :param d_dy:     rDy - Y increment</span>
+<span class="sd">        :param d_rot:    rRot- Rotation degree</span>
+<span class="sd">        :type  pg:       GXPG</span>
+<span class="sd">        :type  con_fil:  str</span>
+<span class="sd">        :type  tr:       GXTR</span>
+<span class="sd">        :type  d_dx:     float</span>
+<span class="sd">        :type  d_dy:     float</span>
+<span class="sd">        :type  d_rot:    float</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_fft2_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">con_fil</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tr</span><span class="p">,</span> <span class="n">d_dx</span><span class="p">,</span> <span class="n">d_dy</span><span class="p">,</span> <span class="n">d_rot</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXPGU.fft2_trans">
+<a class="viewcode-back" href="../../../GXPGU.html#geosoft.gxapi.GXPGU.fft2_trans">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">fft2_trans</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Carry out a fourier transform on a pager object</span>
+<span class="sd">        </span>
+<span class="sd">        :param pg:      Pager obj</span>
+<span class="sd">        :param option:  Option: 0 - forward transform, 1 - invers transform</span>
+<span class="sd">        :type  pg:      GXPG</span>
+<span class="sd">        :type  option:  int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_fft2_trans</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">option</span><span class="p">)</span></div>
+
+        
+
 
 
 <div class="viewcode-block" id="GXPGU.direct_gridding_db">
@@ -1439,6 +1627,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">direct_gridding_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Direct-gridding method, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:      Input grid</span>
@@ -1471,6 +1660,7 @@
 <span class="sd">        **Note:** Grid cells take on the specified statistic of the values inside the</span>
 <span class="sd">        cell area. Grid cells containing no data values are set to dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_direct_gridding_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
 
         
@@ -1482,6 +1672,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">direct_gridding_db2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">xMax</span><span class="p">,</span> <span class="n">yMax</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Direct-gridding method, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:      Input grid</span>
@@ -1518,6 +1709,7 @@
 <span class="sd">        **Note:** Grid cells take on the specified statistic of the values inside the</span>
 <span class="sd">        cell area. Grid cells containing no data values are set to dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_direct_gridding_db2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">xMax</span><span class="p">,</span> <span class="n">yMax</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
 
         
@@ -1529,6 +1721,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">direct_gridding_db_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">zo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Direct-gridding method, `GXDB &lt;geosoft.gxapi.GXDB&gt;` version, 3D.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:      Input 3D `GXPG &lt;geosoft.gxapi.GXPG&gt;`</span>
@@ -1567,6 +1760,7 @@
 <span class="sd">        **Note:** 3D grid cells take on the specified statistic of the values inside the</span>
 <span class="sd">        cell area. Grid cells containing no data values are set to dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_direct_gridding_db_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">zo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
 
         
@@ -1578,6 +1772,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">direct_gridding_vv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Direct-gridding method, `GXVV &lt;geosoft.gxapi.GXVV&gt;` version.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:      Input grid</span>
@@ -1608,6 +1803,7 @@
 <span class="sd">        **Note:** Grid cells take on the specified statistic of the values inside the</span>
 <span class="sd">        cell area. Grid cells containing no data values are set to dummy.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPGU</span><span class="o">.</span><span class="n">_direct_gridding_vv</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rot</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vz</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
 </div>
 
@@ -1640,7 +1836,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPGU</a></li> 
@@ -1648,7 +1844,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

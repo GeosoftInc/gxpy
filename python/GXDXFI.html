@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXDXFI class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXDXFI class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDXFI class</a></li> 
       </ul>
     </div>
@@ -41,12 +41,17 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI"><code class="docutils literal notranslate"><span class="pre">GXDXFI</span></code></a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.__init__"><code class="docutils literal notranslate"><span class="pre">GXDXFI.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.create"><code class="docutils literal notranslate"><span class="pre">GXDXFI.create()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.dxf2_map"><code class="docutils literal notranslate"><span class="pre">GXDXFI.dxf2_map()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.dxf2_map_ex"><code class="docutils literal notranslate"><span class="pre">GXDXFI.dxf2_map_ex()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.dxf2_ply"><code class="docutils literal notranslate"><span class="pre">GXDXFI.dxf2_ply()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.dxf2_view"><code class="docutils literal notranslate"><span class="pre">GXDXFI.dxf2_view()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.dxf2_view_ex"><code class="docutils literal notranslate"><span class="pre">GXDXFI.dxf2_view_ex()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.dxf2_view_no_surfaces"><code class="docutils literal notranslate"><span class="pre">GXDXFI.dxf2_view_no_surfaces()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.get_range"><code class="docutils literal notranslate"><span class="pre">GXDXFI.get_range()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.is_null"><code class="docutils literal notranslate"><span class="pre">GXDXFI.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.map_extents"><code class="docutils literal notranslate"><span class="pre">GXDXFI.map_extents()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.null"><code class="docutils literal notranslate"><span class="pre">GXDXFI.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXDXFI.set_ipj"><code class="docutils literal notranslate"><span class="pre">GXDXFI.set_ipj()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -113,6 +118,64 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDXFI.dxf2_map">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dxf2_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dxfi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_fac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pb_black</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDXFI.html#GXDXFI.dxf2_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDXFI.dxf2_map" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Draw entities in a DXF file in a map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map handle</p></li>
+<li><p><strong>dxfi</strong> (<a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI.GXDXFI"><em>GXDXFI</em></a>) – <a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDXFI</span></code></a> handle</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – User defined map scale</p></li>
+<li><p><strong>u_fac</strong> (<em>float</em>) – Unit conversion factor</p></li>
+<li><p><strong>x0</strong> (<em>float</em>) – X origin of the map</p></li>
+<li><p><strong>y0</strong> (<em>float</em>) – Y origin of the map</p></li>
+<li><p><strong>max_pen</strong> (<em>int</em>) – User defined number of pens to use</p></li>
+<li><p><strong>pb_black</strong> (<em>int</em>) – Force black color if 1</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDXFI.dxf2_map_ex">
+<span class="sig-name descname"><span class="pre">dxf2_map_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_fac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pb_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pb_one_color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDXFI.html#GXDXFI.dxf2_map_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDXFI.dxf2_map_ex" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Draw entities in a DXF file in a map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>map</strong> (<a class="reference internal" href="GXMAP.html#geosoft.gxapi.GXMAP" title="geosoft.gxapi.GXMAP"><em>GXMAP</em></a>) – Map handle</p></li>
+<li><p><strong>scale</strong> (<em>float</em>) – User defined map scale</p></li>
+<li><p><strong>u_fac</strong> (<em>float</em>) – Unit conversion factor</p></li>
+<li><p><strong>x0</strong> (<em>float</em>) – X origin of the map</p></li>
+<li><p><strong>y0</strong> (<em>float</em>) – Y origin of the map</p></li>
+<li><p><strong>max_pen</strong> (<em>int</em>) – User defined number of pens to use</p></li>
+<li><p><strong>pb_group</strong> (<em>int</em>) – TRUE to place entire DXF in one group</p></li>
+<li><p><strong>group</strong> (<em>str</em>) – Group name for one group</p></li>
+<li><p><strong>pb_one_color</strong> (<em>int</em>) – TRUE to force one color</p></li>
+<li><p><strong>p_color</strong> (<em>int</em>) – <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> The DXF will be drawin in the “<a href="#id3"><span class="problematic" id="id4">*</span></a>Data” view.  If a “<a href="#id5"><span class="problematic" id="id6">*</span></a>Data” view
+does not exist, it will be created.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXDXFI.dxf2_ply">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dxf2_ply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dxfi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDXFI.html#GXDXFI.dxf2_ply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDXFI.dxf2_ply" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a DXF file to a <a class="reference internal" href="GXPLY.html#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> object</p>
@@ -126,6 +189,34 @@
 </dl>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 5.1.6.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDXFI.dxf2_view">
+<span class="sig-name descname"><span class="pre">dxf2_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_fac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pb_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pb_one_color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDXFI.html#GXDXFI.dxf2_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDXFI.dxf2_view" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Draw entities in a DXF file to a view in a map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scale</strong> (<em>float</em>) – User defined map scale</p></li>
+<li><p><strong>u_fac</strong> (<em>float</em>) – Unit conversion factor</p></li>
+<li><p><strong>x0</strong> (<em>float</em>) – X origin of the map</p></li>
+<li><p><strong>y0</strong> (<em>float</em>) – Y origin of the map</p></li>
+<li><p><strong>max_pen</strong> (<em>int</em>) – User defined number of pens to use</p></li>
+<li><p><strong>pb_group</strong> (<em>int</em>) – TRUE to place entire DXF in one group</p></li>
+<li><p><strong>group</strong> (<em>str</em>) – Group name for one group</p></li>
+<li><p><strong>pb_one_color</strong> (<em>int</em>) – TRUE to force one color</p></li>
+<li><p><strong>p_color</strong> (<em>int</em>) – <a class="reference internal" href="GXMVIEW.html#mview-color"><span class="std std-ref">MVIEW_COLOR constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -209,6 +300,29 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDXFI.map_extents">
+<span class="sig-name descname"><span class="pre">map_extents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDXFI.html#GXDXFI.map_extents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDXFI.map_extents" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Get map extent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min X - returned</p></li>
+<li><p><strong>min_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Min Y - returned</p></li>
+<li><p><strong>max_x</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max X - returned</p></li>
+<li><p><strong>max_y</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.float_ref" title="geosoft.gxapi.float_ref"><em>float_ref</em></a>) – Max Y - returned</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXDXFI.null">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDXFI.html#GXDXFI.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDXFI.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDXFI</span></code></a></p>
@@ -220,6 +334,24 @@
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXDXFI" title="geosoft.gxapi.GXDXFI.GXDXFI">GXDXFI</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXDXFI.set_ipj">
+<span class="sig-name descname"><span class="pre">set_ipj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXDXFI.html#GXDXFI.set_ipj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXDXFI.set_ipj" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Set the projection of the DXF.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ipj</strong> (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><em>GXIPJ</em></a>) – <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> to place in the view</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 </dd></dl>
@@ -239,13 +371,13 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDXFI class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

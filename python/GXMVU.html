@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXMVU class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXMVU class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMVU class</a></li> 
       </ul>
     </div>
@@ -60,6 +60,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.contour_ply"><code class="docutils literal notranslate"><span class="pre">GXMVU.contour_ply()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.decay_curve"><code class="docutils literal notranslate"><span class="pre">GXMVU.decay_curve()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.direction_plot"><code class="docutils literal notranslate"><span class="pre">GXMVU.direction_plot()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMVU.duplicate_chem"><code class="docutils literal notranslate"><span class="pre">GXMVU.duplicate_chem()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.em_forward"><code class="docutils literal notranslate"><span class="pre">GXMVU.em_forward()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.export_datamine_string"><code class="docutils literal notranslate"><span class="pre">GXMVU.export_datamine_string()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.export_dxf_3d"><code class="docutils literal notranslate"><span class="pre">GXMVU.export_dxf_3d()</span></code></a></li>
@@ -92,6 +93,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.plot_voxel_slice"><code class="docutils literal notranslate"><span class="pre">GXMVU.plot_voxel_slice()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.plot_voxel_surface"><code class="docutils literal notranslate"><span class="pre">GXMVU.plot_voxel_surface()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.plot_voxel_surface2"><code class="docutils literal notranslate"><span class="pre">GXMVU.plot_voxel_surface2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMVU.plot_voxel_surface3"><code class="docutils literal notranslate"><span class="pre">GXMVU.plot_voxel_surface3()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.post"><code class="docutils literal notranslate"><span class="pre">GXMVU.post()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.post_ex"><code class="docutils literal notranslate"><span class="pre">GXMVU.post_ex()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.probability"><code class="docutils literal notranslate"><span class="pre">GXMVU.probability()</span></code></a></li>
@@ -99,6 +101,9 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.profile_plot_ex"><code class="docutils literal notranslate"><span class="pre">GXMVU.profile_plot_ex()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.prop_symb_legend"><code class="docutils literal notranslate"><span class="pre">GXMVU.prop_symb_legend()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.re_gen_areas"><code class="docutils literal notranslate"><span class="pre">GXMVU.re_gen_areas()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMVU.scatter"><code class="docutils literal notranslate"><span class="pre">GXMVU.scatter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMVU.scatter2"><code class="docutils literal notranslate"><span class="pre">GXMVU.scatter2()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXMVU.standard"><code class="docutils literal notranslate"><span class="pre">GXMVU.standard()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.symb_off"><code class="docutils literal notranslate"><span class="pre">GXMVU.symb_off()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.text_box"><code class="docutils literal notranslate"><span class="pre">GXMVU.text_box()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXMVU.tick"><code class="docutils literal notranslate"><span class="pre">GXMVU.tick()</span></code></a></li>
@@ -110,164 +115,164 @@
 <li><a class="reference internal" href="#geosoft.gxapi.EMLAY_V_COPLANAR"><code class="docutils literal notranslate"><span class="pre">EMLAY_V_COPLANAR</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.EMLAY_V_COPLANAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMLAY_H_COPLANAR"><code class="docutils literal notranslate"><span class="pre">EMLAY_H_COPLANAR</span></code></a></li>
-<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.EMLAY_H_COPLANAR</span></code></a></li>
+<li><a class="reference internal" href="#id66"><code class="docutils literal notranslate"><span class="pre">gxapi.EMLAY_H_COPLANAR</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.EMLAY_V_COAXIAL"><code class="docutils literal notranslate"><span class="pre">EMLAY_V_COAXIAL</span></code></a></li>
-<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.EMLAY_V_COAXIAL</span></code></a></li>
+<li><a class="reference internal" href="#id67"><code class="docutils literal notranslate"><span class="pre">gxapi.EMLAY_V_COAXIAL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#arrow-alignment-constants">ARROW_ALIGNMENT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.ARROW_ALIGNMENT_HORIZONTAL"><code class="docutils literal notranslate"><span class="pre">ARROW_ALIGNMENT_HORIZONTAL</span></code></a></li>
-<li><a class="reference internal" href="#id63"><code class="docutils literal notranslate"><span class="pre">gxapi.ARROW_ALIGNMENT_HORIZONTAL</span></code></a></li>
+<li><a class="reference internal" href="#id68"><code class="docutils literal notranslate"><span class="pre">gxapi.ARROW_ALIGNMENT_HORIZONTAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.ARROW_ALIGNMENT_VERTICAL"><code class="docutils literal notranslate"><span class="pre">ARROW_ALIGNMENT_VERTICAL</span></code></a></li>
-<li><a class="reference internal" href="#id64"><code class="docutils literal notranslate"><span class="pre">gxapi.ARROW_ALIGNMENT_VERTICAL</span></code></a></li>
+<li><a class="reference internal" href="#id69"><code class="docutils literal notranslate"><span class="pre">gxapi.ARROW_ALIGNMENT_VERTICAL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#barchart-label-constants">BARCHART_LABEL constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.BARCHART_LABEL_NO"><code class="docutils literal notranslate"><span class="pre">BARCHART_LABEL_NO</span></code></a></li>
-<li><a class="reference internal" href="#id65"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_NO</span></code></a></li>
+<li><a class="reference internal" href="#id70"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_NO</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BARCHART_LABEL_BELOWX"><code class="docutils literal notranslate"><span class="pre">BARCHART_LABEL_BELOWX</span></code></a></li>
-<li><a class="reference internal" href="#id66"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_BELOWX</span></code></a></li>
+<li><a class="reference internal" href="#id71"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_BELOWX</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BARCHART_LABEL_ABOVEX"><code class="docutils literal notranslate"><span class="pre">BARCHART_LABEL_ABOVEX</span></code></a></li>
-<li><a class="reference internal" href="#id67"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_ABOVEX</span></code></a></li>
+<li><a class="reference internal" href="#id72"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_ABOVEX</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BARCHART_LABEL_PEND"><code class="docutils literal notranslate"><span class="pre">BARCHART_LABEL_PEND</span></code></a></li>
-<li><a class="reference internal" href="#id68"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_PEND</span></code></a></li>
+<li><a class="reference internal" href="#id73"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_PEND</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BARCHART_LABEL_NEND"><code class="docutils literal notranslate"><span class="pre">BARCHART_LABEL_NEND</span></code></a></li>
-<li><a class="reference internal" href="#id69"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_NEND</span></code></a></li>
+<li><a class="reference internal" href="#id74"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_NEND</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BARCHART_LABEL_ALTERNAT1"><code class="docutils literal notranslate"><span class="pre">BARCHART_LABEL_ALTERNAT1</span></code></a></li>
-<li><a class="reference internal" href="#id70"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_ALTERNAT1</span></code></a></li>
+<li><a class="reference internal" href="#id75"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_ALTERNAT1</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.BARCHART_LABEL_ALTERNAT2"><code class="docutils literal notranslate"><span class="pre">BARCHART_LABEL_ALTERNAT2</span></code></a></li>
-<li><a class="reference internal" href="#id71"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_ALTERNAT2</span></code></a></li>
+<li><a class="reference internal" href="#id76"><code class="docutils literal notranslate"><span class="pre">gxapi.BARCHART_LABEL_ALTERNAT2</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#colorbar-label-constants">COLORBAR_LABEL constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.COLORBAR_LABEL_HORIZONTAL"><code class="docutils literal notranslate"><span class="pre">COLORBAR_LABEL_HORIZONTAL</span></code></a></li>
-<li><a class="reference internal" href="#id72"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_LABEL_HORIZONTAL</span></code></a></li>
+<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_LABEL_HORIZONTAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.COLORBAR_LABEL_VERTICAL"><code class="docutils literal notranslate"><span class="pre">COLORBAR_LABEL_VERTICAL</span></code></a></li>
-<li><a class="reference internal" href="#id73"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_LABEL_VERTICAL</span></code></a></li>
+<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_LABEL_VERTICAL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#colorbar-style-constants">COLORBAR_STYLE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.COLORBAR_STYLE_NONE"><code class="docutils literal notranslate"><span class="pre">COLORBAR_STYLE_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id74"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_STYLE_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_STYLE_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.COLORBAR_STYLE_MAXMIN"><code class="docutils literal notranslate"><span class="pre">COLORBAR_STYLE_MAXMIN</span></code></a></li>
-<li><a class="reference internal" href="#id75"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_STYLE_MAXMIN</span></code></a></li>
+<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.COLORBAR_STYLE_MAXMIN</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-orientation-constants">MVU_ORIENTATION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_ORIENTATION_VERTICAL"><code class="docutils literal notranslate"><span class="pre">MVU_ORIENTATION_VERTICAL</span></code></a></li>
-<li><a class="reference internal" href="#id76"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ORIENTATION_VERTICAL</span></code></a></li>
+<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ORIENTATION_VERTICAL</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_ORIENTATION_HORIZONTAL"><code class="docutils literal notranslate"><span class="pre">MVU_ORIENTATION_HORIZONTAL</span></code></a></li>
-<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ORIENTATION_HORIZONTAL</span></code></a></li>
+<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ORIENTATION_HORIZONTAL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-division-style-constants">MVU_DIVISION_STYLE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_DIVISION_STYLE_NONE"><code class="docutils literal notranslate"><span class="pre">MVU_DIVISION_STYLE_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_DIVISION_STYLE_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_DIVISION_STYLE_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_DIVISION_STYLE_LINES"><code class="docutils literal notranslate"><span class="pre">MVU_DIVISION_STYLE_LINES</span></code></a></li>
-<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_DIVISION_STYLE_LINES</span></code></a></li>
+<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_DIVISION_STYLE_LINES</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_DIVISION_STYLE_TICS"><code class="docutils literal notranslate"><span class="pre">MVU_DIVISION_STYLE_TICS</span></code></a></li>
-<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_DIVISION_STYLE_TICS</span></code></a></li>
+<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_DIVISION_STYLE_TICS</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-arrow-constants">MVU_ARROW constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_ARROW_SOLID"><code class="docutils literal notranslate"><span class="pre">MVU_ARROW_SOLID</span></code></a></li>
-<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ARROW_SOLID</span></code></a></li>
+<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ARROW_SOLID</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_ARROW_FIXED"><code class="docutils literal notranslate"><span class="pre">MVU_ARROW_FIXED</span></code></a></li>
-<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ARROW_FIXED</span></code></a></li>
+<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_ARROW_FIXED</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-flight-compass-constants">MVU_FLIGHT_COMPASS constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_NONE"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_COMPASS_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_EAST"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_COMPASS_EAST</span></code></a></li>
-<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_EAST</span></code></a></li>
+<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_EAST</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_NORTH"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_COMPASS_NORTH</span></code></a></li>
-<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_NORTH</span></code></a></li>
+<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_NORTH</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_WEST"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_COMPASS_WEST</span></code></a></li>
-<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_WEST</span></code></a></li>
+<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_WEST</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_SOUTH"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_COMPASS_SOUTH</span></code></a></li>
-<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_SOUTH</span></code></a></li>
+<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_COMPASS_SOUTH</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-flight-dummies-constants">MVU_FLIGHT_DUMMIES constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_DUMMIES_NOTINCLUDED"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_DUMMIES_NOTINCLUDED</span></code></a></li>
-<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_DUMMIES_NOTINCLUDED</span></code></a></li>
+<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_DUMMIES_NOTINCLUDED</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_DUMMIES_INCLUDED"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_DUMMIES_INCLUDED</span></code></a></li>
-<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_DUMMIES_INCLUDED</span></code></a></li>
+<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_DUMMIES_INCLUDED</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-flight-locate-constants">MVU_FLIGHT_LOCATE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_LOCATE_NONE"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_LOCATE_NONE</span></code></a></li>
-<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_NONE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_LOCATE_END"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_LOCATE_END</span></code></a></li>
-<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_END</span></code></a></li>
+<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_END</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_LOCATE_ABOVE"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_LOCATE_ABOVE</span></code></a></li>
-<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_ABOVE</span></code></a></li>
+<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_ABOVE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_LOCATE_BELOW"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_LOCATE_BELOW</span></code></a></li>
-<li><a class="reference internal" href="#id93"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_BELOW</span></code></a></li>
+<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_LOCATE_BELOW</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_FLIGHT_DIRECTION"><code class="docutils literal notranslate"><span class="pre">MVU_FLIGHT_DIRECTION</span></code></a></li>
-<li><a class="reference internal" href="#id94"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_DIRECTION</span></code></a></li>
+<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_FLIGHT_DIRECTION</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-vox-surface-method-constants">MVU_VOX_SURFACE_METHOD constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VOX_SURFACE_METHOD_MARCHING_CUBES"><code class="docutils literal notranslate"><span class="pre">MVU_VOX_SURFACE_METHOD_MARCHING_CUBES</span></code></a></li>
-<li><a class="reference internal" href="#id95"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VOX_SURFACE_METHOD_MARCHING_CUBES</span></code></a></li>
+<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VOX_SURFACE_METHOD_MARCHING_CUBES</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-vox-surface-option-constants">MVU_VOX_SURFACE_OPTION constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VOX_SURFACE_OPTION_OPEN"><code class="docutils literal notranslate"><span class="pre">MVU_VOX_SURFACE_OPTION_OPEN</span></code></a></li>
-<li><a class="reference internal" href="#id96"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VOX_SURFACE_OPTION_OPEN</span></code></a></li>
+<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VOX_SURFACE_OPTION_OPEN</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VOX_SURFACE_OPTION_CLOSED"><code class="docutils literal notranslate"><span class="pre">MVU_VOX_SURFACE_OPTION_CLOSED</span></code></a></li>
-<li><a class="reference internal" href="#id97"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VOX_SURFACE_OPTION_CLOSED</span></code></a></li>
+<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VOX_SURFACE_OPTION_CLOSED</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-textbox-constants">MVU_TEXTBOX constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_TEXTBOX_LEFT"><code class="docutils literal notranslate"><span class="pre">MVU_TEXTBOX_LEFT</span></code></a></li>
-<li><a class="reference internal" href="#id98"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_TEXTBOX_LEFT</span></code></a></li>
+<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_TEXTBOX_LEFT</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_TEXTBOX_CENTER"><code class="docutils literal notranslate"><span class="pre">MVU_TEXTBOX_CENTER</span></code></a></li>
-<li><a class="reference internal" href="#id99"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_TEXTBOX_CENTER</span></code></a></li>
+<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_TEXTBOX_CENTER</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_TEXTBOX_RIGHT"><code class="docutils literal notranslate"><span class="pre">MVU_TEXTBOX_RIGHT</span></code></a></li>
-<li><a class="reference internal" href="#id100"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_TEXTBOX_RIGHT</span></code></a></li>
+<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_TEXTBOX_RIGHT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-vpoint-constants">MVU_VPOINT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VPOINT_SHARP"><code class="docutils literal notranslate"><span class="pre">MVU_VPOINT_SHARP</span></code></a></li>
-<li><a class="reference internal" href="#id101"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOINT_SHARP</span></code></a></li>
+<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOINT_SHARP</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VPOINT_MEDIUM"><code class="docutils literal notranslate"><span class="pre">MVU_VPOINT_MEDIUM</span></code></a></li>
-<li><a class="reference internal" href="#id102"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOINT_MEDIUM</span></code></a></li>
+<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOINT_MEDIUM</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VPOINT_BLUNT"><code class="docutils literal notranslate"><span class="pre">MVU_VPOINT_BLUNT</span></code></a></li>
-<li><a class="reference internal" href="#id103"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOINT_BLUNT</span></code></a></li>
+<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOINT_BLUNT</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-vpos-constants">MVU_VPOS constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VPOS_HEAD"><code class="docutils literal notranslate"><span class="pre">MVU_VPOS_HEAD</span></code></a></li>
-<li><a class="reference internal" href="#id104"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOS_HEAD</span></code></a></li>
+<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOS_HEAD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VPOS_MIDDLE"><code class="docutils literal notranslate"><span class="pre">MVU_VPOS_MIDDLE</span></code></a></li>
-<li><a class="reference internal" href="#id105"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOS_MIDDLE</span></code></a></li>
+<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOS_MIDDLE</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VPOS_TAIL"><code class="docutils literal notranslate"><span class="pre">MVU_VPOS_TAIL</span></code></a></li>
-<li><a class="reference internal" href="#id106"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOS_TAIL</span></code></a></li>
+<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VPOS_TAIL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-vsize-constants">MVU_VSIZE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSIZE_NOHEAD"><code class="docutils literal notranslate"><span class="pre">MVU_VSIZE_NOHEAD</span></code></a></li>
-<li><a class="reference internal" href="#id107"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_NOHEAD</span></code></a></li>
+<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_NOHEAD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSIZE_SMALLHEAD"><code class="docutils literal notranslate"><span class="pre">MVU_VSIZE_SMALLHEAD</span></code></a></li>
-<li><a class="reference internal" href="#id108"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_SMALLHEAD</span></code></a></li>
+<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_SMALLHEAD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSIZE_MEDIUMHEAD"><code class="docutils literal notranslate"><span class="pre">MVU_VSIZE_MEDIUMHEAD</span></code></a></li>
-<li><a class="reference internal" href="#id109"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_MEDIUMHEAD</span></code></a></li>
+<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_MEDIUMHEAD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSIZE_LARGEHEAD"><code class="docutils literal notranslate"><span class="pre">MVU_VSIZE_LARGEHEAD</span></code></a></li>
-<li><a class="reference internal" href="#id110"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_LARGEHEAD</span></code></a></li>
+<li><a class="reference internal" href="#id115"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_LARGEHEAD</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSIZE_NOTAIL"><code class="docutils literal notranslate"><span class="pre">MVU_VSIZE_NOTAIL</span></code></a></li>
-<li><a class="reference internal" href="#id111"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_NOTAIL</span></code></a></li>
+<li><a class="reference internal" href="#id116"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSIZE_NOTAIL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#mvu-vstyle-constants">MVU_VSTYLE constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSTYLE_LINES"><code class="docutils literal notranslate"><span class="pre">MVU_VSTYLE_LINES</span></code></a></li>
-<li><a class="reference internal" href="#id112"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSTYLE_LINES</span></code></a></li>
+<li><a class="reference internal" href="#id117"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSTYLE_LINES</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSTYLE_BARB"><code class="docutils literal notranslate"><span class="pre">MVU_VSTYLE_BARB</span></code></a></li>
-<li><a class="reference internal" href="#id113"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSTYLE_BARB</span></code></a></li>
+<li><a class="reference internal" href="#id118"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSTYLE_BARB</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.MVU_VSTYLE_TRIANGLE"><code class="docutils literal notranslate"><span class="pre">MVU_VSTYLE_TRIANGLE</span></code></a></li>
-<li><a class="reference internal" href="#id114"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSTYLE_TRIANGLE</span></code></a></li>
+<li><a class="reference internal" href="#id119"><code class="docutils literal notranslate"><span class="pre">gxapi.MVU_VSTYLE_TRIANGLE</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -717,7 +722,7 @@ primary <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" titl
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> To allow for expansion, all parameters are passed inside the <a class="reference internal" href="GXREG.html#geosoft.gxapi.GXREG" title="geosoft.gxapi.GXREG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXREG</span></code></a> object.</p>
-<p>BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = <a class="reference internal" href="#id76" title="geosoft.gxapi.MVU_ORIENTATION_VERTICAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MVU_ORIENTATION_VERTICAL</span></code></a>)
+<p>BAR_ORIENTATION        one of MVU_ORIENTATION_XXX (DEFAULT = <a class="reference internal" href="#id81" title="geosoft.gxapi.MVU_ORIENTATION_VERTICAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MVU_ORIENTATION_VERTICAL</span></code></a>)
 DECIMALS                                        decimals in plotted values (see sFormatStr_GS for rules) (DEFAULT = 1)
 ANNOFF                                          annotation offset from bar (+/- determines side of the bar left/right and below/above)
 BOX_SIZE               box height (mm) (width for horizontal color bar) (DEFAULT = 4)
@@ -729,7 +734,7 @@ FIXED_MINOR_INTERVAL   Preset minor interval for annotations scale (DEFAULT = DU
 X                                                               X location      (REQUIRED)
 Y                                                               Y location      (REQUIRED)
 POST_MAXMIN            Post limit values at ends of the bar (0 or 1)? (DEFAULT = 0)
-DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = <a class="reference internal" href="#id79" title="geosoft.gxapi.MVU_DIVISION_STYLE_LINES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MVU_DIVISION_STYLE_LINES</span></code></a>)</p>
+DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = <a class="reference internal" href="#id84" title="geosoft.gxapi.MVU_DIVISION_STYLE_LINES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MVU_DIVISION_STYLE_LINES</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py method">
@@ -890,6 +895,37 @@ bars. Curves outside the box are not clipped.</p>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> An arrow will be drawn in the direction from the first valid
 to the last points in the X and Y VVs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMVU.duplicate_chem">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">duplicate_chem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det_lim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ys</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVU.html#GXMVU.duplicate_chem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVU.duplicate_chem" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Plot an ASSAY Duplicate result in a graph window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Duplicate data</p></li>
+<li><p><strong>log</strong> (<em>int</em>) – Log-transform: 0 - linear, 1 - log</p></li>
+<li><p><strong>det_lim</strong> (<em>float</em>) – Detect Limit</p></li>
+<li><p><strong>old</strong> (<em>int</em>) – Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+<li><p><strong>tol</strong> (<em>float</em>) – Tolerance as a function of std dev</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Unit</p></li>
+<li><p><strong>x0</strong> (<em>float</em>) – X location (bottom left corner of graph)</p></li>
+<li><p><strong>y0</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>xs</strong> (<em>float</em>) – Graph width</p></li>
+<li><p><strong>ys</strong> (<em>float</em>) – Graph height</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1397,7 +1433,7 @@ the X data range.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
 <li><p><strong>file</strong> (<em>str</em>) – GOCAD file name</p></li>
-<li><p><strong>col</strong> (<em>int</em>) – Color to plot (<a class="reference internal" href="GXMVIEW.html#id274" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a> to use file-defined color).</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Color to plot (<a class="reference internal" href="GXMVIEW.html#id284" title="geosoft.gxapi.C_TRANSPARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">C_TRANSPARENT</span></code></a> to use file-defined color).</p></li>
 </ul>
 </dd>
 </dl>
@@ -1847,6 +1883,36 @@ plotted, using lines.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMVU.plot_voxel_surface3">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plot_voxel_surface3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_thick</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transparency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_closed_geosurface_around_voxel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enclose_cells_less_than_surface_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_objects_with_volume_less_than_this_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVU.html#GXMVU.plot_voxel_surface3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVU.plot_voxel_surface3" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Extract an iso-surface from a voxel and plot it to a 2D or 3D view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>vox</strong> (<a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><em>GXVOX</em></a>) – Voxel model</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – Iso-surface value</p></li>
+<li><p><strong>col</strong> (<em>int</em>) – Drawing color</p></li>
+<li><p><strong>line_thick</strong> (<em>float</em>) – Line thickness for line drawing, and 2D views.</p></li>
+<li><p><strong>transparency</strong> (<em>float</em>) – Transparency (0 - transparent, 1 - opaque).</p></li>
+<li><p><strong>surface_name</strong> (<em>str</em>) – Iso-surface name</p></li>
+<li><p><strong>create_closed_geosurface_around_voxel</strong> (<em>bool</em>) – Create closed geosurface around voxel?</p></li>
+<li><p><strong>enclose_cells_less_than_surface_value</strong> (<em>bool</em>) – Closed geosurface should enclose cells LESS than surface value?</p></li>
+<li><p><strong>exclude_objects_with_volume_less_than_this_value</strong> (<em>float</em>) – Exclude objects with volume less than this value</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.3.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Same as <a class="reference internal" href="#geosoft.gxapi.GXMVU.plot_voxel_surface2" title="geosoft.gxapi.GXMVU.plot_voxel_surface2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_voxel_surface2</span></code></a> but with a couple more options.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMVU.post">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dummy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVU.html#GXMVU.post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVU.post" title="Link to this definition">¶</a></dt>
 <dd><p>Post values on a map.</p>
@@ -2062,6 +2128,133 @@ the most likely attributes for the new polygon groups.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMVU.scatter">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horiz_chan_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_chan_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_chan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horiz_chan_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_chan_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_chan_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horiz_chan_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vert_chan_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_horiz_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_horiz_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_vert_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_vert_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_horiz_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_horiz_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_vert_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_vert_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_min_horiz_sel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_max_horiz_sel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_min_vert_sel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_max_vert_sel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_linear_horiz_axis_scaling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_linear_vert_axis_scaling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVU.html#GXMVU.scatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVU.scatter" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Plot the scatter plot on a map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>view</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>x_loc</strong> (<em>float</em>) – X location (bottom left corner of color boxes)</p></li>
+<li><p><strong>y_loc</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>box_width</strong> (<em>float</em>) – Box width</p></li>
+<li><p><strong>box_height</strong> (<em>float</em>) – Box height</p></li>
+<li><p><strong>horiz_chan_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel</p></li>
+<li><p><strong>vert_chan_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel</p></li>
+<li><p><strong>mask_chan</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mask channel</p></li>
+<li><p><strong>horiz_chan_name</strong> (<em>str</em>) – Horizontal channel name</p></li>
+<li><p><strong>vert_chan_name</strong> (<em>str</em>) – Vertical channel name</p></li>
+<li><p><strong>mask_chan_name</strong> (<em>str</em>) – Mask channel name</p></li>
+<li><p><strong>horiz_chan_units</strong> (<em>str</em>) – Horizontal channel units</p></li>
+<li><p><strong>vert_chan_units</strong> (<em>str</em>) – Vertical channel units</p></li>
+<li><p><strong>min_horiz_val</strong> (<em>float</em>) – Min. Horizontal value</p></li>
+<li><p><strong>max_horiz_val</strong> (<em>float</em>) – Max. Horizontal value</p></li>
+<li><p><strong>min_vert_val</strong> (<em>float</em>) – Min. Vertical value</p></li>
+<li><p><strong>max_vert_val</strong> (<em>float</em>) – Max. Vertical value</p></li>
+<li><p><strong>min_horiz_range</strong> (<em>float</em>) – Min. Horizontal range value</p></li>
+<li><p><strong>max_horiz_range</strong> (<em>float</em>) – Max. Horizontal range value</p></li>
+<li><p><strong>min_vert_range</strong> (<em>float</em>) – Min. Vertical range value</p></li>
+<li><p><strong>max_vert_range</strong> (<em>float</em>) – Max. Vertical range value</p></li>
+<li><p><strong>use_min_horiz_sel</strong> (<em>int</em>) – Use Min Horz. Range selection?</p></li>
+<li><p><strong>use_max_horiz_sel</strong> (<em>int</em>) – Use Max Horz. Range selection?</p></li>
+<li><p><strong>use_min_vert_sel</strong> (<em>int</em>) – Use Min Vert. Range selection?</p></li>
+<li><p><strong>use_max_vert_sel</strong> (<em>int</em>) – Use Max Vert. Range selection?</p></li>
+<li><p><strong>use_linear_horiz_axis_scaling</strong> (<em>int</em>) – Use linear horizontal axis scaling?</p></li>
+<li><p><strong>use_linear_vert_axis_scaling</strong> (<em>int</em>) – Use linear vertical axis scaling?</p></li>
+<li><p><strong>symbol_size</strong> (<em>int</em>) – Symbol size (0: small, 1: medium, 2: large)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMVU.scatter2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scatter2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p19</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p23</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p24</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p26</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p27</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p28</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p29</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p31</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVU.html#GXMVU.scatter2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVU.scatter2" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Plot the scatter plot on a map using symbol number, size and color VVs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>p2</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>p3</strong> (<em>float</em>) – X location (bottom left corner of box)</p></li>
+<li><p><strong>p4</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>p5</strong> (<em>float</em>) – Box width</p></li>
+<li><p><strong>p6</strong> (<em>float</em>) – Box height</p></li>
+<li><p><strong>p7</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Horizontal channel</p></li>
+<li><p><strong>p8</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Vertical channel</p></li>
+<li><p><strong>p9</strong> (<em>str</em>) – Decorated font name, “” for default symbol font (normally symbols.gfn)</p></li>
+<li><p><strong>p10</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol numbers</p></li>
+<li><p><strong>p11</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Symbol sizes</p></li>
+<li><p><strong>p12</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Colors  if symbol number or color == 0, do not plot</p></li>
+<li><p><strong>p13</strong> (<em>int</em>) – Annotation style 0 - outside, 1 - inside</p></li>
+<li><p><strong>p14</strong> (<em>str</em>) – Horizontal channel name</p></li>
+<li><p><strong>p15</strong> (<em>str</em>) – Vertical channel name</p></li>
+<li><p><strong>p16</strong> (<em>str</em>) – Horizontal channel units</p></li>
+<li><p><strong>p17</strong> (<em>str</em>) – Vertical channel units</p></li>
+<li><p><strong>p18</strong> (<em>float</em>) – Min. Horizontal value, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a> for default</p></li>
+<li><p><strong>p19</strong> (<em>float</em>) – Max. Horizontal value</p></li>
+<li><p><strong>p20</strong> (<em>float</em>) – Min. Vertical value</p></li>
+<li><p><strong>p21</strong> (<em>float</em>) – Max. Vertical value</p></li>
+<li><p><strong>p22</strong> (<em>float</em>) – Min. Horizontal range value</p></li>
+<li><p><strong>p23</strong> (<em>float</em>) – Max. Horizontal range value</p></li>
+<li><p><strong>p24</strong> (<em>float</em>) – Min. Vertical range value</p></li>
+<li><p><strong>p25</strong> (<em>float</em>) – Max. Vertical range value</p></li>
+<li><p><strong>p26</strong> (<em>int</em>) – Use Min Horz. Range selection?</p></li>
+<li><p><strong>p27</strong> (<em>int</em>) – Use Max Horz. Range selection?</p></li>
+<li><p><strong>p28</strong> (<em>int</em>) – Use Min Vert. Range selection?</p></li>
+<li><p><strong>p29</strong> (<em>int</em>) – Use Max Vert. Range selection?</p></li>
+<li><p><strong>p30</strong> (<em>int</em>) – Horizontal axis scaling: 0 - linear, 1 - log</p></li>
+<li><p><strong>p31</strong> (<em>int</em>) – Vertical axis scaling</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXMVU.standard">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">standard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVU.html#GXMVU.standard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVU.standard" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version None: </span>None</p>
+</div>
+<p>Plot an ASSAY standard result in a graph window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mview</strong> (<a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><em>GXMVIEW</em></a>) – View</p></li>
+<li><p><strong>vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Standard data</p></li>
+<li><p><strong>old</strong> (<em>int</em>) – Number of old samples in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p></li>
+<li><p><strong>tol</strong> (<em>float</em>) – Tolerance as a function of std dev (default=2)</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Unit</p></li>
+<li><p><strong>x0</strong> (<em>float</em>) – X location (bottom left corner of graph)</p></li>
+<li><p><strong>y0</strong> (<em>float</em>) – Y location</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – Graph width</p></li>
+<li><p><strong>height</strong> (<em>float</em>) – Graph height</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 5.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMVU.symb_off">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symb_off</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mview</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_off</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVU.html#GXMVU.symb_off"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVU.symb_off" title="Link to this definition">¶</a></dt>
 <dd><p>Draws symbols with an offset and against a flag channel</p>
@@ -2209,8 +2402,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">EMLAY_H_COPLANAR</span></span><a class="headerlink" href="#geosoft.gxapi.EMLAY_H_COPLANAR" title="Link to this definition">¶</a></dt>
 <dd><p>1</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id61">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMLAY_H_COPLANAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id66">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMLAY_H_COPLANAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id66" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2220,8 +2413,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">EMLAY_V_COAXIAL</span></span><a class="headerlink" href="#geosoft.gxapi.EMLAY_V_COAXIAL" title="Link to this definition">¶</a></dt>
 <dd><p>2</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id62">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMLAY_V_COAXIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id67">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMLAY_V_COAXIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id67" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2235,8 +2428,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">ARROW_ALIGNMENT_HORIZONTAL</span></span><a class="headerlink" href="#geosoft.gxapi.ARROW_ALIGNMENT_HORIZONTAL" title="Link to this definition">¶</a></dt>
 <dd><p>Horizontal</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id63">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ARROW_ALIGNMENT_HORIZONTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id68">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ARROW_ALIGNMENT_HORIZONTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id68" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2246,8 +2439,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">ARROW_ALIGNMENT_VERTICAL</span></span><a class="headerlink" href="#geosoft.gxapi.ARROW_ALIGNMENT_VERTICAL" title="Link to this definition">¶</a></dt>
 <dd><p>Vertical</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id64">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ARROW_ALIGNMENT_VERTICAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id69">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ARROW_ALIGNMENT_VERTICAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id69" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2261,8 +2454,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">BARCHART_LABEL_NO</span></span><a class="headerlink" href="#geosoft.gxapi.BARCHART_LABEL_NO" title="Link to this definition">¶</a></dt>
 <dd><p>No label</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id65">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id70">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id70" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2272,8 +2465,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">BARCHART_LABEL_BELOWX</span></span><a class="headerlink" href="#geosoft.gxapi.BARCHART_LABEL_BELOWX" title="Link to this definition">¶</a></dt>
 <dd><p>Label below X axis</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id66">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_BELOWX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id66" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id71">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_BELOWX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id71" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2283,8 +2476,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">BARCHART_LABEL_ABOVEX</span></span><a class="headerlink" href="#geosoft.gxapi.BARCHART_LABEL_ABOVEX" title="Link to this definition">¶</a></dt>
 <dd><p>Label above X axis</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id67">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_ABOVEX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id67" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id72">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_ABOVEX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id72" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2294,8 +2487,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">BARCHART_LABEL_PEND</span></span><a class="headerlink" href="#geosoft.gxapi.BARCHART_LABEL_PEND" title="Link to this definition">¶</a></dt>
 <dd><p>Label at positive end of bar</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id68">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_PEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id68" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id73">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_PEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id73" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2305,8 +2498,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">BARCHART_LABEL_NEND</span></span><a class="headerlink" href="#geosoft.gxapi.BARCHART_LABEL_NEND" title="Link to this definition">¶</a></dt>
 <dd><p>Label at negative end of bar</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id69">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_NEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id69" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id74">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_NEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id74" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2316,8 +2509,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">BARCHART_LABEL_ALTERNAT1</span></span><a class="headerlink" href="#geosoft.gxapi.BARCHART_LABEL_ALTERNAT1" title="Link to this definition">¶</a></dt>
 <dd><p>Label at alternative ends,1st label at positive end</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id70">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_ALTERNAT1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id70" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id75">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_ALTERNAT1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id75" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2327,8 +2520,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">BARCHART_LABEL_ALTERNAT2</span></span><a class="headerlink" href="#geosoft.gxapi.BARCHART_LABEL_ALTERNAT2" title="Link to this definition">¶</a></dt>
 <dd><p>Label at alternative ends,1st label at negative end</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id71">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_ALTERNAT2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id71" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id76">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">BARCHART_LABEL_ALTERNAT2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id76" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2342,8 +2535,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">COLORBAR_LABEL_HORIZONTAL</span></span><a class="headerlink" href="#geosoft.gxapi.COLORBAR_LABEL_HORIZONTAL" title="Link to this definition">¶</a></dt>
 <dd><p>(default)</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id72">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_LABEL_HORIZONTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id72" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id77">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_LABEL_HORIZONTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2353,8 +2546,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">COLORBAR_LABEL_VERTICAL</span></span><a class="headerlink" href="#geosoft.gxapi.COLORBAR_LABEL_VERTICAL" title="Link to this definition">¶</a></dt>
 <dd><p>Gives text an orientation of -90 degrees</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id73">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_LABEL_VERTICAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id73" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id78">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_LABEL_VERTICAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2368,8 +2561,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">COLORBAR_STYLE_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.COLORBAR_STYLE_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>Don’t draw</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id74">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_STYLE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id74" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id79">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_STYLE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2379,8 +2572,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">COLORBAR_STYLE_MAXMIN</span></span><a class="headerlink" href="#geosoft.gxapi.COLORBAR_STYLE_MAXMIN" title="Link to this definition">¶</a></dt>
 <dd><p>Post max/min values</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id75">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_STYLE_MAXMIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id75" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id80">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">COLORBAR_STYLE_MAXMIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2394,8 +2587,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">MVU_ORIENTATION_VERTICAL</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_ORIENTATION_VERTICAL" title="Link to this definition">¶</a></dt>
 <dd><p>Vertical</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id76">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ORIENTATION_VERTICAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id76" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id81">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ORIENTATION_VERTICAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2405,8 +2598,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">MVU_ORIENTATION_HORIZONTAL</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_ORIENTATION_HORIZONTAL" title="Link to this definition">¶</a></dt>
 <dd><p>Horizontal</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id77">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ORIENTATION_HORIZONTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id82">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ORIENTATION_HORIZONTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2420,8 +2613,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_DIVISION_STYLE_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>No division marks</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id78">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id83">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2431,8 +2624,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_LINES</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_DIVISION_STYLE_LINES" title="Link to this definition">¶</a></dt>
 <dd><p>Division line</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id79">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_LINES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id84">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_LINES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2442,8 +2635,8 @@ plot only the longer trend lines.</p>
 <span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_TICS</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_DIVISION_STYLE_TICS" title="Link to this definition">¶</a></dt>
 <dd><p>Inside tics, both sides</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id80">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_TICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id85">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_DIVISION_STYLE_TICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2459,8 +2652,8 @@ used together by passing sums.</p>
 <dd><p>Plot the head as a solid triangle, otherwise plot a “stick arrow”
 with three lines for the tail and two barbs.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id81">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ARROW_SOLID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id86">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ARROW_SOLID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2473,8 +2666,8 @@ view X-axis units, as measured along the tail. If not used, enter the ratio
 between the length of the barbs and full length of the arrow (e.g. 0.4).
 In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id82">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ARROW_FIXED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id87">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_ARROW_FIXED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2488,8 +2681,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>None</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id83">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id88">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2499,8 +2692,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_EAST</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_EAST" title="Link to this definition">¶</a></dt>
 <dd><p>East</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id84">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_EAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id89">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_EAST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2510,8 +2703,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_NORTH</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_NORTH" title="Link to this definition">¶</a></dt>
 <dd><p>North</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id85">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_NORTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id90">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_NORTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2521,8 +2714,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_WEST</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_WEST" title="Link to this definition">¶</a></dt>
 <dd><p>West</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id86">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_WEST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id91">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_WEST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2532,8 +2725,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_SOUTH</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_COMPASS_SOUTH" title="Link to this definition">¶</a></dt>
 <dd><p>South</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id87">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_SOUTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id92">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_COMPASS_SOUTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2547,8 +2740,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_DUMMIES_NOTINCLUDED</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_DUMMIES_NOTINCLUDED" title="Link to this definition">¶</a></dt>
 <dd><p>Notincluded</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id88">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_DUMMIES_NOTINCLUDED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id93">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_DUMMIES_NOTINCLUDED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2558,8 +2751,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_DUMMIES_INCLUDED</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_DUMMIES_INCLUDED" title="Link to this definition">¶</a></dt>
 <dd><p>Included</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id89">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_DUMMIES_INCLUDED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id94">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_DUMMIES_INCLUDED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2573,8 +2766,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_FLIGHT_LOCATE_NONE" title="Link to this definition">¶</a></dt>
 <dd><p>No label</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id90">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id95">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2588,8 +2781,8 @@ In the latter case, the longer the arrow, the bigger the arrow head.</p>
 <p>dOffA controls distance from label to line.
 dOffB controls vertical offset from center.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id91">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_END</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id96">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_END</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2604,8 +2797,8 @@ dOffB controls vertical offset from center.</p>
 <p>dOffA controls label distance above the line.
 dOffB controls offset in from line end.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id92">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_ABOVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id97">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_ABOVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2620,8 +2813,8 @@ dOffB controls offset in from line end.</p>
 <p>dOffA controls label distance below the line.
 dOffB controls offset in from line end.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id93">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_BELOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id93" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id98">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_LOCATE_BELOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2632,8 +2825,8 @@ dOffB controls offset in from line end.</p>
 <dd><p>To add ‘&gt;’ to label to indicate direction, for example:
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">MVU_FLIGHT_LOCATE_END</span></code></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id94">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_DIRECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id94" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id99">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_FLIGHT_DIRECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2647,8 +2840,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_METHOD_MARCHING_CUBES</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VOX_SURFACE_METHOD_MARCHING_CUBES" title="Link to this definition">¶</a></dt>
 <dd><p>Marching cubes</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id95">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_METHOD_MARCHING_CUBES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id95" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id100">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_METHOD_MARCHING_CUBES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2662,8 +2855,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_OPTION_OPEN</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VOX_SURFACE_OPTION_OPEN" title="Link to this definition">¶</a></dt>
 <dd><p>Open</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id96">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_OPTION_OPEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id96" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id101">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_OPTION_OPEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2673,8 +2866,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_OPTION_CLOSED</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VOX_SURFACE_OPTION_CLOSED" title="Link to this definition">¶</a></dt>
 <dd><p>Closed</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id97">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_OPTION_CLOSED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id97" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id102">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VOX_SURFACE_OPTION_CLOSED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2688,8 +2881,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_TEXTBOX_LEFT</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_TEXTBOX_LEFT" title="Link to this definition">¶</a></dt>
 <dd><p>Left</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id98">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_TEXTBOX_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id98" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id103">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_TEXTBOX_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2699,8 +2892,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_TEXTBOX_CENTER</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_TEXTBOX_CENTER" title="Link to this definition">¶</a></dt>
 <dd><p>Center</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id99">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_TEXTBOX_CENTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id99" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id104">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_TEXTBOX_CENTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2710,8 +2903,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_TEXTBOX_RIGHT</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_TEXTBOX_RIGHT" title="Link to this definition">¶</a></dt>
 <dd><p>Right</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id100">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_TEXTBOX_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id100" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id105">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_TEXTBOX_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2725,8 +2918,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VPOINT_SHARP</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VPOINT_SHARP" title="Link to this definition">¶</a></dt>
 <dd><p>Sharp</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id101">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOINT_SHARP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id101" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id106">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOINT_SHARP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2736,8 +2929,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VPOINT_MEDIUM</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VPOINT_MEDIUM" title="Link to this definition">¶</a></dt>
 <dd><p>Medium</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id102">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOINT_MEDIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id102" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id107">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOINT_MEDIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2747,8 +2940,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VPOINT_BLUNT</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VPOINT_BLUNT" title="Link to this definition">¶</a></dt>
 <dd><p>Blunt</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id103">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOINT_BLUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id103" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id108">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOINT_BLUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2762,8 +2955,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VPOS_HEAD</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VPOS_HEAD" title="Link to this definition">¶</a></dt>
 <dd><p>Head</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id104">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOS_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id104" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id109">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOS_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2773,8 +2966,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VPOS_MIDDLE</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VPOS_MIDDLE" title="Link to this definition">¶</a></dt>
 <dd><p>Middle</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id105">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOS_MIDDLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id105" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id110">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOS_MIDDLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2784,8 +2977,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VPOS_TAIL</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VPOS_TAIL" title="Link to this definition">¶</a></dt>
 <dd><p>Tail</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id106">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOS_TAIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id106" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id111">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VPOS_TAIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2799,8 +2992,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSIZE_NOHEAD</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSIZE_NOHEAD" title="Link to this definition">¶</a></dt>
 <dd><p>Nohead</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id107">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_NOHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id107" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id112">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_NOHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2810,8 +3003,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSIZE_SMALLHEAD</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSIZE_SMALLHEAD" title="Link to this definition">¶</a></dt>
 <dd><p>Smallhead</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id108">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_SMALLHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id108" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id113">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_SMALLHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2821,8 +3014,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSIZE_MEDIUMHEAD</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSIZE_MEDIUMHEAD" title="Link to this definition">¶</a></dt>
 <dd><p>Mediumhead</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id109">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_MEDIUMHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id109" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id114">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_MEDIUMHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2832,8 +3025,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSIZE_LARGEHEAD</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSIZE_LARGEHEAD" title="Link to this definition">¶</a></dt>
 <dd><p>Largehead</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id110">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_LARGEHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id110" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id115">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_LARGEHEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id115" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2843,8 +3036,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSIZE_NOTAIL</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSIZE_NOTAIL" title="Link to this definition">¶</a></dt>
 <dd><p>Notail</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id111">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_NOTAIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id111" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id116">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSIZE_NOTAIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id116" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2858,8 +3051,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSTYLE_LINES</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSTYLE_LINES" title="Link to this definition">¶</a></dt>
 <dd><p>Lines</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id112">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSTYLE_LINES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id112" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id117">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSTYLE_LINES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id117" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2869,8 +3062,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSTYLE_BARB</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSTYLE_BARB" title="Link to this definition">¶</a></dt>
 <dd><p>Barb</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id113">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSTYLE_BARB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id113" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id118">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSTYLE_BARB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id118" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2880,8 +3073,8 @@ dOffB controls offset in from line end.</p>
 <span class="sig-name descname"><span class="pre">MVU_VSTYLE_TRIANGLE</span></span><a class="headerlink" href="#geosoft.gxapi.MVU_VSTYLE_TRIANGLE" title="Link to this definition">¶</a></dt>
 <dd><p>Triangle</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id114">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSTYLE_TRIANGLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id114" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id119">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVU_VSTYLE_TRIANGLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id119" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -2902,13 +3095,13 @@ dOffB controls offset in from line end.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMVU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

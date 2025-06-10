@@ -949,6 +949,58 @@ geosoft.gxapi module history
 ==========================================
 
   
+Version 2026.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDH.re_survey_location_general` Call a resurveying method based on the input.
+
+
+  
+Version 2025.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDH.get_channel_type` Get the drill hole channel type based on input channel name.
+
+:func:`geosoft.gxapi.GXDH.re_survey_rad_curve_locations` Use radius of curvature resurveying method.
+
+:func:`geosoft.gxapi.GXEMAP.current_allow_cancel_on_browse` This method returns the Current Edited map, with special behaviour
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.create_default` Create an empty `GXEVOOBJMETA <geosoft.gxapi.GXEVOOBJMETA>` object.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.create` Create an `GXEVOOBJMETA <geosoft.gxapi.GXEVOOBJMETA>` object.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_bounding_box` Get Evo object bounding box in JSON string.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_modified_at` Return the Evo object modified at.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_object_id` Return the Evo object Id.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_workspace_id` Return the Evo workspace Id.
+
+:func:`geosoft.gxapi.GXITR.get_shade` Get the shading parameters of the `GXITR <geosoft.gxapi.GXITR>`
+
+:func:`geosoft.gxapi.GXITR.set_shade` Set the shading parameters of the `GXITR <geosoft.gxapi.GXITR>`
+
+:func:`geosoft.gxapi.GXMVIEW.aggregate_to_plane` Add an aggregate to a view plane.
+
+:func:`geosoft.gxapi.GXMVIEW.set_plane_matrix` Set the equation of a plane using a matrix
+
+:func:`geosoft.gxapi.GXPROJ.get_document_evo_object_metadata` Get Evo object metadata associated with the document from project metadata
+
+:func:`geosoft.gxapi.GXPROJ.set_document_evo_object_metadata` Set evo object metadata associated with the document into project metadata
+
+:func:`geosoft.gxapi.GXVOX.generate_from_grid` Create a single-layer VOX object from a grid
+
+
+  
 Version 2024.2
 -----------------
 
@@ -957,6 +1009,10 @@ New Functions
 ^^^^^^^^^^^^^
 
 :func:`geosoft.gxapi.GXMAP.export_all_in_view2` Same as ExportAllInView_MAP, but preset the range in X and Y to export (mm)
+
+:func:`geosoft.gxapi.GXPROJ.get_numeric_voxel_itr` Get a numeric voxel document's ITR from project metadata
+
+:func:`geosoft.gxapi.GXPROJ.set_numeric_voxel_itr` Set a numeric voxel document's ITR into project metadata
 
 
   
@@ -1466,6 +1522,8 @@ New Functions
 
 :func:`geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box` Checks intersections of a bounding box with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
 
+:func:`geosoft.gxapi.GXSYS.get_view_service_url` .. deprecated:: 9.9 Seequent View was discontinued.
+
 
   
 Version 9.7
@@ -1565,6 +1623,10 @@ New Functions
 
 :func:`geosoft.gxapi.GXSEGYREADER.set_z_slice_indices` Which z slices to export to a section grid.
 
+:func:`geosoft.gxapi.GXSYS.get_api_key` .. deprecated:: 9.9 Seequent View was discontinued.
+
+:func:`geosoft.gxapi.GXSYS.get_view_url` .. deprecated:: 9.9 Seequent View was discontinued.
+
 
   
 Version 9.6
@@ -1608,7 +1670,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXSEGYREADER.estimate_number_of_traces` Get the number of traces that would be in the SEG-Y file, given a trace length and data type.
 
-:func:`geosoft.gxapi.GXSEGYREADER.export_voxel_and_database` Exports contents of SEG Y file to voxel and/or database.
+:func:`geosoft.gxapi.GXSEGYREADER.export_voxel_and_database` .. deprecated:: 9.7 Use SetGdbOutputName() and/or SetVoxelOutputName() followed by ExportFile() instead.
 
 :func:`geosoft.gxapi.GXSEGYREADER.get_binary_header` Get the SEG Y file's binary header.
 
@@ -1754,6 +1816,10 @@ New Functions
 
 :func:`geosoft.gxapi.GXGUI.import_drill_wizard_ex` Generate a template file for importing drill holes where type is known
 
+:func:`geosoft.gxapi.GXGUI.launch_va_view_multiple_tool` .. deprecated:: 9.6 Tool is now GX.Net
+
+:func:`geosoft.gxapi.GXGUI.va_view_multiple_tool_exists` .. deprecated:: 9.6 Tool is now GX.Net
+
 :func:`geosoft.gxapi.GXMESH.add_face` Adds a face to a patch in a mesh
 
 :func:`geosoft.gxapi.GXMESH.add_vertex` Adds a vertex to a patch in a mesh
@@ -1831,6 +1897,8 @@ New Functions
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.create_subset` Create a new MULTIGRID3D that is a subset of an exisiting MULTIGRID3D.
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.extract_dem` Extract a DEM grid from a voxel.
+
+:func:`geosoft.gxapi.GXMULTIGRID3DUTIL.generate_rbf` .. deprecated:: 9.6 Removed.
 
 :func:`geosoft.gxapi.GXMULTIGRID3DUTIL.get_data_extents` Get the voxel size that has non-dummy data.
 
@@ -1922,6 +1990,8 @@ New Functions
 :func:`geosoft.gxapi.GXGRID3D.write_y` Write data to a GRID3D in the Y direction
 
 :func:`geosoft.gxapi.GXGRID3D.write_z` Write data to a GRID3D in the Z direction
+
+:func:`geosoft.gxapi.GXGUI.multiple_array_channel_profile_viewer` .. deprecated:: 9.5 Tool is now GX.Net
 
 :func:`geosoft.gxapi.GXIMU.refresh_shad` Refresh a shaded relief image
 

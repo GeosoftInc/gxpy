@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMULTIGRID3D &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXMULTIGRID3D &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMULTIGRID3D</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXMULTIGRID3D</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXGRID3D</span> <span class="kn">import</span> <span class="n">GXGRID3D</span>
@@ -130,6 +130,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Opens an existing Multivoxset</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File Name</span>
@@ -142,6 +143,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3D</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXMULTIGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -153,6 +155,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">modify</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Opens an existing Multivoxset with an plan to modify it</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  File Name</span>
@@ -165,6 +168,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3D</span><span class="o">.</span><span class="n">_modify</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXMULTIGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -176,6 +180,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates a new Multivoxset</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:    File Name</span>
@@ -194,6 +199,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMULTIGRID3D</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="p">,</span> <span class="n">size_z</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXMULTIGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -205,6 +211,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.duplicate">[docs]</a>
     <span class="k">def</span> <span class="nf">duplicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Creates an MULTIGRID3D with identical geometry to the input</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:         File Name</span>
@@ -217,6 +224,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_duplicate</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXMULTIGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -228,6 +236,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_default">[docs]</a>
     <span class="k">def</span> <span class="nf">get_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the default voxset</span>
 <span class="sd">        </span>
 
@@ -238,6 +247,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_default</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -249,6 +259,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.create_default">[docs]</a>
     <span class="k">def</span> <span class="nf">create_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the default voxset</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:         :ref:`GRID3D_TYPE`</span>
@@ -261,6 +272,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_default</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXGRID3D</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -272,6 +284,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.is_uniform_cell_size_x">[docs]</a>
     <span class="k">def</span> <span class="nf">is_uniform_cell_size_x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is the cell uniform in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              bool</span>
@@ -280,6 +293,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_uniform_cell_size_x</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -291,6 +305,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.is_uniform_cell_size_y">[docs]</a>
     <span class="k">def</span> <span class="nf">is_uniform_cell_size_y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is the cell uniform in the Y direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              bool</span>
@@ -299,6 +314,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_uniform_cell_size_y</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -310,6 +326,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.is_uniform_cell_size_z">[docs]</a>
     <span class="k">def</span> <span class="nf">is_uniform_cell_size_z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is the cell uniform in the Z direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              bool</span>
@@ -318,6 +335,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_uniform_cell_size_z</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -329,6 +347,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_size_x">[docs]</a>
     <span class="k">def</span> <span class="nf">get_size_x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the number of cells in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              int</span>
@@ -337,6 +356,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_size_x</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -348,6 +368,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_size_y">[docs]</a>
     <span class="k">def</span> <span class="nf">get_size_y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the number of cells in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              int</span>
@@ -356,6 +377,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_size_y</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -367,6 +389,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_size_z">[docs]</a>
     <span class="k">def</span> <span class="nf">get_size_z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the number of cells in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              int</span>
@@ -375,6 +398,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_size_z</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -386,6 +410,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_cell_sizes_x">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cell_sizes_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the cell sizes in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:           X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -395,6 +420,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_cell_sizes_x</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -406,6 +432,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_cell_sizes_y">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cell_sizes_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the cell sizes in the Y direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:           Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -415,6 +442,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_cell_sizes_y</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -426,6 +454,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_cell_sizes_z">[docs]</a>
     <span class="k">def</span> <span class="nf">get_cell_sizes_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the cell sizes in the Z direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:           Z `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -435,6 +464,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_cell_sizes_z</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -446,6 +476,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_cell_sizes_x">[docs]</a>
     <span class="k">def</span> <span class="nf">set_cell_sizes_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the cell sizes in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:           X `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -455,6 +486,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_cell_sizes_x</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -466,6 +498,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_cell_sizes_y">[docs]</a>
     <span class="k">def</span> <span class="nf">set_cell_sizes_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the cell sizes in the Y direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:           Y `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -475,6 +508,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_cell_sizes_y</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -486,6 +520,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_cell_sizes_z">[docs]</a>
     <span class="k">def</span> <span class="nf">set_cell_sizes_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the cell sizes in the Z direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param vv:           Z `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -495,6 +530,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_cell_sizes_z</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -506,6 +542,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_uniform_cell_size_x">[docs]</a>
     <span class="k">def</span> <span class="nf">get_uniform_cell_size_x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the uniform cell size in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              float</span>
@@ -514,6 +551,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_uniform_cell_size_x</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -525,6 +563,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_uniform_cell_size_y">[docs]</a>
     <span class="k">def</span> <span class="nf">get_uniform_cell_size_y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the uniform cell size in the Y direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              float</span>
@@ -533,6 +572,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_uniform_cell_size_y</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -544,6 +584,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_uniform_cell_size_z">[docs]</a>
     <span class="k">def</span> <span class="nf">get_uniform_cell_size_z</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the uniform cell size in the Z direction</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:              float</span>
@@ -552,6 +593,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_uniform_cell_size_z</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -563,6 +605,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_uniform_cell_size_x">[docs]</a>
     <span class="k">def</span> <span class="nf">set_uniform_cell_size_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cellsize</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the uniform cell size in the X direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param cellsize:     cell size</span>
@@ -572,6 +615,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_uniform_cell_size_x</span><span class="p">(</span><span class="n">cellsize</span><span class="p">)</span></div>
 
         
@@ -583,6 +627,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_uniform_cell_size_y">[docs]</a>
     <span class="k">def</span> <span class="nf">set_uniform_cell_size_y</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cellsize</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the uniform cell size in the Y direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param cellsize:     cell size</span>
@@ -592,6 +637,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_uniform_cell_size_y</span><span class="p">(</span><span class="n">cellsize</span><span class="p">)</span></div>
 
         
@@ -603,6 +649,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_uniform_cell_size_z">[docs]</a>
     <span class="k">def</span> <span class="nf">set_uniform_cell_size_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cellsize</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the uniform cell size in the Z direction</span>
 <span class="sd">        </span>
 <span class="sd">        :param cellsize:     cell size</span>
@@ -612,6 +659,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_uniform_cell_size_z</span><span class="p">(</span><span class="n">cellsize</span><span class="p">)</span></div>
 
         
@@ -623,6 +671,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_origin">[docs]</a>
     <span class="k">def</span> <span class="nf">get_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the origin</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:     x</span>
@@ -636,6 +685,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_origin</span><span class="p">(</span><span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -647,6 +697,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_origin">[docs]</a>
     <span class="k">def</span> <span class="nf">set_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the origin</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:     x</span>
@@ -660,6 +711,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_origin</span><span class="p">(</span><span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">)</span></div>
 
         
@@ -671,6 +723,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_bounding_box">[docs]</a>
     <span class="k">def</span> <span class="nf">get_bounding_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the bounding box</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:        minx</span>
@@ -690,6 +743,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_bounding_box</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -701,6 +755,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_volume_vectors">[docs]</a>
     <span class="k">def</span> <span class="nf">get_volume_vectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">X_vector_x</span><span class="p">,</span> <span class="n">X_vector_y</span><span class="p">,</span> <span class="n">X_vector_z</span><span class="p">,</span> <span class="n">Y_vector_x</span><span class="p">,</span> <span class="n">Y_vector_y</span><span class="p">,</span> <span class="n">Y_vector_z</span><span class="p">,</span> <span class="n">Z_vector_x</span><span class="p">,</span> <span class="n">Z_vector_y</span><span class="p">,</span> <span class="n">Z_vector_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the direction of the volume</span>
 <span class="sd">        </span>
 <span class="sd">        :param origin_x:     origin_x</span>
@@ -732,6 +787,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">X_vector_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">X_vector_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">X_vector_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Y_vector_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Y_vector_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Y_vector_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Z_vector_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Z_vector_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Z_vector_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_volume_vectors</span><span class="p">(</span><span class="n">origin_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">origin_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">X_vector_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">X_vector_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">X_vector_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Y_vector_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Y_vector_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Y_vector_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Z_vector_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Z_vector_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Z_vector_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -743,6 +799,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_oriented_data_extents">[docs]</a>
     <span class="k">def</span> <span class="nf">get_oriented_data_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oriented_origin_x</span><span class="p">,</span> <span class="n">oriented_origin_y</span><span class="p">,</span> <span class="n">oriented_origin_z</span><span class="p">,</span> <span class="n">X_vector_x</span><span class="p">,</span> <span class="n">X_vector_y</span><span class="p">,</span> <span class="n">X_vector_z</span><span class="p">,</span> <span class="n">Y_vector_x</span><span class="p">,</span> <span class="n">Y_vector_y</span><span class="p">,</span> <span class="n">Y_vector_z</span><span class="p">,</span> <span class="n">Z_vector_x</span><span class="p">,</span> <span class="n">Z_vector_y</span><span class="p">,</span> <span class="n">Z_vector_z</span><span class="p">,</span> <span class="n">p1_x</span><span class="p">,</span> <span class="n">p1_y</span><span class="p">,</span> <span class="n">p1_z</span><span class="p">,</span> <span class="n">p2_x</span><span class="p">,</span> <span class="n">p2_y</span><span class="p">,</span> <span class="n">p2_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the data extents based on an orientation</span>
 <span class="sd">        </span>
 <span class="sd">        :param oriented_origin_x:  oriented_origin_x</span>
@@ -786,6 +843,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">p1_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p1_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p1_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p2_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p2_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p2_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_oriented_data_extents</span><span class="p">(</span><span class="n">oriented_origin_x</span><span class="p">,</span> <span class="n">oriented_origin_y</span><span class="p">,</span> <span class="n">oriented_origin_z</span><span class="p">,</span> <span class="n">X_vector_x</span><span class="p">,</span> <span class="n">X_vector_y</span><span class="p">,</span> <span class="n">X_vector_z</span><span class="p">,</span> <span class="n">Y_vector_x</span><span class="p">,</span> <span class="n">Y_vector_y</span><span class="p">,</span> <span class="n">Y_vector_z</span><span class="p">,</span> <span class="n">Z_vector_x</span><span class="p">,</span> <span class="n">Z_vector_y</span><span class="p">,</span> <span class="n">Z_vector_z</span><span class="p">,</span> <span class="n">p1_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p1_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p1_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p2_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p2_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">p2_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -797,6 +855,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_section_cell_sizes">[docs]</a>
     <span class="k">def</span> <span class="nf">get_section_cell_sizes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the cell sizes of a section</span>
 <span class="sd">        </span>
 <span class="sd">        :param azimuth:      azimuth</span>
@@ -818,6 +877,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">cell_size_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_section_cell_sizes</span><span class="p">(</span><span class="n">azimuth</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">,</span> <span class="n">cell_size_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -829,6 +889,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_vector_orientation">[docs]</a>
     <span class="k">def</span> <span class="nf">get_vector_orientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the vector voxel orientation</span>
 <span class="sd">        </span>
 <span class="sd">        :param inc:          inclination</span>
@@ -842,6 +903,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">inc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dec</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_vector_orientation</span><span class="p">(</span><span class="n">inc</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">dec</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cell_size_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -853,6 +915,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.fill">[docs]</a>
     <span class="k">def</span> <span class="nf">fill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a grid3d.</span>
 <span class="sd">        </span>
 <span class="sd">        :param output_file:  Name of the output grid3d</span>
@@ -866,6 +929,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_fill</span><span class="p">(</span><span class="n">output_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">method</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span></div>
 
         
@@ -877,6 +941,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_ipj">[docs]</a>
     <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the projection of the multigrid3d.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:          `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object</span>
@@ -886,6 +951,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
 
         
@@ -897,6 +963,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.set_ipj">[docs]</a>
     <span class="k">def</span> <span class="nf">set_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the projection of the multigrid3d.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:          `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` object</span>
@@ -906,6 +973,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
 
         
@@ -917,6 +985,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.export_to_xyz">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to an XYZ File</span>
 <span class="sd">        </span>
 <span class="sd">        :param xyz:          File Name</span>
@@ -936,6 +1005,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_xyz</span><span class="p">(</span><span class="n">xyz</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">)</span></div>
 
         
@@ -947,6 +1017,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.export_to_binary">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_binary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binary_file</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">output_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export contents of `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to a Binary File.</span>
 <span class="sd">        </span>
 <span class="sd">        :param binary_file:  Binary file to write to</span>
@@ -968,6 +1039,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_binary</span><span class="p">(</span><span class="n">binary_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">output_type</span><span class="p">)</span></div>
 
         
@@ -979,6 +1051,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.export_to_binary_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_binary_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binary_file</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">output_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export contents of `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to a Binary File, with dummy replacement.</span>
 <span class="sd">        </span>
 <span class="sd">        :param binary_file:  Binary file to write to</span>
@@ -1002,6 +1075,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_binary_ex</span><span class="p">(</span><span class="n">binary_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">swap</span><span class="p">,</span> <span class="n">dummy</span><span class="p">,</span> <span class="n">output_type</span><span class="p">)</span></div>
 
         
@@ -1013,6 +1087,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.export_to_xml">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xml_file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` to XML</span>
 <span class="sd">        </span>
 <span class="sd">        :param xml_file:     XML file</span>
@@ -1022,6 +1097,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_xml</span><span class="p">(</span><span class="n">xml_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1033,6 +1109,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.export_to_wa">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_wa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export To GDB</span>
 <span class="sd">        </span>
 <span class="sd">        :param wa:           `GXWA &lt;geosoft.gxapi.GXWA&gt;` File</span>
@@ -1052,6 +1129,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_wa</span><span class="p">(</span><span class="n">wa</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummy</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1063,6 +1141,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.export_to_gdb">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_gdb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export To GDB</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:           Database</span>
@@ -1084,6 +1163,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_gdb</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="p">,</span> <span class="n">rev_x</span><span class="p">,</span> <span class="n">rev_y</span><span class="p">,</span> <span class="n">rev_z</span><span class="p">,</span> <span class="n">dummies</span><span class="p">)</span></div>
 
         
@@ -1095,6 +1175,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.export_to_pg">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_pg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export a MULTIGRID3D To a PG</span>
 <span class="sd">        </span>
 
@@ -1105,6 +1186,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_pg</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXPG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -1116,6 +1198,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_data_extents">[docs]</a>
     <span class="k">def</span> <span class="nf">get_data_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the voxel size that has non-dummy data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:        Index of minimum valid data in X.</span>
@@ -1138,6 +1221,7 @@
 <span class="sd">        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` object. If the voxel is all dummies,</span>
 <span class="sd">        returns `iMAX &lt;geosoft.gxapi.iMAX&gt;` for the minima, and `iMIN &lt;geosoft.gxapi.iMIN&gt;` for the maxima.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_extents</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -1149,6 +1233,7 @@
 <a class="viewcode-back" href="../../../GXMULTIGRID3D.html#geosoft.gxapi.GXMULTIGRID3D.get_data_ground_extents">[docs]</a>
     <span class="k">def</span> <span class="nf">get_data_ground_extents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_z</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the voxel size in ground units that has non-dummy data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param min_x:        Ground location of minimum valid data in X.</span>
@@ -1171,6 +1256,7 @@
 <span class="sd">        **Note:** Find the non-dummy volume of a `GXMULTIGRID3D &lt;geosoft.gxapi.GXMULTIGRID3D&gt;` object. If the voxel is all dummies,</span>
 <span class="sd">        returns `iMAX &lt;geosoft.gxapi.iMAX&gt;` for the minima, and `iMIN &lt;geosoft.gxapi.iMIN&gt;` for the maxima.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_data_ground_extents</span><span class="p">(</span><span class="n">min_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">min_z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">max_z</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 </div>
 
@@ -1203,7 +1289,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMULTIGRID3D</a></li> 
@@ -1211,7 +1297,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

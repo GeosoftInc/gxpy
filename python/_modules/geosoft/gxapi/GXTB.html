@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXTB &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXTB &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTB</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXTB</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -132,6 +132,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.set_search_mode">[docs]</a>
     <span class="k">def</span> <span class="nf">set_search_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the search mode of a table.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mode:  :ref:`TB_SEARCH`</span>
@@ -144,6 +145,7 @@
 <span class="sd">        **Note:** If performance is an issue, you may want to test which search</span>
 <span class="sd">        mode provides the best performance with typical data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_search_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -155,6 +157,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.set_sort_mode">[docs]</a>
     <span class="k">def</span> <span class="nf">set_sort_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the sort mode of a table.</span>
 <span class="sd">        </span>
 <span class="sd">        :param mode:  :ref:`TB_SORT`</span>
@@ -164,6 +167,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_sort_mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -175,6 +179,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Loads a table into memory and return a table handle.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of the table file to load</span>
@@ -191,6 +196,7 @@
 <span class="sd">        the table header, the `GXTB &lt;geosoft.gxapi.GXTB&gt;` object will read in the table and dummy</span>
 <span class="sd">        the elements of the missing data columns.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTB</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXTB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -202,6 +208,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_db</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a table from a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database</span>
@@ -220,6 +227,7 @@
 <span class="sd">        The database is not loaded with data.  Use the `load_db &lt;geosoft.gxapi.GXTB.load_db&gt;`</span>
 <span class="sd">        function to load data into the table.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTB</span><span class="o">.</span><span class="n">_create_db</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXTB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -231,6 +239,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ltb</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ltb</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a table from an `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ltb:  `GXLTB &lt;geosoft.gxapi.GXLTB&gt;` object</span>
@@ -243,6 +252,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapTB</span><span class="o">.</span><span class="n">_create_ltb</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">ltb</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXTB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -256,6 +266,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.field">[docs]</a>
     <span class="k">def</span> <span class="nf">field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a field handle.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Field name</span>
@@ -268,6 +279,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_field</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -279,6 +291,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.get_string">[docs]</a>
     <span class="k">def</span> <span class="nf">get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets a string value from a table element.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row of element to Get</span>
@@ -292,6 +305,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">val</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -303,6 +317,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.data_type">[docs]</a>
     <span class="k">def</span> <span class="nf">data_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the data type for the specified column.</span>
 <span class="sd">        </span>
 <span class="sd">        :param col:  Column of element to Get</span>
@@ -315,6 +330,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_type</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -326,6 +342,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.find_col_by_index">[docs]</a>
     <span class="k">def</span> <span class="nf">find_col_by_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Finds a column&#39;s name by its index.</span>
 <span class="sd">        </span>
 <span class="sd">        :param idx:   Index of column to find</span>
@@ -337,6 +354,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_col_by_index</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -348,6 +366,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.find_col_by_name">[docs]</a>
     <span class="k">def</span> <span class="nf">find_col_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Finds a column&#39;s index by its name.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name of column to find</span>
@@ -361,6 +380,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_col_by_name</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -372,6 +392,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.format">[docs]</a>
     <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Returns the channel format for the specified column.</span>
 <span class="sd">        </span>
 <span class="sd">        :param col:  Column of element to Get</span>
@@ -384,6 +405,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -395,6 +417,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.get_int">[docs]</a>
     <span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets an integer value from a table element.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row of element to Get</span>
@@ -409,6 +432,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_int</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -420,6 +444,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.num_columns">[docs]</a>
     <span class="k">def</span> <span class="nf">num_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets the number of data fields (columns) in a table.</span>
 <span class="sd">        </span>
 
@@ -430,6 +455,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_columns</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -441,6 +467,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.num_rows">[docs]</a>
     <span class="k">def</span> <span class="nf">num_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets the number of data rows in a table.</span>
 <span class="sd">        </span>
 
@@ -451,6 +478,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_rows</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -462,6 +490,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.load_db">[docs]</a>
     <span class="k">def</span> <span class="nf">load_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Load a database into a `GXTB &lt;geosoft.gxapi.GXTB&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database</span>
@@ -475,6 +504,7 @@
 
 <span class="sd">        **Note:** The line is appended to the data already in the table.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_db</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span></div>
 
         
@@ -486,6 +516,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.get_double">[docs]</a>
     <span class="k">def</span> <span class="nf">get_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets an real value from a table element.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row of element to Get</span>
@@ -500,6 +531,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_double</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -511,6 +543,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.save">[docs]</a>
     <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Saves the data in a table to a file. The table header will be</span>
 <span class="sd">        in ASCII and the data will be in BINARY format.</span>
 <span class="sd">        </span>
@@ -521,6 +554,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -532,6 +566,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.save_db">[docs]</a>
     <span class="k">def</span> <span class="nf">save_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Save a `GXTB &lt;geosoft.gxapi.GXTB&gt;` in a database line</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database</span>
@@ -546,6 +581,7 @@
 <span class="sd">        **Note:** Missing channels are created.</span>
 <span class="sd">        Data in existing channels on the line will be replaced.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_db</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span></div>
 
         
@@ -557,6 +593,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.save_to_ascii">[docs]</a>
     <span class="k">def</span> <span class="nf">save_to_ascii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Saves the data in a table to a file. The table header will be</span>
 <span class="sd">        in ASCII and the data will be in ASCII format.</span>
 <span class="sd">        </span>
@@ -567,6 +604,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_to_ascii</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -578,6 +616,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.set_int">[docs]</a>
     <span class="k">def</span> <span class="nf">set_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets an integer value into a table element.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row of element to set</span>
@@ -605,6 +644,7 @@
 <span class="sd">        the new rows up to the new element&#39;s row will also contain</span>
 <span class="sd">        invalid data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_int</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
 
         
@@ -616,6 +656,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.set_double">[docs]</a>
     <span class="k">def</span> <span class="nf">set_double</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets an real value into a table element.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row of element to set</span>
@@ -643,6 +684,7 @@
 <span class="sd">        the new rows up to the new element&#39;s row will also contain</span>
 <span class="sd">        invalid data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_double</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
 
         
@@ -654,6 +696,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.set_string">[docs]</a>
     <span class="k">def</span> <span class="nf">set_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets a string value into a table element.</span>
 <span class="sd">        </span>
 <span class="sd">        :param row:  Row of element to set</span>
@@ -678,6 +721,7 @@
 <span class="sd">        the new rows up to the new element&#39;s row will also contain</span>
 <span class="sd">        invalid data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -689,6 +733,7 @@
 <a class="viewcode-back" href="../../../GXTB.html#geosoft.gxapi.GXTB.sort">[docs]</a>
     <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sorts a table by a specified column.</span>
 <span class="sd">        </span>
 <span class="sd">        :param col:  Index of data Column to sort table by</span>
@@ -707,6 +752,7 @@
 <span class="sd">        may or may not come after the first row in the sorted</span>
 <span class="sd">        table.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_sort</span><span class="p">(</span><span class="n">col</span><span class="p">)</span></div>
 </div>
 
@@ -739,7 +785,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXTB</a></li> 
@@ -747,7 +793,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

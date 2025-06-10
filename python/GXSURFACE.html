@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXSURFACE class &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>GXSURFACE class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=0af83669"></script>
+    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSURFACE class</a></li> 
       </ul>
     </div>
@@ -50,6 +50,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXSURFACE.get_closed_surface_names"><code class="docutils literal notranslate"><span class="pre">GXSURFACE.get_closed_surface_names()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXSURFACE.get_extents"><code class="docutils literal notranslate"><span class="pre">GXSURFACE.get_extents()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXSURFACE.get_ipj"><code class="docutils literal notranslate"><span class="pre">GXSURFACE.get_ipj()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXSURFACE.get_ordered_surface_names"><code class="docutils literal notranslate"><span class="pre">GXSURFACE.get_ordered_surface_names()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXSURFACE.get_surface_item"><code class="docutils literal notranslate"><span class="pre">GXSURFACE.get_surface_item()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXSURFACE.get_surface_items"><code class="docutils literal notranslate"><span class="pre">GXSURFACE.get_surface_items()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXSURFACE.get_surface_names"><code class="docutils literal notranslate"><span class="pre">GXSURFACE.get_surface_names()</span></code></a></li>
@@ -64,7 +65,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.SURFACE_OPEN_READ"><code class="docutils literal notranslate"><span class="pre">SURFACE_OPEN_READ</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.SURFACE_OPEN_READ</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.SURFACE_OPEN_READWRITE"><code class="docutils literal notranslate"><span class="pre">SURFACE_OPEN_READWRITE</span></code></a></li>
-<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.SURFACE_OPEN_READWRITE</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.SURFACE_OPEN_READWRITE</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -303,6 +304,24 @@ contains one or more triangular polyhedral meshes.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACE.get_ordered_surface_names">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_ordered_surface_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACE.html#GXSURFACE.get_ordered_surface_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_ordered_surface_names" title="Link to this definition">¶</a></dt>
+<dd><p>Get the surface item names in a Geosurface file alphabetically ordered</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface_file</strong> (<em>str</em>) – Geosurface file</p></li>
+<li><p><strong>lst</strong> (<a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><em>GXLST</em></a>) – <a class="reference internal" href="GXLST.html#geosoft.gxapi.GXLST" title="geosoft.gxapi.GXLST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLST</span></code></a> to fill</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 8.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXSURFACE.get_surface_item">
 <span class="sig-name descname"><span class="pre">get_surface_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">guid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSURFACE.html#GXSURFACE.get_surface_item"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSURFACE.get_surface_item" title="Link to this definition">¶</a></dt>
 <dd><p>Get the an existing surface item from the <a class="reference internal" href="#geosoft.gxapi.GXSURFACE" title="geosoft.gxapi.GXSURFACE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSURFACE</span></code></a></p>
@@ -459,8 +478,8 @@ contains one or more triangular polyhedral meshes.</p>
 <span class="sig-name descname"><span class="pre">SURFACE_OPEN_READWRITE</span></span><a class="headerlink" href="#geosoft.gxapi.SURFACE_OPEN_READWRITE" title="Link to this definition">¶</a></dt>
 <dd><p>Readwrite</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id15">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SURFACE_OPEN_READWRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id16">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SURFACE_OPEN_READWRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -481,13 +500,13 @@ contains one or more triangular polyhedral meshes.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSURFACE class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIP &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXIP &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIP</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXIP</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXPG</span> <span class="kn">import</span> <span class="n">GXPG</span>
@@ -140,6 +140,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">convert_ubcip_2d_to_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">reciprocal</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Convert a UBC 2D model to a regular grid.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:        Output grid file name</span>
@@ -169,6 +170,7 @@
 <span class="sd">        By setting the final value, a resistivity grid can be</span>
 <span class="sd">        created from conductivity data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_convert_ubcip_2d_to_grid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">reciprocal</span><span class="p">)</span></div>
 
         
@@ -180,6 +182,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.create_default_job">[docs]</a>
     <span class="k">def</span> <span class="nf">create_default_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a default job from scratch.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ini:   File name of the INI file to create (forces correct suffix)</span>
@@ -191,6 +194,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_create_default_job</span><span class="p">(</span><span class="n">ini</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -202,6 +206,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ubcip3">[docs]</a>
     <span class="k">def</span> <span class="nf">export_ubcip3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">error_chan</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export of `GXIP &lt;geosoft.gxapi.GXIP&gt;` data to UBC format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:          `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -227,6 +232,7 @@
 <span class="sd">        UBC 2D inversion program IPINV2D.</span>
 <span class="sd">        Include error channel output and version-specific formatting.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_ubcip3</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">version</span><span class="p">)</span></div>
 
         
@@ -238,6 +244,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_ubcip_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">i_rest</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">cond</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">topo</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">ref_mod</span><span class="p">,</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">wts</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export a control file for using in the UBC IPINV2D program.</span>
 <span class="sd">        </span>
 <span class="sd">        :param control:     Output control file name</span>
@@ -273,6 +280,7 @@
 <span class="sd">        Outputs a control file for use in the</span>
 <span class="sd">        UBC 2D `GXIP &lt;geosoft.gxapi.GXIP&gt;` inversion program IPINV2D.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_export_ubcip_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">control</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">i_rest</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cond</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mesh</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">initial</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ref_mod</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">alphas</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wts</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -284,6 +292,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_ubcip_control_v5</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">,</span> <span class="n">cond_selection</span><span class="p">,</span> <span class="n">cond</span><span class="p">,</span> <span class="n">mesh_selection</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">initial_selection</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">reference_selection</span><span class="p">,</span> <span class="n">ref_cond</span><span class="p">,</span> <span class="n">alphas_selection</span><span class="p">,</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">wts</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export a control file for using in the UBC IPINV2D program.</span>
 <span class="sd">        </span>
 <span class="sd">        :param control:              Output control file name</span>
@@ -325,6 +334,7 @@
 
 <span class="sd">        **Note:** UBC Version 5 Control file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_export_ubcip_control_v5</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">control</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cond_selection</span><span class="p">,</span> <span class="n">cond</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mesh_selection</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">initial_selection</span><span class="p">,</span> <span class="n">initial</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">reference_selection</span><span class="p">,</span> <span class="n">ref_cond</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">alphas_selection</span><span class="p">,</span> <span class="n">alphas</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wts</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -336,6 +346,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ubc_res3">[docs]</a>
     <span class="k">def</span> <span class="nf">export_ubc_res3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">voltage_chan</span><span class="p">,</span> <span class="n">current_chan</span><span class="p">,</span> <span class="n">error_chan</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export of `GXIP &lt;geosoft.gxapi.GXIP&gt;` Resistivity data to UBC format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:            `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -364,6 +375,7 @@
 <span class="sd">        Voltage and current channels should be in units such that</span>
 <span class="sd">        V/I gives volts/amp (or mV/mA).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_ubc_res3</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">voltage_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">current_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">version</span><span class="p">)</span></div>
 
         
@@ -375,6 +387,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_ubc_res_control</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">i_rest</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">topo</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">ref_cond</span><span class="p">,</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">wts</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export a control file for using in the UBC DCINV2D program.</span>
 <span class="sd">        </span>
 <span class="sd">        :param control:     Output control file name</span>
@@ -408,6 +421,7 @@
 <span class="sd">        Outputs a control file for use in the</span>
 <span class="sd">        UBC 2D resistivity inversion program DCINV2D.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_export_ubc_res_control</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">control</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">i_rest</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mesh</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">initial</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ref_cond</span><span class="p">,</span> <span class="n">alphas</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wts</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -419,6 +433,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">export_ubc_res_control_v5</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">,</span> <span class="n">mesh_selection</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">initial_selection</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">reference_selection</span><span class="p">,</span> <span class="n">ref_cond</span><span class="p">,</span> <span class="n">alphas_selection</span><span class="p">,</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">wts</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export a control file for using in the UBC DCINV2D program.</span>
 <span class="sd">        </span>
 <span class="sd">        :param control:              Output control file name</span>
@@ -458,6 +473,7 @@
 <span class="sd">        Outputs a control file for use in the</span>
 <span class="sd">        UBC 2D resistivity inversion program DCINV2D.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_export_ubc_res_control_v5</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">control</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">chi_factor</span><span class="p">,</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mesh_selection</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">initial_selection</span><span class="p">,</span> <span class="n">initial</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">reference_selection</span><span class="p">,</span> <span class="n">ref_cond</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">alphas_selection</span><span class="p">,</span> <span class="n">alphas</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">wts</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -469,6 +485,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_data_to_ubc_3d">[docs]</a>
     <span class="k">def</span> <span class="nf">export_data_to_ubc_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">,</span> <span class="n">locations_only</span><span class="p">,</span> <span class="n">include_z</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">error_chan</span><span class="p">,</span> <span class="n">mask_chan</span><span class="p">,</span> <span class="n">ip_type</span><span class="p">,</span> <span class="n">comments</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export of `GXIP &lt;geosoft.gxapi.GXIP&gt;` data to UBC 3D `GXIP &lt;geosoft.gxapi.GXIP&gt;` format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:              `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -499,6 +516,7 @@
 <span class="sd">        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the</span>
 <span class="sd">        UBC `GXIP &lt;geosoft.gxapi.GXIP&gt;` 3D inversion programs.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_data_to_ubc_3d</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">,</span> <span class="n">locations_only</span><span class="p">,</span> <span class="n">include_z</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mask_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_type</span><span class="p">,</span> <span class="n">comments</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -510,6 +528,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_ubc2_dmod</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Import a MOD file from the UBC IPINV2D program.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  UBC MOD file name to import</span>
@@ -528,6 +547,7 @@
 <span class="sd">        The CON/CHG selection is necessary because the import sets</span>
 <span class="sd">        padding values to dummies based on the type of file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_import_ubc2_dmod</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXPG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -539,6 +559,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_ubc2_dmsh</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Import a MSH file from the UBC IPINV2D program.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:  UBC MSH file to import</span>
@@ -558,6 +579,7 @@
 
 <span class="sd">        **Note:** Imports the MSH file geometry.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_import_ubc2_dmsh</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
 
         
@@ -569,6 +591,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">import_ubc_2d_topo</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">elev0</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Import a Topography file from the UBC IPINV2D program.</span>
 <span class="sd">        </span>
 <span class="sd">        :param file:   UBC Topo file to import</span>
@@ -587,6 +610,7 @@
 <span class="sd">        **Note:** Imports the maximum elevation (top of mesh)</span>
 <span class="sd">        as well as the topo (X, Z) values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">elev0</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_import_ubc_2d_topo</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">elev0</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">)</span></div>
 
         
@@ -598,6 +622,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.open_job">[docs]</a>
     <span class="k">def</span> <span class="nf">open_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Open a `GXIP &lt;geosoft.gxapi.GXIP&gt;` plotting job</span>
 <span class="sd">        </span>
 <span class="sd">        :param job:   Job file name</span>
@@ -609,6 +634,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_open_job</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -620,6 +646,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.save_job">[docs]</a>
     <span class="k">def</span> <span class="nf">save_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Save a `GXIP &lt;geosoft.gxapi.GXIP&gt;` plotting job</span>
 <span class="sd">        </span>
 <span class="sd">        :param job:   Job file name</span>
@@ -631,6 +658,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_job</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -642,6 +670,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">trim_ubc_2d_model</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">trim_xl</span><span class="p">,</span> <span class="n">trim_xr</span><span class="p">,</span> <span class="n">trim_z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Trim the padding cells from the UBC IPINV2D Model.</span>
 <span class="sd">        </span>
 <span class="sd">        :param pg:       Input model (unchanged)</span>
@@ -671,6 +700,7 @@
 <span class="sd">        The input cell size VVs are also trimmed to match,</span>
 <span class="sd">        and the origin is updated (still upper left corner).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_trim_ubc_2d_model</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">pg</span><span class="p">,</span> <span class="n">trim_xl</span><span class="p">,</span> <span class="n">trim_xr</span><span class="p">,</span> <span class="n">trim_z</span><span class="p">,</span> <span class="n">vv_x</span><span class="p">,</span> <span class="n">vv_z</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXPG</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -682,6 +712,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.write_distant_electrodes">[docs]</a>
     <span class="k">def</span> <span class="nf">write_distant_electrodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write distant electrode locations to channels</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -693,6 +724,7 @@
 
 <span class="sd">        **Note:** Writes values for ALL lines.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_distant_electrodes</span><span class="p">(</span><span class="n">db</span><span class="p">)</span></div>
 
         
@@ -704,6 +736,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.write_distant_electrodes_lst">[docs]</a>
     <span class="k">def</span> <span class="nf">write_distant_electrodes_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Write distant electrode locations to channels for a `GXLST &lt;geosoft.gxapi.GXLST&gt;` of lines</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -717,6 +750,7 @@
 
 <span class="sd">        **Note:** Writes values for lines in the input `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_distant_electrodes_lst</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -732,6 +766,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.average_duplicates_qc">[docs]</a>
     <span class="k">def</span> <span class="nf">average_duplicates_qc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">qc_chan</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Average duplicate samples in a database.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       Database to export from</span>
@@ -754,6 +789,7 @@
 <span class="sd">        If the QC channel is selected, only those rows of data where the QC channel</span>
 <span class="sd">        value is &quot;1&quot; will be included in the average.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_average_duplicates_qc</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">qc_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out</span><span class="p">)</span></div>
 
         
@@ -765,6 +801,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create `GXIP &lt;geosoft.gxapi.GXIP&gt;`.</span>
 <span class="sd">        </span>
 
@@ -775,6 +812,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXIP</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -788,6 +826,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_i2_x">[docs]</a>
     <span class="k">def</span> <span class="nf">export_i2_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">res_data</span><span class="p">,</span> <span class="n">ip_data</span><span class="p">,</span> <span class="n">res_model</span><span class="p">,</span> <span class="n">ip_model</span><span class="p">,</span> <span class="n">res_synth</span><span class="p">,</span> <span class="n">ip_synth</span><span class="p">,</span> <span class="n">res_poly</span><span class="p">,</span> <span class="n">ip_poly</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export line(s) to an Interpex RESIX I2X format file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         Database to export from</span>
@@ -819,6 +858,7 @@
 
 <span class="sd">        **Note:** Exports a line to an &quot;.I2X&quot; file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_i2_x</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_synth</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_synth</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_poly</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_poly</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -830,6 +870,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ipdata">[docs]</a>
     <span class="k">def</span> <span class="nf">export_ipdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports data in the Geosoft IPDATA format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to export from</span>
@@ -843,6 +884,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_ipdata</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -854,6 +896,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ipdata_dir">[docs]</a>
     <span class="k">def</span> <span class="nf">export_ipdata_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports data in the Geosoft IPDATA format in the specified directory</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to export from</span>
@@ -869,6 +912,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_ipdata_dir</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -880,6 +924,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ipred">[docs]</a>
     <span class="k">def</span> <span class="nf">export_ipred</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">suffix</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">wts</span><span class="p">,</span> <span class="n">stn1</span><span class="p">,</span> <span class="n">stn2</span><span class="p">,</span> <span class="n">max_n</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports pseudo-section in the Geosoft IPRED format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:      Database to export from</span>
@@ -909,6 +954,7 @@
 <span class="sd">        and are listed as w1,w2,w3,...   Unspecified values beyond</span>
 <span class="sd">        the list&#39;s end are set to 1.0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_ipred</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">suffix</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">wts</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">stn1</span><span class="p">,</span> <span class="n">stn2</span><span class="p">,</span> <span class="n">max_n</span><span class="p">)</span></div>
 
         
@@ -920,6 +966,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ipred_dir">[docs]</a>
     <span class="k">def</span> <span class="nf">export_ipred_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">suffix</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">wts</span><span class="p">,</span> <span class="n">stn1</span><span class="p">,</span> <span class="n">stn2</span><span class="p">,</span> <span class="n">max_n</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports pseudo-section in the Geosoft IPRED format in the specified directory</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:      Database to export from</span>
@@ -951,6 +998,7 @@
 <span class="sd">        and are listed as w1,w2,w3,...   Unspecified values beyond</span>
 <span class="sd">        the list&#39;s end are set to 1.0.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_ipred_dir</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">suffix</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">wts</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">stn1</span><span class="p">,</span> <span class="n">stn2</span><span class="p">,</span> <span class="n">max_n</span><span class="p">,</span> <span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -962,6 +1010,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_line_ipdata">[docs]</a>
     <span class="k">def</span> <span class="nf">export_line_ipdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports one line of data in the Geosoft IPDATA format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to export from</span>
@@ -977,6 +1026,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_line_ipdata</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">title</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -988,6 +1038,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_sgdf">[docs]</a>
     <span class="k">def</span> <span class="nf">export_sgdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">chan2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Exports data to a Scintrex Geophysical Data Format file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to export from</span>
@@ -1003,6 +1054,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_sgdf</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan2</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1014,6 +1066,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_n_value_lst">[docs]</a>
     <span class="k">def</span> <span class="nf">get_n_value_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a list with unique N values in selected lines.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database</span>
@@ -1025,6 +1078,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_n_value_lst</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -1036,6 +1090,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_topo_line">[docs]</a>
     <span class="k">def</span> <span class="nf">get_topo_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">x_inc</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get topography values for a line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to import data to</span>
@@ -1060,6 +1115,7 @@
 <span class="sd">        will be dummies. Values between actual data are interpolated using</span>
 <span class="sd">        the Akima spline. Ends are extrapolated using the end data points.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_topo_line</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">x_inc</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -1071,6 +1127,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_chan_domain">[docs]</a>
     <span class="k">def</span> <span class="nf">get_chan_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Is this channel registered as a Time or Frequency domain channel?</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database</span>
@@ -1085,6 +1142,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_chan_domain</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -1096,6 +1154,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_chan_label</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the default label and units for a given channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param chan:   Input channel</span>
@@ -1109,6 +1168,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">units</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_get_chan_label</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">label</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">units</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1120,6 +1180,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_channel_info">[docs]</a>
     <span class="k">def</span> <span class="nf">get_channel_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">n_windows</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Time Windows or Frequency info from a channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         Database</span>
@@ -1139,6 +1200,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">domain</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">delay</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">n_windows</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_channel_info</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">domain</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">delay</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">n_windows</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -1150,6 +1212,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.set_channel_info">[docs]</a>
     <span class="k">def</span> <span class="nf">set_channel_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">n_windows</span><span class="p">,</span> <span class="n">vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set Time Windows or Frequency info for a channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         Database</span>
@@ -1169,6 +1232,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_channel_info</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">domain</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">n_windows</span><span class="p">,</span> <span class="n">vv</span><span class="p">)</span></div>
 
         
@@ -1180,6 +1244,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_dump">[docs]</a>
     <span class="k">def</span> <span class="nf">import_dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_sys</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dump_file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports data from an `GXIP &lt;geosoft.gxapi.GXIP&gt;` instrument dump file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ip_sys:     :ref:`IP_SYS`</span>
@@ -1193,6 +1258,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_dump</span><span class="p">(</span><span class="n">ip_sys</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dump_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1204,6 +1270,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_grid">[docs]</a>
     <span class="k">def</span> <span class="nf">import_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports data from a grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database to import data to</span>
@@ -1221,6 +1288,7 @@
 <span class="sd">        The values are interpolated at each row&#39;s X and Y</span>
 <span class="sd">        positions.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_grid</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1232,6 +1300,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_i2_x">[docs]</a>
     <span class="k">def</span> <span class="nf">import_i2_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">res_data</span><span class="p">,</span> <span class="n">ip_data</span><span class="p">,</span> <span class="n">res_model</span><span class="p">,</span> <span class="n">ip_model</span><span class="p">,</span> <span class="n">res_synth</span><span class="p">,</span> <span class="n">ip_synth</span><span class="p">,</span> <span class="n">res_poly</span><span class="p">,</span> <span class="n">ip_poly</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports an Interpex RESIX I2X format file to a line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         Database to import to</span>
@@ -1266,6 +1335,7 @@
 <span class="sd">        **Note:** Imports a single &quot;.I2X&quot; file to a specified line.</span>
 <span class="sd">        If the line does not exist, it will be created.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_i2_x</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_synth</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_synth</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_poly</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_poly</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -1277,6 +1347,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_i2_x_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">import_i2_x_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">res_data</span><span class="p">,</span> <span class="n">ip_data</span><span class="p">,</span> <span class="n">res_model</span><span class="p">,</span> <span class="n">ip_model</span><span class="p">,</span> <span class="n">res_synth</span><span class="p">,</span> <span class="n">ip_synth</span><span class="p">,</span> <span class="n">res_poly</span><span class="p">,</span> <span class="n">ip_poly</span><span class="p">,</span> <span class="n">res_zonge</span><span class="p">,</span> <span class="n">ip_zonge</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `import_i2_x &lt;geosoft.gxapi.GXIP.import_i2_x&gt;`, with Zonge data imported as well.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         Database to import to</span>
@@ -1315,6 +1386,7 @@
 <span class="sd">        **Note:** Imports a single &quot;.I2X&quot; file to a specified line.</span>
 <span class="sd">        If the line does not exist, it will be created.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_i2_x_ex</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_model</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_synth</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_synth</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_poly</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_poly</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_zonge</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_zonge</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span></div>
 
         
@@ -1326,6 +1398,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_instrumentation_gdd">[docs]</a>
     <span class="k">def</span> <span class="nf">import_instrumentation_gdd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports an Instrumentation GDD format file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database to import to</span>
@@ -1337,6 +1410,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_instrumentation_gdd</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1348,6 +1422,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_ipdata">[docs]</a>
     <span class="k">def</span> <span class="nf">import_ipdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports data in the Geosoft IPDATA format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database to import to</span>
@@ -1361,6 +1436,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_ipdata</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1372,6 +1448,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_ipdata2">[docs]</a>
     <span class="k">def</span> <span class="nf">import_ipdata2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">chan2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports data in the Geosoft IPDATA format - up to two arrays.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to import to</span>
@@ -1394,6 +1471,7 @@
 <span class="sd">        the T= or F= fields) then the import is assumed to be frequency</span>
 <span class="sd">        domain.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_ipdata2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan2</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1405,6 +1483,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_ipred">[docs]</a>
     <span class="k">def</span> <span class="nf">import_ipred</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports data from the Geosoft IPRED format.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database to import to</span>
@@ -1421,6 +1500,7 @@
 <span class="sd">        **Note:** This import produces a limited `GXIP &lt;geosoft.gxapi.GXIP&gt;` data set with no Current &quot;I&quot;,</span>
 <span class="sd">        Voltage &quot;Vp&quot; or Apparent Resistivity &quot;ResApp&quot; values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_ipred</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1432,6 +1512,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_merge_ipred">[docs]</a>
     <span class="k">def</span> <span class="nf">import_merge_ipred</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports IPRED data to an existing line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database to import to</span>
@@ -1448,6 +1529,7 @@
 <span class="sd">        **Note:** Exits with error if the line does not exist.</span>
 <span class="sd">        Data is merged on basis of Stn and N value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_merge_ipred</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1459,6 +1541,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_sgdf">[docs]</a>
     <span class="k">def</span> <span class="nf">import_sgdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports data from a Scintrex Geophysical Data Format file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database to import to</span>
@@ -1470,6 +1553,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_sgdf</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1481,6 +1565,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_topo_csv">[docs]</a>
     <span class="k">def</span> <span class="nf">import_topo_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">csv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports topography data from a CSV line-station file</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database to calculate topography for</span>
@@ -1495,6 +1580,7 @@
 <span class="sd">        **Note:** The elevation of each point in the current database</span>
 <span class="sd">        is interpolated from the input topography values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_topo_csv</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">csv</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1506,6 +1592,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_topo_grid">[docs]</a>
     <span class="k">def</span> <span class="nf">import_topo_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports topography data from a grid</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database to calculate topography for</span>
@@ -1520,6 +1607,7 @@
 <span class="sd">        **Note:** The elevation of each point in the current database</span>
 <span class="sd">        is interpolated from the input topography grid.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_topo_grid</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1531,6 +1619,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_zonge_avg">[docs]</a>
     <span class="k">def</span> <span class="nf">import_zonge_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports a Zonge AVG format file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to import to</span>
@@ -1550,6 +1639,7 @@
 
 <span class="sd">        **Note:** See `import_zonge_fld &lt;geosoft.gxapi.GXIP.import_zonge_fld&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_zonge_avg</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">mult</span><span class="p">)</span></div>
 
         
@@ -1561,6 +1651,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.import_zonge_fld">[docs]</a>
     <span class="k">def</span> <span class="nf">import_zonge_fld</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Imports a Zonge FLD format file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database to import to</span>
@@ -1580,6 +1671,7 @@
 <span class="sd">        values, and a conversion is required.</span>
 <span class="sd">        The line direction is taken from the `GXIP &lt;geosoft.gxapi.GXIP&gt;` setup values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_import_zonge_fld</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">scale</span><span class="p">,</span> <span class="n">mult</span><span class="p">)</span></div>
 
         
@@ -1591,6 +1683,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.new_xy_database">[docs]</a>
     <span class="k">def</span> <span class="nf">new_xy_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">new_db</span><span class="p">,</span> <span class="n">chan_vv</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">pr_n_val</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a subset database using a mask channel, &quot;N&quot; value</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -1611,6 +1704,7 @@
 <span class="sd">        **Note:** A mask channel can be used to select a subset of the data.</span>
 <span class="sd">        A single N value can also be selected (Dummy for all).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_new_xy_database</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">new_db</span><span class="p">,</span> <span class="n">chan_vv</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pr_n_val</span><span class="p">)</span></div>
 
         
@@ -1622,6 +1716,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.pseudo_plot">[docs]</a>
     <span class="k">def</span> <span class="nf">pseudo_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">ini_file</span><span class="p">,</span> <span class="n">cur_line</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create pseudo-sections of a single line using a control file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        Database</span>
@@ -1640,6 +1735,7 @@
 <span class="sd">        **Note:** The control file is created using the IPPLTCON GX. It may then</span>
 <span class="sd">        be modified by hand as required.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_pseudo_plot</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">ini_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cur_line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1651,6 +1747,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.pseudo_plot2">[docs]</a>
     <span class="k">def</span> <span class="nf">pseudo_plot2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">ini_file</span><span class="p">,</span> <span class="n">cur_line</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `pseudo_plot &lt;geosoft.gxapi.GXIP.pseudo_plot&gt;`, but specify a tag for grids created.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        Database</span>
@@ -1671,6 +1768,7 @@
 <span class="sd">        **Note:** The control file is created using the IPPLTCON GX. It may then</span>
 <span class="sd">        be modified by hand as required.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_pseudo_plot2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">ini_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cur_line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tag</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1682,6 +1780,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.pseudo_plot2_dir">[docs]</a>
     <span class="k">def</span> <span class="nf">pseudo_plot2_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">ini_file</span><span class="p">,</span> <span class="n">cur_line</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `pseudo_plot2 &lt;geosoft.gxapi.GXIP.pseudo_plot2&gt;`, but with directory specified.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        Database</span>
@@ -1704,6 +1803,7 @@
 <span class="sd">        **Note:** The control file is created using the IPPLTCON GX. It may then</span>
 <span class="sd">        be modified by hand as required.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_pseudo_plot2_dir</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">ini_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">cur_line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tag</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1715,6 +1815,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.ps_stack">[docs]</a>
     <span class="k">def</span> <span class="nf">ps_stack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">con_file</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a stacked pseudo-section plot using a control file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -1733,6 +1834,7 @@
 <span class="sd">        **Note:** The control file is created using the IPSTAKCON GX. It may then</span>
 <span class="sd">        be modified by hand as required.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_ps_stack</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">con_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1744,6 +1846,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.ps_stack2">[docs]</a>
     <span class="k">def</span> <span class="nf">ps_stack2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">con_file</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        As `ps_stack &lt;geosoft.gxapi.GXIP.ps_stack&gt;`, but select section spacing option.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -1761,6 +1864,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_ps_stack2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">con_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1772,6 +1876,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.ps_stack2_dir">[docs]</a>
     <span class="k">def</span> <span class="nf">ps_stack2_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">con_file</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `pseudo_plot2 &lt;geosoft.gxapi.GXIP.pseudo_plot2&gt;`, but with directory specified.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -1791,6 +1896,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_ps_stack2_dir</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">con_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">dir</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1802,6 +1908,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.qc_chan_lst">[docs]</a>
     <span class="k">def</span> <span class="nf">qc_chan_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fill a list with QC channels.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:   Database</span>
@@ -1816,6 +1923,7 @@
 <span class="sd">        **Note:** Searches for the following QC channels existing in a database:</span>
 <span class="sd">        QC, QC_RES.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_qc_chan_lst</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -1827,6 +1935,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.recalculate">[docs]</a>
     <span class="k">def</span> <span class="nf">recalculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Recalculate derived channel values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database</span>
@@ -1854,6 +1963,7 @@
 <span class="sd">        (since the X and Y values would have changed), then call</span>
 <span class="sd">        `recalculate_z &lt;geosoft.gxapi.GXIP.recalculate_z&gt;`, since &quot;Z&quot; values are based on &quot;Topo&quot; values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_recalculate</span><span class="p">(</span><span class="n">db</span><span class="p">)</span></div>
 
         
@@ -1865,6 +1975,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.recalculate_ex">[docs]</a>
     <span class="k">def</span> <span class="nf">recalculate_ex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">recalculate_xyz</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Recalculate derived channel values, with option for including/excluding location calculations.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:               Database</span>
@@ -1879,6 +1990,7 @@
 <span class="sd">        **Note:** See `recalculate &lt;geosoft.gxapi.GXIP.recalculate&gt;`. This version allows you to suppress the recalculation of the</span>
 <span class="sd">        current X, Y and Z channel values from the station locations.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_recalculate_ex</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">recalculate_xyz</span><span class="p">)</span></div>
 
         
@@ -1890,6 +2002,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.recalculate_derived_data">[docs]</a>
     <span class="k">def</span> <span class="nf">recalculate_derived_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_handle</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">,</span> <span class="n">recalculate_xyz</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Recalculate derived channel values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:               Database</span>
@@ -1936,15 +2049,14 @@
 <span class="sd">            &quot;R1Y&quot;, &quot;R2Y&quot;, &quot;T1Y&quot;, &quot;T2Y&quot;  (Across-line locations)</span>
 <span class="sd">            &quot;R1Z&quot;, &quot;R2Z&quot;, &quot;T1Z&quot;, &quot;T2Z&quot;  (Z)</span>
 <span class="sd">            (for any electrode not include or set to &quot;&quot; the default channel name For</span>
-<span class="sd">             the array line direction, or the defined distant electrode location</span>
-<span class="sd">             is used)</span>
+<span class="sd">            the array line direction, or the defined distant electrode location</span>
+<span class="sd">            is used)</span>
 
 <span class="sd">        Other input channels overridden if defined:</span>
 <span class="sd">            &quot;Vp&quot; (primary voltage - must be in mV)</span>
 <span class="sd">            &quot;I&quot; (current - must be in A)</span>
 
-<span class="sd">        Other output channels overridden if defined (if you DON&#39;T want the</span>
-<span class="sd">        various output channels modified, then set the override values to &quot;&quot;):</span>
+<span class="sd">        Other output channels overridden if defined (if you DON&#39;T want the various output channels modified, then set the override values to &quot;&quot;):</span>
 <span class="sd">            &quot;MF&quot; (metal factor) - formulation defined in settings, </span>
 <span class="sd">            &quot;AvgIP&quot; (average IP)</span>
 <span class="sd">            &quot;AppRes&quot; (apparent resistivity)</span>
@@ -1959,6 +2071,7 @@
 <span class="sd">         being re-run, then if a maker exists for the Topo channel it is re-run, and</span>
 <span class="sd">         finally the Z channel is recalculated (see &quot;RecalculateZ_IP&quot;).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_recalculate_derived_data</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line_handle</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">,</span> <span class="n">recalculate_xyz</span><span class="p">)</span></div>
 
         
@@ -1970,6 +2083,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.recalculate_z">[docs]</a>
     <span class="k">def</span> <span class="nf">recalculate_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Recalculate Z channel values.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:  Database</span>
@@ -1989,7 +2103,53 @@
 
 <span class="sd">            `recalculate &lt;geosoft.gxapi.GXIP.recalculate&gt;`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_recalculate_z</span><span class="p">(</span><span class="n">db</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXIP.resix__zonge">
+<a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.resix__zonge">[docs]</a>
+    <span class="k">def</span> <span class="nf">resix__zonge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">res_chan</span><span class="p">,</span> <span class="n">syn_res_chan</span><span class="p">,</span> <span class="n">inv_res_chan</span><span class="p">,</span> <span class="n">ip_too</span><span class="p">,</span> <span class="n">chg_chan</span><span class="p">,</span> <span class="n">syn_chg_chan</span><span class="p">,</span> <span class="n">inv_chg_chan</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Runs the Interpex RESIX Zonge inversion on selected lines.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:            Database object</span>
+<span class="sd">        :param line:          Name of the line</span>
+<span class="sd">        :param res_chan:      Apparent resistivity channel</span>
+<span class="sd">        :param syn_res_chan:  Synthetic Apparent resistivity channel</span>
+<span class="sd">        :param inv_res_chan:  Inverted Apparent resistivity channel</span>
+<span class="sd">        :param ip_too:        Invert `GXIP &lt;geosoft.gxapi.GXIP&gt;` data too? :ref:`IP_I2XINV`</span>
+<span class="sd">        :param chg_chan:      `GXIP &lt;geosoft.gxapi.GXIP&gt;` channel</span>
+<span class="sd">        :param syn_chg_chan:  Synthetic `GXIP &lt;geosoft.gxapi.GXIP&gt;` channel</span>
+<span class="sd">        :param inv_chg_chan:  Inverted `GXIP &lt;geosoft.gxapi.GXIP&gt;` channel</span>
+<span class="sd">        :type  db:            GXDB</span>
+<span class="sd">        :type  line:          str</span>
+<span class="sd">        :type  res_chan:      str</span>
+<span class="sd">        :type  syn_res_chan:  str</span>
+<span class="sd">        :type  inv_res_chan:  str</span>
+<span class="sd">        :type  ip_too:        int</span>
+<span class="sd">        :type  chg_chan:      str</span>
+<span class="sd">        :type  syn_chg_chan:  str</span>
+<span class="sd">        :type  inv_chg_chan:  str</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The IP2DI program is run in batch mode, and the</span>
+<span class="sd">        input file is overwritten with the new results, ready to</span>
+<span class="sd">        be imported using `import_i2_x &lt;geosoft.gxapi.GXIP.import_i2_x&gt;`.</span>
+<span class="sd">        The three `GXIP &lt;geosoft.gxapi.GXIP&gt;` channels are required only if joint Res/`GXIP &lt;geosoft.gxapi.GXIP&gt;` inversion</span>
+<span class="sd">        is selected.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resix__zonge</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">res_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">syn_res_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inv_res_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ip_too</span><span class="p">,</span> <span class="n">chg_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">syn_chg_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">inv_chg_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
 
@@ -2000,6 +2160,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.set_import_line">[docs]</a>
     <span class="k">def</span> <span class="nf">set_import_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the line name for some imports.</span>
 <span class="sd">        </span>
 <span class="sd">        :param line:  Line name</span>
@@ -2011,6 +2172,7 @@
 
 <span class="sd">        **Note:** For some imports, no line name is derivable from the import itself.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_import_line</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2022,6 +2184,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.set_import_mode">[docs]</a>
     <span class="k">def</span> <span class="nf">set_import_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">append</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        When importing data to a line, set append/overwrite mode.</span>
 <span class="sd">        </span>
 <span class="sd">        :param append:  0: Overwrite, 1: Append</span>
@@ -2037,6 +2200,7 @@
 <span class="sd">        &quot;Short&quot; data channels will be dummied to the existing</span>
 <span class="sd">        data length before the new data is appended.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_import_mode</span><span class="p">(</span><span class="n">append</span><span class="p">)</span></div>
 
         
@@ -2048,6 +2212,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.window">[docs]</a>
     <span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">va_chan</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">windows</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Window an `GXIP &lt;geosoft.gxapi.GXIP&gt;` array channel to produce a normal channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2070,6 +2235,7 @@
 <span class="sd">        In frequency domain a simple sum is performed.</span>
 <span class="sd">        Window List Syntax:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_window</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">va_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">windows</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -2081,6 +2247,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">winnow_chan_list</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Removes obviously non-pseudo-section type channels from list.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  List of channels</span>
@@ -2090,6 +2257,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_winnow_chan_list</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -2101,6 +2269,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">winnow_chan_list2</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">db</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Same as `winnow_chan_list &lt;geosoft.gxapi.GXIP.winnow_chan_list&gt;`, but removes current X,Y,Z.</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:  List of channels</span>
@@ -2112,6 +2281,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_winnow_chan_list2</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span></div>
 
         
@@ -2123,6 +2293,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.is_valid_line">[docs]</a>
     <span class="k">def</span> <span class="nf">is_valid_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        See if a given database line is registered for the `GXIP &lt;geosoft.gxapi.GXIP&gt;` system</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database</span>
@@ -2137,6 +2308,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_valid_line</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2148,6 +2320,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.line_array_type">[docs]</a>
     <span class="k">def</span> <span class="nf">line_array_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return the type of `GXIP &lt;geosoft.gxapi.GXIP&gt;` array for the input line. If necessary, first imports the specified line into the `GXIP &lt;geosoft.gxapi.GXIP&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database</span>
@@ -2162,6 +2335,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_line_array_type</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2173,6 +2347,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.a_spacing">[docs]</a>
     <span class="k">def</span> <span class="nf">a_spacing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return the A-Spacing for the input line. If necessary, first imports the specified line into the `GXIP &lt;geosoft.gxapi.GXIP&gt;` object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database</span>
@@ -2188,6 +2363,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a_spacing</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2199,6 +2375,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.pldp_convention">[docs]</a>
     <span class="k">def</span> <span class="nf">pldp_convention</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return the user&#39;s plot point convention for pole-dipole arrays.</span>
 <span class="sd">        </span>
 
@@ -2209,6 +2386,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pldp_convention</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2220,6 +2398,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values">[docs]</a>
     <span class="k">def</span> <span class="nf">get_electrode_locations_and_mask_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm1</span><span class="p">,</span> <span class="n">v_vm2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get unique electrodes, along with current mask info.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2244,6 +2423,7 @@
 <span class="sd">        **Note:** The mask values are determined from the first row where a given electrode is found.</span>
 <span class="sd">        Values returned for all currently selected lines.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_electrode_locations_and_mask_values</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm1</span><span class="p">,</span> <span class="n">v_vm2</span><span class="p">)</span></div>
 
         
@@ -2255,6 +2435,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_electrode_locations_and_mask_values2">[docs]</a>
     <span class="k">def</span> <span class="nf">get_electrode_locations_and_mask_values2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm1</span><span class="p">,</span> <span class="n">v_vm2</span><span class="p">,</span> <span class="n">v_vlines</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get unique electrodes, along with current mask info.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2281,6 +2462,7 @@
 <span class="sd">        **Note:** The mask values are determined from the first row where a given electrode is found.</span>
 <span class="sd">        Values returned for all currently selected lines.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_electrode_locations_and_mask_values2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm1</span><span class="p">,</span> <span class="n">v_vm2</span><span class="p">,</span> <span class="n">v_vlines</span><span class="p">)</span></div>
 
         
@@ -2292,6 +2474,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.set_electrode_mask_values">[docs]</a>
     <span class="k">def</span> <span class="nf">set_electrode_mask_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm1</span><span class="p">,</span> <span class="n">v_vm2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set unique electrodes, along with current mask info.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2315,6 +2498,7 @@
 
 <span class="sd">        **Note:** Mask values are set for all included electrode locations, currently selected lines.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_electrode_mask_values</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm1</span><span class="p">,</span> <span class="n">v_vm2</span><span class="p">)</span></div>
 
         
@@ -2326,6 +2510,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.set_electrode_mask_values_single_qc_channel">[docs]</a>
     <span class="k">def</span> <span class="nf">set_electrode_mask_values_single_qc_channel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">qc_type</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set unique electrodes, along with current mask info.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2349,6 +2534,7 @@
 
 <span class="sd">        **Note:** Mask values are set for all included electrode locations, currently selected lines.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_electrode_mask_values_single_qc_channel</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx_rx</span><span class="p">,</span> <span class="n">qc_type</span><span class="p">,</span> <span class="n">v_vx</span><span class="p">,</span> <span class="n">v_vy</span><span class="p">,</span> <span class="n">v_vm</span><span class="p">)</span></div>
 
         
@@ -2360,6 +2546,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_qc_channel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">qc_type</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the QC channel handle, if it exists.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:       `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2379,6 +2566,7 @@
 <span class="sd">        **Note:** For `GXIP &lt;geosoft.gxapi.GXIP&gt;`, looks for &quot;QC_IP&quot;, then &quot;QC_OffTime&quot;, then &quot;QC&quot;.</span>
 <span class="sd">        For Resistivity, looks for &quot;QC_Res&quot;, then &quot;QC_OnTime&quot; (case insensitive).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_get_qc_channel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">qc_type</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -2390,6 +2578,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">locate_contributing_electrodes</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">rx1x</span><span class="p">,</span> <span class="n">rx1y</span><span class="p">,</span> <span class="n">rx2x</span><span class="p">,</span> <span class="n">rx2y</span><span class="p">,</span> <span class="n">tx1x</span><span class="p">,</span> <span class="n">tx1y</span><span class="p">,</span> <span class="n">tx2x</span><span class="p">,</span> <span class="n">tx2y</span><span class="p">,</span> <span class="n">sym_size</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Locate on a map electrodes selected in a database row.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2425,6 +2614,7 @@
 <span class="sd">        This EXT is not serialized, so it is also removed if the database is closed (since</span>
 <span class="sd">        this is not the normal behaviour expected from a database).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_locate_contributing_electrodes</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx1x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx1y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx2x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx2y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx1x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx1y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx2x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx2y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">sym_size</span><span class="p">)</span></div>
 
         
@@ -2436,6 +2626,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">locate_contributing_electrodes_3d</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">rx1x</span><span class="p">,</span> <span class="n">rx1y</span><span class="p">,</span> <span class="n">rx1z</span><span class="p">,</span> <span class="n">rx2x</span><span class="p">,</span> <span class="n">rx2y</span><span class="p">,</span> <span class="n">rx2z</span><span class="p">,</span> <span class="n">tx1x</span><span class="p">,</span> <span class="n">tx1y</span><span class="p">,</span> <span class="n">tx1z</span><span class="p">,</span> <span class="n">tx2x</span><span class="p">,</span> <span class="n">tx2y</span><span class="p">,</span> <span class="n">tx2z</span><span class="p">,</span> <span class="n">sym_size</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Locate on a 3D view electrodes selected in a database row.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2479,6 +2670,7 @@
 <span class="sd">        This EXT is not serialized, so it is also removed if the database is closed (since</span>
 <span class="sd">        this is not the normal behaviour expected from a database).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapIP</span><span class="o">.</span><span class="n">_locate_contributing_electrodes_3d</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx1x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx1y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx1z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx2x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx2y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rx2z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx1x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx1y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx1z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx2x</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx2y</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tx2z</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">sym_size</span><span class="p">)</span></div>
 
         
@@ -2490,6 +2682,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_grids_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_grids_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a VV populated with grids created making pseudosections by this IP object</span>
 <span class="sd">        </span>
 
@@ -2502,6 +2695,7 @@
 
 <span class="sd">        **Note:** You can use this list (for instance) to add the created grids to the project list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_grids_vv</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXVV</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -2513,6 +2707,7 @@
 <a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.get_line_data">[docs]</a>
     <span class="k">def</span> <span class="nf">get_line_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">vv_R1X</span><span class="p">,</span> <span class="n">vv_R1Y</span><span class="p">,</span> <span class="n">vv_R2X</span><span class="p">,</span> <span class="n">vv_R2Y</span><span class="p">,</span> <span class="n">vv_T1X</span><span class="p">,</span> <span class="n">vv_T1Y</span><span class="p">,</span> <span class="n">vv_T2X</span><span class="p">,</span> <span class="n">vv_T2Y</span><span class="p">,</span> <span class="n">vv_QC_IP</span><span class="p">,</span> <span class="n">vv_QC_Res</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">vv_data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get electrodes, data and mask values for a single line.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:         `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
@@ -2550,7 +2745,193 @@
 
 <span class="sd">        **Note:** True XY locations are returned for 2D arrays. Distant Electrode locations may be dummies.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_line_data</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_R1X</span><span class="p">,</span> <span class="n">vv_R1Y</span><span class="p">,</span> <span class="n">vv_R2X</span><span class="p">,</span> <span class="n">vv_R2Y</span><span class="p">,</span> <span class="n">vv_T1X</span><span class="p">,</span> <span class="n">vv_T1Y</span><span class="p">,</span> <span class="n">vv_T2X</span><span class="p">,</span> <span class="n">vv_T2Y</span><span class="p">,</span> <span class="n">vv_QC_IP</span><span class="p">,</span> <span class="n">vv_QC_Res</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vv_data</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<span class="c1"># Deprecated</span>
+
+
+
+<div class="viewcode-block" id="GXIP.average_duplicates">
+<a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.average_duplicates">[docs]</a>
+    <span class="k">def</span> <span class="nf">average_duplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Average duplicate samples in a database.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:    Database to export from</span>
+<span class="sd">        :param chan:  Mask or reference channel</span>
+<span class="sd">        :param out:   :ref:`IP_DUPLICATE`</span>
+<span class="sd">        :type  db:    GXDB</span>
+<span class="sd">        :type  chan:  str</span>
+<span class="sd">        :type  out:   int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Averages all values with shared station and N values,</span>
+<span class="sd">        as long as the mask channel is defined at that FID.</span>
+<span class="sd">        Previous averaged values (IP_DATA_AVG) are overwritten according to the</span>
+<span class="sd">        overwrite flag.</span>
+<span class="sd">        REPLACED BY: `average_duplicates_qc &lt;geosoft.gxapi.GXIP.average_duplicates_qc&gt;`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_average_duplicates</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">out</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXIP.export_ubcip">
+<a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ubcip">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_ubcip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Export an `GXIP &lt;geosoft.gxapi.GXIP&gt;` OBS file to use in the UBC IPINV2D program.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:    `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
+<span class="sd">        :param line:  Output line name</span>
+<span class="sd">        :param chan:  Output `GXIP &lt;geosoft.gxapi.GXIP&gt;` channel name</span>
+<span class="sd">        :param obs:   Output OBS file name</span>
+<span class="sd">        :param topo:  Output TOPO file name</span>
+<span class="sd">        :type  db:    GXDB</span>
+<span class="sd">        :type  line:  str</span>
+<span class="sd">        :type  chan:  str</span>
+<span class="sd">        :type  obs:   str</span>
+<span class="sd">        :type  topo:  str</span>
+
+<span class="sd">        .. versionadded:: 6.4</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the</span>
+<span class="sd">        UBC 2D inversion program IPINV2D.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_ubcip</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXIP.export_ubcip2">
+<a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ubcip2">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_ubcip2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">error_chan</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Same as `export_ubcip &lt;geosoft.gxapi.GXIP.export_ubcip&gt;`, with error channel output.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:          `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
+<span class="sd">        :param line:        Output line name</span>
+<span class="sd">        :param chan:        Output `GXIP &lt;geosoft.gxapi.GXIP&gt;` channel name</span>
+<span class="sd">        :param error_chan:  Output error channel name (&quot;&quot; for none)</span>
+<span class="sd">        :param obs:         Output OBS file name</span>
+<span class="sd">        :param topo:        Output TOPO file name</span>
+<span class="sd">        :type  db:          GXDB</span>
+<span class="sd">        :type  line:        str</span>
+<span class="sd">        :type  chan:        str</span>
+<span class="sd">        :type  error_chan:  str</span>
+<span class="sd">        :type  obs:         str</span>
+<span class="sd">        :type  topo:        str</span>
+
+<span class="sd">        .. versionadded:: 6.4.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the</span>
+<span class="sd">        UBC 2D inversion program IPINV2D.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_ubcip2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXIP.export_ubc_res">
+<a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ubc_res">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_ubc_res</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">voltage_chan</span><span class="p">,</span> <span class="n">current_chan</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Export a RES OBS file to use in the UBC DCINV2D program.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:            `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
+<span class="sd">        :param line:          Output line name</span>
+<span class="sd">        :param voltage_chan:  Output voltage channel name</span>
+<span class="sd">        :param current_chan:  Output current channel name</span>
+<span class="sd">        :param obs:           Output OBS file name</span>
+<span class="sd">        :param topo:          Output TOPO file name</span>
+<span class="sd">        :type  db:            GXDB</span>
+<span class="sd">        :type  line:          str</span>
+<span class="sd">        :type  voltage_chan:  str</span>
+<span class="sd">        :type  current_chan:  str</span>
+<span class="sd">        :type  obs:           str</span>
+<span class="sd">        :type  topo:          str</span>
+
+<span class="sd">        .. versionadded:: 6.4</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the</span>
+<span class="sd">        UBC 2D inversion program DCINV2D.</span>
+<span class="sd">        Voltage and current channels should be in units such that</span>
+<span class="sd">        V/I gives volts/amp (or mV/mA).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_ubc_res</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">voltage_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">current_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXIP.export_ubc_res2">
+<a class="viewcode-back" href="../../../GXIP.html#geosoft.gxapi.GXIP.export_ubc_res2">[docs]</a>
+    <span class="k">def</span> <span class="nf">export_ubc_res2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">voltage_chan</span><span class="p">,</span> <span class="n">current_chan</span><span class="p">,</span> <span class="n">error_chan</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">topo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Same as `export_ubc_res &lt;geosoft.gxapi.GXIP.export_ubc_res&gt;`, with error channel output.</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:            `GXDB &lt;geosoft.gxapi.GXDB&gt;` object</span>
+<span class="sd">        :param line:          Output line name</span>
+<span class="sd">        :param voltage_chan:  Output voltage channel name</span>
+<span class="sd">        :param current_chan:  Output current channel name</span>
+<span class="sd">        :param error_chan:    Output error channel name (&quot;&quot; for none)</span>
+<span class="sd">        :param obs:           Output OBS file name</span>
+<span class="sd">        :param topo:          Output TOPO file name</span>
+<span class="sd">        :type  db:            GXDB</span>
+<span class="sd">        :type  line:          str</span>
+<span class="sd">        :type  voltage_chan:  str</span>
+<span class="sd">        :type  current_chan:  str</span>
+<span class="sd">        :type  error_chan:    str</span>
+<span class="sd">        :type  obs:           str</span>
+<span class="sd">        :type  topo:          str</span>
+
+<span class="sd">        .. versionadded:: 6.4.2</span>
+
+<span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the</span>
+<span class="sd">        UBC 2D inversion program DCINV2D.</span>
+<span class="sd">        Voltage and current channels should be in units such that</span>
+<span class="sd">        V/I gives volts/amp (or mV/mA).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_ubc_res2</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">voltage_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">current_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error_chan</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">obs</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">topo</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
         
@@ -2582,7 +2963,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIP</a></li> 
@@ -2590,7 +2971,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

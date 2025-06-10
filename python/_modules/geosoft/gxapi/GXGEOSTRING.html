@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXGEOSTRING &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXGEOSTRING &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGEOSTRING</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXGEOSTRING</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -132,6 +132,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">geostring_file</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Open a Geostring file</span>
 <span class="sd">        </span>
 <span class="sd">        :param geostring_file:  Geostring file name</span>
@@ -146,6 +147,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapGEOSTRING</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">geostring_file</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">mode</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXGEOSTRING</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -159,6 +161,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_ipj">[docs]</a>
     <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the coordinate system of the Geostring.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` in which to place the Geostring coordinate system</span>
@@ -168,6 +171,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
 
         
@@ -179,6 +183,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_features">[docs]</a>
     <span class="k">def</span> <span class="nf">get_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the features</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:        `GXLST &lt;geosoft.gxapi.GXLST&gt;` to fill</span>
@@ -190,6 +195,7 @@
 
 <span class="sd">        **Note:** List items are returned with feature GUID in name and feature name in value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_features</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -201,6 +207,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_sections">[docs]</a>
     <span class="k">def</span> <span class="nf">get_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the sections</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:        `GXLST &lt;geosoft.gxapi.GXLST&gt;` to fill</span>
@@ -212,6 +219,7 @@
 
 <span class="sd">        **Note:** List items are returned with section GUID in name and section name in value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_sections</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -223,6 +231,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_all_shapes">[docs]</a>
     <span class="k">def</span> <span class="nf">get_all_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the all shapes</span>
 <span class="sd">        </span>
 <span class="sd">        :param lst:        `GXLST &lt;geosoft.gxapi.GXLST&gt;` to fill</span>
@@ -232,6 +241,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_all_shapes</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -243,6 +253,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature">[docs]</a>
     <span class="k">def</span> <span class="nf">get_shapes_for_feature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get all shapes linked to a specific feature</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:       Feature GUID</span>
@@ -254,6 +265,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_shapes_for_feature</span><span class="p">(</span><span class="n">guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -265,6 +277,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_shapes_for_section">[docs]</a>
     <span class="k">def</span> <span class="nf">get_shapes_for_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get all shapes linked to a specific section</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:       Section GUID</span>
@@ -276,6 +289,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_shapes_for_section</span><span class="p">(</span><span class="n">guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -287,6 +301,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_shapes_for_feature_and_section">[docs]</a>
     <span class="k">def</span> <span class="nf">get_shapes_for_feature_and_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature_guid</span><span class="p">,</span> <span class="n">section_guid</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get all shapes linked to a specific feature and section</span>
 <span class="sd">        </span>
 <span class="sd">        :param feature_guid:  Feature GUID</span>
@@ -300,6 +315,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_shapes_for_feature_and_section</span><span class="p">(</span><span class="n">feature_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">section_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -311,6 +327,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_feature_properties">[docs]</a>
     <span class="k">def</span> <span class="nf">get_feature_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">pat_number</span><span class="p">,</span> <span class="n">pat_size</span><span class="p">,</span> <span class="n">pat_thick</span><span class="p">,</span> <span class="n">pat_density</span><span class="p">,</span> <span class="n">pat_color</span><span class="p">,</span> <span class="n">pat_bg_color</span><span class="p">,</span> <span class="n">line_style</span><span class="p">,</span> <span class="n">line_thickness</span><span class="p">,</span> <span class="n">line_pitch</span><span class="p">,</span> <span class="n">line_color</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a feature&#39;s properties</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:            Feature GUID</span>
@@ -346,6 +363,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">description</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">polygon</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_number</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_density</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_bg_color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_style</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_thickness</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_color</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_feature_properties</span><span class="p">(</span><span class="n">guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">description</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">polygon</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_number</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_size</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_thick</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_density</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">pat_bg_color</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_style</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_thickness</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_pitch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">line_color</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -357,6 +375,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_section_properties">[docs]</a>
     <span class="k">def</span> <span class="nf">get_section_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">container_name</span><span class="p">,</span> <span class="n">orientation</span><span class="p">,</span> <span class="n">easting</span><span class="p">,</span> <span class="n">northing</span><span class="p">,</span> <span class="n">elevation</span><span class="p">,</span> <span class="n">azimuth</span><span class="p">,</span> <span class="n">swing</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a section&#39;s properties</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:            Section GUID</span>
@@ -390,6 +409,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">container_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">orientation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">easting</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">northing</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">elevation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">swing</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_section_properties</span><span class="p">(</span><span class="n">guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">container_name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">orientation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">easting</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">northing</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">elevation</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">azimuth</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">swing</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
 
         
@@ -401,6 +421,7 @@
 <a class="viewcode-back" href="../../../GXGEOSTRING.html#geosoft.gxapi.GXGEOSTRING.get_shape_properties">[docs]</a>
     <span class="k">def</span> <span class="nf">get_shape_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">guid</span><span class="p">,</span> <span class="n">feature_guid</span><span class="p">,</span> <span class="n">section_guid</span><span class="p">,</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a shape&#39;s properties</span>
 <span class="sd">        </span>
 <span class="sd">        :param guid:          Shape GUID</span>
@@ -420,6 +441,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">feature_guid</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">section_guid</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_shape_properties</span><span class="p">(</span><span class="n">guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">feature_guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">section_guid</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">vert_v_vx</span><span class="p">,</span> <span class="n">vert_v_vy</span><span class="p">,</span> <span class="n">vert_v_vz</span><span class="p">)</span></div>
 </div>
 
@@ -452,7 +474,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXGEOSTRING</a></li> 
@@ -460,7 +482,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXPROJ</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -128,6 +128,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">drop_map_clip_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">hglobal</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Drop Map clipboard data in the current project (workspace background)</span>
 <span class="sd">        </span>
 <span class="sd">        :param hglobal:  Handle to Global Clipboard data</span>
@@ -139,6 +140,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_drop_map_clip_data</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">hglobal</span><span class="p">)</span></div>
 
         
@@ -154,6 +156,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">add_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Adds (and opens) a document file in the current project.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     Document name</span>
@@ -189,6 +192,7 @@
 <span class="sd">            GMS3D         </span>
 <span class="sd">            GMS2D</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">display</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -200,6 +204,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">add_document_without_opening</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Adds (and opens) a document file in the current project.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Document name</span>
@@ -233,6 +238,7 @@
 <span class="sd">            GMS3D         </span>
 <span class="sd">            GMS2D</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document_without_opening</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -244,6 +250,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">add_document_include_meta</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Adds (and opens) a document file in the current project.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     Document name</span>
@@ -281,6 +288,7 @@
 <span class="sd">            GMS3D         </span>
 <span class="sd">            GMS2D</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_document_include_meta</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">display</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -292,6 +300,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">add_grid_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Adds (and opens) a grid document file in the current project with a particular colour distribution and colour file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:     Document name</span>
@@ -316,6 +325,7 @@
 <span class="sd">        **Note:** The passed file name must be a valid Grid document</span>
 <span class="sd">        with an extension and qualifiers (if applicable).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_grid_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">colors</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">method</span><span class="p">,</span> <span class="n">display</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -327,6 +337,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">add_grid_documents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Adds (and opens) multiple grid document files of the same type in the current project with a shared (same) colour distribution and colour file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param names:    String VV with document names</span>
@@ -352,6 +363,7 @@
 <span class="sd">        with an extension and qualifiers (if applicable).</span>
 <span class="sd">        ALL grids must have the same extension and qualifier.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_add_grid_documents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">names</span><span class="p">,</span> <span class="n">colors</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">method</span><span class="p">,</span> <span class="n">display</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -363,6 +375,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_command_environment</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        The current command environment</span>
 <span class="sd">        </span>
 
@@ -384,6 +397,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_command_environment</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -395,6 +409,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">list_documents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fills a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with documents of a certain type.</span>
 <span class="sd">        </span>
 <span class="sd">        :param gvv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type -`STR_FILE &lt;geosoft.gxapi.STR_FILE&gt;`</span>
@@ -424,6 +439,7 @@
 <span class="sd">        GMS2D            List GM-SYS 2D Models.</span>
 <span class="sd">        All              Lists all files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_list_documents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -435,6 +451,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">list_loaded_documents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fills a `GXVV &lt;geosoft.gxapi.GXVV&gt;` with loaded documents of a certain type.</span>
 <span class="sd">        </span>
 <span class="sd">        :param gvv:   `GXVV &lt;geosoft.gxapi.GXVV&gt;` of type -`STR_FILE &lt;geosoft.gxapi.STR_FILE&gt;`&gt;</span>
@@ -464,6 +481,7 @@
 <span class="sd">        GMS2D            List GM-SYS 2D Models.</span>
 <span class="sd">        All              Lists all files.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_list_loaded_documents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -475,6 +493,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the name and type of the loaded document with focus.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name (empty if none currently loaded)</span>
@@ -488,6 +507,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_current_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -499,6 +519,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current_document_of_type</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the name of a loaded document of a specific type.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Name (empty if none currently loaded)</span>
@@ -512,6 +533,7 @@
 
 <span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_current_document_of_type</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -523,6 +545,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">list_tools</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Fills an `GXLST &lt;geosoft.gxapi.GXLST&gt;` object with tools of a certain type and</span>
 <span class="sd">        notes the current visibility setting.</span>
 <span class="sd">        </span>
@@ -546,6 +569,7 @@
 <span class="sd">        include whether the tool is currently visible in the value</span>
 <span class="sd">        column (1=visible, 0-hidden).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_list_tools</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">lst</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -557,6 +581,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_document</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Removes (and closes if visible) a document from the current project.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Document name</span>
@@ -576,6 +601,7 @@
 <span class="sd">        file name complete with an extension and</span>
 <span class="sd">        qualifiers (if applicable).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_remove_document</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -587,6 +613,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">remove_tool</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Removes (and closes if visible) a auxiliary tool from the current project.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  Tool name</span>
@@ -604,6 +631,7 @@
 
 <span class="sd">        **Note:** Nothing</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_remove_tool</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -615,6 +643,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">save_close_documents</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Saves and closes (if visible) documents contained in the current project.</span>
 <span class="sd">        </span>
 <span class="sd">        :param type:  Type of document to save / close</span>
@@ -648,6 +677,7 @@
 <span class="sd">            GMS2D</span>
 <span class="sd">            All</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_save_close_documents</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -659,6 +689,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return the name of the project file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:  name</span>
@@ -672,6 +703,7 @@
 
 <span class="sd">        **Note:** Return the name of the project file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -683,6 +715,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_server_and_project_guid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">server_id</span><span class="p">,</span> <span class="n">project_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Return the unique identifier of the project and server.</span>
 <span class="sd">        </span>
 <span class="sd">        :param server_id:   Server ID</span>
@@ -698,6 +731,7 @@
 
 <span class="sd">        **Note:** Return the unique identifier of the project and server.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">server_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">project_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_server_and_project_guid</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">server_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -709,6 +743,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_central_project_information</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">server_guid</span><span class="p">,</span> <span class="n">project_guid</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">revision_id</span><span class="p">,</span> <span class="n">cs_info</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set Central project information.</span>
 <span class="sd">        </span>
 <span class="sd">        :param server_guid:   server guid</span>
@@ -730,6 +765,7 @@
 
 <span class="sd">        **Note:** Set Central project information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_set_central_project_information</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">server_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project_guid</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">revision_id</span><span class="p">,</span> <span class="n">cs_info</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -741,6 +777,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_central_project_information</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">rev_id</span><span class="p">,</span> <span class="n">rev_date</span><span class="p">,</span> <span class="n">rev_note</span><span class="p">,</span> <span class="n">rev_stage</span><span class="p">,</span> <span class="n">rev_author</span><span class="p">,</span> <span class="n">rev_server_url</span><span class="p">,</span> <span class="n">rev_proj_url</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get Central project information.</span>
 <span class="sd">        </span>
 <span class="sd">        :param instance:        Instance name</span>
@@ -774,6 +811,7 @@
 
 <span class="sd">        **Note:** Get Central project information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_server_url</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">rev_proj_url</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_central_project_information</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">instance</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">project</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">crs</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">branch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_date</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_note</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_stage</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_author</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_server_url</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">rev_proj_url</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -785,6 +823,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">save_document_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">meta_file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Save document view to a file.</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:       Document name</span>
@@ -800,6 +839,7 @@
 
 <span class="sd">        **Note:** Save document view to a file.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_save_document_view</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">meta_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -811,6 +851,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_default_project_path</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get default project folder.</span>
 <span class="sd">        </span>
 <span class="sd">        :param folder:  Returned default path</span>
@@ -824,6 +865,7 @@
 
 <span class="sd">        **Note:** Get default project folder.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">folder</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_default_project_path</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">folder</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -835,6 +877,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_default_project_path</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set default project folder.</span>
 <span class="sd">        </span>
 <span class="sd">        :param folder:  Default path</span>
@@ -848,6 +891,7 @@
 
 <span class="sd">        **Note:** Set default project folder.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_set_default_project_path</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">folder</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -859,6 +903,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">has_pending_central_publish_event</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Checks if there is a pending publish event.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:      bool</span>
@@ -871,6 +916,7 @@
 
 <span class="sd">        **Note:** Checks if there is a pending publish event.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_has_pending_central_publish_event</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -886,6 +932,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">register_background_script</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">save_log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">file_to_delete</span><span class="p">,</span> <span class="n">process_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Register an OMS script launched from the project</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:            Name for the process</span>
@@ -913,6 +960,7 @@
 
 <span class="sd">        **Note:** Allows the project to track the progress/failure/success of scripts launched in the background</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_register_background_script</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name2</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">script</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">save_log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">file_to_delete</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">process_id</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -924,6 +972,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">register_background_script_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tooltip</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">output_log</span><span class="p">,</span> <span class="n">error_log</span><span class="p">,</span> <span class="n">save_log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">output_file_types</span><span class="p">,</span> <span class="n">file_to_delete</span><span class="p">,</span> <span class="n">process_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Register an OMS script launched from the project</span>
 <span class="sd">        </span>
 <span class="sd">        :param name:               Name of the job</span>
@@ -957,6 +1006,7 @@
 
 <span class="sd">        **Note:** Allows the project to track the progress/failure/success of scripts launched in the background</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_register_background_script_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">tooltip</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">script</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_log</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error_log</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">save_log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">output_file_types</span><span class="p">,</span> <span class="n">file_to_delete</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">process_id</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -968,6 +1018,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_registered_background_script</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">date_time</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">process_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve info on a registered OMS script launched from the project</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:         Index for the process (input) 0 to N-1</span>
@@ -995,6 +1046,7 @@
 
 <span class="sd">        **Note:** reference by index</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">date_time</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">script</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">process_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_registered_background_script</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">,</span> <span class="n">date_time</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name2</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">script</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">process_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1006,6 +1058,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_registered_background_script_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">date_time</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">name2</span><span class="p">,</span> <span class="n">script</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">error_file</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">output_file_types</span><span class="p">,</span> <span class="n">process_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Retrieve info on a registered OMS script launched from the project</span>
 <span class="sd">        </span>
 <span class="sd">        :param index:              Index for the process (input) 0 to N-1</span>
@@ -1039,6 +1092,7 @@
 
 <span class="sd">        **Note:** reference by index</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">date_time</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">script</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">output_file</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">error_file</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">process_id</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_registered_background_script_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">index</span><span class="p">,</span> <span class="n">date_time</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">name2</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">script</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">log</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_file</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">error_file</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">output_file_types</span><span class="p">,</span> <span class="n">process_id</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -1050,6 +1104,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_num_registered_background_scripts</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Register a OMS script launched from the project</span>
 <span class="sd">        </span>
 
@@ -1064,7 +1119,136 @@
 
 <span class="sd">        **Note:** Allows the project to track the progress/failure/success of scripts launched in the background</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_num_registered_background_scripts</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_numeric_voxel_itr">
+<a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_numeric_voxel_itr">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_numeric_voxel_itr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Get a numeric voxel document&#39;s ITR from project metadata</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Document name</span>
+<span class="sd">        :param itr:   `GXITR &lt;geosoft.gxapi.GXITR&gt;` Handle</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  itr:   GXITR</span>
+
+<span class="sd">        :returns:     0 - Ok</span>
+<span class="sd">                      1 - Can not find ITR from the document</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 2024.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_numeric_voxel_itr</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">itr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPROJ.set_numeric_voxel_itr">
+<a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.set_numeric_voxel_itr">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_numeric_voxel_itr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Set a numeric voxel document&#39;s ITR into project metadata</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  Document name</span>
+<span class="sd">        :param itr:   `GXITR &lt;geosoft.gxapi.GXITR&gt;` Handle</span>
+<span class="sd">        :type  name:  str</span>
+<span class="sd">        :type  itr:   GXITR</span>
+
+<span class="sd">        :returns:     0 - Ok</span>
+<span class="sd">                      1 - Error</span>
+<span class="sd">        :rtype:       int</span>
+
+<span class="sd">        .. versionadded:: 2024.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_set_numeric_voxel_itr</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">itr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPROJ.get_document_evo_object_metadata">
+<a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_document_evo_object_metadata">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_document_evo_object_metadata</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">metadata</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Get Evo object metadata associated with the document from project metadata</span>
+<span class="sd">        </span>
+<span class="sd">        :param path:      Document full path including name without qualifiers</span>
+<span class="sd">        :param metadata:  `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;` Handle</span>
+<span class="sd">        :type  path:      str</span>
+<span class="sd">        :type  metadata:  GXEVOOBJMETA</span>
+
+<span class="sd">        :returns:         0 - Ok</span>
+<span class="sd">                          1 - Can not find object metadata for the document</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_get_document_evo_object_metadata</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">metadata</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+<div class="viewcode-block" id="GXPROJ.set_document_evo_object_metadata">
+<a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.set_document_evo_object_metadata">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">set_document_evo_object_metadata</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">metadata</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Set evo object metadata associated with the document into project metadata</span>
+<span class="sd">        </span>
+<span class="sd">        :param path:      Document full path including name without qualifiers</span>
+<span class="sd">        :param metadata:  `GXEVOOBJMETA &lt;geosoft.gxapi.GXEVOOBJMETA&gt;` Handle</span>
+<span class="sd">        :type  path:      str</span>
+<span class="sd">        :type  metadata:  GXEVOOBJMETA</span>
+
+<span class="sd">        :returns:         0 - Ok</span>
+<span class="sd">                          1 - Error</span>
+<span class="sd">        :rtype:           int</span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_set_document_evo_object_metadata</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">path</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">metadata</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 </div>
 
@@ -1096,7 +1280,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -1104,7 +1288,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

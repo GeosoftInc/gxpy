@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMXD &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXMXD &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMXD</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXMXD</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -124,11 +124,59 @@
 <span class="c1"># Miscellaneous</span>
 
 
+
+<div class="viewcode-block" id="GXMXD.commit">
+<a class="viewcode-back" href="../../../GXMXD.html#geosoft.gxapi.GXMXD.commit">[docs]</a>
+    <span class="k">def</span> <span class="nf">commit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Commit any changes to a `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_commit</span><span class="p">()</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXMXD.create">
+<a class="viewcode-back" href="../../../GXMXD.html#geosoft.gxapi.GXMXD.create">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Create a `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name:  `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` file name</span>
+<span class="sd">        :type  name:  str</span>
+
+<span class="sd">        :returns:     `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` Object</span>
+<span class="sd">        :rtype:       GXMXD</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMXD</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">GXMXD</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
 <div class="viewcode-block" id="GXMXD.create_metadata">
 <a class="viewcode-back" href="../../../GXMXD.html#geosoft.gxapi.GXMXD.create_metadata">[docs]</a>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_metadata</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mxd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create metadata for this brand new `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` (we are the creator)</span>
 <span class="sd">        </span>
 <span class="sd">        :param mxd:  `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` file name</span>
@@ -138,7 +186,56 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMXD</span><span class="o">.</span><span class="n">_create_metadata</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mxd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+
+
+<div class="viewcode-block" id="GXMXD.discard">
+<a class="viewcode-back" href="../../../GXMXD.html#geosoft.gxapi.GXMXD.discard">[docs]</a>
+    <span class="k">def</span> <span class="nf">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Discard all changes made to the `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`.</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_discard</span><span class="p">()</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXMXD.save_as_map">
+<a class="viewcode-back" href="../../../GXMXD.html#geosoft.gxapi.GXMXD.save_as_map">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_as_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">,</span> <span class="n">focus_map_only</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Save `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` as Geosoft map</span>
+<span class="sd">        </span>
+<span class="sd">        :param map:             Geosoft map file name</span>
+<span class="sd">        :param focus_map_only:  Export focus map only?</span>
+<span class="sd">        :type  map:             str</span>
+<span class="sd">        :type  focus_map_only:  bool</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_as_map</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">focus_map_only</span><span class="p">)</span></div>
 
         
 
@@ -149,6 +246,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">convert_to_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mxd</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create Geosoft map from ArcGIS `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param mxd:  ArcGIS `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` file name</span>
@@ -160,7 +258,31 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMXD</span><span class="o">.</span><span class="n">_convert_to_map</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mxd</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">map</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXMXD.save_as_mxd">
+<a class="viewcode-back" href="../../../GXMXD.html#geosoft.gxapi.GXMXD.save_as_mxd">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_as_mxd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mxdHandle</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        .. deprecated:: None None </span>
+<span class="sd">        Save `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` as a `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` in different location</span>
+<span class="sd">        </span>
+<span class="sd">        :param mxdHandle:  `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` file name</span>
+<span class="sd">        :type  mxdHandle:  str</span>
+
+<span class="sd">        .. versionadded:: 7.0</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save_as_mxd</span><span class="p">(</span><span class="n">mxdHandle</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
 
@@ -171,6 +293,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sync</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mxd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Syncronize any Metadata for this `GXMXD &lt;geosoft.gxapi.GXMXD&gt;`</span>
 <span class="sd">        </span>
 <span class="sd">        :param mxd:  `GXMXD &lt;geosoft.gxapi.GXMXD&gt;` file name</span>
@@ -180,6 +303,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMXD</span><span class="o">.</span><span class="n">_sync</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">mxd</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
@@ -212,7 +336,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMXD</a></li> 
@@ -220,7 +344,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

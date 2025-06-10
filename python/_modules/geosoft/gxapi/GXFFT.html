@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXFFT &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXFFT &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXFFT</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXFFT</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 
@@ -131,6 +131,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.add_white_noise">[docs]</a>
     <span class="k">def</span> <span class="nf">add_white_noise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">option</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Add white noise to the power spectrum of an FFT object.</span>
 <span class="sd">        </span>
 <span class="sd">        :param amp:     The value added to the real part of all non-DC components of the current power spectrum</span>
@@ -142,6 +143,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_white_noise</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="n">option</span><span class="p">)</span></div>
 
         
@@ -153,6 +155,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.app_dens">[docs]</a>
     <span class="k">def</span> <span class="nf">app_dens</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">dens</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Appparent density filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param thick:  Thickness (meters) of the earth model</span>
@@ -164,6 +167,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_app_dens</span><span class="p">(</span><span class="n">thick</span><span class="p">,</span> <span class="n">dens</span><span class="p">)</span></div>
 
         
@@ -175,6 +179,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.app_susc">[docs]</a>
     <span class="k">def</span> <span class="nf">app_susc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strength</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Apparent susceptiblity filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param strength:  Total magnetic field strength</span>
@@ -187,6 +192,7 @@
 <span class="sd">        **Note:** Reduction to magnetic pole (`red_pol &lt;geosoft.gxapi.GXFFT.red_pol&gt;`) and downward continuation</span>
 <span class="sd">        (`contin &lt;geosoft.gxapi.GXFFT.contin&gt;`) should be called BEFORE using `app_susc &lt;geosoft.gxapi.GXFFT.app_susc&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_app_susc</span><span class="p">(</span><span class="n">strength</span><span class="p">)</span></div>
 
         
@@ -198,6 +204,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.band_pass">[docs]</a>
     <span class="k">def</span> <span class="nf">band_pass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">llen</span><span class="p">,</span> <span class="n">hlen</span><span class="p">,</span> <span class="n">pass_defined</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Bandpass filter (using low and high wavelength cutoffs)</span>
 <span class="sd">        </span>
 <span class="sd">        :param llen:          Low Cutoff wavelength (meters)</span>
@@ -211,6 +218,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_band_pass</span><span class="p">(</span><span class="n">llen</span><span class="p">,</span> <span class="n">hlen</span><span class="p">,</span> <span class="n">pass_defined</span><span class="p">)</span></div>
 
         
@@ -222,6 +230,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.b_worth">[docs]</a>
     <span class="k">def</span> <span class="nf">b_worth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clen</span><span class="p">,</span> <span class="n">degree</span><span class="p">,</span> <span class="n">filter_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Butterworth filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param clen:         Central cutoff wavelength (meter)</span>
@@ -235,6 +244,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_b_worth</span><span class="p">(</span><span class="n">clen</span><span class="p">,</span> <span class="n">degree</span><span class="p">,</span> <span class="n">filter_type</span><span class="p">)</span></div>
 
         
@@ -246,6 +256,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.rc_filter">[docs]</a>
     <span class="k">def</span> <span class="nf">rc_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clen</span><span class="p">,</span> <span class="n">filter_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        RC filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param clen:         Central cutoff wavelength (meter)</span>
@@ -257,6 +268,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_rc_filter</span><span class="p">(</span><span class="n">clen</span><span class="p">,</span> <span class="n">filter_type</span><span class="p">)</span></div>
 
         
@@ -268,6 +280,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.contin">[docs]</a>
     <span class="k">def</span> <span class="nf">contin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dist</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Upward/Downward continuation filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param dist:  Distance to continue; positive = downwards negative = upwards</span>
@@ -277,6 +290,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_contin</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span></div>
 
         
@@ -288,6 +302,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.cos_roll">[docs]</a>
     <span class="k">def</span> <span class="nf">cos_roll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">llen</span><span class="p">,</span> <span class="n">hlen</span><span class="p">,</span> <span class="n">degree</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Cosine roll-off filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param llen:    Low wavelength start point (meters)</span>
@@ -303,6 +318,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_cos_roll</span><span class="p">(</span><span class="n">llen</span><span class="p">,</span> <span class="n">hlen</span><span class="p">,</span> <span class="n">degree</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -314,6 +330,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a New `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` with detrend options.</span>
 <span class="sd">        </span>
 <span class="sd">        :param gvv:     `GXVV &lt;geosoft.gxapi.GXVV&gt;` to transform.</span>
@@ -333,6 +350,7 @@
 <span class="sd">        **Note:** The detrending options control the removal of a trend from the data</span>
 <span class="sd">        before the `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` is applied. The default data expansion is 10% before `GXFFT &lt;geosoft.gxapi.GXFFT&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFFT</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXFFT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -344,6 +362,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">expansion</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a New `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` with detrend and expansion options.</span>
 <span class="sd">        </span>
 <span class="sd">        :param gvv:        `GXVV &lt;geosoft.gxapi.GXVV&gt;` to transform.</span>
@@ -366,6 +385,7 @@
 <span class="sd">        before the `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` is applied. The expansion options control the minimum</span>
 <span class="sd">        data expansion before the `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` is applied.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFFT</span><span class="o">.</span><span class="n">_create_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">expansion</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXFFT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -377,6 +397,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ref</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` object with detrend options from reference (original) channel,</span>
 <span class="sd">        but no `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` process.</span>
 <span class="sd">        </span>
@@ -397,6 +418,7 @@
 <span class="sd">        **Note:** This just creates an object.  It is intended to be called</span>
 <span class="sd">        immediately after with `set_vv &lt;geosoft.gxapi.GXFFT.set_vv&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFFT</span><span class="o">.</span><span class="n">_create_ref</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXFFT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -408,6 +430,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create_ref_ex</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">expansion</span><span class="p">,</span> <span class="n">d_cmult</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` object with detrend and expansion options from reference (original) channel,</span>
 <span class="sd">        but no `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` process.</span>
 <span class="sd">        </span>
@@ -432,6 +455,7 @@
 <span class="sd">        **Note:** This just creates an object.  It is intended to be called</span>
 <span class="sd">        immediately after with `set_vv &lt;geosoft.gxapi.GXFFT.set_vv&gt;`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapFFT</span><span class="o">.</span><span class="n">_create_ref_ex</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">interv</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">expansion</span><span class="p">,</span> <span class="n">d_cmult</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXFFT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -445,6 +469,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.gaus">[docs]</a>
     <span class="k">def</span> <span class="nf">gaus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dev</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gaussian filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param dev:   Standard deviation cutoff of function (meters)</span>
@@ -456,6 +481,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_gaus</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span></div>
 
         
@@ -467,6 +493,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.get_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">get_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vr</span><span class="p">,</span> <span class="n">gv_vi</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Copies real and imaginary `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s to user `GXVV &lt;geosoft.gxapi.GXVV&gt;`&#39;s.</span>
 <span class="sd">        </span>
 <span class="sd">        :param gv_vr:  Real component</span>
@@ -478,6 +505,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_vv</span><span class="p">(</span><span class="n">gv_vr</span><span class="p">,</span> <span class="n">gv_vi</span><span class="p">)</span></div>
 
         
@@ -489,6 +517,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.h_drv">[docs]</a>
     <span class="k">def</span> <span class="nf">h_drv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Horizontal derivative</span>
 <span class="sd">        </span>
 <span class="sd">        :param order:  Order of differentiation (default = 1)</span>
@@ -498,6 +527,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_h_drv</span><span class="p">(</span><span class="n">order</span><span class="p">)</span></div>
 
         
@@ -509,6 +539,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.high_pass">[docs]</a>
     <span class="k">def</span> <span class="nf">high_pass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wlen</span><span class="p">,</span> <span class="n">fid_int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        High bandpass filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param wlen:     Cutoff wavelength (meter)</span>
@@ -520,6 +551,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_high_pass</span><span class="p">(</span><span class="n">wlen</span><span class="p">,</span> <span class="n">fid_int</span><span class="p">)</span></div>
 
         
@@ -531,6 +563,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.h_int">[docs]</a>
     <span class="k">def</span> <span class="nf">h_int</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Horizontal integration</span>
 <span class="sd">        </span>
 
@@ -538,6 +571,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_h_int</span><span class="p">()</span></div>
 
         
@@ -549,6 +583,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.inverse">[docs]</a>
     <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">gv_vm</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Inverse the `GXFFT &lt;geosoft.gxapi.GXFFT&gt;` from wave number domain to space domain</span>
 <span class="sd">        </span>
 <span class="sd">        :param gvv:    Output `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -560,6 +595,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_inverse</span><span class="p">(</span><span class="n">gvv</span><span class="p">,</span> <span class="n">gv_vm</span><span class="p">)</span></div>
 
         
@@ -571,6 +607,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.low_pass">[docs]</a>
     <span class="k">def</span> <span class="nf">low_pass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wlen</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Low bandpass filter</span>
 <span class="sd">        </span>
 <span class="sd">        :param wlen:  Cutoff wavelength (meters)</span>
@@ -580,6 +617,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_low_pass</span><span class="p">(</span><span class="n">wlen</span><span class="p">)</span></div>
 
         
@@ -591,6 +629,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.red_pol">[docs]</a>
     <span class="k">def</span> <span class="nf">red_pol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">incp</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Reduction to magnetic pole</span>
 <span class="sd">        </span>
 <span class="sd">        :param inc:   Geomagnetic inclination (degrees)</span>
@@ -606,6 +645,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_red_pol</span><span class="p">(</span><span class="n">inc</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">incp</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span></div>
 
         
@@ -617,6 +657,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.nyquist">[docs]</a>
     <span class="k">def</span> <span class="nf">nyquist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets the Nyquist frequency (wavenumbers/sample unit).</span>
 <span class="sd">        </span>
 
@@ -627,6 +668,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nyquist</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -638,6 +680,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.samp_incr">[docs]</a>
     <span class="k">def</span> <span class="nf">samp_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Gets the original sample increment.</span>
 <span class="sd">        </span>
 
@@ -648,6 +691,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_samp_incr</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -659,6 +703,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.wave_incr">[docs]</a>
     <span class="k">def</span> <span class="nf">wave_incr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the wave number increment.</span>
 <span class="sd">        </span>
 
@@ -669,6 +714,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wave_incr</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -680,6 +726,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.set_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">set_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gv_vr</span><span class="p">,</span> <span class="n">gv_vi</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Sets real and imaginary VVs in `GXFFT &lt;geosoft.gxapi.GXFFT&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :param gv_vr:  Real component</span>
@@ -694,6 +741,7 @@
 <span class="sd">        **Note:** The `GXVV &lt;geosoft.gxapi.GXVV&gt;` must have been obtained from the same `GXFFT &lt;geosoft.gxapi.GXFFT&gt;`</span>
 <span class="sd">        using the `set_vv &lt;geosoft.gxapi.GXFFT.set_vv&gt;` method.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_vv</span><span class="p">(</span><span class="n">gv_vr</span><span class="p">,</span> <span class="n">gv_vi</span><span class="p">)</span></div>
 
         
@@ -705,6 +753,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.spectrum">[docs]</a>
     <span class="k">def</span> <span class="nf">spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gvv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Calculates a power spectrum</span>
 <span class="sd">        </span>
 <span class="sd">        :param gvv:  Output power spectrum `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -714,6 +763,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_spectrum</span><span class="p">(</span><span class="n">gvv</span><span class="p">)</span></div>
 
         
@@ -725,6 +775,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.v_drv">[docs]</a>
     <span class="k">def</span> <span class="nf">v_drv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Vertical derivative</span>
 <span class="sd">        </span>
 <span class="sd">        :param order:  Order of differentiation (default = 1)</span>
@@ -734,6 +785,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_v_drv</span><span class="p">(</span><span class="n">order</span><span class="p">)</span></div>
 
         
@@ -745,6 +797,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.v_int">[docs]</a>
     <span class="k">def</span> <span class="nf">v_int</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Vertical integration</span>
 <span class="sd">        </span>
 
@@ -752,6 +805,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_v_int</span><span class="p">()</span></div>
 
         
@@ -763,6 +817,7 @@
 <a class="viewcode-back" href="../../../GXFFT.html#geosoft.gxapi.GXFFT.write_spectrum">[docs]</a>
     <span class="k">def</span> <span class="nf">write_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gvv</span><span class="p">,</span> <span class="n">out_file</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Writes a power spectrum to a file</span>
 <span class="sd">        </span>
 <span class="sd">        :param gvv:       Output power spectrum `GXVV &lt;geosoft.gxapi.GXVV&gt;`</span>
@@ -774,6 +829,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_write_spectrum</span><span class="p">(</span><span class="n">gvv</span><span class="p">,</span> <span class="n">out_file</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 </div>
 
@@ -806,7 +862,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXFFT</a></li> 
@@ -814,7 +870,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

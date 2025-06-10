@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXARCDB &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXARCDB &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCDB</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXARCDB</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXDAT</span> <span class="kn">import</span> <span class="n">GXDAT</span>
@@ -130,6 +130,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.create_dat">[docs]</a>
     <span class="k">def</span> <span class="nf">create_dat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_field</span><span class="p">,</span> <span class="n">y_field</span><span class="p">,</span> <span class="n">d_field</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a handle to a ARCGIS table `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` 2D object</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_field:  Name of X field in table</span>
@@ -146,6 +147,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_dat</span><span class="p">(</span><span class="n">x_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">d_field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXDAT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -157,6 +159,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.create_dat_3d">[docs]</a>
     <span class="k">def</span> <span class="nf">create_dat_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_field</span><span class="p">,</span> <span class="n">y_field</span><span class="p">,</span> <span class="n">z_field</span><span class="p">,</span> <span class="n">d_field</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create a handle to a ARCGIS table `GXDAT &lt;geosoft.gxapi.GXDAT&gt;` 3D object</span>
 <span class="sd">        </span>
 <span class="sd">        :param x_field:  Name of X field in table</span>
@@ -175,6 +178,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_dat_3d</span><span class="p">(</span><span class="n">x_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">z_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">d_field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXDAT</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -186,6 +190,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method return a handle to the current table</span>
 <span class="sd">        </span>
 
@@ -196,6 +201,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDB</span><span class="o">.</span><span class="n">_current</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXARCDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -207,6 +213,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.export_to_db">[docs]</a>
     <span class="k">def</span> <span class="nf">export_to_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Export data from an `GXARCDB &lt;geosoft.gxapi.GXARCDB&gt;` table into a group in a Geosoft GDB using a template.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database</span>
@@ -225,6 +232,7 @@
 
 <span class="sd">        3. If the line already exists, the data will overwrite the existing data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_export_to_db</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -236,6 +244,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.field_lst">[docs]</a>
     <span class="k">def</span> <span class="nf">field_lst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Place the list of field names in a `GXLST &lt;geosoft.gxapi.GXLST&gt;`.</span>
 <span class="sd">        </span>
 <span class="sd">        :type  lst:    GXLST</span>
@@ -247,6 +256,7 @@
 <span class="sd">        **Note:** If Z or M values are supported by the table geometry the strings</span>
 <span class="sd">        &quot;&lt;Z Values&gt;&quot; and &quot;&lt;M Values&gt;&quot; will be added accordingly.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_field_lst</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span></div>
 
         
@@ -258,6 +268,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_i_unknown</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">unknown</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method attempts to make a table handle from an IUnknown pointer</span>
 
 <span class="sd">        Returns				 `GXARCDB &lt;geosoft.gxapi.GXARCDB&gt;` Handle, `ARCDB_NULL &lt;geosoft.gxapi.ARCDB_NULL&gt;` if not successful</span>
@@ -270,6 +281,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDB</span><span class="o">.</span><span class="n">_from_i_unknown</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">unknown</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXARCDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -281,6 +293,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.get_ipj">[docs]</a>
     <span class="k">def</span> <span class="nf">get_ipj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get georeference information from a table.</span>
 <span class="sd">        </span>
 <span class="sd">        :param ipj:    `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` to fill in</span>
@@ -293,6 +306,7 @@
 <span class="sd">        **Note:** If the table does not have an `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;`, the `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` that is</span>
 <span class="sd">        returned will have an unknown projection.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_ipj</span><span class="p">(</span><span class="n">ipj</span><span class="p">)</span></div>
 
         
@@ -304,6 +318,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.exist_field">[docs]</a>
     <span class="k">def</span> <span class="nf">exist_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method checks to see if the specified field exists</span>
 <span class="sd">        in the table.</span>
 <span class="sd">        </span>
@@ -318,6 +333,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exist_field</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -329,6 +345,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.get_i_unknown">[docs]</a>
     <span class="k">def</span> <span class="nf">get_i_unknown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        This method gets the IUnknown pointer</span>
 <span class="sd">        </span>
 
@@ -339,6 +356,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_i_unknown</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -350,6 +368,7 @@
 <a class="viewcode-back" href="../../../GXARCDB.html#geosoft.gxapi.GXARCDB.import_chem_database_wizard">[docs]</a>
     <span class="k">def</span> <span class="nf">import_chem_database_wizard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Template creation for importing geochem data.</span>
 <span class="sd">        </span>
 <span class="sd">        :param temp:   Template to make</span>
@@ -364,6 +383,7 @@
 
 <span class="sd">        **License:** `Geosoft Extended End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_import_chem_database_wizard</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="nb">type</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -375,6 +395,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sel_tbl_ex_gui</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">table_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Select table `GXGUI &lt;geosoft.gxapi.GXGUI&gt;` with table type.</span>
 <span class="sd">        </span>
 <span class="sd">        :param table_type:  :ref:`ARC_SELTBL_TYPE`</span>
@@ -387,6 +408,7 @@
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">table_type</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDB</span><span class="o">.</span><span class="n">_sel_tbl_ex_gui</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">table_type</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXARCDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -398,6 +420,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">sel_tbl_gui</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Select table `GXGUI &lt;geosoft.gxapi.GXGUI&gt;`.</span>
 <span class="sd">        </span>
 
@@ -410,6 +433,7 @@
 
 <span class="sd">        **Note:** Terminates with Cancel on cancel, returns `ARCDB_NULL &lt;geosoft.gxapi.ARCDB_NULL&gt;` if there are no valid tables in current document.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapARCDB</span><span class="o">.</span><span class="n">_sel_tbl_gui</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXARCDB</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 </div>
@@ -442,7 +466,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXARCDB</a></li> 
@@ -450,7 +474,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">

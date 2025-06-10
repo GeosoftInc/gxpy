@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXMSTK &#8212; Geosoft GX Python API 2024.2.0 documentation</title>
+    <title>geosoft.gxapi.GXMSTK &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=0af83669"></script>
+    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMSTK</a></li> 
@@ -61,11 +61,11 @@
             
   <h1>Source code for geosoft.gxapi.GXMSTK</h1><div class="highlight"><pre>
 <span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
-<span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
 <span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
 <span class="kn">from</span> <span class="nn">.GXSTK</span> <span class="kn">import</span> <span class="n">GXSTK</span>
@@ -133,6 +133,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.add_stk">[docs]</a>
     <span class="k">def</span> <span class="nf">add_stk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create and add a `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object to `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;`</span>
 <span class="sd">        </span>
 
@@ -145,6 +146,7 @@
 
 <span class="sd">        **Note:** Index to the added `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object is the last one in `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` container.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_stk</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">GXSTK</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -156,6 +158,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.chan_list_vv">[docs]</a>
     <span class="k">def</span> <span class="nf">chan_list_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">num_ch_vv</span><span class="p">,</span> <span class="n">str_ch_vv</span><span class="p">,</span> <span class="n">x_ch_vv</span><span class="p">,</span> <span class="n">prof_ch_vv</span><span class="p">,</span> <span class="n">prof_ch__un_used_vv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Save channel names in VVs based on channel types</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:                   Database handle</span>
@@ -178,6 +181,7 @@
 <span class="sd">        **Note:** Terms &#39;used&#39; and &#39;unused&#39; indicate that the a channel name</span>
 <span class="sd">        in database also &#39;in&#39; and &#39;not in&#39; the `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` object respectively</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_chan_list_vv</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">num_ch_vv</span><span class="p">,</span> <span class="n">str_ch_vv</span><span class="p">,</span> <span class="n">x_ch_vv</span><span class="p">,</span> <span class="n">prof_ch_vv</span><span class="p">,</span> <span class="n">prof_ch__un_used_vv</span><span class="p">)</span></div>
 
         
@@ -189,6 +193,7 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Create `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;`.</span>
 <span class="sd">        </span>
 
@@ -199,6 +204,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapMSTK</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">GXMSTK</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -212,6 +218,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.draw_profile">[docs]</a>
     <span class="k">def</span> <span class="nf">draw_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="nb">map</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Draw multiple profiles in map</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:    Database handle</span>
@@ -225,6 +232,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_profile</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="nb">map</span><span class="p">)</span></div>
 
         
@@ -236,6 +244,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.set_y_axis_direction">[docs]</a>
     <span class="k">def</span> <span class="nf">set_y_axis_direction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Set the Y-axis direction - normal or inverted</span>
 <span class="sd">        </span>
 <span class="sd">        :param direction:  Y-axis direction: 0 - normal, 1 - inverted</span>
@@ -245,6 +254,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_y_axis_direction</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span></div>
 
         
@@ -256,6 +266,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.find_stk2">[docs]</a>
     <span class="k">def</span> <span class="nf">find_stk2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">vv_rtd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find index of `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` from a string of group names and X/Y channels</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Input string (see notes above). Will be modified on return</span>
@@ -276,6 +287,7 @@
 <span class="sd">        for example, string &quot;DATA ( DIST , MAG )&quot;  indicates a map group name of DATA,</span>
 <span class="sd">        X channel name of DIST and Y channel name of MAG.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">index</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_stk2</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">index</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vv_rtd</span><span class="p">)</span></div>
 
         
@@ -287,6 +299,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.get_stk">[docs]</a>
     <span class="k">def</span> <span class="nf">get_stk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get a specific `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object from a `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` object</span>
 <span class="sd">        (Index of 0 gets the first `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` in the `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;`)</span>
 <span class="sd">        </span>
@@ -300,6 +313,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_stk</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GXSTK</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
@@ -311,6 +325,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.delete_stk">[docs]</a>
     <span class="k">def</span> <span class="nf">delete_stk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Delete a `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` object</span>
 <span class="sd">        </span>
 <span class="sd">        :param num:   Index to `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` to delete (0 is first one)</span>
@@ -322,6 +337,7 @@
 
 <span class="sd">        **Note:** 0 is the first one</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_delete_stk</span><span class="p">(</span><span class="n">num</span><span class="p">)</span></div>
 
         
@@ -333,6 +349,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.find_stk">[docs]</a>
     <span class="k">def</span> <span class="nf">find_stk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_val</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">x_ch</span><span class="p">,</span> <span class="n">y_ch</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Find index of `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` from a string of group names and X/Y channels</span>
 <span class="sd">        </span>
 <span class="sd">        :param str_val:  Input string (see notes above). Will be modified on return</span>
@@ -357,6 +374,7 @@
 <span class="sd">        for example, string &quot;DATA ( DIST , MAG )&quot;  indicates a map group name of DATA,</span>
 <span class="sd">        X channel name of DIST and Y channel name of MAG.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">index</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">x_ch</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_stk</span><span class="p">(</span><span class="n">str_val</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">index</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">x_ch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">y_ch</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
 
         
@@ -368,6 +386,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.get_num_stk">[docs]</a>
     <span class="k">def</span> <span class="nf">get_num_stk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Get the number of `GXSTK &lt;geosoft.gxapi.GXSTK&gt;` objects in a `GXMSTK &lt;geosoft.gxapi.GXMSTK&gt;` object</span>
 <span class="sd">        </span>
 
@@ -378,6 +397,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_num_stk</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
 
@@ -389,6 +409,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.read_ini">[docs]</a>
     <span class="k">def</span> <span class="nf">read_ini</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Read multiple profiles parameters from an INI file</span>
 <span class="sd">        </span>
 <span class="sd">        :param ra:    `GXRA &lt;geosoft.gxapi.GXRA&gt;` handle to an INI file</span>
@@ -398,6 +419,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_read_ini</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span></div>
 
         
@@ -409,6 +431,7 @@
 <a class="viewcode-back" href="../../../GXMSTK.html#geosoft.gxapi.GXMSTK.save_profile">[docs]</a>
     <span class="k">def</span> <span class="nf">save_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wa</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
 <span class="sd">        Save multiple profile INI parameters in a `GXWA &lt;geosoft.gxapi.GXWA&gt;` file of INI format</span>
 <span class="sd">        </span>
 <span class="sd">        :param wa:    `GXWA &lt;geosoft.gxapi.GXWA&gt;` handle to an INI file</span>
@@ -418,6 +441,7 @@
 
 <span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">_save_profile</span><span class="p">(</span><span class="n">wa</span><span class="p">)</span></div>
 </div>
 
@@ -450,7 +474,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2024.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXMSTK</a></li> 
@@ -458,7 +482,7 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Geosoft Inc.
+    &#169; Copyright 2025, Geosoft Inc.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
