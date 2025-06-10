@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXMESH(gxapi_cy.WrapMESH):
     @classmethod
     def create(cls, name):
         """
+        
         Creates a new Mesh
         
         :param name:  Mesh Name
@@ -65,6 +66,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMESH._create(GXContext._get_tls_geo(), name.encode())
         return GXMESH(ret_val)
 
@@ -73,6 +75,7 @@ class GXMESH(gxapi_cy.WrapMESH):
     @classmethod
     def open(cls, fileName, lstMeshNames):
         """
+        
         Opens an existing Mesh
         
         :param fileName:      File Name
@@ -87,6 +90,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMESH._open(GXContext._get_tls_geo(), fileName.encode(), lstMeshNames)
         return GXMESH(ret_val)
 
@@ -95,6 +99,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def insert_patch(self, mesh_name):
         """
+        
         Inserts a new surface patch to the mesh specified by a unique ID
         
         :param mesh_name:  Mesh Name
@@ -107,6 +112,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._insert_patch(mesh_name.encode())
         return ret_val
 
@@ -115,6 +121,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def delete_patch(self, mesh_name, patch_id):
         """
+        
         Deletes a patch specified by Patch ID from a mesh
         
         :param mesh_name:  Mesh Name
@@ -126,6 +133,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_patch(mesh_name.encode(), patch_id)
         
 
@@ -134,6 +142,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def patch_exists(self, mesh_name, patch_id):
         """
+        
         Checks if a patch specified by a patch ID exists in a mesh
         
         :param mesh_name:  Mesh Name
@@ -148,6 +157,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._patch_exists(mesh_name.encode(), patch_id)
         return ret_val
 
@@ -156,6 +166,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def num_patches(self, mesh_name):
         """
+        
         Returns the number of patches added to the mesh
         
         :param mesh_name:  Mesh Name
@@ -168,6 +179,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_patches(mesh_name.encode())
         return ret_val
 
@@ -176,6 +188,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def add_vertex(self, mesh_name, patch_id, x, y, z):
         """
+        
         Adds a vertex to a patch in a mesh
         
         :param mesh_name:  Mesh Name
@@ -196,6 +209,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._add_vertex(mesh_name.encode(), patch_id, x, y, z)
         return ret_val
 
@@ -204,6 +218,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def num_vertices(self, mesh_name, patch_id):
         """
+        
         Number of vertices in a patch in mesh
         
         :param mesh_name:  Mesh Name
@@ -218,6 +233,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_vertices(mesh_name.encode(), patch_id)
         return ret_val
 
@@ -226,6 +242,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def add_face(self, mesh_name, patch_id, v0, v1, v2):
         """
+        
         Adds a face to a patch in a mesh
         
         :param mesh_name:  Mesh Name
@@ -246,6 +263,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._add_face(mesh_name.encode(), patch_id, v0, v1, v2)
         return ret_val
 
@@ -254,6 +272,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def num_faces(self, mesh_name, patch_id):
         """
+        
         Number of faces in a patch in mesh
         
         :param mesh_name:  Mesh Name
@@ -268,6 +287,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_faces(mesh_name.encode(), patch_id)
         return ret_val
 
@@ -276,6 +296,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def get_vertex_point(self, mesh_name, patch_id, vertex_index, x_coordinate, y_coordinate, z_coordinate):
         """
+        
         Number of faces in a patch in mesh
         
         :param mesh_name:     Mesh Name
@@ -298,6 +319,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, x_coordinate.value, y_coordinate.value, z_coordinate.value = self._get_vertex_point(mesh_name.encode(), patch_id, vertex_index, x_coordinate.value, y_coordinate.value, z_coordinate.value)
         return ret_val
 
@@ -306,6 +328,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def get_vertices(self, mesh_name, patch_id, vert_v_vx, vert_v_vy, vert_v_vz):
         """
+        
         Returns all the vertices in a patch
         
         :param mesh_name:  Mesh Name
@@ -323,6 +346,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_vertices(mesh_name.encode(), patch_id, vert_v_vx, vert_v_vy, vert_v_vz)
         
 
@@ -331,6 +355,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def get_faces(self, mesh_name, patch_id, face_v_1, face_v_2, face_v_3):
         """
+        
         Returns all the faces comprising of vertex indices in a patch
         
         :param mesh_name:  Mesh Name
@@ -348,6 +373,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_faces(mesh_name.encode(), patch_id, face_v_1, face_v_2, face_v_3)
         
 
@@ -356,6 +382,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def insert_attributes(self, mesh_name, attribute_name, data_type, attribute_type):
         """
+        
         Inserts an attribute set to a mesh
         
         :param mesh_name:       Mesh Name
@@ -371,6 +398,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._insert_attributes(mesh_name.encode(), attribute_name.encode(), data_type, attribute_type)
         
 
@@ -379,6 +407,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def set_attribute_values(self, mesh_name, attribute_name, data_type, attribute_type, patch_id, vv):
         """
+        
         Inserts an attribute set to a mesh
         
         :param mesh_name:       Mesh Name
@@ -398,6 +427,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attribute_values(mesh_name.encode(), attribute_name.encode(), data_type, attribute_type, patch_id, vv)
         
 
@@ -406,6 +436,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def get_attribute_values(self, mesh_name, attribute_name, data_type, attribute_type, patch_id, vv):
         """
+        
         Inserts an attribute set to a mesh
         
         :param mesh_name:       Mesh Name
@@ -425,6 +456,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_attribute_values(mesh_name.encode(), attribute_name.encode(), data_type, attribute_type, patch_id, vv)
         
 
@@ -433,6 +465,7 @@ class GXMESH(gxapi_cy.WrapMESH):
     @classmethod
     def import_grid_to_mesh(cls, grid_file_name, geosurface_filename, surface_name):
         """
+        
         Imports a Grid to a Surface. Creates a new Geosurface file for the surface
         
         :param grid_file_name:       Grid File Name
@@ -449,6 +482,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMESH._import_grid_to_mesh(GXContext._get_tls_geo(), grid_file_name.encode(), geosurface_filename.encode(), surface_name.encode())
         return GXMESH(ret_val)
 
@@ -457,6 +491,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
     def save(self):
         """
+        
         Saves Mesh to the Project Cache and Geosurface file
         
 
@@ -464,6 +499,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save()
         
 

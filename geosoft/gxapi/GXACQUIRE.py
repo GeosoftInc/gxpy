@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
     @classmethod
     def create(cls):
         """
+        
         Create an acQuire object
         
 
@@ -64,6 +65,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapACQUIRE._create(GXContext._get_tls_geo())
         return GXACQUIRE(ret_val)
 
@@ -72,6 +74,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
     def delete_empty_chan(self, db):
         """
+        
         Delete empty channels
         
         :param db:     Database
@@ -81,6 +84,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._delete_empty_chan(db)
         
 
@@ -91,6 +95,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
     def import_hole(self, proj, dir, para, geo_vv, delete_existing, convert):
         """
+        
         Import Drillhole data acQuire database into a GDB
         
         :param proj:             Project name
@@ -117,6 +122,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         **Note:** Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
+        
         ret_val = self._import_hole(proj.encode(), dir.encode(), para.encode(), geo_vv, delete_existing, convert)
         return ret_val
 
@@ -125,6 +131,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
     def import_point(self, db, para, convert):
         """
+        
         Import Point Sample data acQuire database into a GDB
         
         :param db:       Geosoft GDB
@@ -146,6 +153,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
+        
         ret_val = self._import_point(db, para.encode(), convert)
         return ret_val
 
@@ -154,6 +162,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
     def selection_tool(self, selection_file, mode):
         """
+        
         Run the acQuire Selection Tool.
         
         :param selection_file:  Selection File Name
@@ -173,6 +182,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         the user can make selections then the selections are saved
         back in the selection file.
         """
+        
         ret_val = self._selection_tool(selection_file.encode(), mode)
         return ret_val
 
@@ -181,6 +191,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
     def selection_tool_force_grid_selection(self, selection_file, mode):
         """
+        
         Run the acQuire Selection Tool, but force selection of destination grid.
         
         :param selection_file:  Selection File Name
@@ -200,6 +211,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         the user can make selections then the selections are saved
         back in the selection file.
         """
+        
         ret_val = self._selection_tool_force_grid_selection(selection_file.encode(), mode)
         return ret_val
 
@@ -208,6 +220,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
     def get_selection_info(self, selection_file, mode, destination_grid):
         """
+        
         Get some information from existing selection file.
         
         :param selection_file:    Selection File Name
@@ -222,6 +235,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         mode.value, destination_grid.value = self._get_selection_info(selection_file.encode(), mode.value, destination_grid.value)
         
 

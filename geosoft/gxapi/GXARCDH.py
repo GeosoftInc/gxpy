@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def close_project(cls):
         """
+        
         Closes the current `GXDH <geosoft.gxapi.GXDH>` project in the Target extension
         
 
@@ -61,6 +62,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapARCDH._close_project(GXContext._get_tls_geo())
         
 
@@ -69,6 +71,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def set_project(cls, path, project):
         """
+        
         Sets the current `GXDH <geosoft.gxapi.GXDH>` project in the Target extension
         
         :param path:     Path String
@@ -80,6 +83,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapARCDH._set_project(GXContext._get_tls_geo(), path.encode(), project.encode())
         
 
@@ -88,6 +92,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def set_string_file_gdb(cls, string_file_gdb):
         """
+        
         Sets the current Geostring File Geodatabase in the Target extension
         
         :param string_file_gdb:  File Geodatabase
@@ -97,6 +102,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapARCDH._set_string_file_gdb(GXContext._get_tls_geo(), string_file_gdb.encode())
         
 
@@ -105,6 +111,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def stop_editing_string_file_gdb(cls):
         """
+        
         Stops editing session for current string fGDB
         
 
@@ -112,6 +119,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapARCDH._stop_editing_string_file_gdb(GXContext._get_tls_geo())
         
 
@@ -120,6 +128,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def has_string_file_gdb_edits(cls):
         """
+        
         Is a Geostring File Geodatabase loaded and contains edits?
         
         :rtype:      int
@@ -128,6 +137,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapARCDH._has_string_file_gdb_edits(GXContext._get_tls_geo())
         return ret_val
 
@@ -136,6 +146,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def geostrings_extension_available(cls):
         """
+        
         Verifies if the geostrings extension in TfA is available. Return 1 if true, 0 otherwise
         
         :rtype:      int
@@ -144,6 +155,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapARCDH._geostrings_extension_available(GXContext._get_tls_geo())
         return ret_val
 
@@ -152,6 +164,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def get_current_string_file_gdb(cls, name):
         """
+        
         Gets the current Geostring File Geodatabase.
         
         :param name:  Name returned
@@ -161,6 +174,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         name.value = gxapi_cy.WrapARCDH._get_current_string_file_gdb(GXContext._get_tls_geo(), name.value.encode())
         
 
@@ -169,6 +183,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def is_valid_fgdb_file_name(cls, fgdb):
         """
+        
         Is this a valid FGDB filename?
         
         :param fgdb:  FGDB filename
@@ -179,6 +194,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapARCDH._is_valid_fgdb_file_name(GXContext._get_tls_geo(), fgdb.encode())
         return ret_val
 
@@ -187,6 +203,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def is_valid_feature_class_name(cls, feature_class_name):
         """
+        
         Is this a valid featureclass name?
         
         :param feature_class_name:  Featureclass name
@@ -197,6 +214,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapARCDH._is_valid_feature_class_name(GXContext._get_tls_geo(), feature_class_name.encode())
         return ret_val
 
@@ -205,6 +223,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
     @classmethod
     def s_prompt_for_esri_symbol(cls, hwnd, h_wnd, input_xml_string, xml, fill_color, edge_color):
         """
+        
         Prompt the user to select an ESRI symbol and return it as an XML string. The output string will be empty if the user cancels the dialog.
         
         :param hwnd:              Window handle
@@ -224,6 +243,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         xml.value, fill_color.value, edge_color.value = gxapi_cy.WrapARCDH._s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, xml.value.encode(), fill_color.value, edge_color.value)
         
 

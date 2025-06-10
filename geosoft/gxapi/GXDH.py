@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXDB import GXDB
@@ -64,6 +64,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def is_esri(cls):
         """
+        
         Running inside ArcGIS?
         
 
@@ -75,6 +76,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDH._is_esri(GXContext._get_tls_geo())
         return ret_val
 
@@ -87,6 +89,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def creat_chan_lst(self, lst):
         """
+        
         Fills a `GXLST <geosoft.gxapi.GXLST>` with available string and numeric channel code values.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill with channel code values.
@@ -101,6 +104,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
+        
         self._creat_chan_lst(lst)
         
 
@@ -109,6 +113,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def depth_data_lst(self, lst):
         """
+        
         Fills a `GXLST <geosoft.gxapi.GXLST>` with available channel code values from Depth databases.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill with channel code values.
@@ -123,6 +128,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
+        
         self._depth_data_lst(lst)
         
 
@@ -131,6 +137,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def from_to_data_lst(self, assay, lst):
         """
+        
         Fills a `GXLST <geosoft.gxapi.GXLST>` with available string and numeric channel code values from From-To databases.
         
         :param assay:  Assay dataset ("" for all)
@@ -147,6 +154,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
+        
         self._from_to_data_lst(assay.encode(), lst)
         
 
@@ -155,6 +163,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_geology_contacts(self, lst, chan_code, geology, surface, gap, vv_x, vv_y, vv_z):
         """
+        
         Return XYZ locations of top or bottom geological surfaces
         
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` of holes to check
@@ -182,6 +191,7 @@ class GXDH(gxapi_cy.WrapDH):
         contact with the input geology. Those selected holes which do NOT
         have contacts, return `rDUMMY <geosoft.gxapi.rDUMMY>` for the corresponding locations.
         """
+        
         self._get_geology_contacts(lst, chan_code.encode(), geology.encode(), surface, gap, vv_x, vv_y, vv_z)
         
 
@@ -190,6 +200,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_oriented_core_dip_dir(self, lst, alpha, beta, top_ref, dip, dip_dir):
         """
+        
         Converted alpha/beta values in oriented cores to dip/dip direction.
         
         :param lst:      List of holes to process (e.g. from `hole_lst <geosoft.gxapi.GXDH.hole_lst>`)
@@ -216,6 +227,7 @@ class GXDH(gxapi_cy.WrapDH):
         The alpha and beta data must be from the same database, and the output
         dip and dip/dir channels are written to the same database.
         """
+        
         self._get_oriented_core_dip_dir(lst, alpha.encode(), beta.encode(), top_ref, dip.encode(), dip_dir.encode())
         
 
@@ -224,6 +236,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_unique_channel_items(self, chan_code, selected_holes, vv):
         """
+        
         Return a `GXVV <geosoft.gxapi.GXVV>` with unique items in a channel.
         
         :param chan_code:       Channel code
@@ -239,6 +252,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
+        
         self._get_unique_channel_items(chan_code.encode(), selected_holes, vv)
         
 
@@ -247,6 +261,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_unique_channel_items_from_collar(self, chan_name, selected_holes, vv):
         """
+        
         Return a `GXVV <geosoft.gxapi.GXVV>` with unique items in a channel.
         
         :param chan_name:       Channel
@@ -262,6 +277,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
+        
         self._get_unique_channel_items_from_collar(chan_name.encode(), selected_holes, vv)
         
 
@@ -270,6 +286,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def chan_type(self, chan_code):
         """
+        
         Return the data type for a channel code.
         
         :param chan_code:  Channel code
@@ -284,6 +301,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
+        
         ret_val = self._chan_type(chan_code.encode())
         return ret_val
 
@@ -292,6 +310,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def find_hole_intersection(self, hole, img, x, y, z):
         """
+        
         Return XYZ locations of the intersection of a hole with a DEM grid.
         
         :param hole:  Hole index
@@ -318,6 +337,7 @@ class GXDH(gxapi_cy.WrapDH):
         uses the native `GXIMG <geosoft.gxapi.GXIMG>` interp method. If no intersection is found the
         returned XYZ locations are `rDUMMY <geosoft.gxapi.rDUMMY>`.
         """
+        
         ret_val, x.value, y.value, z.value = self._find_hole_intersection(hole, img, x.value, y.value, z.value)
         return ret_val
 
@@ -326,6 +346,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_chan_code_info(self, chan_code, assay_db_index, chan):
         """
+        
         Return the assay database index and channel name from a channel code string.
         
         :param chan_code:       Input channel code "[Assay] channel"
@@ -341,6 +362,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** The input channel code is in the form "[Assay] channel"
         """
+        
         assay_db_index.value, chan.value = self._get_chan_code_info(chan_code.encode(), assay_db_index.value, chan.value.encode())
         
 
@@ -349,6 +371,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def grid_intersection(self, xi, yi, zi, dip, az, grid, xo, yo, zo):
         """
+        
         Algorithm to determine the intersection of a straight hole with a surface (DEM) grid.
         
         :param xi:    Input location on hole X
@@ -380,6 +403,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Given a point on the hole and the straight hole dip and azimuth,
         ocate (an) intersection point with the input DEM grid.
         """
+        
         ret_val, xo.value, yo.value, zo.value = self._grid_intersection(xi, yi, zi, dip, az, grid.encode(), xo.value, yo.value, zo.value)
         return ret_val
 
@@ -388,6 +412,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def litho_grid_3d(self, chan_code, tpat, vox, cell_size, gap, non_contact_radius, gridding_type, reg, retain_grid_files):
         """
+        
         Create a lithology voxel grid with lith codes mapped to single values.
         
         :param chan_code:           Lithology channel code
@@ -422,6 +447,7 @@ class GXDH(gxapi_cy.WrapDH):
         where the gridded lithology is not found. If not specified (dummy) then
         half the distance to the nearest contacting hole is used.
         """
+        
         self._litho_grid_3d(chan_code.encode(), tpat, vox.encode(), cell_size, gap, non_contact_radius, gridding_type, reg, retain_grid_files)
         
 
@@ -430,6 +456,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def numeric_chan_lst(self, lst):
         """
+        
         Fills a `GXLST <geosoft.gxapi.GXLST>` with available numeric channel code values.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill with channel code values.
@@ -444,6 +471,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
+        
         self._numeric_chan_lst(lst)
         
 
@@ -452,6 +480,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def numeric_from_to_data_lst(self, assay, lst):
         """
+        
         Fills a `GXLST <geosoft.gxapi.GXLST>` with available numeric channel code values from From-To databases..
         
         :param assay:  Assay dataset ("" for all)
@@ -468,6 +497,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
+        
         self._numeric_from_to_data_lst(assay.encode(), lst)
         
 
@@ -476,6 +506,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def punch_grid_holes(self, img, vv_x, vv_y, vv_z, blank_dist):
         """
+        
         Dummy out locations in a grid around non-contact holes.
         
         :param img:         DEM grid
@@ -500,6 +531,7 @@ class GXDH(gxapi_cy.WrapDH):
         If the blanking distance is zero or dummy, the distance is
         automatically set to half the distance to the closest hole intersection.
         """
+        
         self._punch_grid_holes(img, vv_x, vv_y, vv_z, blank_dist)
         
 
@@ -508,6 +540,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def string_chan_lst(self, lst):
         """
+        
         Fills a `GXLST <geosoft.gxapi.GXLST>` with available string channel code values.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill with channel code values.
@@ -522,6 +555,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
+        
         self._string_chan_lst(lst)
         
 
@@ -530,6 +564,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def string_from_to_data_lst(self, assay, lst):
         """
+        
         Fills a `GXLST <geosoft.gxapi.GXLST>` with available string-type channel code values from From-To databases.
         
         :param assay:  Assay dataset ("" for all)
@@ -546,6 +581,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Lithology" channel in the "Tutorial_Geology.gdb" database.
         """
+        
         self._string_from_to_data_lst(assay.encode(), lst)
         
 
@@ -558,6 +594,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_assay_db(self, assay):
         """
+        
         Database for an assay data set.
         
         :param assay:  Assay dataset number
@@ -573,6 +610,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_assay_db(assay)
         return GXDB(ret_val)
 
@@ -581,6 +619,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_assay_symb(self, assay, hole):
         """
+        
         Line/Group symbol for a specific assay data set hole.
         
         :param assay:  Assay dataset number
@@ -598,6 +637,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_assay_symb(assay, hole)
         return ret_val
 
@@ -606,6 +646,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_collar_db(self):
         """
+        
         Database for the collar table.
         
 
@@ -619,6 +660,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_collar_db()
         return GXDB(ret_val)
 
@@ -627,6 +669,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_collar_symb(self):
         """
+        
         Line/Group symbol for the collar table.
         
 
@@ -640,6 +683,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_collar_symb()
         return ret_val
 
@@ -648,6 +692,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_dip_az_survey_db(self):
         """
+        
         Database for the Dip-Azimuth survey data
         
 
@@ -661,6 +706,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_dip_az_survey_db()
         return GXDB(ret_val)
 
@@ -669,6 +715,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_dip_az_survey_symb(self, hole):
         """
+        
         Line/Group symbol for a specific hole Dip-Azimuth survey.
         
         :param hole:  Hole index number
@@ -684,6 +731,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_dip_az_survey_symb(hole)
         return ret_val
 
@@ -692,6 +740,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_en_survey_db(self):
         """
+        
         Database for the East-North survey data
         
 
@@ -705,6 +754,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_en_survey_db()
         return GXDB(ret_val)
 
@@ -713,6 +763,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def h_en_survey_symb(self, hole):
         """
+        
         Line/Group symbol for a specific hole East-North survey.
         
         :param hole:  Hole index number
@@ -728,6 +779,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._h_en_survey_symb(hole)
         return ret_val
 
@@ -736,6 +788,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def add_survey_table(self, hole):
         """
+        
         Add a survey table for a new hole.
         
         :param hole:  Hole index
@@ -748,6 +801,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** The information is created from the collar table info.
         If the survey info already exists, does nothing.
         """
+        
         self._add_survey_table(hole)
         
 
@@ -756,6 +810,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def assay_hole_lst(self, assay_db, lst):
         """
+        
         Populate an `GXLST <geosoft.gxapi.GXLST>` with holes in an assay database
         
         :param assay_db:  Index of the assay database
@@ -767,6 +822,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._assay_hole_lst(assay_db, lst)
         
 
@@ -775,6 +831,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def assay_lst(self, lst):
         """
+        
         Return the `GXLST <geosoft.gxapi.GXLST>` of from-to and point assay datasets
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to be populated
@@ -788,6 +845,7 @@ class GXDH(gxapi_cy.WrapDH):
         Assay dataset number is given as `LST_ITEM_VALUE <geosoft.gxapi.LST_ITEM_VALUE>`
         Returns an empty `GXLST <geosoft.gxapi.GXLST>` if no datasets.
         """
+        
         self._assay_lst(lst)
         
 
@@ -796,6 +854,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def auto_select_holes(cls, flag):
         """
+        
         Use automatic hole selection based on slice.
         
         :param flag:  Turn on (TRUE) or off (FALSE)
@@ -805,6 +864,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapDH._auto_select_holes(GXContext._get_tls_geo(), flag)
         
 
@@ -813,6 +873,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def clean(self):
         """
+        
         Delete extraneous holes from project databases.
         
 
@@ -825,6 +886,7 @@ class GXDH(gxapi_cy.WrapDH):
         If all the database lines would be removed, the database is
         simply deleted.
         """
+        
         self._clean()
         
 
@@ -833,6 +895,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def composite_db(self, mast_db, comp_db, hol_sel, int_sel, fix_int, lith_ch, int_file, wt_ch, rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch):
         """
+        
         Make a composite database
         
         :param mast_db:   Input assay `GXDB <geosoft.gxapi.GXDB>` object
@@ -866,6 +929,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._composite_db(mast_db, comp_db, hol_sel, int_sel, fix_int, lith_ch.encode(), int_file.encode(), wt_ch.encode(), rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch.encode())
         
 
@@ -874,6 +938,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def compute_hole_xyz(self, hole):
         """
+        
         Computes XYZ for survey and assay data for a single hole.
         
         :param hole:  Hole index
@@ -883,6 +948,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._compute_hole_xyz(hole)
         
 
@@ -891,6 +957,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def compute_sel_extent(self, e_min, e_max, n_min, n_max, z_min, z_max):
         """
+        
         Computes the extents for selected holes.
         
         :param e_min:  East Min
@@ -910,6 +977,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value = self._compute_sel_extent(e_min.value, e_max.value, n_min.value, n_max.value, z_min.value, z_max.value)
         
 
@@ -918,6 +986,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def compute_xyz(self):
         """
+        
         Computes XYZ for survey and assay data.
         
 
@@ -925,6 +994,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._compute_xyz()
         
 
@@ -933,6 +1003,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def convert_old_line_names(cls, db, lst):
         """
+        
         Convert old "DD001.Assay" type lines to "DD001"
         
         :param db:   `GXDH <geosoft.gxapi.GXDH>` object
@@ -955,6 +1026,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         DO NOT use on old-style single-database Wholeplot projects.
         """
+        
         gxapi_cy.WrapDH._convert_old_line_names(GXContext._get_tls_geo(), db, lst)
         
 
@@ -963,6 +1035,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def create(cls, db):
         """
+        
         Create `GXDH <geosoft.gxapi.GXDH>`.
         
         :param db:  Name of current database
@@ -975,6 +1048,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDH._create(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
@@ -983,6 +1057,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def create_default_job(self, ini, type):
         """
+        
         Create a default job from scratch.
         
         :param ini:   File name of the INI file to create (forces correct suffix)
@@ -994,6 +1069,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._create_default_job(ini.encode(), type)
         
 
@@ -1002,6 +1078,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def create_external(cls, db):
         """
+        
         Create a `GXDH <geosoft.gxapi.GXDH>` from an external process (no montaj running).
         
         :param db:  Name of example project database
@@ -1019,6 +1096,7 @@ class GXDH(gxapi_cy.WrapDH):
         This function instead creates the project from all projects
         in the input databases's directory.
         """
+        
         ret_val = gxapi_cy.WrapDH._create_external(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
@@ -1027,6 +1105,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def current(cls):
         """
+        
         Creates a drill project from current environment.
         
 
@@ -1040,6 +1119,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** If no `GXDH <geosoft.gxapi.GXDH>` database is open the Open `GXDH <geosoft.gxapi.GXDH>` Project `GXGUI <geosoft.gxapi.GXGUI>` will be displayed which may be
         cancelled by the user in which case the GX will terminate with cancel.
         """
+        
         ret_val = gxapi_cy.WrapDH._current(GXContext._get_tls_geo())
         return GXDH(ret_val)
 
@@ -1048,6 +1128,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def datamine_to_csv(cls, file, proj):
         """
+        
         Convert a Datamine drillhole file to CSV files ready for import.
         
         :param file:  Datamine database file to import (``*.dm``)
@@ -1066,6 +1147,7 @@ class GXDH(gxapi_cy.WrapDH):
              Project_Survey.csv, .i3
              Project_Assay.csv,  .i3
         """
+        
         gxapi_cy.WrapDH._datamine_to_csv(GXContext._get_tls_geo(), file.encode(), proj.encode())
         
 
@@ -1074,6 +1156,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def delete_holes(self, lst):
         """
+        
         Delete a list of holes from the project.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` of holes to delete
@@ -1087,6 +1170,7 @@ class GXDH(gxapi_cy.WrapDH):
         If all the database lines would be removed, the database is
         simply deleted.
         """
+        
         self._delete_holes(lst)
         
 
@@ -1097,6 +1181,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def export_file(self, file, type):
         """
+        
         Exports a Drill Hole database to an external file.
         
         :param file:  File name
@@ -1108,6 +1193,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._export_file(file.encode(), type)
         
 
@@ -1116,6 +1202,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def export_geodatabase_lst(self, lst, file, pre, feat_class, overwrite):
         """
+        
         Exports whole or part of a Drill Hole database to an ArcGIS Geodatabase as feature class(es).
         
         :param lst:         Hole Names in the Name and Value parts of the `GXLST <geosoft.gxapi.GXLST>`
@@ -1136,6 +1223,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** A table with metadata about the created feature classes will be written to the Geodatabase. This table will have the same
         name with the postfix "_Metadata" attached
         """
+        
         feat_class.value = self._export_geodatabase_lst(lst, file.encode(), pre.encode(), feat_class.value.encode(), overwrite)
         
 
@@ -1144,6 +1232,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def export_las(self, assay_db, hole, interval, file):
         """
+        
         Exports a Drill Hole database to a LAS v2 file.
         
         :param assay_db:  Assay database index
@@ -1159,6 +1248,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._export_las(assay_db, hole, interval, file.encode())
         
 
@@ -1167,6 +1257,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def export_lst(self, lst, file, type):
         """
+        
         Exports a `GXLST <geosoft.gxapi.GXLST>` of holes in a Drill Hole database to an external file.
         
         :param lst:   Hole Names in the Name and Value parts of the `GXLST <geosoft.gxapi.GXLST>`
@@ -1182,6 +1273,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Use functions like `GXDB.selected_line_lst <geosoft.gxapi.GXDB.selected_line_lst>` to construct the `GXLST <geosoft.gxapi.GXLST>`
         """
+        
         self._export_lst(lst, file.encode(), type)
         
 
@@ -1190,6 +1282,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def flush_select(self):
         """
+        
         Flush all selections to database selection engine.
         
 
@@ -1197,6 +1290,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._flush_select()
         
 
@@ -1205,6 +1299,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_databases_vv(self, gvv):
         """
+        
         Get the names of the project databases in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param gvv:  `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`
@@ -1214,6 +1309,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_databases_vv(gvv)
         
 
@@ -1222,6 +1318,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_databases_sorted_vv(self, gvv):
         """
+        
         Get the names of the project databases in a `GXVV <geosoft.gxapi.GXVV>`, same as `get_databases_vv <geosoft.gxapi.GXDH.get_databases_vv>` but the list is sorted alphabetically.
         
         :param gvv:  `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`
@@ -1231,6 +1328,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_databases_sorted_vv(gvv)
         
 
@@ -1239,6 +1337,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_data_type(self, db, type):
         """
+        
         Get the type of data in a Wholeplot database.
         
         :param db:    `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -1252,6 +1351,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Returns `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` if it can't determine the type.
         """
+        
         type.value = self._get_data_type(db, type.value)
         
 
@@ -1260,6 +1360,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_default_section(self, az, x1, x2, l, w):
         """
+        
         Computes default section azimuths, extents for selected holes.
         
         :param az:  Azimuth of section (returned)
@@ -1277,6 +1378,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         az.value, x1.value, x2.value, l.value, w.value = self._get_default_section(az.value, x1.value, x2.value, l.value, w.value)
         
 
@@ -1285,6 +1387,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_hole_group(self, hole, assay):
         """
+        
         Get the Group symbol for this hole/table combination.
         
         :param hole:   Hole index
@@ -1299,6 +1402,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._get_hole_group(hole, assay.encode())
         return ret_val
 
@@ -1307,6 +1411,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_hole_survey(self, hole, vv_x, vv_y, vv_z, vv_d):
         """
+        
         Get the Survey information of a Hole.
         
         :param hole:  Hole index
@@ -1324,6 +1429,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_hole_survey(hole, vv_x, vv_y, vv_z, vv_d)
         
 
@@ -1332,6 +1438,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_hole_survey_ex(self, hole, vv_x, vv_y, vv_z, vv_d, thin):
         """
+        
         Get the Survey information of a Hole.
         
         :param hole:  Hole index
@@ -1351,6 +1458,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_hole_survey_ex(hole, vv_x, vv_y, vv_z, vv_d, thin)
         
 
@@ -1359,6 +1467,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_hole_survey_from_to(self, db, line, vv_x, vv_y, vv_z, vv_d, vv_l, thin):
         """
+        
         Get the Survey information of a Hole using From/To database.
         
         :param db:    From/To Database
@@ -1382,6 +1491,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_hole_survey_from_to(db, line, vv_x, vv_y, vv_z, vv_d, vv_l, thin)
         
 
@@ -1390,6 +1500,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def desurvey(cls, desurvey_method, order, dip_convention, inc, thin, locations, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d):
         """
+        
         Calculate survey locations and depth from a hole survey.
         
         :param desurvey_method:  :ref:`DH_DESURVEY`
@@ -1433,6 +1544,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapDH._desurvey(GXContext._get_tls_geo(), desurvey_method, order, dip_convention, inc, thin, locations, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d)
         
 
@@ -1441,6 +1553,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def convert_oriented_core_dip_dir_for_hole_survey(cls, vv_depth, vv_alpha, vv_beta, vv_survey_x, vv_survey_y, vv_survey_z, vv_survey_depth, top_ref):
         """
+        
         Converted alpha/beta values in oriented cores to dip/dip direction.
         
         :param vv_depth:         Depth VV
@@ -1469,6 +1582,7 @@ class GXDH(gxapi_cy.WrapDH):
         to "absolute" dip and dip-direction values, using the desurveyed hole
         orientations at each depth.
         """
+        
         gxapi_cy.WrapDH._convert_oriented_core_dip_dir_for_hole_survey(GXContext._get_tls_geo(), vv_depth, vv_alpha, vv_beta, vv_survey_x, vv_survey_y, vv_survey_z, vv_survey_depth, top_ref)
         
 
@@ -1477,6 +1591,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def desurvey_from_to(cls, desurvey_method, order, dip_convention, inc, thin, vv_from, vv_to, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d, vv_l):
         """
+        
         Calculate survey locations and depth from a hole survey using from/to values
         
         :param desurvey_method:  :ref:`DH_DESURVEY`
@@ -1524,6 +1639,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapDH._desurvey_from_to(GXContext._get_tls_geo(), desurvey_method, order, dip_convention, inc, thin, vv_from, vv_to, vv_depth, vv_dip, vv_az, x, y, z, top, bottom, vv_x, vv_y, vv_z, vv_d, vv_l)
         
 
@@ -1532,6 +1648,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_ipj(self, ipj):
         """
+        
         Get the project `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` Handle
@@ -1544,6 +1661,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** The projection for the project is the projection stored
         in the DH_EAST channel in the collar table.
         """
+        
         self._get_ipj(ipj)
         
 
@@ -1552,6 +1670,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_map_names_vv(self, vv):
         """
+        
         Get plotted map names.
         
         :param vv:  Returned map names (string type `GXVV <geosoft.gxapi.GXVV>`)
@@ -1566,6 +1685,7 @@ class GXDH(gxapi_cy.WrapDH):
         to `wholeplot <geosoft.gxapi.GXDH.wholeplot>`. The `GXVV <geosoft.gxapi.GXVV>` size is set to the number
         of maps created.
         """
+        
         self._get_map_names_vv(vv)
         
 
@@ -1574,6 +1694,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_map(self, index):
         """
+        
         Get a plotting map
         
         :param index:  Map Index
@@ -1586,6 +1707,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._get_map(index)
         return GXMAP(ret_val)
 
@@ -1594,6 +1716,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_num_maps(self):
         """
+        
         Get the number plotting maps
         
 
@@ -1604,6 +1727,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._get_num_maps()
         return ret_val
 
@@ -1612,6 +1736,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_reg(self):
         """
+        
         Get the `GXREG <geosoft.gxapi.GXREG>` Object used in this project.
         
 
@@ -1622,6 +1747,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._get_reg()
         return GXREG(ret_val)
 
@@ -1630,6 +1756,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_selected_holes_vv(self, vv):
         """
+        
         Populate a `GXVV <geosoft.gxapi.GXVV>` with the indices of all selected holes
         
         :param vv:  Returned hole indices (must be type INT)
@@ -1639,6 +1766,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_selected_holes_vv(vv)
         
 
@@ -1647,6 +1775,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def get_table_default_chan_lst(cls, lst, type):
         """
+        
         Return list of default channels by collar/assay/survey table type.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` handle
@@ -1661,6 +1790,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Fills a `GXLST <geosoft.gxapi.GXLST>` with the default channel names created according to
         type (Collar, Survey, Assay). Value is in the `LST_ITEM_NAME <geosoft.gxapi.LST_ITEM_NAME>` part.
         """
+        
         gxapi_cy.WrapDH._get_table_default_chan_lst(GXContext._get_tls_geo(), lst, type)
         
 
@@ -1669,6 +1799,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def hole_lst(self, lst):
         """
+        
         Populate an `GXLST <geosoft.gxapi.GXLST>` with the list of the selected holes
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` handle
@@ -1678,6 +1809,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._hole_lst(lst)
         
 
@@ -1686,6 +1818,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def hole_lst2(self, lst):
         """
+        
         Populate an `GXLST <geosoft.gxapi.GXLST>` with the list of all the holes
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` handle
@@ -1695,6 +1828,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._hole_lst2(lst)
         
 
@@ -1703,6 +1837,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def add_hole(self, hole):
         """
+        
         Add a hole and return it's index.
         
         :param hole:  Name of hole
@@ -1715,6 +1850,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._add_hole(hole.encode())
         return ret_val
 
@@ -1723,6 +1859,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def clean_will_delete_db(self):
         """
+        
         See if "cleaning" will delete project databases.
         
 
@@ -1734,6 +1871,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._clean_will_delete_db()
         return ret_val
 
@@ -1742,6 +1880,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def compositing_tool_gui(self, map, x, y1, y2):
         """
+        
         Annotate a strip log map using the compositing tool.
         
         :param map:  Current strip log map
@@ -1762,6 +1901,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** If any of the input X or Y values are dummies the tool uses default values.
         """
+        
         ret_val = self._compositing_tool_gui(map, x, y1, y2)
         return ret_val
 
@@ -1770,6 +1910,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def create_collar_table(cls, project, chan, db):
         """
+        
         Create a collar table `GXDB <geosoft.gxapi.GXDB>` with channels set up.
         
         :param project:  Project name
@@ -1787,6 +1928,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         "d:\\directory\\Project_Collar.gdb"
         """
+        
         db.value = gxapi_cy.WrapDH._create_collar_table(GXContext._get_tls_geo(), project.encode(), chan, db.value.encode())
         
 
@@ -1795,6 +1937,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def create_collar_table_dir(cls, project, dir, chan, db):
         """
+        
         Create a collar table in the specified directory.
         
         :param project:  Project name
@@ -1814,6 +1957,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         "d:\\directory\\Project_Collar.gdb"
         """
+        
         db.value = gxapi_cy.WrapDH._create_collar_table_dir(GXContext._get_tls_geo(), project.encode(), dir.encode(), chan, db.value.encode())
         
 
@@ -1822,6 +1966,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def delete_will_delete_db(self, lst):
         """
+        
         See if deleting holes will delete project databases.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` of holes to delete
@@ -1835,6 +1980,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._delete_will_delete_db(lst)
         return ret_val
 
@@ -1843,6 +1989,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def find_hole(self, hole):
         """
+        
         Find a hole and return it's index.
         
         :param hole:  Name of hole
@@ -1856,6 +2003,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._find_hole(hole.encode())
         return ret_val
 
@@ -1864,6 +2012,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_collar_table_db(self, db):
         """
+        
         Get the name of the database containing the collar table.
         
         :param db:  Returned file name
@@ -1873,6 +2022,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         db.value = self._get_collar_table_db(db.value.encode())
         
 
@@ -1881,6 +2031,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_info(self, hole, name, data):
         """
+        
         Get Collar Information.
         
         :param hole:  Hole index
@@ -1898,6 +2049,7 @@ class GXDH(gxapi_cy.WrapDH):
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
+        
         data.value = self._get_info(hole, name.encode(), data.value.encode())
         
 
@@ -1906,6 +2058,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_project_name(self, project):
         """
+        
         Get the Wholeplot project name.
         
         :param project:  Returned string
@@ -1915,6 +2068,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         project.value = self._get_project_name(project.value.encode())
         
 
@@ -1923,6 +2077,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def get_section_id(cls, azimuth, east, north, id):
         """
+        
         Create a section ID based on its location
         
         :param azimuth:  Section Azimuth
@@ -1938,6 +2093,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         id.value = gxapi_cy.WrapDH._get_section_id(GXContext._get_tls_geo(), azimuth, east, north, id.value.encode())
         
 
@@ -1946,6 +2102,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def get_template_blob(cls, db, templ, imp_type):
         """
+        
         Retrieve the import template from the database.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -1971,6 +2128,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         If no template blob exists, templ
         """
+        
         ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, templ.encode(), imp_type.value)
         return ret_val
 
@@ -1979,6 +2137,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def get_template_blob_no_source_resolve(cls, db, templ, imp_type):
         """
+        
         Retrieve the import template from the database.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -2004,6 +2163,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         If no template blob exists, templ
         """
+        
         ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob_no_source_resolve(GXContext._get_tls_geo(), db, templ.encode(), imp_type.value)
         return ret_val
 
@@ -2012,6 +2172,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def get_template_info(cls, templ, data_type, file, table):
         """
+        
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name and type from an import template.
         
         :param templ:      Template name
@@ -2046,6 +2207,7 @@ class GXDH(gxapi_cy.WrapDH):
         `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         """
+        
         data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), templ.encode(), data_type.value, file.value.encode(), table.value.encode())
         
 
@@ -2054,6 +2216,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def get_template_info_ex(cls, templ, data_type, file, table, lst):
         """
+        
         Retrieve the file, `GXDH <geosoft.gxapi.GXDH>` Table name, type and channel list from an import template.
         
         :param templ:      Template name
@@ -2092,6 +2255,7 @@ class GXDH(gxapi_cy.WrapDH):
         This version also returns a list of the channels in the template checks can be made to
         see if the import will exceed the database channel limit.
         """
+        
         data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), templ.encode(), data_type.value, file.value.encode(), table.value.encode(), lst)
         
 
@@ -2100,6 +2264,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def get_units(self, units, conv_factor):
         """
+        
         Get the positional units and conversion factor to m.
         
         :param units:        Units (i.e. "m")
@@ -2111,6 +2276,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         units.value, conv_factor.value = self._get_units(units.value.encode(), conv_factor.value)
         
 
@@ -2119,6 +2285,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def have_current(cls):
         """
+        
         Returns ``True`` if a drill project is loaded
         
         :rtype:      bool
@@ -2127,6 +2294,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDH._have_current(GXContext._get_tls_geo())
         return ret_val
 
@@ -2135,6 +2303,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def have_current2(cls, db):
         """
+        
         Returns ``True`` if a drill project is loaded, and the collar database if it is loaded.
         
         :param db:  Collar table name (returned)
@@ -2145,6 +2314,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, db.value = gxapi_cy.WrapDH._have_current2(GXContext._get_tls_geo(), db.value.encode())
         return ret_val
 
@@ -2153,6 +2323,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def holes(self):
         """
+        
         Return number of holes.
         
 
@@ -2163,6 +2334,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._holes()
         return ret_val
 
@@ -2171,6 +2343,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def hole_select_from_list_gui(cls, lst, sel_lst):
         """
+        
         Select/Deselect holes using the two-panel selection tool.
         
         :param lst:      All holes
@@ -2186,6 +2359,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDH._hole_select_from_list_gui(GXContext._get_tls_geo(), lst, sel_lst)
         return ret_val
 
@@ -2194,6 +2368,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def hole_selection_tool_gui(self):
         """
+        
         Select/Deselect holes using plan map tool.
         
 
@@ -2205,6 +2380,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._hole_selection_tool_gui()
         return ret_val
 
@@ -2213,6 +2389,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify3d_gui(self, ini, page):
         """
+        
         Modify parameters for a 3D plot.
         
         :param ini:   Job Name   (``*.in3``)
@@ -2228,6 +2405,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, page.value = self._modify3d_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2236,6 +2414,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def edit_classification_table_file_gui(self, chan, class_file, fill_patterns, colors_only):
         """
+        
         Edit a symbol color/pattern CSV file
         
         :param chan:           Channel
@@ -2257,6 +2436,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, class_file.value = self._edit_classification_table_file_gui(chan.encode(), class_file.value.encode(), fill_patterns, colors_only)
         return ret_val
 
@@ -2265,6 +2445,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_crooked_section_holes_gui(self, ini, page):
         """
+        
         Modify parameters to replot holes and hole data to an existing crooked section map.
         
         :param ini:   Job Name (``*.ins``)
@@ -2282,6 +2463,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Will plot to an empty crooked section.
         """
+        
         ret_val, page.value = self._modify_crooked_section_holes_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2290,6 +2472,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_fence_gui(self, ini, page):
         """
+        
         Modify parameters for a section plot.
         
         :param ini:   Job Name (``*.ins``)
@@ -2308,6 +2491,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** The fence section function.
         """
+        
         ret_val, page.value = self._modify_fence_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2316,6 +2500,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_hole_traces_3d_gui(self, ini, page):
         """
+        
         Modify parameters for a hole traces plot to an existing 3D view.
         
         :param ini:   Job Name
@@ -2331,6 +2516,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, page.value = self._modify_hole_traces_3d_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2339,6 +2525,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_hole_traces_gui(self, ini, page):
         """
+        
         Modify parameters for a hole traces plot to a current map.
         
         :param ini:   Job Name
@@ -2354,6 +2541,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, page.value = self._modify_hole_traces_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2362,6 +2550,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_hole_traces_gui2(self, ini, plot_type, page):
         """
+        
         Modify parameters for a hole traces plot to a current plan or section view.
         
         :param ini:        Job Name
@@ -2381,6 +2570,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Currently supports `DH_PLOT_PLAN <geosoft.gxapi.DH_PLOT_PLAN>` and `DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>`
         """
+        
         ret_val, page.value = self._modify_hole_traces_gui2(ini.encode(), plot_type, page.value)
         return ret_val
 
@@ -2389,6 +2579,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_plan_gui(self, ini, page):
         """
+        
         Modify parameters for a plan plot.
         
         :param ini:   Job Name (``*.inp``)
@@ -2404,6 +2595,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, page.value = self._modify_plan_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2412,6 +2604,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_plan_holes_gui(self, ini, page):
         """
+        
         Modify parameters to replot holes and hole data to an existing plan map.
         
         :param ini:   Job Name (``*.ins``)
@@ -2429,6 +2622,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Modifies only hole trace, hole data, topo, voxel slice data.
         """
+        
         ret_val, page.value = self._modify_plan_holes_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2437,6 +2631,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def modify_rock_codes_gui(cls, file):
         """
+        
         Modify/create a rock codes file.
         
         :param file:  File name
@@ -2450,6 +2645,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
@@ -2458,6 +2654,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def modify_rock_codes_gui2(cls, db, file):
         """
+        
         Modify/create a rock codes file, channel population option.
         
         :param db:    Database
@@ -2478,6 +2675,7 @@ class GXDH(gxapi_cy.WrapDH):
         automatically populate the rock code list. The database
         should be a Wholeplot database.
         """
+        
         ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui2(GXContext._get_tls_geo(), db, file.encode())
         return ret_val
 
@@ -2486,6 +2684,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_section_gui(self, ini, page):
         """
+        
         Modify parameters for a section plot.
         
         :param ini:   Job Name (``*.ins``)
@@ -2510,6 +2709,7 @@ class GXDH(gxapi_cy.WrapDH):
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
+        
         ret_val, page.value = self._modify_section_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2518,6 +2718,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_section_holes_gui(self, ini, page):
         """
+        
         Modify parameters to replot holes and hole data to an existing section map.
         
         :param ini:   Job Name (``*.ins``)
@@ -2536,6 +2737,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Works for both regular and stacked sections.
         Modifies only hole trace, hole data, topo, voxel slice data.
         """
+        
         ret_val, page.value = self._modify_section_holes_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2544,6 +2746,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_stacked_section_gui(self, ini, page):
         """
+        
         Modify parameters for a section plot.
         
         :param ini:   Job Name (``*.ins``)
@@ -2568,6 +2771,7 @@ class GXDH(gxapi_cy.WrapDH):
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
+        
         ret_val, page.value = self._modify_stacked_section_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2576,6 +2780,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def modify_strip_log_gui(self, ini, page):
         """
+        
         Modify parameters for a strip log plot.
         
         :param ini:   Job Name   (``*.inl``)
@@ -2591,6 +2796,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, page.value = self._modify_strip_log_gui(ini.encode(), page.value)
         return ret_val
 
@@ -2599,6 +2805,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def modify_structure_codes_gui(cls, file):
         """
+        
         Modify/create a structure codes file.
         
         :param file:  File name
@@ -2612,6 +2819,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui(GXContext._get_tls_geo(), file.encode())
         return ret_val
 
@@ -2620,6 +2828,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def modify_structure_codes_gui2(cls, db, file):
         """
+        
         Modify/create a structure codes file, channel population option.
         
         :param db:    Database
@@ -2640,6 +2849,7 @@ class GXDH(gxapi_cy.WrapDH):
         automatically populate the structure code list. The database
         should be a Wholeplot database.
         """
+        
         ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui2(GXContext._get_tls_geo(), db, file.encode())
         return ret_val
 
@@ -2648,6 +2858,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def import2(cls, project, db, line, hole, table, type, log):
         """
+        
         Imports data into a Drill Hole Database (obsolete).
         
         :param project:  Drill project name
@@ -2669,6 +2880,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapDH._import2(GXContext._get_tls_geo(), project.encode(), db, line, hole, table.encode(), type, log.encode())
         
 
@@ -2677,6 +2889,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def import_las(self, assay, file, interval, interp, wa):
         """
+        
         Imports LAS Data into a `GXDH <geosoft.gxapi.GXDH>` database
         
         :param assay:     Assay database to use
@@ -2698,6 +2911,7 @@ class GXDH(gxapi_cy.WrapDH):
         without the project name and underscore, e.g. for
         "Project_Assay.gdb" use "Assay"
         """
+        
         self._import_las(assay.encode(), file.encode(), interval, interp, wa)
         
 
@@ -2706,6 +2920,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def num_assays(self):
         """
+        
         Number of assay datasets.
         
 
@@ -2718,6 +2933,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Works for both single and multiple `GXDB <geosoft.gxapi.GXDB>` Wholeplots.
         """
+        
         ret_val = self._num_assays()
         return ret_val
 
@@ -2726,6 +2942,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def num_selected_holes(self):
         """
+        
         Returns number of selected holes.
         
 
@@ -2736,6 +2953,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._num_selected_holes()
         return ret_val
 
@@ -2744,6 +2962,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_dip_az_curvature_lst(self, lst, tolerance, wa):
         """
+        
         Do QA/QC Curvature checking on Dip Azimuth data for holes in a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` of holes (name, index)
@@ -2762,6 +2981,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks all holes with Dip-Azimuth survey data
         """
+        
         ret_val = self._qa_dip_az_curvature_lst(lst, tolerance, wa)
         return ret_val
 
@@ -2770,6 +2990,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_dip_az_survey_lst(self, lst, wa):
         """
+        
         Do QA/QC on Dip/Az Survey data for holes in a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` of holes (Name, Index)
@@ -2787,6 +3008,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Error if no Dip-Azimuth survey database, or if
         a requested hole does not exist in the drill project.
         """
+        
         ret_val = self._qa_dip_az_survey_lst(lst, wa)
         return ret_val
 
@@ -2795,6 +3017,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_east_north_curvature_lst(self, lst, tolerance, wa):
         """
+        
         Do QA/QC Curvature checking on Dip Azimuth data for holes in a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` of holes (name, index)
@@ -2813,6 +3036,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks all holes with East-North survey data
         """
+        
         ret_val = self._qa_east_north_curvature_lst(lst, tolerance, wa)
         return ret_val
 
@@ -2821,6 +3045,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_east_north_survey_lst(self, lst, wa):
         """
+        
         Do QA/QC on East/North Survey data for holes in a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` of holes (Name, Index)
@@ -2838,6 +3063,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Error if no East-North survey database, or if
         a requested hole does not exist in the drill project.
         """
+        
         ret_val = self._qa_east_north_survey_lst(lst, wa)
         return ret_val
 
@@ -2846,6 +3072,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def slice_selection_tool_gui(self, aoix1, aoiy1, aoix2, aoiy2, aoix3, aoiy3, aoix4, aoiy4, x1, y1, x2, y2):
         """
+        
         Select a slice with the holes in context. An optional 4 point area of interest (AOI) can be added to be represented in the UI too.
         
         :param aoix1:  1st Corner of AOI - X
@@ -2881,6 +3108,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, x1.value, y1.value, x2.value, y2.value = self._slice_selection_tool_gui(aoix1, aoiy1, aoix2, aoiy2, aoix3, aoiy3, aoix4, aoiy4, x1.value, y1.value, x2.value, y2.value)
         return ret_val
 
@@ -2889,6 +3117,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def update_survey_from_collar(self, hole):
         """
+        
         Update the Survey table from the collar info.
         
         :param hole:  Hole index
@@ -2907,6 +3136,7 @@ class GXDH(gxapi_cy.WrapDH):
         values. If the survey contains more than one row, then no changes
         are applied, and no warning or error is registered.
         """
+        
         ret_val = self._update_survey_from_collar(hole)
         return ret_val
 
@@ -2915,6 +3145,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def load_data_parameters_ini(self, db, dir):
         """
+        
         Load data parameters from INI files..
         
         :param db:   Source database
@@ -2930,6 +3161,7 @@ class GXDH(gxapi_cy.WrapDH):
         in the channel `GXREG <geosoft.gxapi.GXREG>`. This function lets a user transfer pre-defined
         settings to individual INI files (eg. cu.ini).
         """
+        
         self._load_data_parameters_ini(db, dir.encode())
         
 
@@ -2938,6 +3170,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def load_plot_parameters(self, ini, type):
         """
+        
         Load parameters from a Job into the Drill object.
         
         :param ini:   The job file file to read
@@ -2949,6 +3182,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._load_plot_parameters(ini.encode(), type)
         
 
@@ -2957,6 +3191,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def load_select(self, file):
         """
+        
         Load selections to from a file.
         
         :param file:  File Name
@@ -2966,6 +3201,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._load_select(file.encode())
         
 
@@ -2974,6 +3210,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def mask_ply(self, pply, ipj, tol, mask, select, append):
         """
+        
         Set mask channel based on view selection polygon.
         
         :param pply:    Masking polygon
@@ -2999,6 +3236,7 @@ class GXDH(gxapi_cy.WrapDH):
         `DH_MASK_NEW <geosoft.gxapi.DH_MASK_NEW>` --- Mask is created new for each selected hole
         `DH_MASK_APPEND <geosoft.gxapi.DH_MASK_APPEND>` --- Current selection is added to previous.
         """
+        
         self._mask_ply(pply, ipj, tol, mask.encode(), select, append)
         
 
@@ -3007,6 +3245,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def open(cls, db):
         """
+        
         Open `GXDH <geosoft.gxapi.GXDH>` from collar database and load all associated databases.
         
         :param db:  Name of collar database
@@ -3019,6 +3258,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDH._open(GXContext._get_tls_geo(), db.encode())
         return GXDH(ret_val)
 
@@ -3027,6 +3267,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def open_job(self, job, type):
         """
+        
         Open a `GXDH <geosoft.gxapi.GXDH>` plotting job
         
         :param job:   Job file name
@@ -3038,6 +3279,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._open_job(job.encode(), type)
         
 
@@ -3046,6 +3288,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def plot_hole_traces(self, map, job):
         """
+        
         Plot hole traces to a regular (plan) map.
         
         :param map:  Map handle
@@ -3061,6 +3304,7 @@ class GXDH(gxapi_cy.WrapDH):
         The DHPLANHOLES GX uses the default plan map parameter file
         "_plan.inp".
         """
+        
         self._plot_hole_traces(map, job.encode())
         
 
@@ -3069,6 +3313,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def plot_hole_traces_3d(self, mview, job):
         """
+        
         Plot hole traces to an existing 3D map view.
         
         :param mview:  Existing 3D map view
@@ -3084,6 +3329,7 @@ class GXDH(gxapi_cy.WrapDH):
         The DH3DHOLES GX uses the default 3D map parameter file
         "_3D.in3".
         """
+        
         self._plot_hole_traces_3d(mview, job.encode())
         
 
@@ -3092,6 +3338,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def plot_symbols_3d(self, mview, job):
         """
+        
         Plot 3D symbols to an existing 3D map view.
         
         :param mview:  Existing 3D map view
@@ -3103,6 +3350,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._plot_symbols_3d(mview, job.encode())
         
 
@@ -3111,6 +3359,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_collar(self, wa):
         """
+        
         Do QA/QC on Hole Collar data.
         
         :param wa:  `GXWA <geosoft.gxapi.GXWA>` Handle
@@ -3120,6 +3369,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._qa_collar(wa)
         
 
@@ -3128,6 +3378,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_collar_lst(self, lst, wa):
         """
+        
         Do QA/QC on Hole Collar data - `GXLST <geosoft.gxapi.GXLST>` of holes.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` of holes (Name, Index)
@@ -3139,6 +3390,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._qa_collar_lst(lst, wa)
         
 
@@ -3147,6 +3399,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_dip_az_curvature(self, wa, tolerance):
         """
+        
         Do QA/QC Curvature checking on Dip Azimuth data.
         
         :param wa:         `GXWA <geosoft.gxapi.GXWA>` Handle
@@ -3160,6 +3413,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks all holes with Dip-Azimuth survey data
         """
+        
         self._qa_dip_az_curvature(wa, tolerance)
         
 
@@ -3168,6 +3422,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_dip_az_curvature2(self, wa, tolerance, hole):
         """
+        
         Do QA/QC Curvature checking on Dip Azimuth data for a single hole.
         
         :param wa:         `GXWA <geosoft.gxapi.GXWA>` Handle
@@ -3183,6 +3438,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks single hole with Dip-Azimuth survey data
         """
+        
         self._qa_dip_az_curvature2(wa, tolerance, hole.encode())
         
 
@@ -3191,6 +3447,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_dip_az_survey(self, db, wa, line, hole):
         """
+        
         Do QA/QC on Dip/Az Survey data.
         
         :param db:    `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -3209,6 +3466,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Error if no Dip-Azimuth survey database, or if
         the requested line does not exist in the database.
         """
+        
         self._qa_dip_az_survey(db, wa, line, hole.encode())
         
 
@@ -3217,6 +3475,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_east_north_curvature(self, wa, tolerance):
         """
+        
         Do QA/QC Curvature checking on Dip Azimuth data.
         
         :param wa:         `GXWA <geosoft.gxapi.GXWA>` Handle
@@ -3230,6 +3489,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks all holes with East-North survey data
         """
+        
         self._qa_east_north_curvature(wa, tolerance)
         
 
@@ -3238,6 +3498,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_east_north_curvature2(self, wa, tolerance, hole):
         """
+        
         Do QA/QC Curvature checking on Dip Azimuth data for a single hole.
         
         :param wa:         `GXWA <geosoft.gxapi.GXWA>` Handle
@@ -3253,6 +3514,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks single holes with East-North survey data
         """
+        
         self._qa_east_north_curvature2(wa, tolerance, hole.encode())
         
 
@@ -3261,6 +3523,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_east_north_survey(self, db, wa, line, hole):
         """
+        
         Do QA/QC on East/North Survey data.
         
         :param db:    `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -3279,6 +3542,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Error if no East-North survey database, or if
         the requested line does not exist in the database.
         """
+        
         self._qa_east_north_survey(db, wa, line, hole.encode())
         
 
@@ -3287,6 +3551,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_from_to_data(self, db, wa, line, hole):
         """
+        
         Do QA/QC on From/To data.
         
         :param db:    `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -3302,6 +3567,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._qa_from_to_data(db, wa, line, hole.encode())
         
 
@@ -3310,6 +3576,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_point_data(self, db, wa, line, hole):
         """
+        
         Do QA/QC on Point data.
         
         :param db:    `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -3325,6 +3592,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._qa_point_data(db, wa, line, hole.encode())
         
 
@@ -3333,6 +3601,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def qa_write_unregistered_holes(self, db, wa):
         """
+        
         Write out unregistered holes in a database.
         
         :param db:  `GXDB <geosoft.gxapi.GXDB>` Handle (not the collar table)
@@ -3347,6 +3616,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Looks at each line in a database and sees if it is listed in
         the collar tables' hole list.
         """
+        
         self._qa_write_unregistered_holes(db, wa)
         
 
@@ -3355,6 +3625,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def replot_holes(self, job, plot_type):
         """
+        
         Replot holes on an existing drill map.
         
         :param job:        Parameter (INI) name
@@ -3374,6 +3645,7 @@ class GXDH(gxapi_cy.WrapDH):
         INI file used to create the existing map, or things may not
         work out (e.g. bad locations etc).
         """
+        
         self._replot_holes(job.encode(), plot_type)
         
 
@@ -3382,6 +3654,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def plot_holes_on_section(self, job, plot_type, view):
         """
+        
         Plot the currently selected holes on an existing section view.
         
         :param job:        Parameter (INI) name
@@ -3397,6 +3670,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Plot the currently selected holes to a section view.
         """
+        
         self._plot_holes_on_section(job.encode(), plot_type, view.encode())
         
 
@@ -3405,6 +3679,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def re_survey_east_north(self, hole, vv_x, vv_y, vv_z, vv_d, east, north, elev, top, bot):
         """
+        
         Resurvey an East-North-RL survey.
         
         :param hole:   Hole ID (for error messages)
@@ -3435,6 +3710,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Re-interpolates in X, Y and Z to proper depth interval
         and returns depths for each point
         """
+        
         bot.value = self._re_survey_east_north(hole.encode(), vv_x, vv_y, vv_z, vv_d, east, north, elev, top, bot.value)
         
 
@@ -3443,6 +3719,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def re_survey_pol_fit(self, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, order, vv_x, vv_y, vv_z, vv_d):
         """
+        
         Use the polynomial fit resurveying method.
         
         :param hole:      Hole ID (used for error messages)
@@ -3491,6 +3768,7 @@ class GXDH(gxapi_cy.WrapDH):
         for most smoothly curving holes. The order is reduced to no more than
         the number of input points.
         """
+        
         self._re_survey_pol_fit(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, order, vv_x, vv_y, vv_z, vv_d)
         
 
@@ -3499,6 +3777,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def re_survey_rad_curve(self, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d):
         """
+        
         Use radius of curvature resurveying method.
         
         :param hole:      Hole ID (used for error messages)
@@ -3542,7 +3821,114 @@ class GXDH(gxapi_cy.WrapDH):
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
+        
         self._re_survey_rad_curve(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
+        
+
+
+
+    @classmethod
+    def re_survey_rad_curve_locations(cls, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, dip_conv, vv_x, vv_y, vv_z, vv_d):
+        """
+        
+        Use radius of curvature resurveying method.
+        
+        :param hole:      Hole ID (used for error messages)
+        :param vv_dip:    Dip
+        :param vv_az:     Azimuth
+        :param vv_depth:  Depth
+        :param east:      Collar X (easting) (depth = 0)
+        :param north:     Collar Y (northing)(depth = 0)
+        :param elev:      Collar Z (elevation) (depth = 0)
+        :param top:       Minimum hole depth to start output values
+        :param bot:       Maximum hole depth for output values
+        :param dip_conv:  :ref:`DIP_CONVENTION`
+        :param vv_x:      X (Easting) - Output
+        :param vv_y:      Y (Northin) - Output
+        :param vv_z:      Z (Elevation) - Output
+        :param vv_d:      Depths - Output
+        :type  hole:      str
+        :type  vv_dip:    GXVV
+        :type  vv_az:     GXVV
+        :type  vv_depth:  GXVV
+        :type  east:      float
+        :type  north:     float
+        :type  elev:      float
+        :type  top:       float
+        :type  bot:       float
+        :type  dip_conv:  int
+        :type  vv_x:      GXVV
+        :type  vv_y:      GXVV
+        :type  vv_z:      GXVV
+        :type  vv_d:      GXVV
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Uses the Radius of curvature method to calculate (X, Y, Z)
+        locations down the hole from azimuth, dip, depth values.
+        The collar is assumed to be at zero depth, and depth is the
+        measure distance down the hole (even if it's horizontal).
+        A negative dip convention means vertical down is -90 degrees.
+        """
+        
+        gxapi_cy.WrapDH._re_survey_rad_curve_locations(GXContext._get_tls_geo(), hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, dip_conv, vv_x, vv_y, vv_z, vv_d)
+        
+
+
+
+    @classmethod
+    def re_survey_location_general(cls, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, survey_pol_order, res_type, dip_conv, vv_x, vv_y, vv_z, vv_d):
+        """
+        
+        Call a resurveying method based on the input.
+        
+        :param hole:              Hole ID (used for error messages)
+        :param vv_dip:            Dip
+        :param vv_az:             Azimuth
+        :param vv_depth:          Depth
+        :param east:              Collar X (easting) (depth = 0)
+        :param north:             Collar Y (northing)(depth = 0)
+        :param elev:              Collar Z (elevation) (depth = 0)
+        :param top:               Minimum hole depth to start output values
+        :param bot:               Maximum hole depth for output values
+        :param survey_pol_order:  Survey polygon order
+        :param res_type:          :ref:`RESURVEY_TYPE`
+        :param dip_conv:          :ref:`DIP_CONVENTION`
+        :param vv_x:              X (Easting) - Output
+        :param vv_y:              Y (Northin) - Output
+        :param vv_z:              Z (Elevation) - Output
+        :param vv_d:              Depths - Output
+        :type  hole:              str
+        :type  vv_dip:            GXVV
+        :type  vv_az:             GXVV
+        :type  vv_depth:          GXVV
+        :type  east:              float
+        :type  north:             float
+        :type  elev:              float
+        :type  top:               float
+        :type  bot:               float
+        :type  survey_pol_order:  int
+        :type  res_type:          int
+        :type  dip_conv:          int
+        :type  vv_x:              GXVV
+        :type  vv_y:              GXVV
+        :type  vv_z:              GXVV
+        :type  vv_d:              GXVV
+
+        .. versionadded:: 2026.1
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Uses the Radius of curvature method to calculate (X, Y, Z)
+        locations down the hole from azimuth, dip, depth values.
+        The collar is assumed to be at zero depth, and depth is the
+        measure distance down the hole (even if it's horizontal).
+        A negative dip convention means vertical down is -90 degrees.
+        """
+        
+        gxapi_cy.WrapDH._re_survey_location_general(GXContext._get_tls_geo(), hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, survey_pol_order, res_type, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3550,6 +3936,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def re_survey_straight(self, hole, dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d):
         """
+        
         Resurvey a straight hole.
         
         :param hole:      Hole ID (used for error messages)
@@ -3591,6 +3978,7 @@ class GXDH(gxapi_cy.WrapDH):
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
+        
         self._re_survey_straight(hole.encode(), dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
@@ -3599,6 +3987,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def re_survey_straight_seg(self, hole, vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d):
         """
+        
         Resurvey a hole with straight segments between locations.
         
         :param hole:      Hole ID (used for error messages)
@@ -3643,6 +4032,7 @@ class GXDH(gxapi_cy.WrapDH):
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
+        
         self._re_survey_straight_seg(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
@@ -3651,6 +4041,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def save_data_parameters_ini(self, db, dir):
         """
+        
         Save data parameters to INI files..
         
         :param db:   Source database
@@ -3668,6 +4059,7 @@ class GXDH(gxapi_cy.WrapDH):
         As of v6.3, the `GXDH <geosoft.gxapi.GXDH>` object is NOT required for this function, and
         is, in fact, ignored.
         """
+        
         self._save_data_parameters_ini(db, dir.encode())
         
 
@@ -3676,6 +4068,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def save_job(self, job, type):
         """
+        
         Save a `GXDH <geosoft.gxapi.GXDH>` plotting job
         
         :param job:   Job file name
@@ -3687,6 +4080,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._save_job(job.encode(), type)
         
 
@@ -3695,6 +4089,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def save_select(self, file):
         """
+        
         Saves current selections to a file.
         
         :param file:  File Name
@@ -3704,6 +4099,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._save_select(file.encode())
         
 
@@ -3712,6 +4108,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def section_window_size_mm(self, xmm, ymm):
         """
+        
         Deterine the size, in mm, of the section window
         
         :param xmm:  X size in mm.
@@ -3727,6 +4124,7 @@ class GXDH(gxapi_cy.WrapDH):
         paper size and orientation, return the size in mm of the
         window used for plotting the section.
         """
+        
         xmm.value, ymm.value = self._section_window_size_mm(xmm.value, ymm.value)
         
 
@@ -3735,6 +4133,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def select_all_holes(self):
         """
+        
         Select all the holes in a Drill hole project.
         
 
@@ -3742,6 +4141,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._select_all_holes()
         
 
@@ -3750,6 +4150,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def select_holes(self, gvv, sel):
         """
+        
         Select holes by hole indices.
         
         :param gvv:  INT `GXVV <geosoft.gxapi.GXVV>` with hole indices.
@@ -3764,6 +4165,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Indices less than 0 are skipped. This lets you use this function
         after a call to `GXLST.find_items <geosoft.gxapi.GXLST.find_items>`, which returns -1 for indices not located.
         """
+        
         self._select_holes(gvv, sel)
         
 
@@ -3772,6 +4174,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def select_name(self, mask, sel, mode):
         """
+        
         Select holes using a name mask.
         
         :param mask:  Mask
@@ -3788,6 +4191,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Overwrite mode - all selections tested and selected or not selected
         Append mode    - only holes matching the mask are selected or not selected.
         """
+        
         self._select_name(mask.encode(), sel, mode)
         
 
@@ -3796,6 +4200,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def select_ply(self, pply):
         """
+        
         Select all holes in `GXPLY <geosoft.gxapi.GXPLY>` (Polygon) object.
         
         :param pply:  Polygon object
@@ -3808,6 +4213,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** This function operates the same as the `select_ply2 <geosoft.gxapi.GXDH.select_ply2>` method 
         with parameters ``(1, 0, 0)``
         """
+        
         self._select_ply(pply)
         
 
@@ -3816,6 +4222,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def select_ply2(self, pply, select, inside, new_mode):
         """
+        
         Select holes in `GXPLY <geosoft.gxapi.GXPLY>` (Polygon) object with options.
         
         :param pply:      Polygon object
@@ -3851,6 +4258,7 @@ class GXDH(gxapi_cy.WrapDH):
         Append/Deselect/outside: Deselect all holes outside the polygon.
                               Leave selections inside as is.
         """
+        
         self._select_ply2(pply, select, inside, new_mode)
         
 
@@ -3859,6 +4267,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def set_crooked_section_ipj(self, ipj):
         """
+        
         Pass the Crooked projection required for plotting to a crooked section.
         
         :param ipj:  Crooked Section `GXIPJ <geosoft.gxapi.GXIPJ>`
@@ -3870,6 +4279,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** This might be extracted from an existing crooked section view, or created from a database line.
         """
+        
         self._set_crooked_section_ipj(ipj)
         
 
@@ -3878,6 +4288,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def set_current_view_name(self, cur_view):
         """
+        
         Set the current map view name.
         
         :param cur_view:  View name
@@ -3889,6 +4300,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Can be used to specify the name of the view to plot into.
         """
+        
         self._set_current_view_name(cur_view.encode())
         
 
@@ -3897,6 +4309,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def set_info(self, hole, name, data):
         """
+        
         Set Collar Information.
         
         :param hole:  Hole index
@@ -3914,6 +4327,7 @@ class GXDH(gxapi_cy.WrapDH):
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
+        
         self._set_info(hole, name.encode(), data.encode())
         
 
@@ -3922,6 +4336,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def set_ipj(self, ipj):
         """
+        
         Set the project `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` Handle
@@ -3939,6 +4354,7 @@ class GXDH(gxapi_cy.WrapDH):
         The input `GXIPJ <geosoft.gxapi.GXIPJ>` cannot be a geographic coordinate system
         or this call will fail with an error message.
         """
+        
         self._set_ipj(ipj)
         
 
@@ -3947,6 +4363,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def set_map(self, map):
         """
+        
         Store the current `GXMAP <geosoft.gxapi.GXMAP>` to the `GXDH <geosoft.gxapi.GXDH>` object.
         
         :param map:  `GXIPJ <geosoft.gxapi.GXIPJ>` Handle
@@ -3960,6 +4377,7 @@ class GXDH(gxapi_cy.WrapDH):
         so that, instead of creating a new map, the plotting
         functions use the existing one.
         """
+        
         self._set_map(map)
         
 
@@ -3968,6 +4386,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def set_new_ipj(self, db):
         """
+        
         Set a new project database projection to collar table projection.
         
         :param db:  Project database name
@@ -3980,6 +4399,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Gets the `GXIPJ <geosoft.gxapi.GXIPJ>` of the collar table current x channel and copies it
         into the named database (as long as it is in the project!)
         """
+        
         self._set_new_ipj(db.encode())
         
 
@@ -3988,6 +4408,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def set_selected_holes_vv(self, vv, append):
         """
+        
         Set hole selection using hole indices.
         
         :param vv:      Input hole indices (must be type INT)
@@ -3999,6 +4420,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._set_selected_holes_vv(vv, append)
         
 
@@ -4007,6 +4429,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def set_template_blob(cls, db, templ, imp_type):
         """
+        
         Store the import template to the database.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -4026,6 +4449,7 @@ class GXDH(gxapi_cy.WrapDH):
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """
+        
         gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, templ.encode(), imp_type)
         
 
@@ -4034,6 +4458,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def update_template_blob(cls, db, templDestination, templSource, imp_type):
         """
+        
         Update the import template and store to the database if necessary.
         
         :param db:                `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -4054,6 +4479,7 @@ class GXDH(gxapi_cy.WrapDH):
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """
+        
         gxapi_cy.WrapDH._update_template_blob(GXContext._get_tls_geo(), db, templDestination.encode(), templSource.encode(), imp_type)
         
 
@@ -4062,6 +4488,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def significant_intersections_db(self, mast_db, comp_db, hol_sel, assay_ch, cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays):
         """
+        
         Make a report of Significant Intersections
         
         :param mast_db:                       Input assay `GXDB <geosoft.gxapi.GXDB>` object
@@ -4091,6 +4518,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._significant_intersections_db(mast_db, comp_db, hol_sel, assay_ch.encode(), cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays)
         
 
@@ -4099,6 +4527,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def test_import_las(self, assay, file, interval, wa, warn):
         """
+        
         Tests import of LAS Data for problems.
         
         :param assay:     Assay table name
@@ -4123,6 +4552,7 @@ class GXDH(gxapi_cy.WrapDH):
         where data is merely extended at the start or the end with dummies
         to match a different interval down the hole.
         """
+        
         warn.value = self._test_import_las(assay.encode(), file.encode(), interval, wa, warn.value)
         
 
@@ -4131,6 +4561,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def un_select_all_holes(self):
         """
+        
         Unselect all the holes in a Drill hole project.
         
 
@@ -4138,6 +4569,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._un_select_all_holes()
         
 
@@ -4146,6 +4578,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def un_selected_hole_lst(self, lst):
         """
+        
         Populate an `GXLST <geosoft.gxapi.GXLST>` with the list of the unselected holes
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` handle
@@ -4155,6 +4588,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._un_selected_hole_lst(lst)
         
 
@@ -4163,6 +4597,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def update_collar_table(self):
         """
+        
         Update all collar table information.
         
 
@@ -4170,6 +4605,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._update_collar_table()
         
 
@@ -4178,6 +4614,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def update_hole_extent(self, hole):
         """
+        
         Update extents for one hole.
         
         :param hole:  Hole index
@@ -4187,6 +4624,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._update_hole_extent(hole)
         
 
@@ -4195,6 +4633,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def wholeplot(self, job, plot_type):
         """
+        
         Run a Wholeplot plot job.
         
         :param job:        Parameter (INI) name
@@ -4211,6 +4650,7 @@ class GXDH(gxapi_cy.WrapDH):
         parameters (e.g. Map template, scale, boundaries,
         section definitions, hole trace parameters etc...)
         """
+        
         self._wholeplot(job.encode(), plot_type)
         
 
@@ -4219,6 +4659,7 @@ class GXDH(gxapi_cy.WrapDH):
 
     def surface_intersections(self, output_db, input_geosurface_or_grid, hole_selection):
         """
+        
         Determine intersections of drillholes with a surface.
         
         :param output_db:                 Output `GXDB <geosoft.gxapi.GXDB>` Handle
@@ -4232,6 +4673,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._surface_intersections(output_db, input_geosurface_or_grid.encode(), hole_selection)
         
 
@@ -4240,6 +4682,7 @@ class GXDH(gxapi_cy.WrapDH):
     @classmethod
     def get_mx_deposit_rights_info(cls, has_rights, base_url, api_version_prefix, api_key, user_key, database_id):
         """
+        
         Get MX Deposit Service API information via Geosoft ID rights.
         
         :param has_rights:          Does Geosoft ID have rights to access MX Deposit?
@@ -4259,14 +4702,42 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         has_rights.value, base_url.value, api_version_prefix.value, api_key.value, user_key.value, database_id.value = gxapi_cy.WrapDH._get_mx_deposit_rights_info(GXContext._get_tls_geo(), has_rights.value, base_url.value.encode(), api_version_prefix.value.encode(), api_key.value.encode(), user_key.value.encode(), database_id.value.encode())
         
 
 
 
     @classmethod
+    def get_channel_type(cls, channel_name, database_type, class_name):
+        """
+        
+        Get the drill hole channel type based on input channel name.
+        
+        :param channel_name:   Name of the channel
+        :param database_type:  one of 0:DH_DATA_DIPAZIMUTH, 2:DH_DATA_FROMTO, 3:DH_DATA_POINT, 4:DH_DATA_COLLAR
+        :param class_name:     class name buffer
+        :type  channel_name:   str
+        :type  database_type:  int
+        :type  class_name:     str_ref
+
+        :returns:              -1 if no type is found, otherwise > 0
+        :rtype:                int
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        
+        ret_val, class_name.value = gxapi_cy.WrapDH._get_channel_type(GXContext._get_tls_geo(), channel_name.encode(), database_type, class_name.value.encode())
+        return ret_val
+
+
+
+    @classmethod
     def navigate_to_mx_deposit(cls, select_type, select_id):
         """
+        
         Navigate to MX Deposit portal
         
         :param select_type:  Selection Type
@@ -4278,8 +4749,60 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapDH._navigate_to_mx_deposit(GXContext._get_tls_geo(), select_type.encode(), select_id.encode())
         
+
+
+
+
+# Deprecated
+
+
+
+    def get_shp_names_vv(self, vv_n, vv_d):
+        """
+        
+        .. deprecated:: None None 
+        Get generated `GXSHP <geosoft.gxapi.GXSHP>` file names.
+        
+        :param vv_n:  Returned `GXSHP <geosoft.gxapi.GXSHP>` names (string type `GXVV <geosoft.gxapi.GXVV>`)
+        :param vv_d:  Corresponding data frame for each `GXSHP <geosoft.gxapi.GXSHP>`
+        :type  vv_n:  GXVV
+        :type  vv_d:  GXVV
+
+        .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._get_shp_names_vv(vv_n, vv_d)
+        
+
+
+
+
+    def is_multi_db(self):
+        """
+        
+        .. deprecated:: None 
+               As of v6.3.0, old single-database Wholeplot GDBs cannot
+               be opened, so this check is deprecated. The function now always
+               returns TRUE (1).
+                
+        Is this a (new-style) multi-database Wholeplot project?
+        
+
+        :returns:    1 if it is a new-style Wholeplot database.
+        :rtype:      int
+
+        .. versionadded:: 5.1.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, As of v6.3.0, old single-database Wholeplot GDBs cannot be opened, so this check is deprecated. The function now always returns TRUE (1).""", )
+        ret_val = self._is_multi_db()
+        return ret_val
 
 
 

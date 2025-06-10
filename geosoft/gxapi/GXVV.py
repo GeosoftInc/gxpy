@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -12,8 +12,6 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
-from . import gxapi_cy_extend
-import numpy as np
 ### endblock Header
 
 ### block ClassImplementation
@@ -68,6 +66,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_data(self, start, elements, data, gs_type):
         """
+        
         Copy data from user memory to a `GXVV <geosoft.gxapi.GXVV>`
         
         :param start:     Start Location
@@ -83,6 +82,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_data(start, elements, data, gs_type)
         
 
@@ -91,6 +91,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_data(self, start, elements, data, gs_type):
         """
+        
         Copy data from user memory to a `GXVV <geosoft.gxapi.GXVV>`
         
         :param start:     Start Location
@@ -106,6 +107,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_data(start, elements, data, gs_type)
         
 
@@ -114,6 +116,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def copy(self, vv_s):
         """
+        
         Copy one `GXVV <geosoft.gxapi.GXVV>` to another.
         
         :param vv_s:  Source
@@ -123,6 +126,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(vv_s)
         
 
@@ -131,6 +135,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def copy2(self, dest, vv_s, source, n):
         """
+        
         Copy part of a vector into part of another vector.
         
         :param dest:    Destination start element
@@ -152,6 +157,7 @@ class GXVV(gxapi_cy.WrapVV):
         2. All `GXVV <geosoft.gxapi.GXVV>` types are supported and will be converted using
         Convert_GS if necessary.
         """
+        
         self._copy2(dest, vv_s, source, n)
         
 
@@ -160,6 +166,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def log(self, log_base, log_mode, log_min):
         """
+        
         Apply log to the vv.
         
         :param log_base:  :ref:`VV_LOG_BASE`
@@ -176,6 +183,7 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** Minimum value will be defaulted to 1.0 if it is 0.0 or
         less than 0.0
         """
+        
         self._log(log_base, log_mode, log_min)
         
 
@@ -184,6 +192,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def log_linear(self, log_min):
         """
+        
         Take the log10 or original value of a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param log_min:  Minimum value
@@ -205,6 +214,7 @@ class GXVV(gxapi_cy.WrapVV):
         Minimum value will be defaulted to 1.0 if it is negative
         or 0.
         """
+        
         self._log_linear(log_min)
         
 
@@ -213,6 +223,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def mask(self, vv_m):
         """
+        
         Mask one `GXVV <geosoft.gxapi.GXVV>` against another.
         
         :param vv_m:  Mask `GXVV <geosoft.gxapi.GXVV>`
@@ -229,6 +240,7 @@ class GXVV(gxapi_cy.WrapVV):
         `GXVV <geosoft.gxapi.GXVV>` after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies.
         """
+        
         self._mask(vv_m)
         
 
@@ -237,6 +249,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def reverse(self):
         """
+        
         Reverses the order of the data in a `GXVV <geosoft.gxapi.GXVV>`.
         
 
@@ -244,6 +257,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._reverse()
         
 
@@ -252,6 +266,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def serial(self, bf):
         """
+        
         Serialize
         
         :type  bf:   GXBF
@@ -260,6 +275,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -268,6 +284,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def trans(self, base, mult):
         """
+        
         Translate (`GXVV <geosoft.gxapi.GXVV>` + base ) * mult
         
         :param base:  Base value
@@ -281,6 +298,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** All `GXVV <geosoft.gxapi.GXVV>` types now supported.
         """
+        
         self._trans(base, mult)
         
 
@@ -289,6 +307,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def abs(self):
         """
+        
         Take the absolute value of values in a `GXVV <geosoft.gxapi.GXVV>`.
         
 
@@ -296,6 +315,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._abs()
         
 
@@ -304,6 +324,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def add(self, vv_b, vv_c):
         """
+        
         Add two VVs: VV_A + VV_B = VV_C
         
         :param vv_b:  `GXVV <geosoft.gxapi.GXVV>` B
@@ -315,6 +336,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add(vv_b, vv_c)
         
 
@@ -323,6 +345,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def add2(self, f1, vv_b, f2, vv_c):
         """
+        
         Add two VVs with linear factors: VV_A*f1 + VV_B*f2 = VV_C
         
         :param f1:    Multiplier f1 for A
@@ -340,6 +363,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** The multipliers must be defined and within the `GS_R8MN <geosoft.gxapi.GS_R8MN>` `GS_R8MX <geosoft.gxapi.GS_R8MX>` range.
         """
+        
         self._add2(f1, vv_b, f2, vv_c)
         
 
@@ -348,6 +372,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def append(self, vv_a):
         """
+        
         Appends `GXVV <geosoft.gxapi.GXVV>`'s
         
         :param vv_a:  `GXVV <geosoft.gxapi.GXVV>` to append
@@ -357,6 +382,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._append(vv_a)
         
 
@@ -365,6 +391,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def crc(self, pul_crc):
         """
+        
         Compute the CRC value of a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param pul_crc:  Previous CRC `CRC_INIT_VALUE <geosoft.gxapi.CRC_INIT_VALUE>`
@@ -377,6 +404,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._crc(pul_crc)
         return ret_val
 
@@ -385,6 +413,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def crc_inexact(self, pul_crc, float_bits, double_bits):
         """
+        
         Compute the CRC value of a `GXVV <geosoft.gxapi.GXVV>` and allows you to specify
         number of bits of floats/doubles to drop so that the CRC
         will be same even of this are changed.
@@ -406,6 +435,7 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** Very useful for testing where the last bits of accuracy
         are not as important.
         """
+        
         ret_val = self._crc_inexact(pul_crc, float_bits, double_bits)
         return ret_val
 
@@ -414,6 +444,7 @@ class GXVV(gxapi_cy.WrapVV):
     @classmethod
     def create(cls, type, elements):
         """
+        
         Create a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param type:      :ref:`GEO_VAR`
@@ -441,6 +472,7 @@ class GXVV(gxapi_cy.WrapVV):
         a bit less efficient than setting the length when you
         know it.
         """
+        
         ret_val = gxapi_cy.WrapVV._create(GXContext._get_tls_geo(), type, elements)
         return GXVV(ret_val)
 
@@ -449,6 +481,7 @@ class GXVV(gxapi_cy.WrapVV):
     @classmethod
     def create_ext(cls, type, elements):
         """
+        
         Create a `GXVV <geosoft.gxapi.GXVV>`, using one of the :ref:`GS_TYPES` special data types.
         
         :param type:      :ref:`GS_TYPES`
@@ -469,6 +502,7 @@ class GXVV(gxapi_cy.WrapVV):
         this will result in a respective data type of unsigned byte or
         short for the `GXVV <geosoft.gxapi.GXVV>`.
         """
+        
         ret_val = gxapi_cy.WrapVV._create_ext(GXContext._get_tls_geo(), type, elements)
         return GXVV(ret_val)
 
@@ -477,6 +511,7 @@ class GXVV(gxapi_cy.WrapVV):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create a `GXVV <geosoft.gxapi.GXVV>`  from serialized source.
         
         :type  bf:  GXBF
@@ -488,6 +523,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVV._create_s(GXContext._get_tls_geo(), bf)
         return GXVV(ret_val)
 
@@ -498,6 +534,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def diff(self, n):
         """
+        
         Calculate differences.
         
         :param n:   Number of differences
@@ -512,6 +549,7 @@ class GXVV(gxapi_cy.WrapVV):
         An odd number of differences locates result 1/2 element lower
         in the `GXVV <geosoft.gxapi.GXVV>`.
         """
+        
         self._diff(n)
         
 
@@ -520,6 +558,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def divide(self, vv_y, vv_z):
         """
+        
         Divide one `GXVV <geosoft.gxapi.GXVV>` by another: VV_A / VV_B = VV_C
         
         :param vv_y:  `GXVV <geosoft.gxapi.GXVV>` B
@@ -531,6 +570,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._divide(vv_y, vv_z)
         
 
@@ -539,6 +579,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def fid_norm(self, vv2):
         """
+        
         Re-sample a pair of `GXVV <geosoft.gxapi.GXVV>`'s to match each other.
         
         :param vv2:  `GXVV <geosoft.gxapi.GXVV>` to resample
@@ -552,6 +593,7 @@ class GXVV(gxapi_cy.WrapVV):
         fid and fid increment.  The smaller start fid
         and fid increment will be used.
         """
+        
         self._fid_norm(vv2)
         
 
@@ -560,6 +602,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def fill_int(self, value):
         """
+        
         Fill a `GXVV <geosoft.gxapi.GXVV>` with an int value.
         
         :param value:  Value to fill with
@@ -569,6 +612,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._fill_int(value)
         
 
@@ -577,6 +621,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def fill_double(self, val):
         """
+        
         Fill a `GXVV <geosoft.gxapi.GXVV>` with a real value.
         
         :param val:  Value to fill with
@@ -586,6 +631,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._fill_double(val)
         
 
@@ -594,6 +640,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def fill_string(self, str_val):
         """
+        
         Fill a `GXVV <geosoft.gxapi.GXVV>` with a string value.
         
         :param str_val:  String
@@ -603,6 +650,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._fill_string(str_val.encode())
         
 
@@ -611,6 +659,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def count_dummies(self, start, elem):
         """
+        
         Count the number of dummies in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param start:  Starting point in `GXVV <geosoft.gxapi.GXVV>` (0 for all)
@@ -625,6 +674,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._count_dummies(start, elem)
         return ret_val
 
@@ -633,6 +683,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def find_dum(self, start, end, yn, order):
         """
+        
         Finds the first dummy or non-dummy value in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param start:  Lowest element in `GXVV <geosoft.gxapi.GXVV>` element to search
@@ -656,6 +707,7 @@ class GXVV(gxapi_cy.WrapVV):
         at the highest element specified. (Conversely, an increasing
         order starts at the lowest element specified.)
         """
+        
         ret_val = self._find_dum(start, end, yn, order)
         return ret_val
 
@@ -664,6 +716,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_fid_expansion(self):
         """
+        
         Gets the Fiducial expansion from a `GXVV <geosoft.gxapi.GXVV>`
         
 
@@ -674,6 +727,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_fid_expansion()
         return ret_val
 
@@ -682,6 +736,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_int(self, element):
         """
+        
         Get an integer element from a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param element:  Element wanted
@@ -695,6 +750,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_int(element)
         return ret_val
 
@@ -703,6 +759,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_string(self, element, str_val):
         """
+        
         Get a string element from a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param element:  Element wanted
@@ -720,6 +777,7 @@ class GXVV(gxapi_cy.WrapVV):
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
+        
         str_val.value = self._get_string(element, str_val.value.encode())
         
 
@@ -728,6 +786,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_ext_type(self):
         """
+        
         Return the internal data type of this VV
         
 
@@ -738,6 +797,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_ext_type()
         return ret_val
 
@@ -746,6 +806,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def index_max(self, max):
         """
+        
         Get the index where the maximum value occurs.
         
         :param max:  Maximum value (`rDUMMY <geosoft.gxapi.rDUMMY>` if all dummies or no data)
@@ -761,6 +822,7 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** If more than one value has the same maximum value, the index of the
         first is returned.
         """
+        
         ret_val, max.value = self._index_max(max.value)
         return ret_val
 
@@ -769,6 +831,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def length(self):
         """
+        
         Returns current `GXVV <geosoft.gxapi.GXVV>` length.
         
 
@@ -779,6 +842,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._length()
         return ret_val
 
@@ -787,6 +851,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def index_insert(self, vv_d, vv_i):
         """
+        
         Insert items into a `GXVV <geosoft.gxapi.GXVV>` using an index `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_d:  Data items to insert (must be same type as output data `GXVV <geosoft.gxapi.GXVV>`)
@@ -815,6 +880,7 @@ class GXVV(gxapi_cy.WrapVV):
         put the processed values at the correct locations in the data `GXVV <geosoft.gxapi.GXVV>`
         before you write it back to the channel.
         """
+        
         self._index_insert(vv_d, vv_i)
         
 
@@ -823,6 +889,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def index_order(self, vv_d):
         """
+        
         Reorder a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_d:  `GXVV <geosoft.gxapi.GXVV>` to order
@@ -835,6 +902,7 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** Given an index `GXVV <geosoft.gxapi.GXVV>` (of type INT), this method reorders a
         `GXVV <geosoft.gxapi.GXVV>`. Please make sure that the index holds valid information.
         """
+        
         self._index_order(vv_d)
         
 
@@ -843,6 +911,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def init_index(self, n):
         """
+        
         Initialize an index `GXVV <geosoft.gxapi.GXVV>` to values 0, 1, 2, etc...
         
         :param n:   Final length of `GXVV <geosoft.gxapi.GXVV>` (-1 to use current length).
@@ -856,6 +925,7 @@ class GXVV(gxapi_cy.WrapVV):
         used for various indexing functions, such as `index_insert <geosoft.gxapi.GXVV.index_insert>` or
         `index_order <geosoft.gxapi.GXVV.index_order>`.
         """
+        
         self._init_index(n)
         
 
@@ -864,6 +934,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def inv_log(self, log_base, log_mode, log_min):
         """
+        
         Inverse of the `log <geosoft.gxapi.GXVV.log>` function.
         
         :param log_base:  :ref:`VV_LOG_BASE`
@@ -879,6 +950,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** This is the inverse function for `log <geosoft.gxapi.GXVV.log>`, with the same inputs.
         """
+        
         self._inv_log(log_base, log_mode, log_min)
         
 
@@ -887,6 +959,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def order(self, rep):
         """
+        
         Identifies the data size order of the elements.
         
         :param rep:  Returned: Do any values repeat (0: No, 1: Yes)?
@@ -899,6 +972,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val, rep.value = self._order(rep.value)
         return ret_val
 
@@ -907,6 +981,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def lines_to_xy(self, vv_x, vv_y):
         """
+        
         Convert a 2D Line segment `GXVV <geosoft.gxapi.GXVV>` into X and Y VVs.
         
         :param vv_x:  Output `GXVV <geosoft.gxapi.GXVV>` with X locations (`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`)
@@ -925,6 +1000,7 @@ class GXVV(gxapi_cy.WrapVV):
         X and Y VVs of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` (REAL). N lines produces 2*N
         X and Y values.
         """
+        
         self._lines_to_xy(vv_x, vv_y)
         
 
@@ -933,6 +1009,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def lookup_index(self, vvi, vvr):
         """
+        
         Lookup a `GXVV <geosoft.gxapi.GXVV>` from another `GXVV <geosoft.gxapi.GXVV>` using an index `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vvi:  Index `GXVV <geosoft.gxapi.GXVV>` of REAL
@@ -953,6 +1030,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         See also `setup_index <geosoft.gxapi.GXVV.setup_index>` for an example of how this can be implemented.
         """
+        
         self._lookup_index(vvi, vvr)
         
 
@@ -961,6 +1039,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def make_mem_based(self):
         """
+        
         Make this `GXVV <geosoft.gxapi.GXVV>` use regular instead of virtual memory.
         
 
@@ -988,6 +1067,7 @@ class GXVV(gxapi_cy.WrapVV):
 
             `GXGEO.get_ptr_vv <geosoft.gxapi.GXGEO.get_ptr_vv>` in gx_extern.h
         """
+        
         self._make_mem_based()
         
 
@@ -996,6 +1076,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def mask_and(self, vv_y, vv_z):
         """
+        
         Create mask from logical AND of two VVs.
         
         :param vv_y:  `GXVV <geosoft.gxapi.GXVV>` B
@@ -1009,6 +1090,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** If both values are non-dummies, then result is 1, else dummy.
         """
+        
         self._mask_and(vv_y, vv_z)
         
 
@@ -1017,6 +1099,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def mask_or(self, vv_y, vv_z):
         """
+        
         Create mask from logical OR of two VVs.
         
         :param vv_y:  `GXVV <geosoft.gxapi.GXVV>` B
@@ -1030,6 +1113,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** If either values is non-dummy, then result is 1, else dummy.
         """
+        
         self._mask_or(vv_y, vv_z)
         
 
@@ -1038,6 +1122,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def mask_str(self, vv_m, str_val):
         """
+        
         Mask one `GXVV <geosoft.gxapi.GXVV>` against another using a string.
         
         :param vv_m:     Mask `GXVV <geosoft.gxapi.GXVV>`
@@ -1056,6 +1141,7 @@ class GXVV(gxapi_cy.WrapVV):
         not shortened after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies before applying the mask.
         """
+        
         self._mask_str(vv_m, str_val.encode())
         
 
@@ -1064,6 +1150,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def multiply(self, vv_y, vv_z):
         """
+        
         Multiply two VVs: VV_A * VV_B = VV_C
         
         :param vv_y:  `GXVV <geosoft.gxapi.GXVV>` B
@@ -1075,6 +1162,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._multiply(vv_y, vv_z)
         
 
@@ -1083,6 +1171,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def amplitude_3d(self, v_vx, v_vy, v_vz):
         """
+        
         Calculate the 3D length for XYZ component VVs
         
         :param v_vx:  X component `GXVV <geosoft.gxapi.GXVV>`
@@ -1096,6 +1185,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._amplitude_3d(v_vx, v_vy, v_vz)
         
 
@@ -1104,6 +1194,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def polygon_mask(self, yvv, rvv, pply, dummy):
         """
+        
         Mask a `GXVV <geosoft.gxapi.GXVV>` using XY data and a polygon
         
         :param yvv:    Y `GXVV <geosoft.gxapi.GXVV>`
@@ -1121,6 +1212,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** The VVs has to be the same length
         """
+        
         self._polygon_mask(yvv, rvv, pply, dummy)
         
 
@@ -1129,6 +1221,7 @@ class GXVV(gxapi_cy.WrapVV):
     @classmethod
     def project(cls, pj, vv_x, vv_y):
         """
+        
         This method projects an X and Y `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_x:  X
@@ -1143,6 +1236,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** This function is equivalent to `GXPJ.convert_vv <geosoft.gxapi.GXPJ.convert_vv>`.
         """
+        
         gxapi_cy.WrapVV._project(GXContext._get_tls_geo(), pj, vv_x, vv_y)
         
 
@@ -1151,6 +1245,7 @@ class GXVV(gxapi_cy.WrapVV):
     @classmethod
     def project_3d(cls, pj, vv_x, vv_y, vv_z):
         """
+        
         This method projects an X,Y,Z `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_x:  X
@@ -1167,6 +1262,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** This function is equivalent to `GXPJ.convert_vv3 <geosoft.gxapi.GXPJ.convert_vv3>`.
         """
+        
         gxapi_cy.WrapVV._project_3d(GXContext._get_tls_geo(), pj, vv_x, vv_y, vv_z)
         
 
@@ -1175,6 +1271,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def range_double(self, min, max):
         """
+        
         Get the min. and max. values of a `GXVV <geosoft.gxapi.GXVV>` while ignoring dummies.
         
         :param min:  Minimum value - returned
@@ -1188,6 +1285,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** Minimum and maximum become `GS_R8DM <geosoft.gxapi.GS_R8DM>` if entire `GXVV <geosoft.gxapi.GXVV>` is dummy.
         """
+        
         min.value, max.value = self._range_double(min.value, max.value)
         
 
@@ -1196,6 +1294,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def re_fid(self, start, incr, length):
         """
+        
         Re-sample a `GXVV <geosoft.gxapi.GXVV>` to a new fid start/icrement
         
         :param start:   New fid start
@@ -1209,6 +1308,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._re_fid(start, incr, length)
         
 
@@ -1217,6 +1317,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def re_fid_vv(self, vv_m):
         """
+        
         Re-sample a `GXVV <geosoft.gxapi.GXVV>` to match another `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_m:  `GXVV <geosoft.gxapi.GXVV>` model (fid increment and start)
@@ -1229,6 +1330,7 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** This method will honor the `GXVV <geosoft.gxapi.GXVV>` FID Expansion and will expand/contract
         `GXVV <geosoft.gxapi.GXVV>`'s based on this flag if it is used.
         """
+        
         self._re_fid_vv(vv_m)
         
 
@@ -1237,6 +1339,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def re_sample(self, c_start, c_incr, n_start, n_incr, length, unused):
         """
+        
         Resamples a `GXVV <geosoft.gxapi.GXVV>` from one fid/incr to another fid/incr.
         
         :param c_start:  Current start fid
@@ -1256,6 +1359,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._re_sample(c_start, c_incr, n_start, n_incr, length, unused)
         
 
@@ -1264,6 +1368,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_fid_incr(self):
         """
+        
         Gets the Fiducial increment from a `GXVV <geosoft.gxapi.GXVV>`
         
 
@@ -1274,6 +1379,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_fid_incr()
         return ret_val
 
@@ -1282,6 +1388,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_fid_start(self):
         """
+        
         Gets the Fiducial start from a `GXVV <geosoft.gxapi.GXVV>`
         
 
@@ -1292,6 +1399,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_fid_start()
         return ret_val
 
@@ -1300,6 +1408,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def get_double(self, element):
         """
+        
         Get a real element from a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param element:  Element wanted
@@ -1316,6 +1425,7 @@ class GXVV(gxapi_cy.WrapVV):
         **Note:** Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
+        
         ret_val = self._get_double(element)
         return ret_val
 
@@ -1324,6 +1434,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def sum(self):
         """
+        
         Calculate the sum of the values in a `GXVV <geosoft.gxapi.GXVV>`.
         
 
@@ -1336,6 +1447,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** Dummy value is treated as Zero(0)
         """
+        
         ret_val = self._sum()
         return ret_val
 
@@ -1344,6 +1456,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def weighted_mean(self, vv_weights):
         """
+        
         Calculate the weighted average of the values.
         
         :param vv_weights:   `GXVV <geosoft.gxapi.GXVV>` of weights
@@ -1358,6 +1471,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **Note:** Dummy values are ignored.
         """
+        
         ret_val = self._weighted_mean(vv_weights)
         return ret_val
 
@@ -1366,6 +1480,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_fid_expansion(self, expand):
         """
+        
         Sets the Fiducial expansion from a `GXVV <geosoft.gxapi.GXVV>`
         
         :param expand:  Expansion setting (1 or greater)
@@ -1375,6 +1490,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_fid_expansion(expand)
         
 
@@ -1383,6 +1499,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_fid_incr(self, incr):
         """
+        
         Sets the Fiducial increment of a `GXVV <geosoft.gxapi.GXVV>`
         
         :param incr:  New increment
@@ -1392,6 +1509,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_fid_incr(incr)
         
 
@@ -1400,6 +1518,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_fid_start(self, start):
         """
+        
         Sets the Fiducial start of a `GXVV <geosoft.gxapi.GXVV>`
         
         :param start:  New start
@@ -1409,6 +1528,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_fid_start(start)
         
 
@@ -1417,6 +1537,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_int(self, element, value):
         """
+        
         Set an integer element in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param element:  Element to set
@@ -1438,6 +1559,7 @@ class GXVV(gxapi_cy.WrapVV):
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
+        
         self._set_int(element, value)
         
 
@@ -1446,6 +1568,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_int_n(self, start, n, value):
         """
+        
         Set N integer elements in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param start:  Start element (>= 0)
@@ -1463,6 +1586,7 @@ class GXVV(gxapi_cy.WrapVV):
         If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         """
+        
         self._set_int_n(start, n, value)
         
 
@@ -1471,6 +1595,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_len(self, size):
         """
+        
         Set the length of a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param size:  New length (number of elements)
@@ -1489,6 +1614,7 @@ class GXVV(gxapi_cy.WrapVV):
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
+        
         self._set_len(size)
         
 
@@ -1497,6 +1623,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_double(self, element, value):
         """
+        
         Set a real element in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param element:  Element to set
@@ -1518,6 +1645,7 @@ class GXVV(gxapi_cy.WrapVV):
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
+        
         self._set_double(element, value)
         
 
@@ -1526,6 +1654,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_double_n(self, start, n, value):
         """
+        
         Set N real elements in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param start:  Start element (>= 0)
@@ -1543,6 +1672,7 @@ class GXVV(gxapi_cy.WrapVV):
         If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         """
+        
         self._set_double_n(start, n, value)
         
 
@@ -1551,6 +1681,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_string(self, element, value):
         """
+        
         Set a string element in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param element:  Element to set
@@ -1572,6 +1703,7 @@ class GXVV(gxapi_cy.WrapVV):
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
+        
         self._set_string(element, value.encode())
         
 
@@ -1580,6 +1712,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def set_string_n(self, start, n, value):
         """
+        
         Set N string elements in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param start:  Start element (>= 0)
@@ -1597,6 +1730,7 @@ class GXVV(gxapi_cy.WrapVV):
         If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         """
+        
         self._set_string_n(start, n, value.encode())
         
 
@@ -1605,6 +1739,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def setup_index(self, vvq, vvi, mode, space):
         """
+        
         Setup an index `GXVV <geosoft.gxapi.GXVV>` from VV1 to VV2.
         
         :param vvq:    Query `GXVV <geosoft.gxapi.GXVV>` (same type as Data `GXVV <geosoft.gxapi.GXVV>`)
@@ -1644,6 +1779,7 @@ class GXVV(gxapi_cy.WrapVV):
         values in ``hVVy``, and uses linear interpolation to calculate the values of
         ``hVVy2`` at the input indices contained in ``hVVi``.
         """
+        
         self._setup_index(vvq, vvi, mode, space)
         
 
@@ -1652,6 +1788,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def sort(self, order):
         """
+        
         Sort a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param order:  :ref:`VV_SORT`
@@ -1661,6 +1798,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._sort(order)
         
 
@@ -1669,6 +1807,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def sort_index(self, ivv):
         """
+        
         Sort index `GXVV <geosoft.gxapi.GXVV>` based on a data `GXVV <geosoft.gxapi.GXVV>`.
         
         :param ivv:  Index `GXVV <geosoft.gxapi.GXVV>` of type INT
@@ -1682,6 +1821,7 @@ class GXVV(gxapi_cy.WrapVV):
         This index vv can then be used by the IndexOrder method
         to order a group of `GXVV <geosoft.gxapi.GXVV>`'s.
         """
+        
         self._sort_index(ivv)
         
 
@@ -1690,6 +1830,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def sort_index1(self, ivv, ord1):
         """
+        
         Sort index `GXVV <geosoft.gxapi.GXVV>` based on 1 data `GXVV <geosoft.gxapi.GXVV>` - set orders.
         
         :param ivv:   Index `GXVV <geosoft.gxapi.GXVV>` of type INT
@@ -1709,6 +1850,7 @@ class GXVV(gxapi_cy.WrapVV):
         the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the ternary values are compared, etc.
         """
+        
         self._sort_index1(ivv, ord1)
         
 
@@ -1717,6 +1859,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def sort_index2(self, d2_vv, ivv, ord1, ord2):
         """
+        
         Sort index `GXVV <geosoft.gxapi.GXVV>` based on 2 data VVs - set orders.
         
         :param d2_vv:  Secondary Data `GXVV <geosoft.gxapi.GXVV>`
@@ -1740,6 +1883,7 @@ class GXVV(gxapi_cy.WrapVV):
         the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the ternary values are compared, etc
         """
+        
         self._sort_index2(d2_vv, ivv, ord1, ord2)
         
 
@@ -1748,6 +1892,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def sort_index3(self, d2_vv, d3_vv, ivv, ord1, ord2, ord3):
         """
+        
         Sort index `GXVV <geosoft.gxapi.GXVV>` based on 3 data VVs - set orders.
         
         :param d2_vv:  Secondary Data `GXVV <geosoft.gxapi.GXVV>`
@@ -1775,6 +1920,7 @@ class GXVV(gxapi_cy.WrapVV):
         the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
+        
         self._sort_index3(d2_vv, d3_vv, ivv, ord1, ord2, ord3)
         
 
@@ -1783,6 +1929,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def sort_index4(self, d2_vv, d3_vv, d4_vv, ivv, ord1, ord2, ord3, ord4):
         """
+        
         Sort index `GXVV <geosoft.gxapi.GXVV>` based on 4 data VVs - set orders.
         
         :param d2_vv:  Secondary Data `GXVV <geosoft.gxapi.GXVV>`
@@ -1814,6 +1961,7 @@ class GXVV(gxapi_cy.WrapVV):
         the secondary `GXVV <geosoft.gxapi.GXVV>` values are compared. If the secondary values
         are the same, the third values are compared, etc
         """
+        
         self._sort_index4(d2_vv, d3_vv, d4_vv, ivv, ord1, ord2, ord3, ord4)
         
 
@@ -1822,6 +1970,7 @@ class GXVV(gxapi_cy.WrapVV):
     @classmethod
     def statistics(cls, st, vv):
         """
+        
         Add a `GXVV <geosoft.gxapi.GXVV>` to a `GXST <geosoft.gxapi.GXST>`.
         
         :param st:  `GXST <geosoft.gxapi.GXST>` Handle
@@ -1833,6 +1982,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVV._statistics(GXContext._get_tls_geo(), st, vv)
         
 
@@ -1841,6 +1991,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def subtract(self, vv_y, vv_z):
         """
+        
         Subtract one `GXVV <geosoft.gxapi.GXVV>` from another: VV_A - VV_B = VV_C
         
         :param vv_y:  `GXVV <geosoft.gxapi.GXVV>` B
@@ -1852,6 +2003,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._subtract(vv_y, vv_z)
         
 
@@ -1860,6 +2012,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def swap(self):
         """
+        
         Swaps the bytes of the SHORT, USHORT, LONG, FLOAT and DOUBLE vv's.
         Other vv's are not affected by this method. This is used
         primarily with changing the order of bytes for other machine
@@ -1870,6 +2023,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._swap()
         
 
@@ -1878,6 +2032,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def window(self, min, max, mode):
         """
+        
         Limit the elements of a vv to a range.
         
         :param min:   Min Val
@@ -1891,6 +2046,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._window(min, max, mode)
         
 
@@ -1899,6 +2055,7 @@ class GXVV(gxapi_cy.WrapVV):
 
     def write_xml(self, file, format, decimal):
         """
+        
         Write the `GXVV <geosoft.gxapi.GXVV>` data as an XML object with bytes and formating.
         
         :param file:     XML file to create
@@ -1912,6 +2069,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._write_xml(file.encode(), format, decimal)
         
 
@@ -1922,21 +2080,6 @@ class GXVV(gxapi_cy.WrapVV):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
-    def get_data_np(self, start: int, num_elements: int, np_dtype: type(np.dtype)):
-        from .GXNumpy import gs_from_np
-        gs_type = gs_from_np(np_dtype)
-        return np.asarray(self.get_data_array(start, num_elements, gs_type))
-
-    def set_data_np(self, start: int, np_array: type(np.ndarray)):
-        from .GXNumpy import gs_from_np
-        gs_type = gs_from_np(np_array.dtype)
-        num_elements = np.prod(np_array.shape)
-        if not np_array.flags['C_CONTIGUOUS']:
-            np_array = np.ascontiguousarray(np_array)
-        self._set_data(start, num_elements, np_array.data.tobytes(), gs_type)
-    
-    def get_data_array(self, start: int, num_elements: int, gs_type: int):
-        return gxapi_cy_extend.GXMemMethods.get_data_array_vv(GXContext._internal_p(), self._internal_handle(), start, num_elements, gs_type)
 ### endblock ClassExtend
 
 

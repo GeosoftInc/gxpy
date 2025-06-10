@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXMULTIGRID3D import GXMULTIGRID3D
@@ -54,6 +54,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_xyz(cls, name, ra, type, ipj):
         """
+        
         Import XYZ file into a Multi-Voxset
         
         :param name:  Name of output Voxel file
@@ -69,6 +70,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_xyz(GXContext._get_tls_geo(), name.encode(), ra, type, ipj)
         
 
@@ -77,6 +79,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_xyz(cls, grid3d_file, xyz, dir, rev_x, rev_y, rev_z, dummies):
         """
+        
         Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to an XYZ File
         
         :param grid3d_file:  Input Voxel file
@@ -98,6 +101,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_xyz(GXContext._get_tls_geo(), grid3d_file.encode(), xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
 
@@ -106,6 +110,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_binary(cls, grid3d_file, binary_file, dir, rev_x, rev_y, rev_z, swap, output_type):
         """
+        
         Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File.
         
         :param grid3d_file:  Input Voxel file
@@ -129,6 +134,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_binary(GXContext._get_tls_geo(), grid3d_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
         
 
@@ -137,6 +143,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_binary_ex(cls, grid3d_file, binary_file, dir, rev_x, rev_y, rev_z, swap, dummy, output_type):
         """
+        
         Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File, with dummy replacement.
         
         :param grid3d_file:  Input Voxel file
@@ -162,6 +169,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_binary_ex(GXContext._get_tls_geo(), grid3d_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, dummy, output_type)
         
 
@@ -170,6 +178,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_xml(cls, grid3d_file, xml_file):
         """
+        
         Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to XML
         
         :param grid3d_file:  Voxel file
@@ -181,6 +190,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_xml(GXContext._get_tls_geo(), grid3d_file.encode(), xml_file.encode())
         
 
@@ -189,6 +199,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def check_equal_to_legacy_voxel(cls, grid3d_file, legacy_grid3d_file):
         """
+        
         Compare `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to Legacy Voxel
         
         :param grid3d_file:         Voxel file
@@ -200,6 +211,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._check_equal_to_legacy_voxel(GXContext._get_tls_geo(), grid3d_file.encode(), legacy_grid3d_file.encode())
         
 
@@ -208,6 +220,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_ubc(cls, name, mesh, mod, dummy, ipj):
         """
+        
         Import UBC file into a MultiVoxset
         
         :param name:   Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -225,6 +238,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_ubc(GXContext._get_tls_geo(), name.encode(), mesh.encode(), mod.encode(), dummy, ipj)
         
 
@@ -233,6 +247,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_gocad(cls, name, header, property, ipj, orientation):
         """
+        
         Imports a MultiVoxset from a GOCAD File
         
         :param name:         Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -249,6 +264,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj, orientation)
         
 
@@ -257,6 +273,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def list_properties_gocad(cls, header, lst):
         """
+        
         List all the properties available in this GOCAD file.
         
         :param header:  Name of GOCAD Voxel file
@@ -268,6 +285,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._list_properties_gocad(GXContext._get_tls_geo(), header.encode(), lst)
         
 
@@ -276,6 +294,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_gdb(cls, grid3d_file, db, symb):
         """
+        
         Imports from a Geosoft Database
         
         :param grid3d_file:  Name of output Voxel file
@@ -289,6 +308,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gdb(GXContext._get_tls_geo(), grid3d_file.encode(), db, symb)
         
 
@@ -297,6 +317,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_gdb_ignore_stored_voxel_geometry(cls, grid3d_file, db, symb):
         """
+        
         Imports from a Geosoft Database, but ignores any stored internal geometry
         
         :param grid3d_file:  Name of output Voxel file
@@ -310,6 +331,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gdb_ignore_stored_voxel_geometry(GXContext._get_tls_geo(), grid3d_file.encode(), db, symb)
         
 
@@ -318,6 +340,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def database_contains_voxel_geometry(cls, db):
         """
+        
         Returns 1 if the original voxel geometry is stored inside the database
         
         :param db:  `GXDB <geosoft.gxapi.GXDB>` To import from
@@ -328,6 +351,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._database_contains_voxel_geometry(GXContext._get_tls_geo(), db)
         return ret_val
 
@@ -336,6 +360,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_vector_gdb(cls, grid3d_file, db, vector_type, symb_x, symb_y, symb_z, inc, dec):
         """
+        
         Imports from a Vector Geosoft Database
         
         :param grid3d_file:  Voxel Name
@@ -359,6 +384,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_vector_gdb(GXContext._get_tls_geo(), grid3d_file.encode(), db, vector_type, symb_x, symb_y, symb_z, inc, dec)
         
 
@@ -367,6 +393,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_segy(cls, multigrid3d_file, output_segy_filename, sample_interval):
         """
+        
         Export To SEGY
         
         :param multigrid3d_file:      Input Voxel file
@@ -380,6 +407,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_segy(GXContext._get_tls_geo(), multigrid3d_file.encode(), output_segy_filename.encode(), sample_interval)
         
 
@@ -388,6 +416,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_gdb(cls, grid3d_file, db, chan, dir, rev_x, rev_y, rev_z, dummies):
         """
+        
         Export To GDB
         
         :param grid3d_file:  Input Voxel file
@@ -411,6 +440,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_gdb(GXContext._get_tls_geo(), grid3d_file.encode(), db, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
 
@@ -419,6 +449,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_wa(cls, file_name, wa, dir, rev_x, rev_y, rev_z, dummy):
         """
+        
         Export To GDB
         
         :param file_name:  Input Voxel file
@@ -440,6 +471,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_wa(GXContext._get_tls_geo(), file_name.encode(), wa, dir, rev_x, rev_y, rev_z, dummy.encode())
         
 
@@ -448,6 +480,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def convert_double_to_vector(cls, x_file_name, y_file_name, z_file_name, out_file_name, inclination, declination, rotated):
         """
+        
         Convert 3 Double Voxels to a Vector Voxel
         
         :param x_file_name:    Input X Voxel file
@@ -469,6 +502,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_vector(GXContext._get_tls_geo(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), out_file_name.encode(), inclination, declination, rotated)
         
 
@@ -477,6 +511,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def convert_vector_to_double(cls, file_name, x_file_name, y_file_name, z_file_name, rotated):
         """
+        
         Convert a Vector Voxel to 3 double Voxels
         
         :param file_name:    Input Vector Voxel file
@@ -494,6 +529,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._convert_vector_to_double(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), rotated)
         
 
@@ -502,6 +538,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def convert_vector_to_double_using_rotation(cls, file_name, x_file_name, y_file_name, z_file_name, inclination, declination):
         """
+        
         Convert a Vector Voxel to 3 double Voxels using an external rotation. Internal rotations are ignored.
         
         :param file_name:    Input Vector Voxel file
@@ -521,6 +558,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._convert_vector_to_double_using_rotation(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), inclination, declination)
         
 
@@ -529,6 +567,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def convert_thematic_to_double(cls, input_grid3d_filename, translate_vv, output_grid3d_filename):
         """
+        
         Convert Thematic MultiVoxset to Double MultiVoxset
         
         :param input_grid3d_filename:   Input grid3d filename
@@ -542,6 +581,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._convert_thematic_to_double(GXContext._get_tls_geo(), input_grid3d_filename.encode(), translate_vv, output_grid3d_filename.encode())
         
 
@@ -550,6 +590,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def convert_double_to_thematic(cls, input_grid3d_filename, translate_vv, tpat, output_grid3d_filename):
         """
+        
         Convert Double MultiVoxset to Thematic MultiVoxset
         
         :param input_grid3d_filename:   Input grid3d filename
@@ -565,6 +606,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_thematic(GXContext._get_tls_geo(), input_grid3d_filename.encode(), translate_vv, tpat, output_grid3d_filename.encode())
         
 
@@ -573,6 +615,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def convert_velocity_to_density(cls, input_grid3d_filename, input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename):
         """
+        
         Convert Velocity MultiVoxset to Density MultiVoxset
         
         :param input_grid3d_filename:   Input grid3d filename
@@ -604,6 +647,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._convert_velocity_to_density(GXContext._get_tls_geo(), input_grid3d_filename.encode(), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename.encode())
         
 
@@ -612,6 +656,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def convert_density_to_velocity(cls, input_grid3d_filename, input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename):
         """
+        
         Convert Density MultiVoxset to Velocity MultiVoxset
         
         :param input_grid3d_filename:   Input grid3d filename
@@ -643,6 +688,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._convert_density_to_velocity(GXContext._get_tls_geo(), input_grid3d_filename.encode(), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename.encode())
         
 
@@ -651,6 +697,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def get_gocad_location(cls, input_grid3d_filename, origin_x, origin_y, origin_z, vect_xx, vect_xy, vect_xz, vect_yx, vect_yy, vect_yz, vect_zx, vect_zy, vect_zz):
         """
+        
         Get the location of a grid3d with origin and scaled xyz vectors for use with GOCAD.
         
         :param input_grid3d_filename:  Input grid3d filename
@@ -684,6 +731,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_gocad_location(GXContext._get_tls_geo(), input_grid3d_filename.encode(), origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value)
         
 
@@ -692,6 +740,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_double_constant(cls, name, value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj):
         """
+        
         Generate a double MultiVoxset with a constant value
         
         :param name:    Name of output Voxel File
@@ -723,6 +772,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
@@ -731,6 +781,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_double_constant_copy(cls, name, value, source_name):
         """
+        
         Generate a double MultiVoxset with a constant value based on an input voxel
         
         :param name:         Name of output Voxel File
@@ -744,6 +795,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant_copy(GXContext._get_tls_geo(), name.encode(), value, source_name.encode())
         
 
@@ -752,6 +804,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_thematic_constant(cls, name, value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj):
         """
+        
         Generate a double MultiVoxset with a constant value
         
         :param name:    Name of output Voxel File
@@ -783,6 +836,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._create_thematic_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
@@ -791,6 +845,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_vector_constant(cls, name, value_x, value_y, value_z, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj):
         """
+        
         Generate a double MultiVoxset with a constant value
         
         :param name:     Name of output Voxel File
@@ -826,6 +881,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._create_vector_constant(GXContext._get_tls_geo(), name.encode(), value_x, value_y, value_z, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
@@ -834,6 +890,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_double_constant_vv(cls, name, value, ox, oy, oz, cx, cy, cz, ipj):
         """
+        
         Generate a double MultiVoxset with a constant value and non-uniform cell sizes
         
         :param name:   Name of output Voxel
@@ -859,6 +916,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx, cy, cz, ipj)
         
 
@@ -867,6 +925,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_thematic_constant_vv(cls, name, value, ox, oy, oz, cx, cy, cz, ipj):
         """
+        
         Generate a double MultiVoxset with a constant value and non-uniform cell sizes
         
         :param name:   Name of output Voxel
@@ -892,6 +951,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._create_thematic_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx, cy, cz, ipj)
         
 
@@ -900,6 +960,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_vector_constant_vv(cls, name, x_value, y_value, z_value, ox, oy, oz, cx, cy, cz, ipj):
         """
+        
         Generate a double MultiVoxset with a constant value and non-uniform cell sizes
         
         :param name:     Name of output Voxel
@@ -929,6 +990,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._create_vector_constant_vv(GXContext._get_tls_geo(), name.encode(), x_value, y_value, z_value, ox, oy, oz, cx, cy, cz, ipj)
         
 
@@ -937,6 +999,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def export_to_voxel(cls, project_file, multi_voxset_uuid, multi_voxset_attribute, grid3d_file):
         """
+        
         Exports a Multi-Voxset into a Voxel
         
         :param project_file:            Project file
@@ -952,6 +1015,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._export_to_voxel(GXContext._get_tls_geo(), project_file.encode(), multi_voxset_uuid.encode(), multi_voxset_attribute.encode(), grid3d_file.encode())
         
 
@@ -960,6 +1024,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_voxel(cls, project_file, grid3d_file, multi_voxset_attribute, p_uuid_string):
         """
+        
         Import a Voxel directly into a Multi-Voxset
         
         :param project_file:            Project file
@@ -975,6 +1040,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         p_uuid_string.value = gxapi_cy.WrapMULTIGRID3DUTIL._import_from_voxel(GXContext._get_tls_geo(), project_file.encode(), grid3d_file.encode(), multi_voxset_attribute.encode(), p_uuid_string.value.encode())
         
 
@@ -983,6 +1049,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def import_from_datamine(cls, file, field, ipj, grid3d):
         """
+        
         Create a Geosoft Voxel file from a Datamine block model file.
         
         :param file:    Datamine file name
@@ -1000,6 +1067,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._import_from_datamine(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj, grid3d.encode())
         
 
@@ -1008,6 +1076,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def compute_default_cell_size(cls, min_x, max_x, min_y, max_y, min_z, max_z):
         """
+        
         Used if the user does not provide a default cell size.
         
         :param min_x:  MinX
@@ -1032,6 +1101,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** Compute a default cell size for a grid3d given a data range.
         """
+        
         ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._compute_default_cell_size(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, min_z, max_z)
         return ret_val
 
@@ -1040,6 +1110,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def filter(cls, input_file, output_file, filter, filter_file, n_passes, interpolate_dummies):
         """
+        
         Apply a 3D filter to a grid3d.
         
         :param input_file:           Name of the input grid3d
@@ -1059,6 +1130,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._filter(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), filter, filter_file.encode(), n_passes, interpolate_dummies)
         
 
@@ -1067,6 +1139,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def invert_z(cls, input_file, output_file):
         """
+        
         Invert the Z values in the Grid3d.
         
         :param input_file:   Name of the input grid3d
@@ -1078,6 +1151,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._invert_z(GXContext._get_tls_geo(), input_file.encode(), output_file.encode())
         
 
@@ -1086,6 +1160,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def extract_dem(cls, input_file, output_file):
         """
+        
         Extract a DEM grid from a voxel.
         
         :param input_file:   Name of the input grid3d
@@ -1097,6 +1172,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._extract_dem(GXContext._get_tls_geo(), input_file.encode(), output_file.encode())
         
 
@@ -1105,6 +1181,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def clip_to_polygon(cls, input_file, output_file, poly, clip_dummies):
         """
+        
         Invert the Z values in the Grid3d.
         
         :param input_file:    Name of the input grid3d
@@ -1120,6 +1197,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._clip_to_polygon(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), poly, clip_dummies)
         
 
@@ -1128,6 +1206,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def grid_direct_from_gdb(cls, output_grid3d_filename, origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db, x_channel, y_channel, z_channel, data_channel):
         """
+        
         Create a grid3d using direct gridding.
         
         :param output_grid3d_filename:  Output grid3d filename
@@ -1169,6 +1248,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._grid_direct_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db, x_channel, y_channel, z_channel, data_channel)
         
 
@@ -1177,6 +1257,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def grid_idw_from_gdb(cls, output_grid3d_filename, origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, db, x_channel, y_channel, z_channel, data_channel, weight_power, weight_slope, search_radius, blanking_distance, log, log_base, log_negative):
         """
+        
         Create a grid3d using IDW gridding.
         
         :param output_grid3d_filename:  Output grid3d filename
@@ -1239,6 +1320,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
                        If the blanking distance is set, all cells whose center point is not within the blanking distance of
                        at least one data point are set to dummy.
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._grid_idw_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, db, x_channel, y_channel, z_channel, data_channel, weight_power, weight_slope, search_radius, blanking_distance, log, log_base, log_negative)
         
 
@@ -1247,6 +1329,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def get_data_extents(cls, filename, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the voxel size that has non-dummy data.
         
         :param filename:  input filename
@@ -1271,6 +1354,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
         returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_extents(GXContext._get_tls_geo(), filename.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -1279,6 +1363,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def get_data_ground_extents(cls, filename, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the voxel size in ground units that has non-dummy data.
         
         :param filename:  input filename
@@ -1303,6 +1388,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
         returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_ground_extents(GXContext._get_tls_geo(), filename.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -1311,6 +1397,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def grid_points_from_gdb(cls, name, error, cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
         """
+        
         Grid a grid3d from a database using kriging.
         
         :param name:          Output grid3d filename
@@ -1359,6 +1446,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
@@ -1367,6 +1455,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def grid_points_z_from_gdb(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
         """
+        
         Grid a grid3d from a database (using variable Z's)
         
         :param name:          Output grid3d filename
@@ -1417,6 +1506,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
@@ -1425,6 +1515,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def grid_points_z_ex_from_gdb(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
         """
+        
         Grid a grid3d from a database (using variable Z's)
         
         :param name:                 Output grid3d filename
@@ -1485,6 +1576,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
@@ -1493,6 +1585,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def log_grid_points_z_ex_from_gdb(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, db, x_channel, y_channel, z_channel, data_channel, ipj):
         """
+        
         Log grid a grid3d from a database (using variable Z's)
         
         :param name:                 Output grid3d filename
@@ -1557,6 +1650,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._log_grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
@@ -1565,6 +1659,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def krig_from_gdb(cls, name, cell_size, type, db, x_channel, y_channel, z_channel, data_channel, ipj, reg):
         """
+        
         A more compact and extensible form of `log_grid_points_z_ex_from_gdb <geosoft.gxapi.GXMULTIGRID3DUTIL.log_grid_points_z_ex_from_gdb>`.
         
         :param name:          Output grid3d filename
@@ -1621,6 +1716,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `GXVOX.log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`. Only the most
         basic parameters are entered directly. Optional parameters are passed via a `GXREG <geosoft.gxapi.GXREG>` object.
         """
+        
         gxapi_cy.WrapMULTIGRID3DUTIL._krig_from_gdb(GXContext._get_tls_geo(), name.encode(), cell_size, type, db, x_channel, y_channel, z_channel, data_channel, ipj, reg)
         
 
@@ -1629,6 +1725,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_subset(cls, input_name, output_name, offset_x, offset_y, offset_z, length_x, length_y, length_z):
         """
+        
         Create a new MULTIGRID3D that is a subset of an exisiting MULTIGRID3D.
         
         :param input_name:   File Name of the MULTIGRID3D that will be subset
@@ -1655,6 +1752,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** Creates a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object that is a subset .
         """
+        
         ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset(GXContext._get_tls_geo(), input_name.encode(), output_name.encode(), offset_x, offset_y, offset_z, length_x, length_y, length_z)
         return GXMULTIGRID3D(ret_val)
 
@@ -1663,6 +1761,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
     @classmethod
     def create_subset_from_double_extents(cls, input_name, output_name):
         """
+        
         Create a new MULTIGRID3D that is a subset of the non-dummy extents.
         
         :param input_name:   File Name of the MULTIGRID3D that will be subset
@@ -1677,8 +1776,49 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** Creates a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object that is a subset with all dummy data regions removed.
         """
+        
         ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset_from_double_extents(GXContext._get_tls_geo(), input_name.encode(), output_name.encode())
         return GXMULTIGRID3D(ret_val)
+
+
+
+
+# Deprecated
+
+
+    @classmethod
+    def generate_rbf(cls, db, output_file, data_channel, cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon):
+        """
+        
+        .. deprecated:: 9.6 Removed. 
+        Creates a VOXEL from an database using RBF.
+        
+        :param db:               Handle to a database
+        :param output_file:      Name of the output grid3d
+        :param data_channel:     Channel to grid`
+        :param cell_size:        Cell size
+        :param error_tolerance:  Error Tolerance
+        :param max_iterations:   Maximum number of iterations (>0)
+        :param desample:         Desample data (1) or use as is (0)
+        :param kernel:           :ref:`RBFKERNEL`
+        :param kernel_epsilon:   Kernel Epsilon
+        :type  db:               GXDB
+        :type  output_file:      str
+        :type  data_channel:     str
+        :type  cell_size:        float
+        :type  error_tolerance:  float
+        :type  max_iterations:   int
+        :type  desample:         int
+        :type  kernel:           int
+        :type  kernel_epsilon:   float
+
+        .. versionadded:: 9.5
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since 9.6, Removed.""", )
+        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon)
+        
 
 
 

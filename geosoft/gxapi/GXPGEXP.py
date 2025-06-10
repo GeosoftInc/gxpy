@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
     def add_pager(self, pg, var):
         """
+        
         This method adds an pager to the `GXPGEXP <geosoft.gxapi.GXPGEXP>` object with a
         variable name.
         
@@ -68,6 +69,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._add_pager(pg, var.encode())
         
 
@@ -76,6 +78,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
     @classmethod
     def create(cls):
         """
+        
         This method creates an `GXPGEXP <geosoft.gxapi.GXPGEXP>` object.
         
 
@@ -86,6 +89,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPGEXP._create(GXContext._get_tls_geo())
         return GXPGEXP(ret_val)
 
@@ -96,6 +100,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
     def do_formula(self, formula, unused):
         """
+        
         This method runs a formula on the pagers.
         
         :param formula:  Formula
@@ -107,6 +112,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._do_formula(formula.encode(), unused)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXRA(gxapi_cy.WrapRA):
     @classmethod
     def create(cls, file):
         """
+        
         Creates `GXRA <geosoft.gxapi.GXRA>`
         
         :param file:  Name of the file
@@ -67,6 +68,7 @@ class GXRA(gxapi_cy.WrapRA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapRA._create(GXContext._get_tls_geo(), file.encode())
         return GXRA(ret_val)
 
@@ -75,6 +77,7 @@ class GXRA(gxapi_cy.WrapRA):
     @classmethod
     def create_sbf(cls, sbf, file):
         """
+        
         Creates `GXRA <geosoft.gxapi.GXRA>` on an `GXSBF <geosoft.gxapi.GXSBF>`
         
         :param sbf:   Storage
@@ -99,6 +102,7 @@ class GXRA(gxapi_cy.WrapRA):
 
             sbf.gxh
         """
+        
         ret_val = gxapi_cy.WrapRA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode())
         return GXRA(ret_val)
 
@@ -109,6 +113,7 @@ class GXRA(gxapi_cy.WrapRA):
 
     def gets(self, strbuff):
         """
+        
         Get next full line from `GXRA <geosoft.gxapi.GXRA>`
         
         :param strbuff:  Buffer in which to place string
@@ -122,6 +127,7 @@ class GXRA(gxapi_cy.WrapRA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, strbuff.value = self._gets(strbuff.value.encode())
         return ret_val
 
@@ -130,6 +136,7 @@ class GXRA(gxapi_cy.WrapRA):
 
     def len(self):
         """
+        
         Returns the total number of lines in `GXRA <geosoft.gxapi.GXRA>`
         
 
@@ -140,6 +147,7 @@ class GXRA(gxapi_cy.WrapRA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._len()
         return ret_val
 
@@ -148,6 +156,7 @@ class GXRA(gxapi_cy.WrapRA):
 
     def line(self):
         """
+        
         Returns current line #, 0 is the first
         
 
@@ -160,6 +169,7 @@ class GXRA(gxapi_cy.WrapRA):
 
         **Note:** This will be the next line read.
         """
+        
         ret_val = self._line()
         return ret_val
 
@@ -168,6 +178,7 @@ class GXRA(gxapi_cy.WrapRA):
 
     def seek(self, line):
         """
+        
         Position next read to specified line #
         
         :param line:  Line #, 0 is the first.
@@ -181,6 +192,7 @@ class GXRA(gxapi_cy.WrapRA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._seek(line)
         return ret_val
 

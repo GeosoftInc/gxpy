@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
     @classmethod
     def add_message(cls, message):
         """
+        
         Add informational message to output of current script
         
         :param message:  Message
@@ -63,6 +64,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapARCPY._add_message(GXContext._get_tls_geo(), message.encode())
         
 
@@ -71,6 +73,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
     @classmethod
     def add_warning(cls, message):
         """
+        
         Add warning message to output of current script
         
         :param message:  Message
@@ -80,6 +83,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapARCPY._add_warning(GXContext._get_tls_geo(), message.encode())
         
 
@@ -88,6 +92,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
     @classmethod
     def add_error(cls, message):
         """
+        
         Add error message to output of current script
         
         :param message:  Message
@@ -97,6 +102,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapARCPY._add_error(GXContext._get_tls_geo(), message.encode())
         
 

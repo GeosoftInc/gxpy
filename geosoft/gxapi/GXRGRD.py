@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXIMG import GXIMG
@@ -56,6 +56,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
     def clear(self):
         """
+        
         Clears all the parameters in a `GXRGRD <geosoft.gxapi.GXRGRD>` object
         
 
@@ -65,6 +66,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **Note:** DLL name `clear <geosoft.gxapi.GXRGRD.clear>`
         """
+        
         self._clear()
         
 
@@ -73,6 +75,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
     @classmethod
     def create(cls):
         """
+        
         Create a handle to a Rangrid object
         
 
@@ -88,6 +91,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         to execute. Use the LoadParms_RGRD method to get the
         control file parameters into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         """
+        
         ret_val = gxapi_cy.WrapRGRD._create(GXContext._get_tls_geo())
         return GXRGRD(ret_val)
 
@@ -96,6 +100,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
     @classmethod
     def create_img(cls, vv_x, vv_y, vv_z, ipj, ctl, grid):
         """
+        
         Run Rangrid directly on XYZ `GXVV <geosoft.gxapi.GXVV>` data, output to an `GXIMG <geosoft.gxapi.GXIMG>`.
         
         :param vv_x:  X data (any numeric `GXVV <geosoft.gxapi.GXVV>` type)
@@ -122,6 +127,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         If the grid file name is not defined, the `GXIMG <geosoft.gxapi.GXIMG>` is memory-based; not
         tied to a file.
         """
+        
         ret_val = gxapi_cy.WrapRGRD._create_img(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grid.encode())
         return GXIMG(ret_val)
 
@@ -130,8 +136,9 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
 
 
-    def default(self, zchan, in_dat):
+    def set_default(self, zchan, in_dat):
         """
+        
         Set the defaults.
         
         :param zchan:   Name of Z Channel to perfrom gridding on
@@ -146,7 +153,8 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._default(zchan.encode(), in_dat)
+        
+        ret_val = self._set_default(zchan.encode(), in_dat)
         return ret_val
 
 
@@ -154,6 +162,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
     def load_parms(self, file):
         """
+        
         Retrieves a Rangrid object's control parameters from a file,
         or sets the parameters to default if the file doesn't exist.
         
@@ -173,6 +182,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         """
+        
         ret_val = self._load_parms(file.encode())
         return ret_val
 
@@ -181,6 +191,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
     def run(self, in_dat, out_dat):
         """
+        
         Executes the Rangrid program, using the input channel and
         output file parameters.
         
@@ -196,6 +207,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._run(in_dat, out_dat)
         return ret_val
 
@@ -204,6 +216,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
     @classmethod
     def run2(cls, db, x, y, z, ctl, grd):
         """
+        
         Executes the Rangrid program directly on a database.
         
         :param db:   Handle to a database
@@ -226,6 +239,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapRGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode())
         return ret_val
 
@@ -234,6 +248,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
     @classmethod
     def run3(cls, db, x, y, z, ctl, grd, log):
         """
+        
         Executes the Rangrid program directly on a database. Specify log file
         
         :param db:   Handle to a database
@@ -258,6 +273,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapRGRD._run3(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), log.encode())
         return ret_val
 
@@ -266,6 +282,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
     def save_parms(self, name):
         """
+        
         Puts the Rangrid object's control parameters back into
         its control file.
         
@@ -282,6 +299,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
+        
         ret_val = self._save_parms(name.encode())
         return ret_val
 
@@ -290,6 +308,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
     @classmethod
     def run_vv(cls, vv_x, vv_y, vv_z, ipj, ctl, grd):
         """
+        
         Executes the Rangrid program directly on input data VVs.
         
         :param vv_x:  X data
@@ -309,6 +328,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapRGRD._run_vv(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grd.encode())
         
 
@@ -317,6 +337,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
     @classmethod
     def run_list(cls, dbs, zch, ipj, ctl, grd):
         """
+        
         Executes the Rangrid program from a list of databases.
         
         :param dbs:  List of databases (using | separator)
@@ -334,6 +355,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapRGRD._run_list(GXContext._get_tls_geo(), dbs.encode(), zch.encode(), ipj, ctl.encode(), grd.encode())
         
 

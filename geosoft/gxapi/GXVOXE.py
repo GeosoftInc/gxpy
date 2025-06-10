@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
     @classmethod
     def create(cls, vox):
         """
+        
         Create a handle to an `GXVOXE <geosoft.gxapi.GXVOXE>` object
         
         :param vox:  `GXVOX <geosoft.gxapi.GXVOX>` Object
@@ -66,6 +67,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOXE._create(GXContext._get_tls_geo(), vox)
         return GXVOXE(ret_val)
 
@@ -76,6 +78,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
 
     def profile(self, vv_x, vv_y, vv_z, vv_d, interp):
         """
+        
         Extract a profile of data along points provided.
         
         :param vv_x:    X `GXVV <geosoft.gxapi.GXVV>` (must be double)
@@ -93,6 +96,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._profile(vv_x, vv_y, vv_z, vv_d, interp)
         
 
@@ -101,6 +105,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
 
     def value(self, x, y, z, interp):
         """
+        
         Get a value at a specific point
         
         :param x:       X Location
@@ -119,6 +124,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._value(x, y, z, interp)
         return ret_val
 
@@ -127,6 +133,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
 
     def vector(self, ox, oy, oz, vx, vy, vz, vv, interp):
         """
+        
         Extract a profile of data along a vector
         
         :param ox:      X Origin
@@ -150,6 +157,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._vector(ox, oy, oz, vx, vy, vz, vv, interp)
         
 

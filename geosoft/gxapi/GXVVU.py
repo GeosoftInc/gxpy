@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def average_repeat(cls, ref_vv, dat_vv):
         """
+        
         Average repeat values.
         
         :param ref_vv:  Reference `GXVV <geosoft.gxapi.GXVV>`
@@ -76,6 +77,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             `remove_dummy <geosoft.gxapi.GXVVU.remove_dummy>`
         """
+        
         gxapi_cy.WrapVVU._average_repeat(GXContext._get_tls_geo(), ref_vv, dat_vv)
         
 
@@ -84,6 +86,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def average_repeat_ex(cls, ref_vv, dat_vv, mode):
         """
+        
         Average repeat values.
         
         :param ref_vv:  Reference `GXVV <geosoft.gxapi.GXVV>`
@@ -108,6 +111,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             `remove_dummy <geosoft.gxapi.GXVVU.remove_dummy>`
         """
+        
         gxapi_cy.WrapVVU._average_repeat_ex(GXContext._get_tls_geo(), ref_vv, dat_vv, mode)
         
 
@@ -116,6 +120,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def average_repeat2(cls, ref_vv1, ref_vv2, dat_vv):
         """
+        
         Average repeat values based on 2 reference channels.
         
         :param ref_vv1:  Reference `GXVV <geosoft.gxapi.GXVV>`
@@ -142,6 +147,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             RemoveDummy_VV
         """
+        
         gxapi_cy.WrapVVU._average_repeat2(GXContext._get_tls_geo(), ref_vv1, ref_vv2, dat_vv)
         
 
@@ -150,6 +156,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def average_repeat2_ex(cls, ref_vv1, ref_vv2, dat_vv, mode):
         """
+        
         Average repeat values based on 2 reference channels.
         
         :param ref_vv1:  Reference `GXVV <geosoft.gxapi.GXVV>`
@@ -177,6 +184,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             RemoveDummy_VV
         """
+        
         gxapi_cy.WrapVVU._average_repeat2_ex(GXContext._get_tls_geo(), ref_vv1, ref_vv2, dat_vv, mode)
         
 
@@ -185,6 +193,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def binary_search(cls, vv, val, l_min, l_max):
         """
+        
         Search  numeric value in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param val:    Value to search for.
@@ -202,6 +211,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` should be sorted.Search comparison is made on double
         comparison of the data.
         """
+        
         l_min.value, l_max.value = gxapi_cy.WrapVVU._binary_search(GXContext._get_tls_geo(), vv, val, l_min.value, l_max.value)
         
 
@@ -210,6 +220,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def box_cox(cls, vv, lm):
         """
+        
         Run Box-Cox (lambda) Transformation on `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv:  [i/o] `GXVV <geosoft.gxapi.GXVV>`
@@ -221,6 +232,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._box_cox(GXContext._get_tls_geo(), vv, lm)
         
 
@@ -229,6 +241,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def bp_filt(cls, vv_i, vv_o, pr_sw, pr_lw, flen):
         """
+        
         Band-pass filter to the specified.
         
         :param vv_i:   Input `GXVV <geosoft.gxapi.GXVV>`
@@ -251,6 +264,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         The wavelengths are in fiducials.
         """
+        
         gxapi_cy.WrapVVU._bp_filt(GXContext._get_tls_geo(), vv_i, vv_o, pr_sw, pr_lw, flen)
         
 
@@ -259,6 +273,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def clip(cls, vv, min, max, clip):
         """
+        
         Clip a `GXVV <geosoft.gxapi.GXVV>` to a range.
         
         :param vv:    `GXVV <geosoft.gxapi.GXVV>` to clip
@@ -274,6 +289,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVVU._clip(GXContext._get_tls_geo(), vv, min, max, clip)
         
 
@@ -282,6 +298,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def clip_to_detect_limit(cls, vv, det_limit, conv):
         """
+        
         Apply detection limit clipping of data.
         
         :param vv:         Input data vv (altered).
@@ -306,7 +323,52 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         This function is identical to `GXCHIMERA.clip_to_detect_limit <geosoft.gxapi.GXCHIMERA.clip_to_detect_limit>`.
         """
+        
         gxapi_cy.WrapVVU._clip_to_detect_limit(GXContext._get_tls_geo(), vv, det_limit, conv)
+        
+
+
+
+    @classmethod
+    def cond_depth_tem(cls, resp_vv, time_vv, cond_vv, depth_vv, current, flag, min_xvv, min_yvv, max_xvv, max_yvv, t_moment, r_moment, array):
+        """
+        
+        .. deprecated:: None None 
+        Calculate TEM apparent conductivity and depth
+        
+        :param resp_vv:   Response channel (microvolts)
+        :param time_vv:   Time channel (milliseconds)
+        :param cond_vv:   Conductivity channel (siemen/m)
+        :param depth_vv:  Depth (m)
+        :param current:   Transmitter current
+        :param flag:      Flag  Transmitter defined by moment (0) or by 4 VVs (1) below
+        :param min_xvv:   Minimum X to define transmitter loop layout (moment)
+        :param min_yvv:   Minimum Y to define transmitter loop layout (moment)
+        :param max_xvv:   Maximum X to define transmitter loop layout (moment)
+        :param max_yvv:   Maximum Y to define transmitter loop layout (moment)
+        :param t_moment:  Transmitter moment (square meters), dummy if the above flag is 1
+        :param r_moment:  Receiver moment (square meters)
+        :param array:     :ref:`TEM_ARRAY`
+        :type  resp_vv:   GXVV
+        :type  time_vv:   GXVV
+        :type  cond_vv:   GXVV
+        :type  depth_vv:  GXVV
+        :type  current:   float
+        :type  flag:      int
+        :type  min_xvv:   GXVV
+        :type  min_yvv:   GXVV
+        :type  max_xvv:   GXVV
+        :type  max_yvv:   GXVV
+        :type  t_moment:  float
+        :type  r_moment:  float
+        :type  array:     int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapVVU._cond_depth_tem(GXContext._get_tls_geo(), resp_vv, time_vv, cond_vv, depth_vv, current, flag, min_xvv, min_yvv, max_xvv, max_yvv, t_moment, r_moment, array)
         
 
 
@@ -314,6 +376,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def decimate(cls, vv, decimate):
         """
+        
         Decimate a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param decimate:  Decimation factor (must be > 0)
@@ -327,6 +390,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** For a decimation factor N, will remove all values except
         those with indices equal to MN, where M is an integer.
         """
+        
         gxapi_cy.WrapVVU._decimate(GXContext._get_tls_geo(), vv, decimate)
         
 
@@ -335,6 +399,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def deviation(cls, vv_x, vv_y, vv_d, x1, y1, x2, y2, line):
         """
+        
         Calculate distance of point locations to a straight line
         
         :param vv_x:  X `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
@@ -358,6 +423,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._deviation(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x1, y1, x2, y2, line)
         
 
@@ -366,6 +432,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def distance(cls, vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
         """
+        
         Create a cumulative distance `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv_x:         X `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
@@ -387,6 +454,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._distance(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
 
@@ -395,6 +463,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def distance_link_non_dummies(cls, vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
         """
+        
         Create distance linking non-dummies `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv_x:         X `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
@@ -416,6 +485,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._distance_link_non_dummies(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
 
@@ -424,6 +494,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def distance_non_cumulative(cls, vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr):
         """
+        
         Create a non cumulative distance `GXVV <geosoft.gxapi.GXVV>` i.e each
         distance element is the distance of the corresponding
         (X,Y) element and the previous element.
@@ -449,6 +520,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** The fist distace element is `rDUMMY <geosoft.gxapi.rDUMMY>`.
         """
+        
         gxapi_cy.WrapVVU._distance_non_cumulative(GXContext._get_tls_geo(), vv_x, vv_y, vv_d, x_fid_start, x_fid_incr, y_fid_start, y_fid_incr)
         
 
@@ -457,6 +529,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def distance_3d(cls, vv_x, vv_y, vv_z, start_distance, vv_d):
         """
+        
         Create a cumulative distance `GXVV <geosoft.gxapi.GXVV>` from X, Y and Z VVs
         
         :param vv_x:            X `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
@@ -481,6 +554,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         between the points. No re-sampling is performed.
         VVs of any type are supported.
         """
+        
         gxapi_cy.WrapVVU._distance_3d(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, start_distance, vv_d)
         
 
@@ -489,6 +563,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def find_gaps_3d(cls, vv_x, vv_y, vv_z, gap, vv_g):
         """
+        
         Return indices of locations separated from previous locations by more than the input gap distance.
         
         :param vv_x:  X `GXVV <geosoft.gxapi.GXVV>`,REAL `GXVV <geosoft.gxapi.GXVV>`
@@ -511,6 +586,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         The number of returned indices is one less than the number of line segments.
         (So if there are no gaps the returned `GXVV <geosoft.gxapi.GXVV>` has zero length).
         """
+        
         gxapi_cy.WrapVVU._find_gaps_3d(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, gap, vv_g)
         
 
@@ -519,6 +595,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def dummy_range(cls, vv, min, max, inside, incl):
         """
+        
         Dummy values inside or outside a range in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv:      `GXVV <geosoft.gxapi.GXVV>` handle
@@ -543,6 +620,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         range. If it is FALSE, then < or > are used, and dMin and
         dMax lie outside the range.
         """
+        
         gxapi_cy.WrapVVU._dummy_range(GXContext._get_tls_geo(), vv, min, max, inside, incl)
         
 
@@ -551,6 +629,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def dummy_range_ex(cls, vv, min, max, inside, include_min, include_max):
         """
+        
         Like DummyRangeVVU, with inclusion options for both ends.
         
         :param vv:           `GXVV <geosoft.gxapi.GXVV>` handle
@@ -577,6 +656,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         range. If it is FALSE, then < or > are used, and dMin and
         dMax lie outside the range.
         """
+        
         gxapi_cy.WrapVVU._dummy_range_ex(GXContext._get_tls_geo(), vv, min, max, inside, include_min, include_max)
         
 
@@ -585,6 +665,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def dummy_repeat(cls, vv, mode):
         """
+        
         Dummy repeat values in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param mode:  :ref:`VVU_DUMMYREPEAT`
@@ -598,6 +679,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** Either the first, middle or last point will be left.
                           Use `interp <geosoft.gxapi.GXVVU.interp>` to interpolate after if desired.
         """
+        
         gxapi_cy.WrapVVU._dummy_repeat(GXContext._get_tls_geo(), vv, mode)
         
 
@@ -606,6 +688,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def dup_stats(cls, data_vv, sample_vv, mean_vv, diff_vv):
         """
+        
         Calculate means and differences for duplicate sample pairs
         
         :param data_vv:    Duplicate data `GXVV <geosoft.gxapi.GXVV>`
@@ -630,6 +713,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         for samples out of order, for unmatched values, or when the
         sample type does not equal "1" or "2" are set to dummy.
         """
+        
         gxapi_cy.WrapVVU._dup_stats(GXContext._get_tls_geo(), data_vv, sample_vv, mean_vv, diff_vv)
         
 
@@ -638,6 +722,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def exp_dist(cls, vv, seed, mean, length):
         """
+        
         Fill with exponentially distributed values.
         
         :param vv:      `GXVV <geosoft.gxapi.GXVV>` object
@@ -657,6 +742,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         See RAND for a short discription of the
         random number generator used.
         """
+        
         gxapi_cy.WrapVVU._exp_dist(GXContext._get_tls_geo(), vv, seed, mean, length)
         
 
@@ -665,6 +751,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def filter(cls, vv_i, vv_o, flt):
         """
+        
         Apply a convolution filter to a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_i:  Input `GXVV <geosoft.gxapi.GXVV>`
@@ -678,6 +765,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._filter(GXContext._get_tls_geo(), vv_i, vv_o, flt)
         
 
@@ -686,6 +774,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def find_string_items(cls, vv_source, vv_search, pis_source_sorted, pis_search_sorted, pis_case_tolerant, vv_i):
         """
+        
         Searches a `GXVV <geosoft.gxapi.GXVV>` for items in a second `GXVV <geosoft.gxapi.GXVV>`, returns indices of those found.
         
         :param vv_source:          String `GXVV <geosoft.gxapi.GXVV>` in which to locate items
@@ -718,6 +807,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         will do so internally. Since the input VVs may already be sorted,
         the method will run faster if this stage can be skipped.
         """
+        
         gxapi_cy.WrapVVU._find_string_items(GXContext._get_tls_geo(), vv_source, vv_search, pis_source_sorted, pis_search_sorted, pis_case_tolerant, vv_i)
         
 
@@ -726,6 +816,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def fractal_filter(cls, vv_i, order, number, vv_o):
         """
+        
         Fractal filter a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_i:    [i] `GXVV <geosoft.gxapi.GXVV>`
@@ -741,6 +832,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._fractal_filter(GXContext._get_tls_geo(), vv_i, order, number, vv_o)
         
 
@@ -749,6 +841,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def close_xy(cls, vv_x, vv_y, x, y):
         """
+        
         Find the closest point to an input point (XY).
         
         :param vv_x:  X locations
@@ -771,6 +864,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
         input point.
         """
+        
         ret_val = gxapi_cy.WrapVVU._close_xy(GXContext._get_tls_geo(), vv_x, vv_y, x, y)
         return ret_val
 
@@ -779,6 +873,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def close_xym(cls, vv_x, vv_y, vv_m, x, y):
         """
+        
         Find the closest point to an input point, with mask (XY).
         
         :param vv_x:  X locations
@@ -806,6 +901,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         If no valid points are in the VVs, or all the mask `GXVV <geosoft.gxapi.GXVV>` values
         are dummy, the returned index is -1.
         """
+        
         ret_val = gxapi_cy.WrapVVU._close_xym(GXContext._get_tls_geo(), vv_x, vv_y, vv_m, x, y)
         return ret_val
 
@@ -814,6 +910,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def close_xyz(cls, vv_x, vv_y, vv_z, x, y, z):
         """
+        
         Find the closest point to an input point (XYZ).
         
         :param vv_x:  X locations
@@ -840,6 +937,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         Returns the index of the point in the `GXVV <geosoft.gxapi.GXVV>` closest to the
         input point.
         """
+        
         ret_val = gxapi_cy.WrapVVU._close_xyz(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, x, y, z)
         return ret_val
 
@@ -848,6 +946,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def close_xyzm(cls, vv_x, vv_y, vv_z, vv_m, x, y, z):
         """
+        
         Find the closest point to an input point, with mask (XYZ).
         
         :param vv_x:  X locations
@@ -879,6 +978,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         If no valid points are in the VVs, or all the mask `GXVV <geosoft.gxapi.GXVV>` values
         are dummy, the returned index is -1.
         """
+        
         ret_val = gxapi_cy.WrapVVU._close_xyzm(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, vv_m, x, y, z)
         return ret_val
 
@@ -887,6 +987,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def dummy_back_tracks(cls, vv):
         """
+        
         Dummy all points that keep a `GXVV <geosoft.gxapi.GXVV>` from being monotonically increasing.
         
         :param vv:  `GXVV <geosoft.gxapi.GXVV>` handle
@@ -902,6 +1003,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` length remains the same. Any point that is less than or equal to
         the previous (valid) point in the `GXVV <geosoft.gxapi.GXVV>` is dummied.
         """
+        
         ret_val = gxapi_cy.WrapVVU._dummy_back_tracks(GXContext._get_tls_geo(), vv)
         return ret_val
 
@@ -910,6 +1012,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def find_dummy(cls, vv, dir, type, start, end):
         """
+        
         Find the first dummy|non-dummy value in `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv:     `GXVV <geosoft.gxapi.GXVV>` handle
@@ -935,6 +1038,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         to largest even if decreasing search order.  To search
         entire `GXVV <geosoft.gxapi.GXVV>` range, specify 0,-1.
         """
+        
         ret_val = gxapi_cy.WrapVVU._find_dummy(GXContext._get_tls_geo(), vv, dir, type, start, end)
         return ret_val
 
@@ -943,6 +1047,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def interp(cls, vv, input, output):
         """
+        
         Replace all dummies by interpolating from valid data.
         
         :param vv:      Input `GXVV <geosoft.gxapi.GXVV>`
@@ -978,6 +1083,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         In all other cases and combinations of the two interpolation
         choices, the dummies are left "as is".
         """
+        
         gxapi_cy.WrapVVU._interp(GXContext._get_tls_geo(), vv, input, output)
         
 
@@ -986,6 +1092,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def qc_fill_gaps(cls, vvx, vvy, vvf, vvd, dist):
         """
+        
         Calculate fill in line segments
         
         :param vvx:   Input/output X `GXVV <geosoft.gxapi.GXVV>` on which to operate Required in `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
@@ -1008,6 +1115,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** The X & Y VVs are returned as the calculated fill in line segments.
         """
+        
         ret_val = gxapi_cy.WrapVVU._qc_fill_gaps(GXContext._get_tls_geo(), vvx, vvy, vvf, vvd, dist)
         return ret_val
 
@@ -1016,6 +1124,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def search_text(cls, vv, text, case_sensitive, match, start, dir):
         """
+        
         Search for a text value in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv:              `GXVV <geosoft.gxapi.GXVV>` to search
@@ -1051,6 +1160,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             sSearchReplace_VV
         """
+        
         ret_val = gxapi_cy.WrapVVU._search_text(GXContext._get_tls_geo(), vv, text.encode(), case_sensitive, match, start, dir)
         return ret_val
 
@@ -1059,6 +1169,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def mask(cls, vv_d, vv_m):
         """
+        
         Mask dummies in one `GXVV <geosoft.gxapi.GXVV>` onto another.
         
         :param vv_d:  `GXVV <geosoft.gxapi.GXVV>` to be masked
@@ -1074,6 +1185,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         The returned length of the `GXVV <geosoft.gxapi.GXVV>` to mask will be the shorter
         of the reference `GXVV <geosoft.gxapi.GXVV>` or the mask `GXVV <geosoft.gxapi.GXVV>`.
         """
+        
         gxapi_cy.WrapVVU._mask(GXContext._get_tls_geo(), vv_d, vv_m)
         
 
@@ -1082,6 +1194,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def mask_and(cls, vv_a, vv_b, vv_c):
         """
+        
         Create mask from logical AND of two VVs.
         
         :param vv_a:  `GXVV <geosoft.gxapi.GXVV>` A
@@ -1097,6 +1210,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** If both values are non-dummies, then result is 1, else dummy.
         """
+        
         gxapi_cy.WrapVVU._mask_and(GXContext._get_tls_geo(), vv_a, vv_b, vv_c)
         
 
@@ -1105,6 +1219,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def mask_or(cls, vv_a, vv_b, vv_c):
         """
+        
         Create mask from logical OR of two VVs.
         
         :param vv_a:  `GXVV <geosoft.gxapi.GXVV>` A
@@ -1120,6 +1235,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** If either values is non-dummy, then result is 1, else dummy.
         """
+        
         gxapi_cy.WrapVVU._mask_or(GXContext._get_tls_geo(), vv_a, vv_b, vv_c)
         
 
@@ -1128,6 +1244,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def nl_filt(cls, vv_i, vv_o, fwid, pr_ftol):
         """
+        
         Applies a non-linear filter.
         
         :param vv_i:     Input `GXVV <geosoft.gxapi.GXVV>`
@@ -1143,6 +1260,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._nl_filt(GXContext._get_tls_geo(), vv_i, vv_o, fwid, pr_ftol)
         
 
@@ -1151,6 +1269,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def noise_check(cls, vv_i, vv_f, all_tol, num):
         """
+        
         Check on deviation of data from variable background in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv_i:     Input `GXVV <geosoft.gxapi.GXVV>` on which to apply quality control Required in `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
@@ -1173,6 +1292,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         otherwise, it will be 1.
         Output `GXVV <geosoft.gxapi.GXVV>` will be 0 if the straight line is vertical.
         """
+        
         gxapi_cy.WrapVVU._noise_check(GXContext._get_tls_geo(), vv_i, vv_f, all_tol, num)
         
 
@@ -1181,6 +1301,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def noise_check2(cls, vv_i, vv_f, vv_d, all_tol, num):
         """
+        
         Like `noise_check <geosoft.gxapi.GXVVU.noise_check>`, but returns maximum deviation at all points.
         
         :param vv_i:     Input `GXVV <geosoft.gxapi.GXVV>` on which to apply quality control Required in `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
@@ -1211,6 +1332,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         The output maximum deviation `GXVV <geosoft.gxapi.GXVV>` contains the maximum deviation at each point
         for all the moving line segments that it is a part of.
         """
+        
         gxapi_cy.WrapVVU._noise_check2(GXContext._get_tls_geo(), vv_i, vv_f, vv_d, all_tol, num)
         
 
@@ -1219,6 +1341,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def normal_dist(cls, vv, seed, mean, var, length):
         """
+        
         Fill with normally (Gaussian) distributed values.
         
         :param vv:      `GXVV <geosoft.gxapi.GXVV>` object
@@ -1240,6 +1363,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         See RAND for a short discription of the
         random number generator used.
         """
+        
         gxapi_cy.WrapVVU._normal_dist(GXContext._get_tls_geo(), vv, seed, mean, var, length)
         
 
@@ -1248,6 +1372,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def offset_circles(cls, vv_xi, vv_yi, offset, radius, vv_xo, vv_yo):
         """
+        
         Get non-overlapping offset location for circular symbols.
         
         :param vv_xi:   Input X locations
@@ -1282,6 +1407,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
+        
         gxapi_cy.WrapVVU._offset_circles(GXContext._get_tls_geo(), vv_xi, vv_yi, offset, radius, vv_xo, vv_yo)
         
 
@@ -1290,6 +1416,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def offset_correct(cls, vv_xi, vv_yi, dist, heading, v_vxo, v_vyo):
         """
+        
         Correct locations based on heading and fixed offset.
         
         :param vv_xi:    Input X
@@ -1335,6 +1462,7 @@ class GXVVU(gxapi_cy.WrapVVU):
             5. For each input point, calculate the bearing using the nearest points
                on the smoothed curve
         """
+        
         gxapi_cy.WrapVVU._offset_correct(GXContext._get_tls_geo(), vv_xi, vv_yi, dist, heading, v_vxo, v_vyo)
         
 
@@ -1343,6 +1471,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def offset_correct2(cls, vv_xi, vv_yi, dist, azimuth, vv_xo, vv_yo):
         """
+        
         Same as `offset_correct <geosoft.gxapi.GXVVU.offset_correct>`, but for an arbitrary offset angle.
         
         :param vv_xi:    Input X
@@ -1362,6 +1491,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._offset_correct2(GXContext._get_tls_geo(), vv_xi, vv_yi, dist, azimuth, vv_xo, vv_yo)
         
 
@@ -1370,6 +1500,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def offset_correct3(cls, vv_xi, vv_yi, dist, azimuth, interval, vv_xo, vv_yo):
         """
+        
         Same as `offset_correct2 <geosoft.gxapi.GXVVU.offset_correct2>`, but specify smoothing interval.
         
         :param vv_xi:     Input X
@@ -1393,6 +1524,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** See the algorithm note #2 above for the default smoothing interval.
         """
+        
         gxapi_cy.WrapVVU._offset_correct3(GXContext._get_tls_geo(), vv_xi, vv_yi, dist, azimuth, interval, vv_xo, vv_yo)
         
 
@@ -1401,6 +1533,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def offset_correct_xyz(cls, vv_xi, vv_yi, vv_zi, x_off, y_off, z_off, interval, v_vxo, v_vyo, v_vzo):
         """
+        
         Correct locations based on heading and fixed offset.
         
         :param vv_xi:     Input X
@@ -1454,6 +1587,7 @@ class GXVVU(gxapi_cy.WrapVVU):
             5. For each input point, calculate the bearing using the nearest points
                on the smoothed curve
         """
+        
         gxapi_cy.WrapVVU._offset_correct_xyz(GXContext._get_tls_geo(), vv_xi, vv_yi, vv_zi, x_off, y_off, z_off, interval, v_vxo, v_vyo, v_vzo)
         
 
@@ -1462,6 +1596,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def offset_rectangles(cls, vv_xi, vv_yi, offset, size_x, size_y, vv_xo, vv_yo):
         """
+        
         Get non-overlapping offset location for rectangular symbols.
         
         :param vv_xi:   Input X locations
@@ -1500,6 +1635,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
+        
         gxapi_cy.WrapVVU._offset_rectangles(GXContext._get_tls_geo(), vv_xi, vv_yi, offset, size_x, size_y, vv_xo, vv_yo)
         
 
@@ -1508,6 +1644,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def pick_peak(cls, vv_i, vv_o, pr_tol, width):
         """
+        
         Find peaks in a `GXVV <geosoft.gxapi.GXVV>` - method one.
         
         :param vv_i:    Input `GXVV <geosoft.gxapi.GXVV>`
@@ -1534,6 +1671,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         Use `filter <geosoft.gxapi.GXVVU.filter>` to apply a Laplace filter
         "-0.5,1.0,-0.5" to make curvature data.
         """
+        
         gxapi_cy.WrapVVU._pick_peak(GXContext._get_tls_geo(), vv_i, vv_o, pr_tol, width)
         
 
@@ -1542,6 +1680,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def pick_peak2(cls, vv_i, vv_o, pr_base_lvl, pr_ampl):
         """
+        
         Find peaks in a `GXVV <geosoft.gxapi.GXVV>` - method two.
         
         :param vv_i:         Input `GXVV <geosoft.gxapi.GXVV>`
@@ -1565,6 +1704,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         A `GXVV <geosoft.gxapi.GXVV>` may have to be pre-filtered before finding
         the peak values.
         """
+        
         gxapi_cy.WrapVVU._pick_peak2(GXContext._get_tls_geo(), vv_i, vv_o, pr_base_lvl, pr_ampl)
         
 
@@ -1573,6 +1713,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def pick_peak3(cls, vv_i, vv_x, vv_y, pr_base_lvl, pr_ampl, v_vind, v_vamp, v_vwid, v_vhawid):
         """
+        
         Find peaks in a `GXVV <geosoft.gxapi.GXVV>` - method two, returning width and half-amplitude widths.
         
         :param vv_i:         [i] data `GXVV <geosoft.gxapi.GXVV>`
@@ -1608,6 +1749,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         The returned VVs are packed; no dummies. Instead the
         indicies of the peak locations are returned.
         """
+        
         gxapi_cy.WrapVVU._pick_peak3(GXContext._get_tls_geo(), vv_i, vv_x, vv_y, pr_base_lvl, pr_ampl, v_vind, v_vamp, v_vwid, v_vhawid)
         
 
@@ -1616,6 +1758,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def poly_fill(cls, vv_d, order, vv_c):
         """
+        
         Fill a `GXVV <geosoft.gxapi.GXVV>` with values from an n'th order polynomial, integral x.
         
         :param vv_d:   `GXVV <geosoft.gxapi.GXVV>` with output data. (Preset length)
@@ -1637,6 +1780,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             `trend <geosoft.gxapi.GXVVU.trend>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill2 <geosoft.gxapi.GXVVU.poly_fill2>`
         """
+        
         gxapi_cy.WrapVVU._poly_fill(GXContext._get_tls_geo(), vv_d, order, vv_c)
         
 
@@ -1645,6 +1789,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def poly_fill2(cls, vv_x, vv_d, order, vv_c):
         """
+        
         Fill a `GXVV <geosoft.gxapi.GXVV>` with values from an n'th order polynomial, specified X
         
         :param vv_x:   `GXVV <geosoft.gxapi.GXVV>` with x spacing (input)
@@ -1667,6 +1812,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             `trend <geosoft.gxapi.GXVVU.trend>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill <geosoft.gxapi.GXVVU.poly_fill>`
         """
+        
         gxapi_cy.WrapVVU._poly_fill2(GXContext._get_tls_geo(), vv_x, vv_d, order, vv_c)
         
 
@@ -1675,6 +1821,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def polygon_mask(cls, vv_x, vv_y, vv_m, pply, mask):
         """
+        
         Mask a `GXVV <geosoft.gxapi.GXVV>` using XY data and a polygon.
         
         :param vv_x:  X `GXVV <geosoft.gxapi.GXVV>`
@@ -1694,6 +1841,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** The VVs have to be the same length
         """
+        
         gxapi_cy.WrapVVU._polygon_mask(GXContext._get_tls_geo(), vv_x, vv_y, vv_m, pply, mask)
         
 
@@ -1702,6 +1850,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def prune(cls, vv_p, vv_r, o):
         """
+        
         Prune values from a `GXVV <geosoft.gxapi.GXVV>` based on reference `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv_p:  `GXVV <geosoft.gxapi.GXVV>` to prune
@@ -1719,6 +1868,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         that are either dummy or non-dummy in the reference
         `GXVV <geosoft.gxapi.GXVV>`
         """
+        
         gxapi_cy.WrapVVU._prune(GXContext._get_tls_geo(), vv_p, vv_r, o)
         
 
@@ -1727,6 +1877,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def qc(cls, vv_i, vv_d, v_vf, nominal, max_tol, all_tol, dist, qc):
         """
+        
         Quality control on deviation of data from norm in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv_i:     Input `GXVV <geosoft.gxapi.GXVV>` on which to apply quality control Required in `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
@@ -1776,6 +1927,7 @@ class GXVVU(gxapi_cy.WrapVVU):
          -3        The input data failed on above two tests
         =========  ==============================================================
         """
+        
         gxapi_cy.WrapVVU._qc(GXContext._get_tls_geo(), vv_i, vv_d, v_vf, nominal, max_tol, all_tol, dist, qc)
         
 
@@ -1784,6 +1936,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def qc2(cls, vv_i, vv_d, v_vf, vv_drape, max_tol, all_tol, dist, qc):
         """
+        
         Quality control on deviation of data from norm in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param vv_i:      Input `GXVV <geosoft.gxapi.GXVV>` on which to apply quality control Required in `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>` or `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`
@@ -1833,6 +1986,7 @@ class GXVVU(gxapi_cy.WrapVVU):
          -3        The input data failed on above two tests
         =========  ==============================================================
         """
+        
         gxapi_cy.WrapVVU._qc2(GXContext._get_tls_geo(), vv_i, vv_d, v_vf, vv_drape, max_tol, all_tol, dist, qc)
         
 
@@ -1841,6 +1995,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def range_vector_mag(cls, vv1, vv2, min, max):
         """
+        
         Find the range of hypotenuse values of two VVs.
         
         :param vv1:  First `GXVV <geosoft.gxapi.GXVV>` (X)
@@ -1859,6 +2014,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** For each value in the VVs, finds sqrt(dV1*dV1 + dV2*dV2)
         and returns the min and max values.
         """
+        
         min.value, max.value = gxapi_cy.WrapVVU._range_vector_mag(GXContext._get_tls_geo(), vv1, vv2, min.value, max.value)
         
 
@@ -1867,6 +2023,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def regress(cls, vv_x, vv_y, slp, intercept):
         """
+        
         Calculate linear regression through data
         
         :param vv_x:       X data
@@ -1882,6 +2039,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         slp.value, intercept.value = gxapi_cy.WrapVVU._regress(GXContext._get_tls_geo(), vv_x, vv_y, slp.value, intercept.value)
         
 
@@ -1890,6 +2048,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def rel_var_dup(cls, data_vv, sample_vv, rel_var, num_dup):
         """
+        
         Estimate relative variance of duplicate sample pairs from a database.
         
         :param data_vv:    Data `GXVV <geosoft.gxapi.GXVV>`
@@ -1916,6 +2075,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         Samples out of order, unmatched pairs, or when the
         sample type does not equal "1" or "2" are ignored.
         """
+        
         rel_var.value, num_dup.value = gxapi_cy.WrapVVU._rel_var_dup(GXContext._get_tls_geo(), data_vv, sample_vv, rel_var.value, num_dup.value)
         
 
@@ -1924,6 +2084,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def remove_dummy(cls, vv):
         """
+        
         Remove dummy values from a `GXVV <geosoft.gxapi.GXVV>`
         
         :type  vv:  GXVV
@@ -1932,6 +2093,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVVU._remove_dummy(GXContext._get_tls_geo(), vv)
         
 
@@ -1940,6 +2102,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def remove_dummy2(cls, vv1, vv2):
         """
+        
         Remove dummy values from 2 VVs.
         
         :param vv1:  `GXVV <geosoft.gxapi.GXVV>` object
@@ -1954,6 +2117,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** Removes all indices where either `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
         """
+        
         gxapi_cy.WrapVVU._remove_dummy2(GXContext._get_tls_geo(), vv1, vv2)
         
 
@@ -1962,6 +2126,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def remove_dummy3(cls, vv1, vv2, vv3):
         """
+        
         Remove dummy values from 3 VVs.
         
         :param vv1:  `GXVV <geosoft.gxapi.GXVV>` object
@@ -1978,6 +2143,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
         """
+        
         gxapi_cy.WrapVVU._remove_dummy3(GXContext._get_tls_geo(), vv1, vv2, vv3)
         
 
@@ -1986,6 +2152,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def remove_dummy4(cls, vv1, vv2, vv3, vv4):
         """
+        
         Remove dummy values from 4 VVs.
         
         :param vv1:  `GXVV <geosoft.gxapi.GXVV>` object
@@ -2004,6 +2171,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         **Note:** Removes all indices where any `GXVV <geosoft.gxapi.GXVV>` has a dummy, or is
         not defined (due to length differences).
         """
+        
         gxapi_cy.WrapVVU._remove_dummy4(GXContext._get_tls_geo(), vv1, vv2, vv3, vv4)
         
 
@@ -2012,6 +2180,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def remove_dup(cls, data_vv, sample_vv, output):
         """
+        
         Remove/average duplicate sample pairs from a database.
         
         :param data_vv:    Data `GXVV <geosoft.gxapi.GXVV>`
@@ -2033,6 +2202,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         Results for samples out of order, for unmatched pairs, or when the
         sample type does not equal "1" or "2" remain unchanged.
         """
+        
         gxapi_cy.WrapVVU._remove_dup(GXContext._get_tls_geo(), data_vv, sample_vv, output)
         
 
@@ -2041,6 +2211,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def remove_xy_dup(cls, xvv, yvv, zvv, xy_dup):
         """
+        
         Remove/average duplicate samples with the same (X, Y).
         
         :param xvv:     X `GXVV <geosoft.gxapi.GXVV>`
@@ -2063,6 +2234,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         duplicates.
         The Z `GXVV <geosoft.gxapi.GXVV>` can be set to NULL on input, in which case it is ignored.
         """
+        
         gxapi_cy.WrapVVU._remove_xy_dup(GXContext._get_tls_geo(), xvv, yvv, zvv, xy_dup)
         
 
@@ -2071,6 +2243,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def remove_xy_dup_index(cls, xvv, yvv, index_vv):
         """
+        
         Remove duplicate samples with the same (X, Y) and update index.
         
         :param xvv:       X `GXVV <geosoft.gxapi.GXVV>`
@@ -2089,6 +2262,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         updated accordingly .i.e if  (X,Y) location of Index[0] == Index[1]
         Index[1] is removed.
         """
+        
         gxapi_cy.WrapVVU._remove_xy_dup_index(GXContext._get_tls_geo(), xvv, yvv, index_vv)
         
 
@@ -2097,6 +2271,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def rolling_stats(cls, vv_i, vv_o, stat, window, shrink):
         """
+        
         Calculate a statistic in a rolling window.
         
         :param vv_i:    Input `GXVV <geosoft.gxapi.GXVV>`
@@ -2151,6 +2326,7 @@ class GXVVU(gxapi_cy.WrapVVU):
         number of occurrences, then the smallest of these values is
         returned.
         """
+        
         gxapi_cy.WrapVVU._rolling_stats(GXContext._get_tls_geo(), vv_i, vv_o, stat, window, shrink)
         
 
@@ -2159,6 +2335,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def search_replace(cls, vv, val, rpl):
         """
+        
         Search and replace numeric values in a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param val:  Value to replace
@@ -2178,6 +2355,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             SearchReplaceText_VV
         """
+        
         gxapi_cy.WrapVVU._search_replace(GXContext._get_tls_geo(), vv, val, rpl)
         
 
@@ -2186,6 +2364,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def search_replace_text(cls, vv, format, decimal, val, rpl, mode):
         """
+        
         Search and replace text values in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param format:   String format for numeric `GXVV <geosoft.gxapi.GXVV>`
@@ -2211,6 +2390,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             SearchReplace_VV
         """
+        
         gxapi_cy.WrapVVU._search_replace_text(GXContext._get_tls_geo(), vv, format, decimal, val.encode(), rpl.encode(), mode)
         
 
@@ -2219,6 +2399,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def search_replace_text_ex(cls, vv, format, decimal, val, rpl, mode, items):
         """
+        
         Search and replace text values in a `GXVV <geosoft.gxapi.GXVV>`, count items changed.
         
         :param format:   String format for numeric `GXVV <geosoft.gxapi.GXVV>`
@@ -2246,6 +2427,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             SearchReplaceText_VV
         """
+        
         items.value = gxapi_cy.WrapVVU._search_replace_text_ex(GXContext._get_tls_geo(), vv, format, decimal, val.encode(), rpl.encode(), mode, items.value)
         
 
@@ -2254,6 +2436,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def spline(cls, vv_x, vv_y, vv_o, length, start, incr, gap, ext, type):
         """
+        
         Spline a Y `GXVV <geosoft.gxapi.GXVV>` onto an X `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_x:    X (no dummies)
@@ -2279,6 +2462,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._spline(GXContext._get_tls_geo(), vv_x, vv_y, vv_o, length, start, incr, gap, ext, type)
         
 
@@ -2287,6 +2471,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def spline2(cls, vv_x, vv_y, vv_x2, vv_o, type):
         """
+        
         Spline a Y `GXVV <geosoft.gxapi.GXVV>` onto an X `GXVV <geosoft.gxapi.GXVV>`. Uses specified values of X in X2
         
         :param vv_x:   X (no dummies)
@@ -2304,6 +2489,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVVU._spline2(GXContext._get_tls_geo(), vv_x, vv_y, vv_x2, vv_o, type)
         
 
@@ -2312,6 +2498,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def tokenize_to_values(cls, vv, str_val):
         """
+        
         Tokenize a string based on any characters.
         
         :param vv:       `GXVV <geosoft.gxapi.GXVV>` to place values in
@@ -2328,6 +2515,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** Parses a series of space, tab or comma-delimited values to a `GXVV <geosoft.gxapi.GXVV>`.
         """
+        
         ret_val = gxapi_cy.WrapVVU._tokenize_to_values(GXContext._get_tls_geo(), vv, str_val.encode())
         return ret_val
 
@@ -2336,6 +2524,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def translate(cls, vv, base, mult):
         """
+        
         Translate values in a `GXVV <geosoft.gxapi.GXVV>`
         
         :param base:  Base
@@ -2350,6 +2539,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** (new `GXVV <geosoft.gxapi.GXVV>`) = ((old `GXVV <geosoft.gxapi.GXVV>`) + base) * scale
         """
+        
         gxapi_cy.WrapVVU._translate(GXContext._get_tls_geo(), vv, base, mult)
         
 
@@ -2358,6 +2548,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def trend(cls, vv_d, order, vv_c):
         """
+        
         Calculate an n'th order best-fit polynomial, integral x.
         
         :param vv_d:   `GXVV <geosoft.gxapi.GXVV>` with input data
@@ -2384,6 +2575,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             `poly_fill <geosoft.gxapi.GXVVU.poly_fill>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill2 <geosoft.gxapi.GXVVU.poly_fill2>`
         """
+        
         gxapi_cy.WrapVVU._trend(GXContext._get_tls_geo(), vv_d, order, vv_c)
         
 
@@ -2392,6 +2584,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def trend2(cls, vv_x, vv_d, order, vv_c):
         """
+        
         Calculate an n'th order best-fit polynomial, specified X
         
         :param vv_x:   `GXVV <geosoft.gxapi.GXVV>` with x spacing (input)
@@ -2420,6 +2613,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             `poly_fill <geosoft.gxapi.GXVVU.poly_fill>`, `trend2 <geosoft.gxapi.GXVVU.trend2>`, `poly_fill2 <geosoft.gxapi.GXVVU.poly_fill2>`
         """
+        
         gxapi_cy.WrapVVU._trend2(GXContext._get_tls_geo(), vv_x, vv_d, order, vv_c)
         
 
@@ -2428,6 +2622,7 @@ class GXVVU(gxapi_cy.WrapVVU):
     @classmethod
     def uniform_dist(cls, vv, seed, min, max, length):
         """
+        
         Fill with uniformly distributed values.
         
         :param vv:      `GXVV <geosoft.gxapi.GXVV>` object
@@ -2449,7 +2644,58 @@ class GXVVU(gxapi_cy.WrapVVU):
         See rand.gxh for a short discription of the
         random number generator used.
         """
+        
         gxapi_cy.WrapVVU._uniform_dist(GXContext._get_tls_geo(), vv, seed, min, max, length)
+        
+
+
+
+
+# Deprecated
+
+
+    @classmethod
+    def offset_correct4(cls, vv_xi, vv_yi, vv_zi, zoffset, dist, azimuth, interval, vv_roll, vv_pitch, vv_yaw, vv_xo, vv_yo, vv_zo):
+        """
+        
+        .. deprecated:: None None 
+        Same as `offset_correct3 <geosoft.gxapi.GXVVU.offset_correct3>`, but specify roll, pitch, yaw and Z.
+        
+        :param vv_xi:     Input X
+        :param vv_yi:     Input Y
+        :param vv_zi:     Input Z
+        :param zoffset:   ZOffset distance
+        :param dist:      XYOffset distance
+        :param azimuth:   XYOffset azimuth (degrees clockwise from straight ahead)
+        :param interval:  Averaging interval - `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param vv_roll:   Roll
+        :param vv_pitch:  Pitch
+        :param vv_yaw:    Yaw
+        :param vv_xo:     Output X
+        :param vv_yo:     Output Y
+        :param vv_zo:     Output Z
+        :type  vv_xi:     GXVV
+        :type  vv_yi:     GXVV
+        :type  vv_zi:     GXVV
+        :type  zoffset:   float
+        :type  dist:      float
+        :type  azimuth:   float
+        :type  interval:  float
+        :type  vv_roll:   GXVV
+        :type  vv_pitch:  GXVV
+        :type  vv_yaw:    GXVV
+        :type  vv_xo:     GXVV
+        :type  vv_yo:     GXVV
+        :type  vv_zo:     GXVV
+
+        .. versionadded:: 7.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Add roll, pitch, yaw correction.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapVVU._offset_correct4(GXContext._get_tls_geo(), vv_xi, vv_yi, vv_zi, zoffset, dist, azimuth, interval, vv_roll, vv_pitch, vv_yaw, vv_xo, vv_yo, vv_zo)
         
 
 

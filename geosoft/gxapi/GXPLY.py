@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def add_polygon(self, vv_x, vv_y):
         """
+        
         Add a polygon to the polygon file.
         
         :param vv_x:  X `GXVV <geosoft.gxapi.GXVV>`.
@@ -65,6 +66,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_polygon(vv_x, vv_y)
         
 
@@ -73,6 +75,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def add_polygon_ex(self, vv_x, vv_y, exclude):
         """
+        
         Add a polygon to the polygon file.
         
         :param vv_x:     X `GXVV <geosoft.gxapi.GXVV>`.
@@ -86,6 +89,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_polygon_ex(vv_x, vv_y, exclude)
         
 
@@ -94,6 +98,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def change_ipj(self, ipj):
         """
+        
         Set the projection.
         
         :param ipj:   `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the `GXPLY <geosoft.gxapi.GXPLY>`
@@ -105,6 +110,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **Note:** The `GXPLY <geosoft.gxapi.GXPLY>` is re-projected to the new projection.
         """
+        
         self._change_ipj(ipj)
         
 
@@ -113,6 +119,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def clear(self):
         """
+        
         Clear/remove all polygons from the `GXPLY <geosoft.gxapi.GXPLY>`.
         
 
@@ -120,6 +127,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clear()
         
 
@@ -128,6 +136,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def copy(self, srce):
         """
+        
         Copies one `GXPLY <geosoft.gxapi.GXPLY>` Object to another
         
         :param srce:  Source
@@ -137,6 +146,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(srce)
         
 
@@ -145,6 +155,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def is_valid(self):
         """
+        
         Ensure a polygon is valid
         
         :rtype:       int
@@ -153,6 +164,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_valid()
         return ret_val
 
@@ -161,6 +173,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def combine(self, srce, exclude):
         """
+        
         Combines two `GXPLY <geosoft.gxapi.GXPLY>` Object with another
         
         :param srce:     Source
@@ -172,6 +185,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._combine(srce, exclude)
         
 
@@ -180,6 +194,7 @@ class GXPLY(gxapi_cy.WrapPLY):
     @classmethod
     def create(cls):
         """
+        
         Creates a Polygon Object.
         
 
@@ -190,6 +205,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPLY._create(GXContext._get_tls_geo())
         return GXPLY(ret_val)
 
@@ -198,6 +214,7 @@ class GXPLY(gxapi_cy.WrapPLY):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create an `GXPLY <geosoft.gxapi.GXPLY>` Object from a `GXBF <geosoft.gxapi.GXBF>`
         
         :param bf:  `GXBF <geosoft.gxapi.GXBF>` to serialize from
@@ -210,6 +227,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPLY._create_s(GXContext._get_tls_geo(), bf)
         return GXPLY(ret_val)
 
@@ -220,6 +238,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def extent(self, min_x, min_y, max_x, max_y):
         """
+        
         Get the extent of the current polygon.
         
         :param min_x:  Min X
@@ -237,6 +256,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **Note:** If there are no polygons in the `GXPLY <geosoft.gxapi.GXPLY>` object, returns dummies.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._extent(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -245,6 +265,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def get_ipj(self, ipj):
         """
+        
         Get the projection.
         
         :param ipj:   `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the `GXPLY <geosoft.gxapi.GXPLY>` projection
@@ -254,6 +275,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -262,6 +284,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def get_polygon(self, vv_x, vv_y, poly):
         """
+        
         Get a polygon from the `GXPLY <geosoft.gxapi.GXPLY>`
         
         :param vv_x:  X `GXVV <geosoft.gxapi.GXVV>`.
@@ -275,6 +298,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_polygon(vv_x, vv_y, poly)
         
 
@@ -283,6 +307,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def get_polygon_ex(self, vv_x, vv_y, poly, exclude):
         """
+        
         Get a polygon from the `GXPLY <geosoft.gxapi.GXPLY>`
         
         :param vv_x:     X `GXVV <geosoft.gxapi.GXVV>`.
@@ -298,6 +323,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         exclude.value = self._get_polygon_ex(vv_x, vv_y, poly, exclude.value)
         
 
@@ -306,6 +332,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def clip_area(self, min_x, min_y, max_x, max_y):
         """
+        
         Clip a polygon to an area
         
         :param min_x:  Min X
@@ -324,6 +351,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._clip_area(min_x, min_y, max_x, max_y)
         return ret_val
 
@@ -332,6 +360,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def clip_line_int(self, min_x, min_y, max_x, max_y, vv, inc, first):
         """
+        
         Clips a line in or out of the polygons for intersections (`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`).
         Intersections are returned as fiducials down the line stored in `GXVV <geosoft.gxapi.GXVV>`
         starting at the first point of the line.
@@ -364,6 +393,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, first.value = self._clip_line_int(min_x, min_y, max_x, max_y, vv, inc, first.value)
         return ret_val
 
@@ -372,6 +402,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def clip_ply(self, pply_b, pply_c):
         """
+        
         Clip one polygon against another
         
         :param pply_b:  Polygon B
@@ -390,6 +421,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         regions of the clipped area.  Exclusion polygons
         are treated as included areas.
         """
+        
         ret_val = self._clip_ply(pply_b, pply_c)
         return ret_val
 
@@ -398,6 +430,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def clip_point(self, x, y):
         """
+        
         Clips a point in or out of the polygon.
         Point is inside: `PLY_POINT_CLIP_INSIDE <geosoft.gxapi.PLY_POINT_CLIP_INSIDE>`
         Point is outside: `PLY_POINT_CLIP_OUTSIDE <geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE>`
@@ -415,6 +448,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._clip_point(x, y)
         return ret_val
 
@@ -423,6 +457,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def get_description(self, desc):
         """
+        
         Get the `GXPLY <geosoft.gxapi.GXPLY>` description string
         
         :param desc:  Polygon description
@@ -432,6 +467,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         desc.value = self._get_description(desc.value.encode())
         
 
@@ -440,6 +476,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def num_poly(self):
         """
+        
         Get the number of polygons.
         
 
@@ -450,6 +487,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_poly()
         return ret_val
 
@@ -458,6 +496,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def load_table(self, table):
         """
+        
         Loads Polygons from a Polygon file.
         
         :param table:  Name of the polygon file File contains coordinates of one or more polygons
@@ -467,6 +506,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._load_table(table.encode())
         
 
@@ -475,6 +515,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def area(self):
         """
+        
         Compute the Area of a polygon
         
 
@@ -487,6 +528,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **Note:** Excluded polygons have negative area.
         """
+        
         ret_val = self._area()
         return ret_val
 
@@ -495,6 +537,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def rectangle(self, min_x, min_y, max_x, max_y):
         """
+        
         Creates a polygon from a rectangular area.
         
         :param min_x:  Min X
@@ -510,6 +553,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._rectangle(min_x, min_y, max_x, max_y)
         
 
@@ -518,6 +562,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def rotate(self, x, y, rot):
         """
+        
         Rotate a polygon about a point.
         
         :param x:     Rotation point, X
@@ -531,6 +576,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._rotate(x, y, rot)
         
 
@@ -539,6 +585,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def save_table(self, table):
         """
+        
         Save Polygons to a Polygon file.
         
         :param table:  Name of the polygon file
@@ -548,6 +595,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save_table(table.encode())
         
 
@@ -556,6 +604,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def serial(self, bf):
         """
+        
         Serialize an `GXPLY <geosoft.gxapi.GXPLY>` to a `GXBF <geosoft.gxapi.GXBF>`
         
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` to serialize to
@@ -565,6 +614,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -573,6 +623,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def set_description(self, desc):
         """
+        
         Set the `GXPLY <geosoft.gxapi.GXPLY>` description string
         
         :param desc:  Polygon description
@@ -582,6 +633,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_description(desc.encode())
         
 
@@ -590,6 +642,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def set_ipj(self, ipj):
         """
+        
         Set the projection.
         
         :param ipj:   `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the `GXPLY <geosoft.gxapi.GXPLY>`
@@ -601,6 +654,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **Note:** This changes the projection information only.
         """
+        
         self._set_ipj(ipj)
         
 
@@ -609,6 +663,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
     def thin(self, thin):
         """
+        
         Thin polygons to a desired resolution
         
         :param thin:  Thining resolution
@@ -622,6 +677,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         neighboring points by more than the thining resolution will
         be removed.
         """
+        
         self._thin(thin)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def add_item(self, name, val):
         """
+        
         Adds an item to the end of the list.
         
         :param name:  Name of the Item
@@ -67,6 +68,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_item(name.encode(), val.encode())
         
 
@@ -75,6 +77,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def add_symb_item(self, name, symb):
         """
+        
         Adds a channel/line/blob name and symbol to a list.
         
         :param name:  Name of the channel, line or blob symbol
@@ -92,6 +95,7 @@ class GXLST(gxapi_cy.WrapLST):
         you quickly add a new item without the need of coverting
         the handle into a string value.
         """
+        
         self._add_symb_item(name.encode(), symb)
         
 
@@ -100,6 +104,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def add_unique_item(self, name, val):
         """
+        
         Adds a unique item to the end of the list.
         
         :param name:  Name of the Item
@@ -113,6 +118,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** Existing items that match the name are first removed.
         """
+        
         self._add_unique_item(name.encode(), val.encode())
         
 
@@ -121,6 +127,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def append(self, lst2):
         """
+        
         Add the items in one list to another list.
         
         :param lst2:  List to append to the above `GXLST <geosoft.gxapi.GXLST>`.
@@ -135,6 +142,7 @@ class GXLST(gxapi_cy.WrapLST):
         items are duplicated in the appended `GXLST <geosoft.gxapi.GXLST>`, the last one will be
         the one to remain after the process is complete.
         """
+        
         self._append(lst2)
         
 
@@ -143,6 +151,7 @@ class GXLST(gxapi_cy.WrapLST):
     @classmethod
     def assay_channel(cls):
         """
+        
         Create a `GXLST <geosoft.gxapi.GXLST>` of assay channel mask strings from file.
         
 
@@ -177,6 +186,7 @@ class GXLST(gxapi_cy.WrapLST):
 
             `find_item_mask <geosoft.gxapi.GXLST.find_item_mask>`
         """
+        
         ret_val = gxapi_cy.WrapLST._assay_channel(GXContext._get_tls_geo())
         return GXLST(ret_val)
 
@@ -185,6 +195,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def clear(self):
         """
+        
         Clear a list object.
         
 
@@ -192,6 +203,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clear()
         
 
@@ -200,6 +212,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def convert_from_csv_string(self, buff):
         """
+        
         Load a `GXLST <geosoft.gxapi.GXLST>` with items from a string.
         
         :param buff:  Comma separated items
@@ -214,6 +227,7 @@ class GXLST(gxapi_cy.WrapLST):
         Both the Name and Value in the list are set to the
         item.
         """
+        
         self._convert_from_csv_string(buff.encode())
         
 
@@ -222,6 +236,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def copy(self, source):
         """
+        
         Copy one `GXLST <geosoft.gxapi.GXLST>` object to another.
         
         :param source:  Source List to Copy from
@@ -231,6 +246,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(source)
         
 
@@ -239,6 +255,7 @@ class GXLST(gxapi_cy.WrapLST):
     @classmethod
     def create(cls, width):
         """
+        
         creates a user controllable list. The list
         is empty when created.
         
@@ -252,6 +269,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapLST._create(GXContext._get_tls_geo(), width)
         return GXLST(ret_val)
 
@@ -260,6 +278,7 @@ class GXLST(gxapi_cy.WrapLST):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create `GXLST <geosoft.gxapi.GXLST>` from serialized source.
         
         :type  bf:  GXBF
@@ -271,6 +290,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapLST._create_s(GXContext._get_tls_geo(), bf)
         return GXLST(ret_val)
 
@@ -279,6 +299,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def del_item(self, item):
         """
+        
         Removes an item from the list. All items below
         it are shifted up one.
         
@@ -289,6 +310,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._del_item(item)
         
 
@@ -299,6 +321,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def find_items(self, type, lst2, vv):
         """
+        
         Searches a `GXLST <geosoft.gxapi.GXLST>` for items in a second `GXLST <geosoft.gxapi.GXLST>`, returns indices of those found.
         
         :param type:  :ref:`LST_ITEM` data to do the search on
@@ -320,6 +343,7 @@ class GXLST(gxapi_cy.WrapLST):
         value is not found, and the index of items that are found.
         Comparisons are case-tolerant.
         """
+        
         self._find_items(type, lst2, vv)
         
 
@@ -328,6 +352,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def gt_item(self, type, item, buff):
         """
+        
         This places the specified item into the buffer provided.
         
         :param type:  :ref:`LST_ITEM` data to retrieve
@@ -343,6 +368,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** If item number is not in the list, the buffer will be "".
         """
+        
         buff.value = self._gt_item(type, item, buff.value.encode())
         
 
@@ -351,6 +377,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def gt_symb_item(self, item, name, symb):
         """
+        
         Returns a channel/line/blob name and symbol from a list.
         
         :param item:  Item number to get
@@ -370,6 +397,7 @@ class GXLST(gxapi_cy.WrapLST):
         you quickly retrieve both the name and symbol handle
         for a given item, which needing to convert between types.
         """
+        
         name.value, symb.value = self._gt_symb_item(item, name.value.encode(), symb.value)
         
 
@@ -378,6 +406,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def convert_to_csv_string(self, buff):
         """
+        
         Load a string with names from a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param buff:  Buffer to add items to
@@ -390,6 +419,7 @@ class GXLST(gxapi_cy.WrapLST):
         **Note:** The list name values are put into a string,
         items separated by commas.
         """
+        
         buff.value = self._convert_to_csv_string(buff.value.encode())
         
 
@@ -398,6 +428,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def find_item(self, type, name):
         """
+        
         Searches the list for a specified item.
         
         :param type:  :ref:`LST_ITEM` data to do the search on
@@ -415,6 +446,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** Comparisons are case-tolerant.
         """
+        
         ret_val = self._find_item(type, name.encode())
         return ret_val
 
@@ -423,6 +455,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def find_item_mask(self, type, name):
         """
+        
         Searches the list for a specified item, list contains masks.
         
         :param type:  :ref:`LST_ITEM` data to search
@@ -455,6 +488,7 @@ class GXLST(gxapi_cy.WrapLST):
 
             `assay_channel <geosoft.gxapi.GXLST.assay_channel>`
         """
+        
         ret_val = self._find_item_mask(type, name.encode())
         return ret_val
 
@@ -463,6 +497,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def get_int(self, type, item):
         """
+        
         Get an integer item.
         
         :param type:  :ref:`LST_ITEM` data to retrieve
@@ -477,6 +512,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_int(type, item)
         return ret_val
 
@@ -485,6 +521,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def insert_item(self, item, name, val):
         """
+        
         Adds an item at a given location in the list.
         
         :param item:  Item index
@@ -501,6 +538,7 @@ class GXLST(gxapi_cy.WrapLST):
         **Note:** Index must be 0 >= index >= list size.
         Items above the list index are shifted up one index value.
         """
+        
         self._insert_item(item, name.encode(), val.encode())
         
 
@@ -509,6 +547,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def size(self):
         """
+        
         Get the number of items in the list.
         
 
@@ -519,6 +558,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._size()
         return ret_val
 
@@ -527,6 +567,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def load_csv(self, csv, name_field, value_field):
         """
+        
         Load a list with data from a CSV file
         
         :param csv:          The CSV file
@@ -545,6 +586,7 @@ class GXLST(gxapi_cy.WrapLST):
         a header line with the field names.
         Leading and trailing spaces are removed in the names and values.
         """
+        
         self._load_csv(csv.encode(), name_field.encode(), value_field.encode())
         
 
@@ -553,6 +595,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def load_file(self, file):
         """
+        
         Set up a list from a list file.
         
         :param file:  Name of the file
@@ -577,6 +620,7 @@ class GXLST(gxapi_cy.WrapLST):
         If it cannot be found, the list will be
         empty.  Not finding a file is not an error.
         """
+        
         self._load_file(file.encode())
         
 
@@ -585,6 +629,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def resource(self, res):
         """
+        
         Load a GX List Resource into this list object.  The
         entries are placed at the end of the list and are not
         sorted.
@@ -596,6 +641,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._resource(res.encode())
         
 
@@ -604,6 +650,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def get_double(self, type, item):
         """
+        
         Get a real item.
         
         :param type:  :ref:`LST_ITEM` data to retrieve
@@ -618,6 +665,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_double(type, item)
         return ret_val
 
@@ -626,6 +674,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def save_file(self, file):
         """
+        
         Save a list to a file.
         
         :param file:  Name of the file
@@ -649,6 +698,7 @@ class GXLST(gxapi_cy.WrapLST):
         file in the local then the GEOSOFT\\etc directory.  If the file
         does not exist it will be created in the GEOSOFT\\etc directory.
         """
+        
         self._save_file(file.encode())
         
 
@@ -657,6 +707,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def select_csv_string_items(self, buff, ls_to):
         """
+        
         Load a `GXLST <geosoft.gxapi.GXLST>` with items from a second `GXLST <geosoft.gxapi.GXLST>` found in a CSV string.
         
         :param buff:   Comma separated item names
@@ -678,6 +729,7 @@ class GXLST(gxapi_cy.WrapLST):
         are ignored, and no error is registered.
         Item matches are case-tolerant.
         """
+        
         self._select_csv_string_items(buff.encode(), ls_to)
         
 
@@ -686,6 +738,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def serial(self, bf):
         """
+        
         Serialize `GXLST <geosoft.gxapi.GXLST>` to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :type  bf:   GXBF
@@ -694,6 +747,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -702,6 +756,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def set_item(self, type, item, buff):
         """
+        
         Place an item at a specified point in the `GXLST <geosoft.gxapi.GXLST>`.
         
         :param type:  :ref:`LST_ITEM` data to insert
@@ -717,6 +772,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** The existing item at the given index will be replaced.
         """
+        
         self._set_item(type, item, buff.encode())
         
 
@@ -725,6 +781,7 @@ class GXLST(gxapi_cy.WrapLST):
 
     def sort(self, type, ord):
         """
+        
         Sorts a list.
         
         :param type:  :ref:`LST_ITEM` data to sort on
@@ -736,7 +793,91 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._sort(type, ord)
+        
+
+
+
+
+# Deprecated
+
+
+
+    def load_proj(self, file):
+        """
+        
+        .. deprecated:: None None 
+        Sets up a list with datum codes and their associated
+        descriptions read from a projection datum file.
+        
+        :param file:  Name of the projection datum file (``*.DTM`` file)
+        :type  file:  str
+
+        :returns:     0 - Ok
+                      1 - Error
+        :rtype:       int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was based on the old Mapproj.dtm file. Superseded by the current
+        projection engine.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = self._load_proj(file.encode())
+        return ret_val
+
+
+
+
+    def load_proj_codes(self, file):
+        """
+        
+        .. deprecated:: None None 
+        Sets up a list with datum codes read from a projection
+        datum file.
+        
+        :param file:  Name of the projection datum file (``*.DTM`` file)
+        :type  file:  str
+
+        :returns:     0 - Ok
+                      1 - Error
+        :rtype:       int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was based on the old Mapproj.dtm file. Superseded by the current
+        projection engine.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = self._load_proj_codes(file.encode())
+        return ret_val
+
+
+
+
+    def make_reg(self, name, reg):
+        """
+        
+        .. deprecated:: None None 
+        Make an `GXLST <geosoft.gxapi.GXLST>` from a `GXREG <geosoft.gxapi.GXREG>`.
+        
+        :param name:  Group name in the reg
+        :type  name:  str
+        :type  reg:   GXREG
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was not correctly implemented or used
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._make_reg(name.encode(), reg)
         
 
 

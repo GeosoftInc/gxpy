@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -80,6 +80,7 @@ class GXST(gxapi_cy.WrapST):
     @classmethod
     def create(cls):
         """
+        
         This method creates a statistics object which is used to
         accumulate statistics.
         
@@ -91,6 +92,7 @@ class GXST(gxapi_cy.WrapST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapST._create(GXContext._get_tls_geo())
         return GXST(ret_val)
 
@@ -99,6 +101,7 @@ class GXST(gxapi_cy.WrapST):
     @classmethod
     def create_exact(cls):
         """
+        
         This method creates a statistics object which stores
         all values.
         
@@ -110,6 +113,7 @@ class GXST(gxapi_cy.WrapST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapST._create_exact(GXContext._get_tls_geo())
         return GXST(ret_val)
 
@@ -118,6 +122,7 @@ class GXST(gxapi_cy.WrapST):
 
     def data(self, val):
         """
+        
         Add this value to the statistics object.
         
         :param val:  Value to Add
@@ -127,6 +132,7 @@ class GXST(gxapi_cy.WrapST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._data(val)
         
 
@@ -135,6 +141,7 @@ class GXST(gxapi_cy.WrapST):
 
     def data_vv(self, vv):
         """
+        
         Add all the values in this `GXVV <geosoft.gxapi.GXVV>` to the statistics object.
         
         :param vv:  `GXVV <geosoft.gxapi.GXVV>` object
@@ -144,6 +151,7 @@ class GXST(gxapi_cy.WrapST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._data_vv(vv)
         
 
@@ -154,6 +162,7 @@ class GXST(gxapi_cy.WrapST):
 
     def get_histogram_bins(self, vv):
         """
+        
         Retrieve number of items in each hostogram bin
         
         :param vv:  `GXVV <geosoft.gxapi.GXVV>` for numbers of items
@@ -167,6 +176,7 @@ class GXST(gxapi_cy.WrapST):
         number of bins. If a histogram is not defined in
         the `GXST <geosoft.gxapi.GXST>`, then the returned length is zero.
         """
+        
         self._get_histogram_bins(vv)
         
 
@@ -175,6 +185,7 @@ class GXST(gxapi_cy.WrapST):
 
     def get_histogram_info(self, div, min, max):
         """
+        
         Retrieve number of bins, min and max value in histogram
         
         :param div:  # of bins
@@ -193,6 +204,7 @@ class GXST(gxapi_cy.WrapST):
         the `GXST <geosoft.gxapi.GXST>`, then the returned number of bins is zero, and
         the min and max values will be dummies.
         """
+        
         div.value, min.value, max.value = self._get_histogram_info(div.value, min.value, max.value)
         
 
@@ -201,6 +213,7 @@ class GXST(gxapi_cy.WrapST):
 
     def histogram(self, bins):
         """
+        
         This method prepares `GXST <geosoft.gxapi.GXST>` for recording histogram.
         
         :param bins:  # of bins
@@ -224,6 +237,7 @@ class GXST(gxapi_cy.WrapST):
 
         See histogram_ranges_
         """
+        
         self._histogram(bins)
         
 
@@ -232,6 +246,7 @@ class GXST(gxapi_cy.WrapST):
 
     def histogram2(self, bins, min, max):
         """
+        
         This method prepares `GXST <geosoft.gxapi.GXST>` for recording histogram.
         
         :param bins:  # of bins
@@ -251,6 +266,7 @@ class GXST(gxapi_cy.WrapST):
 
         See histogram_ranges_
         """
+        
         self._histogram2(bins, min, max)
         
 
@@ -259,6 +275,7 @@ class GXST(gxapi_cy.WrapST):
 
     def equivalent_percentile(self, value):
         """
+        
         Return corresponding Percentile for a Value.
         
         :param value:  Input value
@@ -274,6 +291,7 @@ class GXST(gxapi_cy.WrapST):
         **Note:** Statistics and histogram must have been calculated prior to
         calling this method
         """
+        
         ret_val = self._equivalent_percentile(value)
         return ret_val
 
@@ -282,6 +300,7 @@ class GXST(gxapi_cy.WrapST):
 
     def equivalent_value(self, percent):
         """
+        
         Return corresponding Value for a Percentile
         
         :param percent:  Input percentile (0 - 100)
@@ -297,6 +316,7 @@ class GXST(gxapi_cy.WrapST):
         **Note:** Statistics and histogram must have been calculated prior to
         calling this method
         """
+        
         ret_val = self._equivalent_value(percent)
         return ret_val
 
@@ -305,6 +325,7 @@ class GXST(gxapi_cy.WrapST):
 
     def reset(self):
         """
+        
         Resets the Statistics.
         
 
@@ -312,6 +333,7 @@ class GXST(gxapi_cy.WrapST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._reset()
         
 
@@ -320,6 +342,7 @@ class GXST(gxapi_cy.WrapST):
 
     def get_info(self, id):
         """
+        
         This method allows you to retrieve (and compute) the
         information from the `GXST <geosoft.gxapi.GXST>` object.
         
@@ -340,6 +363,7 @@ class GXST(gxapi_cy.WrapST):
         `ST_MINPOS <geosoft.gxapi.ST_MINPOS>` can be used to retrieve the smallest value greater
         than zero, but not from `GXST <geosoft.gxapi.GXST>` objects recovered from serialized object.
         """
+        
         ret_val = self._get_info(id)
         return ret_val
 
@@ -348,6 +372,7 @@ class GXST(gxapi_cy.WrapST):
     @classmethod
     def get_norm_prob(cls, x):
         """
+        
         Return percent value
         
         :param x:  Real
@@ -364,6 +389,7 @@ class GXST(gxapi_cy.WrapST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapST._get_norm_prob(GXContext._get_tls_geo(), x)
         return ret_val
 
@@ -372,6 +398,7 @@ class GXST(gxapi_cy.WrapST):
     @classmethod
     def get_norm_prob_x(cls, percent):
         """
+        
         Return number of sigmas from 50% a given percent is
         
         :param percent:  Real
@@ -388,6 +415,7 @@ class GXST(gxapi_cy.WrapST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapST._get_norm_prob_x(GXContext._get_tls_geo(), percent)
         return ret_val
 
@@ -396,6 +424,7 @@ class GXST(gxapi_cy.WrapST):
 
     def normal_test(self):
         """
+        
         Test the "normality" of the histogram distribution
         
 
@@ -417,6 +446,7 @@ class GXST(gxapi_cy.WrapST):
         If the histogram were perfectly normal, then a value of 0 would be returned.
         The more "non-normal", the higher the statistic.
         """
+        
         ret_val = self._normal_test()
         return ret_val
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def apply_filter_to_mask(cls, db, filter, mask_ch, mineral_ch, mineral, mode):
         """
+        
         Apply the filter to the mask channel
         
         :param db:          Database handle
@@ -76,6 +77,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         the actions of the filter. Those values passing get 1, those
         failing get 0.
         """
+        
         gxapi_cy.WrapSEMPLOT._apply_filter_to_mask(GXContext._get_tls_geo(), db, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode(), mode)
         
 
@@ -84,6 +86,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def convert_dummies(cls, db, line):
         """
+        
         Convert dummies to zero values for assay channels.
         
         :param db:    Database handle
@@ -101,6 +104,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         "no", then all ASSAY class channels will have dummy values
         converted to 0.0.
         """
+        
         gxapi_cy.WrapSEMPLOT._convert_dummies(GXContext._get_tls_geo(), db, line)
         
 
@@ -109,6 +113,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def create_groups(cls, db, mask_ch):
         """
+        
         Group data by anomaly or string channel - Interactive.
         
         :param db:       Database handle
@@ -120,6 +125,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._create_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
         
 
@@ -128,6 +134,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def default_groups(cls, db):
         """
+        
         Group data by selected anomalies.
         
         :param db:  Database handle
@@ -137,6 +144,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._default_groups(GXContext._get_tls_geo(), db)
         
 
@@ -145,6 +153,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def edit_map_plot_parameters(cls, db, mask_ch, mineral_ch, map, view):
         """
+        
         Alter parameters in an XYplot Triplot map.
         
         :param db:          Database handle
@@ -167,6 +176,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         based on the new settings. Note that the selection of data
         in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
         """
+        
         gxapi_cy.WrapSEMPLOT._edit_map_plot_parameters(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), map, view.encode())
         
 
@@ -175,6 +185,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def edit_plot_components(cls, db, templ):
         """
+        
         Set group names and channels to plot in a template.
         
         :param db:     Database handle
@@ -193,6 +204,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
+        
         gxapi_cy.WrapSEMPLOT._edit_plot_components(GXContext._get_tls_geo(), db, templ.encode())
         
 
@@ -201,6 +213,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def edit_plot_parameters(cls, db, templ):
         """
+        
         Set TriPlot parameters in a template.
         
         :param db:     Database handle
@@ -219,6 +232,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
+        
         gxapi_cy.WrapSEMPLOT._edit_plot_parameters(GXContext._get_tls_geo(), db, templ.encode())
         
 
@@ -227,6 +241,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def export_overlay(cls, overlay, map, mview, group, plot_type, x_stage, x_oxide, y_stage, y_oxide, z_stage, z_oxide, extension):
         """
+        
         Create overlay map and file from a group.
         
         :param overlay:    Overlay file name
@@ -261,6 +276,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** The group is written to a new map, and an overlay file
         is created which points to this map.
         """
+        
         gxapi_cy.WrapSEMPLOT._export_overlay(GXContext._get_tls_geo(), overlay.encode(), map.encode(), mview, group.encode(), plot_type, x_stage.encode(), x_oxide.encode(), y_stage.encode(), y_oxide.encode(), z_stage.encode(), z_oxide.encode(), extension)
         
 
@@ -269,6 +285,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def export_view(cls, db, lst, new_db, view, mask_ch, mineral_ch, mineral):
         """
+        
         Create a "View" database
         
         :param db:          Original raw data database
@@ -290,6 +307,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._export_view(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         
 
@@ -298,6 +316,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def export_view2(cls, db, lst, new_db, view, mask_ch, mineral_ch, mineral, export_extra):
         """
+        
         Create a "View" database, with channel selection
         
         :param db:            Original raw data database
@@ -321,6 +340,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._export_view2(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export_extra)
         
 
@@ -329,6 +349,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def filter_lst(cls, lst):
         """
+        
         Fill a `GXLST <geosoft.gxapi.GXLST>` with existing `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` filters
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill.
@@ -345,6 +366,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         as the value.
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         """
+        
         gxapi_cy.WrapSEMPLOT._filter_lst(GXContext._get_tls_geo(), lst)
         
 
@@ -353,6 +375,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def filter_mineral_pos_data(cls, db, mask_ch, mineral_ch, mineral, pos):
         """
+        
         Filter raw data by position and mineral values
         
         :param db:          Database handle
@@ -375,6 +398,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         NO DATA IS REMOVED.
         Works on all selected lines of data.
         """
+        
         gxapi_cy.WrapSEMPLOT._filter_mineral_pos_data(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), pos)
         
 
@@ -383,6 +407,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def get_associated_lst(cls, db, group, lst):
         """
+        
         Get the associated channels for this group in a `GXLST <geosoft.gxapi.GXLST>`
         
         :param db:     Database handle
@@ -396,6 +421,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._get_associated_lst(GXContext._get_tls_geo(), db, group, lst)
         
 
@@ -404,6 +430,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def get_current_mineral_lst(cls, db, mineral_ch, lst):
         """
+        
         Retrieve `GXLST <geosoft.gxapi.GXLST>` of minerals in selected lines.
         
         :param db:          Database handle
@@ -420,6 +447,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** If the mineral channel name is not specified, it returns
         just the "X" (Unknown) item.
         """
+        
         gxapi_cy.WrapSEMPLOT._get_current_mineral_lst(GXContext._get_tls_geo(), db, mineral_ch.encode(), lst)
         
 
@@ -428,6 +456,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def get_current_position_lst(cls, db, lst):
         """
+        
         Retrieve `GXLST <geosoft.gxapi.GXLST>` of positions in selected lines.
         
         :param db:   Database handle
@@ -439,6 +468,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._get_current_position_lst(GXContext._get_tls_geo(), db, lst)
         
 
@@ -447,6 +477,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def get_full_mineral_lst(cls, lst):
         """
+        
         Retrieve `GXLST <geosoft.gxapi.GXLST>` of all minerals in Semplot_Minerals.csv
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
@@ -456,6 +487,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._get_full_mineral_lst(GXContext._get_tls_geo(), lst)
         
 
@@ -464,6 +496,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def get_full_position_lst(cls, lst):
         """
+        
         Retrieve `GXLST <geosoft.gxapi.GXLST>` of all possible mineral positions.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
@@ -473,6 +506,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._get_full_position_lst(GXContext._get_tls_geo(), lst)
         
 
@@ -481,6 +515,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def get_grouping_lst(cls, db, lst):
         """
+        
         Get list of items to group symbols by.
         
         :param db:   Database handle
@@ -498,6 +533,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         elements. (The list can include the mineral).
         Channel symbol is the `GXLST <geosoft.gxapi.GXLST>` value (except for the first item - "Anomaly")
         """
+        
         gxapi_cy.WrapSEMPLOT._get_grouping_lst(GXContext._get_tls_geo(), db, lst)
         
 
@@ -506,6 +542,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def create_ascii_template(cls, name, temp):
         """
+        
         : Generate ASCII import template automatically
         
         :param name:  Data file name
@@ -521,6 +558,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSEMPLOT._create_ascii_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
@@ -529,6 +567,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def create_database_template(cls, name, temp):
         """
+        
         Generate database import template automatically
         
         :param name:  Data file name
@@ -544,6 +583,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSEMPLOT._create_database_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
         return ret_val
 
@@ -552,6 +592,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def edit_filter(cls, db, filter, mask_ch, mineral_ch, mineral):
         """
+        
         Edit and create filter on channel values
         
         :param db:          Database handle
@@ -591,6 +632,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSEMPLOT._edit_filter(GXContext._get_tls_geo(), db, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode())
         return ret_val
 
@@ -599,6 +641,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def get_mineral_channel_name(cls, db, mineral_ch):
         """
+        
         Retrieve the mineral channel name.
         
         :param db:          Database handle
@@ -615,6 +658,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         channel found. If still not found, returns a
         blank string.
         """
+        
         mineral_ch.value = gxapi_cy.WrapSEMPLOT._get_mineral_channel_name(GXContext._get_tls_geo(), db, mineral_ch.value.encode())
         
 
@@ -623,6 +667,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def import_ascii_wizard(cls, name, temp, anomaly):
         """
+        
         Generate a `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` ASCII import template.
         
         :param name:     Data file name
@@ -639,6 +684,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** If the anomaly name is not included, then
         the input data must have an "Anom_Name" field.
         """
+        
         anomaly.value = gxapi_cy.WrapSEMPLOT._import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), anomaly.value.encode())
         
 
@@ -647,6 +693,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def import_database_odbc(cls, connection, temp):
         """
+        
         Generate a template file for importing ODBC databases.
         
         :param connection:  Connection string (input and returned)
@@ -658,6 +705,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         connection.value, temp.value = gxapi_cy.WrapSEMPLOT._import_database_odbc(GXContext._get_tls_geo(), connection.value.encode(), temp.value.encode())
         
 
@@ -666,6 +714,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def import_bin(cls, db, data, templ, line, flight, date):
         """
+        
         Import blocked binary or archive ASCII data
         
         :param db:      Database
@@ -703,6 +752,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
             `GXDU.lab_template <geosoft.gxapi.GXDU.lab_template>` in du.gxh
         """
+        
         gxapi_cy.WrapSEMPLOT._import_bin(GXContext._get_tls_geo(), db, data.encode(), templ.encode(), line.encode(), flight, date)
         
 
@@ -711,6 +761,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def import_database_ado(cls, name, temp):
         """
+        
         Generate a template file for importing semplot databases.
         
         :param name:  Data file name
@@ -722,6 +773,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._import_database_ado(GXContext._get_tls_geo(), name.encode(), temp.encode())
         
 
@@ -730,6 +782,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def init_group_symbols_used(cls, db):
         """
+        
         Initializes memory of symbols used in plotting.
         
         :param db:  Database handle
@@ -743,6 +796,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Plotting one or more legends - symbols are accumulated.
         `plot_symbol_legend <geosoft.gxapi.GXSEMPLOT.plot_symbol_legend>` uses this information to create a legend.
         """
+        
         gxapi_cy.WrapSEMPLOT._init_group_symbols_used(GXContext._get_tls_geo(), db)
         
 
@@ -751,6 +805,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def template_type(cls, templ):
         """
+        
         Create a new XYPlot or TriPlot template.
         
         :param templ:  Template name
@@ -765,6 +820,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSEMPLOT._template_type(GXContext._get_tls_geo(), templ.encode())
         return ret_val
 
@@ -773,6 +829,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def view_type(cls, map, view):
         """
+        
         Test to see if a view is an XYPlot or Triplot view.
         
         :param map:   Input map object
@@ -794,6 +851,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         If the view does not appear to be an XYPlot or a TriPlot view,
         the function returns `SEMPLOT_PLOT_UNKNOWN <geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN>`.
         """
+        
         ret_val = gxapi_cy.WrapSEMPLOT._view_type(GXContext._get_tls_geo(), map, view.encode())
         return ret_val
 
@@ -802,6 +860,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def mineral_id(cls, db, resid, min_ch, res_ch):
         """
+        
         Identify minerals from the oxide channels.
         
         :param db:      Database
@@ -825,6 +884,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         as a percent of the total) is less than or equal to the
         input value.
         """
+        
         gxapi_cy.WrapSEMPLOT._mineral_id(GXContext._get_tls_geo(), db, resid, min_ch, res_ch)
         
 
@@ -833,6 +893,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def new_filter(cls, filter, model):
         """
+        
         Create a new selection filter.
         
         :param filter:  New filter name
@@ -846,6 +907,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **Note:** Creates a new, empty filter file in the user\\etc directory
         """
+        
         gxapi_cy.WrapSEMPLOT._new_filter(GXContext._get_tls_geo(), filter.encode(), model.encode())
         
 
@@ -854,6 +916,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def new_template(cls, templ, type, model):
         """
+        
         Create a new XYPlot or TriPlot template.
         
         :param templ:  New template name
@@ -878,6 +941,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         an XYPlot template as a model for a TriPlot, and vica-verca, with
         few complications.  (e.g. needing to define a "Z" component)
         """
+        
         gxapi_cy.WrapSEMPLOT._new_template(GXContext._get_tls_geo(), templ.encode(), type, model.encode())
         
 
@@ -886,6 +950,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def overlay_lst(cls, lst, extension, type):
         """
+        
         Fill a list with the available plot overlay names
         
         :param lst:        Input `GXLST <geosoft.gxapi.GXLST>`.
@@ -902,6 +967,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** Looks first in user\\etc, then in \\etc.
         See :ref:`SEMPLOT_EXT` definitions above for which files to look for.
         """
+        
         gxapi_cy.WrapSEMPLOT._overlay_lst(GXContext._get_tls_geo(), lst, extension, type)
         
 
@@ -910,6 +976,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def plot(cls, db, templ, mask_ch, mineral_ch, map, map_mode, plot_symb):
         """
+        
         Plot an XYPlot or TriPlot based on the template.
         
         :param db:          Database handle
@@ -942,6 +1009,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
+        
         gxapi_cy.WrapSEMPLOT._plot(GXContext._get_tls_geo(), db, templ.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
         
 
@@ -950,6 +1018,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def plot_symbol_legend(cls, db, mview, x_min, y_min, y_max, symb_size):
         """
+        
         Plot a symbol legend in a view.
         
         :param db:         Database handle
@@ -976,6 +1045,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         recovered by this function to make the legend at the
         specified location.
         """
+        
         gxapi_cy.WrapSEMPLOT._plot_symbol_legend(GXContext._get_tls_geo(), db, mview, x_min, y_min, y_max, symb_size)
         
 
@@ -984,6 +1054,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def prop_symb(cls, db, map, view, chan, mask_ch, mineral_ch, log, area, base, scale, symb, wt, line_col, fill_col, legend):
         """
+        
         Plot a proportional symbol plot.
         
         :param db:          Database handle
@@ -1023,6 +1094,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **Note:** Replots map using proportional symbols
         """
+        
         gxapi_cy.WrapSEMPLOT._prop_symb(GXContext._get_tls_geo(), db, map, view.encode(), chan.encode(), mask_ch.encode(), mineral_ch.encode(), log, area, base, scale, symb, wt, line_col, fill_col, legend)
         
 
@@ -1031,6 +1103,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def replot(cls, db, mask_ch, mineral_ch, map, view):
         """
+        
         Replot an existing `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` plot based on current data.
         
         :param db:          Database handle
@@ -1057,6 +1130,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
+        
         gxapi_cy.WrapSEMPLOT._replot(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), map, view.encode())
         
 
@@ -1065,6 +1139,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def re_plot_symbol_legend(cls, db, mview):
         """
+        
         Replot a symbol legend in a view.
         
         :param db:     Database handle
@@ -1080,6 +1155,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         created legend, and if it finds that info, replots the Legend,
         using the current data, group key etc.
         """
+        
         gxapi_cy.WrapSEMPLOT._re_plot_symbol_legend(GXContext._get_tls_geo(), db, mview)
         
 
@@ -1088,6 +1164,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def reset_groups(cls, db, mask_ch):
         """
+        
         Re-group data using current settings.
         
         :param db:       Database handle
@@ -1099,6 +1176,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._reset_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
         
 
@@ -1107,6 +1185,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def reset_used_channel(cls, db):
         """
+        
         Set the "Plotted" channel to dummies
         
         :param db:  Database handle
@@ -1124,6 +1203,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         If the "Plotted" channel does not exist, it is created, associated,
         loaded, and filled with dummies.
         """
+        
         gxapi_cy.WrapSEMPLOT._reset_used_channel(GXContext._get_tls_geo(), db)
         
 
@@ -1132,6 +1212,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def select_poly(cls, db, mview, mask_ch, mineral_ch, pply, mode):
         """
+        
         Select data from a polygonal area on a map.
         
         :param db:          Database handle
@@ -1151,6 +1232,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._select_poly(GXContext._get_tls_geo(), db, mview, mask_ch.encode(), mineral_ch.encode(), pply, mode)
         
 
@@ -1159,6 +1241,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def set_channel_order(cls, db, lst):
         """
+        
         Sets preset channel order.
         
         :param db:   Database handle
@@ -1187,6 +1270,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         Channel order is set for all "RawData" groups.
         """
+        
         gxapi_cy.WrapSEMPLOT._set_channel_order(GXContext._get_tls_geo(), db, lst)
         
 
@@ -1195,6 +1279,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def set_channel_units(cls, db):
         """
+        
         Set units for oxides (%) and elements (ppm)
         
         :param db:  Database handle
@@ -1209,6 +1294,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Trace elements are identified from the periodic table of the
         elements, except for "Y", if it is the current Y channel.
         """
+        
         gxapi_cy.WrapSEMPLOT._set_channel_units(GXContext._get_tls_geo(), db)
         
 
@@ -1217,6 +1303,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def set_itr(cls, db, ch, itr):
         """
+        
         Put `GXITR <geosoft.gxapi.GXITR>` into a channel.
         
         :param db:   Database handle
@@ -1229,6 +1316,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._set_itr(GXContext._get_tls_geo(), db, ch, itr)
         
 
@@ -1237,6 +1325,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def set_mask(cls, db, mask_ch, mineral_ch, mineral, selected, val):
         """
+        
         Set the mask channel ON or OFF.
         
         :param db:          Database handle
@@ -1256,6 +1345,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._set_mask(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), selected, val)
         
 
@@ -1264,6 +1354,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def sort_data(cls, db, group, anomaly):
         """
+        
         Sort data by Sample No, Grain and Position
         
         :param db:       Database handle
@@ -1277,6 +1368,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._sort_data(GXContext._get_tls_geo(), db, group, anomaly)
         
 
@@ -1285,6 +1377,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def template_lst(cls, lst, type):
         """
+        
         Fill a list with the available plot template names
         
         :param lst:   Input `GXLST <geosoft.gxapi.GXLST>`.
@@ -1301,6 +1394,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         (New-style templates with the "semtemplate" extentsion have the
         plot type "triplot" or "xyplot" inside them.)
         """
+        
         gxapi_cy.WrapSEMPLOT._template_lst(GXContext._get_tls_geo(), lst, type)
         
 
@@ -1309,6 +1403,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def tile_windows(cls):
         """
+        
         Tile currently maximimized windows.
         
 
@@ -1316,6 +1411,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSEMPLOT._tile_windows(GXContext._get_tls_geo())
         
 
@@ -1324,6 +1420,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
     @classmethod
     def total_oxides(cls, db, mineral_ch):
         """
+        
         Calculate the total oxides channel.
         
         :param db:          Database handle
@@ -1340,6 +1437,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         require a mineral for their identification. If none is provided,
         mineral "X" (unknown) is assumed.
         """
+        
         gxapi_cy.WrapSEMPLOT._total_oxides(GXContext._get_tls_geo(), db, mineral_ch.encode())
         
 

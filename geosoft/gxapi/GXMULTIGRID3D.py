@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXGRID3D import GXGRID3D
@@ -55,6 +55,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
     @classmethod
     def open(cls, name):
         """
+        
         Opens an existing Multivoxset
         
         :param name:  File Name
@@ -67,6 +68,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMULTIGRID3D._open(GXContext._get_tls_geo(), name.encode())
         return GXMULTIGRID3D(ret_val)
 
@@ -75,6 +77,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
     @classmethod
     def modify(cls, name):
         """
+        
         Opens an existing Multivoxset with an plan to modify it
         
         :param name:  File Name
@@ -87,6 +90,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMULTIGRID3D._modify(GXContext._get_tls_geo(), name.encode())
         return GXMULTIGRID3D(ret_val)
 
@@ -95,6 +99,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
     @classmethod
     def create(cls, name, size_x, size_y, size_z):
         """
+        
         Creates a new Multivoxset
         
         :param name:    File Name
@@ -113,6 +118,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMULTIGRID3D._create(GXContext._get_tls_geo(), name.encode(), size_x, size_y, size_z)
         return GXMULTIGRID3D(ret_val)
 
@@ -121,6 +127,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def duplicate(self, name):
         """
+        
         Creates an MULTIGRID3D with identical geometry to the input
         
         :param name:         File Name
@@ -133,6 +140,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._duplicate(name.encode())
         return GXMULTIGRID3D(ret_val)
 
@@ -141,6 +149,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_default(self):
         """
+        
         Get the default voxset
         
 
@@ -151,6 +160,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_default()
         return GXGRID3D(ret_val)
 
@@ -159,6 +169,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def create_default(self, type):
         """
+        
         Get the default voxset
         
         :param type:         :ref:`GRID3D_TYPE`
@@ -171,6 +182,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create_default(type)
         return GXGRID3D(ret_val)
 
@@ -179,6 +191,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def is_uniform_cell_size_x(self):
         """
+        
         Is the cell uniform in the X direction
         
         :rtype:              bool
@@ -187,6 +200,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_uniform_cell_size_x()
         return ret_val
 
@@ -195,6 +209,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def is_uniform_cell_size_y(self):
         """
+        
         Is the cell uniform in the Y direction
         
         :rtype:              bool
@@ -203,6 +218,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_uniform_cell_size_y()
         return ret_val
 
@@ -211,6 +227,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def is_uniform_cell_size_z(self):
         """
+        
         Is the cell uniform in the Z direction
         
         :rtype:              bool
@@ -219,6 +236,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_uniform_cell_size_z()
         return ret_val
 
@@ -227,6 +245,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_size_x(self):
         """
+        
         Get the number of cells in the X direction
         
         :rtype:              int
@@ -235,6 +254,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_size_x()
         return ret_val
 
@@ -243,6 +263,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_size_y(self):
         """
+        
         Get the number of cells in the X direction
         
         :rtype:              int
@@ -251,6 +272,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_size_y()
         return ret_val
 
@@ -259,6 +281,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_size_z(self):
         """
+        
         Get the number of cells in the X direction
         
         :rtype:              int
@@ -267,6 +290,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_size_z()
         return ret_val
 
@@ -275,6 +299,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_cell_sizes_x(self, vv):
         """
+        
         Get the cell sizes in the X direction
         
         :param vv:           X `GXVV <geosoft.gxapi.GXVV>`
@@ -284,6 +309,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_cell_sizes_x(vv)
         
 
@@ -292,6 +318,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_cell_sizes_y(self, vv):
         """
+        
         Get the cell sizes in the Y direction
         
         :param vv:           Y `GXVV <geosoft.gxapi.GXVV>`
@@ -301,6 +328,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_cell_sizes_y(vv)
         
 
@@ -309,6 +337,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_cell_sizes_z(self, vv):
         """
+        
         Get the cell sizes in the Z direction
         
         :param vv:           Z `GXVV <geosoft.gxapi.GXVV>`
@@ -318,6 +347,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_cell_sizes_z(vv)
         
 
@@ -326,6 +356,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_cell_sizes_x(self, vv):
         """
+        
         Set the cell sizes in the X direction
         
         :param vv:           X `GXVV <geosoft.gxapi.GXVV>`
@@ -335,6 +366,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_cell_sizes_x(vv)
         
 
@@ -343,6 +375,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_cell_sizes_y(self, vv):
         """
+        
         Set the cell sizes in the Y direction
         
         :param vv:           Y `GXVV <geosoft.gxapi.GXVV>`
@@ -352,6 +385,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_cell_sizes_y(vv)
         
 
@@ -360,6 +394,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_cell_sizes_z(self, vv):
         """
+        
         Set the cell sizes in the Z direction
         
         :param vv:           Z `GXVV <geosoft.gxapi.GXVV>`
@@ -369,6 +404,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_cell_sizes_z(vv)
         
 
@@ -377,6 +413,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_uniform_cell_size_x(self):
         """
+        
         Get the uniform cell size in the X direction
         
         :rtype:              float
@@ -385,6 +422,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_uniform_cell_size_x()
         return ret_val
 
@@ -393,6 +431,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_uniform_cell_size_y(self):
         """
+        
         Get the uniform cell size in the Y direction
         
         :rtype:              float
@@ -401,6 +440,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_uniform_cell_size_y()
         return ret_val
 
@@ -409,6 +449,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_uniform_cell_size_z(self):
         """
+        
         Get the uniform cell size in the Z direction
         
         :rtype:              float
@@ -417,6 +458,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_uniform_cell_size_z()
         return ret_val
 
@@ -425,6 +467,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_uniform_cell_size_x(self, cellsize):
         """
+        
         Set the uniform cell size in the X direction
         
         :param cellsize:     cell size
@@ -434,6 +477,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_uniform_cell_size_x(cellsize)
         
 
@@ -442,6 +486,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_uniform_cell_size_y(self, cellsize):
         """
+        
         Get the uniform cell size in the Y direction
         
         :param cellsize:     cell size
@@ -451,6 +496,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_uniform_cell_size_y(cellsize)
         
 
@@ -459,6 +505,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_uniform_cell_size_z(self, cellsize):
         """
+        
         Get the uniform cell size in the Z direction
         
         :param cellsize:     cell size
@@ -468,6 +515,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_uniform_cell_size_z(cellsize)
         
 
@@ -476,6 +524,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_origin(self, origin_x, origin_y, origin_z):
         """
+        
         Get the origin
         
         :param origin_x:     x
@@ -489,6 +538,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         origin_x.value, origin_y.value, origin_z.value = self._get_origin(origin_x.value, origin_y.value, origin_z.value)
         
 
@@ -497,6 +547,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_origin(self, origin_x, origin_y, origin_z):
         """
+        
         Set the origin
         
         :param origin_x:     x
@@ -510,6 +561,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_origin(origin_x, origin_y, origin_z)
         
 
@@ -518,6 +570,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_bounding_box(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the bounding box
         
         :param min_x:        minx
@@ -537,6 +590,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_bounding_box(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -545,6 +599,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_volume_vectors(self, origin_x, origin_y, origin_z, X_vector_x, X_vector_y, X_vector_z, Y_vector_x, Y_vector_y, Y_vector_z, Z_vector_x, Z_vector_y, Z_vector_z):
         """
+        
         Get the direction of the volume
         
         :param origin_x:     origin_x
@@ -576,6 +631,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         origin_x.value, origin_y.value, origin_z.value, X_vector_x.value, X_vector_y.value, X_vector_z.value, Y_vector_x.value, Y_vector_y.value, Y_vector_z.value, Z_vector_x.value, Z_vector_y.value, Z_vector_z.value = self._get_volume_vectors(origin_x.value, origin_y.value, origin_z.value, X_vector_x.value, X_vector_y.value, X_vector_z.value, Y_vector_x.value, Y_vector_y.value, Y_vector_z.value, Z_vector_x.value, Z_vector_y.value, Z_vector_z.value)
         
 
@@ -584,6 +640,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_oriented_data_extents(self, oriented_origin_x, oriented_origin_y, oriented_origin_z, X_vector_x, X_vector_y, X_vector_z, Y_vector_x, Y_vector_y, Y_vector_z, Z_vector_x, Z_vector_y, Z_vector_z, p1_x, p1_y, p1_z, p2_x, p2_y, p2_z):
         """
+        
         Get the data extents based on an orientation
         
         :param oriented_origin_x:  oriented_origin_x
@@ -627,6 +684,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         p1_x.value, p1_y.value, p1_z.value, p2_x.value, p2_y.value, p2_z.value = self._get_oriented_data_extents(oriented_origin_x, oriented_origin_y, oriented_origin_z, X_vector_x, X_vector_y, X_vector_z, Y_vector_x, Y_vector_y, Y_vector_z, Z_vector_x, Z_vector_y, Z_vector_z, p1_x.value, p1_y.value, p1_z.value, p2_x.value, p2_y.value, p2_z.value)
         
 
@@ -635,6 +693,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_section_cell_sizes(self, azimuth, scale, origin_x, origin_y, origin_z, cell_size_x, cell_size_y):
         """
+        
         Get the cell sizes of a section
         
         :param azimuth:      azimuth
@@ -656,6 +715,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         cell_size_x.value, cell_size_y.value = self._get_section_cell_sizes(azimuth, scale, origin_x, origin_y, origin_z, cell_size_x.value, cell_size_y.value)
         
 
@@ -664,6 +724,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_vector_orientation(self, inc, dec, cell_size_y):
         """
+        
         Get the vector voxel orientation
         
         :param inc:          inclination
@@ -677,6 +738,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         inc.value, dec.value, cell_size_y.value = self._get_vector_orientation(inc.value, dec.value, cell_size_y.value)
         
 
@@ -685,6 +747,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def fill(self, output_file, method, fill_value):
         """
+        
         Fill a grid3d.
         
         :param output_file:  Name of the output grid3d
@@ -698,6 +761,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._fill(output_file.encode(), method, fill_value)
         
 
@@ -706,6 +770,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_ipj(self, ipj):
         """
+        
         Get the projection of the multigrid3d.
         
         :param ipj:          `GXIPJ <geosoft.gxapi.GXIPJ>` object
@@ -715,6 +780,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -723,6 +789,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def set_ipj(self, ipj):
         """
+        
         Set the projection of the multigrid3d.
         
         :param ipj:          `GXIPJ <geosoft.gxapi.GXIPJ>` object
@@ -732,6 +799,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_ipj(ipj)
         
 
@@ -740,6 +808,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def export_to_xyz(self, xyz, dir, rev_x, rev_y, rev_z, dummies):
         """
+        
         Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to an XYZ File
         
         :param xyz:          File Name
@@ -759,6 +828,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_to_xyz(xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
 
@@ -767,6 +837,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def export_to_binary(self, binary_file, dir, rev_x, rev_y, rev_z, swap, output_type):
         """
+        
         Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File.
         
         :param binary_file:  Binary file to write to
@@ -788,6 +859,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._export_to_binary(binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
         
 
@@ -796,6 +868,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def export_to_binary_ex(self, binary_file, dir, rev_x, rev_y, rev_z, swap, dummy, output_type):
         """
+        
         Export contents of `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to a Binary File, with dummy replacement.
         
         :param binary_file:  Binary file to write to
@@ -819,6 +892,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._export_to_binary_ex(binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, dummy, output_type)
         
 
@@ -827,6 +901,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def export_to_xml(self, xml_file):
         """
+        
         Export a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` to XML
         
         :param xml_file:     XML file
@@ -836,6 +911,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_to_xml(xml_file.encode())
         
 
@@ -844,6 +920,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def export_to_wa(self, wa, dir, rev_x, rev_y, rev_z, dummy):
         """
+        
         Export To GDB
         
         :param wa:           `GXWA <geosoft.gxapi.GXWA>` File
@@ -863,6 +940,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_to_wa(wa, dir, rev_x, rev_y, rev_z, dummy.encode())
         
 
@@ -871,6 +949,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def export_to_gdb(self, db, chan, dir, rev_x, rev_y, rev_z, dummies):
         """
+        
         Export To GDB
         
         :param db:           Database
@@ -892,6 +971,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_to_gdb(db, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
 
@@ -900,6 +980,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def export_to_pg(self):
         """
+        
         Export a MULTIGRID3D To a PG
         
 
@@ -910,6 +991,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._export_to_pg()
         return GXPG(ret_val)
 
@@ -918,6 +1000,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_data_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the voxel size that has non-dummy data.
         
         :param min_x:        Index of minimum valid data in X.
@@ -940,6 +1023,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
         returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_data_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -948,6 +1032,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
     def get_data_ground_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the voxel size in ground units that has non-dummy data.
         
         :param min_x:        Ground location of minimum valid data in X.
@@ -970,6 +1055,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
         **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
         returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_data_ground_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 

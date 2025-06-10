@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXDAT import GXDAT
@@ -55,6 +55,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def create_dat(self, x_field, y_field, d_field):
         """
+        
         Create a handle to a ARCGIS table `GXDAT <geosoft.gxapi.GXDAT>` 2D object
         
         :param x_field:  Name of X field in table
@@ -71,6 +72,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._create_dat(x_field.encode(), y_field.encode(), d_field.encode())
         return GXDAT(ret_val)
 
@@ -79,6 +81,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def create_dat_3d(self, x_field, y_field, z_field, d_field):
         """
+        
         Create a handle to a ARCGIS table `GXDAT <geosoft.gxapi.GXDAT>` 3D object
         
         :param x_field:  Name of X field in table
@@ -97,6 +100,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
         return GXDAT(ret_val)
 
@@ -105,6 +109,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
     @classmethod
     def current(cls):
         """
+        
         This method return a handle to the current table
         
 
@@ -115,6 +120,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapARCDB._current(GXContext._get_tls_geo())
         return GXARCDB(ret_val)
 
@@ -123,6 +129,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def export_to_db(self, db, temp, line):
         """
+        
         Export data from an `GXARCDB <geosoft.gxapi.GXARCDB>` table into a group in a Geosoft GDB using a template.
         
         :param db:     Database
@@ -141,6 +148,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
+        
         self._export_to_db(db, temp.encode(), line.encode())
         
 
@@ -149,6 +157,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def field_lst(self, lst):
         """
+        
         Place the list of field names in a `GXLST <geosoft.gxapi.GXLST>`.
         
         :type  lst:    GXLST
@@ -160,6 +169,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         **Note:** If Z or M values are supported by the table geometry the strings
         "<Z Values>" and "<M Values>" will be added accordingly.
         """
+        
         self._field_lst(lst)
         
 
@@ -168,6 +178,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
     @classmethod
     def from_i_unknown(cls, unknown):
         """
+        
         This method attempts to make a table handle from an IUnknown pointer
 
         Returns				 `GXARCDB <geosoft.gxapi.GXARCDB>` Handle, `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if not successful
@@ -180,6 +191,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapARCDB._from_i_unknown(GXContext._get_tls_geo(), unknown)
         return GXARCDB(ret_val)
 
@@ -188,6 +200,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def get_ipj(self, ipj):
         """
+        
         Get georeference information from a table.
         
         :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to fill in
@@ -200,6 +213,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         **Note:** If the table does not have an `GXIPJ <geosoft.gxapi.GXIPJ>`, the `GXIPJ <geosoft.gxapi.GXIPJ>` that is
         returned will have an unknown projection.
         """
+        
         self._get_ipj(ipj)
         
 
@@ -208,6 +222,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def exist_field(self, field):
         """
+        
         This method checks to see if the specified field exists
         in the table.
         
@@ -222,6 +237,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._exist_field(field.encode())
         return ret_val
 
@@ -230,6 +246,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def get_i_unknown(self):
         """
+        
         This method gets the IUnknown pointer
         
 
@@ -240,6 +257,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_i_unknown()
         return ret_val
 
@@ -248,6 +266,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
     def import_chem_database_wizard(self, temp, type):
         """
+        
         Template creation for importing geochem data.
         
         :param temp:   Template to make
@@ -262,6 +281,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._import_chem_database_wizard(temp.encode(), type)
         return ret_val
 
@@ -270,6 +290,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
     @classmethod
     def sel_tbl_ex_gui(cls, table_type):
         """
+        
         Select table `GXGUI <geosoft.gxapi.GXGUI>` with table type.
         
         :param table_type:  :ref:`ARC_SELTBL_TYPE`
@@ -282,6 +303,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, table_type.value = gxapi_cy.WrapARCDB._sel_tbl_ex_gui(GXContext._get_tls_geo(), table_type.value)
         return GXARCDB(ret_val)
 
@@ -290,6 +312,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
     @classmethod
     def sel_tbl_gui(cls):
         """
+        
         Select table `GXGUI <geosoft.gxapi.GXGUI>`.
         
 
@@ -302,6 +325,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **Note:** Terminates with Cancel on cancel, returns `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if there are no valid tables in current document.
         """
+        
         ret_val = gxapi_cy.WrapARCDB._sel_tbl_gui(GXContext._get_tls_geo())
         return GXARCDB(ret_val)
 

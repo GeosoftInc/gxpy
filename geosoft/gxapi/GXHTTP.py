@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -66,6 +66,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
     @classmethod
     def create(cls, url, user_name, password, purpose):
         """
+        
         This method creates a connection to an `GXHTTP <geosoft.gxapi.GXHTTP>` server
         
         :param url:        URL of the server
@@ -105,6 +106,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         relationship with your server to "Trusted".  Your user will have the
         opportunity to do so the first time a script is run.
         """
+        
         ret_val = gxapi_cy.WrapHTTP._create(GXContext._get_tls_geo(), url.encode(), user_name.encode(), password.encode(), purpose.encode())
         return GXHTTP(ret_val)
 
@@ -115,6 +117,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
     def download(self, file, bf, dynamic):
         """
+        
         Download file from the internet to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param file:     File Name on the `GXHTTP <geosoft.gxapi.GXHTTP>` site
@@ -131,6 +134,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         **Note:** The file will be written starting at the current location
         in the `GXBF <geosoft.gxapi.GXBF>`
         """
+        
         self._download(file.encode(), bf, dynamic)
         
 
@@ -139,6 +143,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
     def silent_download(self, file, bf, dynamic):
         """
+        
         Download file from the internet to a `GXBF <geosoft.gxapi.GXBF>` with no prompt for proxy authentication.
         
         :param file:     File Name on the `GXHTTP <geosoft.gxapi.GXHTTP>` site
@@ -155,6 +160,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         **Note:** The file will be written starting at the current location
         in the `GXBF <geosoft.gxapi.GXBF>`. No prompt for proxy authentication
         """
+        
         self._silent_download(file.encode(), bf, dynamic)
         
 
@@ -163,6 +169,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
     def get(self, cl, method, bf, ret_bf):
         """
+        
         Get data from a server.
         
         :param cl:      Http path (file or an ISAPI DLL), no spaces
@@ -184,6 +191,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         request URL will be:
         http://server/path?search
         """
+        
         self._get(cl.encode(), method.encode(), bf, ret_bf)
         
 
@@ -192,6 +200,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
     def post(self, cl, method, bf):
         """
+        
         Post data to the server.
         
         :param cl:      Http path (file or an ISAPI DLL)
@@ -210,6 +219,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         request URL will be:
         http://server/path?search
         """
+        
         self._post(cl.encode(), method.encode(), bf)
         
 
@@ -218,6 +228,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
     def set_proxy_credentials(self, username, password):
         """
+        
         Assigns the proxy username and password so that
         user is not prompted when the first download fails
         
@@ -230,6 +241,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_proxy_credentials(username.encode(), password.encode())
         
 

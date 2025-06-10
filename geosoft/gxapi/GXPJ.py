@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def clip_ply(self, min_x, min_y, max_x, max_y, max_dev, pply):
         """
+        
         Create a clip polygon from a projected area.
         
         :param min_x:    Min X (or Longitude...)
@@ -83,6 +84,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         (180 degrees - maximum deviation).  (i.e. if max. dev = 0,
         only co-linear points would be removed).
         """
+        
         self._clip_ply(min_x, min_y, max_x, max_y, max_dev, pply)
         
 
@@ -91,6 +93,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def convert_vv(self, vv_x, vv_y):
         """
+        
         Convert VVx/VVy from input projection to output projection.
         
         :param vv_x:  VVx
@@ -104,6 +107,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **Note:** This function is equivalent to `GXVV.project <geosoft.gxapi.GXVV.project>`.
         """
+        
         self._convert_vv(vv_x, vv_y)
         
 
@@ -112,6 +116,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def convert_vv3(self, vv_x, vv_y, vv_z):
         """
+        
         Convert VVx/VVy/VVz projections
         
         :param vv_x:  VVx
@@ -127,6 +132,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **Note:** This function is equivalent to `GXVV.project_3d <geosoft.gxapi.GXVV.project_3d>`.
         """
+        
         self._convert_vv3(vv_x, vv_y, vv_z)
         
 
@@ -135,6 +141,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def convert_xy(self, x, y):
         """
+        
         Convert X, Y from input projection to output projection.
         
         :param x:   X  (or Longitude)
@@ -146,6 +153,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         x.value, y.value = self._convert_xy(x.value, y.value)
         
 
@@ -154,6 +162,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def convert_xy_from_xyz(self, x, y, z):
         """
+        
         Convert X, Y from input projection to output projection, taking Z into account
         
         :param x:   X  (or Longitude)
@@ -175,6 +184,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         the normal `convert_xy <geosoft.gxapi.GXPJ.convert_xy>` assumes a value of Z=0 internally and calls
         `convert_xyz <geosoft.gxapi.GXPJ.convert_xyz>`.
         """
+        
         x.value, y.value = self._convert_xy_from_xyz(x.value, y.value, z)
         
 
@@ -183,6 +193,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def convert_xyz(self, x, y, z):
         """
+        
         Convert X,Y,Z from input projection to output projection.
         
         :param x:   X  (or Longitude)
@@ -196,6 +207,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         x.value, y.value, z.value = self._convert_xyz(x.value, y.value, z.value)
         
 
@@ -204,6 +216,7 @@ class GXPJ(gxapi_cy.WrapPJ):
     @classmethod
     def create(cls, input, output):
         """
+        
         This method creates a projection object.
         
         :param input:   Input PRJ file name, "" for geodetic
@@ -218,6 +231,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPJ._create(GXContext._get_tls_geo(), input.encode(), output.encode())
         return GXPJ(ret_val)
 
@@ -226,6 +240,7 @@ class GXPJ(gxapi_cy.WrapPJ):
     @classmethod
     def create_ipj(cls, ip_jin, ip_jout):
         """
+        
         This method creates a projection object from IPJs.
         
         :param ip_jin:   Input Projection, (`GXIPJ <geosoft.gxapi.GXIPJ>`)0 for long/lat
@@ -244,6 +259,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         system of the source/target, only the long/lat system
         can be passed as (`GXIPJ <geosoft.gxapi.GXIPJ>`)0.
         """
+        
         ret_val = gxapi_cy.WrapPJ._create_ipj(GXContext._get_tls_geo(), ip_jin, ip_jout)
         return GXPJ(ret_val)
 
@@ -252,6 +268,7 @@ class GXPJ(gxapi_cy.WrapPJ):
     @classmethod
     def create_rectified(cls, lon, lat, x, y, rot, scl, dir):
         """
+        
         Create a rectified `GXPJ <geosoft.gxapi.GXPJ>` from lon,lat,rotation
         
         :param lon:  Longitude  at (X,Y) origin
@@ -282,6 +299,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         projection with central meridian through the center
         of the coordinates on a WGS 84 datum.
         """
+        
         ret_val = gxapi_cy.WrapPJ._create_rectified(GXContext._get_tls_geo(), lon, lat, x, y, rot, scl, dir)
         return GXPJ(ret_val)
 
@@ -292,6 +310,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def elevation(self):
         """
+        
         Get elevation correction method
         
 
@@ -314,6 +333,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         in the \\etc directory.  If the geoid model is missing, this method will
         return `PJ_ELEVATION_NONE <geosoft.gxapi.PJ_ELEVATION_NONE>` and elevation coordinates will not be changed.
         """
+        
         ret_val = self._elevation()
         return ret_val
 
@@ -322,6 +342,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def is_input_ll(self):
         """
+        
         Is the input projection a lat/long.
         
 
@@ -333,6 +354,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_input_ll()
         return ret_val
 
@@ -341,6 +363,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def is_output_ll(self):
         """
+        
         Is the output projection a lat/long.
         
 
@@ -352,6 +375,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_output_ll()
         return ret_val
 
@@ -360,6 +384,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def project_bounding_rectangle(self, min_x, min_y, max_x, max_y):
         """
+        
         Project a bounding rectangle.
         
         :param min_x:  Bounding Region Min X
@@ -382,6 +407,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         projection the resulting bounding region may be slightly
         smaller than the true region.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._project_bounding_rectangle(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -390,6 +416,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def project_bounding_rectangle2(self, min_x, min_y, max_x, max_y, err):
         """
+        
         Project a bounding rectangle with error tolerance.
         
         :param min_x:  Bounding Region Min X
@@ -411,6 +438,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._project_bounding_rectangle2(min_x.value, min_y.value, max_x.value, max_y.value, err)
         
 
@@ -419,6 +447,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def project_bounding_rectangle_res(self, min_x, min_y, max_x, max_y, res):
         """
+        
         Project a bounding rectangle with resolution.
         
         :param min_x:  Bounding Region Min X
@@ -441,6 +470,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         at the reprojected coordinate system from a given original
         resolution.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._project_bounding_rectangle_res(min_x.value, min_y.value, max_x.value, max_y.value, res.value)
         
 
@@ -449,6 +479,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def project_bounding_rectangle_res2(self, min_x, min_y, max_x, max_y, res, err):
         """
+        
         Project a bounding rectangle with resolution and error tolerance.
         
         :param min_x:  Bounding Region Min X
@@ -472,6 +503,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         rectangle will be limited to an area within which the projection can be
         performed to an accuracy better than the specified error tolerance.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value, res.value = self._project_bounding_rectangle_res2(min_x.value, min_y.value, max_x.value, max_y.value, res.value, err)
         
 
@@ -480,6 +512,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def project_limited_bounding_rectangle(self, min_xl, min_yl, max_xl, max_yl, min_x, min_y, max_x, max_y):
         """
+        
         Project a bounding rectangle with limits.
         
         :param min_xl:  Output limited bounding region Min X
@@ -512,6 +545,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
             `project_bounding_rectangle <geosoft.gxapi.GXPJ.project_bounding_rectangle>`.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._project_limited_bounding_rectangle(min_xl, min_yl, max_xl, max_yl, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -520,6 +554,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def setup_ldt(self):
         """
+        
         Setup the `GXPJ <geosoft.gxapi.GXPJ>` with LDT check.
         
 
@@ -538,6 +573,7 @@ class GXPJ(gxapi_cy.WrapPJ):
         convert both sets back to their original WGS84 coordinates
         and combine in WGS84.
         """
+        
         self._setup_ldt()
         
 
@@ -546,6 +582,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
     def project_bounding_volume(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Project a bounding volume.
         
         :param min_x:  Min X
@@ -565,6 +602,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._project_bounding_volume(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 

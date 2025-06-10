@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXWA(gxapi_cy.WrapWA):
 
     def puts(self, str_val):
         """
+        
         Writes a string to the file.
         
         :param str_val:  String to write
@@ -62,6 +63,7 @@ class GXWA(gxapi_cy.WrapWA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._puts(str_val.encode())
         
 
@@ -70,6 +72,7 @@ class GXWA(gxapi_cy.WrapWA):
     @classmethod
     def create(cls, file, append):
         """
+        
         Creates an ASCII file to write to.
         
         :param file:    Name of the File
@@ -86,6 +89,7 @@ class GXWA(gxapi_cy.WrapWA):
 
         **Note:** ANSI Encoding is assumed, See `create_ex <geosoft.gxapi.GXWA.create_ex>` to override this.
         """
+        
         ret_val = gxapi_cy.WrapWA._create(GXContext._get_tls_geo(), file.encode(), append)
         return GXWA(ret_val)
 
@@ -94,6 +98,7 @@ class GXWA(gxapi_cy.WrapWA):
     @classmethod
     def create_ex(cls, file, append, encode):
         """
+        
         Creates an ASCII file to write to.
         
         :param file:    Name of the File
@@ -115,6 +120,7 @@ class GXWA(gxapi_cy.WrapWA):
         montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
+        
         ret_val = gxapi_cy.WrapWA._create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
         return GXWA(ret_val)
 
@@ -123,6 +129,7 @@ class GXWA(gxapi_cy.WrapWA):
     @classmethod
     def create_sbf(cls, sbf, file, append):
         """
+        
         Creates an ASCII file to write to in an `GXSBF <geosoft.gxapi.GXSBF>`.
         
         :param sbf:     Storage
@@ -141,6 +148,7 @@ class GXWA(gxapi_cy.WrapWA):
 
         **Note:** See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex <geosoft.gxapi.GXWA.create_sbf_ex>` to override this.
         """
+        
         ret_val = gxapi_cy.WrapWA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode(), append)
         return GXWA(ret_val)
 
@@ -149,6 +157,7 @@ class GXWA(gxapi_cy.WrapWA):
     @classmethod
     def create_sbf_ex(cls, sbf, file, append, encode):
         """
+        
         Creates an ASCII file to write to in an `GXSBF <geosoft.gxapi.GXSBF>`.
         
         :param sbf:     Storage
@@ -173,6 +182,7 @@ class GXWA(gxapi_cy.WrapWA):
         montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
+        
         ret_val = gxapi_cy.WrapWA._create_sbf_ex(GXContext._get_tls_geo(), sbf, file.encode(), append, encode)
         return GXWA(ret_val)
 
@@ -183,6 +193,7 @@ class GXWA(gxapi_cy.WrapWA):
 
     def new_line(self):
         """
+        
         Forces a new line in the `GXWA <geosoft.gxapi.GXWA>` object.
         
 
@@ -190,6 +201,7 @@ class GXWA(gxapi_cy.WrapWA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._new_line()
         
 

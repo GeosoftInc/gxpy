@@ -1,8 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -52,6 +53,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
     @classmethod
     def is_valid_triangulation_file(cls, triangulation_file):
         """
+        
         Check if the given file can be opened as a Vulcan triangulation file.
         
         :param triangulation_file:  Triangulation file
@@ -65,6 +67,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVULCAN._is_valid_triangulation_file(GXContext._get_tls_geo(), triangulation_file.encode())
         return ret_val
 
@@ -73,6 +76,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
     @classmethod
     def is_valid_block_model_file(cls, block_model_file):
         """
+        
         Check if the given file can be opened as a Vulcan block model file.
         
         :param block_model_file:  Block model file
@@ -86,6 +90,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVULCAN._is_valid_block_model_file(GXContext._get_tls_geo(), block_model_file.encode())
         return ret_val
 
@@ -94,6 +99,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
     @classmethod
     def triangulation_to_view(cls, triangulation_file, ipj, mview, new_group_name):
         """
+        
         Draw triangle edges in a Vulcan triangulation file to a 3D view in a map.
         
         :param triangulation_file:  Triangulation file
@@ -109,6 +115,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVULCAN._triangulation_to_view(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, mview, new_group_name.encode())
         
 
@@ -117,6 +124,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
     @classmethod
     def get_block_model_variable_info(cls, block_model_file, query, lst):
         """
+        
         Query a block model for the variable names and descriptions.
         
         :param block_model_file:  Block model file
@@ -130,6 +138,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVULCAN._get_block_model_variable_info(GXContext._get_tls_geo(), block_model_file.encode(), query, lst)
         
 
@@ -138,6 +147,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
     @classmethod
     def get_block_model_string_variable_values(cls, block_model_file, variable_name, lst):
         """
+        
         Query a block model for the values a string variable can assume.
         
         :param block_model_file:  Block model file
@@ -151,6 +161,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVULCAN._get_block_model_string_variable_values(GXContext._get_tls_geo(), block_model_file.encode(), variable_name.encode(), lst)
         
 
@@ -159,6 +170,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
     @classmethod
     def block_model_to_voxel(cls, block_model_file, ipj, variable_to_export, output_voxel_filename, remove_default_values, rock_code_filename):
         """
+        
         Create a Geosoft voxel file from a Vulcan block model file.
         
         :param block_model_file:       Block model file
@@ -178,6 +190,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapVULCAN._block_model_to_voxel(GXContext._get_tls_geo(), block_model_file.encode(), ipj, variable_to_export.encode(), output_voxel_filename.encode(), remove_default_values, rock_code_filename.encode())
         
 

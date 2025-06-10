@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
     def add_grid(self, img, var):
         """
+        
         This method adds an image to the `GXIEXP <geosoft.gxapi.GXIEXP>` object with a
         variable name.
         
@@ -66,6 +67,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._add_grid(img, var.encode())
         
 
@@ -74,6 +76,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
     @classmethod
     def create(cls):
         """
+        
         This method creates an `GXIEXP <geosoft.gxapi.GXIEXP>` object.
         
 
@@ -84,6 +87,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapIEXP._create(GXContext._get_tls_geo())
         return GXIEXP(ret_val)
 
@@ -94,6 +98,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
     def do_formula(self, formula, unused):
         """
+        
         This method runs a formula on the grids.
         
         :param formula:  Formula
@@ -105,6 +110,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._do_formula(formula.encode(), unused)
         
 

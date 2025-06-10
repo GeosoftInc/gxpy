@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -58,6 +58,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
     @classmethod
     def create_voxel(cls, file, field, ipj, meta, voxel):
         """
+        
         Create a Geosoft Voxel file from a Datamine block model file.
         
         :param file:   Datamine file name
@@ -77,6 +78,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
 
         **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
+        
         gxapi_cy.WrapDATAMINE._create_voxel(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj, meta, voxel.encode())
         
 
@@ -85,6 +87,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
     @classmethod
     def numeric_field_lst(cls, file, lst):
         """
+        
         Return a `GXLST <geosoft.gxapi.GXLST>` containing the non-standard numeric fields in a Datamine file.
         
         :param file:  Datamine file name
@@ -100,6 +103,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
         The field names go in the name part, and field indices (1 to N)
         in the value part.
         """
+        
         gxapi_cy.WrapDATAMINE._numeric_field_lst(GXContext._get_tls_geo(), file.encode(), lst)
         
 

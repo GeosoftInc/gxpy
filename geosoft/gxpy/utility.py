@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 """
 Utility functions to support Geosoft Python scripts and modules.
 
@@ -550,7 +550,7 @@ def gx_dtype(dtype):
     global _np2gx_type
     if not bool(_np2gx_type):
         _np2gx_type = {
-            str(np.dtype(np.float_)): gxapi.GS_DOUBLE,
+            str(np.dtype(np.float64)): gxapi.GS_DOUBLE,
             str(np.dtype(np.int_)): gxapi.GS_LONG64,
             str(np.dtype(np.byte)): gxapi.GS_BYTE,
             str(np.dtype(np.float64)): gxapi.GS_DOUBLE,
@@ -685,7 +685,6 @@ def gx_dummy(dtype):
     global _dummy_map
     if not bool(_dummy_map):
         _dummy_map = {
-            np.dtype(np.float_): gxapi.rDUMMY,
             np.dtype(np.float64): gxapi.rDUMMY,
             np.dtype(np.float32): gxapi.rDUMMY,
             np.dtype(np.int_): gxapi.iDUMMY,

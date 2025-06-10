@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -75,6 +75,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def add_record(self, key, rec):
         """
+        
         Add a new record.
         
         :param key:  Key name
@@ -89,6 +90,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **Note:** If the record exists, the existing record is cleared
         and the record number is returned.
         """
+        
         rec.value = self._add_record(key.encode(), rec.value)
         
 
@@ -97,6 +99,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def contract(self, lt_bc):
         """
+        
         Contract the contents of two same-key and same-fields tables.
         
         :param lt_bc:  Contract `GXLTB <geosoft.gxapi.GXLTB>`
@@ -119,6 +122,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         2. All records in the contract LIB are deleted from the New `GXLTB <geosoft.gxapi.GXLTB>` (if there are any)
         3. The New `GXLTB <geosoft.gxapi.GXLTB>` is returned.
         """
+        
         ret_val = self._contract(lt_bc)
         return GXLTB(ret_val)
 
@@ -127,6 +131,7 @@ class GXLTB(gxapi_cy.WrapLTB):
     @classmethod
     def create(cls, file, type, delim, key):
         """
+        
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
         
         :param file:   File name, .csv assumed, searched locally then in GEOSOFT.
@@ -148,6 +153,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
+        
         ret_val = gxapi_cy.WrapLTB._create(GXContext._get_tls_geo(), file.encode(), type, delim, key.encode())
         return GXLTB(ret_val)
 
@@ -156,6 +162,7 @@ class GXLTB(gxapi_cy.WrapLTB):
     @classmethod
     def create_crypt(cls, file, type, delim, case_sensitive, key, crypt):
         """
+        
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from an encrypted file.
         
         :param file:            File name, .csv assumed, searched locally then in GEOSOFT.
@@ -181,6 +188,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
+        
         ret_val = gxapi_cy.WrapLTB._create_crypt(GXContext._get_tls_geo(), file.encode(), type, delim, case_sensitive, key.encode(), crypt.encode())
         return GXLTB(ret_val)
 
@@ -189,6 +197,7 @@ class GXLTB(gxapi_cy.WrapLTB):
     @classmethod
     def create_ex(cls, file, type, delim, case_sensitive, key):
         """
+        
         Creates a `GXLTB <geosoft.gxapi.GXLTB>` object from a file.
         
         :param file:            File name, .csv assumed, searched locally then in GEOSOFT.
@@ -212,6 +221,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
+        
         ret_val = gxapi_cy.WrapLTB._create_ex(GXContext._get_tls_geo(), file.encode(), type, delim, case_sensitive, key.encode())
         return GXLTB(ret_val)
 
@@ -220,6 +230,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def delete_record(self, rec):
         """
+        
         Delete a record.
         
         :param rec:  Record number to delete
@@ -232,6 +243,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **Note:** Record numbers after the deleted record will be reduced
         by 1.
         """
+        
         self._delete_record(rec)
         
 
@@ -242,6 +254,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_con_lst(self, fld, match, match_type, lst):
         """
+        
         Populate a `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names from matching fields.
         
         :param fld:         Field
@@ -261,6 +274,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         The `GXLST <geosoft.gxapi.GXLST>` names will be the `GXLTB <geosoft.gxapi.GXLTB>` key fields and the
         `GXLST <geosoft.gxapi.GXLST>` values will be the `GXLTB <geosoft.gxapi.GXLTB>` record numbers.
         """
+        
         self._get_con_lst(fld, match.encode(), match_type, lst)
         
 
@@ -269,6 +283,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_lst(self, fld, lst):
         """
+        
         Populate an `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names
         
         :param fld:  Field to get, 0 for key field
@@ -284,6 +299,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         The `GXLST <geosoft.gxapi.GXLST>` names will be the `GXLTB <geosoft.gxapi.GXLTB>` fields and the
         `GXLST <geosoft.gxapi.GXLST>` values will be the `GXLTB <geosoft.gxapi.GXLTB>` record numbers.
         """
+        
         self._get_lst(fld, lst)
         
 
@@ -292,6 +308,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_lst2(self, fld_n, fld_v, lst):
         """
+        
         Populate an `GXLST <geosoft.gxapi.GXLST>` with `GXLTB <geosoft.gxapi.GXLTB>` names and values
         
         :param fld_n:  Field for names, 0 for key field
@@ -309,6 +326,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         The `GXLST <geosoft.gxapi.GXLST>` names will come from the `GXLTB <geosoft.gxapi.GXLTB>` name field and the
         `GXLST <geosoft.gxapi.GXLST>` values will come from value field specified.
         """
+        
         self._get_lst2(fld_n, fld_v, lst)
         
 
@@ -317,6 +335,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def fields(self):
         """
+        
         Get number of fields.
         
 
@@ -327,6 +346,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._fields()
         return ret_val
 
@@ -335,6 +355,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def find_field(self, field):
         """
+        
         Return the field number for the specified field.
         
         :param field:  Field name
@@ -348,6 +369,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_field(field.encode())
         return ret_val
 
@@ -356,6 +378,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def find_key(self, key):
         """
+        
         Return the key index of a record.
         
         :param key:  Key name
@@ -369,6 +392,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_key(key.encode())
         return ret_val
 
@@ -377,6 +401,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_field(self, field_num, field):
         """
+        
         Get a field name by index.
         
         :param field_num:  Field number
@@ -390,6 +415,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the record or field are out of range, an empty string is returned.
         """
+        
         field.value = self._get_field(field_num, field.value.encode())
         
 
@@ -398,6 +424,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_int(self, record, field):
         """
+        
         Get a int entry from the `GXLTB <geosoft.gxapi.GXLTB>`
         
         :param record:  Record number
@@ -413,6 +440,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_int(record, field)
         return ret_val
 
@@ -421,6 +449,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_string(self, record, field, token):
         """
+        
         Get an entry from the `GXLTB <geosoft.gxapi.GXLTB>`
         
         :param record:  Record number
@@ -437,6 +466,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **Note:** If the record or field are out of range,
         an empty string or dummy value is returned.
         """
+        
         token.value = self._get_string(record, field, token.value.encode())
         
 
@@ -445,6 +475,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_english_string(self, record, field, token):
         """
+        
         Get the English entry from the `GXLTB <geosoft.gxapi.GXLTB>`
         
         :param record:  Record number
@@ -461,6 +492,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **Note:** If the record or field are out of range,
         an empty string or dummy value is returned.
         """
+        
         token.value = self._get_english_string(record, field, token.value.encode())
         
 
@@ -469,6 +501,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def records(self):
         """
+        
         Get number of records in `GXLTB <geosoft.gxapi.GXLTB>`.
         
 
@@ -479,6 +512,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._records()
         return ret_val
 
@@ -487,6 +521,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def search(self, rec, fld, field):
         """
+        
         Search for a record containing field value
         
         :param rec:    Search start record
@@ -504,6 +539,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._search(rec, fld, field.encode())
         return ret_val
 
@@ -512,6 +548,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def merge(self, lt_bc):
         """
+        
         Merge the contents of two same-key tables.
         
         :param lt_bc:  Child `GXLTB <geosoft.gxapi.GXLTB>`
@@ -541,6 +578,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         4. The Master `GXLTB <geosoft.gxapi.GXLTB>` is copied to the New `GXLTB <geosoft.gxapi.GXLTB>`.
         5. Any New records found in the child are added to the New `GXLTB <geosoft.gxapi.GXLTB>`
         """
+        
         ret_val = self._merge(lt_bc)
         return GXLTB(ret_val)
 
@@ -549,6 +587,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def get_double(self, record, field):
         """
+        
         Get a real entry from the `GXLTB <geosoft.gxapi.GXLTB>`
         
         :param record:  Record number
@@ -564,6 +603,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_double(record, field)
         return ret_val
 
@@ -572,6 +612,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def save(self, file):
         """
+        
         Save `GXLTB <geosoft.gxapi.GXLTB>` changes to existing or new file
         
         :param file:  File name, .csv assumed.  If "", save to original file.
@@ -581,6 +622,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save(file.encode())
         
 
@@ -589,6 +631,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def save_crypt(self, file, crypt):
         """
+        
         Save `GXLTB <geosoft.gxapi.GXLTB>` to a new file using encryption
         
         :param file:   File name, .csv assumed.  If "", save to original file.
@@ -600,6 +643,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save_crypt(file.encode(), crypt.encode())
         
 
@@ -608,6 +652,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def set_int(self, record, field, data):
         """
+        
         Set a long entry
         
         :param record:  Record number
@@ -621,6 +666,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_int(record, field, data)
         
 
@@ -629,6 +675,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def set_double(self, record, field, data):
         """
+        
         Set a double entry
         
         :param record:  Record number
@@ -642,6 +689,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_double(record, field, data)
         
 
@@ -650,6 +698,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
     def set_string(self, record, field, token):
         """
+        
         Set an entry
         
         :param record:  Record number
@@ -663,6 +712,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_string(record, field, token.encode())
         
 

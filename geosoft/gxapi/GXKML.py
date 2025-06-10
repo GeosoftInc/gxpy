@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXKML(gxapi_cy.WrapKML):
     @classmethod
     def import_3d_polygon(cls, mview, name, vv_vx, vv_vy, vv_vz, color, extruded):
         """
+        
         Imports a KML 3D polygon into a provided view.
         
         :param mview:     `GXMVIEW <geosoft.gxapi.GXMVIEW>` object - the (3d) view to import the polygon into.
@@ -81,6 +82,7 @@ class GXKML(gxapi_cy.WrapKML):
 
         **Note:** Requirements -- The MVIEW must be 3D and valid (see `GXMVIEW.is_view_3d <geosoft.gxapi.GXMVIEW.is_view_3d>`);- The group name must not be null/empty;- The three VV for vector components must contain vertices, and be of equal length.
         """
+        
         ret_val = gxapi_cy.WrapKML._import_3d_polygon(GXContext._get_tls_geo(), mview, name.encode(), vv_vx, vv_vy, vv_vz, color, extruded)
         return ret_val
 
@@ -89,6 +91,7 @@ class GXKML(gxapi_cy.WrapKML):
     @classmethod
     def import_3d_line_path(cls, mview, name, vv_vx, vv_vy, vv_vz, color, extruded):
         """
+        
         Imports a KML 3D LinePath into a provided view.
         
         :param mview:     `GXMVIEW <geosoft.gxapi.GXMVIEW>` object - the (3d) view to import the LinePath into.
@@ -113,6 +116,7 @@ class GXKML(gxapi_cy.WrapKML):
 
         **Note:** Requirements -- The MVIEW must be 3D and valid (see `GXMVIEW.is_view_3d <geosoft.gxapi.GXMVIEW.is_view_3d>`);- The group name must not be null/empty;- The three VV for vector components must contain vertices, and be of equal length.
         """
+        
         ret_val = gxapi_cy.WrapKML._import_3d_line_path(GXContext._get_tls_geo(), mview, name.encode(), vv_vx, vv_vy, vv_vz, color, extruded)
         return ret_val
 

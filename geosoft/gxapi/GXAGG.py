@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXST import GXST
@@ -57,6 +57,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def set_model(self, model):
         """
+        
         Sets the Color Model
         
         :param model:  :ref:`AGG_MODEL`
@@ -66,6 +67,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_model(model)
         
 
@@ -74,6 +76,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def change_brightness(self, brt):
         """
+        
         Change the brightness.
         
         :param brt:  -1.0 - black; 0.0 no change; 1.0 white
@@ -87,6 +90,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         -1.0 to 0.0 makes colors darker, -1.0 is black
         0.0 to 1.0 makes colors lighter, 1.0 is white
         """
+        
         self._change_brightness(brt)
         
 
@@ -95,6 +99,7 @@ class GXAGG(gxapi_cy.WrapAGG):
     @classmethod
     def create(cls):
         """
+        
         Create an aggregate
         
 
@@ -105,6 +110,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapAGG._create(GXContext._get_tls_geo())
         return GXAGG(ret_val)
 
@@ -113,6 +119,7 @@ class GXAGG(gxapi_cy.WrapAGG):
     @classmethod
     def create_map(cls, map, name):
         """
+        
         Create `GXAGG <geosoft.gxapi.GXAGG>` from Map with Group name.
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
@@ -132,6 +139,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         "Data\\AGG_test" (when used as a string, the double slash
         represents as single \\).
         """
+        
         ret_val = gxapi_cy.WrapAGG._create_map(GXContext._get_tls_geo(), map, name.encode())
         return GXAGG(ret_val)
 
@@ -142,6 +150,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def get_layer_itr(self, layer, itr):
         """
+        
         Get the `GXITR <geosoft.gxapi.GXITR>` of a layer
         
         :param layer:  Layer number
@@ -159,6 +168,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         self._get_layer_itr(layer, itr)
         
 
@@ -167,6 +177,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def get_layer_st(self, layer):
         """
+        
         Get a `GXST <geosoft.gxapi.GXST>` filled with layer statistics
         
         :param layer:  Layer number
@@ -186,14 +197,42 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         ret_val = self._get_layer_st(layer)
         return GXST(ret_val)
 
 
 
 
+    def layer_pic(self, pic, name):
+        """
+        
+        .. deprecated:: None None 
+        Add a PIC as a layer in an aggregate.
+        
+        :param pic:   Note: the PIC object is obsolete
+        :param name:  Temp File name
+        :type  pic:   int
+        :type  name:  str_ref
+
+        .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This function creates a temporary PNG file in the temp directory.
+        The name is returned so that you can pack the map and remove the file
+        or copy the file elsewhere for later use.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        name.value = self._layer_pic(pic, name.value.encode())
+        
+
+
+
+
     def list_img(self, gvv):
         """
+        
         Lists file names of all the IMGs inside of the `GXAGG <geosoft.gxapi.GXAGG>`.
         
         :param gvv:  `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`
@@ -208,6 +247,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         **Note:** The returned `GXVV <geosoft.gxapi.GXVV>` contains the file names.
         """
+        
         ret_val = self._list_img(gvv)
         return ret_val
 
@@ -216,6 +256,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def num_layers(self):
         """
+        
         Get the number of layers in an aggregate.
         
 
@@ -226,6 +267,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_layers()
         return ret_val
 
@@ -234,6 +276,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def layer_img(self, name, zone, color, cont):
         """
+        
         Add an image as a layer in an aggregate.
         
         :param name:   Grid name
@@ -253,6 +296,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
             `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
+        
         self._layer_img(name.encode(), zone, color.encode(), cont)
         
 
@@ -261,6 +305,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def layer_img_ex(self, name, zone, color, min, max, cont):
         """
+        
         Add an image as a layer in an aggregate.
         
         :param name:   Grid name
@@ -284,6 +329,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
             `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
+        
         self._layer_img_ex(name.encode(), zone, color.encode(), min, max, cont)
         
 
@@ -292,6 +338,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def layer_shade_img(self, name, color, inc, dec, scl):
         """
+        
         Add a shaded image as a layer in an aggregate.
         
         :param name:   Grid name
@@ -316,6 +363,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         regardless of the location of the original source image.
         If the file already exists, it will replaced.
         """
+        
         scl.value = self._layer_shade_img(name.encode(), color.encode(), inc, dec, scl.value)
         
 
@@ -324,6 +372,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def get_brightness(self):
         """
+        
         Get the brightness setting of the `GXAGG <geosoft.gxapi.GXAGG>`
         
         :rtype:      float
@@ -347,6 +396,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
             `change_brightness <geosoft.gxapi.GXAGG.change_brightness>`, `get_brightness <geosoft.gxapi.GXAGG.get_brightness>`, `change_brightness <geosoft.gxapi.GXAGG.change_brightness>`
         """
+        
         ret_val = self._get_brightness()
         return ret_val
 
@@ -355,6 +405,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def set_layer_itr(self, layer, itr):
         """
+        
         Set the `GXITR <geosoft.gxapi.GXITR>` of a layer
         
         :param layer:  Layer number
@@ -372,6 +423,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         Caller must create/destroy `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         self._set_layer_itr(layer, itr)
         
 
@@ -380,6 +432,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
     def set_render_method(self, method):
         """
+        
         Sets the Rendering Method
         
         :param method:  :ref:`AGG_RENDER`
@@ -389,7 +442,30 @@ class GXAGG(gxapi_cy.WrapAGG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_render_method(method)
+        
+
+
+
+
+    def update_thumb(self, grid, size):
+        """
+        
+        .. deprecated:: None None 
+        Update the thumbnail of an `GXIMG <geosoft.gxapi.GXIMG>` from an `GXAGG <geosoft.gxapi.GXAGG>`
+        
+        :param grid:  Name of the grid to update
+        :param size:  Size of the thumbnail in pixels (64 is typical) the minimum size if 16 (16x16)
+        :type  grid:  str
+        :type  size:  int
+
+        .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._update_thumb(grid.encode(), size)
         
 
 

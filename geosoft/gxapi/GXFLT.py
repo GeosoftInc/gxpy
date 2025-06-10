@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXFLT(gxapi_cy.WrapFLT):
     @classmethod
     def create(cls, input):
         """
+        
         Create a filter from a comma/space delimited string.
         
         :param input:  Filter string
@@ -70,6 +71,7 @@ class GXFLT(gxapi_cy.WrapFLT):
 
               "-1,-1,1,1"
         """
+        
         ret_val = gxapi_cy.WrapFLT._create(GXContext._get_tls_geo(), input.encode())
         return ret_val
 
@@ -80,6 +82,7 @@ class GXFLT(gxapi_cy.WrapFLT):
     @classmethod
     def load(cls, file):
         """
+        
         Load and return handle to a convolution filter.
         
         :param file:  Name of the filter File
@@ -108,6 +111,7 @@ class GXFLT(gxapi_cy.WrapFLT):
            1
            1
         """
+        
         ret_val = gxapi_cy.WrapFLT._load(GXContext._get_tls_geo(), file.encode())
         return ret_val
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXEXT(gxapi_cy.WrapEXT):
     @classmethod
     def get_info(cls, img, xmin, ymin, xmax, ymax, ipj):
         """
+        
         Retrieves information about an external image format.
         
         :param img:   Image Name
@@ -72,6 +73,7 @@ class GXEXT(gxapi_cy.WrapEXT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         xmin.value, ymin.value, xmax.value, ymax.value = gxapi_cy.WrapEXT._get_info(GXContext._get_tls_geo(), img.encode(), xmin.value, ymin.value, xmax.value, ymax.value, ipj)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
     @classmethod
     def goto_line(cls, line):
         """
+        
         Sends a 'go to line' message
         
         :param line:  Line name
@@ -62,6 +63,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapLMSG._goto_line(GXContext._get_tls_geo(), line.encode())
         
 
@@ -70,6 +72,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
     @classmethod
     def goto_point(cls, x, y, z, ipj):
         """
+        
         Sends a move cursor message
         
         :param x:    X location
@@ -85,6 +88,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapLMSG._goto_point(GXContext._get_tls_geo(), x, y, z, ipj)
         
 
@@ -93,6 +97,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
     @classmethod
     def view_area(cls, x0, y0, x1, y1, ipj):
         """
+        
         Sends a view area message
         
         :param x0:   X0 location
@@ -110,6 +115,7 @@ class GXLMSG(gxapi_cy.WrapLMSG):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapLMSG._view_area(GXContext._get_tls_geo(), x0, y0, x1, y1, ipj)
         
 

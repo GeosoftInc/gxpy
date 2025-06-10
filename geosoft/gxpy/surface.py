@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 """
 Geosoft surfaces
 
@@ -625,9 +625,9 @@ class Surface(gxspd.SpatialData, Sequence):
 
     def _get_mesh_vv(self, component=0):
 
-        f1 = gxvv.GXvv(dtype=np.int_)
-        f2 = gxvv.GXvv(dtype=np.int_)
-        f3 = gxvv.GXvv(dtype=np.int_)
+        f1 = gxvv.GXvv(dtype=np.uint32)
+        f2 = gxvv.GXvv(dtype=np.uint32)
+        f3 = gxvv.GXvv(dtype=np.uint32)
         vx = gxvv.GXvv()
         vy = gxvv.GXvv()
         vz = gxvv.GXvv()
@@ -859,9 +859,9 @@ class Surface(gxspd.SpatialData, Sequence):
         .. versionadded:: 9.3.1
         """
 
-        f1 = gxvv.GXvv(dtype=np.int_)
-        f2 = gxvv.GXvv(dtype=np.int_)
-        f3 = gxvv.GXvv(dtype=np.int_)
+        f1 = gxvv.GXvv(dtype=np.uint32)
+        f2 = gxvv.GXvv(dtype=np.uint32)
+        f3 = gxvv.GXvv(dtype=np.uint32)
         vx = gxvv.GXvv()
         vy = gxvv.GXvv()
         vz = gxvv.GXvv()

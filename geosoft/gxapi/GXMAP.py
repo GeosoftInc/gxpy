@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXLPT import GXLPT
@@ -60,6 +60,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def export_all_in_view(self, name, view, pix_size, dpi, bits, dither, format, options):
         """
+        
         Export the entire map in view units to an external format. View and Group names are removed and plane spatial coordinates will be in the units of the map.
         
         :param name:      File Name To Export
@@ -83,6 +84,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_all_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, format.encode(), options.encode())
         
 
@@ -91,6 +93,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def export_all_in_view2(self, name, view, dpi, minX, minY, maxX, maxY, bits, dither, format, options):
         """
+        
         Same as ExportAllInView_MAP, but preset the range in X and Y to export (mm)
         
         :param name:     File Name To Export
@@ -120,6 +123,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_all_in_view2(name.encode(), view.encode(), dpi, minX, minY, maxX, maxY, bits, dither, format.encode(), options.encode())
         
 
@@ -128,6 +132,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def export_all_raster(self, name, view, size_x, size_y, dpi, bits, dither, format, options):
         """
+        
         Export the entire map to map to a non-geo raster format.
         
         :param name:     File Name To Export
@@ -153,6 +158,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_all_raster(name.encode(), view.encode(), size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
 
@@ -161,6 +167,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def export_area_in_view(self, name, view, pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format, options):
         """
+        
         Export an area of a map in view units to an external format
         
         :param name:      File Name To Export
@@ -192,6 +199,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_area_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format.encode(), options.encode())
         
 
@@ -200,6 +208,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def export_area_raster(self, name, view, min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format, options):
         """
+        
         Export an area of a map to a non-geo raster format.
         
         :param name:     File Name To Export
@@ -233,6 +242,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_area_raster(name.encode(), view.encode(), min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
         
 
@@ -241,6 +251,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def rename_view(self, current_name, new_name):
         """
+        
         Renames a view in this map.
         
         :param current_name:  Name of view to rename)
@@ -252,6 +263,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._rename_view(current_name.encode(), new_name.encode())
         
 
@@ -260,6 +272,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def render_bitmap(self, view, min_x, min_y, max_x, max_y, file, max_res):
         """
+        
         Render a map to a bitmap.
         
         :param view:     View we exporting units in
@@ -281,6 +294,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), max_res)
         
 
@@ -289,6 +303,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def render_view_bitmap(self, view, group, min_x, min_y, max_x, max_y, file, max_res):
         """
+        
         Render a map view to a bitmap.
         
         :param view:     `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
@@ -312,6 +327,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._render_view_bitmap(view, group, min_x, min_y, max_x, max_y, file.encode(), max_res)
         
 
@@ -324,6 +340,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def create_linked_3d_view(self, mview, view_name, min_x, min_y, max_x, max_y):
         """
+        
         Create a 3D View in this map that is linked to a `GXMVIEW <geosoft.gxapi.GXMVIEW>` in a 3D View file.
         
         :param mview:      `GX3DV <geosoft.gxapi.GX3DV>`'s 3D `GXMVIEW <geosoft.gxapi.GXMVIEW>`
@@ -343,6 +360,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._create_linked_3d_view(mview, view_name.encode(), min_x, min_y, max_x, max_y)
         
 
@@ -355,6 +373,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def agg_list(self, lst, optn):
         """
+        
         Get a list of all aggregates in this map.
         
         :param lst:   List to hold the views (allow up to 96 characters)
@@ -373,6 +392,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
+        
         self._agg_list(lst, optn)
         
 
@@ -381,6 +401,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def agg_list_ex(self, lst, optn, mode):
         """
+        
         Get a list of aggregates in this map based on a mode
         
         :param lst:   List to hold the views (allow up to 96 characters)
@@ -401,6 +422,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
+        
         self._agg_list_ex(lst, optn, mode)
         
 
@@ -409,6 +431,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def clean(self):
         """
+        
         Clean up empty groups in all views in map.
         
 
@@ -416,6 +439,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clean()
         
 
@@ -424,6 +448,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def delete_empty_groups(self):
         """
+        
         Remove empty groups in the map, do not delete empty views.
         
 
@@ -431,6 +456,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_empty_groups()
         
 
@@ -439,6 +465,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def commit(self):
         """
+        
         Commit any changes to a map.
         
 
@@ -446,6 +473,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._commit()
         
 
@@ -454,6 +482,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def copy_map_to_view(self, dest_map, dest_view):
         """
+        
         Copy entire map into one view in output map.
         
         :param dest_map:   Destination `GXMAP <geosoft.gxapi.GXMAP>` name
@@ -465,6 +494,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy_map_to_view(dest_map.encode(), dest_view.encode())
         
 
@@ -473,6 +503,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def crc_map(self, crc, file):
         """
+        
         Generate an XML CRC of a `GXMAP <geosoft.gxapi.GXMAP>`
         
         :param crc:   CRC returned
@@ -484,6 +515,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         crc.value = self._crc_map(crc.value, file.encode())
         
 
@@ -492,6 +524,7 @@ class GXMAP(gxapi_cy.WrapMAP):
     @classmethod
     def create(cls, name, mode):
         """
+        
         Create a `GXMAP <geosoft.gxapi.GXMAP>`.
         
         :param name:  `GXMAP <geosoft.gxapi.GXMAP>` file name
@@ -506,6 +539,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMAP._create(GXContext._get_tls_geo(), name.encode(), mode)
         return GXMAP(ret_val)
 
@@ -514,6 +548,7 @@ class GXMAP(gxapi_cy.WrapMAP):
     @classmethod
     def current(cls):
         """
+        
         This method returns the Current map opened.
         
 
@@ -529,6 +564,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         **Note:** If there is no current map, and running interactively,
         the user is prompted to open a map.
         """
+        
         ret_val = gxapi_cy.WrapMAP._current(GXContext._get_tls_geo())
         return GXMAP(ret_val)
 
@@ -537,6 +573,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def delete_view(self, name):
         """
+        
         Deletes a view in this map.
         
         :param name:  View Name to delete
@@ -548,6 +585,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **Note:** If the view does not exist, nothing happens.
         """
+        
         self._delete_view(name.encode())
         
 
@@ -558,6 +596,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def discard(self):
         """
+        
         Discard all changes made to the map.
         
 
@@ -565,6 +604,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._discard()
         
 
@@ -573,6 +613,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def dup_map(self, ma_pd, content):
         """
+        
         Duplicate copy of current map.
         
         :param ma_pd:    Destination `GXMAP <geosoft.gxapi.GXMAP>` object
@@ -593,6 +634,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         The constant `DUPMAP_COPY_PRE62 <geosoft.gxapi.DUPMAP_COPY_PRE62>` provides a way to create maps that can be
         distributed to versions prior to 6.2.
         """
+        
         self._dup_map(ma_pd, content)
         
 
@@ -601,6 +643,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_lpt(self):
         """
+        
         Get the `GXLPT <geosoft.gxapi.GXLPT>` Object of a `GXMAP <geosoft.gxapi.GXMAP>`.
         
 
@@ -611,6 +654,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_lpt()
         return GXLPT(ret_val)
 
@@ -619,6 +663,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_map_size(self, xmin, ymin, xmax, ymax):
         """
+        
         Get the size of the Map.
         
         :param xmin:  X minimum in mm
@@ -634,6 +679,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         xmin.value, ymin.value, xmax.value, ymax.value = self._get_map_size(xmin.value, ymin.value, xmax.value, ymax.value)
         
 
@@ -642,6 +688,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_meta(self):
         """
+        
         Get the map's `GXMETA <geosoft.gxapi.GXMETA>`
         
 
@@ -654,6 +701,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **Note:** If the map has no `GXMETA <geosoft.gxapi.GXMETA>`, an empty `GXMETA <geosoft.gxapi.GXMETA>` will be created.
         """
+        
         ret_val = self._get_meta()
         return GXMETA(ret_val)
 
@@ -662,6 +710,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_reg(self):
         """
+        
         Get the map's `GXREG <geosoft.gxapi.GXREG>`
         
 
@@ -674,6 +723,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **Note:** If the map has no `GXREG <geosoft.gxapi.GXREG>`, an empty `GXREG <geosoft.gxapi.GXREG>` will be created.
         """
+        
         ret_val = self._get_reg()
         return GXREG(ret_val)
 
@@ -682,6 +732,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def group_list(self, lst):
         """
+        
         Get a list of all views/groups in this map.
         
         :param lst:  List to hold the view/groups.  Names may be up to 2080 characters in length.
@@ -700,6 +751,7 @@ class GXMAP(gxapi_cy.WrapMAP):
             `GXLST <geosoft.gxapi.GXLST>` class.
             `GXMVIEW.list_groups <geosoft.gxapi.GXMVIEW.list_groups>`
         """
+        
         self._group_list(lst)
         
 
@@ -708,6 +760,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def group_list_ex(self, lst, mode):
         """
+        
         Get a list of views/groups in this map for this mode
         
         :param lst:   List to hold the views.  View names may be up to 2080 characters in length.
@@ -723,6 +776,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
+        
         self._group_list_ex(lst, mode)
         
 
@@ -731,6 +785,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def duplicate_view(self, view, n_view, copy):
         """
+        
         Duplicate an entire view
         
         :param view:    Name of view to duplicate
@@ -744,6 +799,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         n_view.value = self._duplicate_view(view.encode(), n_view.value.encode(), copy)
         
 
@@ -752,6 +808,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def exist_view(self, name):
         """
+        
         Checks to see if a view exists.
         
         :param name:  View name
@@ -765,6 +822,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._exist_view(name.encode())
         return ret_val
 
@@ -773,6 +831,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_class_name(self, cl, name):
         """
+        
         Get a class name.
         
         :param cl:    Class
@@ -796,6 +855,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         If a name is not set, the class name is set and
         returned.
         """
+        
         name.value = self._get_class_name(cl.encode(), name.value.encode())
         
 
@@ -804,6 +864,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_file_name(self, name):
         """
+        
         Get the name of the map.
         
         :param name:  Returned map file name
@@ -813,6 +874,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._get_file_name(name.value.encode())
         
 
@@ -821,6 +883,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_map_name(self, name):
         """
+        
         Get the Map Name of the Map.
         
         :param name:  Returned map name
@@ -830,6 +893,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._get_map_name(name.value.encode())
         
 
@@ -838,6 +902,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def packed_files(self):
         """
+        
         The number of packed files in the current map.
         
 
@@ -848,6 +913,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._packed_files()
         return ret_val
 
@@ -856,6 +922,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def un_pack_files_ex(self, force, errors):
         """
+        
         UnPack all files from map to workspace.
         
         :param force:   (0 - Produce errors, 1 - Force overwrites)
@@ -872,6 +939,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         stop if any files are going to be overwritting. These
         file names will end up in the Errors string.
         """
+        
         errors.value = self._un_pack_files_ex(force, errors.value.encode())
         
 
@@ -880,6 +948,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def un_pack_files_to_folder(self, force, dir, errors):
         """
+        
         UnPack all files from map to workspace.
         
         :param force:   (0 - Produce errors, 1 - Force overwrites)
@@ -893,6 +962,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         errors.value = self._un_pack_files_to_folder(force, dir.encode(), errors.value.encode())
         
 
@@ -901,6 +971,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def pack_files(self):
         """
+        
         Pack all files in the map so that it can be mailed.
         
 
@@ -908,6 +979,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._pack_files()
         
 
@@ -916,6 +988,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def render(self, name):
         """
+        
         Render a map to file/device.
         
         :param name:  Plot file/device
@@ -925,6 +998,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._render(name.encode())
         
 
@@ -933,6 +1007,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def remove_grid(self, grid, removed):
         """
+        
         Remove references to a grid from a map.
         
         :param grid:     grid file name to remove
@@ -950,6 +1025,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         This is name-dependent, and will not work if a user has renamed the color bar
         or grid histogram.
         """
+        
         removed.value = self._remove_grid(grid.encode(), removed.value)
         
 
@@ -958,6 +1034,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def remove_geosurface(self, surface, removed):
         """
+        
         Remove all geosurface groups from a map that are linked to a specific geosurface file.
         
         :param surface:  geosurface file name to remove
@@ -969,6 +1046,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         removed.value = self._remove_geosurface(surface.encode(), removed.value)
         
 
@@ -977,6 +1055,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def remove_voxel(self, surface, removed):
         """
+        
         Remove all voxel groups from a map that are linked to a specific voxel file.
         
         :param surface:  voxel file name to remove
@@ -988,6 +1067,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         removed.value = self._remove_voxel(surface.encode(), removed.value)
         
 
@@ -996,6 +1076,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def repair_broken_grid_links(self, grid, repaired):
         """
+        
         Replaces/repairs references to a grid inside a map.
         
         :param grid:      new grid file name path (must resolve to an existing file)
@@ -1013,6 +1094,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         The replacement path must resolve to an existing grid, and if possible will be
         stored as a relative path to the map.
         """
+        
         repaired.value = self._repair_broken_grid_links(grid.encode(), repaired.value)
         
 
@@ -1021,6 +1103,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def repair_broken_geosurface_links(self, surface, repaired):
         """
+        
         Replaces/repairs references to a geosurface inside a map.
         
         :param surface:   new geosurface file name path (must resolve to an existing file)
@@ -1038,6 +1121,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         The replacement path must resolve to an existing geosurface, and if possible will be
         stored as a relative path to the map.
         """
+        
         repaired.value = self._repair_broken_geosurface_links(surface.encode(), repaired.value)
         
 
@@ -1046,6 +1130,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def repair_broken_voxel_links(self, voxel, repaired):
         """
+        
         Replaces/repairs references to a Geosoft Voxel inside a map.
         
         :param voxel:     new voxel file name path (must resolve to an existing file)
@@ -1063,6 +1148,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         The replacement path must resolve to an existing voxel, and if possible will be
         stored as a relative path to the map.
         """
+        
         repaired.value = self._repair_broken_voxel_links(voxel.encode(), repaired.value)
         
 
@@ -1071,6 +1157,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def resize_all(self):
         """
+        
         Resize a map to the extents of all views.
         
 
@@ -1081,6 +1168,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         **Note:** This is the same as `resize_all_ex <geosoft.gxapi.GXMAP.resize_all_ex>` with
         `MVIEW_EXTENT_CLIP <geosoft.gxapi.MVIEW_EXTENT_CLIP>`.
         """
+        
         self._resize_all()
         
 
@@ -1089,6 +1177,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def resize_all_ex(self, ext):
         """
+        
         `resize_all <geosoft.gxapi.GXMAP.resize_all>` with selection of view extent type selection.
         
         :param ext:  :ref:`MVIEW_EXTENT`
@@ -1101,6 +1190,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         **Note:** `MVIEW_EXTENT_VISIBLE <geosoft.gxapi.MVIEW_EXTENT_VISIBLE>` gives a more "reasonable" map size, and won't
         clip off labels outside a graph window.
         """
+        
         self._resize_all_ex(ext)
         
 
@@ -1109,6 +1199,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_map_scale(self):
         """
+        
         Get the current map scale
         
 
@@ -1128,6 +1219,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         All views must be closed, or open read-only.
         """
+        
         ret_val = self._get_map_scale()
         return ret_val
 
@@ -1136,6 +1228,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def save_as_mxd(self, mxd):
         """
+        
         Save as ArcGIS `GXMXD <geosoft.gxapi.GXMXD>`
         
         :param mxd:  Geosoft map file name
@@ -1145,6 +1238,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._save_as_mxd(mxd.encode())
         
 
@@ -1153,6 +1247,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def set_class_name(self, cl, name):
         """
+        
         Set a class name.
         
         :param cl:    Class
@@ -1176,6 +1271,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         If a name is not set, the class name is set and
         returned.
         """
+        
         self._set_class_name(cl.encode(), name.encode())
         
 
@@ -1184,6 +1280,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def set_current(self):
         """
+        
         Sets the current map to this map.
         
 
@@ -1193,6 +1290,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_current()
         
 
@@ -1201,6 +1299,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def set_map_name(self, name):
         """
+        
         Set the Map Name of the Map.
         
         :param name:  Map Name
@@ -1210,6 +1309,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_map_name(name.encode())
         
 
@@ -1218,6 +1318,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def set_map_scale(self, scale):
         """
+        
         Set the current map scale
         
         :param scale:  New map scale (must be > 0).
@@ -1230,6 +1331,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         **Note:** All views in the map will be resized for the new
         map scale.
         """
+        
         self._set_map_scale(scale)
         
 
@@ -1238,6 +1340,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def set_map_size(self, xmin, ymin, xmax, ymax):
         """
+        
         Set the size of the Map.
         
         :param xmin:  X minimum in mm
@@ -1262,6 +1365,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
             SetSizeViews_MAP
         """
+        
         self._set_map_size(xmin, ymin, xmax, ymax)
         
 
@@ -1270,6 +1374,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def set_meta(self, meta):
         """
+        
         Write a `GXMETA <geosoft.gxapi.GXMETA>` to a map.
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` to write to map
@@ -1279,6 +1384,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta(meta)
         
 
@@ -1287,6 +1393,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def set_reg(self, reg):
         """
+        
         Write a `GXREG <geosoft.gxapi.GXREG>` to a map.
         
         :param reg:  `GXREG <geosoft.gxapi.GXREG>` to write to map
@@ -1296,6 +1403,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_reg(reg)
         
 
@@ -1304,6 +1412,7 @@ class GXMAP(gxapi_cy.WrapMAP):
     @classmethod
     def sync(cls, map):
         """
+        
         Syncronize the Metadata
         
         :param map:  Geosoft map file name
@@ -1313,6 +1422,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMAP._sync(GXContext._get_tls_geo(), map.encode())
         
 
@@ -1321,6 +1431,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def un_pack_files(self):
         """
+        
         UnPack all files from map to workspace.
         
 
@@ -1328,6 +1439,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._un_pack_files()
         
 
@@ -1336,6 +1448,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def view_list(self, lst):
         """
+        
         Get a list of all views in this map.
         
         :param lst:  List to hold the views.  View names may be up to 2080 characters in length.
@@ -1349,6 +1462,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
+        
         self._view_list(lst)
         
 
@@ -1357,6 +1471,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def view_list_ex(self, lst, mode):
         """
+        
         Get a list of views of certain types in this map
         
         :param lst:   List to hold the views.  View names may be up to 2080 characters in length.
@@ -1368,6 +1483,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._view_list_ex(lst, mode)
         
 
@@ -1376,6 +1492,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def get_data_proj(self):
         """
+        
         Get the projection type of the Data view of a map.
         
 
@@ -1386,6 +1503,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_data_proj()
         return ret_val
 
@@ -1394,6 +1512,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
     def dataset_file_path_list(self, lst):
         """
+        
         Get a list of all dataset file paths in this map.
         
         :param lst:  List to hold the paths.  Paths may be up to 2080 characters in length.
@@ -1407,6 +1526,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
             `GXLST <geosoft.gxapi.GXLST>` class.
         """
+        
         self._dataset_file_path_list(lst)
         
 

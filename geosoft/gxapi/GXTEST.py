@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXTEST(gxapi_cy.WrapTEST):
     @classmethod
     def enable_disable_arc_engine_license(cls, enable):
         """
+        
         Forcefully disable ArEngine license availability for testing purposes
         
         :param enable:  Enable/disable?
@@ -62,6 +63,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapTEST._enable_disable_arc_engine_license(GXContext._get_tls_geo(), enable)
         
 
@@ -70,6 +72,7 @@ class GXTEST(gxapi_cy.WrapTEST):
     @classmethod
     def arc_engine_license(cls):
         """
+        
         Test availability of an ArEngine license on this system
         
 
@@ -80,6 +83,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTEST._arc_engine_license(GXContext._get_tls_geo())
         return ret_val
 
@@ -88,6 +92,7 @@ class GXTEST(gxapi_cy.WrapTEST):
     @classmethod
     def test_mode(cls):
         """
+        
         Checks to see if we are running inside testing system
         
         :rtype:      bool
@@ -96,6 +101,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTEST._test_mode(GXContext._get_tls_geo())
         return ret_val
 
@@ -104,6 +110,7 @@ class GXTEST(gxapi_cy.WrapTEST):
     @classmethod
     def wrapper_test(cls, funcs, log):
         """
+        
         Test to make sure all wrappers are valid linking
         
         :param funcs:  List of functions to test
@@ -115,6 +122,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapTEST._wrapper_test(GXContext._get_tls_geo(), funcs.encode(), log.encode())
         
 
@@ -123,6 +131,7 @@ class GXTEST(gxapi_cy.WrapTEST):
     @classmethod
     def core_class(cls, cl, log):
         """
+        
         Generic Class Test Wrapper
         
         :param cl:   Name of class to test
@@ -134,6 +143,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapTEST._core_class(GXContext._get_tls_geo(), cl.encode(), log.encode())
         
 

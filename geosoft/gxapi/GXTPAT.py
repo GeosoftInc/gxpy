@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -85,6 +85,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
     def add_color(self, code, label, descr, color):
         """
+        
         Add a new color to the list
         
         :param code:   Code (required - CASE SENSITIVE)
@@ -102,6 +103,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
         **Note:** The new code must be unique; not in the existing list.
         """
+        
         self._add_color(code.encode(), label.encode(), descr.encode(), color)
         
 
@@ -110,6 +112,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
     @classmethod
     def create(cls):
         """
+        
         Creates an empty thematic pattern object.
         
 
@@ -120,6 +123,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTPAT._create(GXContext._get_tls_geo())
         return GXTPAT(ret_val)
 
@@ -130,6 +134,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
     def code(self, code):
         """
+        
         Find the index of a given thematic pattern
         
         :param code:  Pattern code (case sensitive)
@@ -142,6 +147,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._code(code.encode())
         return ret_val
 
@@ -150,6 +156,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
     def get_solid_pattern(self, index, code, label, descr, color):
         """
+        
         Get solid pattern info from the `GXTPAT <geosoft.gxapi.GXTPAT>`.
         
         :param index:  Index
@@ -170,6 +177,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         **Note:** Returns the solid color, pattern foreground color, or symbol
         color, along with the code, label and description.
         """
+        
         code.value, label.value, descr.value, color.value = self._get_solid_pattern(index, code.value.encode(), label.value.encode(), descr.value.encode(), color.value)
         
 
@@ -178,6 +186,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
     def size(self):
         """
+        
         Returns the number of rows (items) in the `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         
 
@@ -188,6 +197,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._size()
         return ret_val
 
@@ -196,6 +206,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
     def load_csv(self, file):
         """
+        
         Load thematic patterns from a CSV file
         
         :param file:  Thematic Pattern file name
@@ -231,6 +242,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         SYMBROT         Symbol rotation
         SYMBSCL         Additional scaling factor applied to the current size
         """
+        
         self._load_csv(file.encode())
         
 
@@ -239,6 +251,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
     def setup_translation_vv(self, ltb, field, vv_values):
         """
+        
         Initializes a `GXVV <geosoft.gxapi.GXVV>` used to map `GXTPAT <geosoft.gxapi.GXTPAT>` indices to output values
         
         :param ltb:        Table containing `GXTPAT <geosoft.gxapi.GXTPAT>` codes as the key
@@ -257,6 +270,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         `GXLTB <geosoft.gxapi.GXLTB>` oject was created (see ltb.h).
         The `GXLTB <geosoft.gxapi.GXLTB>` field values are converted to the output `GXVV <geosoft.gxapi.GXVV>` type.
         """
+        
         self._setup_translation_vv(ltb, field, vv_values)
         
 

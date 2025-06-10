@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
     @classmethod
     def open(cls, geostring_file, mode):
         """
+        
         Open a Geostring file
         
         :param geostring_file:  Geostring file name
@@ -71,6 +72,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapGEOSTRING._open(GXContext._get_tls_geo(), geostring_file.encode(), mode)
         return GXGEOSTRING(ret_val)
 
@@ -81,6 +83,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_ipj(self, ipj):
         """
+        
         Get the coordinate system of the Geostring.
         
         :param ipj:        `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the Geostring coordinate system
@@ -90,6 +93,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -98,6 +102,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_features(self, lst):
         """
+        
         Get the features
         
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` to fill
@@ -109,6 +114,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **Note:** List items are returned with feature GUID in name and feature name in value.
         """
+        
         self._get_features(lst)
         
 
@@ -117,6 +123,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_sections(self, lst):
         """
+        
         Get the sections
         
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` to fill
@@ -128,6 +135,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **Note:** List items are returned with section GUID in name and section name in value.
         """
+        
         self._get_sections(lst)
         
 
@@ -136,6 +144,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_all_shapes(self, lst):
         """
+        
         Get the all shapes
         
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` to fill
@@ -145,6 +154,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_all_shapes(lst)
         
 
@@ -153,6 +163,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_shapes_for_feature(self, guid, lst):
         """
+        
         Get all shapes linked to a specific feature
         
         :param guid:       Feature GUID
@@ -164,6 +175,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_shapes_for_feature(guid.encode(), lst)
         
 
@@ -172,6 +184,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_shapes_for_section(self, guid, lst):
         """
+        
         Get all shapes linked to a specific section
         
         :param guid:       Section GUID
@@ -183,6 +196,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_shapes_for_section(guid.encode(), lst)
         
 
@@ -191,6 +205,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_shapes_for_feature_and_section(self, feature_guid, section_guid, lst):
         """
+        
         Get all shapes linked to a specific feature and section
         
         :param feature_guid:  Feature GUID
@@ -204,6 +219,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_shapes_for_feature_and_section(feature_guid.encode(), section_guid.encode(), lst)
         
 
@@ -212,6 +228,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_feature_properties(self, guid, name, description, polygon, pat_number, pat_size, pat_thick, pat_density, pat_color, pat_bg_color, line_style, line_thickness, line_pitch, line_color):
         """
+        
         Get a feature's properties
         
         :param guid:            Feature GUID
@@ -247,6 +264,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value, description.value, polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value = self._get_feature_properties(guid.encode(), name.value.encode(), description.value.encode(), polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value)
         
 
@@ -255,6 +273,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_section_properties(self, guid, name, container_name, orientation, easting, northing, elevation, azimuth, swing, a, b, c, d):
         """
+        
         Get a section's properties
         
         :param guid:            Section GUID
@@ -288,6 +307,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value, container_name.value, orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value = self._get_section_properties(guid.encode(), name.value.encode(), container_name.value.encode(), orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value)
         
 
@@ -296,6 +316,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
     def get_shape_properties(self, guid, feature_guid, section_guid, vert_v_vx, vert_v_vy, vert_v_vz):
         """
+        
         Get a shape's properties
         
         :param guid:          Shape GUID
@@ -315,6 +336,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         feature_guid.value, section_guid.value = self._get_shape_properties(guid.encode(), feature_guid.value.encode(), section_guid.value.encode(), vert_v_vx, vert_v_vy, vert_v_vz)
         
 

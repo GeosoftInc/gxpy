@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_type(self):
         """
+        
         Get the type of this GRID3D
         
         :rtype:         int
@@ -61,6 +62,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_type()
         return ret_val
 
@@ -69,6 +71,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def is_thematic(self):
         """
+        
         Does this grid3d contain thematic data
         
         :rtype:         bool
@@ -77,6 +80,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_thematic()
         return ret_val
 
@@ -85,6 +89,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def is_double(self):
         """
+        
         Does this grid3d contain floating point data
         
         :rtype:         bool
@@ -93,6 +98,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_double()
         return ret_val
 
@@ -101,6 +107,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def is_vector(self):
         """
+        
         Does this grid3d contain vector data
         
         :rtype:         bool
@@ -109,6 +116,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_vector()
         return ret_val
 
@@ -117,6 +125,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_tpat(self, ipj):
         """
+        
         Get the TPAT from the thematic grid3d.
         
         :param ipj:     `GXTPAT <geosoft.gxapi.GXTPAT>` object
@@ -126,6 +135,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_tpat(ipj)
         
 
@@ -134,6 +144,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def set_tpat(self, ipj):
         """
+        
         Set the TPAT of a thematic grid3d.
         
         :param ipj:     `GXTPAT <geosoft.gxapi.GXTPAT>` object
@@ -143,6 +154,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_tpat(ipj)
         
 
@@ -151,6 +163,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_double_stats(self, num_valid, num_dummies, min, max, mean, stddev):
         """
+        
         Get Double statistics.
         
         :param num_valid:    Number of valid values
@@ -170,6 +183,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         num_valid.value, num_dummies.value, min.value, max.value, mean.value, stddev.value = self._get_double_stats(num_valid.value, num_dummies.value, min.value, max.value, mean.value, stddev.value)
         
 
@@ -178,6 +192,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_thematic_stats(self, num_valid, num_dummies, min, max, mean, stddev):
         """
+        
         Get Thematic Data statistics.
         
         :param num_valid:    Number of valid values
@@ -197,6 +212,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         num_valid.value, num_dummies.value, min.value, max.value, mean.value, stddev.value = self._get_thematic_stats(num_valid.value, num_dummies.value, min.value, max.value, mean.value, stddev.value)
         
 
@@ -205,6 +221,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_vector_stats(self, num_valid, num_dummies, min_x, min_y, min_z, max_x, max_y, max_z, mean_x, mean_y, mean_z, stddev_x, stddev_y, stddev_z):
         """
+        
         Get Vector Data statistics.
         
         :param num_valid:    Number of valid values
@@ -240,6 +257,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         num_valid.value, num_dummies.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, mean_x.value, mean_y.value, mean_z.value, stddev_x.value, stddev_y.value, stddev_z.value = self._get_vector_stats(num_valid.value, num_dummies.value, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, mean_x.value, mean_y.value, mean_z.value, stddev_x.value, stddev_y.value, stddev_z.value)
         
 
@@ -248,6 +266,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def fill_double(self, value):
         """
+        
         Fill the grid3d with a single double value.
         
         :param value:   Fill Value
@@ -257,6 +276,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._fill_double(value)
         
 
@@ -265,6 +285,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def fill_thematic(self, value):
         """
+        
         Fill the grid3d with a single thematic value.
         
         :param value:   Fill Value
@@ -274,6 +295,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._fill_thematic(value)
         
 
@@ -282,6 +304,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def fill_vector(self, value_x, value_y, value_z):
         """
+        
         Fill the grid3d with a single vector value.
         
         :param value_x:  Fill Value X
@@ -295,6 +318,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._fill_vector(value_x, value_y, value_z)
         
 
@@ -303,6 +327,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_elements_in_block_x(self):
         """
+        
         Get the number of cells in the block in the X direction
         
         :rtype:         int
@@ -311,6 +336,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_elements_in_block_x()
         return ret_val
 
@@ -319,6 +345,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_elements_in_block_y(self):
         """
+        
         Get the number of cells in the block in the Y direction
         
         :rtype:         int
@@ -327,6 +354,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_elements_in_block_y()
         return ret_val
 
@@ -335,6 +363,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def get_elements_in_block_z(self):
         """
+        
         Get the number of cells in the block in the Z direction
         
         :rtype:         int
@@ -343,6 +372,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_elements_in_block_z()
         return ret_val
 
@@ -351,6 +381,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def read_x(self, x, y, z, VV):
         """
+        
         Read data from a GRID3D in the x direction (MOST EFFICIENT)
         
         :param x:       X location
@@ -367,6 +398,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._read_x(x, y, z, VV)
         return ret_val
 
@@ -375,6 +407,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def write_x(self, x, y, z, VV):
         """
+        
         Write data to a GRID3D in the X direction (MOST EFFICIENT)
         
         :param x:       X location
@@ -391,6 +424,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._write_x(x, y, z, VV)
         return ret_val
 
@@ -399,6 +433,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def read_y(self, x, y, z, VV):
         """
+        
         Read data from a GRID3D in the Y direction
         
         :param x:       X location
@@ -415,6 +450,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._read_y(x, y, z, VV)
         return ret_val
 
@@ -423,6 +459,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def write_y(self, x, y, z, VV):
         """
+        
         Write data to a GRID3D in the Y direction
         
         :param x:       X location
@@ -439,6 +476,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._write_y(x, y, z, VV)
         return ret_val
 
@@ -447,6 +485,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def read_z(self, x, y, z, VV):
         """
+        
         Read data from a GRID3D in the Z direction
         
         :param x:       X location
@@ -463,6 +502,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._read_z(x, y, z, VV)
         return ret_val
 
@@ -471,6 +511,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
     def write_z(self, x, y, z, VV):
         """
+        
         Write data to a GRID3D in the Z direction
         
         :param x:       X location
@@ -487,6 +528,7 @@ class GXGRID3D(gxapi_cy.WrapGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._write_z(x, y, z, VV)
         return ret_val
 

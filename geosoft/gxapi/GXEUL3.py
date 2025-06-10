@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
     def destr(self):
         """
+        
         Destroys a `GXEUL3 <geosoft.gxapi.GXEUL3>` object.
         
 
@@ -61,6 +62,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._destr()
         
 
@@ -69,6 +71,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
     @classmethod
     def creat(cls, imgt, imgtx, imgty, imgtz, wnd_siz, gi, tolrnc, max_dis, obs_flg, obs_hght, obs_elev):
         """
+        
         Creates an `GXEUL3 <geosoft.gxapi.GXEUL3>` object.
         
         :param imgt:      Image of grid T
@@ -101,6 +104,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapEUL3._creat(GXContext._get_tls_geo(), imgt, imgtx, imgty, imgtz, wnd_siz, gi, tolrnc, max_dis, obs_flg, obs_hght, obs_elev)
         return GXEUL3(ret_val)
 
@@ -109,6 +113,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
     def get_result(self, vv_r, pi_res_field):
         """
+        
         Get a result field `GXVV <geosoft.gxapi.GXVV>` from `GXEUL3 <geosoft.gxapi.GXEUL3>` object
         
         :param vv_r:          `GXVV <geosoft.gxapi.GXVV>` to store the result
@@ -120,6 +125,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_result(vv_r, pi_res_field)
         
 
@@ -128,6 +134,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
     def write(self, out_fil):
         """
+        
         Write the results of `GXEUL3 <geosoft.gxapi.GXEUL3>` object to output file.
         
         :param out_fil:  Output File Name
@@ -137,6 +144,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._write(out_fil.encode())
         
 
@@ -145,6 +153,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
     @classmethod
     def ex_euler_derive(cls, vv_dist, pr_dx, vv_mag, length, vv_gx, vv_gz, max_sol):
         """
+        
         Calculates gradients
         
         :param vv_dist:  Input distance
@@ -169,6 +178,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapEUL3._ex_euler_derive(GXContext._get_tls_geo(), vv_dist, pr_dx, vv_mag, length, vv_gx, vv_gz, max_sol)
         return ret_val
 
@@ -177,6 +187,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
     @classmethod
     def ex_euler_calc(cls, typ, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20):
         """
+        
         Does the exeuler depth calculations
         
         :param typ:  Solution type flag (0 for contacts, 1 for dykes)
@@ -227,6 +238,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapEUL3._ex_euler_calc(GXContext._get_tls_geo(), typ, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20)
         return ret_val
 

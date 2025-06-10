@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -59,6 +59,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def append_item(self):
         """
+        
         Append the current item and data to an old `GXSHP <geosoft.gxapi.GXSHP>` object.
         
 
@@ -70,6 +71,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         `GXSHP <geosoft.gxapi.GXSHP>` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
+        
         self._append_item()
         
 
@@ -78,6 +80,7 @@ class GXSHP(gxapi_cy.WrapSHP):
     @classmethod
     def create(cls, name, type):
         """
+        
         Create a new `GXSHP <geosoft.gxapi.GXSHP>` object
         
         :param name:  File name
@@ -110,6 +113,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>`      `set_arc_z <geosoft.gxapi.GXSHP.set_arc_z>`
         `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>`  `set_polygon_z <geosoft.gxapi.GXSHP.set_polygon_z>`
         """
+        
         ret_val = gxapi_cy.WrapSHP._create(GXContext._get_tls_geo(), name.encode(), type)
         return GXSHP(ret_val)
 
@@ -120,6 +124,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def add_int_field(self, field):
         """
+        
         Add an INT type data field to a shape file
         
         :param field:  Field name
@@ -135,6 +140,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
+        
         ret_val = self._add_int_field(field.encode())
         return ret_val
 
@@ -143,6 +149,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def add_double_field(self, field, dec):
         """
+        
         Add a REAL type data field to a shape file
         
         :param field:  Field name
@@ -160,6 +167,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
+        
         ret_val = self._add_double_field(field.encode(), dec)
         return ret_val
 
@@ -168,6 +176,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def add_string_field(self, field, width):
         """
+        
         Add a string type data field to a shape file
         
         :param field:  Field name
@@ -185,6 +194,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
+        
         ret_val = self._add_string_field(field.encode(), width)
         return ret_val
 
@@ -193,6 +203,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def find_field(self, field):
         """
+        
         Find the index for a data field.
         
         :param field:  Field name
@@ -205,6 +216,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_field(field.encode())
         return ret_val
 
@@ -213,6 +225,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def max_id_num(self):
         """
+        
         Get the max ID number.
         
 
@@ -223,6 +236,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._max_id_num()
         return ret_val
 
@@ -231,6 +245,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def num_fields(self):
         """
+        
         Get the field number.
         
 
@@ -241,6 +256,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_fields()
         return ret_val
 
@@ -249,6 +265,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def num_records(self):
         """
+        
         Get the record number.
         
 
@@ -259,6 +276,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_records()
         return ret_val
 
@@ -267,6 +285,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def type(self):
         """
+        
         Get the `GXSHP <geosoft.gxapi.GXSHP>` object's geometry type.
         
 
@@ -277,6 +296,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._type()
         return ret_val
 
@@ -285,6 +305,7 @@ class GXSHP(gxapi_cy.WrapSHP):
     @classmethod
     def open(cls, name):
         """
+        
         Open an old `GXSHP <geosoft.gxapi.GXSHP>` object
         
         :param name:  File name
@@ -297,6 +318,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSHP._open(GXContext._get_tls_geo(), name.encode())
         return GXSHP(ret_val)
 
@@ -305,6 +327,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_arc(self, vv_x, vv_y):
         """
+        
         Write an XY arc (polyline) item.
         
         :param vv_x:  X locations
@@ -318,6 +341,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARC <geosoft.gxapi.SHP_GEOM_TYPE_ARC>` files.
         """
+        
         self._set_arc(vv_x, vv_y)
         
 
@@ -326,6 +350,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_arc_z(self, vv_x, vv_y, vv_z):
         """
+        
         Write an XYZ arc (polyline) item.
         
         :param vv_x:  X locations
@@ -341,6 +366,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** Can ONLY be used for `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>` files.
         """
+        
         self._set_arc_z(vv_x, vv_y, vv_z)
         
 
@@ -349,6 +375,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_int(self, index, val):
         """
+        
         Set a data value to a int.
         
         :param index:  Data field index
@@ -362,6 +389,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** The input value is converted to the field's data type.
         """
+        
         self._set_int(index, val)
         
 
@@ -370,6 +398,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_ipj(self, ipj):
         """
+        
         Set a `GXSHP <geosoft.gxapi.GXSHP>` object's projection.
         
         :param ipj:  Input `GXIPJ <geosoft.gxapi.GXIPJ>`
@@ -386,6 +415,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         This function should be called BEFORE the first
         object is written.
         """
+        
         self._set_ipj(ipj)
         
 
@@ -394,6 +424,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_point(self, x, y):
         """
+        
         Write an XY point item.
         
         :param x:    X location
@@ -407,6 +438,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINT <geosoft.gxapi.SHP_GEOM_TYPE_POINT>` files.
         """
+        
         self._set_point(x, y)
         
 
@@ -415,6 +447,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_point_z(self, x, y, z):
         """
+        
         Write an XYZ point item.
         
         :param x:    X location
@@ -430,6 +463,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POINTZ <geosoft.gxapi.SHP_GEOM_TYPE_POINTZ>` files.
         """
+        
         self._set_point_z(x, y, z)
         
 
@@ -438,6 +472,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_polygon(self, vv_x, vv_y, inclusive):
         """
+        
         Write an XY polygon item.
         
         :param vv_x:       X locations
@@ -453,6 +488,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGON <geosoft.gxapi.SHP_GEOM_TYPE_POLYGON>` files.
         """
+        
         self._set_polygon(vv_x, vv_y, inclusive)
         
 
@@ -461,6 +497,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_polygon_z(self, vv_x, vv_y, vv_z, inclusive):
         """
+        
         Write an XYZ polygon item.
         
         :param vv_x:       X locations
@@ -478,6 +515,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** Can ONLY be used for `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>` files.
         """
+        
         self._set_polygon_z(vv_x, vv_y, vv_z, inclusive)
         
 
@@ -486,6 +524,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_double(self, index, val):
         """
+        
         Set a data value to a real.
         
         :param index:  Data field index
@@ -499,6 +538,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** The input value is converted to the field's data type.
         """
+        
         self._set_double(index, val)
         
 
@@ -507,6 +547,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def set_string(self, index, str_val):
         """
+        
         Set a data value to a string.
         
         :param index:    Data field index
@@ -520,6 +561,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** The input string is converted to the field's data type.
         """
+        
         self._set_string(index, str_val.encode())
         
 
@@ -528,6 +570,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
     def write_item(self):
         """
+        
         Output the current item and data.
         
 
@@ -539,6 +582,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         `GXSHP <geosoft.gxapi.GXSHP>` geometry and data files. (If no data fields have been
         defined, then the data file is not written).
         """
+        
         self._write_item()
         
 

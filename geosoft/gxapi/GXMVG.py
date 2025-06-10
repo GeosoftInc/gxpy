@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXMVIEW import GXMVIEW
@@ -54,6 +54,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def axis_x(self, d_y, d_lx, d_rx, d_maj_int, d_min_int, d_size):
         """
+        
         Draw an X axis
         
         :param d_y:        Y location in plot units (mm)
@@ -75,9 +76,8 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
-
-        Obsolete
         """
+        
         self._axis_x(d_y, d_lx, d_rx, d_maj_int, d_min_int, d_size)
         
 
@@ -86,6 +86,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def axis_y(self, d_x, d_by, d_ty, d_maj_int, d_min_int, d_size):
         """
+        
         Draw a  Y axis
         
         :param d_x:        X location in plot units (mm)
@@ -107,9 +108,8 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When Log annotation is applied, nice tick intervals will be
         calculated
-
-        Obsolete
         """
+        
         self._axis_y(d_x, d_by, d_ty, d_maj_int, d_min_int, d_size)
         
 
@@ -118,6 +118,7 @@ class GXMVG(gxapi_cy.WrapMVG):
     @classmethod
     def create(cls, map, name, xmin_m, ymin_m, xmax_m, ymax_m, xmin_u, ymin_u, xmax_u, ymax_u):
         """
+        
         Create a `GXMVG <geosoft.gxapi.GXMVG>` object
         
         :param map:     H_MAP handle
@@ -147,9 +148,8 @@ class GXMVG(gxapi_cy.WrapMVG):
         .. versionadded:: 5.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-
-        **Note:** Obsolete
         """
+        
         ret_val = gxapi_cy.WrapMVG._create(GXContext._get_tls_geo(), map, name.encode(), xmin_m, ymin_m, xmax_m, ymax_m, xmin_u, ymin_u, xmax_u, ymax_u)
         return GXMVG(ret_val)
 
@@ -160,6 +160,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def get_mview(self):
         """
+        
         Get the `GXMVIEW <geosoft.gxapi.GXMVIEW>` Handle of the Object.
         
 
@@ -169,9 +170,8 @@ class GXMVG(gxapi_cy.WrapMVG):
         .. versionadded:: 5.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
-
-        **Note:** Obsolete
         """
+        
         ret_val = self._get_mview()
         return GXMVIEW(ret_val)
 
@@ -180,6 +180,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def grid(self, d1st_x, d1st_y, d_x, d_y, d_dx, d_dy, l_type):
         """
+        
         Draw a grid in the current `GXMVG <geosoft.gxapi.GXMVG>`
         
         :param d1st_x:  X position of 1st vertical grid line to draw (in rescaling unit)
@@ -206,9 +207,8 @@ class GXMVG(gxapi_cy.WrapMVG):
         In the LOG and LOGLINEAR rescaling modes, grids will be
         drawn in decades and the X/Y grid increments will be
         ignored.  In addition, grid lines at 0 (zero) and LOGMIN will be drawn.
-
-        Obsolete
         """
+        
         self._grid(d1st_x, d1st_y, d_x, d_y, d_dx, d_dy, l_type)
         
 
@@ -217,6 +217,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def label_x(self, y, lx, rx, maj_int, just, bound, orient):
         """
+        
         Label annotations on the X axis
         
         :param y:        Y location in plot units (mm)
@@ -243,12 +244,11 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         When Log annotation is applied, labels will be drawn in decades.
 
-        Obsolete
-
         .. seealso::
 
             sAxisX_MVG
         """
+        
         self._label_x(y, lx, rx, maj_int, just, bound, orient)
         
 
@@ -257,6 +257,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def label_y(self, x, by, ty, maj_int, just, bound, orient):
         """
+        
         Label annotations on the Y axis
         
         :param x:        X location in plot units (mm)
@@ -283,12 +284,11 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         When Log annotation is applied, labels will be drawn in decades.
 
-        Obsolete
-
         .. seealso::
 
             sAxisY_MVG
         """
+        
         self._label_y(x, by, ty, maj_int, just, bound, orient)
         
 
@@ -297,6 +297,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def poly_line_va(self, draw, wrap, vv_x, va, vv_array):
         """
+        
         Creates PolyLines/polygons from `GXVV <geosoft.gxapi.GXVV>` and `GXVA <geosoft.gxapi.GXVA>`.
         
         :param draw:      :ref:`MVG_DRAW`
@@ -320,9 +321,8 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         If wrapping is applied, POLYGON parameter is ignored and
         only POLYLINES are drawn.
-
-        Obsolete
         """
+        
         self._poly_line_va(draw, wrap, vv_x, va, vv_array)
         
 
@@ -331,6 +331,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def poly_line_vv(self, draw, wrap, vv_x, vv_y):
         """
+        
         Creates PolyLines/polygons from `GXVV <geosoft.gxapi.GXVV>` and `GXVV <geosoft.gxapi.GXVV>`.
         
         :param draw:  :ref:`MVG_DRAW`
@@ -352,9 +353,8 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         If wrapping is applied, POLYGON parameter is ignored and
         only POLYLINES are drawn.
-
-        Obsolete
         """
+        
         self._poly_line_vv(draw, wrap, vv_x, vv_y)
         
 
@@ -363,6 +363,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def rescale_x_range(self, scale, min, max, log_min):
         """
+        
         Re-scale horizontal axis
         
         :param scale:    :ref:`MVG_SCALE`
@@ -380,9 +381,8 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When RescaleX_MVG is used, only the scaling information
         related to X axis will be considered
-
-        Obsolete
         """
+        
         self._rescale_x_range(scale, min, max, log_min)
         
 
@@ -391,6 +391,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
     def rescale_y_range(self, scale, min, max, log_min):
         """
+        
         Re-scale vertical axis
         
         :param scale:    :ref:`MVG_SCALE`
@@ -408,9 +409,8 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** When RescaleY_MVG is used, only the scaling information
         related to Y axis will be considered
-
-        Obsolete
         """
+        
         self._rescale_y_range(scale, min, max, log_min)
         
 

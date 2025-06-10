@@ -1,8 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -52,6 +53,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def end(self, applyChanges):
         """
+        
         End interactive editing for selected grid layer in gmsys.
         
         :param applyChanges:  Apply changes to layer.
@@ -63,6 +65,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._end(applyChanges)
         
 
@@ -71,6 +74,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def cancel_(self):
         """
+        
         Cancel changes done in the transform layer
         
 
@@ -80,6 +84,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._cancel_()
         
 
@@ -88,6 +93,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def undo(self):
         """
+        
         Undo one step of editing in the transform layer
         
 
@@ -97,6 +103,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._undo()
         
 
@@ -105,6 +112,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def redo(self):
         """
+        
         Redo one step of editing in the transform layer
         
 
@@ -114,6 +122,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._redo()
         
 
@@ -122,6 +131,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def can_undo(self):
         """
+        
         Can perform undo on the transform layer
         
         :rtype:             int
@@ -132,6 +142,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._can_undo()
         return ret_val
 
@@ -140,6 +151,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def can_redo(self):
         """
+        
         Can perform redo on the transform layer
         
         :rtype:             int
@@ -150,6 +162,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._can_redo()
         return ret_val
 
@@ -158,6 +171,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def save_to_new_layer_grid(self, sGrid):
         """
+        
         Save changes to a new grid
         
         :param sGrid:       output grid path
@@ -169,6 +183,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._save_to_new_layer_grid(sGrid.encode())
         
 
@@ -177,6 +192,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def apply_constant_transform(self, elevation):
         """
+        
         Apply constant transform to the transform layer
         
         :param elevation:   change in elevation to apply
@@ -188,6 +204,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._apply_constant_transform(elevation)
         
 
@@ -196,6 +213,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def select_node(self, nodeIdx):
         """
+        
         Select or deselect a node by its index
         
         :param nodeIdx:     node index
@@ -207,6 +225,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._select_node(nodeIdx)
         
 
@@ -215,6 +234,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
     def clear_node_selection(self):
         """
+        
         Clear the section status of every node
         
 
@@ -224,6 +244,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._clear_node_selection()
         
 

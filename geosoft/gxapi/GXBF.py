@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def ch_size(self, size):
         """
+        
         Changes the size of a file
         
         :param size:  New length in bytes
@@ -65,6 +66,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._ch_size(size)
         
 
@@ -73,6 +75,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def seek(self, offset, ref):
         """
+        
         Moves file position
         
         :param offset:  Number of bytes from reference point
@@ -87,6 +90,7 @@ class GXBF(gxapi_cy.WrapBF):
         **Note:** Terminates if attempt to move past the end of
         a read-only file.
         """
+        
         self._seek(offset, ref)
         
 
@@ -95,6 +99,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def copy(self, b_fw):
         """
+        
         Copy entire contents of a source `GXBF <geosoft.gxapi.GXBF>` to a destination `GXBF <geosoft.gxapi.GXBF>`
         
         :param b_fw:  Destination `GXBF <geosoft.gxapi.GXBF>`
@@ -104,6 +109,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(b_fw)
         
 
@@ -112,6 +118,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def crc(self, size, crc):
         """
+        
         Compute CRC of a file.
         
         :param size:  Number of bytes to CRC
@@ -126,6 +133,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._crc(size, crc)
         return ret_val
 
@@ -134,6 +142,7 @@ class GXBF(gxapi_cy.WrapBF):
     @classmethod
     def create(cls, file, status):
         """
+        
         Create `GXBF <geosoft.gxapi.GXBF>` object.
         
         :param file:    File name to open ("" is a temporary file)
@@ -160,6 +169,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         For example "<geosoft>/user/csv/datum.csv"
         """
+        
         ret_val = gxapi_cy.WrapBF._create(GXContext._get_tls_geo(), file.encode(), status)
         return GXBF(ret_val)
 
@@ -168,6 +178,7 @@ class GXBF(gxapi_cy.WrapBF):
     @classmethod
     def create_sbf(cls, sbf, file, status):
         """
+        
         Create `GXBF <geosoft.gxapi.GXBF>` object inside an `GXSBF <geosoft.gxapi.GXSBF>`.
         
         :param sbf:     Storage
@@ -186,6 +197,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **Note:** see sbf.gxh
         """
+        
         ret_val = gxapi_cy.WrapBF._create_sbf(GXContext._get_tls_geo(), sbf, file.encode(), status)
         return GXBF(ret_val)
 
@@ -198,6 +210,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def eof(self):
         """
+        
         Returns 1 if at the end of the file
         
 
@@ -209,6 +222,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._eof()
         return ret_val
 
@@ -217,6 +231,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def query_write(self):
         """
+        
         Check if you can write to the `GXBF <geosoft.gxapi.GXBF>`.
         
 
@@ -228,6 +243,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._query_write()
         return ret_val
 
@@ -236,6 +252,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def read_binary_string(self, bytes, encoding, data):
         """
+        
         Reads string data from current position in `GXBF <geosoft.gxapi.GXBF>`
         
         :param bytes:     Number of bytes to read
@@ -249,6 +266,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         data.value = self._read_binary_string(bytes, encoding, data.value.encode())
         
 
@@ -257,6 +275,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def size(self):
         """
+        
         Returns the file length
         
 
@@ -267,6 +286,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._size()
         return ret_val
 
@@ -275,6 +295,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def tell(self):
         """
+        
         Returns current position of file pointer in bytes
         
 
@@ -285,6 +306,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._tell()
         return ret_val
 
@@ -293,6 +315,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def read_int(self, type, data):
         """
+        
         Reads int data from current position in `GXBF <geosoft.gxapi.GXBF>`
         
         :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
@@ -315,6 +338,7 @@ class GXBF(gxapi_cy.WrapBF):
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
+        
         data.value = self._read_int(type, data.value)
         
 
@@ -323,6 +347,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def read_double(self, type, data):
         """
+        
         Reads real data from current position in `GXBF <geosoft.gxapi.GXBF>`
         
         :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
@@ -345,6 +370,7 @@ class GXBF(gxapi_cy.WrapBF):
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
+        
         data.value = self._read_double(type, data.value)
         
 
@@ -353,6 +379,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def read_vv(self, type, vv):
         """
+        
         Read data to a `GXVV <geosoft.gxapi.GXVV>` from current position in `GXBF <geosoft.gxapi.GXBF>`
         
         :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
@@ -375,6 +402,7 @@ class GXBF(gxapi_cy.WrapBF):
         If a byte order is not specified, the source is assumed to be
         in the native byte order of the reading/writing computer.
         """
+        
         self._read_vv(type, vv)
         
 
@@ -383,6 +411,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def set_destroy_status(self, status):
         """
+        
         Set the flag to delete the file on close
         
         :param status:  :ref:`BF_CLOSE`
@@ -392,6 +421,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_destroy_status(status)
         
 
@@ -400,6 +430,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def write_binary_string(self, encoding, data):
         """
+        
         Write a binary string to a `GXBF <geosoft.gxapi.GXBF>`
         
         :param encoding:  :ref:`BF_ENCODE`
@@ -411,6 +442,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_binary_string(encoding, data.encode())
         
 
@@ -419,6 +451,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def write_data_null(self):
         """
+        
         Writes a null byte (0) to `GXBF <geosoft.gxapi.GXBF>`
         
 
@@ -426,6 +459,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_data_null()
         
 
@@ -434,6 +468,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def write_int(self, type, data):
         """
+        
         Writes int to the `GXBF <geosoft.gxapi.GXBF>`
         
         :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
@@ -451,6 +486,7 @@ class GXBF(gxapi_cy.WrapBF):
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
+        
         self._write_int(type, data)
         
 
@@ -459,6 +495,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def write_double(self, type, data):
         """
+        
         Writes real to the `GXBF <geosoft.gxapi.GXBF>`
         
         :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
@@ -476,6 +513,7 @@ class GXBF(gxapi_cy.WrapBF):
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
+        
         self._write_double(type, data)
         
 
@@ -484,6 +522,7 @@ class GXBF(gxapi_cy.WrapBF):
 
     def write_vv(self, type, vv):
         """
+        
         Writes `GXVV <geosoft.gxapi.GXVV>` to the `GXBF <geosoft.gxapi.GXBF>`
         
         :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
@@ -501,7 +540,116 @@ class GXBF(gxapi_cy.WrapBF):
         If a byte order is not specified, the data is written
         in the native byte order of the writing computer.
         """
+        
         self._write_vv(type, vv)
+        
+
+
+
+
+# is_deprecated
+
+
+    @classmethod
+    def check_file_unc(cls, file):
+        """
+        
+        .. deprecated:: None None 
+        Check if this is UNICODE file.
+        
+        :param file:  File name to open ("" is a temporary file)
+        :type  file:  str
+        :rtype:       bool
+
+        .. versionadded:: 5.1.8
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was not implemented.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = gxapi_cy.WrapBF._check_file_unc(GXContext._get_tls_geo(), file.encode())
+        return ret_val
+
+
+
+
+    def read_string(self, type, data):
+        """
+        
+        .. deprecated:: None None 
+        Reads string data from current position in `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
+        :param data:  Data
+        :type  type:  int
+        :type  data:  str_ref
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If the data source may be in byte order different from that
+        required by the reader, you can add the source byte-order
+        to the `GXBF <geosoft.gxapi.GXBF>` elelment type.  The byte order will be swapped
+        if required.  For example, to write out a real number 3.5
+        with Most-Significant_Byte first (Mortorola) convention:
+
+        `write_double <geosoft.gxapi.GXBF.write_double>`(hBF,`BF_BYTEORDER_MSB <geosoft.gxapi.BF_BYTEORDER_MSB>`+`GS_REAL <geosoft.gxapi.GS_REAL>`,3.5).
+
+        If a byte order is not specified, the source is assumed to be
+        in the native byte order of the reading/writing computer.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        data.value = self._read_string(type, data.value.encode())
+        
+
+
+
+
+    def write_data_string(self, data):
+        """
+        
+        .. deprecated:: None None 
+        Writes a string of bytes to `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param data:  Data string to write (no nulls)
+        :type  data:  str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._write_data_string(data.encode())
+        
+
+
+
+
+    def write_string(self, type, p3):
+        """
+        
+        .. deprecated:: None None 
+        Writes string to the `GXBF <geosoft.gxapi.GXBF>`
+        
+        :param type:  :ref:`GS_TYPES` and :ref:`BF_BYTEORDER`
+        :param p3:    Data
+        :type  type:  int
+        :type  p3:    str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** See comments on byte order for the Read.. functions if you
+        want to enforce a certain byte order.
+
+        If a byte order is not specified, the data is written
+        in the native byte order of the writing computer.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._write_string(type, p3.encode())
         
 
 

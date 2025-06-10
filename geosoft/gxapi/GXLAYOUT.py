@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +64,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def calculate_rects(self, min_x, min_y, max_x, max_y):
         """
+        
         Calculate new positions based on initial conditions and constraints
         
         :param min_x:   Parent Rectangle Min X after calculation
@@ -83,6 +84,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         on the constraints set the parent rectangle may also change
         after the calculation (returned here for convenience).
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._calculate_rects(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -91,6 +93,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def clear_all(self):
         """
+        
         Remove all children and constraints from layout
         
 
@@ -98,6 +101,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._clear_all()
         
 
@@ -106,6 +110,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def clear_constraints(self):
         """
+        
         Remove all constraints from layout
         
 
@@ -113,6 +118,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._clear_constraints()
         
 
@@ -121,6 +127,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
     @classmethod
     def create(cls, num, name):
         """
+        
         Creates a layout calculation object
         
         :param num:   Initial number of objects (may be 0)
@@ -135,6 +142,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapLAYOUT._create(GXContext._get_tls_geo(), num, name.encode())
         return GXLAYOUT(ret_val)
 
@@ -145,6 +153,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def get_rectangle(self, rect, min_x, min_y, max_x, max_y):
         """
+        
         Gets the current bounds for a rectangle or the parent layout
         
         :param rect:    Rectangle to get info for (-1 for parent)
@@ -162,6 +171,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._get_rectangle(rect, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -170,6 +180,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def get_rect_name(self, rect, name):
         """
+        
         Gets an optional name the current info for a rectangle or the parent layout
         
         :param rect:    Rectangle to get info for (-1 for parent)
@@ -181,6 +192,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         name.value = self._get_rect_name(rect, name.value.encode())
         
 
@@ -189,6 +201,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def add_constraint(self, rect_from, constr_from, rect_to, constr_to, o_mod, m_mod):
         """
+        
         Add a constraint between any two rectangles or to one with absolute positioning
         
         :param rect_from:    From rectangle (Or -1 for parent)
@@ -244,6 +257,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         A, `LAYOUT_CONSTR_MOVER <geosoft.gxapi.LAYOUT_CONSTR_MOVER>`, B, `LAYOUT_CONSTR_RIGHT <geosoft.gxapi.LAYOUT_CONSTR_RIGHT>`, 10, 1.1	                  Move node A, align right to 1.1*right of B, plus 10
         A, `LAYOUT_CONSTR_MOVEL <geosoft.gxapi.LAYOUT_CONSTR_MOVEL>`, NULL, 10, 0, 1.0	                                 Move node A, align left at position 10
         """
+        
         ret_val = self._add_constraint(rect_from, constr_from, rect_to, constr_to, o_mod, m_mod)
         return ret_val
 
@@ -252,6 +266,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def add_rectangle(self, min_x, min_y, max_x, max_y):
         """
+        
         Adds a rectangle as one of the layout's children (Higer.
         
         :param min_x:   Rectangle Min X   (All 0's for undefined allowed)
@@ -270,6 +285,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._add_rectangle(min_x, min_y, max_x, max_y)
         return ret_val
 
@@ -278,6 +294,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def num_rectangles(self):
         """
+        
         Returns the number of children in the list.
         
 
@@ -288,6 +305,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._num_rectangles()
         return ret_val
 
@@ -296,6 +314,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def set_rectangle(self, rect, min_x, min_y, max_x, max_y):
         """
+        
         Sets the current bounds for a rectangle previously added to the layout
         
         :param rect:    Rectangle to set info for (-1 for parent)
@@ -313,6 +332,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._set_rectangle(rect, min_x, min_y, max_x, max_y)
         
 
@@ -321,6 +341,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
     def set_rectangle_name(self, rect, p3):
         """
+        
         Sets an optional name the current info for a rectangle or the parent layout
         
         :param rect:    Rectangle to set info for (-1 for parent)
@@ -332,6 +353,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._set_rectangle_name(rect, p3.encode())
         
 

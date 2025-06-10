@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
     def add_vv(self, vv, var):
         """
+        
         This method adds a `GXVV <geosoft.gxapi.GXVV>` to the `GXVVEXP <geosoft.gxapi.GXVVEXP>` object with a
         variable name.
         
@@ -66,6 +67,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._add_vv(vv, var.encode())
         
 
@@ -74,6 +76,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
     @classmethod
     def create(cls):
         """
+        
         This method creates an `GXVVEXP <geosoft.gxapi.GXVVEXP>` object.
         
 
@@ -84,6 +87,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVVEXP._create(GXContext._get_tls_geo())
         return GXVVEXP(ret_val)
 
@@ -94,6 +98,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
     def do_formula(self, formula, unused):
         """
+        
         This method runs a formula on the grids.
         
         :param formula:  Formula
@@ -105,6 +110,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._do_formula(formula.encode(), unused)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXE3DV import GXE3DV
@@ -108,6 +108,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def drop_map_clip_data(self, hglobal):
         """
+        
         Drop Map clipboard data on this `GXEMAP <geosoft.gxapi.GXEMAP>`
         
         :param hglobal:  Handle to Global Clipboard data
@@ -119,6 +120,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._drop_map_clip_data(hglobal)
         
 
@@ -127,6 +129,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def drag_drop_enabled(self):
         """
+        
         Checks if drag-and-drop enabled for the map
         
         :rtype:       bool
@@ -137,6 +140,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._drag_drop_enabled()
         return ret_val
 
@@ -145,6 +149,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_drag_drop_enabled(self, enable):
         """
+        
         Set whether drag-and-drop is enabled for the map.
         
         :param enable:  Enables/disables drag-and-drop
@@ -156,6 +161,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_drag_drop_enabled(enable)
         
 
@@ -168,6 +174,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def copy_to_clip(self):
         """
+        
         Copy entire map to clipboard.
         
 
@@ -185,6 +192,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
             4. Entire map as a Geosoft View (go to view mode and hit paste). The coordinates are placed
                in the current view coordinates.
         """
+        
         self._copy_to_clip()
         
 
@@ -193,6 +201,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def draw_line(self, min_x, min_y, max_x, max_y):
         """
+        
         Draws a line on the current map.
         
         :param min_x:  X1
@@ -216,6 +225,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
+        
         self._draw_line(min_x, min_y, max_x, max_y)
         
 
@@ -224,6 +234,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def draw_rect(self, min_x, min_y, max_x, max_y):
         """
+        
         Draws a rect on the current map.
         
         :param min_x:  X1
@@ -247,6 +258,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
+        
         self._draw_rect(min_x, min_y, max_x, max_y)
         
 
@@ -255,6 +267,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def draw_rect_3d(self, x, y, z, pix):
         """
+        
         Plot a square symbol on a section view.
         
         :param x:     X - True X location
@@ -278,6 +291,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
+        
         self._draw_rect_3d(x, y, z, pix)
         
 
@@ -286,6 +300,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def draw_ply(self, polygon):
         """
+        
         Draws a polygon on the current map.
         
         :param polygon:  `GXPLY <geosoft.gxapi.GXPLY>` Object
@@ -303,6 +318,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         screen refresh.  This function is for you to provide
         interactive screen feedback to your user.
         """
+        
         self._draw_ply(polygon)
         
 
@@ -311,6 +327,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_display_area(self, min_x, min_y, max_x, max_y):
         """
+        
         Get the area you are currently looking at.
         
         :param min_x:  X Min returned
@@ -331,6 +348,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** Coordinates are based on the current view units.
         For 3D views this will return the full map extents.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._get_display_area(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -339,6 +357,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_display_area_raw(self, min_x, min_y, max_x, max_y):
         """
+        
         Get the area you are currently looking at in raw map units
         
         :param min_x:  X Min returned
@@ -359,6 +378,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** Coordinates are in millimeters.
         For 3D views this will return the full map extents.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._get_display_area_raw(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -367,6 +387,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_map_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
+        
         Get the base layout view properties.
         
         :param snap_to_grid:  Snap to grid
@@ -395,6 +416,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** This affects the display units and other related properties for the base
         view of a map.
         """
+        
         snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value = self._get_map_layout_props(snap_to_grid.value, snap_dist.value, view_grid.value, view_rulers.value, view_units.value, grid_red.value, grid_green.value, grid_blue.value)
         
 
@@ -403,6 +425,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_map_snap(self, snap):
         """
+        
         Get current snapping distance in MM
         
         :param snap:  Snap value in MM (returned)
@@ -414,6 +437,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         snap.value = self._get_map_snap(snap.value)
         
 
@@ -422,6 +446,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_window_state(self):
         """
+        
         Retrieve the current state of the map window
         
 
@@ -434,6 +459,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_window_state()
         return ret_val
 
@@ -442,6 +468,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_display_area(self, min_x, min_y, max_x, max_y):
         """
+        
         Set the area you wish to see.
         
         :param min_x:  X Min
@@ -462,6 +489,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** Coordinates are based on the current view user units.
         The map is immediatly redrawn.
         """
+        
         self._set_display_area(min_x, min_y, max_x, max_y)
         
 
@@ -470,6 +498,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_map_layout_props(self, snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue):
         """
+        
         Set the base layout view properties.
         
         :param snap_to_grid:  Snap to grid
@@ -498,6 +527,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** This affects the display units and other related properties for the base
         view of a map.
         """
+        
         self._set_map_layout_props(snap_to_grid, snap_dist, view_grid, view_rulers, view_units, grid_red, grid_green, grid_blue)
         
 
@@ -506,6 +536,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_map_snap(self, snap):
         """
+        
         Set current snapping distance in MM
         
         :param snap:  Snap value in MM
@@ -517,6 +548,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_map_snap(snap)
         
 
@@ -525,6 +557,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_window_state(self, state):
         """
+        
         Changes the state of the map window
         
         :param state:  :ref:`EMAP_WINDOW_STATE`
@@ -536,6 +569,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_window_state(state)
         
 
@@ -548,6 +582,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def packed_files(self):
         """
+        
         The number of packed files in the map.
         
 
@@ -560,6 +595,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._packed_files()
         return ret_val
 
@@ -568,6 +604,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def activate_group(self, view_group):
         """
+        
         Activates a group and associated tools.
         
         :param view_group:  "View/Group"
@@ -585,6 +622,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         image color tool. Be sure to pass a combined name containing
         both the view name and the group separated by a "/" or "\\".
         """
+        
         self._activate_group(view_group.encode())
         
 
@@ -593,6 +631,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def activate_view(self, view):
         """
+        
         Activates a view and associated tools.
         
         :param view:  "View"
@@ -604,6 +643,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._activate_view(view.encode())
         
 
@@ -612,6 +652,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def current(cls):
         """
+        
         This method returns the Current Edited map.
         
 
@@ -624,6 +665,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._current(GXContext._get_tls_geo())
         return GXEMAP(ret_val)
 
@@ -632,6 +674,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def current_no_activate(cls):
         """
+        
         This method returns the Current Edited map.
         
 
@@ -647,6 +690,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** This function acts just like `current <geosoft.gxapi.GXEMAP.current>` except that the document is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._current_no_activate(GXContext._get_tls_geo())
         return GXEMAP(ret_val)
 
@@ -655,6 +699,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def current_if_exists(cls):
         """
+        
         This method returns the Current Edited map.
         
 
@@ -668,7 +713,36 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._current_if_exists(GXContext._get_tls_geo())
+        return GXEMAP(ret_val)
+
+
+
+    @classmethod
+    def current_allow_cancel_on_browse(cls):
+        """
+        
+        This method returns the Current Edited map, with special behaviour
+        
+
+        :returns:    `GXEMAP <geosoft.gxapi.GXEMAP>` Object. If there is no current map,
+                  the user is prompted for a map. If the user cancels from the browse, 0 is return.
+        :rtype:      GXEMAP
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** If there is no current Current map, and the user cancels out of the
+        browse for map dialog", then 0 is returned, which needs to be handled, 
+        otherwise the current map is returned.
+        Normally (for Current_EMAP), the GX will be terminated on Cancel from the browse dialog.
+        """
+        
+        ret_val = gxapi_cy.WrapEMAP._current_allow_cancel_on_browse(GXContext._get_tls_geo())
         return GXEMAP(ret_val)
 
 
@@ -678,6 +752,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def destroy_view(self, unload_flag):
         """
+        
         Removes the view from the workspace.
         
         :param unload_flag:  :ref:`EMAP_REMOVE`
@@ -695,6 +770,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         unloaded and optionally saved depending on the :ref:`EMAP_REMOVE`
         parameter.
         """
+        
         self._destroy_view(unload_flag)
         
 
@@ -703,6 +779,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def font_lst(self, lst, which):
         """
+        
         List all Windows and geosoft fonts.
         
         :param lst:    List Object
@@ -720,6 +797,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         and `EMAP_FONT_TT <geosoft.gxapi.EMAP_FONT_TT>`, then `EMAP_FONT_GFN <geosoft.gxapi.EMAP_FONT_GFN>`, or vice-versa to
         change order of listing.
         """
+        
         self._font_lst(lst, which)
         
 
@@ -728,6 +806,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def change_current_view(self, view):
         """
+        
         Change the current working view.
         
         :param view:  View name
@@ -746,6 +825,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         Unlike `set_current_view <geosoft.gxapi.GXEMAP.set_current_view>` this function's action
         survive the GX finishing.
         """
+        
         ret_val = self._change_current_view(view.encode())
         return ret_val
 
@@ -754,6 +834,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def create_group_snapshot(self, lst):
         """
+        
         Loads an `GXLST <geosoft.gxapi.GXLST>` with the current view/group names
         existing in a map. Typically used to track group
         changes that are about to occur.
@@ -771,6 +852,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._create_group_snapshot(lst)
         return ret_val
 
@@ -779,6 +861,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_3d_view_name(self, name):
         """
+        
         Get the name of a 3D view if the current view is 3D.
         
         :param name:  Name returned
@@ -790,6 +873,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         name.value = self._get_3d_view_name(name.value.encode())
         
 
@@ -798,6 +882,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_current_group(self, group):
         """
+        
         Get the current group name.
         
         :param group:  Returned group name
@@ -811,6 +896,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** This function operates on the current map.
         """
+        
         group.value = self._get_current_group(group.value.encode())
         
 
@@ -819,6 +905,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_current_view(self, view):
         """
+        
         Get the current view name.
         
         :param view:  Returned view name
@@ -832,6 +919,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** This function operates on the current map.
         """
+        
         view.value = self._get_current_view(view.value.encode())
         
 
@@ -840,6 +928,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def get_maps_lst(cls, lst, path):
         """
+        
         Load the file names of open maps into a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
@@ -857,6 +946,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._get_maps_lst(GXContext._get_tls_geo(), lst, path)
         return ret_val
 
@@ -865,6 +955,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_name(self, name):
         """
+        
         Get the name of the map object of this `GXEMAP <geosoft.gxapi.GXEMAP>`.
         
         :param name:  Name returned
@@ -876,6 +967,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         name.value = self._get_name(name.value.encode())
         
 
@@ -884,6 +976,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def have_current(cls):
         """
+        
         This method returns whether a current map is loaded
         
 
@@ -897,6 +990,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._have_current(GXContext._get_tls_geo())
         return ret_val
 
@@ -905,6 +999,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def i_get_specified_map_name(cls, field, value, name):
         """
+        
         Find a loaded map that has a setting in its reg.
         
         :param field:  `GXREG <geosoft.gxapi.GXREG>` field name
@@ -924,6 +1019,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val, name.value = gxapi_cy.WrapEMAP._i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
         return ret_val
 
@@ -932,6 +1028,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def is_grid(self):
         """
+        
         Is the map a grid map?
         
 
@@ -944,6 +1041,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._is_grid()
         return ret_val
 
@@ -952,6 +1050,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def reload_grid(cls, name):
         """
+        
         Reloads a grid document.
         
         :param name:  Source file name
@@ -965,6 +1064,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** Use this method to reload (if loaded) a grid document if the file on disk changed.
         """
+        
         gxapi_cy.WrapEMAP._reload_grid(GXContext._get_tls_geo(), name.encode())
         
 
@@ -973,6 +1073,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def is_3d_view(self):
         """
+        
         Is the current view a 3D view.
         
 
@@ -985,6 +1086,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._is_3d_view()
         return ret_val
 
@@ -993,6 +1095,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_e_3dv(self):
         """
+        
         Get an `GXE3DV <geosoft.gxapi.GXE3DV>` from the `GXEMAP <geosoft.gxapi.GXEMAP>`
         
 
@@ -1005,6 +1108,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_e_3dv()
         return GXE3DV(ret_val)
 
@@ -1013,6 +1117,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def is_locked(self):
         """
+        
         Checks if map is locked
         
         :rtype:       bool
@@ -1023,6 +1128,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._is_locked()
         return ret_val
 
@@ -1031,6 +1137,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def loaded(cls, name):
         """
+        
         Returns 1 if a map is loaded .
         
         :param name:  Map name
@@ -1045,6 +1152,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
@@ -1053,6 +1161,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def read_only(self):
         """
+        
         Checks if a map is currently opened in a read-only mode.
         
         :rtype:       bool
@@ -1063,6 +1172,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._read_only()
         return ret_val
 
@@ -1071,6 +1181,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
+        
         Get the map window's position and dock state
         
         :param left:         Window left position
@@ -1092,6 +1203,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
@@ -1100,6 +1212,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
+        
         Get the map window's position and dock state
         
         :param left:         Window left position
@@ -1121,6 +1234,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_window_position(left, top, right, bottom, state, is_floating)
         
 
@@ -1129,6 +1243,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def doubleize_group_snapshot(self, state):
         """
+        
         The `GXLST <geosoft.gxapi.GXLST>` passed in must contain View\\Group strings in
         the Name field only. The function will compare with
         a more current `GXLST <geosoft.gxapi.GXLST>` and zoom the map to the new entry.
@@ -1149,6 +1264,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** Typically this function is used in conjunction with
         CreateSnapshot_EMAP.
         """
+        
         ret_val = self._doubleize_group_snapshot(state)
         return ret_val
 
@@ -1157,6 +1273,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_current_view(self, view):
         """
+        
         Set the current working view.
         
         :param view:  View name
@@ -1176,6 +1293,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         GX. As soon as the GX terminates the view will revert
         to the original one.
         """
+        
         ret_val = self._set_current_view(view.encode())
         return ret_val
 
@@ -1184,6 +1302,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_view_ipj(self, view, ipj):
         """
+        
         Get a view's `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         :param view:  View name
@@ -1201,6 +1320,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         without having to call `lock <geosoft.gxapi.GXEMAP.lock>`. This could be an expensive operation
         that cause undesirable UX.
         """
+        
         self._get_view_ipj(view.encode(), ipj)
         
 
@@ -1209,6 +1329,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def load(cls, name):
         """
+        
         Loads maps into the editor.
         
         :param name:  List of maps (';' or '|' delimited) to load.
@@ -1231,6 +1352,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._load(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
@@ -1239,6 +1361,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def load_no_activate(cls, name):
         """
+        
         Loads documents into the workspace
         
         :param name:  List of documents (';' or '|' delimited) to load.
@@ -1257,6 +1380,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** This function acts just like `load <geosoft.gxapi.GXEMAP.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._load_no_activate(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
@@ -1265,6 +1389,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def load_with_view(cls, name, p2):
         """
+        
         Load an `GXEMAP <geosoft.gxapi.GXEMAP>` with the view from a current `GXEMAP <geosoft.gxapi.GXEMAP>`.
         
         :param name:  Source Map name
@@ -1285,6 +1410,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         dbsubset to create a new database with the same
         view as previously.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._load_with_view(GXContext._get_tls_geo(), name.encode(), p2)
         return GXEMAP(ret_val)
 
@@ -1293,6 +1419,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def lock(self):
         """
+        
         This method locks the Edited map.
         
 
@@ -1307,6 +1434,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** The Redraw flag is set to `EMAP_REDRAW_YES <geosoft.gxapi.EMAP_REDRAW_YES>` when this functions is called.
         """
+        
         ret_val = self._lock()
         return GXMAP(ret_val)
 
@@ -1315,6 +1443,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def make_current(self):
         """
+        
         Makes this `GXEMAP <geosoft.gxapi.GXEMAP>` object the current active object to the user.
         
 
@@ -1324,6 +1453,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._make_current()
         
 
@@ -1332,6 +1462,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def print_(self, entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file):
         """
+        
         Print the current map to current printer.
         
         :param entire_map:     lEntireMap  (0 or 1)
@@ -1367,6 +1498,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._print_(entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file.encode())
         
 
@@ -1375,6 +1507,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def redraw(self):
         """
+        
         Redraw the map immediately.
         
 
@@ -1386,6 +1519,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** Redraws the map immediately. Map must not be locked.
         """
+        
         self._redraw()
         
 
@@ -1394,6 +1528,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def select_group(self, view_group):
         """
+        
         Select a group.
         
         :param view_group:  "View/Group"
@@ -1405,6 +1540,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._select_group(view_group.encode())
         
 
@@ -1413,6 +1549,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_redraw_flag(self, redraw):
         """
+        
         Set the redraw flag.
         
         :param redraw:  :ref:`EMAP_REDRAW`
@@ -1434,6 +1571,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         to querying information from the map. And then end with a call to
         `un_lock <geosoft.gxapi.GXEMAP.un_lock>`.
         """
+        
         self._set_redraw_flag(redraw)
         
 
@@ -1442,6 +1580,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def un_load(cls, name):
         """
+        
         Unloads a `GXMAP <geosoft.gxapi.GXMAP>`.
         
         :param name:  Name of the map to unload
@@ -1456,6 +1595,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** If the `GXMAP <geosoft.gxapi.GXMAP>` is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEMAP.un_load_verify>` with FALSE to prompt save.
         """
+        
         gxapi_cy.WrapEMAP._un_load(GXContext._get_tls_geo(), name.encode())
         
 
@@ -1464,6 +1604,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def un_load_all(cls):
         """
+        
         Unloads all opened maps
         
 
@@ -1473,6 +1614,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEMAP._un_load_all(GXContext._get_tls_geo())
         
 
@@ -1481,6 +1623,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def un_load_verify(cls, name, prompt):
         """
+        
         Unloads an edited map, optional prompt to save.
         
         :param name:    Name of map to unload
@@ -1497,6 +1640,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** If the map is not loaded, nothing happens.
         If "FALSE", map is saved without a prompt.
         """
+        
         gxapi_cy.WrapEMAP._un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
 
@@ -1505,6 +1649,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def un_lock(self):
         """
+        
         This method unlocks the Edited map.
         
 
@@ -1514,6 +1659,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._un_lock()
         
 
@@ -1526,6 +1672,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_cur_point(self, x, y):
         """
+        
         Returns the coordinates of the currently selected point in view coordinates
         
         :param x:     X coordinate in current user units.
@@ -1539,6 +1686,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         x.value, y.value = self._get_cur_point(x.value, y.value)
         
 
@@ -1547,6 +1695,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_cur_point_mm(self, x, y):
         """
+        
         Returns the coordinates of the currently selected point in mm on map
         
         :param x:     X coordinate in map mm
@@ -1560,6 +1709,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         x.value, y.value = self._get_cur_point_mm(x.value, y.value)
         
 
@@ -1568,6 +1718,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_cursor(self, x, y):
         """
+        
         Returns the coordinates of the last known cursor location
         
         :param x:     X coordinate in current view user units
@@ -1581,6 +1732,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         x.value, y.value = self._get_cursor(x.value, y.value)
         
 
@@ -1589,6 +1741,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_cursor_mm(self, x, y):
         """
+        
         Returns the coordinates of the last known cursor location in mm on map.
         
         :param x:     X coordinate in map mm
@@ -1602,6 +1755,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         x.value, y.value = self._get_cursor_mm(x.value, y.value)
         
 
@@ -1610,6 +1764,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def digitize(self, wa, img, digits, prompt, prefix, delim, newline):
         """
+        
         Digitise points from the current map and place in a `GXWA <geosoft.gxapi.GXWA>`.
         
         :param wa:       `GXWA <geosoft.gxapi.GXWA>` in which to write digitized points
@@ -1648,6 +1803,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         Locations are in the current view user units
         """
+        
         ret_val = self._digitize(wa, img, digits, prompt.encode(), prefix.encode(), delim.encode(), newline)
         return ret_val
 
@@ -1656,6 +1812,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def digitize2(self, vvx, vvy, vvz, img, prompt, newline):
         """
+        
         Digitise points from the current map and place in VVs.
         
         :param vvx:      Real X `GXVV <geosoft.gxapi.GXVV>`
@@ -1692,6 +1849,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         Locations are in the current view user units
         """
+        
         ret_val = self._digitize2(vvx, vvy, vvz, img, prompt.encode(), newline)
         return ret_val
 
@@ -1700,6 +1858,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def digitize_peaks(self, vvx, vvy, vvz, img, prompt, newline):
         """
+        
         Digitise points from the current map and place in VVs.
         
         :param vvx:      Real X `GXVV <geosoft.gxapi.GXVV>`
@@ -1732,6 +1891,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         a higher value, it will just take the first one and continue, and this method will
         stall on flat areas as well (since no surrounding point is larger).
         """
+        
         ret_val = self._digitize_peaks(vvx, vvy, vvz, img, prompt.encode(), newline)
         return ret_val
 
@@ -1740,6 +1900,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def digitize_polygon(self, vvx, vvy, vvz, img, prompt, newline, pixel_radius):
         """
+        
         Same as iDigitze2_EMAP, but automatically close polygons.
         
         :param vvx:           Real X `GXVV <geosoft.gxapi.GXVV>`
@@ -1773,6 +1934,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         the polygon is assumed to be closed, and the operation is the same as
         the RMB "done" command, and the process returns 0.
         """
+        
         ret_val = self._digitize_polygon(vvx, vvy, vvz, img, prompt.encode(), newline, pixel_radius)
         return ret_val
 
@@ -1781,6 +1943,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_box(self, str_val, min_x, min_y, max_x, max_y):
         """
+        
         Returns the coordinates of a user selected box.
         
         :param str_val:  User prompt string
@@ -1804,6 +1967,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_box(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
@@ -1812,6 +1976,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_box2(self, str_val, x1, y1, x2, y2, x3, y3, x4, y4):
         """
+        
         Returns the coordinates of a user selected box in a warped view.
         
         :param str_val:  User prompt string
@@ -1849,6 +2014,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         function returns the exact coordinates of all four corners, calculated
         from the pixel locations.
         """
+        
         ret_val, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = self._get_box2(str_val.encode(), x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
         return ret_val
 
@@ -1857,6 +2023,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_grid(self, str_val, nx, ny, angle, x1, y1, x_len, y_len):
         """
+        
         Position and size a grid on a map.
         
         :param str_val:  User prompt string
@@ -1897,6 +2064,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
+        
         ret_val, angle.value, x1.value, y1.value, x_len.value, y_len.value = self._get_grid(str_val.encode(), nx, ny, angle.value, x1.value, y1.value, x_len.value, y_len.value)
         return ret_val
 
@@ -1905,6 +2073,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_line(self, str_val, min_x, min_y, max_x, max_y):
         """
+        
         Returns the end points of a line.
         
         :param str_val:  User prompt string
@@ -1931,6 +2100,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
+        
         ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
@@ -1939,6 +2109,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_line_ex(self, str_val, min_x, min_y, max_x, max_y):
         """
+        
         Returns the end points of a line.
         
         :param str_val:  User prompt string
@@ -1966,6 +2137,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
+        
         ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line_ex(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
@@ -1974,6 +2146,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_line_xyz(self, str_val, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Returns the end points of a line in X,Y and Z
         
         :param str_val:  User prompt string
@@ -2007,6 +2180,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         This is useful for digitizing a line in an oriented view and getting
         the true coordinates in (X, Y, Z) at the selected point on the view plane.
         """
+        
         ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_line_xyz(str_val.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         return ret_val
 
@@ -2015,6 +2189,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_point(self, str_val, x, y):
         """
+        
         Returns the coordinates of a user selected point.
         
         :param str_val:  User prompt string
@@ -2040,6 +2215,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
             iTrackPoint, GetCurPoint, GetCursor
         """
+        
         ret_val, x.value, y.value = self._get_point(str_val.encode(), x.value, y.value)
         return ret_val
 
@@ -2048,6 +2224,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_point_ex(self, str_val, x, y):
         """
+        
         Returns the coordinates of a user selected point.
         
         :param str_val:  User prompt string
@@ -2075,6 +2252,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
             iTrackPoint, GetCurPoint, GetCursor
         """
+        
         ret_val, x.value, y.value = self._get_point_ex(str_val.encode(), x.value, y.value)
         return ret_val
 
@@ -2083,6 +2261,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_point_3d(self, str_val, x, y, z):
         """
+        
         Returns the coordinates of a user selected point.
         
         :param str_val:  User prompt string
@@ -2112,6 +2291,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
             iTrackPoint, GetCurPoint, GetCursor
         """
+        
         ret_val, x.value, y.value, z.value = self._get_point_3d(str_val.encode(), x.value, y.value, z.value)
         return ret_val
 
@@ -2120,6 +2300,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_poly_line(self, str_val, vv_x, vv_y):
         """
+        
         Returns a polyline.
         
         :param str_val:  User prompt string
@@ -2142,6 +2323,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
+        
         ret_val = self._get_poly_line(str_val.encode(), vv_x, vv_y)
         return ret_val
 
@@ -2150,6 +2332,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_poly_line_xyz(self, str_val, vv_x, vv_y, vv_z):
         """
+        
         Returns a polyline.
         
         :param str_val:  User prompt string
@@ -2176,6 +2359,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         of the method X, Y and Z (depth) are returned. Initially created
         to deal with crooked sections.
         """
+        
         ret_val = self._get_poly_line_xyz(str_val.encode(), vv_x, vv_y, vv_z)
         return ret_val
 
@@ -2184,6 +2368,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_rect(self, str_val, min_x, min_y, max_x, max_y):
         """
+        
         Returns the coordinates of a user selected box starting at a corner.
         
         :param str_val:  User prompt string
@@ -2224,6 +2409,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         max values. What appears to be a rectangle as seen on the map is not
         necessarily a rectangle in the User coordinates.
         """
+        
         ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_rect(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
@@ -2232,6 +2418,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def track_point(self, flags, x, y):
         """
+        
         Get point without prompt or cursor change with tracking
         
         :param flags:  :ref:`EMAP_TRACK`
@@ -2251,6 +2438,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val, x.value, y.value = self._track_point(flags, x.value, y.value)
         return ret_val
 
@@ -2263,6 +2451,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_aoi_area(self, min_x, min_y, max_x, max_y):
         """
+        
         Get the area of interest.
         
         :param min_x:  X Min returned
@@ -2282,6 +2471,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** Coordinates are based on the current view units.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._get_aoi_area(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -2290,6 +2480,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_aoi_area(self, min_x, min_y, max_x, max_y):
         """
+        
         Set the area of interest.
         
         :param min_x:  X Min
@@ -2310,6 +2501,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** Coordinates are based on the current view user units.
         The map is immediatly redrawn.
         """
+        
         self._set_aoi_area(min_x, min_y, max_x, max_y)
         
 
@@ -2318,6 +2510,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def set_viewport_mode(self, mode):
         """
+        
         Set the viewport mode.
         
         :param mode:  :ref:`EMAP_VIEWPORT`
@@ -2333,6 +2526,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         with Get/Set AOIArea. If this is used inside montaj it is important to set or provide
         for a method to set the map mode back to normal as this is not exposed in the interface.
         """
+        
         self._set_viewport_mode(mode)
         
 
@@ -2345,6 +2539,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
     def get_selected_vertices(self, vv_x, vv_y):
         """
+        
         Get the verticies of selected object
         
         :param vv_x:  X `GXVV <geosoft.gxapi.GXVV>` Handle
@@ -2360,6 +2555,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** Works only in Vertex Edit Mode
         """
+        
         self._get_selected_vertices(vv_x, vv_y)
         
 
@@ -2372,6 +2568,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def create_virtual(cls, name):
         """
+        
         Makes this `GXEMAP <geosoft.gxapi.GXEMAP>` object the current active object to the user.
         
         :param name:  Name of map to create a virtual `GXEMAP <geosoft.gxapi.GXEMAP>` from
@@ -2386,6 +2583,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEMAP._create_virtual(GXContext._get_tls_geo(), name.encode())
         return GXEMAP(ret_val)
 
@@ -2398,6 +2596,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def load_control(cls, map_file, window):
         """
+        
         Version of `load <geosoft.gxapi.GXEMAP.load>` that can be used to load a database via subclassing into a Windows control.
         
         :param map_file:  Map filename
@@ -2411,6 +2610,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEMAP._load_control(GXContext._get_tls_geo(), map_file.encode(), window)
         
 
@@ -2419,6 +2619,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
     @classmethod
     def load_with_view_control(cls, map_file, emap, window):
         """
+        
         Version of `GXEDB.load_with_view <geosoft.gxapi.GXEDB.load_with_view>` that can be used to load a database via subclassing into a Windows control.
         
         :param map_file:  Map filename
@@ -2434,7 +2635,307 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEMAP._load_with_view_control(GXContext._get_tls_geo(), map_file.encode(), emap, window)
+        
+
+
+
+
+# Deprecated
+
+
+
+    def export_all_in_view(self, name, view, pix_size, format, options):
+        """
+        
+        .. deprecated:: None None 
+        Export the entire Map in view units to an external format.
+        
+        :param name:      File Name To Export
+        :param view:      View to export coordinates in
+        :param pix_size:  Resolution in view units of one pixel
+        :param format:    EMAP_EXPORT_FORMAT
+        :param options:   Extended Options String (format specific)
+        :type  name:      str
+        :type  view:      str
+        :type  pix_size:  float
+        :type  format:    str
+        :type  options:   str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Uses 24 bit color
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_all_in_view(name.encode(), view.encode(), pix_size, format.encode(), options.encode())
+        
+
+
+
+
+    def export_all_in_view2(self, name, view, pix_size, bits, dither, format, options):
+        """
+        
+        .. deprecated:: None None 
+        Same as above with color depth set.
+        
+        :param name:      File Name To Export
+        :param view:      View to export coordinates in
+        :param pix_size:  Resolution in view units of one pixel
+        :param bits:      EMAP_EXPORT_BITS
+        :param dither:    EMAP_EXPORT_METHOD
+        :param format:    EMAP_EXPORT_FORMAT
+        :param options:   Extended Options String (format specific)
+        :type  name:      str
+        :type  view:      str
+        :type  pix_size:  float
+        :type  bits:      int
+        :type  dither:    int
+        :type  format:    str
+        :type  options:   str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_all_in_view2(name.encode(), view.encode(), pix_size, bits, dither, format.encode(), options.encode())
+        
+
+
+
+
+    def export_all_raster(self, name, size_x, size_y, bits, dither, format, options):
+        """
+        
+        .. deprecated:: None None 
+        Export the entire Map to an external format without units.
+        
+        :param name:     File Name To Export
+        :param size_x:   Number of Pixels in X (X or Y should be specified the other )
+        :param size_y:   Number of Pixels in Y (should be 0 and computed by export)
+        :param bits:     EMAP_EXPORT_BITS
+        :param dither:   EMAP_EXPORT_METHOD
+        :param format:   EMAP_EXPORT_RASTER_FORMAT
+        :param options:  Extended Options String (format specific)
+        :type  name:     str
+        :type  size_x:   float
+        :type  size_y:   float
+        :type  bits:     int
+        :type  dither:   int
+        :type  format:   str
+        :type  options:  str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_all_raster(name.encode(), size_x, size_y, bits, dither, format.encode(), options.encode())
+        
+
+
+
+
+    def export_area_in_view(self, name, view, pix_size, min_x, min_y, max_x, max_y, format, options):
+        """
+        
+        .. deprecated:: None None 
+        Export an area of a Map in view units to an external format.
+        
+        :param name:      File Name To Export
+        :param view:      View to export coordinates in
+        :param pix_size:  Resolution in view units of one pixel
+        :param min_x:     Area To Export Min X location in view units
+        :param min_y:     Area To Export Min Y location in view units
+        :param max_x:     Area To Export Max X location in view units
+        :param max_y:     Area To Export Max Y location in view units
+        :param format:    EMAP_EXPORT_FORMAT
+        :param options:   Extended Options String (format specific)
+        :type  name:      str
+        :type  view:      str
+        :type  pix_size:  float
+        :type  min_x:     float
+        :type  min_y:     float
+        :type  max_x:     float
+        :type  max_y:     float
+        :type  format:    str
+        :type  options:   str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Uses 24 bit color
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_area_in_view(name.encode(), view.encode(), pix_size, min_x, min_y, max_x, max_y, format.encode(), options.encode())
+        
+
+
+
+
+    def export_area_in_view2(self, name, view, pix_size, bits, dither, min_x, min_y, max_x, max_y, format, options):
+        """
+        
+        .. deprecated:: None None 
+        Same as above with color depth set.
+        
+        :param name:      File Name To Export
+        :param view:      View to export coordinates in
+        :param pix_size:  Resolution in view units of one pixel
+        :param bits:      EMAP_EXPORT_BITS
+        :param dither:    EMAP_EXPORT_METHOD
+        :param min_x:     Area To Export Min X location in view units
+        :param min_y:     Area To Export Min Y location in view units
+        :param max_x:     Area To Export Max X location in view units
+        :param max_y:     Area To Export Max Y location in view units
+        :param format:    EMAP_EXPORT_FORMAT
+        :param options:   Extended Options String (format specific)
+        :type  name:      str
+        :type  view:      str
+        :type  pix_size:  float
+        :type  bits:      int
+        :type  dither:    int
+        :type  min_x:     float
+        :type  min_y:     float
+        :type  max_x:     float
+        :type  max_y:     float
+        :type  format:    str
+        :type  options:   str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_area_in_view2(name.encode(), view.encode(), pix_size, bits, dither, min_x, min_y, max_x, max_y, format.encode(), options.encode())
+        
+
+
+
+
+    def export_area_raster(self, name, min_x, min_y, max_x, max_y, size_x, size_y, bits, dither, format, options):
+        """
+        
+        .. deprecated:: None None 
+        Export an area of a Map to an external plot format.
+        
+        :param name:     File Name To Export
+        :param min_x:    Area To Export Min X location in mm
+        :param min_y:    Area To Export Min Y location in mm
+        :param max_x:    Area To Export Max X location in mm
+        :param max_y:    Area To Export Max Y location in mm
+        :param size_x:   Number of Pixels in X (X or Y should be specified the other )
+        :param size_y:   Number of Pixels in Y (should be 0 and computed by export)
+        :param bits:     EMAP_EXPORT_BITS
+        :param dither:   EMAP_EXPORT_METHOD
+        :param format:   EMAP_EXPORT_RASTER_FORMAT
+        :param options:  Extended Options String (format specific)
+        :type  name:     str
+        :type  min_x:    float
+        :type  min_y:    float
+        :type  max_x:    float
+        :type  max_y:    float
+        :type  size_x:   float
+        :type  size_y:   float
+        :type  bits:     int
+        :type  dither:   int
+        :type  format:   str
+        :type  options:  str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_area_raster(name.encode(), min_x, min_y, max_x, max_y, size_x, size_y, bits, dither, format.encode(), options.encode())
+        
+
+
+
+
+    def get_window_area(self, min_x, min_y, max_x, max_y):
+        """
+        
+        .. deprecated:: None None 
+        Get the location of the map window within the frame.
+        
+        :param min_x:  X Min returned
+        :param min_y:  Y Min returned
+        :param max_x:  X Max returned
+        :param max_y:  Y Max returned
+        :type  min_x:  int_ref
+        :type  min_y:  int_ref
+        :type  max_x:  int_ref
+        :type  max_y:  int_ref
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The Coordinates are pixels with 0,0 being the bottom
+        left corner Oasis montaj frame window.
+
+        If the window is minimized, the max values will be
+        equal to the min values. If the window is maximized
+        X Min and Y min will be `iMIN <geosoft.gxapi.iMIN>` and X max and Y max
+        will be `iMAX <geosoft.gxapi.iMAX>`.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_window_area(min_x.value, min_y.value, max_x.value, max_y.value)
+        
+
+
+
+
+    def set_window_area(self, min_x, min_y, max_x, max_y):
+        """
+        
+        .. deprecated:: None None 
+        Set the location of the map window within the frame.
+        
+        :param min_x:  X Min
+        :param min_y:  Y Min
+        :param max_x:  X Max
+        :param max_y:  Y Max
+        :type  min_x:  int
+        :type  min_y:  int
+        :type  max_x:  int
+        :type  max_y:  int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The Coordinates are pixels with 0,0 being the bottom
+        left corner Oasis montaj frame window.
+
+        if the max values are equal or less than the min values
+        the window will be mimimized. If any Min values are `iMIN <geosoft.gxapi.iMIN>`
+        or any Max values are `iMAX <geosoft.gxapi.iMAX>`, the window is maximized.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._set_window_area(min_x, min_y, max_x, max_y)
         
 
 

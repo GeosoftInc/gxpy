@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jan  5 10:15:34 2014
@@ -172,7 +172,7 @@ class SomDialog(QtWidgets.QDialog, Ui_som_om):
         if n >= 5: channorm(self.chan_5,self.norm_5,chans[4],norms[4])
         if n >= 6: channorm(self.chan_6,self.norm_6,chans[5],norms[5])
         if n >= 7: channorm(self.chan_7,self.norm_7,chans[6],norms[6])
-        if n >= 8: channorm(self.chan_8,self.norm_8,chans[8],norms[8])
+        if n >= 8: channorm(self.chan_8,self.norm_8,chans[7],norms[7])
         if n >= 9: channorm(self.chan_9,self.norm_9,chans[8],norms[8])
         if n >= 10: channorm(self.chan_10,self.norm_10,chans[9],norms[9])
         if n >= 11: channorm(self.chan_11,self.norm_11,chans[10],norms[10])

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
     @classmethod
     def create(cls, name, ref_name, line):
         """
+        
         Create a `GXMAPL <geosoft.gxapi.GXMAPL>`.
         
         :param name:      `GXMAPL <geosoft.gxapi.GXMAPL>` file name
@@ -77,6 +78,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
+        
         ret_val = gxapi_cy.WrapMAPL._create(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line)
         return GXMAPL(ret_val)
 
@@ -85,6 +87,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
     @classmethod
     def create_reg(cls, name, ref_name, line, reg):
         """
+        
         Create a `GXMAPL <geosoft.gxapi.GXMAPL>` with `GXREG <geosoft.gxapi.GXREG>`.
         
         :param name:      `GXMAPL <geosoft.gxapi.GXMAPL>` file name
@@ -106,6 +109,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
+        
         ret_val = gxapi_cy.WrapMAPL._create_reg(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line, reg)
         return GXMAPL(ret_val)
 
@@ -116,6 +120,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
     def process(self, map):
         """
+        
         Process a `GXMAPL <geosoft.gxapi.GXMAPL>`
         
         :type  map:   GXMAP
@@ -124,6 +129,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._process(map)
         
 
@@ -132,6 +138,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
     def replace_string(self, var, repl):
         """
+        
         Adds a replacement string to a mapplot control file.
         
         :param var:   Variable
@@ -143,6 +150,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._replace_string(var.encode(), repl.encode())
         
 

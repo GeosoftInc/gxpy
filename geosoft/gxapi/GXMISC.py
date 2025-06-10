@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXMISC(gxapi_cy.WrapMISC):
     @classmethod
     def convert_cg3to_raw(cls, cg3, raw, tide_corr_opt):
         """
+        
         Convert a CG3 dump to RAW format.
         
         :param cg3:            Name of the CG3 file
@@ -67,6 +68,7 @@ class GXMISC(gxapi_cy.WrapMISC):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMISC._convert_cg3to_raw(GXContext._get_tls_geo(), cg3.encode(), raw.encode(), tide_corr_opt)
         
 
@@ -75,6 +77,7 @@ class GXMISC(gxapi_cy.WrapMISC):
     @classmethod
     def convert_cg5to_raw(cls, cg5, raw, tide_corr_opt):
         """
+        
         Convert a CG5 dump to RAW format.
         
         :param cg5:            Name of the CG5 file
@@ -88,6 +91,7 @@ class GXMISC(gxapi_cy.WrapMISC):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMISC._convert_cg5to_raw(GXContext._get_tls_geo(), cg5.encode(), raw.encode(), tide_corr_opt)
         
 
@@ -96,6 +100,7 @@ class GXMISC(gxapi_cy.WrapMISC):
     @classmethod
     def ukoa2_tbl(cls, ukoa, alias, tbl):
         """
+        
         Convert a UKOA file to a location TBL file.
         
         :param ukoa:   Name of the UKOA file
@@ -119,7 +124,62 @@ class GXMISC(gxapi_cy.WrapMISC):
         = Y:double
         = Elevation:double
         """
+        
         gxapi_cy.WrapMISC._ukoa2_tbl(GXContext._get_tls_geo(), ukoa.encode(), alias.encode(), tbl.encode())
+        
+
+
+
+
+# Deprecated
+
+
+    @classmethod
+    def cg3to_raw(cls, cg3, raw):
+        """
+        
+        .. deprecated:: None None 
+        Convert a CG3 dump to RAW format.
+        
+        :param cg3:  Name of the CG3 file
+        :param raw:  Name of the RAW file
+        :type  cg3:  str
+        :type  raw:  str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** REPLACED BY: `convert_cg3to_raw <geosoft.gxapi.GXMISC.convert_cg3to_raw>`.
+        or supporting tide correction info in the CG3 file.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapMISC._cg3to_raw(GXContext._get_tls_geo(), cg3.encode(), raw.encode())
+        
+
+
+
+    @classmethod
+    def cg5to_raw(cls, cg5, raw):
+        """
+        
+        .. deprecated:: None None 
+        Convert a CG5 dump to RAW format.
+        
+        :param cg5:  Name of the CG5 file
+        :param raw:  Name of the RAW file
+        :type  cg5:  str
+        :type  raw:  str
+
+        .. versionadded:: 5.1.8
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** REPLACED BY: `convert_cg5to_raw <geosoft.gxapi.GXMISC.convert_cg5to_raw>`.
+        for supporting tide correction info in the CG5 file.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapMISC._cg5to_raw(GXContext._get_tls_geo(), cg5.encode(), raw.encode())
         
 
 

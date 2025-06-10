@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXMVIEW import GXMVIEW
@@ -54,6 +54,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
 
     def get_data_view(self):
         """
+        
         Get the current data (3D) `GXMVIEW <geosoft.gxapi.GXMVIEW>`
         
 
@@ -64,6 +65,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_data_view()
         return GXMVIEW(ret_val)
 
@@ -72,6 +74,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
 
     def get_base_view(self):
         """
+        
         Get the current Base `GXMVIEW <geosoft.gxapi.GXMVIEW>` (used to draw 2D legends for groups)
         
 
@@ -82,6 +85,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_base_view()
         return GXMVIEW(ret_val)
 

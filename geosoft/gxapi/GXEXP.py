@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXEXP(gxapi_cy.WrapEXP):
     @classmethod
     def create(cls, db, formula, unused):
         """
+        
         This method creates an `GXEXP <geosoft.gxapi.GXEXP>` object.
         
         :param db:       Database Object
@@ -100,6 +101,7 @@ class GXEXP(gxapi_cy.WrapEXP):
 
         All other tokens are assumed to be channel names.
         """
+        
         ret_val = gxapi_cy.WrapEXP._create(GXContext._get_tls_geo(), db, formula.encode(), unused)
         return GXEXP(ret_val)
 
@@ -108,6 +110,7 @@ class GXEXP(gxapi_cy.WrapEXP):
     @classmethod
     def create_file(cls, db, file):
         """
+        
         This method creates an `GXEXP <geosoft.gxapi.GXEXP>` object from a file
         
         :param db:    Database Object
@@ -122,6 +125,7 @@ class GXEXP(gxapi_cy.WrapEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapEXP._create_file(GXContext._get_tls_geo(), db, file.encode())
         return GXEXP(ret_val)
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_angle(self, angle):
         """
+        
         Set the symbol angle.
         
         :param angle:  Symbol angle
@@ -65,6 +66,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_angle(angle)
         
 
@@ -73,6 +75,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_base(self, base):
         """
+        
         Set base value to subtract from Z values.
         
         :param base:   Symbol Base
@@ -82,6 +85,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_base(base)
         
 
@@ -90,6 +94,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_dynamic_col(self, att):
         """
+        
         Associate symbol edge or fill colors with Z data
         and color transform.
         
@@ -104,6 +109,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         reestablishes the symbol color association with their Z data
         values and color transform.
         """
+        
         self._set_dynamic_col(att)
         
 
@@ -112,6 +118,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_fixed(self, fixed):
         """
+        
         Set symbol sizing to fixed (or proportionate)
         
         :param fixed:  TRUE  = Fixed symbol sizing FALSE = Proportionate sizing
@@ -121,6 +128,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_fixed(fixed)
         
 
@@ -129,6 +137,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_number(self, number):
         """
+        
         Set the symbol number.
         
         :param number:  Symbol number (0x1-0x1ffff)
@@ -145,6 +154,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char <geosoft.gxapi.GXUNC.is_valid_utf16_char>`. The high 16-bits are reserved
         for future use. Also see: `GXUNC.valid_symbol <geosoft.gxapi.GXUNC.valid_symbol>` and `GXUNC.validate_symbols <geosoft.gxapi.GXUNC.validate_symbols>`
         """
+        
         self._set_number(number)
         
 
@@ -153,6 +163,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_scale(self, scale):
         """
+        
         Set the symbol scale.
         
         :param scale:  Symbol scale (> 0.0)
@@ -162,6 +173,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_scale(scale)
         
 
@@ -170,6 +182,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def add_data(self, vv_x, vv_y, vv_z):
         """
+        
         Add x,y,z data to a color symbol object.
         
         :param vv_x:   `GXVV <geosoft.gxapi.GXVV>` for X data
@@ -183,6 +196,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_data(vv_x, vv_y, vv_z)
         
 
@@ -191,6 +205,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
     @classmethod
     def create(cls, itr):
         """
+        
         Create a `GXCSYMB <geosoft.gxapi.GXCSYMB>`.
         
         :param itr:  ZON, `GXAGG <geosoft.gxapi.GXAGG>`, or `GXITR <geosoft.gxapi.GXITR>` file name
@@ -203,6 +218,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapCSYMB._create(GXContext._get_tls_geo(), itr.encode())
         return GXCSYMB(ret_val)
 
@@ -213,6 +229,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def get_itr(self, itr):
         """
+        
         Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXCSYMB <geosoft.gxapi.GXCSYMB>`
         
         :param itr:    `GXITR <geosoft.gxapi.GXITR>` object
@@ -222,6 +239,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_itr(itr)
         
 
@@ -230,6 +248,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_font(self, font, geo_font, weight, italic):
         """
+        
         Set the symbol font name.
         
         :param font:      Font name
@@ -245,6 +264,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_font(font.encode(), geo_font, weight, italic)
         
 
@@ -253,6 +273,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def set_static_col(self, col, att):
         """
+        
         Set a static color for the symbol edge or fill.
         
         :param col:    Color value
@@ -268,6 +289,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         By default, both edge and fill colors vary according to their
         Z data values and a color transform.
         """
+        
         self._set_static_col(col, att)
         
 
@@ -276,6 +298,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
     def get_stat(self, st):
         """
+        
         Get the `GXST <geosoft.gxapi.GXST>` of the `GXCSYMB <geosoft.gxapi.GXCSYMB>`
         
         :param st:     `GXST <geosoft.gxapi.GXST>` object
@@ -285,6 +308,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_stat(st)
         
 

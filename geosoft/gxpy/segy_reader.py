@@ -1,6 +1,7 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 """
 Read SEG-Y files into geosoft databases, grids and voxels.
+
 :Classes:
     :class:`SegyReader` Reads SEG-Y files and creates Geosoft grids or voxels
 

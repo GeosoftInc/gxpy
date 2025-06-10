@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXGD(gxapi_cy.WrapGD):
     @classmethod
     def create(cls, name, type):
         """
+        
         This method creates a `GXGD <geosoft.gxapi.GXGD>` object.
         
         :param name:  Name of the Grid File
@@ -69,6 +70,7 @@ class GXGD(gxapi_cy.WrapGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapGD._create(GXContext._get_tls_geo(), name.encode(), type)
         return GXGD(ret_val)
 

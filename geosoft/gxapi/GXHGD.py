@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXHGD(gxapi_cy.WrapHGD):
     @classmethod
     def create(cls, name):
         """
+        
         Create a handle to an `GXHGD <geosoft.gxapi.GXHGD>` object
         
         :param name:  File Name
@@ -69,6 +70,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapHGD._create(GXContext._get_tls_geo(), name.encode())
         return GXHGD(ret_val)
 
@@ -79,6 +81,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
     def export_img(self, name):
         """
+        
         Export all layers of this `GXHGD <geosoft.gxapi.GXHGD>` into grid files.
         
         :param name:  Name of grids (each layers adds _Number to the name)
@@ -88,6 +91,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_img(name.encode())
         
 
@@ -96,6 +100,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
     def get_meta(self, meta):
         """
+        
         Get the metadata of a grid.
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to save `GXHGD <geosoft.gxapi.GXHGD>`'s meta to
@@ -105,6 +110,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_meta(meta)
         
 
@@ -113,6 +119,7 @@ class GXHGD(gxapi_cy.WrapHGD):
     @classmethod
     def h_create_img(cls, img, name):
         """
+        
         Make an `GXHGD <geosoft.gxapi.GXHGD>` from an `GXIMG <geosoft.gxapi.GXIMG>`
         
         :param img:   Image Handle
@@ -127,6 +134,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapHGD._h_create_img(GXContext._get_tls_geo(), img, name.encode())
         return GXHGD(ret_val)
 
@@ -135,6 +143,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
     def set_meta(self, meta):
         """
+        
         Set the metadata of a grid.
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to add to `GXHGD <geosoft.gxapi.GXHGD>`'s meta
@@ -144,6 +153,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta(meta)
         
 

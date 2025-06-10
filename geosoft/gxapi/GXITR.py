@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXREG import GXREG
@@ -77,6 +77,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_name(self, name):
         """
+        
         Set the name of the `GXITR <geosoft.gxapi.GXITR>`.
         
         :param name:  Name to set
@@ -86,6 +87,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_name(name.encode())
         
 
@@ -94,6 +96,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_name(self, name):
         """
+        
         Get the name of the `GXITR <geosoft.gxapi.GXITR>`.
         
         :param name:  Name returned
@@ -103,6 +106,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._get_name(name.value.encode())
         
 
@@ -111,6 +115,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def change_brightness(self, brt):
         """
+        
         Change the brightness.
         
         :param brt:  -1.0 - black; 0.0 no change; 1.0 white
@@ -124,6 +129,7 @@ class GXITR(gxapi_cy.WrapITR):
         -1.0 to 0.0 makes colors darker, -1.0 is black
         0.0 to 1.0 makes colors lighter, 1.0 is white
         """
+        
         self._change_brightness(brt)
         
 
@@ -132,6 +138,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def color_vv(self, vv_d, vv_c):
         """
+        
         Get color transform of a `GXVV <geosoft.gxapi.GXVV>`.
         
         :param vv_d:  Input `GXVV <geosoft.gxapi.GXVV>` of values (none-string)
@@ -146,6 +153,7 @@ class GXITR(gxapi_cy.WrapITR):
         **Note:** If the input value is a dummy, then the output color
         is 0 (no color).
         """
+        
         self._color_vv(vv_d, vv_c)
         
 
@@ -154,6 +162,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def copy(self, it_rs):
         """
+        
         Copies ITRs
         
         :param it_rs:  `GXITR <geosoft.gxapi.GXITR>` Source
@@ -163,6 +172,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(it_rs)
         
 
@@ -171,6 +181,7 @@ class GXITR(gxapi_cy.WrapITR):
     @classmethod
     def create(cls):
         """
+        
         Create an `GXITR <geosoft.gxapi.GXITR>` object
         
 
@@ -181,6 +192,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapITR._create(GXContext._get_tls_geo())
         return GXITR(ret_val)
 
@@ -189,6 +201,7 @@ class GXITR(gxapi_cy.WrapITR):
     @classmethod
     def create_file(cls, file):
         """
+        
         Create an `GXITR <geosoft.gxapi.GXITR>` object from an itr, tbl, zon, lut file.
         
         :param file:  File name, type determined from extension
@@ -201,6 +214,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapITR._create_file(GXContext._get_tls_geo(), file.encode())
         return GXITR(ret_val)
 
@@ -209,6 +223,7 @@ class GXITR(gxapi_cy.WrapITR):
     @classmethod
     def create_img(cls, img, tbl, zone, contour):
         """
+        
         Create an `GXITR <geosoft.gxapi.GXITR>` for an image.
         
         :param tbl:      Color table name, NULL for default
@@ -234,6 +249,7 @@ class GXITR(gxapi_cy.WrapITR):
         the same name as the original grid but with the suffux "_s"
         added to the name part of the grid.
         """
+        
         ret_val = gxapi_cy.WrapITR._create_img(GXContext._get_tls_geo(), img, tbl.encode(), zone, contour)
         return GXITR(ret_val)
 
@@ -242,6 +258,7 @@ class GXITR(gxapi_cy.WrapITR):
     @classmethod
     def create_map(cls, map, name):
         """
+        
         Create `GXITR <geosoft.gxapi.GXITR>` from Map with `GXAGG <geosoft.gxapi.GXAGG>` Group name.
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
@@ -256,6 +273,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapITR._create_map(GXContext._get_tls_geo(), map, name.encode())
         return GXITR(ret_val)
 
@@ -264,6 +282,7 @@ class GXITR(gxapi_cy.WrapITR):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create an `GXITR <geosoft.gxapi.GXITR>` object from a `GXBF <geosoft.gxapi.GXBF>`
         
         :param bf:  `GXBF <geosoft.gxapi.GXBF>` to serialize from
@@ -276,6 +295,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapITR._create_s(GXContext._get_tls_geo(), bf)
         return GXITR(ret_val)
 
@@ -286,6 +306,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def equal_area(self, st, contour):
         """
+        
         Calculate an equal area transform.
         
         :param st:       Stat object with a histogram
@@ -304,6 +325,7 @@ class GXITR(gxapi_cy.WrapITR):
         should the equal-area transform have a problem, and no error message will appear, even if
         there is no valid data at all.
         """
+        
         self._equal_area(st, contour)
         
 
@@ -312,6 +334,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def equal_area_or_linear(self, st, contour):
         """
+        
         Calculate an equal area transform.
         
         :param st:       Stat object with a histogram
@@ -330,6 +353,7 @@ class GXITR(gxapi_cy.WrapITR):
         should the equal-area transform have a problem, and no error message will appear, even if
         there is no valid data at all.
         """
+        
         self._equal_area_or_linear(st, contour)
         
 
@@ -338,6 +362,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_data_limits(self, min, max):
         """
+        
         Get `GXITR <geosoft.gxapi.GXITR>` max/min data limits.
         
         :param min:  Data minimum value (or `rDUMMY <geosoft.gxapi.rDUMMY>` if not set)
@@ -356,6 +381,7 @@ class GXITR(gxapi_cy.WrapITR):
         This is NOT true of all `GXITR <geosoft.gxapi.GXITR>` objects, and in
         those cases dummy values will be returned.
         """
+        
         min.value, max.value = self._get_data_limits(min.value, max.value)
         
 
@@ -364,6 +390,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_reg(self):
         """
+        
         Get the `GXITR <geosoft.gxapi.GXITR>`'s `GXREG <geosoft.gxapi.GXREG>`
         
 
@@ -374,6 +401,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_reg()
         return GXREG(ret_val)
 
@@ -382,6 +410,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_zone_color(self, zone, color):
         """
+        
         Get the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:   Number of the zone to set.
@@ -395,6 +424,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         color.value = self._get_zone_color(zone, color.value)
         
 
@@ -403,6 +433,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_zone_base_color(self, zone, color):
         """
+        
         Get the base color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:   Number of the zone to set.
@@ -417,6 +448,7 @@ class GXITR(gxapi_cy.WrapITR):
         **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         The base colour is the colour in the ITR before any brightness is applied.
         """
+        
         color.value = self._get_zone_base_color(zone, color.value)
         
 
@@ -425,6 +457,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def color_value(self, val):
         """
+        
         Transform single data value to color
         
         :param val:  Data value
@@ -437,14 +470,69 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._color_value(val)
         return ret_val
 
 
 
 
+    def get_shade(self, inclination, declination, scale, origin):
+        """
+        
+        Get the shading parameters of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param inclination:  Shading inclination - DUMMY if not defined
+        :param declination:  Shading declination - DUMMY if not defined
+        :param scale:        Shading scale - DUMMY if not defined
+        :param origin:       Origin returned - empty if not defined
+        :type  inclination:  float_ref
+        :type  declination:  float_ref
+        :type  scale:        float_ref
+        :type  origin:       str_ref
+
+        :returns:            Returns 1 if shading is enabled and defined, 0 otherwise
+        :rtype:              int
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        
+        ret_val, inclination.value, declination.value, scale.value, origin.value = self._get_shade(inclination.value, declination.value, scale.value, origin.value.encode())
+        return ret_val
+
+
+
+
+    def set_shade(self, inclination, declination, scale, origin):
+        """
+        
+        Set the shading parameters of the `GXITR <geosoft.gxapi.GXITR>`
+        
+        :param inclination:  Shading inclination
+        :param declination:  Shading declination
+        :param scale:        Shading scale
+        :param origin:       Origin returned
+        :type  inclination:  float
+        :type  declination:  float
+        :type  scale:        float
+        :type  origin:       str
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        
+        self._set_shade(inclination, declination, scale, origin.encode())
+        
+
+
+
+
     def get_size(self):
         """
+        
         Get the number of zones in an `GXITR <geosoft.gxapi.GXITR>`
         
 
@@ -455,6 +543,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_size()
         return ret_val
 
@@ -463,6 +552,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_zone_model_type(self):
         """
+        
         Get the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area).
         
 
@@ -476,6 +566,7 @@ class GXITR(gxapi_cy.WrapITR):
         **Note:** This function may be used to determine if a color
         transform is included in an `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         ret_val = self._get_zone_model_type()
         return ret_val
 
@@ -484,6 +575,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_zone_model(self, model, parameters):
         """
+        
         Get the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)
         
         :param model:       :ref:`ITR_ZONE_MODEL`
@@ -502,6 +594,7 @@ class GXITR(gxapi_cy.WrapITR):
         ITR_ZONE_MODEL_EQUAL: [0]: Contour
         All other types do not return any values (the VV will be empty).
         """
+        
         model.value = self._get_zone_model(model.value, parameters)
         
 
@@ -510,6 +603,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_zone_model(self, model, parameters):
         """
+        
         Set the `GXITR <geosoft.gxapi.GXITR>` zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)
         
         :param model:       :ref:`ITR_ZONE_MODEL`
@@ -530,6 +624,7 @@ class GXITR(gxapi_cy.WrapITR):
         NOTE: This will not change the actual ranges, so care is needed when using this function that the input
         specification accurately reflects the actual ranges.
         """
+        
         self._set_zone_model(model, parameters)
         
 
@@ -538,6 +633,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def linear(self, min, max, contour):
         """
+        
         Calculate a linear transform.
         
         :param min:      Minimum
@@ -551,6 +647,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._linear(min, max, contour)
         
 
@@ -559,6 +656,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def load_a(self, file):
         """
+        
         Load to an ASCII file, ZON, TBL or ER-Mapper LUT
         
         :param file:  File name
@@ -568,6 +666,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._load_a(file.encode())
         
 
@@ -576,6 +675,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def log_linear(self, min, max, contour):
         """
+        
         Calculate a log transform.
         
         :param min:      Minimum ( > 0)
@@ -591,6 +691,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** The function name is a misnomer. This is a pure log transform.
         """
+        
         self._log_linear(min, max, contour)
         
 
@@ -599,6 +700,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def normal(self, std_dev, mean, exp, contour):
         """
+        
         Calculate a normal distribution transform.
         
         :param std_dev:  Standard deviation
@@ -614,6 +716,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._normal(std_dev, mean, exp, contour)
         
 
@@ -622,6 +725,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def power_zone(self, pow):
         """
+        
         Modified `GXITR <geosoft.gxapi.GXITR>` zone values to 10 (or e) raized to the power of the values
         
         :param pow:  :ref:`ITR_POWER`
@@ -631,6 +735,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._power_zone(pow)
         
 
@@ -639,6 +744,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_brightness(self):
         """
+        
         Get the brightness setting of the `GXITR <geosoft.gxapi.GXITR>`
         
 
@@ -657,6 +763,7 @@ class GXITR(gxapi_cy.WrapITR):
 
             `change_brightness <geosoft.gxapi.GXITR.change_brightness>`, `get_contrast <geosoft.gxapi.GXITR.get_contrast>`, `set_bright_contrast <geosoft.gxapi.GXITR.set_bright_contrast>`
         """
+        
         ret_val = self._get_brightness()
         return ret_val
 
@@ -665,6 +772,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_contrast(self):
         """
+        
         Get the contrast setting of the `GXITR <geosoft.gxapi.GXITR>`
         
 
@@ -681,6 +789,7 @@ class GXITR(gxapi_cy.WrapITR):
 
             `change_brightness <geosoft.gxapi.GXITR.change_brightness>`, `GXAGG.get_brightness <geosoft.gxapi.GXAGG.get_brightness>`, `set_bright_contrast <geosoft.gxapi.GXITR.set_bright_contrast>`
         """
+        
         ret_val = self._get_contrast()
         return ret_val
 
@@ -689,6 +798,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_contour(self):
         """
+        
         Get the contour value associated with the current transform model of the `GXITR <geosoft.gxapi.GXITR>`
         
 
@@ -703,6 +813,7 @@ class GXITR(gxapi_cy.WrapITR):
         All the colour-breaks are rounded to the nearest integral multiple of the contour value (if defined).
         This function returns the value defined, and rDUMMY if none is defined.
         """
+        
         ret_val = self._get_contour()
         return ret_val
 
@@ -711,6 +822,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_zone_value(self, zone):
         """
+        
         Get the value in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:  Number of the zone to set.
@@ -725,6 +837,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** Valid indices are 0 to N-2, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         ret_val = self._get_zone_value(zone)
         return ret_val
 
@@ -733,6 +846,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def save_a(self, file):
         """
+        
         Save to an ASCII file, ZON, TBL or ER-Mapper LUT
         
         :param file:  File name
@@ -742,6 +856,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save_a(file.encode())
         
 
@@ -750,6 +865,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def save_file(self, file):
         """
+        
         Save to any type (based on the extension of the input file name).
         
         :param file:  File name
@@ -759,6 +875,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save_file(file.encode())
         
 
@@ -767,6 +884,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def serial(self, bf):
         """
+        
         Serialize an `GXITR <geosoft.gxapi.GXITR>` to a `GXBF <geosoft.gxapi.GXBF>`
         
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` to serialize to
@@ -776,6 +894,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -784,6 +903,7 @@ class GXITR(gxapi_cy.WrapITR):
     @classmethod
     def set_agg_map(cls, map, name, itr):
         """
+        
         Set `GXITR <geosoft.gxapi.GXITR>` to an `GXAGG <geosoft.gxapi.GXAGG>` in map
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
@@ -799,6 +919,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** See the `create_map <geosoft.gxapi.GXITR.create_map>` function
         """
+        
         gxapi_cy.WrapITR._set_agg_map(GXContext._get_tls_geo(), map, name.encode(), itr)
         
 
@@ -807,6 +928,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_bright_contrast(self, brt, con):
         """
+        
         Set the brightness of the `GXITR <geosoft.gxapi.GXITR>` colors
         
         :param brt:  0.0 - black; 0.5 normal; 1.0 white
@@ -827,6 +949,7 @@ class GXITR(gxapi_cy.WrapITR):
         0.0   - flat
         1.0   - full contrast (normal)
         """
+        
         self._set_bright_contrast(brt, con)
         
 
@@ -835,6 +958,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_color_model(self, model):
         """
+        
         Set the color model of an `GXITR <geosoft.gxapi.GXITR>`.
         
         :param model:  :ref:`ITR_COLOR_MODEL`
@@ -844,6 +968,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_color_model(model)
         
 
@@ -852,6 +977,7 @@ class GXITR(gxapi_cy.WrapITR):
     @classmethod
     def default_color_method(cls):
         """
+        
         Return the user-defined global default color method.
         
 
@@ -862,6 +988,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapITR._default_color_method(GXContext._get_tls_geo())
         return ret_val
 
@@ -870,6 +997,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_data_limits(self, min, max):
         """
+        
         Set `GXITR <geosoft.gxapi.GXITR>` max/min data limits.
         
         :param min:  Data minimum value
@@ -881,6 +1009,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_data_limits(min, max)
         
 
@@ -889,6 +1018,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_size(self, zones):
         """
+        
         Set the number of zones in an `GXITR <geosoft.gxapi.GXITR>`
         
         :param zones:  Number of zones to set `GXITR <geosoft.gxapi.GXITR>` to.
@@ -898,6 +1028,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_size(zones)
         
 
@@ -906,6 +1037,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_zone_color(self, zone, color):
         """
+        
         Set the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:   Number of the zone to set.
@@ -923,6 +1055,7 @@ class GXITR(gxapi_cy.WrapITR):
                        brightness, and triggers an internal reset of the ITR brightness
                        to zero, with all the "rendered" colours becoming the "base" colours.
         """
+        
         self._set_zone_color(zone, color)
         
 
@@ -931,6 +1064,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_zone_base_color(self, zone, color):
         """
+        
         Set the color in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:   Number of the zone to set.
@@ -948,6 +1082,7 @@ class GXITR(gxapi_cy.WrapITR):
                        the current brightness applied to produce the rendered colours. The 
                        internal brightness remains unchanged.
         """
+        
         self._set_zone_base_color(zone, color)
         
 
@@ -956,6 +1091,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_zone_active(self, zone, active):
         """
+        
         Set whether a zone of the `GXITR <geosoft.gxapi.GXITR>` is active (1) or rendered trasparent (0)
         
         :param zone:    Number of the zone to set.
@@ -969,6 +1105,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         self._set_zone_active(zone, active)
         
 
@@ -977,6 +1114,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def get_zone_active(self, zone):
         """
+        
         Get whether a zone of the `GXITR <geosoft.gxapi.GXITR>` is active (1) or rendered trasparent (0)
         
         :param zone:  Number of the zone to set.
@@ -989,6 +1127,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** Valid indices are 0 to N-1, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         ret_val = self._get_zone_active(zone)
         return ret_val
 
@@ -997,6 +1136,7 @@ class GXITR(gxapi_cy.WrapITR):
 
     def set_zone_value(self, zone, value):
         """
+        
         Set the value in a zone of the `GXITR <geosoft.gxapi.GXITR>`
         
         :param zone:   Number of the zone to set.
@@ -1010,6 +1150,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** Valid indices are 0 to N-2, where N is the size of the `GXITR <geosoft.gxapi.GXITR>`.
         """
+        
         self._set_zone_value(zone, value)
         
 

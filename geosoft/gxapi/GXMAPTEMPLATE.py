@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def get_tmp_copy(self, tmp):
         """
+        
         Get a temporary XML file for manipulation of the map template.
         
         :param tmp:          Returned temporary map template file name
@@ -67,6 +68,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         **Note:** After manipulating contents the object may be updated by a call to
         the UpdateFromTmpCopy method.
         """
+        
         tmp.value = self._get_tmp_copy(tmp.value.encode())
         
 
@@ -75,6 +77,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def update_from_tmp_copy(self, tmp):
         """
+        
         Update the object contents from a temporary XML file that may have bee manipulated externally.
         
         :param tmp:          Temporary map template file name
@@ -89,6 +92,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         will restore the contents to that of the original file. The temporary file is not deleted
         and should be to not leak file resources.
         """
+        
         self._update_from_tmp_copy(tmp.encode())
         
 
@@ -101,6 +105,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def commit(self):
         """
+        
         Commit any changes to the map template to disk
         
 
@@ -108,6 +113,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._commit()
         
 
@@ -116,6 +122,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
     @classmethod
     def create(cls, name, base, mode):
         """
+        
         Create a `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>` from an existing file.
         
         :param name:  Map Template file name
@@ -136,6 +143,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         file in the <geosoft>\\maptemplate or <geosoftuser>\\maptemplate folders. A base file
         in the user folder will override any in the Geosoft install dir.
         """
+        
         ret_val = gxapi_cy.WrapMAPTEMPLATE._create(GXContext._get_tls_geo(), name.encode(), base.encode(), mode)
         return GXMAPTEMPLATE(ret_val)
 
@@ -146,6 +154,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def discard(self):
         """
+        
         Discard all changes made to the map template and reload from disk.
         
 
@@ -153,6 +162,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._discard()
         
 
@@ -161,6 +171,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def get_file_name(self, name):
         """
+        
         Get the file name of the map template.
         
         :param name:         Returned map template file name
@@ -170,6 +181,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         name.value = self._get_file_name(name.value.encode())
         
 
@@ -182,6 +194,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def create_map(self, map, group):
         """
+        
         Create a map from the map template
         
         :param map:          New map file name (if it exists it will be overwritten)
@@ -193,6 +206,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._create_map(map.encode(), group.encode())
         
 
@@ -205,6 +219,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def refresh(self):
         """
+        
         Refresh the map template with any newly saved items
         
 
@@ -212,6 +227,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._refresh()
         
 
@@ -220,6 +236,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def render_preview(self, hdc, left, bottom, right, top):
         """
+        
         Create a preview of the map template onto a
         Windows DC handle
         
@@ -238,6 +255,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._render_preview(hdc, left, bottom, right, top)
         
 
@@ -246,6 +264,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
     def render_preview_map_production(self, hdc, left, bottom, right, top):
         """
+        
         Render a preview for map sheet production purposes
         
         :param hdc:          DC Handle (pass 0 to just query the Data view pixel location)
@@ -267,6 +286,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         by passing a null DC handle. This help to plot the view contents
         preview from another location.
         """
+        
         left.value, bottom.value, right.value, top.value = self._render_preview_map_production(hdc, left.value, bottom.value, right.value, top.value)
         
 
@@ -279,6 +299,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
     @classmethod
     def get_media_size(cls, name, full_page_width, full_page_height, plot_width, plot_height):
         """
+        
         Get full width, full height, plot width and plot height in cm for a specific media or template name
         
         :param name:              Page size name
@@ -301,6 +322,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         the sizes of the associated media name are returned.
         If a template is specified, the orientation is taken into account for the media.
         """
+        
         full_page_width.value, full_page_height.value, plot_width.value, plot_height.value = gxapi_cy.WrapMAPTEMPLATE._get_media_size(GXContext._get_tls_geo(), name.encode(), full_page_width.value, full_page_height.value, plot_width.value, plot_height.value)
         
 

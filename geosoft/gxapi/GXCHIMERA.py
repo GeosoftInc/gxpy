@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def bar_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, width):
         """
+        
         Plot a Bar plot of up to 8 channels.
         
         :param mview:         View object to plot to
@@ -86,6 +87,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         Plots a bar plot with the center of the "X" axis at the symbol location.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
+        
         gxapi_cy.WrapCHIMERA._bar_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
         
 
@@ -94,6 +96,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def categorize_by_value(cls, vv_r, vv_i, vv_o):
         """
+        
         Transform values to the index of input data ranges.
         
         :param vv_r:  Input range minima
@@ -117,6 +120,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         else if(V) >= M1) N = 1
         else N = 0
         """
+        
         gxapi_cy.WrapCHIMERA._categorize_by_value(GXContext._get_tls_geo(), vv_r, vv_i, vv_o)
         
 
@@ -125,6 +129,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def categorize_by_value_det_limit(cls, vv_r, vv_i, det_limit, vv_o):
         """
+        
         Transform values to the index of input data ranges, with detection limit.
         
         :param vv_r:       Input range minima
@@ -144,6 +149,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         input value is less than the detection limit,
         the output value is set to zero.
         """
+        
         gxapi_cy.WrapCHIMERA._categorize_by_value_det_limit(GXContext._get_tls_geo(), vv_r, vv_i, det_limit, vv_o)
         
 
@@ -152,6 +158,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def clip_to_detect_limit(cls, vv, det_limit, conv):
         """
+        
         Apply detection limit clipping of data.
         
         :param vv:         Input data vv (altered).
@@ -174,6 +181,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
            `rDUMMY <geosoft.gxapi.rDUMMY>`, then values less than the detection limit are converted to
            one-half the detection limit.
         """
+        
         gxapi_cy.WrapCHIMERA._clip_to_detect_limit(GXContext._get_tls_geo(), vv, det_limit, conv)
         
 
@@ -182,6 +190,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def draw_circle_offset_markers(cls, mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size):
         """
+        
         Plots location marker and joining line for circle offset symbols
         
         :param mview:     View
@@ -203,6 +212,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.
         """
+        
         gxapi_cy.WrapCHIMERA._draw_circle_offset_markers(GXContext._get_tls_geo(), mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size)
         
 
@@ -211,6 +221,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def draw_rectangle_offset_markers(cls, mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size, x_size, y_size):
         """
+        
         Plots location marker and joining line for rectangle offset symbols
         
         :param mview:     View
@@ -236,6 +247,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Draws black filled circle (symbols.gfn #7) and a joining line.
         """
+        
         gxapi_cy.WrapCHIMERA._draw_rectangle_offset_markers(GXContext._get_tls_geo(), mview, vv_xi, vv_yi, vv_xo, vv_yo, off_size, x_size, y_size)
         
 
@@ -244,6 +256,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def duplicate_chem(cls, mview, vv, log, det_lim, old, vv_tol, title, unit, x0, y0, xs, ys):
         """
+        
         Plot an ASSAY Duplicate result in a graph window.
         
         :param mview:    View
@@ -275,6 +288,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapCHIMERA._duplicate_chem(GXContext._get_tls_geo(), mview, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), x0, y0, xs, ys)
         
 
@@ -283,6 +297,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def duplicate_chem_view(cls, map, view, group, ipj, vv, log, det_lim, old, vv_tol, title, unit, vvx, vv_line, vv_fid, db, min_y, max_y):
         """
+        
         Plot an ASSAY Duplicate result in a new view.
         
         :param map:      Map
@@ -323,6 +338,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._duplicate_chem_view(GXContext._get_tls_geo(), map, view.encode(), group.encode(), ipj, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
         
 
@@ -331,6 +347,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def get_expression_data_vv(cls, db, line, stage, exp, ini, gvv):
         """
+        
         Get data from a line using a channel expression.
         
         :param db:     Database
@@ -354,6 +371,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         are stored in the input INI. Returns a `GXVV <geosoft.gxapi.GXVV>` for the given line
         with the calculated expression values.
         """
+        
         gxapi_cy.WrapCHIMERA._get_expression_data_vv(GXContext._get_tls_geo(), db, line, stage.encode(), exp.encode(), ini.encode(), gvv)
         
 
@@ -362,6 +380,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def get_lithogeochem_data(cls, db, lst, m_ch, vv_trans, remove_dummy_rows, vv_dummy, warn, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi):
         """
+        
         Get all rows of non-dummy data in a database.
         
         :param db:                 [i] database handle
@@ -413,6 +432,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
         2 - Lambda transform
         """
+        
         gxapi_cy.WrapCHIMERA._get_lithogeochem_data(GXContext._get_tls_geo(), db, lst, m_ch, vv_trans, remove_dummy_rows, vv_dummy, warn, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi)
         
 
@@ -421,6 +441,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def get_transform(cls, db, chan, trans_opt, trans, lda):
         """
+        
         Get channel transform options and lambda values.
         
         :param db:         `GXDB <geosoft.gxapi.GXDB>` handle
@@ -448,6 +469,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
         2 - Lambda transform
         """
+        
         trans.value, lda.value = gxapi_cy.WrapCHIMERA._get_transform(GXContext._get_tls_geo(), db, chan.encode(), trans_opt, trans.value, lda.value)
         
 
@@ -456,6 +478,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def is_acquire_chan(cls, input_chan, chan, units, factor, oxide):
         """
+        
         Is this channel in acQuire format (e.g. "Ag_ppm_4AWR")
         
         :param input_chan:  String to test
@@ -479,6 +502,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         extracts the channel name, and units from an acQuire-formatted
         channel name.
         """
+        
         ret_val, chan.value, units.value, factor.value, oxide.value = gxapi_cy.WrapCHIMERA._is_acquire_chan(GXContext._get_tls_geo(), input_chan.encode(), chan.value.encode(), units.value.encode(), factor.value, oxide.value)
         return ret_val
 
@@ -487,6 +511,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def is_element(cls, chan, case_sensitive):
         """
+        
         Tests a string to see if it is an element symbol
         
         :param chan:            String to test
@@ -502,6 +527,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** Suggested use - testing to see if a channel name is an
         element so that the "ASSAY" class can be set.
         """
+        
         ret_val = gxapi_cy.WrapCHIMERA._is_element(GXContext._get_tls_geo(), chan.encode(), case_sensitive)
         return ret_val
 
@@ -510,6 +536,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def launch_histogram(cls, db, chan):
         """
+        
         Launch histogram tool on a database.
         
         :param db:    Database name
@@ -525,6 +552,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         This function supercedes `GXEDB.launch_histogram <geosoft.gxapi.GXEDB.launch_histogram>`, (which now
         just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
+        
         gxapi_cy.WrapCHIMERA._launch_histogram(GXContext._get_tls_geo(), db.encode(), chan.encode())
         
 
@@ -533,6 +561,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def launch_probability(cls, db, chan):
         """
+        
         Launch probability tool on a database.
         
         :param db:    Database name
@@ -546,6 +575,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** The database should be a currently open database.
         """
+        
         gxapi_cy.WrapCHIMERA._launch_probability(GXContext._get_tls_geo(), db.encode(), chan.encode())
         
 
@@ -554,6 +584,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def launch_scatter(cls, db):
         """
+        
         Launch scatter tool on a database.
         
         :param db:  Database name
@@ -581,6 +612,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         This function supercedes `GXEDB.launch_scatter <geosoft.gxapi.GXEDB.launch_scatter>`, (which now
         just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
+        
         gxapi_cy.WrapCHIMERA._launch_scatter(GXContext._get_tls_geo(), db.encode())
         
 
@@ -589,6 +621,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def launch_triplot(cls, db):
         """
+        
         Launch Triplot tool on a database.
         
         :param db:  Database name
@@ -616,6 +649,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         The database should be a currently open database.
         """
+        
         gxapi_cy.WrapCHIMERA._launch_triplot(GXContext._get_tls_geo(), db.encode())
         
 
@@ -624,6 +658,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def mask_chan_lst(cls, db, lst):
         """
+        
         Load a `GXLST <geosoft.gxapi.GXLST>` with mask channels.
         
         :param db:   hDB - Database Object
@@ -643,6 +678,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         This function has been duplicated by `GXDB.mask_chan_lst <geosoft.gxapi.GXDB.mask_chan_lst>`, which
         is safe to use in applications which do not have `GXCHIMERA <geosoft.gxapi.GXCHIMERA>` loaded.
         """
+        
         gxapi_cy.WrapCHIMERA._mask_chan_lst(GXContext._get_tls_geo(), db, lst)
         
 
@@ -651,6 +687,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def ordered_channel_lst(cls, db, lst):
         """
+        
         Fill a list with the channels in the preferred order.
         
         :param db:   hDB - Database Object
@@ -672,6 +709,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         otherwise, get all the database channels. (This allows you to pass in
         the currently displayed channels and only reload those).
         """
+        
         gxapi_cy.WrapCHIMERA._ordered_channel_lst(GXContext._get_tls_geo(), db, lst)
         
 
@@ -680,6 +718,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def pie_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, radius):
         """
+        
         Plot a Pie plot of up to 8 channels.
         
         :param mview:         View object to plot to
@@ -714,6 +753,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         is given by the percent contribution of each constituent.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
+        
         gxapi_cy.WrapCHIMERA._pie_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, radius)
         
 
@@ -722,6 +762,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def pie_plot2(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, radius, start_angle):
         """
+        
         Same as `pie_plot <geosoft.gxapi.GXCHIMERA.pie_plot>`, with a starting angle.
         
         :param mview:         View object to plot to
@@ -757,6 +798,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         slice, counted in degrees counter-clockwise from horizontal
         (3 o'clock). Zero degrees gives the same plot as `pie_plot <geosoft.gxapi.GXCHIMERA.pie_plot>`.
         """
+        
         gxapi_cy.WrapCHIMERA._pie_plot2(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, radius, start_angle)
         
 
@@ -765,6 +807,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def plot_string_classified_symbols_legend_from_class_file(cls, mview, title, x, y_min, y_max, class_file, index_vv):
         """
+        
         Plot legend for the string classified symbols
         
         :param mview:       Map view object
@@ -788,6 +831,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot in a legend the classes in the class file found in the input class indices.
         """
+        
         gxapi_cy.WrapCHIMERA._plot_string_classified_symbols_legend_from_class_file(GXContext._get_tls_geo(), mview, title.encode(), x, y_min, y_max, class_file.encode(), index_vv)
         
 
@@ -796,6 +840,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def atomic_weight(cls, element):
         """
+        
         Return the atomic weight of a particular element.
         
         :param element:  Element name (case insensitive)
@@ -811,6 +856,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** If the input string is not an element symbol (elements in the range
         1-92, "H" to "U"), then returns a dummy (`GS_R8DM <geosoft.gxapi.GS_R8DM>`).
         """
+        
         ret_val = gxapi_cy.WrapCHIMERA._atomic_weight(GXContext._get_tls_geo(), element.encode())
         return ret_val
 
@@ -819,6 +865,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def rose_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size):
         """
+        
         Plot a Rose plot of up to 8 channels.
         
         :param mview:         View object to plot to
@@ -860,6 +907,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
+        
         gxapi_cy.WrapCHIMERA._rose_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size)
         
 
@@ -868,6 +916,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def rose_plot2(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, start_angle):
         """
+        
         Same as `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`, with a starting angle.
         
         :param mview:         View object to plot to
@@ -901,6 +950,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         slice, counted in degrees counter-clockwise from horizontal
         (3 o'clock). Zero degrees gives the same plot as `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`.
         """
+        
         gxapi_cy.WrapCHIMERA._rose_plot2(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, start_angle)
         
 
@@ -909,6 +959,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def scatter2(cls, mview, title, x1, y1, width, height, horz_vv, vert_vv, sym_font, sym_num_vv, sym_siz_vv, sym_col_vv, annot_style, h_chan, v_chan, h_units, v_units, h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling):
         """
+        
         Plot the scatter plot on a map using symbol number, size and color VVs.
         
         :param mview:        View
@@ -981,6 +1032,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** The view scaling is not altered with any projection. The base view
         is best as the input.
         """
+        
         gxapi_cy.WrapCHIMERA._scatter2(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, horz_vv, vert_vv, sym_font.encode(), sym_num_vv, sym_siz_vv, sym_col_vv, annot_style, h_chan.encode(), v_chan.encode(), h_units.encode(), v_units.encode(), h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling)
         
 
@@ -989,6 +1041,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def fixed_symbol_scatter_plot(cls, mview, title, x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, symbol_font, symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, annotn, x_chan, y_chan, x_units, y_units, x_min, x_max, y_min, y_max, x_lin, y_lin, overlay):
         """
+        
         Plot a scatter plot using a single fixed symbol.
         Optional data masking with masking Color.
         Optional database linking.
@@ -1062,6 +1115,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a scatter plot using a single fixed symbol.
         """
+        
         gxapi_cy.WrapCHIMERA._fixed_symbol_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
         
 
@@ -1070,6 +1124,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def zone_coloured_scatter_plot(cls, mview, title, x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, zone_data_vv, zone_file, symbol_font, symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, annotn, x_chan, y_chan, x_units, y_units, x_min, x_max, y_min, y_max, x_lin, y_lin, overlay):
         """
+        
         Plot a scatter plot using colors based on a zone file.
         Optional data masking with masking color.
         Optional database linking.
@@ -1149,6 +1204,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a scatter plot using colors based on a zone file.
         """
+        
         gxapi_cy.WrapCHIMERA._zone_coloured_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, zone_data_vv, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
         
 
@@ -1157,6 +1213,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def string_classified_scatter_plot(cls, mview, title, x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, class_vv, class_file, symbol_size_override, db, line_vv, fid_vv, annotn, x_chan, y_chan, x_units, y_units, x_min, x_max, y_min, y_max, x_lin, y_lin, overlay):
         """
+        
         Plot a scatter plot using symbols based on a symbol class file.
         Optional data masking with masking color.
         Optional database linking.
@@ -1224,6 +1281,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a scatter plot using symbols based on a symbol class file.
         """
+        
         gxapi_cy.WrapCHIMERA._string_classified_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, class_vv, class_file.encode(), symbol_size_override, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
         
 
@@ -1232,6 +1290,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def set_lithogeochem_data(cls, db, lst, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi, vv_dummy):
         """
+        
         Set data back into a database.
         
         :param db:        [i] database handle
@@ -1273,6 +1332,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         New channel types will be set using the data `GXVV <geosoft.gxapi.GXVV>` type.
         Any metadata (CLASS, display formats) should be set separately.
         """
+        
         gxapi_cy.WrapCHIMERA._set_lithogeochem_data(GXContext._get_tls_geo(), db, lst, vv_d, vv_line, vv_n, vv_used, vv_index, vv_fids, vv_fidi, vv_dummy)
         
 
@@ -1281,6 +1341,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def stacked_bar_plot(cls, mview, data_group, offset_group, xvv, yvv, dvv, cvv, col, offset, offset_size, width):
         """
+        
         Plot a Bar plot of up to 8 channels, bars stacked on each other.
         
         :param mview:         View object to plot to
@@ -1314,6 +1375,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         Plots a bar plot with the center of the "X" axis at the symbol location.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
+        
         gxapi_cy.WrapCHIMERA._stacked_bar_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
         
 
@@ -1322,6 +1384,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def standard(cls, mview, vv, old, tol, min, max, title, unit, x0, y0, xs, ys):
         """
+        
         Plot ASSAY Standard result in a graph window.
         
         :param mview:  View
@@ -1356,6 +1419,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** If the tolerance is `rDUMMY <geosoft.gxapi.rDUMMY>`, then the minimum and maximum
         values are used, and must be specified.
         """
+        
         gxapi_cy.WrapCHIMERA._standard(GXContext._get_tls_geo(), mview, vv, old, tol, min, max, title.encode(), unit.encode(), x0, y0, xs, ys)
         
 
@@ -1364,6 +1428,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def standard_view(cls, map, view, group, ipj, vvy, old, tol, min, max, title, unit, xs, vvx, vv_line, vv_fid, db, min_y, max_y):
         """
+        
         Plot ASSAY Standard result in a graph window.
         
         :param map:      Map
@@ -1408,6 +1473,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Same as `standard <geosoft.gxapi.GXCHIMERA.standard>` but plot in a new view.
         """
+        
         min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._standard_view(GXContext._get_tls_geo(), map, view.encode(), group.encode(), ipj, vvy, old, tol, min, max, title.encode(), unit.encode(), xs, vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
         
 
@@ -1416,6 +1482,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def tri_plot2(cls, mview, title, x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font, sym_num_vv, sym_siz_vv, sym_col_vv, x_chan, y_chan, z_chan, xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc):
         """
+        
         Plot the TriPlot on a map using symbol number, size and color VVs.
         
         :param mview:       View
@@ -1493,6 +1560,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         The view scaling is not altered with any projection. The base view
         is best as the input.
         """
+        
         gxapi_cy.WrapCHIMERA._tri_plot2(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font.encode(), sym_num_vv, sym_siz_vv, sym_col_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc)
         
 
@@ -1501,6 +1569,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def fixed_symbol_tri_plot(cls, mview, title, x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, symbol_font, symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, x_chan, y_chan, z_chan, grid, tic, grid_inc, overlay):
         """
+        
         Plot a tri-plot using a single fixed symbol.
         Optional data masking with masking color.
         Optional database linking.
@@ -1564,6 +1633,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a tri plot using a single fixed symbol.
         """
+        
         gxapi_cy.WrapCHIMERA._fixed_symbol_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
         
 
@@ -1572,6 +1642,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def zone_coloured_tri_plot(cls, mview, title, x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, zone_data_vv, zone_file, symbol_font, symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, x_chan, y_chan, z_chan, grid, tic, grid_inc, overlay):
         """
+        
         Plot a tri-plot using colors based on a zone file.
         Optional data masking with masking color.
         Optional database linking.
@@ -1641,6 +1712,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a tri plot using colors based on a zone file.
         """
+        
         gxapi_cy.WrapCHIMERA._zone_coloured_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, zone_data_vv, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
         
 
@@ -1649,6 +1721,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
     @classmethod
     def string_classified_tri_plot(cls, mview, title, x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, class_vv, class_file, symbol_size_override, db, line_vv, fid_vv, x_chan, y_chan, z_chan, grid, tic, grid_inc, overlay):
         """
+        
         Plot a tri-plot using symbols based on a symbol class file.
         Optional data masking with masking color.
         Optional database linking.
@@ -1706,7 +1779,423 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a tri-plot using symbols based on a symbol class file.
         """
+        
         gxapi_cy.WrapCHIMERA._string_classified_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, class_vv, class_file.encode(), symbol_size_override, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
+        
+
+
+
+
+# Deprecated
+
+
+    @classmethod
+    def get_string_classified_symbols_index(cls, class_vv, indices_vv):
+        """
+        
+        .. deprecated:: 2024.2 Use GetStringClassifiedSymbolsIndexFromClassFile_CHIMERA. 
+        Get symbol indices based on a classification `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param class_vv:    Classification channel (string type)
+        :param indices_vv:  Symbol indices (returned) (INT `GXVV <geosoft.gxapi.GXVV>`)
+        :type  class_vv:    GXVV
+        :type  indices_vv:  GXVV
+
+        .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Scatter and Triplots now use class files.
+        """
+        warnings.warn("""Deprecated since 2024.2, Use GetStringClassifiedSymbolsIndexFromClassFile_CHIMERA.""", )
+        gxapi_cy.WrapCHIMERA._get_string_classified_symbols_index(GXContext._get_tls_geo(), class_vv, indices_vv)
+        
+
+
+
+    @classmethod
+    def get_string_classified_symbols(cls, p1, p2, p3, p4, p5):
+        """
+        
+        .. deprecated:: 2024.2 Use GetStringClassifiedSymbolsFromClassFile_CHIMERA. 
+        Get symbol numbers and colors based on a classification `GXVV <geosoft.gxapi.GXVV>`.
+        
+        :param p1:  Symbol indices  (INT `GXVV <geosoft.gxapi.GXVV>`)
+        :param p2:  Symbol numbers (returned) (INT `GXVV <geosoft.gxapi.GXVV>`)
+        :param p3:  Symbol colors (returned) (INT `GXVV <geosoft.gxapi.GXVV>`)
+        :param p4:  (TRUE/FALSE) Set Unclassified symbol color to C_ANY_NONE?
+        :param p5:  (TRUE/FALSE) Set Unassigned symbol color to C_ANY_NONE?
+        :type  p1:  GXVV
+        :type  p2:  GXVV
+        :type  p3:  GXVV
+        :type  p4:  int
+        :type  p5:  int
+
+        .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Scatter and Triplots now use class files.
+        Up to 42 different symbols are defined.
+        Index 0 is returned for unclassified strings ""
+        Index 1 is returned for unassigned strings (only the
+        first 40 different classes get their own unique symbol/color.
+        """
+        warnings.warn("""Deprecated since 2024.2, Use GetStringClassifiedSymbolsFromClassFile_CHIMERA.""", )
+        gxapi_cy.WrapCHIMERA._get_string_classified_symbols(GXContext._get_tls_geo(), p1, p2, p3, p4, p5)
+        
+
+
+
+    @classmethod
+    def plot_string_classified_symbols_legend(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9):
+        """
+        
+        .. deprecated:: 2024.2 Use PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA. 
+        Plot legend for the string classified symbols.
+        
+        :param p1:  Map view object
+        :param p2:  Title
+        :param p3:  Left side X location
+        :param p4:  Bottom Y bound
+        :param p5:  Top Y bound
+        :param p6:  Strings (string `GXVV <geosoft.gxapi.GXVV>`)
+        :param p7:  Symbol indices  (INT `GXVV <geosoft.gxapi.GXVV>`) 0-41
+        :param p8:  Plot Unclassified symbol?
+        :param p9:  Plot Unassigned symbol?
+        :type  p1:  GXMVIEW
+        :type  p2:  str
+        :type  p3:  float
+        :type  p4:  float
+        :type  p5:  float
+        :type  p6:  GXVV
+        :type  p7:  GXVV
+        :type  p8:  int
+        :type  p9:  int
+
+        .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Scatter and Triplots now use class files.
+        Up to 42 different symbols are defined.
+        Duplicate symbol indices are removed.
+        Index 0 is returned for unclassified strings ""
+        Index 1 is returned for unassigned strings (only the
+        first 40 different classes get their own unique symbol/color.
+        """
+        warnings.warn("""Deprecated since 2024.2, Use PlotStringClassifiedSymbolsLegendFromClassFile_CHIMERA.""", )
+        gxapi_cy.WrapCHIMERA._plot_string_classified_symbols_legend(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4, p5, p6, p7, p8, p9)
+        
+
+
+
+    @classmethod
+    def scatter(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29):
+        """
+        
+        .. deprecated:: None None 
+        Plot the scatter plot on a map.
+        
+        :param p1:   View
+        :param p2:   Title
+        :param p3:   X location (bottom left corner of color boxes)
+        :param p4:   Y location
+        :param p5:   Box width
+        :param p6:   Box height
+        :param p7:   Horizontal channel
+        :param p8:   Vertical channel
+        :param p9:   Mask channel
+        :param p10:  Horizontal channel name
+        :param p11:  Vertical channel name
+        :param p12:  Mask channel name
+        :param p13:  Horizontal channel units
+        :param p14:  Vertical channel units
+        :param p15:  Min. Horizontal value
+        :param p16:  Max. Horizontal value
+        :param p17:  Min. Vertical value
+        :param p18:  Max. Vertical value
+        :param p19:  Min. Horizontal range value
+        :param p20:  Max. Horizontal range value
+        :param p21:  Min. Vertical range value
+        :param p22:  Max. Vertical range value
+        :param p23:  Use Min Horz. Range selection?
+        :param p24:  Use Max Horz. Range selection?
+        :param p25:  Use Min Vert. Range selection?
+        :param p26:  Use Max Vert. Range selection?
+        :param p27:  Use linear horizontal axis scaling?
+        :param p28:  Use linear vertical axis scaling?
+        :param p29:  Symbol size (0: small, 1: medium, 2: large)
+        :type  p1:   GXMVIEW
+        :type  p2:   str
+        :type  p3:   float
+        :type  p4:   float
+        :type  p5:   float
+        :type  p6:   float
+        :type  p7:   GXVV
+        :type  p8:   GXVV
+        :type  p9:   GXVV
+        :type  p10:  str
+        :type  p11:  str
+        :type  p12:  str
+        :type  p13:  str
+        :type  p14:  str
+        :type  p15:  float
+        :type  p16:  float
+        :type  p17:  float
+        :type  p18:  float
+        :type  p19:  float
+        :type  p20:  float
+        :type  p21:  float
+        :type  p22:  float
+        :type  p23:  int
+        :type  p24:  int
+        :type  p25:  int
+        :type  p26:  int
+        :type  p27:  int
+        :type  p28:  int
+        :type  p29:  int
+
+        .. versionadded:: 5.0.7
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** The view scaling is not altered with any projection. The base view
+        is best as the input.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapCHIMERA._scatter(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10.encode(), p11.encode(), p12.encode(), p13.encode(), p14.encode(), p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29)
+        
+
+
+
+    @classmethod
+    def scatter3(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29):
+        """
+        
+        .. deprecated:: 2024.2 Replaced by Scatter4_CHIMERA. 
+        Like `scatter2 <geosoft.gxapi.GXCHIMERA.scatter2>`, but passes Line-Fid info, more options.
+        
+        :param p1:   View
+        :param p2:   Title
+        :param p3:   X location (bottom left corner of box)
+        :param p4:   Y location
+        :param p5:   Box width
+        :param p6:   Box height
+        :param p7:   Horizontal channel
+        :param p8:   Vertical channel
+        :param p9:   Mask channel
+        :param p10:  Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param p11:  Symbol numbers
+        :param p12:  Symbol sizes
+        :param p13:  Colors if symbol number or color == 0, do not plot
+        :param p14:  Mask color; overrides symbol color. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param p15:  Database (source of data)
+        :param p16:  Line handles for data
+        :param p17:  Fid values for data
+        :param p18:  Annotation style 0 - outside, 1 - inside
+        :param p19:  Horizontal channel name
+        :param p20:  Vertical channel name
+        :param p21:  Horizontal channel units
+        :param p22:  Vertical channel units
+        :param p23:  Min. Horizontal value, `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param p24:  Max. Horizontal value
+        :param p25:  Min. Vertical value
+        :param p26:  Max. Vertical value
+        :param p27:  Horizontal axis scaling: 0 - linear, 1 - log
+        :param p28:  Vertical axis scaling
+        :param p29:  Plot overlay ("" for none)
+        :type  p1:   GXMVIEW
+        :type  p2:   str
+        :type  p3:   float
+        :type  p4:   float
+        :type  p5:   float
+        :type  p6:   float
+        :type  p7:   GXVV
+        :type  p8:   GXVV
+        :type  p9:   GXVV
+        :type  p10:  str
+        :type  p11:  GXVV
+        :type  p12:  GXVV
+        :type  p13:  GXVV
+        :type  p14:  int
+        :type  p15:  GXDB
+        :type  p16:  GXVV
+        :type  p17:  GXVV
+        :type  p18:  int
+        :type  p19:  str
+        :type  p20:  str
+        :type  p21:  str
+        :type  p22:  str
+        :type  p23:  float
+        :type  p24:  float
+        :type  p25:  float
+        :type  p26:  float
+        :type  p27:  int
+        :type  p28:  int
+        :type  p29:  str
+
+        .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** - As of v6.3, the plotted data is put in its own view. The Line-Fid
+        values are passed in to enable Line-Fid linking.
+        - Optional Mask symbol colors
+        - Optional overlay. (See `GXSEMPLOT <geosoft.gxapi.GXSEMPLOT>` class).
+        - If the classified symbols are used, unique symbols (up to 266) are
+        given to the different classes. An "Unassigned" symbol is plotted
+        for blank or classes above 266.
+        - The view is given a user-projection and so should not be re-used
+        for other purposes (like the base view for the `scatter <geosoft.gxapi.GXCHIMERA.scatter>` and
+        `scatter2 <geosoft.gxapi.GXCHIMERA.scatter2>` functions can be).
+        """
+        warnings.warn("""Deprecated since 2024.2, Replaced by Scatter4_CHIMERA.""", )
+        gxapi_cy.WrapCHIMERA._scatter3(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10.encode(), p11, p12, p13, p14, p15, p16, p17, p18, p19.encode(), p20.encode(), p21.encode(), p22.encode(), p23, p24, p25, p26, p27, p28, p29.encode())
+        
+
+
+
+    @classmethod
+    def tri_plot(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30):
+        """
+        
+        .. deprecated:: None None 
+        Plot the TriPlot on a map.
+        
+        :param p1:   View
+        :param p2:   Title
+        :param p3:   X location (bottom left corner of color boxes)
+        :param p4:   Y location
+        :param p5:   Box width
+        :param p6:   Box height
+        :param p7:   X channel
+        :param p8:   Y channel
+        :param p9:   Z channel
+        :param p10:  Mask channel
+        :param p11:  X channel name
+        :param p12:  Y channel name
+        :param p13:  Z channel name
+        :param p14:  Mask channel name
+        :param p15:  Min. X range value
+        :param p16:  Max. X range value
+        :param p17:  Min. Y range value
+        :param p18:  Max. Y range value
+        :param p19:  Min. Z range value
+        :param p20:  Max. Z range value
+        :param p21:  Use Min X Range selection?
+        :param p22:  Use Max X Range selection?
+        :param p23:  Use Min Y Range selection?
+        :param p24:  Use Max Y Range selection?
+        :param p25:  Use Min Z Range selection?
+        :param p26:  Use Max Z Range selection?
+        :param p27:  Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).
+        :param p28:  Tic Increment (in percent)
+        :param p29:  Grid increment (in percent)
+        :param p30:  Symbol size (0: small, 1: medium, 2: large)
+        :type  p1:   GXMVIEW
+        :type  p2:   str
+        :type  p3:   float
+        :type  p4:   float
+        :type  p5:   float
+        :type  p6:   float
+        :type  p7:   GXVV
+        :type  p8:   GXVV
+        :type  p9:   GXVV
+        :type  p10:  GXVV
+        :type  p11:  str
+        :type  p12:  str
+        :type  p13:  str
+        :type  p14:  str
+        :type  p15:  float
+        :type  p16:  float
+        :type  p17:  float
+        :type  p18:  float
+        :type  p19:  float
+        :type  p20:  float
+        :type  p21:  int
+        :type  p22:  int
+        :type  p23:  int
+        :type  p24:  int
+        :type  p25:  int
+        :type  p26:  int
+        :type  p27:  int
+        :type  p28:  float
+        :type  p29:  float
+        :type  p30:  int
+
+        .. versionadded:: 5.0.7
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapCHIMERA._tri_plot(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10, p11.encode(), p12.encode(), p13.encode(), p14.encode(), p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30)
+        
+
+
+
+    @classmethod
+    def tri_plot3(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24):
+        """
+        
+        .. deprecated:: None None 
+        TriPlot to its own view, with Line-Fid info.
+        
+        :param p1:   View
+        :param p2:   Title
+        :param p3:   X location (bottom left corner of box)
+        :param p4:   Y location
+        :param p5:   Triangle side length
+        :param p6:   X channel
+        :param p7:   Y channel
+        :param p8:   Z channel
+        :param p9:   Mask channel
+        :param p10:  Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param p11:  Symbol numbers
+        :param p12:  Symbol sizes
+        :param p13:  Symbol colors  if symbol number or color == 0, do not plot
+        :param p14:  Mask color; overrides symbol color. Pass an empty string to `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>` for no plot.
+        :param p15:  Database (source of data)
+        :param p16:  Line handles for data
+        :param p17:  Fid values for data
+        :param p18:  X channel name
+        :param p19:  Y channel name
+        :param p20:  Z channel name
+        :param p21:  Plot Grid lines? (0: Just outside edge tics, 1: Grid lines).
+        :param p22:  Tic Increment (in percent)
+        :param p23:  Grid increment (in percent)
+        :param p24:  Plot overlay ("" for none)
+        :type  p1:   GXMVIEW
+        :type  p2:   str
+        :type  p3:   float
+        :type  p4:   float
+        :type  p5:   float
+        :type  p6:   GXVV
+        :type  p7:   GXVV
+        :type  p8:   GXVV
+        :type  p9:   GXVV
+        :type  p10:  str
+        :type  p11:  GXVV
+        :type  p12:  GXVV
+        :type  p13:  GXVV
+        :type  p14:  int
+        :type  p15:  GXDB
+        :type  p16:  GXVV
+        :type  p17:  GXVV
+        :type  p18:  str
+        :type  p19:  str
+        :type  p20:  str
+        :type  p21:  int
+        :type  p22:  float
+        :type  p23:  float
+        :type  p24:  str
+
+        .. versionadded:: 6.3
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapCHIMERA._tri_plot3(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4, p5, p6, p7, p8, p9, p10.encode(), p11, p12, p13, p14, p15, p16, p17, p18.encode(), p19.encode(), p20.encode(), p21, p22, p23, p24.encode())
         
 
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -60,6 +60,7 @@ class GXUNC(gxapi_cy.WrapUNC):
     @classmethod
     def is_valid_utf16_char(cls, ch):
         """
+        
         Check if the UTF-16 value is a valid Unicode character code point.
         
         :param ch:  UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)
@@ -70,6 +71,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapUNC._is_valid_utf16_char(GXContext._get_tls_geo(), ch)
         return ret_val
 
@@ -78,6 +80,7 @@ class GXUNC(gxapi_cy.WrapUNC):
     @classmethod
     def valid_symbol(cls, face, geofont, number):
         """
+        
         See if a Symbol number is valid in a particular font.
         
         :param face:     Face name (undecorated)
@@ -92,6 +95,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapUNC._valid_symbol(GXContext._get_tls_geo(), face.encode(), geofont, number)
         return ret_val
 
@@ -100,6 +104,7 @@ class GXUNC(gxapi_cy.WrapUNC):
     @classmethod
     def utf16_val_to_str(cls, ch, str_val):
         """
+        
         Convert a UTF-16 value to a UTF-8 encoded string.
         
         :param ch:       UTF-16 value (32-bit int, lower 16 bits used, upper bits reserved for future use)
@@ -113,6 +118,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         **Note:** An empty string will be returned for invalid symbols
         """
+        
         str_val.value = gxapi_cy.WrapUNC._utf16_val_to_str(GXContext._get_tls_geo(), ch, str_val.value.encode())
         
 
@@ -121,6 +127,7 @@ class GXUNC(gxapi_cy.WrapUNC):
     @classmethod
     def validate_symbols(cls, vv, face, geofont):
         """
+        
         High performance method to see if a set of symbols
         are valid in a particular font.
         
@@ -137,6 +144,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         **Note:** Invalid symbols in the `GXVV <geosoft.gxapi.GXVV>` will be set to -1 by this call. `GXVV <geosoft.gxapi.GXVV>` has to be of type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
+        
         gxapi_cy.WrapUNC._validate_symbols(GXContext._get_tls_geo(), vv, face.encode(), geofont)
         
 

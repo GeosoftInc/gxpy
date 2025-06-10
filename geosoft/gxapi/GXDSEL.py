@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
     @classmethod
     def create(cls):
         """
+        
         Create a Selection object
         
 
@@ -63,6 +64,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDSEL._create(GXContext._get_tls_geo())
         return GXDSEL(ret_val)
 
@@ -71,6 +73,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def data_significant_figures(self, sf):
         """
+        
         Specify the data significant figures required
         
         :param sf:    Significant figures (positive, can be fractional)
@@ -86,6 +89,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         See sSpatialResolution_DSEL to set the desired spatial resolution.
         """
+        
         self._data_significant_figures(sf)
         
 
@@ -96,6 +100,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def meta_query(self, query):
         """
+        
         Specify a metadata query string.
         
         :param query:  Meta query string
@@ -105,6 +110,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._meta_query(query.encode())
         
 
@@ -113,6 +119,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def picture_quality(self, quality):
         """
+        
         Specify the quality of pictures being returned.
         
         :param quality:  Quality
@@ -124,6 +131,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **Note:** Affected Data Types: PICTURE
         """
+        
         self._picture_quality(quality)
         
 
@@ -132,6 +140,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def request_all_info(self, request):
         """
+        
         Request that all meta-data info be sent
         
         :param request:  TRUE to for all data, FALSE - for normal data
@@ -141,6 +150,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._request_all_info(request)
         
 
@@ -149,6 +159,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def select_area(self, pply):
         """
+        
         Select a complex clipping area
         
         :param pply:  `GXPLY <geosoft.gxapi.GXPLY>` containing complex area (must contain a projection)
@@ -161,6 +172,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         **Note:** The DAP server may not handle clipping and may return
         more data than requested.
         """
+        
         self._select_area(pply)
         
 
@@ -169,6 +181,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def select_rect(self, min_x, min_y, max_x, max_y):
         """
+        
         Select a rectangular area.
         
         :param min_x:  Min X
@@ -184,6 +197,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._select_rect(min_x, min_y, max_x, max_y)
         
 
@@ -192,6 +206,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def select_resolution(self, res, force):
         """
+        
         Specify the resolution desired
         
         :param res:    Minimum Resolution
@@ -213,6 +228,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         Call sRequireResolution_DSEL with TRUE to force the client to re-sample
         the data to the resolution requested.
         """
+        
         self._select_resolution(res, force)
         
 
@@ -221,6 +237,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def select_size(self, width, height):
         """
+        
         Specify the image size desired
         
         :param width:   Image width in pixels
@@ -232,6 +249,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._select_size(width, height)
         
 
@@ -240,6 +258,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def set_extract_as_document(self, value):
         """
+        
         Specify that we want to extract this file as a document
         
         :param value:  TRUE (1) if we want as a document
@@ -249,6 +268,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_extract_as_document(value)
         
 
@@ -257,6 +277,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def set_ipj(self, ipj, force):
         """
+        
         Set the desired projection
         
         :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to set
@@ -276,6 +297,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         The spatial resolution and accuracy are accumed to be in the
         coordinate system defined by this `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
+        
         self._set_ipj(ipj, force)
         
 
@@ -284,6 +306,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
     def spatial_accuracy(self, acc):
         """
+        
         Specify the spatial accuracy required.
         
         :param acc:   Spatial accuracy desired
@@ -300,6 +323,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         You can reduce this number to achieve better compression ratios.
         This should only be used when there is one data type in the data.
         """
+        
         self._spatial_accuracy(acc)
         
 

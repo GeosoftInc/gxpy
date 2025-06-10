@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -59,6 +59,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
     def create(self, file, status):
         """
+        
         Create a child `GXSBF <geosoft.gxapi.GXSBF>` object inside an `GXSBF <geosoft.gxapi.GXSBF>`.
         
         :param file:    Directory name to open / create
@@ -73,6 +74,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create(file.encode(), status)
         return GXSBF(ret_val)
 
@@ -81,6 +83,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
     def create_obj_list(self, lst, type):
         """
+        
         Fills an `GXLST <geosoft.gxapi.GXLST>` with embedded storage names of an `GXSBF <geosoft.gxapi.GXSBF>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` handle
@@ -97,6 +100,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         Along with the Name of the file or directory, a constant "dir" or "file" string is written
         to the `GXLST <geosoft.gxapi.GXLST>` also.
         """
+        
         self._create_obj_list(lst, type)
         
 
@@ -105,6 +109,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
     def del_dir(self, dir):
         """
+        
         Delete a directory (storage) from this storage.
         
         :param dir:  Dir/Storage Name
@@ -114,6 +119,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._del_dir(dir.encode())
         
 
@@ -122,6 +128,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
     def del_file(self, file):
         """
+        
         Delete a file from this storage.
         
         :param file:  File Name
@@ -131,6 +138,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._del_file(file.encode())
         
 
@@ -141,6 +149,7 @@ class GXSBF(gxapi_cy.WrapSBF):
     @classmethod
     def h_get_db(cls, db):
         """
+        
         Get the embedded file storage from a database.
         
         :param db:  Database
@@ -153,6 +162,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSBF._h_get_db(GXContext._get_tls_geo(), db)
         return GXSBF(ret_val)
 
@@ -161,6 +171,7 @@ class GXSBF(gxapi_cy.WrapSBF):
     @classmethod
     def h_get_map(cls, map):
         """
+        
         Get the embedded file storage from a map.
         
         :param map:  `GXMAP <geosoft.gxapi.GXMAP>` object
@@ -173,6 +184,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSBF._h_get_map(GXContext._get_tls_geo(), map)
         return GXSBF(ret_val)
 
@@ -181,6 +193,7 @@ class GXSBF(gxapi_cy.WrapSBF):
     @classmethod
     def h_get_sys(cls):
         """
+        
         Get the main embedded file storage (in workspace).
         
 
@@ -191,6 +204,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSBF._h_get_sys(GXContext._get_tls_geo())
         return GXSBF(ret_val)
 
@@ -199,6 +213,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
     def exist_dir(self, dir):
         """
+        
         Check to see if a directory (storage) exists inside this storage.
         
         :param dir:  Dir/Storage Name
@@ -212,6 +227,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._exist_dir(dir.encode())
         return ret_val
 
@@ -220,6 +236,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
     def exist_file(self, file):
         """
+        
         Check to see if a file exists inside this storage.
         
         :param file:  File Name
@@ -233,6 +250,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._exist_file(file.encode())
         return ret_val
 
@@ -241,6 +259,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
     def save_log(self, dir, file, file_save, p5):
         """
+        
         Save an embedded file to an ASCII file.
         
         :param dir:        Directory name in the Parent `GXSBF <geosoft.gxapi.GXSBF>`
@@ -256,6 +275,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save_log(dir.encode(), file.encode(), file_save.encode(), p5)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def cross_correlation_pg(cls, pg1, pg2, normalise, pgo):
         """
+        
         Calculate the cross-correlation of two transform pagers: 
         The complex conjugate of (r, i) items in the first pager are 
         multiplied by the second pager (r, i) values.
@@ -72,6 +73,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._cross_correlation_pg(GXContext._get_tls_geo(), pg1, pg2, normalise, pgo)
         
 
@@ -80,6 +82,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def fft2_in(cls, im_gi, trn_fil, spc_fil):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform
         
         :param im_gi:    Input image
@@ -93,6 +96,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._fft2_in(GXContext._get_tls_geo(), im_gi, trn_fil.encode(), spc_fil.encode())
         
 
@@ -101,6 +105,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def filter_pg(cls, pg, con_fil, tr, dx, dy, rot):
         """
+        
         Apply 2D FFT filters to data in pager
         
         :param pg:       Pager obj
@@ -120,6 +125,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._filter_pg(GXContext._get_tls_geo(), pg, con_fil.encode(), tr, dx, dy, rot)
         
 
@@ -128,6 +134,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def flt(cls, im_gi, out_fil, con_fil):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` filter
         
         :param im_gi:    Input image (Transform grid)
@@ -141,6 +148,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._flt(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
         
 
@@ -149,6 +157,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def flt_inv(cls, im_gi, out_fil, con_fil):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` filter and inverse
         
         :param im_gi:    Input image (Transform grid)
@@ -162,6 +171,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._flt_inv(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
         
 
@@ -170,6 +180,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def pow_spc(cls, im_gi, spc_fil):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform power spectrum
         
         :param im_gi:    Input image (Transform grid)
@@ -181,6 +192,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._pow_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
 
@@ -189,6 +201,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def rad_spc(cls, im_gi, spc_fil):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum
         
         :param im_gi:    Input image (Transform grid)
@@ -200,6 +213,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._rad_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
 
@@ -208,6 +222,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def rad_spc_alt(cls, im_gi, spc_fil):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum - log before average and no normalization
         
         :param im_gi:    Input image (Transform grid)
@@ -219,6 +234,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._rad_spc_alt(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
         
 
@@ -227,6 +243,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def rad_spc1(cls, img, vv):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum for one `GXIMG <geosoft.gxapi.GXIMG>`
         
         :param img:  Input image (Transform grid)
@@ -238,6 +255,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._rad_spc1(GXContext._get_tls_geo(), img, vv)
         
 
@@ -246,6 +264,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def rad_spc2(cls, img1, img2, vv, v_vst, opt):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` transform Radially averaged power spectrum for two IMGs
         
         :param img1:   Input image1 (Transform grid1 - G)
@@ -263,6 +282,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._rad_spc2(GXContext._get_tls_geo(), img1, img2, vv, v_vst, opt)
         
 
@@ -271,6 +291,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def td_xd_y(cls, img_tx, img_ty, out_fil, inv_flg):
         """
+        
         `GXFFT2 <geosoft.gxapi.GXFFT2>` filter (calculate T from the derivatives Tx and Ty)
         
         :param img_tx:   Input dX image (Transform grid)
@@ -286,6 +307,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._td_xd_y(GXContext._get_tls_geo(), img_tx, img_ty, out_fil.encode(), inv_flg)
         
 
@@ -294,6 +316,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def trans_pg(cls, pg, opt):
         """
+        
         Apply 2D FFT transform to data in pager
         
         :param pg:   Pager obj
@@ -305,6 +328,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._trans_pg(GXContext._get_tls_geo(), pg, opt)
         
 
@@ -313,6 +337,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
     @classmethod
     def filter_response(cls, con_fil, start, increment, input_vv, output_vv, profile_vv):
         """
+        
         Calculates response for filter(s) defined in control file. Not specific to 2D.
         
         :param con_fil:     FFT filter control file
@@ -332,6 +357,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapFFT2._filter_response(GXContext._get_tls_geo(), con_fil.encode(), start, increment, input_vv, output_vv, profile_vv)
         
 

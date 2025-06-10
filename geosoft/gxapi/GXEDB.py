@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXDB import GXDB
@@ -63,6 +63,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def apply_formula_internal(self, formula):
         """
+        
         Apply a formula to selected cells of the
         current line. (Do not use this wrapper if you
         want to apply a formula across multiple lines)
@@ -91,6 +92,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._apply_formula_internal(formula.encode())
         
 
@@ -99,6 +101,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def current(cls):
         """
+        
         This method returns the Current Edited Database.
         
 
@@ -111,6 +114,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDB._current(GXContext._get_tls_geo())
         return GXEDB(ret_val)
 
@@ -119,6 +123,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def current_no_activate(cls):
         """
+        
         This method returns the Current Edited Database.
         
 
@@ -134,6 +139,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** This function acts just like `current <geosoft.gxapi.GXEDB.current>` except that the document is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
+        
         ret_val = gxapi_cy.WrapEDB._current_no_activate(GXContext._get_tls_geo())
         return GXEDB(ret_val)
 
@@ -142,6 +148,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def current_if_exists(cls):
         """
+        
         This method returns the Current Edited Database.
         
 
@@ -155,6 +162,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDB._current_if_exists(GXContext._get_tls_geo())
         return GXEDB(ret_val)
 
@@ -163,6 +171,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def del_line0(self):
         """
+        
         Delete Line 0.
         
 
@@ -174,6 +183,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Deletes an empty line 0 from the database.
         """
+        
         self._del_line0()
         
 
@@ -184,6 +194,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def destroy_view(self, unload_flag):
         """
+        
         Removes the view from the workspace.
         
         :param unload_flag:  :ref:`EDB_REMOVE`
@@ -201,6 +212,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         unloaded and optionally saved depending on the :ref:`EDB_REMOVE`
         parameter.
         """
+        
         self._destroy_view(unload_flag)
         
 
@@ -209,6 +221,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_chan_symb(self):
         """
+        
         Returns the currently marked channel symbol.
         
 
@@ -222,6 +235,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_cur_chan_symb()
         return ret_val
 
@@ -230,6 +244,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_line_symb(self):
         """
+        
         Get current line symbol.
         
 
@@ -243,6 +258,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_cur_line_symb()
         return ret_val
 
@@ -251,6 +267,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_displ_fid_range(self, start, num):
         """
+        
         Return the displayed fiducial start index & number of cells
         
         :param start:  Fiducial start
@@ -264,6 +281,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         start.value, num.value = self._get_displ_fid_range(start.value, num.value)
         
 
@@ -272,6 +290,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_point(self, x, y, z):
         """
+        
         Returns the coordinates of the currently selected point in the database (first value if range selected)
         
         :param x:    X coordinate (dummy if no selection or if no X channel defined)
@@ -287,6 +306,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         x.value, y.value, z.value = self._get_cur_point(x.value, y.value, z.value)
         
 
@@ -295,6 +315,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_fid_range(self, start, incr, num):
         """
+        
         Returns currently displayed fid range
         
         :param start:  Fiducial start
@@ -310,6 +331,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         start.value, incr.value, num.value = self._get_fid_range(start.value, incr.value, num.value)
         
 
@@ -318,6 +340,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_next_line_symb(self):
         """
+        
         Returns the next line symbol.
         
 
@@ -331,6 +354,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_next_line_symb()
         return ret_val
 
@@ -339,6 +363,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_prev_line_symb(self):
         """
+        
         Returns the previous line symbol.
         
 
@@ -352,6 +377,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_prev_line_symb()
         return ret_val
 
@@ -360,6 +386,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_x_axis_options(self, rescale_x, lines, interval):
         """
+        
         Get profile X-axis options
         
         :param rescale_x:  Auto rescale X-axis
@@ -375,6 +402,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         rescale_x.value, lines.value, interval.value = self._get_profile_x_axis_options(rescale_x.value, lines.value, interval.value)
         
 
@@ -383,6 +411,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_x_axis_options(self, rescale_x, lines, interval):
         """
+        
         Set profile X-axis options
         
         :param rescale_x:  Auto rescale X-axis
@@ -398,6 +427,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_profile_x_axis_options(rescale_x, lines, interval)
         
 
@@ -406,6 +436,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_range_x(self, min_x, max_x, ph_chan_x):
         """
+        
         Get profile X range and X channel
         
         :param min_x:      Minimum x
@@ -421,6 +452,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         min_x.value, max_x.value, ph_chan_x.value = self._get_profile_range_x(min_x.value, max_x.value, ph_chan_x.value)
         
 
@@ -429,6 +461,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_range_y(self, window, prof, min_y, max_y, scl):
         """
+        
         Get profile Y range and display option
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -448,6 +481,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         min_y.value, max_y.value, scl.value = self._get_profile_range_y(window, prof, min_y.value, max_y.value, scl.value)
         
 
@@ -456,6 +490,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_split(self, d1, d2):
         """
+        
         Get profile split for 3 windows.
         
         :param d1:   Split d1 (profile window 0 height / entire profile window height)
@@ -469,6 +504,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         d1.value, d2.value = self._get_profile_split(d1.value, d2.value)
         
 
@@ -477,6 +513,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_split5(self, d1, d2, d3, d4):
         """
+        
         Get profile split for 5 windows.
         
         :param d1:   Split d1 (profile window 0 height / entire profile window height)
@@ -494,6 +531,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         d1.value, d2.value, d3.value, d4.value = self._get_profile_split5(d1.value, d2.value, d3.value, d4.value)
         
 
@@ -502,6 +540,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_split_vv(self, vv):
         """
+        
         Get profile window splits.
         
         :param vv:   Split `GXVV <geosoft.gxapi.GXVV>` (REAL) (profile window heights / entire profile window height)
@@ -522,6 +561,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         profile windows. To get/set the fraction of the total database window
         devoted to the profiles, use the `set_split <geosoft.gxapi.GXEDB.set_split>` and `get_split <geosoft.gxapi.GXEDB.get_split>` functions.
         """
+        
         self._get_profile_split_vv(vv)
         
 
@@ -530,6 +570,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_vertical_grid_lines(self, grid, interval):
         """
+        
         Get profile grid vertical line info.
         
         :param grid:      Vertical grid lines?
@@ -543,6 +584,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         grid.value, interval.value = self._get_profile_vertical_grid_lines(grid.value, interval.value)
         
 
@@ -551,6 +593,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_window(self, window, x, y):
         """
+        
         Get profile window size
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -566,6 +609,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         x.value, y.value = self._get_profile_window(window, x.value, y.value)
         
 
@@ -574,6 +618,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def goto_column(self, col):
         """
+        
         Move the channel marker to a specific column.
         
         :param col:  Channel column number, 0 is first -1 for first column without data
@@ -585,6 +630,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._goto_column(col)
         
 
@@ -593,6 +639,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def goto_elem(self, elem):
         """
+        
         Goto an element in the current line.
         
         :param elem:  Element number
@@ -604,6 +651,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._goto_elem(elem)
         
 
@@ -612,6 +660,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def goto_line(self, line_symb):
         """
+        
         Goto to a line symbol in the editor.
         
         :param line_symb:  Line symbol to goto to
@@ -623,6 +672,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._goto_line(line_symb)
         
 
@@ -631,6 +681,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def histogram(self, st, min, incr, count):
         """
+        
         Create histogram stats.
         
         :param st:     `GXST <geosoft.gxapi.GXST>` handle to update
@@ -648,6 +699,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._histogram(st, min, incr, count)
         
 
@@ -656,6 +708,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def all_chan_list(self, vv):
         """
+        
         Get a list of the all channels but in the way they are displayed.
         
         :param vv:   `GXVV <geosoft.gxapi.GXVV>` (INT) in which to place the list.
@@ -680,6 +733,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
+        
         ret_val = self._all_chan_list(vv)
         return ret_val
 
@@ -688,6 +742,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def channels(self):
         """
+        
         Returns number of displayed channels
         
 
@@ -700,6 +755,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._channels()
         return ret_val
 
@@ -708,6 +764,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def disp_chan_list(self, vv):
         """
+        
         Get a list of the displayed channel symbols.
         
         :param vv:   `GXVV <geosoft.gxapi.GXVV>` (INT) in which to place the list.
@@ -732,6 +789,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `disp_chan_lst <geosoft.gxapi.GXEDB.disp_chan_lst>`
         """
+        
         ret_val = self._disp_chan_list(vv)
         return ret_val
 
@@ -740,6 +798,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def disp_chan_lst(self, lst):
         """
+        
         Get a list of the displayed channel names.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
@@ -765,6 +824,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
+        
         ret_val = self._disp_chan_lst(lst)
         return ret_val
 
@@ -773,6 +833,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def disp_class_chan_lst(self, lst, class_name):
         """
+        
         Get a list of the displayed channels in a given channel class.
         
         :param lst:         `GXLST <geosoft.gxapi.GXLST>` object
@@ -803,6 +864,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
+        
         ret_val = self._disp_class_chan_lst(lst, class_name.encode())
         return ret_val
 
@@ -811,6 +873,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def find_channel_column(self, chan):
         """
+        
         Find the column that contains a channel
         
         :param chan:  Channel
@@ -826,6 +889,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._find_channel_column(chan.encode())
         return ret_val
 
@@ -834,6 +898,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def find_nearest(self, x, y, z, ipj):
         """
+        
         Find the nearest point on the current line based
         on X,Y and Z and their projection.
         
@@ -856,6 +921,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val, x.value, y.value, z.value = self._find_nearest(x.value, y.value, z.value, ipj)
         return ret_val
 
@@ -864,6 +930,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_chan(self, str_val):
         """
+        
         Get current channel name.
         
         :param str_val:  Where to put the name
@@ -877,6 +944,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Returns "" if mark not currently in a channel.
         """
+        
         str_val.value = self._get_cur_chan(str_val.value.encode())
         
 
@@ -885,6 +953,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_fid_string(self, val):
         """
+        
         This method returns the currently selected value
         at the current fid (if available).
         
@@ -897,6 +966,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         val.value = self._get_cur_fid_string(val.value.encode())
         
 
@@ -905,6 +975,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_line(self, str_val):
         """
+        
         Get current line name.
         
         :param str_val:  Where to put the name
@@ -916,6 +987,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         str_val.value = self._get_cur_line(str_val.value.encode())
         
 
@@ -924,6 +996,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_mark(self, start, end, inc):
         """
+        
         Returns the current data mark info.
         
         :param start:  Start fiducial
@@ -943,6 +1016,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val, start.value, end.value, inc.value = self._get_cur_mark(start.value, end.value, inc.value)
         return ret_val
 
@@ -951,6 +1025,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_current_selection(self, db, chan, line, fid):
         """
+        
         Get current selection information.
         
         :param db:    Database name
@@ -974,6 +1049,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         "[None]"  if no values are selected
         "10 to 20"  giving the range of values.
         """
+        
         db.value, chan.value, line.value, fid.value = self._get_current_selection(db.value.encode(), chan.value.encode(), line.value.encode(), fid.value.encode())
         
 
@@ -982,6 +1058,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def get_databases_lst(cls, lst, path):
         """
+        
         Load the file names of open databases into a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
@@ -999,6 +1076,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDB._get_databases_lst(GXContext._get_tls_geo(), lst, path)
         return ret_val
 
@@ -1007,6 +1085,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_mark_chan_vv(self, vv, chan):
         """
+        
         Get channel data for the current mark.
         
         :param vv:    `GXVV <geosoft.gxapi.GXVV>` in which to place the data.
@@ -1031,6 +1110,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         The `GXVV <geosoft.gxapi.GXVV>` will be resized to the length of the data
         """
+        
         ret_val = self._get_mark_chan_vv(vv, chan)
         return ret_val
 
@@ -1039,6 +1119,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_mark_chan_va(self, vv, chan):
         """
+        
         Get channel data for the current mark.
         
         :param vv:    `GXVA <geosoft.gxapi.GXVA>` in which to place the data.
@@ -1063,6 +1144,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         The `GXVA <geosoft.gxapi.GXVA>` will be resized to the length of the data
         """
+        
         ret_val = self._get_mark_chan_va(vv, chan)
         return ret_val
 
@@ -1071,6 +1153,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_name(self, name):
         """
+        
         Get the name of the database object of this `GXEDB <geosoft.gxapi.GXEDB>`.
         
         :param name:  Name returned
@@ -1082,6 +1165,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         name.value = self._get_name(name.value.encode())
         
 
@@ -1090,6 +1174,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_parm_int(self, window, prof, parm):
         """
+        
         Get integer profile parameter
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1108,6 +1193,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_profile_parm_int(window, prof, parm)
         return ret_val
 
@@ -1116,6 +1202,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_window_state(self):
         """
+        
         Retrieve the current state of the database window
         
 
@@ -1128,6 +1215,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_window_state()
         return ret_val
 
@@ -1136,6 +1224,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def have_current(cls):
         """
+        
         Checks if any database is currently loaded
         
         :rtype:      bool
@@ -1146,6 +1235,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDB._have_current(GXContext._get_tls_geo())
         return ret_val
 
@@ -1154,6 +1244,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def is_locked(self):
         """
+        
         Checks if the database locked
         
         :rtype:      bool
@@ -1164,6 +1255,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._is_locked()
         return ret_val
 
@@ -1172,6 +1264,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def loaded(cls, name):
         """
+        
         Checks if a specific database is loaded.
         
         :param name:  Database name
@@ -1184,6 +1277,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDB._loaded(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
@@ -1192,6 +1286,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def profile_open(self, window):
         """
+        
         Return TRUE or FALSE if profile window is open
         
         :param window:  Profile window number: 0 is the top window 1 is the middle window 2 is the bottom window
@@ -1210,6 +1305,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** This functions will return FALSE if requested window
         is not supported in current version of Oasis montaj.
         """
+        
         ret_val = self._profile_open(window)
         return ret_val
 
@@ -1218,6 +1314,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def read_only(self):
         """
+        
         Checks if a database is currently opened in a read-only mode.
         
         :rtype:      bool
@@ -1228,6 +1325,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._read_only()
         return ret_val
 
@@ -1236,6 +1334,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
+        
         Get the map window's position and dock state
         
         :param left:         Window left position
@@ -1257,6 +1356,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
@@ -1265,6 +1365,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
+        
         Get the map window's position and dock state
         
         :param left:         Window left position
@@ -1286,6 +1387,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_window_position(left, top, right, bottom, state, is_floating)
         
 
@@ -1294,6 +1396,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def show_profile_name(self, state, chan):
         """
+        
         Show a profile in the profile window
         
         :param state:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1312,6 +1415,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** If the symbol is not loaded, it will be loaded.
         """
+        
         ret_val = self._show_profile_name(state, chan.encode())
         return ret_val
 
@@ -1320,6 +1424,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def profile_shown(self, chan):
         """
+        
         Return index of first profile window in which a profile is shown
         
         :param chan:  Name of the channel
@@ -1336,6 +1441,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Returns -1 if channel profile is not loaded.
         """
+        
         ret_val = self._profile_shown(chan.encode())
         return ret_val
 
@@ -1344,6 +1450,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_window_y_axis_direction(self, window):
         """
+        
         Get the y-axis direction for a window
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1358,6 +1465,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_window_y_axis_direction(window)
         return ret_val
 
@@ -1366,6 +1474,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def window_profiles(self, window):
         """
+        
         Get number of profiles in a window
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1380,6 +1489,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._window_profiles(window)
         return ret_val
 
@@ -1388,6 +1498,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def launch_histogram(self, chan):
         """
+        
         Launch histogram tool on a database.
         
         :param chan:  First chan name
@@ -1401,6 +1512,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `GXCHIMERA.launch_histogram <geosoft.gxapi.GXCHIMERA.launch_histogram>` in chimera.gxh
         """
+        
         self._launch_histogram(chan.encode())
         
 
@@ -1409,6 +1521,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def launch_scatter(self):
         """
+        
         Launch scatter tool on a database.
         
 
@@ -1428,6 +1541,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `GXCHIMERA.launch_scatter <geosoft.gxapi.GXCHIMERA.launch_scatter>` in chimera.gxh
         """
+        
         self._launch_scatter()
         
 
@@ -1436,6 +1550,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load(cls, name):
         """
+        
         Loads a list of databases into the workspace
         
         :param name:  List of databases (';' or '|' delimited) to load.
@@ -1459,6 +1574,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
+        
         ret_val = gxapi_cy.WrapEDB._load(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
@@ -1467,6 +1583,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_no_activate(cls, name):
         """
+        
         Loads documents into the workspace
         
         :param name:  List of documents (';' or '|' delimited) to load.
@@ -1485,6 +1602,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** This function acts just like `load <geosoft.gxapi.GXEDB.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
+        
         ret_val = gxapi_cy.WrapEDB._load_no_activate(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
@@ -1493,6 +1611,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def load_all_chans(self):
         """
+        
         Load all channels into current database
         
 
@@ -1502,6 +1621,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._load_all_chans()
         
 
@@ -1510,6 +1630,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def load_chan(self, chan):
         """
+        
         Load a channel into current database
         
         :param chan:  Channel name
@@ -1524,6 +1645,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
+        
         self._load_chan(chan.encode())
         
 
@@ -1532,6 +1654,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_new(cls, name):
         """
+        
         Loads a database into the workspace, flags as new.
         
         :param name:  Database to load.
@@ -1550,6 +1673,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         an internal flag such that if on closing the user chooses
         not to save changes, the database is deleted.
         """
+        
         ret_val = gxapi_cy.WrapEDB._load_new(GXContext._get_tls_geo(), name.encode())
         return GXEDB(ret_val)
 
@@ -1558,6 +1682,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_pass(cls, name, login, password):
         """
+        
         Loads a database into the editor with login and password.
         
         :param name:      Name of database to load
@@ -1581,6 +1706,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         If the database is already loaded, it simply becomes
         the current database.
         """
+        
         ret_val = gxapi_cy.WrapEDB._load_pass(GXContext._get_tls_geo(), name.encode(), login.encode(), password.encode())
         return GXEDB(ret_val)
 
@@ -1589,6 +1715,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_with_view(cls, name, p2):
         """
+        
         Load an `GXEDB <geosoft.gxapi.GXEDB>` with the view from a current `GXEDB <geosoft.gxapi.GXEDB>`.
         
         :param name:  Source `GXDB <geosoft.gxapi.GXDB>` name
@@ -1609,6 +1736,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         dbsubset to create a new database with the same
         view as previously.
         """
+        
         ret_val = gxapi_cy.WrapEDB._load_with_view(GXContext._get_tls_geo(), name.encode(), p2)
         return GXEDB(ret_val)
 
@@ -1617,6 +1745,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def lock(self):
         """
+        
         This method locks the Edited Database.
         
 
@@ -1629,6 +1758,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._lock()
         return GXDB(ret_val)
 
@@ -1637,6 +1767,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def make_current(self):
         """
+        
         Makes this `GXEDB <geosoft.gxapi.GXEDB>` object the current active object to the user.
         
 
@@ -1646,6 +1777,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._make_current()
         
 
@@ -1654,6 +1786,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def remove_profile(self, window, prof):
         """
+        
         Remove a profile from the profile window
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1667,6 +1800,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._remove_profile(window, prof)
         
 
@@ -1675,6 +1809,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_cur_fid(self):
         """
+        
         This method returns the currently selected fiducial if
         the user is selecting a fiducial. If not, it returns
         a dummy.
@@ -1690,6 +1825,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_cur_fid()
         return ret_val
 
@@ -1698,6 +1834,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_profile_parm_double(self, window, prof, parm):
         """
+        
         Get real profile parameter
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1716,6 +1853,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_profile_parm_double(window, prof, parm)
         return ret_val
 
@@ -1724,6 +1862,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def get_split(self):
         """
+        
         Get split ratio between spreadsheet and profile sections.
         
 
@@ -1737,6 +1876,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_split()
         return ret_val
 
@@ -1745,6 +1885,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def run_channel_maker(self, chan):
         """
+        
         Run the maker for a single channel.
         
         :param chan:  Channel name
@@ -1759,6 +1900,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** Skips channels without makers; will not return an
         error if the channel does not exist.
         """
+        
         self._run_channel_maker(chan.encode())
         
 
@@ -1767,6 +1909,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def run_channel_makers(self):
         """
+        
         Recreate channels with makers.
         
 
@@ -1778,6 +1921,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Skips channels without makers.
         """
+        
         self._run_channel_makers()
         
 
@@ -1786,6 +1930,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_cur_line(self, line):
         """
+        
         Set the current line name.
         
         :param line:  Line name
@@ -1797,6 +1942,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_cur_line(line.encode())
         
 
@@ -1805,6 +1951,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_cur_line_no_message(self, str_val):
         """
+        
         Set Line but do not send a message.
         
         :param str_val:  Line name
@@ -1816,6 +1963,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_cur_line_no_message(str_val.encode())
         
 
@@ -1824,6 +1972,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_cur_mark(self, start, end):
         """
+        
         Set the current mark.
         
         :param start:  Start fiducial
@@ -1837,6 +1986,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_cur_mark(start, end)
         
 
@@ -1845,6 +1995,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_parm_i(self, window, prof, parm, value):
         """
+        
         Set integer profile parameter
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1862,6 +2013,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_profile_parm_i(window, prof, parm, value)
         
 
@@ -1870,6 +2022,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_parm_r(self, window, prof, parm, value):
         """
+        
         Set real profile parameter
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1887,6 +2040,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_profile_parm_r(window, prof, parm, value)
         
 
@@ -1895,6 +2049,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_range_x(self, min_x, max_x, x_ch):
         """
+        
         Set profile X range and X channel
         
         :param min_x:  Minimum x, `rDUMMY <geosoft.gxapi.rDUMMY>` for data minimum
@@ -1910,6 +2065,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_profile_range_x(min_x, max_x, x_ch)
         
 
@@ -1918,6 +2074,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_range_y(self, window, prof, min_y, max_y, scl):
         """
+        
         Set profile Y range and display option
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1940,6 +2097,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If channel is not loaded or displayed, it will
         loaded and/or displayed.
         """
+        
         self._set_profile_range_y(window, prof, min_y, max_y, scl)
         
 
@@ -1948,6 +2106,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def profile_rescale_all(self, window):
         """
+        
         Rescale all profiles in a selected window in both X and Y, based on current scaling selections
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -1959,6 +2118,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._profile_rescale_all(window)
         
 
@@ -1967,6 +2127,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_split(self, d1, d2):
         """
+        
         Set profile split for 3 windows.
         
         :param d1:   Split d1 (profile window 0 height / entire profile window height)
@@ -1980,6 +2141,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_profile_split(d1, d2)
         
 
@@ -1988,6 +2150,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_split5(self, d1, d2, d3, d4):
         """
+        
         Set profile split for 5 windows.
         
         :param d1:   Split d1 (profile window 0 height / entire profile window height)
@@ -2005,6 +2168,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_profile_split5(d1, d2, d3, d4)
         
 
@@ -2013,6 +2177,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_profile_split_vv(self, vv):
         """
+        
         Set profile splits
         
         :param vv:   Split `GXVV <geosoft.gxapi.GXVV>` (REAL) (relative sizes of each profile window)
@@ -2031,6 +2196,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         `GXVV <geosoft.gxapi.GXVV>` values beyond the maximum number of displayable
         profiles (`MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`) are ignored.
         """
+        
         self._set_profile_split_vv(vv)
         
 
@@ -2039,6 +2205,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_split(self, d):
         """
+        
         Set split ratio between spreadsheet and profile sections.
         
         :param d:    Split d (0.0 <= d <= 1.0).
@@ -2053,6 +2220,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** d = (spreadsheet window height/
         (spreadsheet window height + entire profile window height))
         """
+        
         self._set_split(d)
         
 
@@ -2061,6 +2229,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def set_window_state(self, state):
         """
+        
         Changes the state of the database window
         
         :param state:  :ref:`EDB_WINDOW_STATE`
@@ -2072,6 +2241,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_window_state(state)
         
 
@@ -2080,6 +2250,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def show_profile(self, window, symb):
         """
+        
         Show a profile in the profile window
         
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, -1 to plot to the currently selected profile window. See `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
@@ -2095,6 +2266,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** If the symbol is not loaded, it will be loaded.
         """
+        
         self._show_profile(window, symb)
         
 
@@ -2103,6 +2275,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def statistics(self, st):
         """
+        
         Add all currently selected data to the `GXST <geosoft.gxapi.GXST>`.
         
         :param st:   `GXST <geosoft.gxapi.GXST>` handle to update
@@ -2116,6 +2289,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Use `histogram <geosoft.gxapi.GXEDB.histogram>` to get median or histogram.
         """
+        
         self._statistics(st)
         
 
@@ -2124,6 +2298,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def un_load(cls, name):
         """
+        
         Unloads an edited database.
         
         :param name:  Name of database to unload
@@ -2138,6 +2313,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If the database is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEDB.un_load_verify>` with FALSE to prompt save.
         """
+        
         gxapi_cy.WrapEDB._un_load(GXContext._get_tls_geo(), name.encode())
         
 
@@ -2146,6 +2322,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def un_load_all(cls):
         """
+        
         Unloads all opened databases
         
 
@@ -2155,6 +2332,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEDB._un_load_all(GXContext._get_tls_geo())
         
 
@@ -2163,6 +2341,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def un_load_all_chans(self):
         """
+        
         Unload all channels into current database
         
 
@@ -2172,6 +2351,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._un_load_all_chans()
         
 
@@ -2180,6 +2360,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def un_load_chan(self, chan):
         """
+        
         Unload a channel into current database
         
         :param chan:  Channel name
@@ -2194,6 +2375,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
+        
         self._un_load_chan(chan.encode())
         
 
@@ -2202,6 +2384,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def un_load_discard(cls, name):
         """
+        
         Unloads a database in the workspace, discards changes.
         
         :param name:  Name of database to unload
@@ -2215,6 +2398,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** If the database is not loaded, nothing happens.
         """
+        
         gxapi_cy.WrapEDB._un_load_discard(GXContext._get_tls_geo(), name.encode())
         
 
@@ -2223,6 +2407,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def un_load_verify(cls, name, prompt):
         """
+        
         Unloads an edited database, optional prompt to save.
         
         :param name:    Name of database to unload
@@ -2242,6 +2427,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         EDB_UNLOAD_MULTIPROMPT is now obsolete and
         is equivalent to `EDB_UNLOAD_SINGLE_PROMPT <geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT>`.
         """
+        
         gxapi_cy.WrapEDB._un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
         
 
@@ -2250,6 +2436,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
     def un_lock(self):
         """
+        
         This method unlocks the Edited Database.
         
 
@@ -2259,6 +2446,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._un_lock()
         
 
@@ -2271,6 +2459,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_control(cls, db_file, window):
         """
+        
         Version of `load <geosoft.gxapi.GXEDB.load>` that can be used to load a database via subclassing into a Windows control.
         
         :param db_file:  Database filename
@@ -2284,6 +2473,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEDB._load_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
 
@@ -2292,6 +2482,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_new_control(cls, db_file, window):
         """
+        
         Version of `load_new <geosoft.gxapi.GXEDB.load_new>` that can be used to load a database via subclassing into a Windows control.
         
         :param db_file:  Database filename
@@ -2305,6 +2496,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEDB._load_new_control(GXContext._get_tls_geo(), db_file.encode(), window)
         
 
@@ -2313,6 +2505,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_pass_control(cls, db_file, user, password, window):
         """
+        
         Version of `load_pass <geosoft.gxapi.GXEDB.load_pass>` that can be used to load a database via subclassing into a Windows control.
         
         :param db_file:   Database filename
@@ -2330,6 +2523,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEDB._load_pass_control(GXContext._get_tls_geo(), db_file.encode(), user.encode(), password.encode(), window)
         
 
@@ -2338,6 +2532,7 @@ class GXEDB(gxapi_cy.WrapEDB):
     @classmethod
     def load_with_view_control(cls, db_file, edb, window):
         """
+        
         Version of `load_with_view <geosoft.gxapi.GXEDB.load_with_view>` that can be used to load a database via subclassing into a Windows control.
         
         :param db_file:  Database filename
@@ -2353,18 +2548,178 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEDB._load_with_view_control(GXContext._get_tls_geo(), db_file.encode(), edb, window)
         
 
 
 
 
-# Obsolete
+# Deprecated
+
+
+    @classmethod
+    def no_load(cls, name):
+        """
+        
+        .. deprecated:: None None 
+        Makes a database the Edited Database without loading it.
+        
+        :param name:  Single databases to "not" load
+        :type  name:  str
+
+        :returns:     Handle to current edited database
+        :rtype:       GXEDB
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = gxapi_cy.WrapEDB._no_load(GXContext._get_tls_geo(), name.encode())
+        return GXEDB(ret_val)
+
+
+
+
+    def read_data_view_bf(self, line_group, bf):
+        """
+        
+        .. deprecated:: None None 
+        Retrieve view info from the database via a `GXBF <geosoft.gxapi.GXBF>`.
+        
+        :param line_group:  Line or group symbol
+        :param bf:          `GXBF <geosoft.gxapi.GXBF>` (returned)
+        :type  line_group:  int
+        :type  bf:          GXBF
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Returns info on loaded channels and profiles for a given line.
+        You can use `NULLSYMB <geosoft.gxapi.NULLSYMB>` to get the line view info from normal lines,
+        since the info is the same for all "regular" lines.
+        A typical usage would be to call `read_data_view_bf <geosoft.gxapi.GXEDB.read_data_view_bf>` to get view
+        info from one database, and then call `write_data_view_bf <geosoft.gxapi.GXEDB.write_data_view_bf>` to
+        load this information into another database.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._read_data_view_bf(line_group, bf)
+        
+
+
+
+
+    def write_data_view_bf(self, line_group, bf):
+        """
+        
+        .. deprecated:: None None 
+        Write the View info from a `GXBF <geosoft.gxapi.GXBF>` into the database.
+        
+        :param line_group:  Line or group symbol
+        :param bf:          `GXBF <geosoft.gxapi.GXBF>` (input)
+        :type  line_group:  int
+        :type  bf:          GXBF
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** Set info on loaded channels and profiles for a given line.
+        You can use `NULLSYMB <geosoft.gxapi.NULLSYMB>` to get the line view info from normal lines,
+        since the info is the same for all "regular" lines.
+        A typical usage would be to call `read_data_view_bf <geosoft.gxapi.GXEDB.read_data_view_bf>` to get view
+        info from one database, and then call `write_data_view_bf <geosoft.gxapi.GXEDB.write_data_view_bf>` to
+        load this information into another database.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._write_data_view_bf(line_group, bf)
+        
+
+
+
+
+    def set_window_area(self, x_min, y_min, x_max, y_max):
+        """
+        
+        .. deprecated:: None Use SetWindowPosition_EDB, which includes multi-monitor support. 
+        Set the location of the database window within the frame.
+        
+        :param x_min:  X Min
+        :param y_min:  Y Min
+        :param x_max:  X Max
+        :param y_max:  Y Max
+        :type  x_min:  int
+        :type  y_min:  int
+        :type  x_max:  int
+        :type  y_max:  int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The Coordinates are pixels with 0,0 being the bottom
+        left corner Oasis montaj frame window.
+
+        if the max values are equal or less than the min values
+        the window will be mimimized. If any Min values are `iMIN <geosoft.gxapi.iMIN>`
+        or any Max values are `iMAX <geosoft.gxapi.iMAX>`, the window is maximized.
+        """
+        warnings.warn("""Deprecated since unknown, Use SetWindowPosition_EDB, which includes multi-monitor support.""", )
+        self._set_window_area(x_min, y_min, x_max, y_max)
+        
+
+
+
+
+    def get_window_area(self, min_x, min_y, max_x, max_y):
+        """
+        
+        .. deprecated:: None Use GetWindowPosition_EDB, which includes multi-monitor support. 
+        Get the location of the database window within the frame.
+        
+        :param min_x:  X Min returned
+        :param min_y:  Y Min returned
+        :param max_x:  X Max returned
+        :param max_y:  Y Max returned
+        :type  min_x:  int_ref
+        :type  min_y:  int_ref
+        :type  max_x:  int_ref
+        :type  max_y:  int_ref
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The Coordinates are pixels with 0,0 being the bottom
+        left corner Oasis montaj frame window.
+
+        If the window is minimized, the max values will be
+        equal to the min values. If the window is maximized
+        X Min and Y min will be `iMIN <geosoft.gxapi.iMIN>` and X max and Y max
+        will be `iMAX <geosoft.gxapi.iMAX>`.
+        """
+        warnings.warn("""Deprecated since unknown, Use GetWindowPosition_EDB, which includes multi-monitor support.""", )
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_window_area(min_x.value, min_y.value, max_x.value, max_y.value)
+        
+
 
 
 
     def load_channel_after(self, chan_to_move, chan_to_move_after):
         """
+        
         Loads the channel after specified channel
         
         :param chan_to_move:        Channel name
@@ -2381,6 +2736,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If the channel to locate does not exist it will load the channel in the default location.
         If the channel to be loaded is already loaded, no changes will be made.
         """
+        
         self._load_channel_after(chan_to_move.encode(), chan_to_move_after.encode())
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXCOM(gxapi_cy.WrapCOM):
     @classmethod
     def create(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
+        
         Create `GXCOM <geosoft.gxapi.GXCOM>` object.
         
         :param port:          Port name to open ("COM1" is example)
@@ -77,6 +78,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapCOM._create(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
@@ -85,6 +87,7 @@ class GXCOM(gxapi_cy.WrapCOM):
     @classmethod
     def create_no_terminate(cls, port, baud, data_size, parity, stop_bits, flow_control, time_out):
         """
+        
         Create `GXCOM <geosoft.gxapi.GXCOM>` object.
         
         :param port:          Port name to open ("COM1" is example)
@@ -109,6 +112,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapCOM._create_no_terminate(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
@@ -119,6 +123,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def read_line_no_terminate(self, line):
         """
+        
         Reads a Line from the `GXCOM <geosoft.gxapi.GXCOM>`
         
         :param line:  String for line
@@ -132,6 +137,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val, line.value = self._read_line_no_terminate(line.value.encode())
         return ret_val
 
@@ -140,6 +146,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def read_chars_no_terminate(self, line):
         """
+        
         Reads characters from the `GXCOM <geosoft.gxapi.GXCOM>`, times out and does not terminate
         
         :param line:  String for characters
@@ -153,6 +160,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val, line.value = self._read_chars_no_terminate(line.value.encode())
         return ret_val
 
@@ -161,6 +169,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def read_line(self, line):
         """
+        
         Reads a Line from the `GXCOM <geosoft.gxapi.GXCOM>`
         
         :param line:  String for line
@@ -170,6 +179,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         line.value = self._read_line(line.value.encode())
         
 
@@ -178,6 +188,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def write_chars_no_terminate(self, line):
         """
+        
         Writes characters to the `GXCOM <geosoft.gxapi.GXCOM>`.  Does not terminate upon error
         
         :param line:  Line to write
@@ -191,6 +202,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._write_chars_no_terminate(line.encode())
         return ret_val
 
@@ -199,6 +211,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def purge_comm(self):
         """
+        
         Purges the input and output buffers.
         
 
@@ -206,6 +219,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._purge_comm()
         
 
@@ -214,6 +228,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def read_chars(self, line):
         """
+        
         Reads characters from the `GXCOM <geosoft.gxapi.GXCOM>`
         
         :param line:  String for characters
@@ -223,6 +238,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         line.value = self._read_chars(line.value.encode())
         
 
@@ -231,6 +247,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def read_em61_lines_wa(self, lines, wa):
         """
+        
         Reads Lines from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`: Geonics EM61 only
         
         :param lines:  Number of lines
@@ -242,6 +259,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._read_em61_lines_wa(lines, wa)
         
 
@@ -250,6 +268,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def read_file2_wa(self, wa):
         """
+        
         Reads entire dataset from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`
         
         :param wa:   Where to put lines
@@ -259,6 +278,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._read_file2_wa(wa)
         
 
@@ -267,6 +287,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def read_lines_wa(self, lines, wa):
         """
+        
         Reads Lines from the `GXCOM <geosoft.gxapi.GXCOM>` to a `GXWA <geosoft.gxapi.GXWA>`
         
         :param lines:  Number of lines
@@ -278,6 +299,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._read_lines_wa(lines, wa)
         
 
@@ -286,6 +308,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def set_time_out(self, time_out):
         """
+        
         Set the timeout value.
         
         :param time_out:  Timeout in Ms (500)
@@ -295,6 +318,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._set_time_out(time_out)
         
 
@@ -303,6 +327,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def write_chars(self, line):
         """
+        
         Writes characters to the `GXCOM <geosoft.gxapi.GXCOM>`
         
         :param line:  Line to write
@@ -312,6 +337,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._write_chars(line.encode())
         
 
@@ -320,6 +346,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
     def write_line(self, line):
         """
+        
         Writes a Line to the `GXCOM <geosoft.gxapi.GXCOM>`
         
         :param line:  Line to write
@@ -329,6 +356,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._write_line(line.encode())
         
 

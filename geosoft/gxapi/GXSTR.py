@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def scan_i(cls, str_val):
         """
+        
         Convert a string to a GX int.
         
         :param str_val:  String to convert to an integer
@@ -69,6 +70,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._scan_i(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
@@ -77,6 +79,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def scan_date(cls, str_val, type):
         """
+        
         Convert a date string to a GX real.
         
         :param str_val:  Date string
@@ -93,6 +96,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **Note:** OLD usage, use ScanForm_STR instead.
         """
+        
         ret_val = gxapi_cy.WrapSTR._scan_date(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
 
@@ -101,6 +105,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def scan_form(cls, str_val, type):
         """
+        
         Convert a formated string to a real.
         
         :param str_val:  Date string
@@ -115,6 +120,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._scan_form(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
 
@@ -123,6 +129,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def scan_r(cls, str_val):
         """
+        
         Convert a string to a GX real.
         
         :param str_val:  String to convert to a real
@@ -135,6 +142,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._scan_r(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
@@ -143,6 +151,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def scan_time(cls, str_val, type):
         """
+        
         Convert a time string to a GX real.
         
         :param str_val:  Date string
@@ -159,6 +168,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **Note:** OLD usage, use ScanForm_STR instead.
         """
+        
         ret_val = gxapi_cy.WrapSTR._scan_time(GXContext._get_tls_geo(), str_val.encode(), type)
         return ret_val
 
@@ -171,6 +181,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def file_combine_parts(cls, drive, dir, file, ext, qual, file_name):
         """
+        
         Combine file parts to build a file name.
         
         :param drive:      Drive
@@ -190,6 +201,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         file_name.value = gxapi_cy.WrapSTR._file_combine_parts(GXContext._get_tls_geo(), drive.encode(), dir.encode(), file.encode(), ext.encode(), qual.encode(), file_name.value.encode())
         
 
@@ -198,6 +210,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def file_ext(cls, ifile, ext, ofile, opt):
         """
+        
         Add a file extension onto a file name string.
         
         :param ifile:  File name to extend
@@ -213,6 +226,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ofile.value = gxapi_cy.WrapSTR._file_ext(GXContext._get_tls_geo(), ifile.encode(), ext.encode(), ofile.value.encode(), opt)
         
 
@@ -221,6 +235,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def file_name_part(cls, file, file_part, part):
         """
+        
         Get part of a file name.
         
         :param file:       File name
@@ -234,6 +249,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         file_part.value = gxapi_cy.WrapSTR._file_name_part(GXContext._get_tls_geo(), file.encode(), file_part.value.encode(), part)
         
 
@@ -242,6 +258,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def get_m_file(cls, in_str, out_str, index):
         """
+        
         Get the indexed filepath from a multiple filepath string
         
         :param in_str:   Input multifile string
@@ -258,6 +275,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** The multifile string must use '|' as a delimiter.
         Do not pass a string after calling `tokenize <geosoft.gxapi.GXSTR.tokenize>`.
         """
+        
         out_str.value = gxapi_cy.WrapSTR._get_m_file(GXContext._get_tls_geo(), in_str.encode(), out_str.value.encode(), index)
         
 
@@ -266,6 +284,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def remove_qualifiers(cls, ifile, ofile):
         """
+        
         Remove file qualifiers from a file name
         
         :param ifile:  Input file name
@@ -277,6 +296,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ofile.value = gxapi_cy.WrapSTR._remove_qualifiers(GXContext._get_tls_geo(), ifile.encode(), ofile.value.encode())
         
 
@@ -289,6 +309,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def format_crc(cls, pul_crc, buff, width):
         """
+        
         Convert a GX CRC value to a string.
         
         :param pul_crc:  CRC value to format
@@ -302,6 +323,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         buff.value = gxapi_cy.WrapSTR._format_crc(GXContext._get_tls_geo(), pul_crc, buff.value.encode(), width)
         
 
@@ -310,6 +332,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def format_date(cls, real, buff, width, type):
         """
+        
         Convert a GX real to a date string.
         
         :param real:   Date value in decimal years to format
@@ -325,6 +348,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         buff.value = gxapi_cy.WrapSTR._format_date(GXContext._get_tls_geo(), real, buff.value.encode(), width, type)
         
 
@@ -333,6 +357,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def format_i(cls, value, buff, width):
         """
+        
         Convert a GX int to a string.
         
         :param value:  Value to format
@@ -346,6 +371,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         buff.value = gxapi_cy.WrapSTR._format_i(GXContext._get_tls_geo(), value, buff.value.encode(), width)
         
 
@@ -354,6 +380,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def format_r(cls, real, buff, width, sig):
         """
+        
         Convert a GX real to a string with significant digits.
         
         :param real:   Value to format
@@ -369,6 +396,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         buff.value = gxapi_cy.WrapSTR._format_r(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
 
@@ -377,6 +405,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def format_r2(cls, real, buff, width, sig):
         """
+        
         Convert a GX real to a string with given decimals.
         
         :param real:   Value to format
@@ -392,6 +421,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         buff.value = gxapi_cy.WrapSTR._format_r2(GXContext._get_tls_geo(), real, buff.value.encode(), width, sig)
         
 
@@ -400,6 +430,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def format_double(cls, real, buff, type, width, dec):
         """
+        
         Convert a GX real to a string.
         
         :param real:   Value to format
@@ -417,6 +448,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         buff.value = gxapi_cy.WrapSTR._format_double(GXContext._get_tls_geo(), real, buff.value.encode(), type, width, dec)
         
 
@@ -425,6 +457,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def format_time(cls, real, buff, width, deci, type):
         """
+        
         Convert a GX real to a time string.
         
         :param real:   Time value in decimal hours to format
@@ -442,6 +475,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         buff.value = gxapi_cy.WrapSTR._format_time(GXContext._get_tls_geo(), real, buff.value.encode(), width, deci, type)
         
 
@@ -454,6 +488,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def escape(cls, str_val, opt):
         """
+        
         Convert/replace escape sequences in strings.
         
         :param str_val:  String to modify
@@ -484,6 +519,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         a user unput string to \\" so the string can be placed in a tokenized
         string.
         """
+        
         str_val.value = gxapi_cy.WrapSTR._escape(GXContext._get_tls_geo(), str_val.value.encode(), opt)
         
 
@@ -492,6 +528,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def char_(cls, str_val):
         """
+        
         Returns the ASCII value of a character.
         
         :param str_val:  String to return ascii value of first character
@@ -504,6 +541,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._char_(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
@@ -512,6 +550,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def char_n(cls, str_val, c, max):
         """
+        
         Returns the ASCII value of the n'th character.
         
         :param str_val:  String
@@ -529,6 +568,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._char_n(GXContext._get_tls_geo(), str_val.encode(), c, max)
         return ret_val
 
@@ -537,6 +577,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def justify(cls, in_str, out_str, width, just):
         """
+        
         Justify a string
         
         :param in_str:   String to justify
@@ -555,6 +596,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** If the string is too big to fit in the number of display characters,
         the output string will be "**" justified as specified.
         """
+        
         out_str.value = gxapi_cy.WrapSTR._justify(GXContext._get_tls_geo(), in_str.encode(), out_str.value.encode(), width, just)
         
 
@@ -563,6 +605,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def replacei_match_string(cls, istr, old, new_str):
         """
+        
         Replaces all occurances of match string by replacement string with case insensitive.
         
         :param istr:     Destination String
@@ -580,6 +623,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
+        
         istr.value = gxapi_cy.WrapSTR._replacei_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_str.encode())
         
 
@@ -588,6 +632,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def replace_match_string(cls, istr, old, new_str):
         """
+        
         Replaces all occurances of match string by replacement string with case sensitive.
         
         :param istr:     Destination String
@@ -605,6 +650,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         then the string to replace is removed from the
         input string, and the string is shortened.
         """
+        
         istr.value = gxapi_cy.WrapSTR._replace_match_string(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_str.encode())
         
 
@@ -613,6 +659,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def set_char_n(cls, str_val, c, ascii):
         """
+        
         Set the n'th character of a string using an ASCII value
         
         :param str_val:  String
@@ -626,6 +673,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = gxapi_cy.WrapSTR._set_char_n(GXContext._get_tls_geo(), str_val.value.encode(), c, ascii)
         
 
@@ -634,6 +682,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def split_string(cls, origstr, ch, split):
         """
+        
         Splits a string in two on a character.
         
         :param origstr:  Original string
@@ -658,6 +707,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         This function is mainly intended to separate comments
         from control file strings.
         """
+        
         origstr.value, split.value = gxapi_cy.WrapSTR._split_string(GXContext._get_tls_geo(), origstr.value.encode(), ch.encode(), split.value.encode())
         
 
@@ -666,6 +716,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def strcat(cls, dest, orig):
         """
+        
         This method contatinates a string.
         
         :param dest:  Destination String
@@ -677,6 +728,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         dest.value = gxapi_cy.WrapSTR._strcat(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
 
@@ -685,6 +737,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def strcmp(cls, first, second, case_sensitive):
         """
+        
         This method compares two strings and returns these values
         
         :param first:           String A
@@ -703,6 +756,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._strcmp(GXContext._get_tls_geo(), first.encode(), second.encode(), case_sensitive)
         return ret_val
 
@@ -711,6 +765,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def strcpy(cls, dest, orig):
         """
+        
         This method copies a string into another string.
         
         :param dest:  Destination string
@@ -722,6 +777,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         dest.value = gxapi_cy.WrapSTR._strcpy(GXContext._get_tls_geo(), dest.value.encode(), orig.encode())
         
 
@@ -730,6 +786,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def stri_mask(cls, mask, test):
         """
+        
         Case insensitive comparison of two strings.
         
         :param mask:  Mask
@@ -751,6 +808,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         Test is case insensitive
         """
+        
         ret_val = gxapi_cy.WrapSTR._stri_mask(GXContext._get_tls_geo(), mask.encode(), test.encode())
         return ret_val
 
@@ -759,6 +817,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def strins(cls, dest, ins, orig):
         """
+        
         This method inserts a string at a specified position.
         
         :param dest:  Destination String
@@ -775,6 +834,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** If the specified position does not fall within the current string
         the source string will simply be Concatenated.
         """
+        
         dest.value = gxapi_cy.WrapSTR._strins(GXContext._get_tls_geo(), dest.value.encode(), ins, orig.encode())
         
 
@@ -783,6 +843,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def strlen(cls, str_val):
         """
+        
         Returns the length of a string.
         
         :param str_val:  String to find the length of
@@ -795,6 +856,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._strlen(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
@@ -803,6 +865,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def str_mask(cls, mask, test):
         """
+        
         Case sensitive comparison of two strings.
         
         :param mask:  Mask
@@ -824,6 +887,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         Test is case sensitive
         """
+        
         ret_val = gxapi_cy.WrapSTR._str_mask(GXContext._get_tls_geo(), mask.encode(), test.encode())
         return ret_val
 
@@ -832,6 +896,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def str_min(cls, str_val):
         """
+        
         Remove spaces and tabs and return length
         
         :param str_val:  String to find the min length of
@@ -850,6 +915,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         name will be altered. Instead, use `str_min2 <geosoft.gxapi.GXSTR.str_min2>`, or use
         `GXSYS.file_exist <geosoft.gxapi.GXSYS.file_exist>` to see if the file actually exists.
         """
+        
         ret_val, str_val.value = gxapi_cy.WrapSTR._str_min(GXContext._get_tls_geo(), str_val.value.encode())
         return ret_val
 
@@ -858,6 +924,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def str_min2(cls, str_val):
         """
+        
         Length less spaces and tabs, string unchanged.
         
         :param str_val:  String to find the min length of
@@ -870,6 +937,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._str_min2(GXContext._get_tls_geo(), str_val.encode())
         return ret_val
 
@@ -878,6 +946,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def strncmp(cls, first, second, n_char, case_sensitive):
         """
+        
         Compares two strings to a given number of characters.
         
         :param first:           String A
@@ -898,6 +967,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._strncmp(GXContext._get_tls_geo(), first.encode(), second.encode(), n_char, case_sensitive)
         return ret_val
 
@@ -906,6 +976,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def str_str(cls, str_val, sub, case_sensitive):
         """
+        
         Scan a string for the occurrence of a given substring.
         
         :param str_val:         String to scan
@@ -923,6 +994,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSTR._str_str(GXContext._get_tls_geo(), str_val.encode(), sub.encode(), case_sensitive)
         return ret_val
 
@@ -931,6 +1003,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def substr(cls, dest, orig, start, length):
         """
+        
         Extract part of a string.
         
         :param dest:    Destination string
@@ -950,6 +1023,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         requested length if the substring is not fully enclosed
         in the origin string.
         """
+        
         dest.value = gxapi_cy.WrapSTR._substr(GXContext._get_tls_geo(), dest.value.encode(), orig.encode(), start, length)
         
 
@@ -958,6 +1032,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def to_lower(cls, str_val):
         """
+        
         Convert a string to lower case.
         
         :param str_val:  String
@@ -967,6 +1042,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = gxapi_cy.WrapSTR._to_lower(GXContext._get_tls_geo(), str_val.value.encode())
         
 
@@ -975,6 +1051,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def to_upper(cls, str_val):
         """
+        
         Convert a string to upper case.
         
         :param str_val:  String
@@ -984,6 +1061,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = gxapi_cy.WrapSTR._to_upper(GXContext._get_tls_geo(), str_val.value.encode())
         
 
@@ -992,6 +1070,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def xyz_line(cls, line, xyz):
         """
+        
         Make a valid XYZ line name from a valid `GXDB <geosoft.gxapi.GXDB>` line name.
         
         :param line:  Line name to convert
@@ -1003,6 +1082,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         xyz.value = gxapi_cy.WrapSTR._xyz_line(GXContext._get_tls_geo(), line.encode(), xyz.value.encode())
         
 
@@ -1011,6 +1091,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def make_alpha(cls, str_val):
         """
+        
         Turns all non alpha-numeric characters into an _.
         
         :param str_val:  String to trim
@@ -1022,6 +1103,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **Note:** THE STRING IS MODIFIED.
         """
+        
         str_val.value = gxapi_cy.WrapSTR._make_alpha(GXContext._get_tls_geo(), str_val.value.encode())
         
 
@@ -1030,6 +1112,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def printf(cls, dest, mask):
         """
+        
         Variable Argument PrintF function
         
         :param dest:  Destination string
@@ -1041,6 +1124,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         dest.value = gxapi_cy.WrapSTR._printf(GXContext._get_tls_geo(), dest.value.encode(), mask.encode())
         
 
@@ -1049,6 +1133,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def replace_char(cls, istr, old, new_char):
         """
+        
         Replaces characters in a string.
         
         :param istr:      String to modify
@@ -1065,6 +1150,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** If the input replacement character is "", then the
         string will be truncated at the first character to replace.
         """
+        
         istr.value = gxapi_cy.WrapSTR._replace_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_char.encode())
         
 
@@ -1073,6 +1159,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def replace_char2(cls, istr, old, new_char):
         """
+        
         Replaces characters in a string, supports simple removal.
         
         :param istr:      String to modify
@@ -1090,6 +1177,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         then the character to replace is removed from the
         input string, and the string is shortened.
         """
+        
         istr.value = gxapi_cy.WrapSTR._replace_char2(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_char.encode())
         
 
@@ -1098,6 +1186,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def replace_multi_char(cls, istr, old, new_char):
         """
+        
         Replaces multiple characters in a string.
         
         :param istr:      String to modify
@@ -1114,6 +1203,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** The number of characters to replace must equal
         the number of replacement characters.
         """
+        
         istr.value = gxapi_cy.WrapSTR._replace_multi_char(GXContext._get_tls_geo(), istr.value.encode(), old.encode(), new_char.encode())
         
 
@@ -1122,6 +1212,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def replace_non_ascii(cls, str_val, rpl):
         """
+        
         Replace non-ASCII characters in a string.
         
         :param str_val:  String to modify
@@ -1136,6 +1227,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         **Note:** All characthers > 127 will be replaced by the first character
         of the replacement string.
         """
+        
         str_val.value = gxapi_cy.WrapSTR._replace_non_ascii(GXContext._get_tls_geo(), str_val.value.encode(), rpl.encode())
         
 
@@ -1144,6 +1236,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def set_char(cls, str_val, ascii):
         """
+        
         Set a string's first character using an ASCII value of a character.
         
         :param str_val:  String
@@ -1155,6 +1248,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = gxapi_cy.WrapSTR._set_char(GXContext._get_tls_geo(), str_val.value.encode(), ascii)
         
 
@@ -1163,6 +1257,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def trim_quotes(cls, str_val):
         """
+        
         Remove double quotes.
         
         :param str_val:  String to trim
@@ -1181,6 +1276,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         the backslash is deleted. These quotes are NOT treated as
         delimiters.
         """
+        
         str_val.value = gxapi_cy.WrapSTR._trim_quotes(GXContext._get_tls_geo(), str_val.value.encode())
         
 
@@ -1189,6 +1285,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def trim_space(cls, str_val, trim):
         """
+        
         Remove leading and/or trailing whitespace.
         
         :param str_val:  String to trim
@@ -1204,6 +1301,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         Whitespace characters are defined as space, tab, carriage return,
         new line, vertical tab or formfeed (0x09 to 0x0D, 0x20)
         """
+        
         str_val.value = gxapi_cy.WrapSTR._trim_space(GXContext._get_tls_geo(), str_val.value.encode(), trim)
         
 
@@ -1212,6 +1310,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def un_quote(cls, str_val):
         """
+        
         Remove double quotes from string
         
         :param str_val:  String to unquote
@@ -1227,6 +1326,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         Both first and last characters must be quotes for the
         triming to take place.
         """
+        
         str_val.value = gxapi_cy.WrapSTR._un_quote(GXContext._get_tls_geo(), str_val.value.encode())
         
 
@@ -1239,6 +1339,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def gen_group_name(cls, istr1, istr2, istr3, ostr):
         """
+        
         Generate a group name string
         from type string, database and channel(optional) strings..
         
@@ -1266,6 +1367,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
             GenNewGroupName_MVIEW
         """
+        
         ostr.value = gxapi_cy.WrapSTR._gen_group_name(GXContext._get_tls_geo(), istr1.encode(), istr2.encode(), istr3.encode(), ostr.value.encode())
         
 
@@ -1278,6 +1380,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def count_tokens(cls, str_val, delims):
         """
+        
         Counts number of tokens.
         
         :param str_val:  String to tokenize
@@ -1299,6 +1402,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         DO NOT use this function except in GXC code. The corresponding
         `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
         """
+        
         ret_val = gxapi_cy.WrapSTR._count_tokens(GXContext._get_tls_geo(), str_val.encode(), delims.encode())
         return ret_val
 
@@ -1307,6 +1411,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def get_token(cls, dest, orig, tok):
         """
+        
         Get a token from a tokenized string.
         
         :param dest:  Destination string
@@ -1333,6 +1438,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
             `tokens <geosoft.gxapi.GXSTR.tokens>`, GetToken_STR
         """
+        
         dest.value = gxapi_cy.WrapSTR._get_token(GXContext._get_tls_geo(), dest.value.encode(), orig.encode(), tok)
         
 
@@ -1341,6 +1447,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def tokenize(cls, str_val, soft, hard, esc, quote):
         """
+        
         Tokenize a string based on any characters.
         
         :param str_val:  `GXSTR <geosoft.gxapi.GXSTR>` - String containing token(s)
@@ -1395,6 +1502,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
             GetToken_STR
         """
+        
         ret_val, str_val.value = gxapi_cy.WrapSTR._tokenize(GXContext._get_tls_geo(), str_val.value.encode(), soft.encode(), hard.encode(), esc.encode(), quote.encode())
         return ret_val
 
@@ -1403,6 +1511,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def tokens(cls, str_val, delims):
         """
+        
         Tokenize a string
         
         :param str_val:  String to tokenize
@@ -1428,6 +1537,7 @@ class GXSTR(gxapi_cy.WrapSTR):
 
             `tokens2 <geosoft.gxapi.GXSTR.tokens2>`, GetToken_STR
         """
+        
         ret_val, str_val.value = gxapi_cy.WrapSTR._tokens(GXContext._get_tls_geo(), str_val.value.encode(), delims.encode())
         return ret_val
 
@@ -1436,6 +1546,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def tokens2(cls, str_val, soft, hard, esc, quote):
         """
+        
         General tokenize a string
         
         :param str_val:  String to tokenize
@@ -1462,6 +1573,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         DO NOT use this function except in GXC code. The corresponding
         `get_token <geosoft.gxapi.GXSTR.get_token>` function will not operate correctly in GX.Net code.
         """
+        
         ret_val, str_val.value = gxapi_cy.WrapSTR._tokens2(GXContext._get_tls_geo(), str_val.value.encode(), soft.encode(), hard.encode(), esc.encode(), quote.encode())
         return ret_val
 
@@ -1470,6 +1582,7 @@ class GXSTR(gxapi_cy.WrapSTR):
     @classmethod
     def parse_list(cls, str_val, gvv):
         """
+        
         Parse a tokenized list to get a selection list.
         
         :param str_val:  String to be parsed
@@ -1489,7 +1602,43 @@ class GXSTR(gxapi_cy.WrapSTR):
         Only values from 0 to one less than the buffer length
         are used.  Out-of-range values are ignored.
         """
+        
         gxapi_cy.WrapSTR._parse_list(GXContext._get_tls_geo(), str_val.encode(), gvv)
+        
+
+
+
+
+# Deprecated
+
+
+    @classmethod
+    def substr(cls, dest, orig, start):
+        """
+        
+        .. deprecated:: None None 
+        Extract part of a string.
+        
+        :param dest:   Destination string
+        :param orig:   Origin string
+        :param start:  Start location
+        :type  dest:   str_ref
+        :type  orig:   str
+        :type  start:  int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The destination string length will be less than the
+        requested length if the substring is not fully enclosed
+        in the origin string.
+
+        The length of the destination string MUST be at least
+        the requested lenth plus 1.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        dest.value = gxapi_cy.WrapSTR._substr(GXContext._get_tls_geo(), dest.value.encode(), orig.encode(), start)
         
 
 
