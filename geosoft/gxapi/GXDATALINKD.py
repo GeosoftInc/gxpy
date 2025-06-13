@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
     @classmethod
     def create_arc_lyr(cls, arc_lyr_file):
         """
+        
         Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYR file
         
         :param arc_lyr_file:  Arc LYR file name
@@ -67,6 +68,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
+        
         ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr(GXContext._get_tls_geo(), arc_lyr_file.encode())
         return GXDATALINKD(ret_val)
 
@@ -75,6 +77,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
     @classmethod
     def create_arc_lyrx(cls, arc_lyrx_file, arc_srylx_file, root_name):
         """
+        
         Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYRX file
         
         :param arc_lyrx_file:   Arc LYRX file name
@@ -93,6 +96,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcGIS Pro SDK and Map SDK licence.
         """
+        
         ret_val, root_name.value = gxapi_cy.WrapDATALINKD._create_arc_lyrx(GXContext._get_tls_geo(), arc_lyrx_file.encode(), arc_srylx_file.encode(), root_name.value.encode())
         return GXDATALINKD(ret_val)
 
@@ -101,6 +105,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
     @classmethod
     def create_arc_lyr_ex(cls, arc_lyr_file, o3d_group):
         """
+        
         Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a ArcGIS LYR file
         
         :param arc_lyr_file:  Arc LYR file name
@@ -117,6 +122,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
+        
         ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
         return GXDATALINKD(ret_val)
 
@@ -125,6 +131,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
     @classmethod
     def create_arc_lyr_from_tmp(cls, arc_lyr_file):
         """
+        
         Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a temporary ArcGIS LYR file
         
         :param arc_lyr_file:  Arc LYR file name
@@ -139,6 +146,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
+        
         ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp(GXContext._get_tls_geo(), arc_lyr_file.encode())
         return GXDATALINKD(ret_val)
 
@@ -147,6 +155,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
     @classmethod
     def create_arc_lyr_from_tmp_ex(cls, arc_lyr_file, o3d_group):
         """
+        
         Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object from a temporary ArcGIS LYR file
         
         :param arc_lyr_file:  Arc LYR file name
@@ -163,6 +172,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
+        
         ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
         return GXDATALINKD(ret_val)
 
@@ -171,6 +181,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
     @classmethod
     def create_bing(cls, layer):
         """
+        
         Create an `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` object for a BING dataset
         
         :param layer:  0 = Aerial, 1 = Road
@@ -183,6 +194,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDATALINKD._create_bing(GXContext._get_tls_geo(), layer)
         return GXDATALINKD(ret_val)
 
@@ -193,6 +205,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
     def get_extents(self, min_x, max_x, min_y, max_y):
         """
+        
         Get the data extents of the DATALINK Display object.
         
         :param min_x:      Min X
@@ -208,6 +221,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, max_x.value, min_y.value, max_y.value = self._get_extents(min_x.value, max_x.value, min_y.value, max_y.value)
         
 
@@ -216,6 +230,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
     def get_ipj(self, ipj):
         """
+        
         Get the projection of the DATALINK Display object.
         
         :param ipj:        `GXIPJ <geosoft.gxapi.GXIPJ>` object to set the projection to
@@ -225,6 +240,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 

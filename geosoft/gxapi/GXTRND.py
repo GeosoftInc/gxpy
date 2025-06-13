@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXTRND(gxapi_cy.WrapTRND):
     @classmethod
     def get_max_min(cls, vv_x, vv_y, vv_z, vv_xm, v_vym, v_vzm, window, trnd):
         """
+        
         Find the max/min nodes in a line.
         
         :param vv_x:    X Channel
@@ -81,6 +82,7 @@ class GXTRND(gxapi_cy.WrapTRND):
 
         **Note:** Trend lines positions consist of X and Y VVs
         """
+        
         gxapi_cy.WrapTRND._get_max_min(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, vv_xm, v_vym, v_vzm, window, trnd)
         
 
@@ -89,6 +91,7 @@ class GXTRND(gxapi_cy.WrapTRND):
     @classmethod
     def get_mesh(cls, db, chan, window, max_length, mesh_vv, trnd):
         """
+        
         Get the lines in a trend mesh.
         
         :param db:          Database
@@ -108,6 +111,7 @@ class GXTRND(gxapi_cy.WrapTRND):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapTRND._get_mesh(GXContext._get_tls_geo(), db, chan.encode(), window, max_length, mesh_vv, trnd)
         
 
@@ -116,6 +120,7 @@ class GXTRND(gxapi_cy.WrapTRND):
     @classmethod
     def trnd_db(cls, db, chan, window, angle, deviation, max_length, deflection, min_length, resample, br_angle):
         """
+        
         Uses a selected channel to find data trends in a database.
         
         :param db:          Database handle
@@ -143,6 +148,7 @@ class GXTRND(gxapi_cy.WrapTRND):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapTRND._trnd_db(GXContext._get_tls_geo(), db, chan.encode(), window, angle, deviation, max_length, deflection, min_length, resample, br_angle)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXLPT(gxapi_cy.WrapLPT):
     @classmethod
     def create(cls):
         """
+        
         Creates a line pattern object with current default patterns.
         
 
@@ -65,6 +66,7 @@ class GXLPT(gxapi_cy.WrapLPT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapLPT._create(GXContext._get_tls_geo())
         return GXLPT(ret_val)
 
@@ -75,6 +77,7 @@ class GXLPT(gxapi_cy.WrapLPT):
 
     def get_lst(self, lst):
         """
+        
         Copies all pattern names into a `GXLST <geosoft.gxapi.GXLST>` object.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` Handle
@@ -84,6 +87,7 @@ class GXLPT(gxapi_cy.WrapLPT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_lst(lst)
         
 
@@ -92,6 +96,7 @@ class GXLPT(gxapi_cy.WrapLPT):
 
     def get_standard_lst(self, lst):
         """
+        
         Copies the six standard line types into a `GXLST <geosoft.gxapi.GXLST>` object.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` Handle
@@ -103,8 +108,58 @@ class GXLPT(gxapi_cy.WrapLPT):
 
         **Note:** The six standard line types are "solid", "long dash", "dotted", "short dash", "long, short dash" and "dash dot".
         """
+        
         self._get_standard_lst(lst)
         
+
+
+
+
+# Deprecated
+
+
+
+    def copy(self, source):
+        """
+        
+        .. deprecated:: None None 
+        Copy one `GXLPT <geosoft.gxapi.GXLPT>` object to another.
+        
+        :param source:  Source `GXLPT <geosoft.gxapi.GXLPT>` to Copy from
+        :type  source:  GXLPT
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was not used.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._copy(source)
+        
+
+
+
+
+    def size(self):
+        """
+        
+        .. deprecated:: None None 
+        Get the number of patterns in the `GXLPT <geosoft.gxapi.GXLPT>`.
+        
+
+        :returns:    x - Number of patterns in the `GXLPT <geosoft.gxapi.GXLPT>`.
+        :rtype:      int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was not implemented or used
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = self._size()
+        return ret_val
 
 
 

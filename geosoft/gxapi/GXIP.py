@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXPG import GXPG
@@ -65,6 +65,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def convert_ubcip_2d_to_grid(cls, file, pg, vv_x, vv_z, x, z, cx, cz, reciprocal):
         """
+        
         Convert a UBC 2D model to a regular grid.
         
         :param file:        Output grid file name
@@ -94,6 +95,7 @@ class GXIP(gxapi_cy.WrapIP):
         By setting the final value, a resistivity grid can be
         created from conductivity data.
         """
+        
         gxapi_cy.WrapIP._convert_ubcip_2d_to_grid(GXContext._get_tls_geo(), file.encode(), pg, vv_x, vv_z, x, z, cx, cz, reciprocal)
         
 
@@ -102,6 +104,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def create_default_job(self, ini, type):
         """
+        
         Create a default job from scratch.
         
         :param ini:   File name of the INI file to create (forces correct suffix)
@@ -113,6 +116,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._create_default_job(ini.encode(), type)
         
 
@@ -121,6 +125,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_ubcip3(self, db, line, chan, error_chan, obs, topo, version):
         """
+        
         Export of `GXIP <geosoft.gxapi.GXIP>` data to UBC format.
         
         :param db:          `GXDB <geosoft.gxapi.GXDB>` object
@@ -146,6 +151,7 @@ class GXIP(gxapi_cy.WrapIP):
         UBC 2D inversion program IPINV2D.
         Include error channel output and version-specific formatting.
         """
+        
         self._export_ubcip3(db, line.encode(), chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
         
 
@@ -154,6 +160,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def export_ubcip_control(cls, control, n_iter, i_rest, chi_factor, obs, cond, mesh, topo, initial, ref_mod, alphas, wts):
         """
+        
         Export a control file for using in the UBC IPINV2D program.
         
         :param control:     Output control file name
@@ -189,6 +196,7 @@ class GXIP(gxapi_cy.WrapIP):
         Outputs a control file for use in the
         UBC 2D `GXIP <geosoft.gxapi.GXIP>` inversion program IPINV2D.
         """
+        
         gxapi_cy.WrapIP._export_ubcip_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), cond.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_mod.encode(), alphas.encode(), wts.encode())
         
 
@@ -197,6 +205,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def export_ubcip_control_v5(cls, control, n_iter, chi_factor, obs, topo, cond_selection, cond, mesh_selection, mesh, initial_selection, initial, reference_selection, ref_cond, alphas_selection, alphas, wts):
         """
+        
         Export a control file for using in the UBC IPINV2D program.
         
         :param control:              Output control file name
@@ -238,6 +247,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** UBC Version 5 Control file.
         """
+        
         gxapi_cy.WrapIP._export_ubcip_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), cond_selection, cond.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
         
 
@@ -246,6 +256,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_ubc_res3(self, db, line, voltage_chan, current_chan, error_chan, obs, topo, version):
         """
+        
         Export of `GXIP <geosoft.gxapi.GXIP>` Resistivity data to UBC format.
         
         :param db:            `GXDB <geosoft.gxapi.GXDB>` object
@@ -274,6 +285,7 @@ class GXIP(gxapi_cy.WrapIP):
         Voltage and current channels should be in units such that
         V/I gives volts/amp (or mV/mA).
         """
+        
         self._export_ubc_res3(db, line.encode(), voltage_chan.encode(), current_chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
         
 
@@ -282,6 +294,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def export_ubc_res_control(cls, control, n_iter, i_rest, chi_factor, obs, mesh, topo, initial, ref_cond, alphas, wts):
         """
+        
         Export a control file for using in the UBC DCINV2D program.
         
         :param control:     Output control file name
@@ -315,6 +328,7 @@ class GXIP(gxapi_cy.WrapIP):
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
+        
         gxapi_cy.WrapIP._export_ubc_res_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_cond, alphas.encode(), wts.encode())
         
 
@@ -323,6 +337,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def export_ubc_res_control_v5(cls, control, n_iter, chi_factor, obs, topo, mesh_selection, mesh, initial_selection, initial, reference_selection, ref_cond, alphas_selection, alphas, wts):
         """
+        
         Export a control file for using in the UBC DCINV2D program.
         
         :param control:              Output control file name
@@ -362,6 +377,7 @@ class GXIP(gxapi_cy.WrapIP):
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
+        
         gxapi_cy.WrapIP._export_ubc_res_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
         
 
@@ -370,6 +386,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_data_to_ubc_3d(self, db, line_lst, locations_only, include_z, chan, error_chan, mask_chan, ip_type, comments, obs):
         """
+        
         Export of `GXIP <geosoft.gxapi.GXIP>` data to UBC 3D `GXIP <geosoft.gxapi.GXIP>` format.
         
         :param db:              `GXDB <geosoft.gxapi.GXDB>` object
@@ -400,6 +417,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
         UBC `GXIP <geosoft.gxapi.GXIP>` 3D inversion programs.
         """
+        
         self._export_data_to_ubc_3d(db, line_lst, locations_only, include_z, chan.encode(), error_chan.encode(), mask_chan.encode(), ip_type, comments.encode(), obs.encode())
         
 
@@ -408,6 +426,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def import_ubc2_dmod(cls, file, type):
         """
+        
         Import a MOD file from the UBC IPINV2D program.
         
         :param file:  UBC MOD file name to import
@@ -426,6 +445,7 @@ class GXIP(gxapi_cy.WrapIP):
         The CON/CHG selection is necessary because the import sets
         padding values to dummies based on the type of file.
         """
+        
         ret_val = gxapi_cy.WrapIP._import_ubc2_dmod(GXContext._get_tls_geo(), file.encode(), type)
         return GXPG(ret_val)
 
@@ -434,6 +454,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def import_ubc2_dmsh(cls, file, x, z, vv_x, vv_z):
         """
+        
         Import a MSH file from the UBC IPINV2D program.
         
         :param file:  UBC MSH file to import
@@ -453,6 +474,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Imports the MSH file geometry.
         """
+        
         x.value, z.value = gxapi_cy.WrapIP._import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode(), x.value, z.value, vv_x, vv_z)
         
 
@@ -461,6 +483,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def import_ubc_2d_topo(cls, file, elev0, vv_x, vv_z):
         """
+        
         Import a Topography file from the UBC IPINV2D program.
         
         :param file:   UBC Topo file to import
@@ -479,6 +502,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Imports the maximum elevation (top of mesh)
         as well as the topo (X, Z) values.
         """
+        
         elev0.value = gxapi_cy.WrapIP._import_ubc_2d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, vv_x, vv_z)
         
 
@@ -487,6 +511,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def open_job(self, job, type):
         """
+        
         Open a `GXIP <geosoft.gxapi.GXIP>` plotting job
         
         :param job:   Job file name
@@ -498,6 +523,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._open_job(job.encode(), type)
         
 
@@ -506,6 +532,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def save_job(self, job, type):
         """
+        
         Save a `GXIP <geosoft.gxapi.GXIP>` plotting job
         
         :param job:   Job file name
@@ -517,6 +544,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._save_job(job.encode(), type)
         
 
@@ -525,6 +553,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def trim_ubc_2d_model(cls, pg, trim_xl, trim_xr, trim_z, vv_x, vv_z, x):
         """
+        
         Trim the padding cells from the UBC IPINV2D Model.
         
         :param pg:       Input model (unchanged)
@@ -554,6 +583,7 @@ class GXIP(gxapi_cy.WrapIP):
         The input cell size VVs are also trimmed to match,
         and the origin is updated (still upper left corner).
         """
+        
         ret_val, x.value = gxapi_cy.WrapIP._trim_ubc_2d_model(GXContext._get_tls_geo(), pg, trim_xl, trim_xr, trim_z, vv_x, vv_z, x.value)
         return GXPG(ret_val)
 
@@ -562,6 +592,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def write_distant_electrodes(self, db):
         """
+        
         Write distant electrode locations to channels
         
         :param db:  `GXDB <geosoft.gxapi.GXDB>` object
@@ -573,6 +604,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Writes values for ALL lines.
         """
+        
         self._write_distant_electrodes(db)
         
 
@@ -581,6 +613,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def write_distant_electrodes_lst(self, db, lst):
         """
+        
         Write distant electrode locations to channels for a `GXLST <geosoft.gxapi.GXLST>` of lines
         
         :param db:   `GXDB <geosoft.gxapi.GXDB>` object
@@ -594,6 +627,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Writes values for lines in the input `GXLST <geosoft.gxapi.GXLST>`.
         """
+        
         self._write_distant_electrodes_lst(db, lst)
         
 
@@ -606,6 +640,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def average_duplicates_qc(self, db, chan, qc_chan, out):
         """
+        
         Average duplicate samples in a database.
         
         :param db:       Database to export from
@@ -628,6 +663,7 @@ class GXIP(gxapi_cy.WrapIP):
         If the QC channel is selected, only those rows of data where the QC channel
         value is "1" will be included in the average.
         """
+        
         self._average_duplicates_qc(db, chan.encode(), qc_chan.encode(), out)
         
 
@@ -636,6 +672,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def create(cls):
         """
+        
         Create `GXIP <geosoft.gxapi.GXIP>`.
         
 
@@ -646,6 +683,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapIP._create(GXContext._get_tls_geo())
         return GXIP(ret_val)
 
@@ -656,6 +694,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_i2_x(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly):
         """
+        
         Export line(s) to an Interpex RESIX I2X format file.
         
         :param db:         Database to export from
@@ -687,6 +726,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Exports a line to an ".I2X" file.
         """
+        
         self._export_i2_x(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode())
         
 
@@ -695,6 +735,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_ipdata(self, db, chan, title):
         """
+        
         Exports data in the Geosoft IPDATA format.
         
         :param db:     Database to export from
@@ -708,6 +749,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._export_ipdata(db, chan.encode(), title.encode())
         
 
@@ -716,6 +758,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_ipdata_dir(self, db, chan, title, dir):
         """
+        
         Exports data in the Geosoft IPDATA format in the specified directory
         
         :param db:     Database to export from
@@ -731,6 +774,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._export_ipdata_dir(db, chan.encode(), title.encode(), dir.encode())
         
 
@@ -739,6 +783,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_ipred(self, db, title, chan, suffix, filter, wts, stn1, stn2, max_n):
         """
+        
         Exports pseudo-section in the Geosoft IPRED format.
         
         :param db:      Database to export from
@@ -768,6 +813,7 @@ class GXIP(gxapi_cy.WrapIP):
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
+        
         self._export_ipred(db, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n)
         
 
@@ -776,6 +822,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_ipred_dir(self, db, title, chan, suffix, filter, wts, stn1, stn2, max_n, dir):
         """
+        
         Exports pseudo-section in the Geosoft IPRED format in the specified directory
         
         :param db:      Database to export from
@@ -807,6 +854,7 @@ class GXIP(gxapi_cy.WrapIP):
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
+        
         self._export_ipred_dir(db, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n, dir.encode())
         
 
@@ -815,6 +863,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_line_ipdata(self, db, line, chan, title):
         """
+        
         Exports one line of data in the Geosoft IPDATA format.
         
         :param db:     Database to export from
@@ -830,6 +879,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._export_line_ipdata(db, line.encode(), chan.encode(), title.encode())
         
 
@@ -838,6 +888,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def export_sgdf(self, db, file, chan, chan2):
         """
+        
         Exports data to a Scintrex Geophysical Data Format file.
         
         :param db:     Database to export from
@@ -853,6 +904,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._export_sgdf(db, file.encode(), chan.encode(), chan2.encode())
         
 
@@ -861,6 +913,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_n_value_lst(self, db, lst):
         """
+        
         Fill a list with unique N values in selected lines.
         
         :param db:   Database
@@ -872,6 +925,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_n_value_lst(db, lst)
         
 
@@ -880,6 +934,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_topo_line(self, db, line, x_min, x_max, x_inc, vv):
         """
+        
         Get topography values for a line.
         
         :param db:     Database to import data to
@@ -904,6 +959,7 @@ class GXIP(gxapi_cy.WrapIP):
         will be dummies. Values between actual data are interpolated using
         the Akima spline. Ends are extrapolated using the end data points.
         """
+        
         self._get_topo_line(db, line.encode(), x_min, x_max, x_inc, vv)
         
 
@@ -912,6 +968,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_chan_domain(self, db, chan):
         """
+        
         Is this channel registered as a Time or Frequency domain channel?
         
         :param db:    Database
@@ -926,6 +983,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._get_chan_domain(db, chan.encode())
         return ret_val
 
@@ -934,6 +992,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def get_chan_label(cls, chan, label, units):
         """
+        
         Get the default label and units for a given channel.
         
         :param chan:   Input channel
@@ -947,6 +1006,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         label.value, units.value = gxapi_cy.WrapIP._get_chan_label(GXContext._get_tls_geo(), chan.encode(), label.value.encode(), units.value.encode())
         
 
@@ -955,6 +1015,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_channel_info(self, db, chan, domain, delay, n_windows, vv):
         """
+        
         Time Windows or Frequency info from a channel.
         
         :param db:         Database
@@ -974,6 +1035,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         domain.value, delay.value, n_windows.value = self._get_channel_info(db, chan.encode(), domain.value, delay.value, n_windows.value, vv)
         
 
@@ -982,6 +1044,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def set_channel_info(self, db, chan, domain, delay, n_windows, vv):
         """
+        
         Set Time Windows or Frequency info for a channel.
         
         :param db:         Database
@@ -1001,6 +1064,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._set_channel_info(db, chan.encode(), domain, delay, n_windows, vv)
         
 
@@ -1009,6 +1073,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_dump(self, ip_sys, db, dump_file):
         """
+        
         Imports data from an `GXIP <geosoft.gxapi.GXIP>` instrument dump file.
         
         :param ip_sys:     :ref:`IP_SYS`
@@ -1022,6 +1087,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._import_dump(ip_sys, db, dump_file.encode())
         
 
@@ -1030,6 +1096,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_grid(self, db, grid, chan):
         """
+        
         Imports data from a grid
         
         :param db:    Database to import data to
@@ -1047,6 +1114,7 @@ class GXIP(gxapi_cy.WrapIP):
         The values are interpolated at each row's X and Y
         positions.
         """
+        
         self._import_grid(db, grid.encode(), chan.encode())
         
 
@@ -1055,6 +1123,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_i2_x(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly, mode):
         """
+        
         Imports an Interpex RESIX I2X format file to a line.
         
         :param db:         Database to import to
@@ -1089,6 +1158,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
+        
         self._import_i2_x(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), mode)
         
 
@@ -1097,6 +1167,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_i2_x_ex(self, db, file, line, res_data, ip_data, res_model, ip_model, res_synth, ip_synth, res_poly, ip_poly, res_zonge, ip_zonge, mode):
         """
+        
         Same as `import_i2_x <geosoft.gxapi.GXIP.import_i2_x>`, with Zonge data imported as well.
         
         :param db:         Database to import to
@@ -1135,6 +1206,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
+        
         self._import_i2_x_ex(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), res_zonge.encode(), ip_zonge.encode(), mode)
         
 
@@ -1143,6 +1215,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_instrumentation_gdd(self, db, file):
         """
+        
         Imports an Instrumentation GDD format file.
         
         :param db:    Database to import to
@@ -1154,6 +1227,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._import_instrumentation_gdd(db, file.encode())
         
 
@@ -1162,6 +1236,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_ipdata(self, db, file, chan):
         """
+        
         Imports data in the Geosoft IPDATA format.
         
         :param db:    Database to import to
@@ -1175,6 +1250,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._import_ipdata(db, file.encode(), chan.encode())
         
 
@@ -1183,6 +1259,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_ipdata2(self, db, file, chan, chan2):
         """
+        
         Imports data in the Geosoft IPDATA format - up to two arrays.
         
         :param db:     Database to import to
@@ -1205,6 +1282,7 @@ class GXIP(gxapi_cy.WrapIP):
         the T= or F= fields) then the import is assumed to be frequency
         domain.
         """
+        
         self._import_ipdata2(db, file.encode(), chan.encode(), chan2.encode())
         
 
@@ -1213,6 +1291,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_ipred(self, db, file, chan):
         """
+        
         Imports data from the Geosoft IPRED format.
         
         :param db:    Database to import to
@@ -1229,6 +1308,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** This import produces a limited `GXIP <geosoft.gxapi.GXIP>` data set with no Current "I",
         Voltage "Vp" or Apparent Resistivity "ResApp" values.
         """
+        
         self._import_ipred(db, file.encode(), chan.encode())
         
 
@@ -1237,6 +1317,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_merge_ipred(self, db, file, chan):
         """
+        
         Imports IPRED data to an existing line.
         
         :param db:    Database to import to
@@ -1253,6 +1334,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Exits with error if the line does not exist.
         Data is merged on basis of Stn and N value.
         """
+        
         self._import_merge_ipred(db, file.encode(), chan.encode())
         
 
@@ -1261,6 +1343,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_sgdf(self, db, file):
         """
+        
         Imports data from a Scintrex Geophysical Data Format file.
         
         :param db:    Database to import to
@@ -1272,6 +1355,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._import_sgdf(db, file.encode())
         
 
@@ -1280,6 +1364,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_topo_csv(self, db, csv):
         """
+        
         Imports topography data from a CSV line-station file
         
         :param db:   Database to calculate topography for
@@ -1294,6 +1379,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The elevation of each point in the current database
         is interpolated from the input topography values.
         """
+        
         self._import_topo_csv(db, csv.encode())
         
 
@@ -1302,6 +1388,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_topo_grid(self, db, grid):
         """
+        
         Imports topography data from a grid
         
         :param db:    Database to calculate topography for
@@ -1316,6 +1403,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The elevation of each point in the current database
         is interpolated from the input topography grid.
         """
+        
         self._import_topo_grid(db, grid.encode())
         
 
@@ -1324,6 +1412,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_zonge_avg(self, db, file, line, scale, mult):
         """
+        
         Imports a Zonge AVG format file.
         
         :param db:     Database to import to
@@ -1343,6 +1432,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** See `import_zonge_fld <geosoft.gxapi.GXIP.import_zonge_fld>`
         """
+        
         self._import_zonge_avg(db, file.encode(), line, scale, mult)
         
 
@@ -1351,6 +1441,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def import_zonge_fld(self, db, file, scale, mult):
         """
+        
         Imports a Zonge FLD format file.
         
         :param db:     Database to import to
@@ -1370,6 +1461,7 @@ class GXIP(gxapi_cy.WrapIP):
         values, and a conversion is required.
         The line direction is taken from the `GXIP <geosoft.gxapi.GXIP>` setup values.
         """
+        
         self._import_zonge_fld(db, file.encode(), scale, mult)
         
 
@@ -1378,6 +1470,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def new_xy_database(self, db, new_db, chan_vv, mask, pr_n_val):
         """
+        
         Create a subset database using a mask channel, "N" value
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
@@ -1398,6 +1491,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** A mask channel can be used to select a subset of the data.
         A single N value can also be selected (Dummy for all).
         """
+        
         self._new_xy_database(db, new_db, chan_vv, mask.encode(), pr_n_val)
         
 
@@ -1406,6 +1500,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def pseudo_plot(self, db, ini_file, cur_line, map):
         """
+        
         Create pseudo-sections of a single line using a control file.
         
         :param db:        Database
@@ -1424,6 +1519,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
+        
         self._pseudo_plot(db, ini_file.encode(), cur_line.encode(), map.encode())
         
 
@@ -1432,6 +1528,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def pseudo_plot2(self, db, ini_file, cur_line, tag, map):
         """
+        
         Same as `pseudo_plot <geosoft.gxapi.GXIP.pseudo_plot>`, but specify a tag for grids created.
         
         :param db:        Database
@@ -1452,6 +1549,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
+        
         self._pseudo_plot2(db, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode())
         
 
@@ -1460,6 +1558,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def pseudo_plot2_dir(self, db, ini_file, cur_line, tag, map, dir):
         """
+        
         Same as `pseudo_plot2 <geosoft.gxapi.GXIP.pseudo_plot2>`, but with directory specified.
         
         :param db:        Database
@@ -1482,6 +1581,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
+        
         self._pseudo_plot2_dir(db, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode(), dir.encode())
         
 
@@ -1490,6 +1590,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def ps_stack(self, db, chan, con_file, map):
         """
+        
         Create a stacked pseudo-section plot using a control file.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
@@ -1508,6 +1609,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPSTAKCON GX. It may then
         be modified by hand as required.
         """
+        
         self._ps_stack(db, chan.encode(), con_file.encode(), map.encode())
         
 
@@ -1516,6 +1618,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def ps_stack2(self, db, chan, con_file, type, map):
         """
+        
         As `ps_stack <geosoft.gxapi.GXIP.ps_stack>`, but select section spacing option.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
@@ -1533,6 +1636,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._ps_stack2(db, chan.encode(), con_file.encode(), type, map.encode())
         
 
@@ -1541,6 +1645,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def ps_stack2_dir(self, db, chan, con_file, type, map, dir):
         """
+        
         Same as `pseudo_plot2 <geosoft.gxapi.GXIP.pseudo_plot2>`, but with directory specified.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
@@ -1560,6 +1665,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._ps_stack2_dir(db, chan.encode(), con_file.encode(), type, map.encode(), dir.encode())
         
 
@@ -1568,6 +1674,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def qc_chan_lst(self, db, lst):
         """
+        
         Fill a list with QC channels.
         
         :param db:   Database
@@ -1582,6 +1689,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Searches for the following QC channels existing in a database:
         QC, QC_RES.
         """
+        
         self._qc_chan_lst(db, lst)
         
 
@@ -1590,6 +1698,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def recalculate(self, db):
         """
+        
         Recalculate derived channel values.
         
         :param db:  Database
@@ -1617,6 +1726,7 @@ class GXIP(gxapi_cy.WrapIP):
         (since the X and Y values would have changed), then call
         `recalculate_z <geosoft.gxapi.GXIP.recalculate_z>`, since "Z" values are based on "Topo" values.
         """
+        
         self._recalculate(db)
         
 
@@ -1625,6 +1735,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def recalculate_ex(self, db, recalculate_xyz):
         """
+        
         Recalculate derived channel values, with option for including/excluding location calculations.
         
         :param db:               Database
@@ -1639,6 +1750,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** See `recalculate <geosoft.gxapi.GXIP.recalculate>`. This version allows you to suppress the recalculation of the
         current X, Y and Z channel values from the station locations.
         """
+        
         self._recalculate_ex(db, recalculate_xyz)
         
 
@@ -1647,6 +1759,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def recalculate_derived_data(self, db, line_handle, channel_list, recalculate_xyz):
         """
+        
         Recalculate derived channel values.
         
         :param db:               Database
@@ -1693,15 +1806,14 @@ class GXIP(gxapi_cy.WrapIP):
             "R1Y", "R2Y", "T1Y", "T2Y"  (Across-line locations)
             "R1Z", "R2Z", "T1Z", "T2Z"  (Z)
             (for any electrode not include or set to "" the default channel name For
-             the array line direction, or the defined distant electrode location
-             is used)
+            the array line direction, or the defined distant electrode location
+            is used)
 
         Other input channels overridden if defined:
             "Vp" (primary voltage - must be in mV)
             "I" (current - must be in A)
 
-        Other output channels overridden if defined (if you DON'T want the
-        various output channels modified, then set the override values to ""):
+        Other output channels overridden if defined (if you DON'T want the various output channels modified, then set the override values to ""):
             "MF" (metal factor) - formulation defined in settings, 
             "AvgIP" (average IP)
             "AppRes" (apparent resistivity)
@@ -1716,6 +1828,7 @@ class GXIP(gxapi_cy.WrapIP):
          being re-run, then if a maker exists for the Topo channel it is re-run, and
          finally the Z channel is recalculated (see "RecalculateZ_IP").
         """
+        
         self._recalculate_derived_data(db, line_handle, channel_list, recalculate_xyz)
         
 
@@ -1724,6 +1837,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def recalculate_z(self, db):
         """
+        
         Recalculate Z channel values.
         
         :param db:  Database
@@ -1743,7 +1857,50 @@ class GXIP(gxapi_cy.WrapIP):
 
             `recalculate <geosoft.gxapi.GXIP.recalculate>`
         """
+        
         self._recalculate_z(db)
+        
+
+
+
+
+    def resix__zonge(self, db, line, res_chan, syn_res_chan, inv_res_chan, ip_too, chg_chan, syn_chg_chan, inv_chg_chan):
+        """
+        
+        .. deprecated:: None None 
+        Runs the Interpex RESIX Zonge inversion on selected lines.
+        
+        :param db:            Database object
+        :param line:          Name of the line
+        :param res_chan:      Apparent resistivity channel
+        :param syn_res_chan:  Synthetic Apparent resistivity channel
+        :param inv_res_chan:  Inverted Apparent resistivity channel
+        :param ip_too:        Invert `GXIP <geosoft.gxapi.GXIP>` data too? :ref:`IP_I2XINV`
+        :param chg_chan:      `GXIP <geosoft.gxapi.GXIP>` channel
+        :param syn_chg_chan:  Synthetic `GXIP <geosoft.gxapi.GXIP>` channel
+        :param inv_chg_chan:  Inverted `GXIP <geosoft.gxapi.GXIP>` channel
+        :type  db:            GXDB
+        :type  line:          str
+        :type  res_chan:      str
+        :type  syn_res_chan:  str
+        :type  inv_res_chan:  str
+        :type  ip_too:        int
+        :type  chg_chan:      str
+        :type  syn_chg_chan:  str
+        :type  inv_chg_chan:  str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** The IP2DI program is run in batch mode, and the
+        input file is overwritten with the new results, ready to
+        be imported using `import_i2_x <geosoft.gxapi.GXIP.import_i2_x>`.
+        The three `GXIP <geosoft.gxapi.GXIP>` channels are required only if joint Res/`GXIP <geosoft.gxapi.GXIP>` inversion
+        is selected.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._resix__zonge(db, line.encode(), res_chan.encode(), syn_res_chan.encode(), inv_res_chan.encode(), ip_too, chg_chan.encode(), syn_chg_chan.encode(), inv_chg_chan.encode())
         
 
 
@@ -1751,6 +1908,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def set_import_line(self, line):
         """
+        
         Set the line name for some imports.
         
         :param line:  Line name
@@ -1762,6 +1920,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** For some imports, no line name is derivable from the import itself.
         """
+        
         self._set_import_line(line.encode())
         
 
@@ -1770,6 +1929,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def set_import_mode(self, append):
         """
+        
         When importing data to a line, set append/overwrite mode.
         
         :param append:  0: Overwrite, 1: Append
@@ -1785,6 +1945,7 @@ class GXIP(gxapi_cy.WrapIP):
         "Short" data channels will be dummied to the existing
         data length before the new data is appended.
         """
+        
         self._set_import_mode(append)
         
 
@@ -1793,6 +1954,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def window(self, db, va_chan, chan, windows):
         """
+        
         Window an `GXIP <geosoft.gxapi.GXIP>` array channel to produce a normal channel.
         
         :param db:       `GXDB <geosoft.gxapi.GXDB>` object
@@ -1815,6 +1977,7 @@ class GXIP(gxapi_cy.WrapIP):
         In frequency domain a simple sum is performed.
         Window List Syntax:
         """
+        
         self._window(db, va_chan.encode(), chan.encode(), windows.encode())
         
 
@@ -1823,6 +1986,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def winnow_chan_list(cls, lst):
         """
+        
         Removes obviously non-pseudo-section type channels from list.
         
         :param lst:  List of channels
@@ -1832,6 +1996,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapIP._winnow_chan_list(GXContext._get_tls_geo(), lst)
         
 
@@ -1840,6 +2005,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def winnow_chan_list2(cls, lst, db):
         """
+        
         Same as `winnow_chan_list <geosoft.gxapi.GXIP.winnow_chan_list>`, but removes current X,Y,Z.
         
         :param lst:  List of channels
@@ -1851,6 +2017,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         gxapi_cy.WrapIP._winnow_chan_list2(GXContext._get_tls_geo(), lst, db)
         
 
@@ -1859,6 +2026,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def is_valid_line(self, db, line):
         """
+        
         See if a given database line is registered for the `GXIP <geosoft.gxapi.GXIP>` system
         
         :param db:    Database
@@ -1873,6 +2041,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._is_valid_line(db, line.encode())
         return ret_val
 
@@ -1881,6 +2050,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def line_array_type(self, db, line):
         """
+        
         Return the type of `GXIP <geosoft.gxapi.GXIP>` array for the input line. If necessary, first imports the specified line into the `GXIP <geosoft.gxapi.GXIP>` object
         
         :param db:    Database
@@ -1895,6 +2065,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._line_array_type(db, line.encode())
         return ret_val
 
@@ -1903,6 +2074,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def a_spacing(self, db, line):
         """
+        
         Return the A-Spacing for the input line. If necessary, first imports the specified line into the `GXIP <geosoft.gxapi.GXIP>` object.
         
         :param db:    Database
@@ -1918,6 +2090,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._a_spacing(db, line.encode())
         return ret_val
 
@@ -1926,6 +2099,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def pldp_convention(self):
         """
+        
         Return the user's plot point convention for pole-dipole arrays.
         
 
@@ -1936,6 +2110,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._pldp_convention()
         return ret_val
 
@@ -1944,6 +2119,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_electrode_locations_and_mask_values(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2):
         """
+        
         Get unique electrodes, along with current mask info.
         
         :param db:     `GXDB <geosoft.gxapi.GXDB>` object
@@ -1968,6 +2144,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
+        
         self._get_electrode_locations_and_mask_values(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
         
 
@@ -1976,6 +2153,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_electrode_locations_and_mask_values2(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2, v_vlines):
         """
+        
         Get unique electrodes, along with current mask info.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
@@ -2002,6 +2180,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
+        
         self._get_electrode_locations_and_mask_values2(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2, v_vlines)
         
 
@@ -2010,6 +2189,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def set_electrode_mask_values(self, db, line, tx_rx, v_vx, v_vy, v_vm1, v_vm2):
         """
+        
         Set unique electrodes, along with current mask info.
         
         :param db:     `GXDB <geosoft.gxapi.GXDB>` object
@@ -2033,6 +2213,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Mask values are set for all included electrode locations, currently selected lines.
         """
+        
         self._set_electrode_mask_values(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
         
 
@@ -2041,6 +2222,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def set_electrode_mask_values_single_qc_channel(self, db, line, tx_rx, qc_type, v_vx, v_vy, v_vm):
         """
+        
         Set unique electrodes, along with current mask info.
         
         :param db:       `GXDB <geosoft.gxapi.GXDB>` object
@@ -2064,6 +2246,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Mask values are set for all included electrode locations, currently selected lines.
         """
+        
         self._set_electrode_mask_values_single_qc_channel(db, line.encode(), tx_rx, qc_type, v_vx, v_vy, v_vm)
         
 
@@ -2072,6 +2255,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def get_qc_channel(cls, db, qc_type, chan):
         """
+        
         Get the QC channel handle, if it exists.
         
         :param db:       `GXDB <geosoft.gxapi.GXDB>` object
@@ -2091,6 +2275,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** For `GXIP <geosoft.gxapi.GXIP>`, looks for "QC_IP", then "QC_OffTime", then "QC".
         For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
         """
+        
         ret_val, chan.value = gxapi_cy.WrapIP._get_qc_channel(GXContext._get_tls_geo(), db, qc_type, chan.value.encode())
         return ret_val
 
@@ -2099,6 +2284,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def locate_contributing_electrodes(cls, db, map, rx1x, rx1y, rx2x, rx2y, tx1x, tx1y, tx2x, tx2y, sym_size):
         """
+        
         Locate on a map electrodes selected in a database row.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
@@ -2134,6 +2320,7 @@ class GXIP(gxapi_cy.WrapIP):
         This EXT is not serialized, so it is also removed if the database is closed (since
         this is not the normal behaviour expected from a database).
         """
+        
         gxapi_cy.WrapIP._locate_contributing_electrodes(GXContext._get_tls_geo(), db, map.encode(), rx1x.encode(), rx1y.encode(), rx2x.encode(), rx2y.encode(), tx1x.encode(), tx1y.encode(), tx2x.encode(), tx2y.encode(), sym_size)
         
 
@@ -2142,6 +2329,7 @@ class GXIP(gxapi_cy.WrapIP):
     @classmethod
     def locate_contributing_electrodes_3d(cls, db, map, rx1x, rx1y, rx1z, rx2x, rx2y, rx2z, tx1x, tx1y, tx1z, tx2x, tx2y, tx2z, sym_size):
         """
+        
         Locate on a 3D view electrodes selected in a database row.
         
         :param db:        `GXDB <geosoft.gxapi.GXDB>` object
@@ -2185,6 +2373,7 @@ class GXIP(gxapi_cy.WrapIP):
         This EXT is not serialized, so it is also removed if the database is closed (since
         this is not the normal behaviour expected from a database).
         """
+        
         gxapi_cy.WrapIP._locate_contributing_electrodes_3d(GXContext._get_tls_geo(), db, map.encode(), rx1x.encode(), rx1y.encode(), rx1z.encode(), rx2x.encode(), rx2y.encode(), rx2z.encode(), tx1x.encode(), tx1y.encode(), tx1z.encode(), tx2x.encode(), tx2y.encode(), tx2z.encode(), sym_size)
         
 
@@ -2193,6 +2382,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_grids_vv(self):
         """
+        
         Get a VV populated with grids created making pseudosections by this IP object
         
 
@@ -2205,6 +2395,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** You can use this list (for instance) to add the created grids to the project list.
         """
+        
         ret_val = self._get_grids_vv()
         return GXVV(ret_val)
 
@@ -2213,6 +2404,7 @@ class GXIP(gxapi_cy.WrapIP):
 
     def get_line_data(self, db, line, vv_R1X, vv_R1Y, vv_R2X, vv_R2Y, vv_T1X, vv_T1Y, vv_T2X, vv_T2Y, vv_QC_IP, vv_QC_Res, data, vv_data):
         """
+        
         Get electrodes, data and mask values for a single line.
         
         :param db:         `GXDB <geosoft.gxapi.GXDB>` object
@@ -2250,7 +2442,178 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** True XY locations are returned for 2D arrays. Distant Electrode locations may be dummies.
         """
+        
         self._get_line_data(db, line.encode(), vv_R1X, vv_R1Y, vv_R2X, vv_R2Y, vv_T1X, vv_T1Y, vv_T2X, vv_T2Y, vv_QC_IP, vv_QC_Res, data.encode(), vv_data)
+        
+
+
+
+
+# Deprecated
+
+
+
+    def average_duplicates(self, db, chan, out):
+        """
+        
+        .. deprecated:: None None 
+        Average duplicate samples in a database.
+        
+        :param db:    Database to export from
+        :param chan:  Mask or reference channel
+        :param out:   :ref:`IP_DUPLICATE`
+        :type  db:    GXDB
+        :type  chan:  str
+        :type  out:   int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Averages all values with shared station and N values,
+        as long as the mask channel is defined at that FID.
+        Previous averaged values (IP_DATA_AVG) are overwritten according to the
+        overwrite flag.
+        REPLACED BY: `average_duplicates_qc <geosoft.gxapi.GXIP.average_duplicates_qc>`.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._average_duplicates(db, chan.encode(), out)
+        
+
+
+
+
+    def export_ubcip(self, db, line, chan, obs, topo):
+        """
+        
+        .. deprecated:: None None 
+        Export an `GXIP <geosoft.gxapi.GXIP>` OBS file to use in the UBC IPINV2D program.
+        
+        :param db:    `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:  Output line name
+        :param chan:  Output `GXIP <geosoft.gxapi.GXIP>` channel name
+        :param obs:   Output OBS file name
+        :param topo:  Output TOPO file name
+        :type  db:    GXDB
+        :type  line:  str
+        :type  chan:  str
+        :type  obs:   str
+        :type  topo:  str
+
+        .. versionadded:: 6.4
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
+        UBC 2D inversion program IPINV2D.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_ubcip(db, line.encode(), chan.encode(), obs.encode(), topo.encode())
+        
+
+
+
+
+    def export_ubcip2(self, db, line, chan, error_chan, obs, topo):
+        """
+        
+        .. deprecated:: None None 
+        Same as `export_ubcip <geosoft.gxapi.GXIP.export_ubcip>`, with error channel output.
+        
+        :param db:          `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:        Output line name
+        :param chan:        Output `GXIP <geosoft.gxapi.GXIP>` channel name
+        :param error_chan:  Output error channel name ("" for none)
+        :param obs:         Output OBS file name
+        :param topo:        Output TOPO file name
+        :type  db:          GXDB
+        :type  line:        str
+        :type  chan:        str
+        :type  error_chan:  str
+        :type  obs:         str
+        :type  topo:        str
+
+        .. versionadded:: 6.4.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
+        UBC 2D inversion program IPINV2D.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_ubcip2(db, line.encode(), chan.encode(), error_chan.encode(), obs.encode(), topo.encode())
+        
+
+
+
+
+    def export_ubc_res(self, db, line, voltage_chan, current_chan, obs, topo):
+        """
+        
+        .. deprecated:: None None 
+        Export a RES OBS file to use in the UBC DCINV2D program.
+        
+        :param db:            `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:          Output line name
+        :param voltage_chan:  Output voltage channel name
+        :param current_chan:  Output current channel name
+        :param obs:           Output OBS file name
+        :param topo:          Output TOPO file name
+        :type  db:            GXDB
+        :type  line:          str
+        :type  voltage_chan:  str
+        :type  current_chan:  str
+        :type  obs:           str
+        :type  topo:          str
+
+        .. versionadded:: 6.4
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
+        UBC 2D inversion program DCINV2D.
+        Voltage and current channels should be in units such that
+        V/I gives volts/amp (or mV/mA).
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_ubc_res(db, line.encode(), voltage_chan.encode(), current_chan.encode(), obs.encode(), topo.encode())
+        
+
+
+
+
+    def export_ubc_res2(self, db, line, voltage_chan, current_chan, error_chan, obs, topo):
+        """
+        
+        .. deprecated:: None None 
+        Same as `export_ubc_res <geosoft.gxapi.GXIP.export_ubc_res>`, with error channel output.
+        
+        :param db:            `GXDB <geosoft.gxapi.GXDB>` object
+        :param line:          Output line name
+        :param voltage_chan:  Output voltage channel name
+        :param current_chan:  Output current channel name
+        :param error_chan:    Output error channel name ("" for none)
+        :param obs:           Output OBS file name
+        :param topo:          Output TOPO file name
+        :type  db:            GXDB
+        :type  line:          str
+        :type  voltage_chan:  str
+        :type  current_chan:  str
+        :type  error_chan:    str
+        :type  obs:           str
+        :type  topo:          str
+
+        .. versionadded:: 6.4.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
+        UBC 2D inversion program DCINV2D.
+        Voltage and current channels should be in units such that
+        V/I gives volts/amp (or mV/mA).
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._export_ubc_res2(db, line.encode(), voltage_chan.encode(), current_chan.encode(), error_chan.encode(), obs.encode(), topo.encode())
         
 
 

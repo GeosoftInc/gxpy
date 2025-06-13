@@ -1,6 +1,6 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'init_empty.py'
 
 ### block Header
@@ -679,6 +679,8 @@ DB_ARRAY_BASETYPE_DEPTHS = 5
 DB_ARRAY_BASETYPE_VELOCITIES = 6
 #: Discrete time windows
 DB_ARRAY_BASETYPE_DISCRETE_TIME_WINDOWS = 7
+#: Energies
+DB_ARRAY_BASETYPE_ENERGIES = 8
 
 #
 # NULLSYMB constants
@@ -734,6 +736,12 @@ DSEL_PICTURE_QUALITY_TIF = 9
 
 #
 # GXE3DV Constants
+# 
+
+	
+
+#
+# GXEVOOBJMETA Constants
 # 
 
 	
@@ -7458,6 +7466,7 @@ __all__ = [
     'GXDBWRITE',
     'GXDSEL',
     'GXE3DV',
+    'GXEVOOBJMETA',
     'GXEXT',
 
 
@@ -7597,6 +7606,7 @@ from .GXDBREAD import GXDBREAD
 from .GXDBWRITE import GXDBWRITE
 from .GXDSEL import GXDSEL
 from .GXE3DV import GXE3DV
+from .GXEVOOBJMETA import GXEVOOBJMETA
 from .GXEXT import GXEXT
 
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def arrow(cls, mview, hx, hy, tx, ty, ratio, angle, type):
         """
+        
         Draw an arrow.
         
         :param mview:  View
@@ -78,6 +79,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._arrow(GXContext._get_tls_geo(), mview, hx, hy, tx, ty, ratio, angle, type)
         
 
@@ -86,6 +88,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def arrow_vector_vv(cls, mview, vv_x, vv_y, vv_dx, vv_dy, scale, pos, size, style, point, thickness):
         """
+        
         Draw arrow vectors based on input VVs.
         
         :param mview:      View
@@ -122,6 +125,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         If the line thickness is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, the line thickness scales
         with the arrow size, and is 1/20 of the vector length.
         """
+        
         gxapi_cy.WrapMVU._arrow_vector_vv(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_dx, vv_dy, scale, pos, size, style, point, thickness)
         
 
@@ -130,6 +134,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def bar_chart(cls, mview, group_name, data, line, x_chan, list, x_title, x_txt_size, y_title, y_txt_size, bar_title, bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm):
         """
+        
         Plot bar chart on a map.
         
         :param mview:         View
@@ -193,6 +198,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._bar_chart(GXContext._get_tls_geo(), mview, group_name.encode(), data, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
         
 
@@ -201,6 +207,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def cdi_pixel_plot(cls, mview, group, data_va, elev_va, xvv, itr):
         """
+        
         Create a color pixel-style plot of CDI data.
         
         :param mview:    View
@@ -228,6 +235,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         are sized so that the boundaries are half-way between adjacent
         data, both vertically and horizontally.
         """
+        
         gxapi_cy.WrapMVU._cdi_pixel_plot(GXContext._get_tls_geo(), mview, group.encode(), data_va, elev_va, xvv, itr)
         
 
@@ -236,6 +244,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def cdi_pixel_plot_3d(cls, mview, group, data_va, elev_va, xvv, yvv, itr):
         """
+        
         Create a color pixel-style plot of CDI data in a 3D view.
         
         :param mview:    View
@@ -263,6 +272,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         data point is plotted in two halves, with each half on adjacent plotting planes,
         with the bend at the data point.
         """
+        
         gxapi_cy.WrapMVU._cdi_pixel_plot_3d(GXContext._get_tls_geo(), mview, group.encode(), data_va, elev_va, xvv, yvv, itr)
         
 
@@ -271,6 +281,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar(cls, mview, itr, decimal, ann, height, width, x, y):
         """
+        
         Create a Color Bar in view
         
         :param mview:    View
@@ -294,6 +305,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._color_bar(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y)
         
 
@@ -302,6 +314,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar2(cls, mview, itr, itr2, decimal, ann, height, width, x, y):
         """
+        
         Create a Color Bar from two `GXITR <geosoft.gxapi.GXITR>`
         
         :param mview:    View
@@ -329,6 +342,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
+        
         gxapi_cy.WrapMVU._color_bar2(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y)
         
 
@@ -337,6 +351,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar2_style(cls, mview, itr, itr2, decimal, ann, height, width, x, y, style):
         """
+        
         Create a Color Bar from two ITRs with style options
         
         :param mview:    View
@@ -366,6 +381,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
+        
         gxapi_cy.WrapMVU._color_bar2_style(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y, style)
         
 
@@ -374,6 +390,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar_hor(cls, mview, itr, decimal, ann, width, height, x, y, label_orient):
         """
+        
         Create a horizontal color bar in view
         
         :param mview:         View
@@ -408,6 +425,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `color_bar <geosoft.gxapi.GXMVU.color_bar>`
         """
+        
         gxapi_cy.WrapMVU._color_bar_hor(GXContext._get_tls_geo(), mview, itr, decimal, ann, width, height, x, y, label_orient)
         
 
@@ -416,6 +434,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar_hor2(cls, mview, itr, itr2, decimal, ann, height, width, x, y, label_orient):
         """
+        
         Create a Horizontal Color Bar from two ITRs
         
         :param mview:         View
@@ -445,6 +464,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
+        
         gxapi_cy.WrapMVU._color_bar_hor2(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y, label_orient)
         
 
@@ -453,6 +473,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar_hor2_style(cls, mview, itr, itr2, decimal, ann, height, width, x, y, style, label_orient):
         """
+        
         Create a Horizontal Color Bar from two ITRs with style options
         
         :param mview:         View
@@ -484,6 +505,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** The secondary `GXITR <geosoft.gxapi.GXITR>` is used to blend horizontally with the
         primary `GXITR <geosoft.gxapi.GXITR>` in each box.
         """
+        
         gxapi_cy.WrapMVU._color_bar_hor2_style(GXContext._get_tls_geo(), mview, itr, itr2, decimal, ann, height, width, x, y, style, label_orient)
         
 
@@ -492,6 +514,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar_hor_style(cls, mview, itr, decimal, ann, height, width, x, y, style, label_orient):
         """
+        
         Create a Horizontal Color Bar in view with style options
         
         :param mview:         View
@@ -519,6 +542,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._color_bar_hor_style(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y, style, label_orient)
         
 
@@ -527,6 +551,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar_style(cls, mview, itr, decimal, ann, height, width, x, y, style):
         """
+        
         Create a Color Bar in view with style options
         
         :param mview:    View
@@ -552,6 +577,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._color_bar_style(GXContext._get_tls_geo(), mview, itr, decimal, ann, height, width, x, y, style)
         
 
@@ -560,6 +586,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar_reg(cls, mview, itr, itr2, reg):
         """
+        
         Create a Color Bar in view
         
         :param mview:  View
@@ -591,6 +618,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         POST_MAXMIN            Post limit values at ends of the bar (0 or 1)? (DEFAULT = 0)
         DIVISION_STYLE         One of MVU_DIVISION_STYLE_XXX (DEFAULT = `MVU_DIVISION_STYLE_LINES <geosoft.gxapi.MVU_DIVISION_STYLE_LINES>`)
         """
+        
         gxapi_cy.WrapMVU._color_bar_reg(GXContext._get_tls_geo(), mview, itr, itr2, reg)
         
 
@@ -599,6 +627,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def color_bar_reg_ex(cls, mview, st_hist, itr, itr2, reg, vv):
         """
+        
         Create a Color Bar in view
         
         :param mview:    View
@@ -626,6 +655,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `color_bar_reg <geosoft.gxapi.GXMVU.color_bar_reg>`
         """
+        
         gxapi_cy.WrapMVU._color_bar_reg_ex(GXContext._get_tls_geo(), mview, st_hist, itr, itr2, reg, vv)
         
 
@@ -634,6 +664,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def contour(cls, mview, con, grid):
         """
+        
         Creates a contour map.
         
         :param mview:  View
@@ -647,6 +678,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._contour(GXContext._get_tls_geo(), mview, con.encode(), grid.encode())
         
 
@@ -655,6 +687,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def contour_ply(cls, mview, ply, con, grid):
         """
+        
         Creates a contour map with clipped areas.
         
         :param mview:  View
@@ -675,6 +708,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         a `GXPLY <geosoft.gxapi.GXPLY>` object using the `GXPLY.add_polygon_ex <geosoft.gxapi.GXPLY.add_polygon_ex>` function, to add both
         inclusive (as the first `GXPLY <geosoft.gxapi.GXPLY>`) and exclusive interior regions.
         """
+        
         gxapi_cy.WrapMVU._contour_ply(GXContext._get_tls_geo(), mview, ply, con.encode(), grid.encode())
         
 
@@ -683,6 +717,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def c_symb_legend(cls, mview, x1, y1, font_size, symb_scale, file, title, sub_title):
         """
+        
         Plot a legend for the classified color symbols.
         
         :param mview:       `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
@@ -718,6 +753,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         the correct font and symbol before CSymbLegend is
         called. The same is true of the edge color.
         """
+        
         gxapi_cy.WrapMVU._c_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, file.encode(), title.encode(), sub_title.encode())
         
 
@@ -726,6 +762,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def decay_curve(cls, mview, vv_x, vv_y, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color):
         """
+        
         Plot decay curves at survey locations
         
         :param mview:       View
@@ -778,6 +815,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** Box width and height are used to draw horizontal and vertical
         bars. Curves outside the box are not clipped.
         """
+        
         gxapi_cy.WrapMVU._decay_curve(GXContext._get_tls_geo(), mview, vv_x, vv_y, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color.encode())
         
 
@@ -786,6 +824,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def direction_plot(cls, mview, vv_x, vv_y, size, loc, align):
         """
+        
         Plot an arrow to indicate the direction of a flight line
         
         :param mview:  View
@@ -808,6 +847,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** An arrow will be drawn in the direction from the first valid
         to the last points in the X and Y VVs.
         """
+        
         gxapi_cy.WrapMVU._direction_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, size, loc, align)
         
 
@@ -816,6 +856,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def em_forward(cls, mview, xo, yo, size_x, size_y, coil_sep, coil_frequency, coil_configuration, r, h, i, q, rvv, hvv, ivv, qvv, lin_log, var):
         """
+        
         Plot an EM forward model against inverted data.
         
         :param mview:               View
@@ -869,6 +910,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         a single resistivity. In either case, the relevant VVs must be
         completely filled (even if one is all the same value).
         """
+        
         gxapi_cy.WrapMVU._em_forward(GXContext._get_tls_geo(), mview, xo, yo, size_x, size_y, coil_sep, coil_frequency, coil_configuration, r, h, i, q, rvv, hvv, ivv, qvv, lin_log, var)
         
 
@@ -877,6 +919,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def export_datamine_string(cls, mview, lst, file):
         """
+        
         Export selected map groups in a map view to a Datamine coordinate string file.
         
         :param mview:  View
@@ -900,6 +943,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `GXLST <geosoft.gxapi.GXLST>` class
         """
+        
         gxapi_cy.WrapMVU._export_datamine_string(GXContext._get_tls_geo(), mview, lst, file.encode())
         
 
@@ -908,6 +952,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def export_dxf_3d(cls, mview, lst, wa):
         """
+        
         Export selected map groups in a map view to an AutoCAD 3D DXF file.
         
         :param mview:  View
@@ -927,6 +972,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `GXLST <geosoft.gxapi.GXLST>` class
         """
+        
         gxapi_cy.WrapMVU._export_dxf_3d(GXContext._get_tls_geo(), mview, lst, wa)
         
 
@@ -935,6 +981,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def export_surpac_str(cls, mview, lst, str_wa, styles_wa):
         """
+        
         Export selected map groups in a map view to a Surpac `GXSTR <geosoft.gxapi.GXSTR>` file.
         
         :param mview:      View
@@ -961,6 +1008,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `GXLST <geosoft.gxapi.GXLST>` class
         """
+        
         gxapi_cy.WrapMVU._export_surpac_str(GXContext._get_tls_geo(), mview, lst, str_wa, styles_wa)
         
 
@@ -969,6 +1017,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def export_map_groups_to_gdb(cls, mview, lst, db):
         """
+        
         Export map group(s) to database line(s).
         
         :param mview:  View
@@ -982,6 +1031,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapMVU._export_map_groups_to_gdb(GXContext._get_tls_geo(), mview, lst, db)
         
 
@@ -990,6 +1040,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def flight_plot(cls, mview, vv_x, vv_y, line, locate, vangle, up, loff, voff):
         """
+        
         Draw a flight line
         
         :param mview:   View
@@ -1041,6 +1092,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `path_plot <geosoft.gxapi.GXMVU.path_plot>`
         """
+        
         gxapi_cy.WrapMVU._flight_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, vangle, up, loff, voff)
         
 
@@ -1049,6 +1101,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def gen_areas(cls, mview, lines, col_vv, pat_vv, pitch):
         """
+        
         Generate areas from an line group.
         
         :param mview:   View
@@ -1076,6 +1129,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `re_gen_areas <geosoft.gxapi.GXMVU.re_gen_areas>`
         """
+        
         gxapi_cy.WrapMVU._gen_areas(GXContext._get_tls_geo(), mview, lines.encode(), col_vv, pat_vv, pitch)
         
 
@@ -1084,6 +1138,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def get_range_gocad_surface(cls, file, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the XYZ range of a GOCAD surface.
         
         :param file:   GOCAD file name
@@ -1108,6 +1163,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** Required to set up a map view before doing the actual
         surface import.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMVU._get_range_gocad_surface(GXContext._get_tls_geo(), file.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -1116,6 +1172,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def histogram(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box):
         """
+        
         Plot the histogram on a map.
         
         :param mview:       View
@@ -1166,6 +1223,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `histogram2 <geosoft.gxapi.GXMVU.histogram2>`, `histogram3 <geosoft.gxapi.GXMVU.histogram3>`
         """
+        
         gxapi_cy.WrapMVU._histogram(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box)
         
 
@@ -1174,6 +1232,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def histogram2(cls, mview, st_data, st_hist, x_title, y_title, xy_txt_size, title, plot_txt_size, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box, x_marker):
         """
+        
         Plot the histogram on a map.
         
         :param mview:          View
@@ -1232,6 +1291,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         None of them will be plotted if threshold value is dummy or outside
         the X data range.
         """
+        
         gxapi_cy.WrapMVU._histogram2(GXContext._get_tls_geo(), mview, st_data, st_hist, x_title.encode(), y_title.encode(), xy_txt_size, title.encode(), plot_txt_size, unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box, x_marker)
         
 
@@ -1240,6 +1300,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def histogram3(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box):
         """
+        
         Plot the histogram on a map, specify decimals.
         
         :param mview:         View
@@ -1287,6 +1348,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._histogram3(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box)
         
 
@@ -1295,6 +1357,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def histogram4(cls, mview, st_data, st_hist, title, unit, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box):
         """
+        
         As `histogram3 <geosoft.gxapi.GXMVU.histogram3>`, but allow probability scaling of percents.
         
         :param mview:         View
@@ -1344,6 +1407,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._histogram4(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box)
         
 
@@ -1352,6 +1416,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def histogram5(cls, mview, st_data, st_hist, title, unit, lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box, itr):
         """
+        
         As `histogram4 <geosoft.gxapi.GXMVU.histogram4>`, but allow `GXITR <geosoft.gxapi.GXITR>` to color bars.
         
         :param mview:         View
@@ -1407,6 +1472,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
+        
         gxapi_cy.WrapMVU._histogram5(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box, itr)
         
 
@@ -1415,6 +1481,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def exportable_dxf_3d_groups_lst(cls, mview, lst):
         """
+        
         Return a `GXLST <geosoft.gxapi.GXLST>` of groups you can export using sExportDXF3D_MVU.
         
         :param mview:  View
@@ -1435,6 +1502,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         views on a reference plan oriented toward the user, and thus
         not exportable.
         """
+        
         ret_val = gxapi_cy.WrapMVU._exportable_dxf_3d_groups_lst(GXContext._get_tls_geo(), mview, lst)
         return ret_val
 
@@ -1443,6 +1511,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def mapset_test(cls, min_x, max_x, min_y, max_y, size, port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
+        
         Test function to ensure parameters to `mapset <geosoft.gxapi.GXMVU.mapset>` is sane
         
         :param min_x:      Minimum X of data area (data units)
@@ -1484,6 +1553,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** Use `GXSYS.show_error <geosoft.gxapi.GXSYS.show_error>` to display errors that may have been encountered. This function can also be used
         to calculate the default scale without creating a map.
         """
+        
         ret_val, scale.value = gxapi_cy.WrapMVU._mapset_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
@@ -1492,6 +1562,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def mapset2_test(cls, min_x, max_x, min_y, max_y, size, port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
+        
         Test function to ensure parameters to `mapset <geosoft.gxapi.GXMVU.mapset>` is sane
         
         :param min_x:      Minimum X of data area (data units)
@@ -1534,6 +1605,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** Same as `mapset_test <geosoft.gxapi.GXMVU.mapset_test>`, with vertical exaggeration.
         """
+        
         ret_val, scale.value = gxapi_cy.WrapMVU._mapset2_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
@@ -1542,6 +1614,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def import_gocad_surface(cls, mview, file, col):
         """
+        
         Import and plot a GOCAD surface model.
         
         :param mview:  View
@@ -1560,6 +1633,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         the normal of each defined triangle, and taking the
         average when vertex is shared among more than one triangle.
         """
+        
         gxapi_cy.WrapMVU._import_gocad_surface(GXContext._get_tls_geo(), mview, file.encode(), col)
         
 
@@ -1568,6 +1642,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def load_plot(cls, map, name):
         """
+        
         Load a Geosoft PLT file into a `GXMAP <geosoft.gxapi.GXMAP>`.
         
         :param map:   Map handle
@@ -1579,6 +1654,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._load_plot(GXContext._get_tls_geo(), map, name.encode())
         
 
@@ -1587,6 +1663,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def map_from_plt(cls, map, base, data, plt, mpx, mpy):
         """
+        
         Creates a new map from a PLT file.
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` Handle
@@ -1614,6 +1691,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `load_plot <geosoft.gxapi.GXMVU.load_plot>`
         """
+        
         gxapi_cy.WrapMVU._map_from_plt(GXContext._get_tls_geo(), map, base.encode(), data.encode(), plt.encode(), mpx, mpy)
         
 
@@ -1622,6 +1700,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def map_mdf(cls, map, mdf, data):
         """
+        
         Creates an MDF from a Map.
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` Handle
@@ -1635,6 +1714,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._map_mdf(GXContext._get_tls_geo(), map, mdf.encode(), data.encode())
         
 
@@ -1643,6 +1723,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def mapset(cls, map, base, data, min_x, max_x, min_y, max_y, size, port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
+        
         Creates a new map directly from parameters.
         
         :param map:        `GXMAP <geosoft.gxapi.GXMAP>` Handle
@@ -1684,6 +1765,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._mapset(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
@@ -1692,6 +1774,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def mapset2(cls, map, base, data, min_x, max_x, min_y, max_y, size, port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside):
         """
+        
         Same as `mapset <geosoft.gxapi.GXMVU.mapset>`, with vertical exaggeration.
         
         :param map:        `GXMAP <geosoft.gxapi.GXMAP>` Handle
@@ -1735,6 +1818,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._mapset2(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
@@ -1743,6 +1827,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def mdf(cls, map, mdf, base, data):
         """
+        
         Creates a new map from an MDF file.
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` Handle
@@ -1758,6 +1843,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._mdf(GXContext._get_tls_geo(), map, mdf.encode(), base.encode(), data.encode())
         
 
@@ -1766,6 +1852,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def path_plot(cls, mview, vv_x, vv_y, line, locate, vangle, up, loff, voff, gap):
         """
+        
         Draw a flight line
         
         :param mview:   View
@@ -1800,6 +1887,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `flight_plot <geosoft.gxapi.GXMVU.flight_plot>`
         """
+        
         gxapi_cy.WrapMVU._path_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, vangle, up, loff, voff, gap)
         
 
@@ -1808,6 +1896,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def path_plot_ex(cls, mview, vv_x, vv_y, line, locate, compass, vangle, up, loff, voff, gap):
         """
+        
         Draw a flight line
         
         :param mview:    View
@@ -1843,6 +1932,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `path_plot <geosoft.gxapi.GXMVU.path_plot>`
         """
+        
         gxapi_cy.WrapMVU._path_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, compass, vangle, up, loff, voff, gap)
         
 
@@ -1851,6 +1941,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def path_plot_ex2(cls, mview, vv_x, vv_y, line, locate, compass, vangle, up, loff, voff, gap, dummies):
         """
+        
         Draw a flight line
         
         :param mview:    View
@@ -1888,6 +1979,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `path_plot_ex <geosoft.gxapi.GXMVU.path_plot_ex>`
         """
+        
         gxapi_cy.WrapMVU._path_plot_ex2(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, compass, vangle, up, loff, voff, gap, dummies)
         
 
@@ -1896,6 +1988,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def plot_voxel_slice(cls, mview, vox, itr, x, y, dOrigin, dMin, dmax, res):
         """
+        
         Extract a vertical slice from a voxel along a path and plot it to a 2D view.
         
         :param mview:    View
@@ -1924,6 +2017,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** The path is splined linearly between points and sampled at the input interval.
         The resulting vertical samples of cubes are plotted as "pixel strips" in the view.
         """
+        
         gxapi_cy.WrapMVU._plot_voxel_slice(GXContext._get_tls_geo(), mview, vox, itr, x, y, dOrigin, dMin, dmax, res)
         
 
@@ -1932,6 +2026,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def plot_voxel_surface(cls, mview, vox, value, col, line_thick):
         """
+        
         Extract an iso-surface from a voxel and plot it to a 2D or 3D view.
         
         :param mview:       View
@@ -1955,6 +2050,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         is 2-D, then only the intersection of the surface with the 2D surface is
         plotted, using lines.
         """
+        
         gxapi_cy.WrapMVU._plot_voxel_surface(GXContext._get_tls_geo(), mview, vox, value, col, line_thick)
         
 
@@ -1963,6 +2059,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def plot_voxel_surface2(cls, mview, vox, value, col, line_thick, transparency, surface_name):
         """
+        
         Extract an iso-surface from a voxel and plot it to a 2D or 3D view.
         
         :param mview:         View
@@ -1990,6 +2087,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         is 2-D, then only the intersection of the surface with the 2D surface is
         plotted, using lines.
         """
+        
         gxapi_cy.WrapMVU._plot_voxel_surface2(GXContext._get_tls_geo(), mview, vox, value, col, line_thick, transparency, surface_name.encode())
         
 
@@ -1998,6 +2096,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def generate_surface_from_voxel(cls, mview, vox, method, option, min_value, max_value, col, line_thick, transparency, surface_name):
         """
+        
         TODO...
         
         :param mview:         View
@@ -2027,6 +2126,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** TODO... Move to `GXVOX <geosoft.gxapi.GXVOX>` method for surface generation only and use GeosurfaceD to display.
         """
+        
         gxapi_cy.WrapMVU._generate_surface_from_voxel(GXContext._get_tls_geo(), mview, vox, method, option, min_value, max_value, col, line_thick, transparency, surface_name.encode())
         
 
@@ -2035,6 +2135,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def post(cls, mview, vv_x, vv_y, vv_z, dummy, size, format, decimals, ref, angle):
         """
+        
         Post values on a map.
         
         :param mview:     View
@@ -2062,6 +2163,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._post(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, dummy, size, format, decimals, ref, angle)
         
 
@@ -2070,6 +2172,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def post_ex(cls, mview, vv_x, vv_y, vv_z, vv_s, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up):
         """
+        
         Post values on a map with more paramters.
         
         :param mview:       View
@@ -2117,6 +2220,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._post_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vv_s, dummy, base, min_detect, size, format, decimals, offset_l, offset_p, alternate, mod, ref, angle, fixed, ref_ang, up)
         
 
@@ -2125,6 +2229,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def probability(cls, mview, st_data, st_hist, title, unit, transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr):
         """
+        
         Plot a probability plot on a map.
         
         :param mview:         View
@@ -2170,6 +2275,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
+        
         gxapi_cy.WrapMVU._probability(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr)
         
 
@@ -2178,6 +2284,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def profile_plot(cls, mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join):
         """
+        
         Draw a profile along line trace
         
         :param mview:   View
@@ -2207,6 +2314,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** Profiles will be drawn in the current line style.
         """
+        
         gxapi_cy.WrapMVU._profile_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join)
         
 
@@ -2215,6 +2323,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def profile_plot_ex(cls, mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color, neg_f_color):
         """
+        
         Draw a profile along line trace with more parameters
         
         :param mview:        View
@@ -2254,6 +2363,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** Profiles will be drawn in the current line style.
         """
+        
         gxapi_cy.WrapMVU._profile_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color.encode(), neg_f_color.encode())
         
 
@@ -2262,6 +2372,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def prop_symb_legend(cls, mview, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title, sub_title):
         """
+        
         Draw a legend for proportional symbols.
         
         :param mview:       `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
@@ -2296,6 +2407,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         Spacing is based on the maximum of the largest plotted symbol
         and the font size.
         """
+        
         gxapi_cy.WrapMVU._prop_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title.encode(), sub_title.encode())
         
 
@@ -2304,6 +2416,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def re_gen_areas(cls, mview, lines):
         """
+        
         Re-Generate from a line group and existing area group
         
         :param mview:  View
@@ -2328,6 +2441,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `gen_areas <geosoft.gxapi.GXMVU.gen_areas>`
         """
+        
         gxapi_cy.WrapMVU._re_gen_areas(GXContext._get_tls_geo(), mview, lines.encode())
         
 
@@ -2336,6 +2450,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def symb_off(cls, mview, vv_x, vv_y, vv_f, x_off, y_off):
         """
+        
         Draws symbols with an offset and against a flag channel
         
         :param mview:  View
@@ -2358,6 +2473,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** Symbols are not plotted for positions where the flag `GXVV <geosoft.gxapi.GXVV>`
         value is 0 or `iDUMMY <geosoft.gxapi.iDUMMY>`.
         """
+        
         gxapi_cy.WrapMVU._symb_off(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_f, x_off, y_off)
         
 
@@ -2366,6 +2482,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def text_box(cls, mview, xmin, ymin, xmax, ymax, text, space, type):
         """
+        
         Draw a wrapped text box
         
         :param mview:  View
@@ -2389,6 +2506,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._text_box(GXContext._get_tls_geo(), mview, xmin, ymin, xmax, ymax, text.encode(), space, type)
         
 
@@ -2397,6 +2515,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def tick(cls, mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod):
         """
+        
         Draw line ticks on a map.
         
         :param mview:    View
@@ -2420,6 +2539,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._tick(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod)
         
 
@@ -2428,6 +2548,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def tick_ex(cls, mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod, gap):
         """
+        
         Same as `tick <geosoft.gxapi.GXMVU.tick>`, with gap allowance.
         
         :param mview:    View
@@ -2453,6 +2574,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVU._tick_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_s, size, mod, mt_size, mt_mod, gap)
         
 
@@ -2461,6 +2583,7 @@ class GXMVU(gxapi_cy.WrapMVU):
     @classmethod
     def trnd_path(cls, mview, vv_x, vv_y, min_sect, min_dist):
         """
+        
         Plot min and max trend lines.
         
         :param mview:     View
@@ -2488,7 +2611,288 @@ class GXMVU(gxapi_cy.WrapMVU):
         Set the minimum distance to > 0 to
         plot only the longer trend lines.
         """
+        
         gxapi_cy.WrapMVU._trnd_path(GXContext._get_tls_geo(), mview, vv_x, vv_y, min_sect, min_dist)
+        
+
+
+
+
+# Deprecated
+
+
+    @classmethod
+    def plot_voxel_surface3(cls, mview, vox, value, col, line_thick, transparency, surface_name, create_closed_geosurface_around_voxel, enclose_cells_less_than_surface_value, exclude_objects_with_volume_less_than_this_value):
+        """
+        
+        .. deprecated:: None None 
+        Extract an iso-surface from a voxel and plot it to a 2D or 3D view.
+        
+        :param mview:                                             View
+        :param vox:                                               Voxel model
+        :param value:                                             Iso-surface value
+        :param col:                                               Drawing color
+        :param line_thick:                                        Line thickness for line drawing, and 2D views.
+        :param transparency:                                      Transparency (0 - transparent, 1 - opaque).
+        :param surface_name:                                      Iso-surface name
+        :param create_closed_geosurface_around_voxel:             Create closed geosurface around voxel?
+        :param enclose_cells_less_than_surface_value:             Closed geosurface should enclose cells LESS than surface value?
+        :param exclude_objects_with_volume_less_than_this_value:  Exclude objects with volume less than this value
+        :type  mview:                                             GXMVIEW
+        :type  vox:                                               GXVOX
+        :type  value:                                             float
+        :type  col:                                               int
+        :type  line_thick:                                        float
+        :type  transparency:                                      float
+        :type  surface_name:                                      str
+        :type  create_closed_geosurface_around_voxel:             bool
+        :type  enclose_cells_less_than_surface_value:             bool
+        :type  exclude_objects_with_volume_less_than_this_value:  float
+
+        .. versionadded:: 8.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Same as `plot_voxel_surface2 <geosoft.gxapi.GXMVU.plot_voxel_surface2>` but with a couple more options.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapMVU._plot_voxel_surface3(GXContext._get_tls_geo(), mview, vox, value, col, line_thick, transparency, surface_name.encode(), create_closed_geosurface_around_voxel, enclose_cells_less_than_surface_value, exclude_objects_with_volume_less_than_this_value)
+        
+
+
+
+    @classmethod
+    def duplicate_chem(cls, mview, vv, log, det_lim, old, tol, title, unit, x0, y0, xs, ys):
+        """
+        
+        .. deprecated:: None None 
+        Plot an ASSAY Duplicate result in a graph window.
+        
+        :param mview:    View
+        :param vv:       Duplicate data
+        :param log:      Log-transform: 0 - linear, 1 - log
+        :param det_lim:  Detect Limit
+        :param old:      Number of old samples in the `GXVV <geosoft.gxapi.GXVV>`
+        :param tol:      Tolerance as a function of std dev
+        :param title:    Title
+        :param unit:     Unit
+        :param x0:       X location (bottom left corner of graph)
+        :param y0:       Y location
+        :param xs:       Graph width
+        :param ys:       Graph height
+        :type  mview:    GXMVIEW
+        :type  vv:       GXVV
+        :type  log:      int
+        :type  det_lim:  float
+        :type  old:      int
+        :type  tol:      float
+        :type  title:    str
+        :type  unit:     str
+        :type  x0:       float
+        :type  y0:       float
+        :type  xs:       float
+        :type  ys:       float
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapMVU._duplicate_chem(GXContext._get_tls_geo(), mview, vv, log, det_lim, old, tol, title.encode(), unit.encode(), x0, y0, xs, ys)
+        
+
+
+
+    @classmethod
+    def scatter(cls, view, title, x_loc, y_loc, box_width, box_height, horiz_chan_vv, vert_chan_vv, mask_chan, horiz_chan_name, vert_chan_name, mask_chan_name, horiz_chan_units, vert_chan_units, min_horiz_val, max_horiz_val, min_vert_val, max_vert_val, min_horiz_range, max_horiz_range, min_vert_range, max_vert_range, use_min_horiz_sel, use_max_horiz_sel, use_min_vert_sel, use_max_vert_sel, use_linear_horiz_axis_scaling, use_linear_vert_axis_scaling, symbol_size):
+        """
+        
+        .. deprecated:: None None 
+        Plot the scatter plot on a map.
+        
+        :param view:                           View
+        :param title:                          Title
+        :param x_loc:                          X location (bottom left corner of color boxes)
+        :param y_loc:                          Y location
+        :param box_width:                      Box width
+        :param box_height:                     Box height
+        :param horiz_chan_vv:                  Horizontal channel
+        :param vert_chan_vv:                   Vertical channel
+        :param mask_chan:                      Mask channel
+        :param horiz_chan_name:                Horizontal channel name
+        :param vert_chan_name:                 Vertical channel name
+        :param mask_chan_name:                 Mask channel name
+        :param horiz_chan_units:               Horizontal channel units
+        :param vert_chan_units:                Vertical channel units
+        :param min_horiz_val:                  Min. Horizontal value
+        :param max_horiz_val:                  Max. Horizontal value
+        :param min_vert_val:                   Min. Vertical value
+        :param max_vert_val:                   Max. Vertical value
+        :param min_horiz_range:                Min. Horizontal range value
+        :param max_horiz_range:                Max. Horizontal range value
+        :param min_vert_range:                 Min. Vertical range value
+        :param max_vert_range:                 Max. Vertical range value
+        :param use_min_horiz_sel:              Use Min Horz. Range selection?
+        :param use_max_horiz_sel:              Use Max Horz. Range selection?
+        :param use_min_vert_sel:               Use Min Vert. Range selection?
+        :param use_max_vert_sel:               Use Max Vert. Range selection?
+        :param use_linear_horiz_axis_scaling:  Use linear horizontal axis scaling?
+        :param use_linear_vert_axis_scaling:   Use linear vertical axis scaling?
+        :param symbol_size:                    Symbol size (0: small, 1: medium, 2: large)
+        :type  view:                           GXMVIEW
+        :type  title:                          str
+        :type  x_loc:                          float
+        :type  y_loc:                          float
+        :type  box_width:                      float
+        :type  box_height:                     float
+        :type  horiz_chan_vv:                  GXVV
+        :type  vert_chan_vv:                   GXVV
+        :type  mask_chan:                      GXVV
+        :type  horiz_chan_name:                str
+        :type  vert_chan_name:                 str
+        :type  mask_chan_name:                 str
+        :type  horiz_chan_units:               str
+        :type  vert_chan_units:                str
+        :type  min_horiz_val:                  float
+        :type  max_horiz_val:                  float
+        :type  min_vert_val:                   float
+        :type  max_vert_val:                   float
+        :type  min_horiz_range:                float
+        :type  max_horiz_range:                float
+        :type  min_vert_range:                 float
+        :type  max_vert_range:                 float
+        :type  use_min_horiz_sel:              int
+        :type  use_max_horiz_sel:              int
+        :type  use_min_vert_sel:               int
+        :type  use_max_vert_sel:               int
+        :type  use_linear_horiz_axis_scaling:  int
+        :type  use_linear_vert_axis_scaling:   int
+        :type  symbol_size:                    int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapMVU._scatter(GXContext._get_tls_geo(), view, title.encode(), x_loc, y_loc, box_width, box_height, horiz_chan_vv, vert_chan_vv, mask_chan, horiz_chan_name.encode(), vert_chan_name.encode(), mask_chan_name.encode(), horiz_chan_units.encode(), vert_chan_units.encode(), min_horiz_val, max_horiz_val, min_vert_val, max_vert_val, min_horiz_range, max_horiz_range, min_vert_range, max_vert_range, use_min_horiz_sel, use_max_horiz_sel, use_min_vert_sel, use_max_vert_sel, use_linear_horiz_axis_scaling, use_linear_vert_axis_scaling, symbol_size)
+        
+
+
+
+    @classmethod
+    def scatter2(cls, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31):
+        """
+        
+        .. deprecated:: None None 
+        Plot the scatter plot on a map using symbol number, size and color VVs.
+        
+        :param p1:   View
+        :param p2:   Title
+        :param p3:   X location (bottom left corner of box)
+        :param p4:   Y location
+        :param p5:   Box width
+        :param p6:   Box height
+        :param p7:   Horizontal channel
+        :param p8:   Vertical channel
+        :param p9:   Decorated font name, "" for default symbol font (normally symbols.gfn)
+        :param p10:  Symbol numbers
+        :param p11:  Symbol sizes
+        :param p12:  Colors  if symbol number or color == 0, do not plot
+        :param p13:  Annotation style 0 - outside, 1 - inside
+        :param p14:  Horizontal channel name
+        :param p15:  Vertical channel name
+        :param p16:  Horizontal channel units
+        :param p17:  Vertical channel units
+        :param p18:  Min. Horizontal value, `rDUMMY <geosoft.gxapi.rDUMMY>` for default
+        :param p19:  Max. Horizontal value
+        :param p20:  Min. Vertical value
+        :param p21:  Max. Vertical value
+        :param p22:  Min. Horizontal range value
+        :param p23:  Max. Horizontal range value
+        :param p24:  Min. Vertical range value
+        :param p25:  Max. Vertical range value
+        :param p26:  Use Min Horz. Range selection?
+        :param p27:  Use Max Horz. Range selection?
+        :param p28:  Use Min Vert. Range selection?
+        :param p29:  Use Max Vert. Range selection?
+        :param p30:  Horizontal axis scaling: 0 - linear, 1 - log
+        :param p31:  Vertical axis scaling
+        :type  p1:   GXMVIEW
+        :type  p2:   str
+        :type  p3:   float
+        :type  p4:   float
+        :type  p5:   float
+        :type  p6:   float
+        :type  p7:   GXVV
+        :type  p8:   GXVV
+        :type  p9:   str
+        :type  p10:  GXVV
+        :type  p11:  GXVV
+        :type  p12:  GXVV
+        :type  p13:  int
+        :type  p14:  str
+        :type  p15:  str
+        :type  p16:  str
+        :type  p17:  str
+        :type  p18:  float
+        :type  p19:  float
+        :type  p20:  float
+        :type  p21:  float
+        :type  p22:  float
+        :type  p23:  float
+        :type  p24:  float
+        :type  p25:  float
+        :type  p26:  int
+        :type  p27:  int
+        :type  p28:  int
+        :type  p29:  int
+        :type  p30:  int
+        :type  p31:  int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapMVU._scatter2(GXContext._get_tls_geo(), p1, p2.encode(), p3, p4, p5, p6, p7, p8, p9.encode(), p10, p11, p12, p13, p14.encode(), p15.encode(), p16.encode(), p17.encode(), p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31)
+        
+
+
+
+    @classmethod
+    def standard(cls, mview, vv, old, tol, title, unit, x0, y0, width, height):
+        """
+        
+        .. deprecated:: None None 
+        Plot an ASSAY standard result in a graph window.
+        
+        :param mview:   View
+        :param vv:      Standard data
+        :param old:     Number of old samples in the `GXVV <geosoft.gxapi.GXVV>`
+        :param tol:     Tolerance as a function of std dev (default=2)
+        :param title:   Title
+        :param unit:    Unit
+        :param x0:      X location (bottom left corner of graph)
+        :param y0:      Y location
+        :param width:   Graph width
+        :param height:  Graph height
+        :type  mview:   GXMVIEW
+        :type  vv:      GXVV
+        :type  old:     int
+        :type  tol:     float
+        :type  title:   str
+        :type  unit:    str
+        :type  x0:      float
+        :type  y0:      float
+        :type  width:   float
+        :type  height:  float
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        gxapi_cy.WrapMVU._standard(GXContext._get_tls_geo(), mview, vv, old, tol, title.encode(), unit.encode(), x0, y0, width, height)
         
 
 

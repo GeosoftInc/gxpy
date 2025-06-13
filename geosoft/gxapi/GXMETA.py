@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -64,6 +64,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def create_attrib(self, name, ph_class, ph_type):
         """
+        
         Create an attribute
         
         :param name:      Attribute Name
@@ -80,6 +81,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create_attrib(name.encode(), ph_class, ph_type)
         return ret_val
 
@@ -88,6 +90,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def delete_attrib(self, ph_attribute):
         """
+        
         Delete Attrib from `GXMETA <geosoft.gxapi.GXMETA>`.
         
         :param ph_attribute:  Attrib to delete
@@ -97,6 +100,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_attrib(ph_attribute)
         
 
@@ -109,6 +113,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attribute_editable(self, ph_attribute, editable):
         """
+        
         Allow/disallow an attribute to be editable in the browser
         
         :param ph_attribute:  Attribute or :ref:`META_CORE_ATTRIB`
@@ -120,6 +125,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attribute_editable(ph_attribute, editable)
         
 
@@ -128,6 +134,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attribute_visible(self, ph_attribute, visible):
         """
+        
         Allow/disallow an attribute to be visible in the browser
         
         :param ph_attribute:  Attribute or :ref:`META_CORE_ATTRIB`
@@ -139,6 +146,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attribute_visible(ph_attribute, visible)
         
 
@@ -151,6 +159,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def create_class(self, name, ph_class):
         """
+        
         Create a class
         
         :param name:      Class Name
@@ -165,6 +174,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create_class(name.encode(), ph_class)
         return ret_val
 
@@ -173,6 +183,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def delete_class(self, ph_class):
         """
+        
         Delete Class from `GXMETA <geosoft.gxapi.GXMETA>`.
         
         :param ph_class:  Class to delete
@@ -182,6 +193,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_class(ph_class)
         
 
@@ -194,6 +206,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def copy(self, source_meta):
         """
+        
         Copy a `GXMETA <geosoft.gxapi.GXMETA>` to another
         
         :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
@@ -203,6 +216,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(source_meta)
         
 
@@ -211,6 +225,7 @@ class GXMETA(gxapi_cy.WrapMETA):
     @classmethod
     def create(cls):
         """
+        
         Create
         
 
@@ -221,6 +236,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMETA._create(GXContext._get_tls_geo())
         return GXMETA(ret_val)
 
@@ -229,6 +245,7 @@ class GXMETA(gxapi_cy.WrapMETA):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create a `GXMETA <geosoft.gxapi.GXMETA>` Object from a `GXBF <geosoft.gxapi.GXBF>`
         
         :param bf:  `GXBF <geosoft.gxapi.GXBF>` to serialize from
@@ -241,6 +258,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMETA._create_s(GXContext._get_tls_geo(), bf)
         return GXMETA(ret_val)
 
@@ -251,6 +269,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def serial(self, bf):
         """
+        
         Serialize an `GXMETA <geosoft.gxapi.GXMETA>` to a `GXBF <geosoft.gxapi.GXBF>`
         
         :param bf:    `GXBF <geosoft.gxapi.GXBF>` to serialize to
@@ -260,6 +279,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -272,6 +292,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def find_data(self, ph_object, ph_attrib):
         """
+        
         Does this meta/attribute have a value ?
         
         :param ph_object:  Object
@@ -287,6 +308,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_data(ph_object, ph_attrib)
         return ret_val
 
@@ -295,6 +317,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def get_attrib_bool(self, ph_object, ph_attrib, value):
         """
+        
         Get a boolean value to an attribute
         
         :param ph_object:  Object
@@ -308,6 +331,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         value.value = self._get_attrib_bool(ph_object, ph_attrib, value.value)
         
 
@@ -316,6 +340,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def get_attrib_enum(self, ph_object, ph_attrib, value):
         """
+        
         Get an enum value to an attribute (as an integer)
         
         :param ph_object:  Object
@@ -329,6 +354,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         value.value = self._get_attrib_enum(ph_object, ph_attrib, value.value)
         
 
@@ -337,6 +363,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def get_attrib_int(self, ph_object, ph_attrib, value):
         """
+        
         Get an integer value to an attribute
         
         :param ph_object:  Object
@@ -350,6 +377,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         value.value = self._get_attrib_int(ph_object, ph_attrib, value.value)
         
 
@@ -358,6 +386,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def get_attrib_double(self, ph_object, ph_attrib, value):
         """
+        
         Get an integer value to an attribute
         
         :param ph_object:  Object
@@ -371,6 +400,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         value.value = self._get_attrib_double(ph_object, ph_attrib, value.value)
         
 
@@ -379,6 +409,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def get_attrib_string(self, ph_object, ph_attrib, value):
         """
+        
         Get a string value to an attribute
         
         :param ph_object:  Object
@@ -392,6 +423,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         value.value = self._get_attrib_string(ph_object, ph_attrib, value.value.encode())
         
 
@@ -400,6 +432,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def has_value(self, ph_object, ph_attrib):
         """
+        
         Does this meta/attribute have a value set?
         
         :param ph_object:  Object
@@ -412,6 +445,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._has_value(ph_object, ph_attrib)
         return ret_val
 
@@ -424,6 +458,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def export_table_csv(self, ph_class, file):
         """
+        
         Export all items in a class as a CSV
         
         :param ph_class:  Class of items to export
@@ -435,6 +470,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_table_csv(ph_class, file.encode())
         
 
@@ -443,6 +479,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def import_table_csv(self, ph_class, file):
         """
+        
         Import a CSV into a class as items.
         
         :param ph_class:  Class to import into
@@ -459,6 +496,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         a class created using the hCreateTable_SCHEMA method so that the contents of
         class can be viewed as a table.
         """
+        
         self._import_table_csv(ph_class, file.encode())
         
 
@@ -467,6 +505,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def write_text(self, wa):
         """
+        
         Write the entire meta as a text file
         
         :param wa:    `GXWA <geosoft.gxapi.GXWA>` to write to
@@ -476,6 +515,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_text(wa)
         
 
@@ -488,6 +528,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def delete_all_items(self, ph_class):
         """
+        
         Delete all items in this class.
         
         :param ph_class:  Class of items to delete
@@ -497,6 +538,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_all_items(ph_class)
         
 
@@ -505,6 +547,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def delete_item(self, ph_item):
         """
+        
         Delete item from `GXMETA <geosoft.gxapi.GXMETA>`.
         
         :param ph_item:  Item to delete
@@ -514,6 +557,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_item(ph_item)
         
 
@@ -522,6 +566,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def h_creat_item(self, name, ph_class):
         """
+        
         Creates item in Class.
         
         :param name:      Unique item Name
@@ -537,6 +582,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._h_creat_item(name.encode(), ph_class)
         return ret_val
 
@@ -545,6 +591,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def h_get_next_item(self, ph_class, ph_token):
         """
+        
         Count the number of items in a class
         
         :param ph_class:  Class
@@ -560,6 +607,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._h_get_next_item(ph_class, ph_token)
         return ret_val
 
@@ -572,6 +620,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def get_attrib_obj(self, ph_object, ph_attrib, obj):
         """
+        
         Get an object from an attribute
         
         :param ph_object:  Object
@@ -585,6 +634,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_attrib_obj(ph_object, ph_attrib, obj)
         
 
@@ -593,6 +643,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attrib_obj(self, ph_object, ph_attrib, obj):
         """
+        
         Set an object to an attribute
         
         :param ph_object:  Object
@@ -606,6 +657,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attrib_obj(ph_object, ph_attrib, obj)
         
 
@@ -618,6 +670,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attrib_bool(self, ph_object, ph_attrib, value):
         """
+        
         Set a boolean value to an attribute
         
         :param ph_object:  Object
@@ -631,6 +684,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attrib_bool(ph_object, ph_attrib, value)
         
 
@@ -639,6 +693,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attrib_enum(self, ph_object, ph_attrib, value):
         """
+        
         Set an enum value to an attribute (as an integer)
         
         :param ph_object:  Object
@@ -652,6 +707,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attrib_enum(ph_object, ph_attrib, value)
         
 
@@ -660,6 +716,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attrib_int(self, ph_object, ph_attrib, value):
         """
+        
         Set an integer value to an attribute
         
         :param ph_object:  Object
@@ -673,6 +730,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attrib_int(ph_object, ph_attrib, value)
         
 
@@ -681,6 +739,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attrib_double(self, ph_object, ph_attrib, value):
         """
+        
         Set an integer value to an attribute
         
         :param ph_object:  Object
@@ -694,6 +753,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attrib_double(ph_object, ph_attrib, value)
         
 
@@ -702,6 +762,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_attrib_string(self, ph_object, ph_attrib, value):
         """
+        
         Set a string value to an attribute
         
         :param ph_object:  Object
@@ -715,6 +776,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_attrib_string(ph_object, ph_attrib, value.encode())
         
 
@@ -723,6 +785,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def set_empty_attrib(self, ph_object, ph_attrib):
         """
+        
         Set an empty attribute data holder
         
         :param ph_object:  MetaObject to set
@@ -734,6 +797,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_empty_attrib(ph_object, ph_attrib)
         
 
@@ -746,6 +810,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def h_copy_across_attribute(self, source_meta, ph_attribute):
         """
+        
         Copy an Attribute from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         
         :param source_meta:   Source `GXMETA <geosoft.gxapi.GXMETA>` object.
@@ -761,6 +826,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._h_copy_across_attribute(source_meta, ph_attribute)
         return ret_val
 
@@ -769,6 +835,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def h_copy_across_class(self, source_meta, ph_class):
         """
+        
         Copy a Class from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         
         :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
@@ -786,6 +853,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **Note:** This will copy all parent classes as well.
         """
+        
         ret_val = self._h_copy_across_class(source_meta, ph_class)
         return ret_val
 
@@ -794,6 +862,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def h_copy_across_data(self, source_meta, ph_data):
         """
+        
         Copy a Data value from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         
         :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
@@ -809,6 +878,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._h_copy_across_data(source_meta, ph_data)
         return ret_val
 
@@ -817,6 +887,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def h_copy_across_item(self, source_meta, ph_item):
         """
+        
         Copy an Item from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         
         :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
@@ -832,6 +903,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._h_copy_across_item(source_meta, ph_item)
         return ret_val
 
@@ -840,6 +912,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def h_copy_across_type(self, source_meta, ph_type):
         """
+        
         Copy a Type from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         
         :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` object.
@@ -857,6 +930,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **Note:** Classes and parent types will also be copied.
         """
+        
         ret_val = self._h_copy_across_type(source_meta, ph_type)
         return ret_val
 
@@ -865,6 +939,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def move_datas_across(self, source_meta, ph_i_obj, ph_o_obj):
         """
+        
         Moves data items from one `GXMETA <geosoft.gxapi.GXMETA>` to another
         
         :param source_meta:  Source `GXMETA <geosoft.gxapi.GXMETA>` Object
@@ -878,6 +953,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._move_datas_across(source_meta, ph_i_obj, ph_o_obj)
         
 
@@ -890,6 +966,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def create_type(self, name, ph_class, ph_type):
         """
+        
         Create an attribute
         
         :param name:      Attribute Name
@@ -906,6 +983,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create_type(name.encode(), ph_class, ph_type)
         return ret_val
 
@@ -914,6 +992,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def delete_data(self, ph_data):
         """
+        
         Delete Data from `GXMETA <geosoft.gxapi.GXMETA>`.
         
         :param ph_data:  Data to delete
@@ -923,6 +1002,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_data(ph_data)
         
 
@@ -931,6 +1011,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def delete_type(self, ph_type):
         """
+        
         Delete Type from `GXMETA <geosoft.gxapi.GXMETA>`.
         
         :param ph_type:  Type to delete
@@ -940,6 +1021,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_type(ph_type)
         
 
@@ -952,6 +1034,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def get_obj_name(self, ph_object, name):
         """
+        
         Get the name of this item.
         
         :param ph_object:  Object
@@ -963,6 +1046,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._get_obj_name(ph_object, name.value.encode())
         
 
@@ -971,6 +1055,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
     def resolve_umn(self, umn):
         """
+        
         Resolve a Unique Meta Name (UMN) and find the token
         
         :param umn:   Unique Meta Name (UMN)
@@ -984,6 +1069,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._resolve_umn(umn.encode())
         return ret_val
 

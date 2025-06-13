@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
 
     def get_itr(self, itr):
         """
+        
         Get the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
         
         :param itr:        `GXITR <geosoft.gxapi.GXITR>` object
@@ -64,6 +65,7 @@ class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_itr(itr)
         
 
@@ -72,6 +74,7 @@ class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
 
     def set_itr(self, itr):
         """
+        
         Set the `GXITR <geosoft.gxapi.GXITR>` of the `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>`
         
         :param itr:        `GXITR <geosoft.gxapi.GXITR>` object
@@ -81,6 +84,7 @@ class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_itr(itr)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def add_white_noise(self, amp, option):
         """
+        
         Add white noise to the power spectrum of an FFT object.
         
         :param amp:     The value added to the real part of all non-DC components of the current power spectrum
@@ -67,6 +68,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._add_white_noise(amp, option)
         
 
@@ -75,6 +77,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def app_dens(self, thick, dens):
         """
+        
         Appparent density filter
         
         :param thick:  Thickness (meters) of the earth model
@@ -86,6 +89,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._app_dens(thick, dens)
         
 
@@ -94,6 +98,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def app_susc(self, strength):
         """
+        
         Apparent susceptiblity filter
         
         :param strength:  Total magnetic field strength
@@ -106,6 +111,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         **Note:** Reduction to magnetic pole (`red_pol <geosoft.gxapi.GXFFT.red_pol>`) and downward continuation
         (`contin <geosoft.gxapi.GXFFT.contin>`) should be called BEFORE using `app_susc <geosoft.gxapi.GXFFT.app_susc>`.
         """
+        
         self._app_susc(strength)
         
 
@@ -114,6 +120,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def band_pass(self, llen, hlen, pass_defined):
         """
+        
         Bandpass filter (using low and high wavelength cutoffs)
         
         :param llen:          Low Cutoff wavelength (meters)
@@ -127,6 +134,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._band_pass(llen, hlen, pass_defined)
         
 
@@ -135,6 +143,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def b_worth(self, clen, degree, filter_type):
         """
+        
         Butterworth filter
         
         :param clen:         Central cutoff wavelength (meter)
@@ -148,6 +157,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._b_worth(clen, degree, filter_type)
         
 
@@ -156,6 +166,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def rc_filter(self, clen, filter_type):
         """
+        
         RC filter
         
         :param clen:         Central cutoff wavelength (meter)
@@ -167,6 +178,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._rc_filter(clen, filter_type)
         
 
@@ -175,6 +187,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def contin(self, dist):
         """
+        
         Upward/Downward continuation filter
         
         :param dist:  Distance to continue; positive = downwards negative = upwards
@@ -184,6 +197,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._contin(dist)
         
 
@@ -192,6 +206,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def cos_roll(self, llen, hlen, degree, type):
         """
+        
         Cosine roll-off filter
         
         :param llen:    Low wavelength start point (meters)
@@ -207,6 +222,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._cos_roll(llen, hlen, degree, type)
         
 
@@ -215,6 +231,7 @@ class GXFFT(gxapi_cy.WrapFFT):
     @classmethod
     def create(cls, gvv, interv, trend):
         """
+        
         Create a New `GXFFT <geosoft.gxapi.GXFFT>` with detrend options.
         
         :param gvv:     `GXVV <geosoft.gxapi.GXVV>` to transform.
@@ -234,6 +251,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         **Note:** The detrending options control the removal of a trend from the data
         before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The default data expansion is 10% before `GXFFT <geosoft.gxapi.GXFFT>`.
         """
+        
         ret_val = gxapi_cy.WrapFFT._create(GXContext._get_tls_geo(), gvv, interv, trend)
         return GXFFT(ret_val)
 
@@ -242,6 +260,7 @@ class GXFFT(gxapi_cy.WrapFFT):
     @classmethod
     def create_ex(cls, gvv, interv, trend, expansion):
         """
+        
         Create a New `GXFFT <geosoft.gxapi.GXFFT>` with detrend and expansion options.
         
         :param gvv:        `GXVV <geosoft.gxapi.GXVV>` to transform.
@@ -264,6 +283,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         before the `GXFFT <geosoft.gxapi.GXFFT>` is applied. The expansion options control the minimum
         data expansion before the `GXFFT <geosoft.gxapi.GXFFT>` is applied.
         """
+        
         ret_val = gxapi_cy.WrapFFT._create_ex(GXContext._get_tls_geo(), gvv, interv, trend, expansion)
         return GXFFT(ret_val)
 
@@ -272,6 +292,7 @@ class GXFFT(gxapi_cy.WrapFFT):
     @classmethod
     def create_ref(cls, gvv, interv, trend):
         """
+        
         Create `GXFFT <geosoft.gxapi.GXFFT>` object with detrend options from reference (original) channel,
         but no `GXFFT <geosoft.gxapi.GXFFT>` process.
         
@@ -292,6 +313,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         **Note:** This just creates an object.  It is intended to be called
         immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
         """
+        
         ret_val = gxapi_cy.WrapFFT._create_ref(GXContext._get_tls_geo(), gvv, interv, trend)
         return GXFFT(ret_val)
 
@@ -300,6 +322,7 @@ class GXFFT(gxapi_cy.WrapFFT):
     @classmethod
     def create_ref_ex(cls, gvv, interv, trend, expansion, d_cmult):
         """
+        
         Create `GXFFT <geosoft.gxapi.GXFFT>` object with detrend and expansion options from reference (original) channel,
         but no `GXFFT <geosoft.gxapi.GXFFT>` process.
         
@@ -324,6 +347,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         **Note:** This just creates an object.  It is intended to be called
         immediately after with `set_vv <geosoft.gxapi.GXFFT.set_vv>`.
         """
+        
         ret_val = gxapi_cy.WrapFFT._create_ref_ex(GXContext._get_tls_geo(), gvv, interv, trend, expansion, d_cmult)
         return GXFFT(ret_val)
 
@@ -334,6 +358,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def gaus(self, dev, type):
         """
+        
         Gaussian filter
         
         :param dev:   Standard deviation cutoff of function (meters)
@@ -345,6 +370,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._gaus(dev, type)
         
 
@@ -353,6 +379,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def get_vv(self, gv_vr, gv_vi):
         """
+        
         Copies real and imaginary `GXVV <geosoft.gxapi.GXVV>`'s to user `GXVV <geosoft.gxapi.GXVV>`'s.
         
         :param gv_vr:  Real component
@@ -364,6 +391,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._get_vv(gv_vr, gv_vi)
         
 
@@ -372,6 +400,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def h_drv(self, order):
         """
+        
         Horizontal derivative
         
         :param order:  Order of differentiation (default = 1)
@@ -381,6 +410,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._h_drv(order)
         
 
@@ -389,6 +419,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def high_pass(self, wlen, fid_int):
         """
+        
         High bandpass filter
         
         :param wlen:     Cutoff wavelength (meter)
@@ -400,6 +431,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._high_pass(wlen, fid_int)
         
 
@@ -408,6 +440,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def h_int(self):
         """
+        
         Horizontal integration
         
 
@@ -415,6 +448,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._h_int()
         
 
@@ -423,6 +457,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def inverse(self, gvv, gv_vm):
         """
+        
         Inverse the `GXFFT <geosoft.gxapi.GXFFT>` from wave number domain to space domain
         
         :param gvv:    Output `GXVV <geosoft.gxapi.GXVV>`
@@ -434,6 +469,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._inverse(gvv, gv_vm)
         
 
@@ -442,6 +478,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def low_pass(self, wlen):
         """
+        
         Low bandpass filter
         
         :param wlen:  Cutoff wavelength (meters)
@@ -451,6 +488,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._low_pass(wlen)
         
 
@@ -459,6 +497,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def red_pol(self, inc, dec, incp, dir):
         """
+        
         Reduction to magnetic pole
         
         :param inc:   Geomagnetic inclination (degrees)
@@ -474,6 +513,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._red_pol(inc, dec, incp, dir)
         
 
@@ -482,6 +522,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def nyquist(self):
         """
+        
         Gets the Nyquist frequency (wavenumbers/sample unit).
         
 
@@ -492,6 +533,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._nyquist()
         return ret_val
 
@@ -500,6 +542,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def samp_incr(self):
         """
+        
         Gets the original sample increment.
         
 
@@ -510,6 +553,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._samp_incr()
         return ret_val
 
@@ -518,6 +562,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def wave_incr(self):
         """
+        
         Get the wave number increment.
         
 
@@ -528,6 +573,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._wave_incr()
         return ret_val
 
@@ -536,6 +582,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def set_vv(self, gv_vr, gv_vi):
         """
+        
         Sets real and imaginary VVs in `GXFFT <geosoft.gxapi.GXFFT>`.
         
         :param gv_vr:  Real component
@@ -550,6 +597,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         **Note:** The `GXVV <geosoft.gxapi.GXVV>` must have been obtained from the same `GXFFT <geosoft.gxapi.GXFFT>`
         using the `set_vv <geosoft.gxapi.GXFFT.set_vv>` method.
         """
+        
         self._set_vv(gv_vr, gv_vi)
         
 
@@ -558,6 +606,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def spectrum(self, gvv):
         """
+        
         Calculates a power spectrum
         
         :param gvv:  Output power spectrum `GXVV <geosoft.gxapi.GXVV>`
@@ -567,6 +616,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._spectrum(gvv)
         
 
@@ -575,6 +625,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def v_drv(self, order):
         """
+        
         Vertical derivative
         
         :param order:  Order of differentiation (default = 1)
@@ -584,6 +635,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._v_drv(order)
         
 
@@ -592,6 +644,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def v_int(self):
         """
+        
         Vertical integration
         
 
@@ -599,6 +652,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._v_int()
         
 
@@ -607,6 +661,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
     def write_spectrum(self, gvv, out_file):
         """
+        
         Writes a power spectrum to a file
         
         :param gvv:       Output power spectrum `GXVV <geosoft.gxapi.GXVV>`
@@ -618,6 +673,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._write_spectrum(gvv, out_file.encode())
         
 

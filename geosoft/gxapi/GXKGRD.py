@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
     def clear(self):
         """
+        
         Clears all the parameters in a `GXKGRD <geosoft.gxapi.GXKGRD>` object
         
 
@@ -63,6 +64,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._clear()
         
 
@@ -71,6 +73,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
     @classmethod
     def create(cls):
         """
+        
         Create a handle to a Krigrid object
         
 
@@ -86,6 +89,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
         to execute. Use the LoadParms_KGRD method to get the
         control file parameters into the `GXKGRD <geosoft.gxapi.GXKGRD>` object.
         """
+        
         ret_val = gxapi_cy.WrapKGRD._create(GXContext._get_tls_geo())
         return GXKGRD(ret_val)
 
@@ -96,6 +100,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
     def load_parms(self, file):
         """
+        
         Retrieves a Krigrid object's control parameters from a file.
         
         :param file:  Name of file to get the parameter settings from
@@ -114,6 +119,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXKGRD <geosoft.gxapi.GXKGRD>` object.
         """
+        
         ret_val = self._load_parms(file.encode())
         return ret_val
 
@@ -122,6 +128,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
     def run(self, zchan, in_dat, out_grd_dat, out_err_dat, in_var_name, out_var_name, vao, vi, vo):
         """
+        
         Executes the Krigrid program, using the input channel and
         output file parameters.
         
@@ -151,6 +158,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._run(zchan.encode(), in_dat, out_grd_dat, out_err_dat, in_var_name.encode(), out_var_name.encode(), vao, vi, vo)
         return ret_val
 
@@ -159,6 +167,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
     @classmethod
     def run2(cls, db, x, y, z, ctl, grd, err_grd, in_var, out_var, vao):
         """
+        
         Executes the Krigrid program directly on a database.
         
         :param db:       Handle to a database
@@ -189,6 +198,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapKGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), vao)
         return ret_val
 
@@ -197,6 +207,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
     @classmethod
     def run3(cls, db, x, y, z, ctl, grd, err_grd, in_var, out_var, log_file, vao):
         """
+        
         Executes the Krigrid program directly on a database and specifies the log file
         
         :param db:        Handle to a database
@@ -229,6 +240,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapKGRD._run3(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
         return ret_val
 
@@ -237,6 +249,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
     @classmethod
     def run_vv(cls, vv_x, vv_y, vv_z, ipj, ctl, grd, err_grd, in_var, out_var, log_file, vao):
         """
+        
         Executes the Krigrid program directly on input data VVs.
         
         :param vv_x:      X data
@@ -269,6 +282,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapKGRD._run_vv(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
         return ret_val
 
@@ -277,6 +291,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
     def save_parms(self, name):
         """
+        
         Puts the Krigrid object's control parameters back into
         its control file.
         
@@ -293,6 +308,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
+        
         ret_val = self._save_parms(name.encode())
         return ret_val
 
@@ -301,6 +317,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
     @classmethod
     def get_defaults(cls, db, x, y, z, blankingDistance, lowPassDesamplingFactor):
         """
+        
         Get default blanking distance and low-pass desampling factor.
         
         :param db:                       Handle to a database
@@ -323,6 +340,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, blankingDistance.value, lowPassDesamplingFactor.value = gxapi_cy.WrapKGRD._get_defaults(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), blankingDistance.value, lowPassDesamplingFactor.value)
         return ret_val
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXLST import GXLST
@@ -90,6 +90,7 @@ class GXDGW(gxapi_cy.WrapDGW):
     @classmethod
     def create(cls, name):
         """
+        
         This method creates a Dialog window from a specified
         resource. The Resource is loaded into memory but not displayed.
         
@@ -105,6 +106,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapDGW._create(GXContext._get_tls_geo(), name.encode())
         return GXDGW(ret_val)
 
@@ -115,6 +117,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def get_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
+        
         Copies the Dialog information to a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
         
         :param obj:           Dialog Object
@@ -133,6 +136,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._get_info_meta(obj, dlg_obj_type, meta, meta_obj, meta_attrib)
         
 
@@ -141,6 +145,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def get_info_sys(self, id, info, group, field):
         """
+        
         This method uses the information in a Dialog box to
         set a `GXSYS <geosoft.gxapi.GXSYS>` variable.
         
@@ -159,6 +164,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._get_info_sys(id, info, group.encode(), field.encode())
         
 
@@ -167,6 +173,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def get_list(self, id):
         """
+        
         This method retrieves the list (`GXLST <geosoft.gxapi.GXLST>`) object associated
         with a Dialog object.
         
@@ -182,6 +189,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_list(id)
         return GXLST(ret_val)
 
@@ -190,6 +198,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def gt_info(self, id, info, buff):
         """
+        
         This method fills the specified string with the text from
         the text object specified.
         
@@ -206,6 +215,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         buff.value = self._gt_info(id, info, buff.value.encode())
         
 
@@ -214,6 +224,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def run_dialogue(self):
         """
+        
         This method runs the Dialog window.
         
 
@@ -226,6 +237,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._run_dialogue()
         return ret_val
 
@@ -234,6 +246,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def set_info(self, id, info, buff):
         """
+        
         This method sets the string of a text object. If the string
         is too long it will be truncated.
         
@@ -250,6 +263,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_info(id, info, buff.encode())
         
 
@@ -258,6 +272,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def set_info_meta(self, obj, dlg_obj_type, meta, meta_obj, meta_attrib):
         """
+        
         This sets a text object to the text found in a `GXMETA <geosoft.gxapi.GXMETA>` attribute.
         
         :param obj:           Dialog Object
@@ -276,6 +291,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_info_meta(obj, dlg_obj_type, meta, meta_obj, meta_attrib)
         
 
@@ -284,6 +300,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def set_info_sys(self, id, info, group, field):
         """
+        
         This sets a text object to the text found in a system
         parameter variable. If the variable has not been set,
         the text is not set.
@@ -303,6 +320,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_info_sys(id, info, group.encode(), field.encode())
         
 
@@ -311,6 +329,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
     def set_title(self, title):
         """
+        
         Changes the title of the dialog.
         
         :param title:  Title to set
@@ -337,6 +356,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
         above in "Setting Fonts in GX dialogs."
         """
+        
         self._set_title(title.encode())
         
 

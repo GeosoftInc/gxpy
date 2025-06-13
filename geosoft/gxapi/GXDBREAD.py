@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXVA import GXVA
@@ -58,6 +58,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
     @classmethod
     def create(cls, db, line_lst):
         """
+        
         Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
         Add channels using the `add_channel <geosoft.gxapi.GXDBREAD.add_channel>` method.channel.
         
@@ -73,6 +74,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDBREAD._create(GXContext._get_tls_geo(), db, line_lst)
         return GXDBREAD(ret_val)
 
@@ -81,6 +83,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
     @classmethod
     def create_xy(cls, db, line_lst):
         """
+        
         Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object for a XY-located data. Add channels using the
         `add_channel <geosoft.gxapi.GXDBREAD.add_channel>` method.
         
@@ -96,6 +99,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDBREAD._create_xy(GXContext._get_tls_geo(), db, line_lst)
         return GXDBREAD(ret_val)
 
@@ -104,6 +108,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
     @classmethod
     def create_xyz(cls, db, line_lst):
         """
+        
         Create a `GXDBREAD <geosoft.gxapi.GXDBREAD>` object for a XYZ-located data.
         Add channels using the `add_channel <geosoft.gxapi.GXDBREAD.add_channel>` method.
         
@@ -119,6 +124,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDBREAD._create_xyz(GXContext._get_tls_geo(), db, line_lst)
         return GXDBREAD(ret_val)
 
@@ -129,6 +135,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def add_channel(self, chan):
         """
+        
         Add a data channel to the `GXDBREAD <geosoft.gxapi.GXDBREAD>` object.
         
         :param chan:    Channel handle (does not need to be locked, but can be.)
@@ -141,6 +148,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._add_channel(chan)
         return ret_val
 
@@ -153,6 +161,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_vv(self, chan):
         """
+        
         Get the `GXVV <geosoft.gxapi.GXVV>` handle for a channel.
         
         :param chan:    Index of channel to access.
@@ -166,9 +175,10 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBREAD.get_chan_array_size>`
-        function to find the number fo columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for 
+        function to find the number of columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for 
         each block served up.
         """
+        
         ret_val = self._get_vv(chan)
         return GXVV(ret_val)
 
@@ -177,6 +187,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_va(self, chan):
         """
+        
         Get the `GXVA <geosoft.gxapi.GXVA>` handle for an array channel.
         
         :param chan:    Index of channel to access.
@@ -190,9 +201,10 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call only for array (multi-column) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBREAD.get_chan_array_size>`
-        function to find the number fo columns in a given channel, or you can call `GXVA.col <geosoft.gxapi.GXVA.col>` on the returned `GXVA <geosoft.gxapi.GXVA>` handle.
+        function to find the number of columns in a given channel, or you can call `GXVA.col <geosoft.gxapi.GXVA.col>` on the returned `GXVA <geosoft.gxapi.GXVA>` handle.
         The `GXVA <geosoft.gxapi.GXVA>` is filled anew for each block served up.
         """
+        
         ret_val = self._get_va(chan)
         return GXVA(ret_val)
 
@@ -201,6 +213,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_v_vx(self):
         """
+        
         Get the X channel `GXVV <geosoft.gxapi.GXVV>` handle.
         
 
@@ -214,6 +227,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
+        
         ret_val = self._get_v_vx()
         return GXVV(ret_val)
 
@@ -222,6 +236,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_v_vy(self):
         """
+        
         Get the Y channel `GXVV <geosoft.gxapi.GXVV>` handle.
         
 
@@ -235,6 +250,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
+        
         ret_val = self._get_v_vy()
         return GXVV(ret_val)
 
@@ -243,6 +259,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_v_vz(self):
         """
+        
         Get the Z channel `GXVV <geosoft.gxapi.GXVV>` handle.
         
 
@@ -257,6 +274,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         If the Z channel is an array channel, the returned `GXVV <geosoft.gxapi.GXVV>` is the "base" `GXVV <geosoft.gxapi.GXVV>` of the `GXVA <geosoft.gxapi.GXVA>` and contains all items sequentially.
         """
+        
         ret_val = self._get_v_vz()
         return GXVV(ret_val)
 
@@ -265,6 +283,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_chan_array_size(self, chan):
         """
+        
         Get the number of columns of data in a channel.
         
         :param chan:    Index of channel to access.
@@ -281,6 +300,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         This function should be called to determine whether to use `get_vv <geosoft.gxapi.GXDBREAD.get_vv>` or `get_va <geosoft.gxapi.GXDBREAD.get_va>` to access data
         for a channel.
         """
+        
         ret_val = self._get_chan_array_size(chan)
         return ret_val
 
@@ -289,6 +309,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_number_of_blocks_to_process(self):
         """
+        
         Get the number of blocks to be served up.
         
 
@@ -303,6 +324,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         all channels are served as a single block. Any lines where any channel's data exceeds the maximum block size are split up into blocks.
         The value returned can be used as the progress message maximum iteration value.
         """
+        
         ret_val = self._get_number_of_blocks_to_process()
         return ret_val
 
@@ -315,6 +337,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
 
     def get_next_block(self, line, block, n_blocks):
         """
+        
         Get the next block of data.
         
         :param line:      (returned) The index into the input selected line list of the line whose data is contained in the current block
@@ -334,6 +357,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         **Note:** The next block of data is read and copied into the channel `GXVV <geosoft.gxapi.GXVV>` and/or `GXVA <geosoft.gxapi.GXVA>` objects, accessed using
         the `get_vv <geosoft.gxapi.GXDBREAD.get_vv>` and `get_va <geosoft.gxapi.GXDBREAD.get_va>` functions.
         """
+        
         ret_val, line.value, block.value, n_blocks.value = self._get_next_block(line.value, block.value, n_blocks.value)
         return ret_val
 

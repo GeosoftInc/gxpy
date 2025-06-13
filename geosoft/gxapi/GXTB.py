@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def set_search_mode(self, mode):
         """
+        
         Set the search mode of a table.
         
         :param mode:  :ref:`TB_SEARCH`
@@ -69,6 +70,7 @@ class GXTB(gxapi_cy.WrapTB):
         **Note:** If performance is an issue, you may want to test which search
         mode provides the best performance with typical data.
         """
+        
         self._set_search_mode(mode)
         
 
@@ -77,6 +79,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def set_sort_mode(self, mode):
         """
+        
         Set the sort mode of a table.
         
         :param mode:  :ref:`TB_SORT`
@@ -86,6 +89,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_sort_mode(mode)
         
 
@@ -94,6 +98,7 @@ class GXTB(gxapi_cy.WrapTB):
     @classmethod
     def create(cls, name):
         """
+        
         Loads a table into memory and return a table handle.
         
         :param name:  Name of the table file to load
@@ -110,6 +115,7 @@ class GXTB(gxapi_cy.WrapTB):
         the table header, the `GXTB <geosoft.gxapi.GXTB>` object will read in the table and dummy
         the elements of the missing data columns.
         """
+        
         ret_val = gxapi_cy.WrapTB._create(GXContext._get_tls_geo(), name.encode())
         return GXTB(ret_val)
 
@@ -118,6 +124,7 @@ class GXTB(gxapi_cy.WrapTB):
     @classmethod
     def create_db(cls, db):
         """
+        
         Create a table from a database.
         
         :param db:  Database
@@ -136,6 +143,7 @@ class GXTB(gxapi_cy.WrapTB):
         The database is not loaded with data.  Use the `load_db <geosoft.gxapi.GXTB.load_db>`
         function to load data into the table.
         """
+        
         ret_val = gxapi_cy.WrapTB._create_db(GXContext._get_tls_geo(), db)
         return GXTB(ret_val)
 
@@ -144,6 +152,7 @@ class GXTB(gxapi_cy.WrapTB):
     @classmethod
     def create_ltb(cls, ltb):
         """
+        
         Create a table from an `GXLTB <geosoft.gxapi.GXLTB>` database.
         
         :param ltb:  `GXLTB <geosoft.gxapi.GXLTB>` object
@@ -156,6 +165,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTB._create_ltb(GXContext._get_tls_geo(), ltb)
         return GXTB(ret_val)
 
@@ -166,6 +176,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def field(self, name):
         """
+        
         Get a field handle.
         
         :param name:  Field name
@@ -178,6 +189,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._field(name.encode())
         return ret_val
 
@@ -186,6 +198,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def get_string(self, row, col, val):
         """
+        
         Gets a string value from a table element.
         
         :param row:  Row of element to Get
@@ -199,6 +212,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         val.value = self._get_string(row, col, val.value.encode())
         
 
@@ -207,6 +221,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def data_type(self, col):
         """
+        
         Returns the data type for the specified column.
         
         :param col:  Column of element to Get
@@ -219,6 +234,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._data_type(col)
         return ret_val
 
@@ -227,6 +243,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def find_col_by_index(self, idx, name):
         """
+        
         Finds a column's name by its index.
         
         :param idx:   Index of column to find
@@ -238,6 +255,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._find_col_by_index(idx, name.value.encode())
         
 
@@ -246,6 +264,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def find_col_by_name(self, name):
         """
+        
         Finds a column's index by its name.
         
         :param name:  Name of column to find
@@ -259,6 +278,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_col_by_name(name.encode())
         return ret_val
 
@@ -267,6 +287,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def format(self, col):
         """
+        
         Returns the channel format for the specified column.
         
         :param col:  Column of element to Get
@@ -279,6 +300,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._format(col)
         return ret_val
 
@@ -287,6 +309,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def get_int(self, row, col):
         """
+        
         Gets an integer value from a table element.
         
         :param row:  Row of element to Get
@@ -301,6 +324,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_int(row, col)
         return ret_val
 
@@ -309,6 +333,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def num_columns(self):
         """
+        
         Gets the number of data fields (columns) in a table.
         
 
@@ -319,6 +344,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_columns()
         return ret_val
 
@@ -327,6 +353,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def num_rows(self):
         """
+        
         Gets the number of data rows in a table.
         
 
@@ -337,6 +364,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_rows()
         return ret_val
 
@@ -345,6 +373,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def load_db(self, db, line):
         """
+        
         Load a database into a `GXTB <geosoft.gxapi.GXTB>`
         
         :param db:    Database
@@ -358,6 +387,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **Note:** The line is appended to the data already in the table.
         """
+        
         self._load_db(db, line)
         
 
@@ -366,6 +396,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def get_double(self, row, col):
         """
+        
         Gets an real value from a table element.
         
         :param row:  Row of element to Get
@@ -380,6 +411,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_double(row, col)
         return ret_val
 
@@ -388,6 +420,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def save(self, name):
         """
+        
         Saves the data in a table to a file. The table header will be
         in ASCII and the data will be in BINARY format.
         
@@ -398,6 +431,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save(name.encode())
         
 
@@ -406,6 +440,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def save_db(self, db, line):
         """
+        
         Save a `GXTB <geosoft.gxapi.GXTB>` in a database line
         
         :param db:    Database
@@ -420,6 +455,7 @@ class GXTB(gxapi_cy.WrapTB):
         **Note:** Missing channels are created.
         Data in existing channels on the line will be replaced.
         """
+        
         self._save_db(db, line)
         
 
@@ -428,6 +464,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def save_to_ascii(self, name):
         """
+        
         Saves the data in a table to a file. The table header will be
         in ASCII and the data will be in ASCII format.
         
@@ -438,6 +475,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._save_to_ascii(name.encode())
         
 
@@ -446,6 +484,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def set_int(self, row, col, val):
         """
+        
         Sets an integer value into a table element.
         
         :param row:  Row of element to set
@@ -473,6 +512,7 @@ class GXTB(gxapi_cy.WrapTB):
         the new rows up to the new element's row will also contain
         invalid data.
         """
+        
         self._set_int(row, col, val)
         
 
@@ -481,6 +521,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def set_double(self, row, col, val):
         """
+        
         Sets an real value into a table element.
         
         :param row:  Row of element to set
@@ -508,6 +549,7 @@ class GXTB(gxapi_cy.WrapTB):
         the new rows up to the new element's row will also contain
         invalid data.
         """
+        
         self._set_double(row, col, val)
         
 
@@ -516,6 +558,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def set_string(self, row, col, val):
         """
+        
         Sets a string value into a table element.
         
         :param row:  Row of element to set
@@ -540,6 +583,7 @@ class GXTB(gxapi_cy.WrapTB):
         the new rows up to the new element's row will also contain
         invalid data.
         """
+        
         self._set_string(row, col, val.encode())
         
 
@@ -548,6 +592,7 @@ class GXTB(gxapi_cy.WrapTB):
 
     def sort(self, col):
         """
+        
         Sorts a table by a specified column.
         
         :param col:  Index of data Column to sort table by
@@ -566,6 +611,7 @@ class GXTB(gxapi_cy.WrapTB):
         may or may not come after the first row in the sorted
         table.
         """
+        
         self._sort(col)
         
 

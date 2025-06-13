@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXPRAGA3(gxapi_cy.WrapPRAGA3):
     @classmethod
     def launch(cls):
         """
+        
         This method launches the application.
         
 
@@ -67,6 +68,7 @@ class GXPRAGA3(gxapi_cy.WrapPRAGA3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPRAGA3._launch(GXContext._get_tls_geo())
         return ret_val
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXSURFACEITEM import GXSURFACEITEM
@@ -56,6 +56,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def create(cls, surface_file, ipj):
         """
+        
         Create a new Geosurface file
         
         :param surface_file:  Geosurface file name
@@ -70,6 +71,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSURFACE._create(GXContext._get_tls_geo(), surface_file.encode(), ipj)
         return GXSURFACE(ret_val)
 
@@ -78,6 +80,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def open(cls, surface_file, mode):
         """
+        
         Open a Geosurface file
         
         :param surface_file:  Geosurface file name
@@ -92,6 +95,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapSURFACE._open(GXContext._get_tls_geo(), surface_file.encode(), mode)
         return GXSURFACE(ret_val)
 
@@ -102,6 +106,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
     def get_ipj(self, ipj):
         """
+        
         Get the coordinate system of the `GXSURFACE <geosoft.gxapi.GXSURFACE>`.
         
         :param ipj:      `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the Geosurface coordinate system
@@ -111,6 +116,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -119,6 +125,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
     def set_ipj(self, ipj):
         """
+        
         Change the coordinate system of the `GXSURFACE <geosoft.gxapi.GXSURFACE>`.
         
         :param ipj:      `GXIPJ <geosoft.gxapi.GXIPJ>` containing the new coordinate system of the Geosurface
@@ -128,6 +135,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_ipj(ipj)
         
 
@@ -136,6 +144,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
     def get_surface_items(self, lst):
         """
+        
         Get the surfaces items in a Geosurface file
         
         :param lst:      `GXLST <geosoft.gxapi.GXLST>` to fill
@@ -145,6 +154,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_surface_items(lst)
         
 
@@ -153,6 +163,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
     def get_surface_item(self, guid):
         """
+        
         Get the an existing surface item from the `GXSURFACE <geosoft.gxapi.GXSURFACE>`
         
         :param guid:     Item GUID
@@ -165,6 +176,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_surface_item(guid.encode())
         return GXSURFACEITEM(ret_val)
 
@@ -173,6 +185,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
     def add_surface_item(self, surfaceitem):
         """
+        
         Add a new surface item to the `GXSURFACE <geosoft.gxapi.GXSURFACE>`
         
         :param surfaceitem:  `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` to add
@@ -182,6 +195,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_surface_item(surfaceitem)
         
 
@@ -190,6 +204,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def get_surface_names(cls, surface_file, lst):
         """
+        
         Get the surface item names in a Geosurface file
         
         :param surface_file:  Geosurface file
@@ -201,7 +216,29 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSURFACE._get_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
+        
+
+
+
+    @classmethod
+    def get_ordered_surface_names(cls, surface_file, lst):
+        """
+        
+        Get the surface item names in a Geosurface file alphabetically ordered
+        
+        :param surface_file:  Geosurface file
+        :param lst:           `GXLST <geosoft.gxapi.GXLST>` to fill
+        :type  surface_file:  str
+        :type  lst:           GXLST
+
+        .. versionadded:: 8.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        
+        gxapi_cy.WrapSURFACE._get_ordered_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
         
 
 
@@ -209,6 +246,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def get_closed_surface_names(cls, surface_file, lst):
         """
+        
         Get the names of closed surface items in a Geosurface file (may return an empty list)
         
         :param surface_file:  Geosurface file
@@ -220,6 +258,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSURFACE._get_closed_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
         
 
@@ -228,6 +267,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
     def get_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the spatial range of all surface items.
         
         :param min_x:    Minimum valid data in X.
@@ -247,6 +287,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -255,6 +296,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def crc(cls, surface_file, output, crc):
         """
+        
         Compute an XML CRC of a Geosurface file.
         
         :param surface_file:  Geosurface file
@@ -271,6 +313,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, crc.value = gxapi_cy.WrapSURFACE._crc(GXContext._get_tls_geo(), surface_file.encode(), output.encode(), crc.value)
         return ret_val
 
@@ -279,6 +322,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def sync(cls, name):
         """
+        
         Syncronize the Metadata for this Geosurface
         
         :param name:  Geosurface file
@@ -288,6 +332,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSURFACE._sync(GXContext._get_tls_geo(), name.encode())
         
 
@@ -296,6 +341,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def create_from_dxf(cls, ipj, surface_file, dxf_file):
         """
+        
         Create Geosurface file from DXF file.
         
         :param surface_file:  Geosurface file
@@ -308,6 +354,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSURFACE._create_from_dxf(GXContext._get_tls_geo(), ipj, surface_file.encode(), dxf_file.encode())
         
 
@@ -316,6 +363,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def create_from_vulcan_triangulation(cls, triangulation_file, ipj, surface_file):
         """
+        
         Create Geosurface file from a Maptek Vulcan triangulation file.
         
         :param triangulation_file:  00t file
@@ -328,6 +376,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSURFACE._create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
         
 
@@ -336,6 +385,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def append_vulcan_triangulation(cls, triangulation_file, ipj, surface_file):
         """
+        
         Create new surface from a Maptek Vulcan triangulation file and add to an existing geosurface.
         
         :param triangulation_file:  00t file
@@ -348,6 +398,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapSURFACE._append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
         
 
@@ -356,6 +407,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
     @classmethod
     def dump_geometry_to_text_file(cls, surface_filename, text_filename):
         """
+        
         Dump surface geometry to a text file.
         
         :param surface_filename:  Geosurface file
@@ -367,6 +419,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSURFACE._dump_geometry_to_text_file(GXContext._get_tls_geo(), surface_filename.encode(), text_filename.encode())
         
 

@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 import numpy as np
 import unittest
 import os
@@ -17,13 +17,13 @@ class Test(GXPYTest):
 
         self.assertEqual(gxva.__version__, geosoft.__version__)
 
-        with gxva.GXva(width=12, dtype=np.float_) as va:
+        with gxva.GXva(width=12, dtype=np.float64) as va:
             self.assertTrue(isinstance(va.gxva, gxapi.GXVA))
             self.assertEqual(va.fid, (0.0,1.0))
             self.assertEqual(va.width, 12)
 
         fid = (10.1,0.99)
-        with gxva.GXva(width=7, dtype=np.float_, fid=fid) as va:
+        with gxva.GXva(width=7, dtype=np.float64, fid=fid) as va:
             self.assertEqual(va.fid, fid)
             self.assertEqual(va.width, 7)
 
@@ -35,14 +35,14 @@ class Test(GXPYTest):
             self.assertEqual(va.fid,(-40,8))
             self.assertEqual(va.length,4)
             self.assertEqual(va.dimensions, (4,7))
-            self.assertEqual(va.gxtype, gxu.gx_dtype(np.float_))
+            self.assertEqual(va.gxtype, gxu.gx_dtype(np.float64))
             self.assertEqual(va.np.shape, (4, 7))
 
             va.length = 16
             self.assertEqual(va.fid,(-40,8))
             self.assertEqual(va.length,16)
             self.assertEqual(va.dimensions, (16,7))
-            self.assertEqual(va.gxtype, gxu.gx_dtype(np.float_))
+            self.assertEqual(va.gxtype, gxu.gx_dtype(np.float64))
             self.assertEqual(va.np.shape, (16, 7))
 
 
@@ -52,7 +52,7 @@ class Test(GXPYTest):
         self.assertRaises(gxva.VAException, gxva.GXva,
                           np.array([["bones", "queens", "geology"], ["a", "b", "c"]]))
 
-        with gxva.GXva([[1, 2, 3, 4, 5, 6, 7]], width=7, dtype=np.float_) as va:
+        with gxva.GXva([[1, 2, 3, 4, 5, 6, 7]], width=7, dtype=np.float64) as va:
             self.assertRaises(gxva.VAException, va.get_data, dtype="U7")
 
         with gxva.GXva(np.array(range(45)).reshape((9, 5))) as va:
@@ -129,7 +129,7 @@ class Test(GXPYTest):
             self.assertEqual(np3[1, 2], gxapi.GS_S4DM)
             self.assertEqual(np3[1, 2], gxapi.iDUMMY)
 
-            np3, fid = va.get_data(np.float_)
+            np3, fid = va.get_data(np.float64)
             self.assertEqual(np3[0, 0], 0.)
             self.assertEqual(np3[2, 11], 43.)
             self.assertTrue(np.isnan(np3[1, 2]))

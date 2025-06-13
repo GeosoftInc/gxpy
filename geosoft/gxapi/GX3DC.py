@@ -1,8 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +57,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
     @classmethod
     def create(cls, handle):
         """
+        
         Create a 3D view container which can be used to instantiate a full 3D View.
         
         :param handle:  Window handle for the OpenGL context.
@@ -72,6 +74,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
 
             DestroyInternal_3DC
         """
+        
         ret_val = gxapi_cy.Wrap3DC._create(GXContext._get_tls_geo(), handle)
         return GX3DC(ret_val)
 
@@ -80,6 +83,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
 
     def get_geo_view(self):
         """
+        
         Retrieves the GeoView associated with the 3D container.
         
         :rtype:       9
@@ -88,6 +92,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_geo_view()
         return ret_val
 
@@ -96,6 +101,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
 
     def destroy_internal(self):
         """
+        
         Destroys a 3D container object and cleans up any unmanaged resources.
         
 
@@ -103,6 +109,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._destroy_internal()
         
 

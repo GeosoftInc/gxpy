@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
     @classmethod
     def create(cls, name):
         """
+        
         Create a handle to an `GXHXYZ <geosoft.gxapi.GXHXYZ>` object
         
         :param name:  File Name
@@ -68,6 +69,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapHXYZ._create(GXContext._get_tls_geo(), name.encode())
         return GXHXYZ(ret_val)
 
@@ -78,6 +80,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
     def get_meta(self, meta):
         """
+        
         Get the metadata of a grid.
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to save `GXHXYZ <geosoft.gxapi.GXHXYZ>`'s meta to
@@ -87,6 +90,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_meta(meta)
         
 
@@ -95,6 +99,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
     @classmethod
     def h_create_db(cls, db, gvv, name):
         """
+        
         Make an `GXHXYZ <geosoft.gxapi.GXHXYZ>` from GDB
         
         :param db:    `GXDB <geosoft.gxapi.GXDB>` handle
@@ -111,6 +116,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapHXYZ._h_create_db(GXContext._get_tls_geo(), db, gvv, name.encode())
         return GXHXYZ(ret_val)
 
@@ -119,6 +125,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
     @classmethod
     def h_create_sql(cls, templ, x, y, z, ipj, name):
         """
+        
         Make an `GXHXYZ <geosoft.gxapi.GXHXYZ>` from SQL Query
         
         :param templ:  Template File Name
@@ -141,6 +148,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapHXYZ._h_create_sql(GXContext._get_tls_geo(), templ.encode(), x.encode(), y.encode(), z.encode(), ipj, name.encode())
         return GXHXYZ(ret_val)
 
@@ -149,6 +157,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
     def set_meta(self, meta):
         """
+        
         Set the metadata of a grid.
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to add to `GXHXYZ <geosoft.gxapi.GXHXYZ>`'s meta
@@ -158,6 +167,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta(meta)
         
 

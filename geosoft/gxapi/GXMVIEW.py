@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXAGG import GXAGG
@@ -82,6 +82,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def box_3d(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Draw a 3D box
         
         :param min_x:  Min X
@@ -103,6 +104,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The Fill color is used to color the box.
         """
+        
         self._box_3d(min_x, min_y, min_z, max_x, max_y, max_z)
         
 
@@ -111,6 +113,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def crc_view(self, crc, file):
         """
+        
         Generate an XML CRC of a View
         
         :param crc:    CRC returned
@@ -122,6 +125,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         crc.value = self._crc_view(crc.value, file.encode())
         
 
@@ -130,6 +134,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def crc_view_group(self, group, crc, file):
         """
+        
         Generate an XML CRC of a Group
         
         :param group:  Name of Group
@@ -143,6 +148,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         crc.value = self._crc_view_group(group.encode(), crc.value, file.encode())
         
 
@@ -151,6 +157,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def view_group_json(self, group, file):
         """
+        
         Generate a JSON representation of a Group.
         
         :param group:  Name of Group
@@ -162,6 +169,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._view_group_json(group.encode(), file.encode())
         
 
@@ -170,6 +178,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def cylinder_3d(self, start_x, start_y, start_z, end_x, end_y, end_z, start_radius, end_radius, flags):
         """
+        
         Draw a 3D cylinder
         
         :param start_x:       Start X
@@ -200,6 +209,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         end are closed. Note that you can create cones by
         specifying a 0 radius for one of the ends.
         """
+        
         self._cylinder_3d(start_x, start_y, start_z, end_x, end_y, end_z, start_radius, end_radius, flags)
         
 
@@ -208,6 +218,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def draw_object_3d(self, type, mode, objects, default_count, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, index_vv, count_vv):
         """
+        
         Draw a 3D object optimized for rendering
         
         :param type:           :ref:`MVIEW_DRAWOBJ3D_ENTITY`
@@ -241,6 +252,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._draw_object_3d(type, mode, objects, default_count, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, index_vv, count_vv)
         
 
@@ -249,6 +261,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def draw_surface_3d_ex(self, group_name, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, color, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3, ipj):
         """
+        
         Draw a 3D object built from triangles
         
         :param group_name:  Group name
@@ -285,6 +298,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** Provide one normal per vertex.
         Triangles are defined by indices into the set of vertices.
         """
+        
         self._draw_surface_3d_ex(group_name.encode(), vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, color, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3, ipj)
         
 
@@ -293,6 +307,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def draw_surface_3d_from_file(self, group_name, surface_file):
         """
+        
         Draw a 3D object from a surface file
         
         :param group_name:    Group name
@@ -304,6 +319,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._draw_surface_3d_from_file(group_name.encode(), surface_file.encode())
         
 
@@ -312,6 +328,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def font_weight_lst(cls, lst):
         """
+        
         Fill a `GXLST <geosoft.gxapi.GXLST>` with the different font weights.
         
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
@@ -321,6 +338,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapMVIEW._font_weight_lst(GXContext._get_tls_geo(), lst)
         
 
@@ -329,6 +347,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_agg_file_names(self, group, vv):
         """
+        
         Get the names of grid files stored in an `GXAGG <geosoft.gxapi.GXAGG>`.
         
         :param group:  Group name
@@ -343,6 +362,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** The group must be an `GXAGG <geosoft.gxapi.GXAGG>` group. Check this using
         `is_group <geosoft.gxapi.GXMVIEW.is_group>` and `MVIEW_IS_AGG <geosoft.gxapi.MVIEW_IS_AGG>`.
         """
+        
         self._get_agg_file_names(group.encode(), vv)
         
 
@@ -351,6 +371,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_meta(self, group, meta):
         """
+        
         Retrieves Metadata from a group
         
         :param group:  Group Name
@@ -365,6 +386,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, meta.value = self._get_meta(group.encode(), meta.value.encode())
         return GXMETA(ret_val)
 
@@ -373,6 +395,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def measure_text(self, text, x_min, y_min, x_max, y_max):
         """
+        
         Compute the bounding rectangle in view units of the text using the current attributes.
         
         :param text:   Text string
@@ -394,6 +417,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         This will return the bounding rectangle as if the text was placed at 0,0 and adjusted according to
         the current text alignment and angle set for the view. Also see notes for `text_size <geosoft.gxapi.GXMVIEW.text_size>`.
         """
+        
         x_min.value, y_min.value, x_max.value, y_max.value = self._measure_text(text.encode(), x_min.value, y_min.value, x_max.value, y_max.value)
         
 
@@ -402,6 +426,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def point_3d(self, x, y, z):
         """
+        
         Draw a 3D point.
         
         :param x:      X
@@ -417,6 +442,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The Line color and line thickness will affect rendering.
         """
+        
         self._point_3d(x, y, z)
         
 
@@ -425,6 +451,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def poly_line_3d(self, vv_x, vv_y, vv_z):
         """
+        
         Draw a 3D polyline.
         
         :param vv_x:   X coordinates.
@@ -441,6 +468,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** Dummies are not allowed in the line.
         Line Color, Thickness is supported on rendering
         """
+        
         self._poly_line_3d(vv_x, vv_y, vv_z)
         
 
@@ -449,6 +477,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def relocate_group(self, group, min_x, min_y, max_x, max_y, asp):
         """
+        
         Re-locate a group in a view.
         
         :param group:  Group name
@@ -468,6 +497,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._relocate_group(group.encode(), min_x, min_y, max_x, max_y, asp)
         
 
@@ -476,6 +506,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_meta(self, group, meta, name):
         """
+        
         Update the `GXMETA <geosoft.gxapi.GXMETA>` in this group with the new meta object.
         
         :param group:  Group Name
@@ -489,6 +520,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta(group.encode(), meta, name.encode())
         
 
@@ -497,6 +529,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def sphere_3d(self, x, y, z, radius):
         """
+        
         Draw a 3D sphere
         
         :param x:       Center X
@@ -514,6 +547,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The Fill color is used to color the sphere.
         """
+        
         self._sphere_3d(x, y, z, radius)
         
 
@@ -522,6 +556,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def update_met_afrom_group(self, group, meta):
         """
+        
         Fill the `GXMETA <geosoft.gxapi.GXMETA>` with group dataset information
         
         :param group:  Group Name
@@ -533,6 +568,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._update_met_afrom_group(group.encode(), meta)
         
 
@@ -545,6 +581,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_plane(self, plane, del_grp):
         """
+        
         Delete a plane in a view
         
         :param plane:    Plane number to delete
@@ -561,6 +598,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         SetAllNewGroupsToPlane  function can be used to assign these groups
         to a different plane.
         """
+        
         self._delete_plane(plane, del_grp)
         
 
@@ -569,6 +607,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_plane_clip_ply(self, plane, pply):
         """
+        
         Get the Plane Clip Region
         
         :param plane:  Plane index
@@ -582,6 +621,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** By default it is the View's Clip Region
         """
+        
         self._get_plane_clip_ply(plane, pply)
         
 
@@ -590,6 +630,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, sz):
         """
+        
         Get the equation of a plane
         
         :param plane:  Plane index
@@ -617,6 +658,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value = self._get_plane_equation(plane, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value)
         
 
@@ -625,6 +667,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_view_plane_equation(self, pitch, yaw, roll, x, y, z, sx, sy, sz):
         """
+        
         Get the View's Plane Equation
         
         :param pitch:  Angle in X
@@ -650,6 +693,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value = self._get_view_plane_equation(pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, sz.value)
         
 
@@ -658,6 +702,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def create_plane(self, plane):
         """
+        
         Create a 3D Plane for 2D Groups
         
         :param plane:  Name of Plane
@@ -670,6 +715,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create_plane(plane.encode())
         return ret_val
 
@@ -678,6 +724,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def find_plane(self, plane):
         """
+        
         Find a plane in a view
         
         :param plane:  Name of the plane
@@ -690,6 +737,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_plane(plane.encode())
         return ret_val
 
@@ -698,6 +746,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_surface_plane(self, plane):
         """
+        
         Is a surface plane?
         
         :param plane:  Name of the plane
@@ -708,6 +757,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_surface_plane(plane.encode())
         return ret_val
 
@@ -716,6 +766,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_plane_visible(self, plane):
         """
+        
         Is the plane visible?
         
         :param plane:  Name of the plane
@@ -726,6 +777,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_plane_visible(plane.encode())
         return ret_val
 
@@ -734,6 +786,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_def_plane(self, name):
         """
+        
         Get the default drawing plane.
         
         :param name:   Name
@@ -748,6 +801,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         has been set, the first valid plane in the view is
         used as the default drawing plane.
         """
+        
         name.value = self._get_def_plane(name.value.encode())
         
 
@@ -756,6 +810,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_view_3d(self):
         """
+        
         Is the view 3D?
         
 
@@ -766,6 +821,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_view_3d()
         return ret_val
 
@@ -774,6 +830,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_section(self):
         """
+        
         Is the view a section view?
         
 
@@ -793,6 +850,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         `IPJ_ORIENT_3D <geosoft.gxapi.IPJ_ORIENT_3D>` - Some Sections extracted from a voxel - e.g. VoxelToGrids,
         as the voxel can have any orientation in 3D.
         """
+        
         ret_val = self._is_section()
         return ret_val
 
@@ -801,6 +859,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def list_plane_groups(self, plane, lst):
         """
+        
         List all groups in a specific plane of a 3D view
         
         :param plane:  Plane number
@@ -817,6 +876,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         Groups are added to the end of the `GXLST <geosoft.gxapi.GXLST>`.
         """
+        
         self._list_plane_groups(plane, lst)
         
 
@@ -825,6 +885,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def list_planes(self, lst):
         """
+        
         List all planes in a 3D view
         
         :param lst:    List of plane names and numbers
@@ -839,6 +900,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         Planes are added to the end of the `GXLST <geosoft.gxapi.GXLST>`.
         """
+        
         self._list_planes(lst)
         
 
@@ -847,6 +909,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_all_groups_to_plane(self, plane):
         """
+        
         Set all groups to be within one plane
         
         :param plane:  Plane Index to set all groups to
@@ -856,6 +919,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_all_groups_to_plane(plane)
         
 
@@ -864,6 +928,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_all_new_groups_to_plane(self, plane):
         """
+        
         Set all groups that are not in any plane to this plane
         
         :param plane:  Plane Index to set all groups to
@@ -873,6 +938,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_all_new_groups_to_plane(plane)
         
 
@@ -881,6 +947,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_def_plane(self, name):
         """
+        
         Set the default drawing plane.
         
         :param name:   Name
@@ -895,6 +962,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         has been set, the first valid plane in the view is
         used as the default drawing plane.
         """
+        
         self._set_def_plane(name.encode())
         
 
@@ -903,6 +971,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_group_to_plane(self, plane, group):
         """
+        
         Set a group to a plane
         
         :param plane:  Plane Index to set all groups to
@@ -914,6 +983,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_group_to_plane(plane, group.encode())
         
 
@@ -922,6 +992,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_3dn(self, o3dn):
         """
+        
         Set the `GX3DN <geosoft.gxapi.GX3DN>` object for this view
         
         :param o3dn:   `GX3DN <geosoft.gxapi.GX3DN>` to set (NULL for 2D view)
@@ -933,6 +1004,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** To make the view a 2D view, set a `GX3DN <geosoft.gxapi.GX3DN>` of NULL.
         """
+        
         self._set_3dn(o3dn)
         
 
@@ -941,6 +1013,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_3d_point_of_view(self, x, y, z, distance, declination, inclination):
         """
+        
         Get 3D point of view (values are will be `rDUMMY <geosoft.gxapi.rDUMMY>` if view for 2D views)
         
         :param x:            X center
@@ -960,6 +1033,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         x.value, y.value, z.value, distance.value, declination.value, inclination.value = self._get_3d_point_of_view(x.value, y.value, z.value, distance.value, declination.value, inclination.value)
         
 
@@ -968,6 +1042,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_3d_point_of_view(self, x, y, z, distance, declination, inclination):
         """
+        
         Set 3D point of view (no effect on 2D views)
         
         :param x:            X center
@@ -987,6 +1062,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_3d_point_of_view(x, y, z, distance, declination, inclination)
         
 
@@ -995,6 +1071,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_plane_clip_ply(self, plane, pply):
         """
+        
         Set the Plane Clip Region
         
         :param plane:  Plane index
@@ -1008,6 +1085,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** By default it is the View's Clip Region
         """
+        
         self._set_plane_clip_ply(plane, pply)
         
 
@@ -1016,6 +1094,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_plane_equation(self, plane, pitch, yaw, roll, x, y, z, sx, sy, sz):
         """
+        
         Set the equation of a plane
         
         :param plane:  Plane index
@@ -1047,7 +1126,33 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         use rotations = (-90, 0, 0) for a section with azimuth 90 (E-W)
         use rotations = (-90, 0, -90) for a section with azimuth 0 (N-S)
         """
+        
         self._set_plane_equation(plane, pitch, yaw, roll, x, y, z, sx, sy, sz)
+        
+
+
+
+
+    def set_plane_matrix(self, plane, ipj):
+        """
+        
+        Set the equation of a plane using a matrix
+        
+        :param plane:  Plane index
+        :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` object
+        :type  plane:  int
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Use only for special cases. The View matrix and the input IPJ must have
+        the same PCS (orientations ignored), and the input IPJ must have an orientation
+        type "IPJ_ORIENT_3D_MATRIX". Null operation if these conditions are not fulfilled.
+        """
+        
+        self._set_plane_matrix(plane, ipj)
         
 
 
@@ -1055,6 +1160,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_plane_surface(self, plane, surface):
         """
+        
         Set the surface image of a plane
         
         :param plane:    Plane index
@@ -1066,6 +1172,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_plane_surface(plane, surface.encode())
         
 
@@ -1074,6 +1181,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_plane_surface(self, plane, surface):
         """
+        
         Get the surface image of a plane
         
         :param plane:    Plane index
@@ -1085,6 +1193,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         surface.value = self._get_plane_surface(plane, surface.value.encode())
         
 
@@ -1093,6 +1202,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_plane_surf_info(self, plane, sample, base, scale, min, max):
         """
+        
         Set the surface information
         
         :param plane:   Plane index
@@ -1112,6 +1222,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_plane_surf_info(plane, sample, base, scale, min, max)
         
 
@@ -1120,6 +1231,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_plane_surf_info(self, plane, sample, base, scale, min, max):
         """
+        
         Get the surface information
         
         :param plane:   Plane index
@@ -1139,6 +1251,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         sample.value, base.value, scale.value, min.value, max.value = self._get_plane_surf_info(plane, sample.value, base.value, scale.value, min.value, max.value)
         
 
@@ -1151,6 +1264,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def define_plane_3d(self, center_x, center_y, center_z, x_vector_x, x_vector_y, x_vector_z, y_vector_x, y_vector_y, y_vector_z):
         """
+        
         Define a 2D drawing plane based on point and normal
         
         :param center_x:    Center point X
@@ -1179,6 +1293,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** 2D rendering commands are translated to 3D commands
         based on the plane.
         """
+        
         self._define_plane_3d(center_x, center_y, center_z, x_vector_x, x_vector_y, x_vector_z, y_vector_x, y_vector_y, y_vector_z)
         
 
@@ -1187,6 +1302,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def define_viewer_axis_3d(self, center_x, center_y, center_z, dir_point_x, dir_point_y, dir_point_z):
         """
+        
         Define a 2D drawing plane based on the user's view that
         oriented around the vector.
         
@@ -1207,6 +1323,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._define_viewer_axis_3d(center_x, center_y, center_z, dir_point_x, dir_point_y, dir_point_z)
         
 
@@ -1215,6 +1332,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def define_viewer_plane_3d(self, center_x, center_y, center_z):
         """
+        
         Define a 2D drawing plane based on the user's view.
         
         :param center_x:  Center point X
@@ -1231,6 +1349,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** The plane is always facing the viewer. Otherwise the
         this is identical to the previous
         """
+        
         self._define_viewer_plane_3d(center_x, center_y, center_z)
         
 
@@ -1243,6 +1362,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_3d_snapshots(self):
         """
+        
         Get the list of 3D snapshots in a 3D view.
         
 
@@ -1255,6 +1375,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Returns name/guid pairs.
         """
+        
         ret_val = self._get_3d_snapshots()
         return GXLST(ret_val)
 
@@ -1263,6 +1384,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def restore_3d_snapshot(self, guid):
         """
+        
         Restore 3D view to specific snapshot state.
         
         :param guid:   Snapshot GUID
@@ -1272,6 +1394,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._restore_3d_snapshot(guid.encode())
         
 
@@ -1280,6 +1403,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def capture_3d_snapshot(self, name, description, light_weight, guid):
         """
+        
         Capture current 3D view state to a snapshot.
         
         :param name:          Snapshot name
@@ -1295,6 +1419,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         guid.value = self._capture_3d_snapshot(name.encode(), description.encode(), light_weight, guid.value.encode())
         
 
@@ -1307,6 +1432,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_poly_ex(self, vv_x, vv_y, unit, exclude):
         """
+        
         Add a polygon to the clip region.
         
         :param vv_x:     X `GXVV <geosoft.gxapi.GXVV>`
@@ -1325,6 +1451,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** The polygon will be added to the current clip region.
         The `GXVV <geosoft.gxapi.GXVV>`'s cannot have any dummy elements.
         """
+        
         self._clip_poly_ex(vv_x, vv_y, unit, exclude)
         
 
@@ -1333,6 +1460,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_rect_ex(self, min_x, min_y, max_x, max_y, unit, exclude):
         """
+        
         Add a rectangle to the clip region.
         
         :param min_x:    X minimum
@@ -1354,6 +1482,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The rectangle will be added to the current clip region.
         """
+        
         self._clip_rect_ex(min_x, min_y, max_x, max_y, unit, exclude)
         
 
@@ -1362,6 +1491,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_clear(self):
         """
+        
         Remove/clear the view clip region.
         
 
@@ -1369,6 +1499,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clip_clear()
         
 
@@ -1377,6 +1508,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_groups(self, mode):
         """
+        
         Set the Clipping mode on/off for all groups.
         
         :param mode:   :ref:`MVIEW_CLIP`
@@ -1386,6 +1518,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clip_groups(mode)
         
 
@@ -1394,6 +1527,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_marked_groups(self, mode):
         """
+        
         Set the Clipping mode on/off for marked groups.
         
         :param mode:   :ref:`MVIEW_CLIP`
@@ -1403,6 +1537,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clip_marked_groups(mode)
         
 
@@ -1411,6 +1546,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_poly(self, vv_x, vv_y, unit):
         """
+        
         Add a polygon to the clip region.
         
         :param vv_x:   X `GXVV <geosoft.gxapi.GXVV>`
@@ -1427,6 +1563,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** The polygon will be added to the current clip region.
         The `GXVV <geosoft.gxapi.GXVV>`'s cannot have any dummy elements.
         """
+        
         self._clip_poly(vv_x, vv_y, unit)
         
 
@@ -1435,6 +1572,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_rect(self, min_x, min_y, max_x, max_y, unit):
         """
+        
         Add a rectangle to the clip region.
         
         :param min_x:  X minimum
@@ -1454,6 +1592,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The rectangle will be added to the current clip region.
         """
+        
         self._clip_rect(min_x, min_y, max_x, max_y, unit)
         
 
@@ -1462,6 +1601,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_ext_clip_ply(self, ext_ply):
         """
+        
         Deletes an extended clip `GXPLY <geosoft.gxapi.GXPLY>` object used by this view.
         
         :param ext_ply:  Extended ClipPLY number
@@ -1471,6 +1611,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_ext_clip_ply(ext_ply)
         
 
@@ -1479,6 +1620,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def ext_clip_ply_list(self, lst):
         """
+        
         Get the names of existing extended clip `GXPLY <geosoft.gxapi.GXPLY>` objects in this view as list.
         
         :type  lst:    GXLST
@@ -1487,6 +1629,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._ext_clip_ply_list(lst)
         
 
@@ -1495,6 +1638,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_clip_ply(self, poly):
         """
+        
         Get clipping polygons, in the user projection
         
         :param poly:   Poly
@@ -1509,6 +1653,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         `get_ply <geosoft.gxapi.GXMVIEW.get_ply>`, which returns the Clip `GXPLY <geosoft.gxapi.GXPLY>` in the view's native
         projection (e.g. the one set using `set_ipj <geosoft.gxapi.GXMVIEW.set_ipj>`).
         """
+        
         self._get_clip_ply(poly)
         
 
@@ -1517,6 +1662,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_ext_clip_ply(self, ext_ply, ply):
         """
+        
         Get an extended clip `GXPLY <geosoft.gxapi.GXPLY>` object used by this view.
         
         :param ext_ply:  Extended ClipPLY number
@@ -1528,6 +1674,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ext_clip_ply(ext_ply, ply)
         
 
@@ -1536,6 +1683,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_group_ext_clip_ply(self, group, ext_ply):
         """
+        
         Gets extended clip information for group in view.
         
         :param group:    Group Name
@@ -1547,6 +1695,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ext_ply.value = self._get_group_ext_clip_ply(group.encode(), ext_ply.value)
         
 
@@ -1555,6 +1704,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_ply(self, poly):
         """
+        
         Get clipping polygons, in the base projection
         
         :param poly:   Poly
@@ -1567,6 +1717,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** This should be used to get the clipping polygon for
         oriented views (especially sections).
         """
+        
         self._get_ply(poly)
         
 
@@ -1575,6 +1726,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def group_clip_mode(self, mode):
         """
+        
         Set the Clipping mode on or off for new groups.
         
         :param mode:   :ref:`MVIEW_CLIP`
@@ -1586,6 +1738,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** All new groups will be clipped.
         """
+        
         self._group_clip_mode(mode)
         
 
@@ -1594,6 +1747,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_name_ext_clip_ply(self, ext_ply, name):
         """
+        
         Get the name of the extended clip `GXPLY <geosoft.gxapi.GXPLY>` object in this view.
         
         :param ext_ply:  Extended ClipPLY number
@@ -1605,6 +1759,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._get_name_ext_clip_ply(ext_ply, name.value.encode())
         
 
@@ -1613,6 +1768,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def num_ext_clip_ply(self):
         """
+        
         Get the number of extended clip `GXPLY <geosoft.gxapi.GXPLY>` objects in this view.
         
 
@@ -1623,6 +1779,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_ext_clip_ply()
         return ret_val
 
@@ -1631,6 +1788,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_ext_clip_ply(self, ext_ply, name, ply):
         """
+        
         Set an extended clip `GXPLY <geosoft.gxapi.GXPLY>` object used by this view.
         
         :param ext_ply:  Extended ClipPLY number, If greater or equal to the return value of `num_ext_clip_ply <geosoft.gxapi.GXMVIEW.num_ext_clip_ply>` it will be added to the end of the current list
@@ -1647,6 +1805,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._set_ext_clip_ply(ext_ply, name.encode(), ply)
         return ret_val
 
@@ -1655,6 +1814,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_clip_ply(self, poly):
         """
+        
         Set clipping region to a `GXPLY <geosoft.gxapi.GXPLY>`
         
         :param poly:   Poly
@@ -1664,6 +1824,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_clip_ply(poly)
         
 
@@ -1672,6 +1833,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_group_ext_clip_ply(self, group, ext_ply):
         """
+        
         Sets extended clip information for group in view.
         
         :param group:    Group Name
@@ -1683,6 +1845,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_group_ext_clip_ply(group.encode(), ext_ply)
         
 
@@ -1695,6 +1858,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def color2_rgb(cls, color, r, g, b):
         """
+        
         Convert to RGB values.
         
         :param color:  Color value
@@ -1716,6 +1880,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `color <geosoft.gxapi.GXMVIEW.color>`
         """
+        
         r.value, g.value, b.value = gxapi_cy.WrapMVIEW._color2_rgb(GXContext._get_tls_geo(), color, r.value, g.value, b.value)
         
 
@@ -1724,6 +1889,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def color_descr(cls, color, color_descr):
         """
+        
         Convert a color to a color string label
         
         :param color:        COL_ANY variable
@@ -1737,6 +1903,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** See `color <geosoft.gxapi.GXMVIEW.color>`.
         """
+        
         color_descr.value = gxapi_cy.WrapMVIEW._color_descr(GXContext._get_tls_geo(), color, color_descr.value.encode())
         
 
@@ -1745,6 +1912,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def color(cls, color):
         """
+        
         Get a color from a color string label
         
         :param color:  Color name string
@@ -1774,6 +1942,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             iColorXXX_MVIEW macros
         """
+        
         ret_val = gxapi_cy.WrapMVIEW._color(GXContext._get_tls_geo(), color.encode())
         return ret_val
 
@@ -1782,6 +1951,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def color_cmy(cls, c, m, y):
         """
+        
         Return CMY color.
         
         :param c:  Cyan
@@ -1804,6 +1974,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `color <geosoft.gxapi.GXMVIEW.color>`
         """
+        
         ret_val = gxapi_cy.WrapMVIEW._color_cmy(GXContext._get_tls_geo(), c, m, y)
         return ret_val
 
@@ -1812,6 +1983,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def color_hsv(cls, h, s, v):
         """
+        
         Return HSV color.
         
         :param h:  Hue
@@ -1834,6 +2006,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `color <geosoft.gxapi.GXMVIEW.color>`
         """
+        
         ret_val = gxapi_cy.WrapMVIEW._color_hsv(GXContext._get_tls_geo(), h, s, v)
         return ret_val
 
@@ -1842,6 +2015,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def color_rgb(cls, r, g, b):
         """
+        
         Return RGB color.
         
         :param r:  Red
@@ -1864,6 +2038,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `color <geosoft.gxapi.GXMVIEW.color>`
         """
+        
         ret_val = gxapi_cy.WrapMVIEW._color_rgb(GXContext._get_tls_geo(), r, g, b)
         return ret_val
 
@@ -1876,6 +2051,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clip_mode(self, mode):
         """
+        
         Set the view clipping mode on or off.
         
         :param mode:   :ref:`MVIEW_CLIP`
@@ -1899,6 +2075,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         to determine the  true visible extents of a group. In such cases, the
         "zoom to full map extents" command may give incorrect results.
         """
+        
         self._clip_mode(mode)
         
 
@@ -1907,6 +2084,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def fill_color(self, color):
         """
+        
         Set the fill color.
         
         :param color:  Color
@@ -1916,6 +2094,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._fill_color(color)
         
 
@@ -1924,6 +2103,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def line_color(self, color):
         """
+        
         Set the line color.
         
         :param color:  Color
@@ -1933,6 +2113,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._line_color(color)
         
 
@@ -1941,6 +2122,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def line_smooth(self, smooth):
         """
+        
         Set the line edge smoothing.
         
         :param smooth:  :ref:`MVIEW_SMOOTH`
@@ -1950,6 +2132,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._line_smooth(smooth)
         
 
@@ -1958,6 +2141,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def line_style(self, style, pitch):
         """
+        
         Set the style of a line.
         
         :param style:  Line Style #, see default.lpt
@@ -1979,6 +2163,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         read into the map at the time the map is created, not
         at display time.
         """
+        
         self._line_style(style, pitch)
         
 
@@ -1987,6 +2172,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def line_thick(self, thick):
         """
+        
         Set the line thickness.
         
         :param thick:  Line thickness in view space units
@@ -1996,6 +2182,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._line_thick(thick)
         
 
@@ -2004,6 +2191,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def pat_angle(self, angle):
         """
+        
         Sets the pattern angle
         
         :param angle:  Angle
@@ -2030,6 +2218,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
+        
         self._pat_angle(angle)
         
 
@@ -2038,6 +2227,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def pat_density(self, density):
         """
+        
         Sets the tiling density.
         
         :param density:  Relative density (default = 1).
@@ -2056,6 +2246,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
+        
         self._pat_density(density)
         
 
@@ -2064,6 +2255,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def pat_number(self, number):
         """
+        
         Sets the pattern number
         
         :param number:  Pattern number
@@ -2091,6 +2283,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         If you want to modify any attributes, call that function (e.g.
         sPatSize_MVIEW(), AFTER you call sPatNumber_MVIEW().
         """
+        
         self._pat_number(number)
         
 
@@ -2099,6 +2292,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def pat_size(self, size):
         """
+        
         Sets the pattern unit cell size (X)
         
         :param size:   Pattern size in view units
@@ -2110,6 +2304,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** See the IMPORTANT note for sPatNumber_MVIEW().
         """
+        
         self._pat_size(size)
         
 
@@ -2118,6 +2313,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def pat_style(self, style):
         """
+        
         Sets the tiling method (i.e. rectangle, triangle)
         
         :param style:  :ref:`MVIEW_TILE`
@@ -2143,6 +2339,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         See the IMPORTANT note for sPatNumber_MVIEW().
         """
+        
         self._pat_style(style)
         
 
@@ -2151,6 +2348,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def pat_thick(self, thick):
         """
+        
         Sets the pattern line thickness
         
         :param thick:  Line thickness as fraction of pattern size (ie. 0.05)
@@ -2162,6 +2360,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** See the IMPORTANT note for sPatNumber_MVIEW().
         """
+        
         self._pat_thick(thick)
         
 
@@ -2170,6 +2369,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symb_angle(self, angle):
         """
+        
         Set the Symb angle.
         
         :param angle:  Angle in degrees CCW from +X
@@ -2179,6 +2379,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._symb_angle(angle)
         
 
@@ -2187,6 +2388,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symb_color(self, color):
         """
+        
         Set the Symbol color.
         
         :param color:  Color
@@ -2196,6 +2398,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._symb_color(color)
         
 
@@ -2204,6 +2407,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symb_fill_color(self, color):
         """
+        
         Set the Symbol color fill.
         
         :param color:  Color
@@ -2213,6 +2417,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._symb_fill_color(color)
         
 
@@ -2221,6 +2426,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symb_font(self, face, geofont, weight, italic):
         """
+        
         Set the symbol font and style.
         
         :param face:     Face name
@@ -2242,6 +2448,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         See `text_font <geosoft.gxapi.GXMVIEW.text_font>` for the font name syntax.
         """
+        
         self._symb_font(face.encode(), geofont, weight, italic)
         
 
@@ -2250,6 +2457,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symb_number(self, number):
         """
+        
         Set the Symbol number.
         
         :param number:  Symbol number
@@ -2266,6 +2474,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         It is possible to check if a character is valid using `GXUNC.is_valid_utf16_char <geosoft.gxapi.GXUNC.is_valid_utf16_char>`. The high 16-bits are reserved
         for future use. Also see: `GXUNC.valid_symbol <geosoft.gxapi.GXUNC.valid_symbol>` and `GXUNC.validate_symbols <geosoft.gxapi.GXUNC.validate_symbols>`.
         """
+        
         self._symb_number(number)
         
 
@@ -2274,6 +2483,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symb_size(self, size):
         """
+        
         Set the Symb size.
         
         :param size:   Size in view units
@@ -2283,6 +2493,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._symb_size(size)
         
 
@@ -2291,6 +2502,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def text_angle(self, angle):
         """
+        
         Set the text angle.
         
         :param angle:  Angle in degrees CCW from +X
@@ -2300,6 +2512,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._text_angle(angle)
         
 
@@ -2308,6 +2521,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def text_color(self, color):
         """
+        
         Set the Text color.
         
         :param color:  Color
@@ -2317,6 +2531,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._text_color(color)
         
 
@@ -2325,6 +2540,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def text_font(self, face, geo_font, weight, italic):
         """
+        
         Set the text font.
         
         :param face:      Font face name
@@ -2373,6 +2589,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         specified in the [MONTAJ] section of GEOSOFT.INI
         will be used.
         """
+        
         self._text_font(face.encode(), geo_font, weight, italic)
         
 
@@ -2381,6 +2598,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def text_ref(self, ref):
         """
+        
         Set the text plot reference point.
         
         :param ref:    :ref:`TEXT_REF`
@@ -2390,6 +2608,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._text_ref(ref)
         
 
@@ -2398,6 +2617,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def text_size(self, size):
         """
+        
         Set the text size.
         
         :param size:   Size in view units
@@ -2422,6 +2642,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         below 0 in the Y (this is known as the "descent" height of the font at this size). The letters B and l
         should be very close to the size set here (this may differ slightly for different fonts).
         """
+        
         self._text_size(size)
         
 
@@ -2430,6 +2651,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def transparency(self, trans):
         """
+        
         Sets the transparency for new objects.
         
         :param trans:  Transparency (1.0 - Opaque, 0.0 - Transparent)
@@ -2443,6 +2665,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Objects written after this will have a combined transparency value with the
         group transparency if it is set (e.g. 0.5 for group and 0.8 stream will result in 0.4).
         """
+        
         self._transparency(trans)
         
 
@@ -2451,6 +2674,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def z_value(self, val):
         """
+        
         Sets Z-value info.
         
         :param val:    Z-Value
@@ -2463,6 +2687,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** This number is stored in map mainly for exports to other vector formats (e.g ShapeFiles)
         A contour map that's exported to a shape file will use this value as a Z-value attributes for its shapes.
         """
+        
         self._z_value(val)
         
 
@@ -2475,6 +2700,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def arc(self, x, y, radius, ratio, angle, start, end):
         """
+        
         Draw an arc.
         
         :param x:       Center x
@@ -2496,6 +2722,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._arc(x, y, radius, ratio, angle, start, end)
         
 
@@ -2504,6 +2731,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def chord(self, x, y, radius, ratio, angle, start, end):
         """
+        
         Draw a filled arc.
         
         :param x:       Center x
@@ -2525,6 +2753,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._chord(x, y, radius, ratio, angle, start, end)
         
 
@@ -2533,6 +2762,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def classified_symbols(self, vv_x, vv_y, vv_z, scal_mm, zmin, zval, size, fcol):
         """
+        
         Plot classified symbols
         
         :param vv_x:     X `GXVV <geosoft.gxapi.GXVV>`
@@ -2563,6 +2793,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         "2.0,2.5,3.0"     sizes in mm
         "y,g,r"           fill colors
         """
+        
         self._classified_symbols(vv_x, vv_y, vv_z, scal_mm, zmin, zval.encode(), size.encode(), fcol.encode())
         
 
@@ -2571,6 +2802,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def complex_polygon(self, vv_i, vv_x, vv_y):
         """
+        
         Draw a polygon with holes in it.
         
         :param vv_i:   `GXVV <geosoft.gxapi.GXVV>` of type int holding the number of points for each polygon
@@ -2586,6 +2818,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** You pass a `GXVV <geosoft.gxapi.GXVV>` with polygon sizes and 2 point vvs.
         """
+        
         self._complex_polygon(vv_i, vv_x, vv_y)
         
 
@@ -2594,6 +2827,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def ellipse(self, x, y, radius, ratio, angle):
         """
+        
         Draw an ellipse
         
         :param x:       Center x
@@ -2611,6 +2845,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._ellipse(x, y, radius, ratio, angle)
         
 
@@ -2619,6 +2854,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def line(self, x0, y0, x1, y1):
         """
+        
         Draw a line.
         
         :param x0:     X0
@@ -2634,6 +2870,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._line(x0, y0, x1, y1)
         
 
@@ -2642,6 +2879,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def line_vv(self, gvv):
         """
+        
         Draw line segments stored in a GS_D2LINE `GXVV <geosoft.gxapi.GXVV>`.
         
         :param gvv:    `GXVV <geosoft.gxapi.GXVV>` for GS_D2LINE
@@ -2651,6 +2889,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._line_vv(gvv)
         
 
@@ -2659,6 +2898,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def polygon_dm(self, vv_x, vv_y):
         """
+        
         Like PolyLineDm, but draw polygons.
         
         :param vv_x:   X coordinates.
@@ -2670,6 +2910,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._polygon_dm(vv_x, vv_y)
         
 
@@ -2678,6 +2919,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def polygon_ply(self, ply):
         """
+        
         Draw a complex polygon from `GXPLY <geosoft.gxapi.GXPLY>`.
         
         :type  ply:    GXPLY
@@ -2686,6 +2928,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._polygon_ply(ply)
         
 
@@ -2694,6 +2937,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def polygon_mply(self, mply):
         """
+        
         Draw multiple complex polygons from `GXMPLY <geosoft.gxapi.GXMPLY>`.
         
         :type  mply:   GXMPLY
@@ -2702,6 +2946,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._polygon_mply(mply)
         
 
@@ -2710,6 +2955,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def poly_line(self, type, vv_x, vv_y):
         """
+        
         Draw a polyline or polygon (dummies deleted).
         
         :param type:   :ref:`MVIEW_DRAW`
@@ -2727,6 +2973,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         in 'solid' line. Using `poly_line_dm <geosoft.gxapi.GXMVIEW.poly_line_dm>` (below) function
         if gaps from dummies are to be kept.
         """
+        
         self._poly_line(type, vv_x, vv_y)
         
 
@@ -2735,6 +2982,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def poly_line_dm(self, vv_x, vv_y):
         """
+        
         Draw a polyline with gaps defined by dummies in X/Y VVs
         
         :param vv_x:   X coordinates.
@@ -2746,6 +2994,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._poly_line_dm(vv_x, vv_y)
         
 
@@ -2754,6 +3003,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def poly_wrap(self, vv_x, vv_y):
         """
+        
         Draw wrapped polylines from X and Y `GXVV <geosoft.gxapi.GXVV>`'s.
         
         :param vv_x:   X coordinates.
@@ -2773,6 +3023,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `poly_line <geosoft.gxapi.GXMVIEW.poly_line>`
         """
+        
         self._poly_wrap(vv_x, vv_y)
         
 
@@ -2781,6 +3032,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def rectangle(self, x0, y0, x1, y1):
         """
+        
         Draw a rectangle.
         
         :param x0:     X0
@@ -2796,6 +3048,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._rectangle(x0, y0, x1, y1)
         
 
@@ -2804,6 +3057,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def segment(self, x, y, radius, ratio, angle, start, end):
         """
+        
         Draw a filled segment of an ellipse.
         
         :param x:       Center x
@@ -2825,6 +3079,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._segment(x, y, radius, ratio, angle, start, end)
         
 
@@ -2833,6 +3088,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def size_symbols(self, vv_x, vv_y, vv_z):
         """
+        
         Plot sized symbols
         
         :param vv_x:   X
@@ -2846,6 +3102,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._size_symbols(vv_x, vv_y, vv_z)
         
 
@@ -2854,6 +3111,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symbol(self, x, y):
         """
+        
         Plot a symbol
         
         :param x:      X
@@ -2865,6 +3123,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._symbol(x, y)
         
 
@@ -2873,6 +3132,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symbols(self, vv_x, vv_y):
         """
+        
         Plot symbols
         
         :param vv_x:   X
@@ -2884,6 +3144,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._symbols(vv_x, vv_y)
         
 
@@ -2892,6 +3153,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def symbols_itr(self, itr, vv_x, vv_y, vv_z):
         """
+        
         Plot symbols using an `GXITR <geosoft.gxapi.GXITR>`
         
         :param itr:    `GXITR <geosoft.gxapi.GXITR>` file name (ZON or `GXITR <geosoft.gxapi.GXITR>`)
@@ -2907,6 +3169,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._symbols_itr(itr.encode(), vv_x, vv_y, vv_z)
         
 
@@ -2915,6 +3178,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def text(self, text, x, y):
         """
+        
         Draw text.
         
         :param text:   Text to plot
@@ -2928,6 +3192,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._text(text.encode(), x, y)
         
 
@@ -2940,6 +3205,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def aggregate(self, agg, name):
         """
+        
         Add an aggregate to a view.
         
         :param agg:    Aggregate
@@ -2951,7 +3217,35 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._aggregate(agg, name.encode())
+        
+
+
+
+
+    def aggregate_to_plane(self, agg, name, plane):
+        """
+        
+        Add an aggregate to a view plane.
+        
+        :param agg:    Aggregate
+        :param name:   Aggregate name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
+        :param plane:  Plane number
+        :type  agg:    GXAGG
+        :type  name:   str
+        :type  plane:  int
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If a plane is not horizontal, then AGG needs to know how the oriented grid
+        will project onto it in order to configure its rendering.
+        There is no need to call SetGroupToPlane_MVIEW.
+        """
+        
+        self._aggregate_to_plane(agg, name.encode(), plane)
         
 
 
@@ -2959,6 +3253,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_aggregate(self, group):
         """
+        
         Get an existing Aggregate object from the view.
         
         :param group:  Group number
@@ -2973,6 +3268,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
+        
         ret_val = self._get_aggregate(group)
         return GXAGG(ret_val)
 
@@ -2981,6 +3277,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def change_line_message(self, line):
         """
+        
         Change the specified line in a view.
         
         :param line:   Change to this line
@@ -2994,6 +3291,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         `DB_LINE_LABEL_FORMAT_LINK <geosoft.gxapi.DB_LINE_LABEL_FORMAT_LINK>`. This insures that the label is
         created is the same way as used in the database.
         """
+        
         self._change_line_message(line.encode())
         
 
@@ -3002,6 +3300,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def col_symbol(self, name, csymb):
         """
+        
         Add a colored symbol object to a view.
         
         :param name:   Name of the color symbol group
@@ -3013,6 +3312,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._col_symbol(name.encode(), csymb)
         
 
@@ -3021,6 +3321,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_col_symbol(self, group):
         """
+        
         Get an existing colored symbol object from the view.
         
         :param group:  Group number
@@ -3035,6 +3336,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
+        
         ret_val = self._get_col_symbol(group)
         return GXCSYMB(ret_val)
 
@@ -3043,6 +3345,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def datalinkd(self, datalinkd, name):
         """
+        
         Add a Data Link Display (`GXDATALINKD <geosoft.gxapi.GXDATALINKD>`) object to the view.
         
         :param name:       Name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
@@ -3053,6 +3356,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._datalinkd(datalinkd, name.encode())
         
 
@@ -3061,6 +3365,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_datalinkd(self, group):
         """
+        
         Get an existing Data Link Display (`GXDATALINKD <geosoft.gxapi.GXDATALINKD>`) object from the view.
         
         :param group:  Group number
@@ -3075,6 +3380,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
+        
         ret_val = self._get_datalinkd(group)
         return GXDATALINKD(ret_val)
 
@@ -3083,6 +3389,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def easy_maker(self, name, groups):
         """
+        
         Used for GX makers which use both maps and databases.
         
         :param name:    Maker name, used in menu prompt
@@ -3094,6 +3401,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._easy_maker(name.encode(), groups.encode())
         
 
@@ -3102,6 +3410,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_maker_name(self, group, str_val):
         """
+        
         Used to retrieve the maker for a particular view group.
         
         :param group:    Group number
@@ -3113,6 +3422,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = self._get_maker_name(group, str_val.value.encode())
         
 
@@ -3121,6 +3431,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def emf_object(self, min_x, min_y, max_x, max_y, file):
         """
+        
         Add an EMF file data object to the view.
         
         :param min_x:  Min X
@@ -3138,6 +3449,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._emf_object(min_x, min_y, max_x, max_y, file.encode())
         
 
@@ -3146,6 +3458,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def external_string_object(self, min_x, min_y, max_x, max_y, name, cl, data):
         """
+        
         Add an external string data object to the view.
         
         :param min_x:  Min X
@@ -3167,6 +3480,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._external_string_object(min_x, min_y, max_x, max_y, name.encode(), cl.encode(), data.encode())
         
 
@@ -3175,6 +3489,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def link(self, db, name):
         """
+        
         Make a link to a database.
         
         :param db:     Database handle
@@ -3186,6 +3501,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._link(db, name.encode())
         
 
@@ -3194,6 +3510,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def maker(self, db, map, prog, type, name, groups):
         """
+        
         Generates a Maker for the database and/or map.
         
         :param db:      Database required? (0 = No, 1 = Yes)
@@ -3213,6 +3530,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._maker(db, map, prog.encode(), type, name.encode(), groups.encode())
         
 
@@ -3221,6 +3539,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def meta(self, meta, name):
         """
+        
         Store Metadata in a group
         
         :param meta:   `GXMETA <geosoft.gxapi.GXMETA>` object
@@ -3232,6 +3551,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._meta(meta, name.encode())
         
 
@@ -3240,6 +3560,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def voxd(self, voxd, name):
         """
+        
         Add a Voxel Display (`GXVOXD <geosoft.gxapi.GXVOXD>`) object to the view.
         
         :param name:   Name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
@@ -3250,6 +3571,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._voxd(voxd, name.encode())
         
 
@@ -3258,6 +3580,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_voxd(self, group):
         """
+        
         Get an existing `GXVOXD <geosoft.gxapi.GXVOXD>` object from the view.
         
         :param group:  Group number
@@ -3272,6 +3595,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
+        
         ret_val = self._get_voxd(group)
         return GXVOXD(ret_val)
 
@@ -3280,6 +3604,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def draw_vector_voxel_vectors(self, vox, group, itr, scale_factor, height_base_ratio, max_base_size_ratio, cutoff_value, max_vectors):
         """
+        
         Display vectors from a vector voxel in the view.
         
         :param group:                View group name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
@@ -3304,6 +3629,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** This will result in a `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` group object within the view
         """
+        
         self._draw_vector_voxel_vectors(vox, group.encode(), itr, scale_factor, height_base_ratio, max_base_size_ratio, cutoff_value, max_vectors)
         
 
@@ -3312,6 +3638,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_vector_3d(self, group):
         """
+        
         Get an existing `GXVECTOR3D <geosoft.gxapi.GXVECTOR3D>` object from the view.
         
         :param group:  Group number
@@ -3326,6 +3653,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
+        
         ret_val = self._get_vector_3d(group)
         return GXVECTOR3D(ret_val)
 
@@ -3334,6 +3662,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def draw_vectors_3d(self, group, vv_x, vv_y, vv_z, vv_vx, vv_vy, vv_vz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio):
         """
+        
         Display vectors in the view.
         
         :param group:                 View group name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
@@ -3364,6 +3693,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._draw_vectors_3d(group.encode(), vv_x, vv_y, vv_z, vv_vx, vv_vy, vv_vz, itr, scale_for_max_vector, height_base_ratio, max_base_size_ratio)
         
 
@@ -3372,6 +3702,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def csymb_3d(self, CSYMB3D, name):
         """
+        
         Add a 3D coloured symbol (`GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>`) object to the view.
         
         :param name:     Name Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
@@ -3382,6 +3713,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._csymb_3d(CSYMB3D, name.encode())
         
 
@@ -3390,6 +3722,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_csymb_3d(self, group):
         """
+        
         Get an existing 3D coloured symbol `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>` object from the view.
         
         :param group:  Group number
@@ -3404,6 +3737,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** This method returns a cached object owned by the `GXMVIEW <geosoft.gxapi.GXMVIEW>` and will be destroyed automatically when the `GXMVIEW <geosoft.gxapi.GXMVIEW>` is disposed
         """
+        
         ret_val = self._get_csymb_3d(group)
         return GXCSYMB3D(ret_val)
 
@@ -3416,6 +3750,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_group_itr(self, group, itr):
         """
+        
         Set group `GXITR <geosoft.gxapi.GXITR>`
         
         :param group:  Group number
@@ -3430,6 +3765,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         self._set_group_itr(group, itr)
         
 
@@ -3438,6 +3774,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_group_itr(self, group):
         """
+        
         Get group `GXITR <geosoft.gxapi.GXITR>`
         
         :param group:  Group number
@@ -3452,6 +3789,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         ret_val = self._get_group_itr(group)
         return GXITR(ret_val)
 
@@ -3460,6 +3798,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def group_itr_exists(self, group):
         """
+        
         Determine if group `GXITR <geosoft.gxapi.GXITR>` exists.
         
         :param group:  Group number
@@ -3476,6 +3815,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         ret_val = self._group_itr_exists(group)
         return ret_val
 
@@ -3484,6 +3824,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_group_itr(self, group):
         """
+        
         Deletes existing `GXITR <geosoft.gxapi.GXITR>` associated with a group.
         
         :param group:  Group number
@@ -3497,6 +3838,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         self._delete_group_itr(group)
         
 
@@ -3505,6 +3847,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_group_tpat(self, group, tpat):
         """
+        
         Set group `GXTPAT <geosoft.gxapi.GXTPAT>`
         
         :param group:  Group number
@@ -3519,6 +3862,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         self._set_group_tpat(group, tpat)
         
 
@@ -3527,6 +3871,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_group_tpat(self, group):
         """
+        
         Get group `GXTPAT <geosoft.gxapi.GXTPAT>`
         
         :param group:  Group number
@@ -3541,6 +3886,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         ret_val = self._get_group_tpat(group)
         return GXTPAT(ret_val)
 
@@ -3549,6 +3895,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def group_tpat_exists(self, group):
         """
+        
         Determine if group `GXTPAT <geosoft.gxapi.GXTPAT>` exists.
         
         :param group:  Group number
@@ -3565,6 +3912,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         ret_val = self._group_tpat_exists(group)
         return ret_val
 
@@ -3573,6 +3921,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_group_tpat(self, group):
         """
+        
         Deletes existing `GXTPAT <geosoft.gxapi.GXTPAT>` associated with a group.
         
         :param group:  Group number
@@ -3586,6 +3935,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         Note that modifying this information does not currently change the group contents and a group needs to be regenerated (e.g. with maker) 
         to refresh the objects.
         """
+        
         self._delete_group_tpat(group)
         
 
@@ -3594,6 +3944,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def group_storage_exists(self, group, storage_name):
         """
+        
         Determine if generic storage associated with a group exists.
         
         :param group:         Group number
@@ -3610,6 +3961,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
+        
         ret_val = self._group_storage_exists(group, storage_name.encode())
         return ret_val
 
@@ -3618,6 +3970,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def read_group_storage(self, group, storage_name):
         """
+        
         Reads existing generic storage associated with a group into an in-memory `GXBF <geosoft.gxapi.GXBF>`.
         
         :param group:         Group number
@@ -3634,6 +3987,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
+        
         ret_val = self._read_group_storage(group, storage_name.encode())
         return GXBF(ret_val)
 
@@ -3642,6 +3996,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_group_storage(self, group, storage_name):
         """
+        
         Deletes existing generic storage associated with a group.
         
         :param group:         Group number
@@ -3655,6 +4010,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
+        
         self._delete_group_storage(group, storage_name.encode())
         
 
@@ -3663,6 +4019,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def write_group_storage(self, group, storage_name, bf):
         """
+        
         Open generic existing storage associated with a group for reading.
         
         :param group:         Group number
@@ -3678,6 +4035,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** External API users should not use storage names starting with "Geosoft"
         """
+        
         self._write_group_storage(group, storage_name.encode(), bf)
         
 
@@ -3686,6 +4044,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def copy_marked_groups(self, mvie_wd):
         """
+        
         Copies all marked groups from one view into another view
         
         :param mvie_wd:  Destination `GXMVIEW <geosoft.gxapi.GXMVIEW>`
@@ -3699,6 +4058,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         entities. Entities are clipped by the destination view's clipping
         region.
         """
+        
         self._copy_marked_groups(mvie_wd)
         
 
@@ -3707,6 +4067,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def copy_raw_marked_groups(self, mvie_wd):
         """
+        
         Copies all marked groups raw from one view into another
         
         :param mvie_wd:  Destination `GXMVIEW <geosoft.gxapi.GXMVIEW>`
@@ -3718,6 +4079,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** The projections, and clipping is completly ignored.
         """
+        
         self._copy_raw_marked_groups(mvie_wd)
         
 
@@ -3726,6 +4088,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def crc_group(self, name, crc):
         """
+        
         Compute CRC for a group.
         
         :param name:   Group name
@@ -3738,6 +4101,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._crc_group(name.encode(), crc)
         return ret_val
 
@@ -3746,6 +4110,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_group(self, group):
         """
+        
         Delete a group.
         
         :param group:  Group name
@@ -3757,6 +4122,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Does nothing if the group does not already exist.
         """
+        
         self._delete_group(group.encode())
         
 
@@ -3765,6 +4131,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def del_marked_groups(self):
         """
+        
         Delete marked groups.
         
 
@@ -3772,6 +4139,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._del_marked_groups()
         
 
@@ -3780,6 +4148,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_group_extent(self, group_name, xmin, ymin, xmax, ymax, unit):
         """
+        
         Get extent of a group in a view
         
         :param group_name:  Group name
@@ -3799,6 +4168,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         xmin.value, ymin.value, xmax.value, ymax.value = self._get_group_extent(group_name.encode(), xmin.value, ymin.value, xmax.value, ymax.value, unit)
         
 
@@ -3807,6 +4177,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_group_transparency(self, group_name, trans):
         """
+        
         Gets the transparency value of group
         
         :param group_name:  Group name
@@ -3818,6 +4189,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         trans.value = self._get_group_transparency(group_name.encode(), trans.value)
         
 
@@ -3826,6 +4198,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def group_to_ply(self, name, pply):
         """
+        
         Save all polygons in group into `GXPLY <geosoft.gxapi.GXPLY>` obj.
         
         :param name:   Group name
@@ -3842,6 +4215,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         to change the working coordinate system. This function will
         return an empty `GXPLY <geosoft.gxapi.GXPLY>` if the group is hidden.
         """
+        
         self._group_to_ply(name.encode(), pply)
         
 
@@ -3850,6 +4224,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def hide_marked_groups(self, mode):
         """
+        
         Hide/Show marked groups.
         
         :param mode:   :ref:`MVIEW_HIDE`
@@ -3859,6 +4234,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._hide_marked_groups(mode)
         
 
@@ -3867,6 +4243,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def hide_shadow_2d_interpretations(self, mode):
         """
+        
         Hide/Show 2d shadow interpretations.
         
         :param mode:   :ref:`MVIEW_HIDE`
@@ -3876,6 +4253,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._hide_shadow_2d_interpretations(mode)
         
 
@@ -3884,6 +4262,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def exist_group(self, name):
         """
+        
         Checks to see if a group exists.
         
         :param name:   Group name
@@ -3897,6 +4276,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._exist_group(name.encode())
         return ret_val
 
@@ -3905,6 +4285,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def gen_new_group_name(self, group, new_name):
         """
+        
         Generate the name of a group from a base name that
         is new. (always unique and won't overwrite existing
         objects).
@@ -3918,6 +4299,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         new_name.value = self._gen_new_group_name(group.encode(), new_name.value.encode())
         
 
@@ -3926,6 +4308,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_group(self, group, what):
         """
+        
         Query a status or characteristic of a group
         
         :param group:  Group name
@@ -3940,6 +4323,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_group(group.encode(), what)
         return ret_val
 
@@ -3948,6 +4332,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_group_empty(self, group):
         """
+        
         Is the group empty?
         
         :param group:  Group name
@@ -3960,6 +4345,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_group_empty(group.encode())
         return ret_val
 
@@ -3968,6 +4354,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_movable(self):
         """
+        
         Is this view movable?
         
         :rtype:        bool
@@ -3980,6 +4367,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         flag is for preventing accidental moving in the `GXGUI <geosoft.gxapi.GXGUI>`.
         By default views are not movable.
         """
+        
         ret_val = self._is_movable()
         return ret_val
 
@@ -3988,6 +4376,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_visible(self):
         """
+        
         Is this view visible?
         
         :rtype:        bool
@@ -3996,6 +4385,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_visible()
         return ret_val
 
@@ -4004,6 +4394,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def list_groups(self, lst, flag):
         """
+        
         Get a list of the groups in a view.
         
         :param lst:    List
@@ -4018,6 +4409,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._list_groups(lst, flag)
         return ret_val
 
@@ -4026,6 +4418,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def render_order(self):
         """
+        
         Query the view render order
         
 
@@ -4038,6 +4431,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Views with lower numbers should render first, `iDUMMY <geosoft.gxapi.iDUMMY>` is undefined
         """
+        
         ret_val = self._render_order()
         return ret_val
 
@@ -4046,6 +4440,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_group_exportable(self, group):
         """
+        
         Query whether the group is an exportable type.
         
         :param group:  Group name
@@ -4058,6 +4453,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_group_exportable(group.encode())
         return ret_val
 
@@ -4066,6 +4462,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def mark_all_groups(self, mark):
         """
+        
         Mark or unmark all groups.
         
         :param mark:   0 - unmark, 1 - mark
@@ -4075,6 +4472,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._mark_all_groups(mark)
         
 
@@ -4083,6 +4481,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def mark_empty_groups(self, mark):
         """
+        
         Mark/unmark all empty groups.
         
         :param mark:   0 - unmark, 1 - mark
@@ -4092,6 +4491,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._mark_empty_groups(mark)
         
 
@@ -4100,6 +4500,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def mark_group(self, name, mark):
         """
+        
         Mark or unmark a specific group
         
         :param name:   Group name
@@ -4111,6 +4512,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._mark_group(name.encode(), mark)
         
 
@@ -4119,6 +4521,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def move_group_backward(self, group):
         """
+        
         Move the group backward one position (render sooner).
         
         :param group:  Group name
@@ -4128,6 +4531,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._move_group_backward(group.encode())
         
 
@@ -4136,6 +4540,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def move_group_forward(self, group):
         """
+        
         Move the group forward one position (render later).
         
         :param group:  Group name
@@ -4145,6 +4550,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._move_group_forward(group.encode())
         
 
@@ -4153,6 +4559,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def move_group_to_back(self, group):
         """
+        
         Move the group to the back (render first).
         
         :param group:  Group name
@@ -4162,6 +4569,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._move_group_to_back(group.encode())
         
 
@@ -4170,6 +4578,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def move_group_to_front(self, group):
         """
+        
         Move the group to the front (render last).
         
         :param group:  Group name
@@ -4179,6 +4588,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._move_group_to_front(group.encode())
         
 
@@ -4187,6 +4597,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def rename_group(self, old, new_group_name):
         """
+        
         Rename a group.
         
         :param old:             Old group name
@@ -4200,6 +4611,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Does nothing if the group does not already exist.
         """
+        
         self._rename_group(old.encode(), new_group_name.encode())
         
 
@@ -4208,6 +4620,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_group_moveable(self, group, move):
         """
+        
         Set the movable attribute of a group.
         
         :param group:  Group name
@@ -4219,6 +4632,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_group_moveable(group.encode(), move)
         
 
@@ -4227,6 +4641,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_group_transparency(self, group_name, trans):
         """
+        
         Sets the transparency value of group
         
         :param group_name:  Group name
@@ -4238,6 +4653,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_group_transparency(group_name.encode(), trans)
         
 
@@ -4246,6 +4662,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_mark_moveable(self, move):
         """
+        
         Set the movable attribute of marked groups.
         
         :param move:   0 - not movable, 1 - movable
@@ -4255,6 +4672,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_mark_moveable(move)
         
 
@@ -4263,6 +4681,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_movability(self, movable):
         """
+        
         Set the view movability
         
         :type  movable:  bool
@@ -4275,6 +4694,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         flag is for preventing accidental moving in the `GXGUI <geosoft.gxapi.GXGUI>`.
         By default views are not movable.
         """
+        
         self._set_movability(movable)
         
 
@@ -4283,6 +4703,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_render_order(self, order):
         """
+        
         Set the view render order
         
         :param order:  Render order
@@ -4294,6 +4715,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Views with lower numbers should render first, `iDUMMY <geosoft.gxapi.iDUMMY>` is undefined
         """
+        
         self._set_render_order(order)
         
 
@@ -4302,6 +4724,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_visibility(self, visible):
         """
+        
         Set the view visibility
         
         :type  visible:  bool
@@ -4310,6 +4733,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_visibility(visible)
         
 
@@ -4318,6 +4742,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def start_group(self, name, mode):
         """
+        
         Start a group.
         
         :param name:   Group name, can be NULL, Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`
@@ -4338,6 +4763,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         Group names must be different from view names.
         """
+        
         self._start_group(name.encode(), mode)
         
 
@@ -4346,6 +4772,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_group_guid(self, group, guid):
         """
+        
         Gets a GUID of a group in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param group:  Group number
@@ -4359,6 +4786,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.
         """
+        
         guid.value = self._get_group_guid(group, guid.value.encode())
         
 
@@ -4367,6 +4795,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_folder_items_3d(self, parent_guid):
         """
+        
         Get the list of folders in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param parent_guid:  Folder parent GUID, or empty string for parent MVIEW
@@ -4379,6 +4808,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Returns name/guid pairs. Empty GUID indicates item is a group.
         """
+        
         ret_val = self._get_folder_items_3d(parent_guid.encode())
         return GXLST(ret_val)
 
@@ -4387,6 +4817,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_folder_items_2d(self, parent_name):
         """
+        
         Get the list of key-value pairs representing the name(key) and the type(value) of all children in the specified parent folders in the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param parent_name:  Parent folder name, or empty string for root MVIEW
@@ -4399,6 +4830,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Returns name/type pairs. Types can be 'Folder', 'Group' or 'Unknown'
         """
+        
         ret_val = self._get_folder_items_2d(parent_name.encode())
         return GXLST(ret_val)
 
@@ -4407,6 +4839,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def add_folder_3d(self, name, parent_guid, guid):
         """
+        
         Add a 3DView folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param name:         Folder name
@@ -4420,6 +4853,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         guid.value = self._add_folder_3d(name.encode(), parent_guid.encode(), guid.value.encode())
         
 
@@ -4428,6 +4862,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def add_folder_2d(self, name, parent_name):
         """
+        
         Add a Map folder to the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param name:         Folder name
@@ -4439,6 +4874,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_folder_2d(name.encode(), parent_name.encode())
         
 
@@ -4447,6 +4883,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def move_group_to_folder_3d(self, guid, group):
         """
+        
         Add group to a 3DView folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param guid:   Folder parent GUID, or empty string for parent `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
@@ -4458,6 +4895,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._move_group_to_folder_3d(guid.encode(), group)
         
 
@@ -4466,6 +4904,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def move_group_to_folder_2d(self, parent_name, group):
         """
+        
         Add group to a Map folder in `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param parent_name:  Parent folder name, or empty string for root `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
@@ -4477,6 +4916,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._move_group_to_folder_2d(parent_name.encode(), group)
         
 
@@ -4485,6 +4925,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_folder_3d(self, guid):
         """
+        
         Delete a Map folder.
         
         :param guid:   Folder GUID.
@@ -4494,6 +4935,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_folder_3d(guid.encode())
         
 
@@ -4502,6 +4944,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def delete_folder_2d(self, name):
         """
+        
         Delete a 3DView folder.
         
         :param name:   Folder name.
@@ -4511,6 +4954,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._delete_folder_2d(name.encode())
         
 
@@ -4519,6 +4963,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def find_group_by_guid(self, guid):
         """
+        
         Find a Group by name.
         
         :param guid:   GUID
@@ -4531,6 +4976,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_group_by_guid(guid.encode())
         return ret_val
 
@@ -4543,6 +4989,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_working_ipj(self, ipj):
         """
+        
         Set the working projection of the view.
         
         :param ipj:    The input projection
@@ -4561,6 +5008,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `mode_pj <geosoft.gxapi.GXMVIEW.mode_pj>` to control use of the working projection.
         """
+        
         self._set_working_ipj(ipj)
         
 
@@ -4569,6 +5017,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def clear_esrild_ts(self):
         """
+        
         Clear ESRI local datum transformations currently in use.
         
 
@@ -4576,6 +5025,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clear_esrild_ts()
         
 
@@ -4584,6 +5034,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_projection_empty(self):
         """
+        
         Returns 1 if the view projection and view user projection are both empty (undefined).
         
 
@@ -4598,6 +5049,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         has projection information you should set up an empty view projection so that subsequent data added with a different
         projection is properly displayed in relation to the initial data.
         """
+        
         ret_val = self._is_projection_empty()
         return ret_val
 
@@ -4606,6 +5058,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_ipj(self, ipj):
         """
+        
         Get the projection of the view.
         
         :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the view `GXIPJ <geosoft.gxapi.GXIPJ>`
@@ -4615,6 +5068,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -4623,6 +5077,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_user_ipj(self, ipj):
         """
+        
         Get the user projection of the view.
         
         :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the view `GXIPJ <geosoft.gxapi.GXIPJ>`
@@ -4632,6 +5087,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_user_ipj(ipj)
         
 
@@ -4640,6 +5096,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def mode_pj(self, mode):
         """
+        
         Set the working projection mode
         
         :param mode:   :ref:`MVIEW_PJ`
@@ -4657,6 +5114,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             SetWorkingIPJ
         """
+        
         self._mode_pj(mode)
         
 
@@ -4665,6 +5123,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def north(self):
         """
+        
         Returns North direction at center of view.
         
 
@@ -4678,6 +5137,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** North is calculated from the `GXIPJ <geosoft.gxapi.GXIPJ>` North direction.
         It will be `rDUMMY <geosoft.gxapi.rDUMMY>` if `GXIPJ <geosoft.gxapi.GXIPJ>` is unknown.
         """
+        
         ret_val = self._north()
         return ret_val
 
@@ -4686,6 +5146,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_ipj(self, ipj):
         """
+        
         Set the projection of the view.
         
         :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the view
@@ -4700,6 +5161,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         This would be equivalent to calling :func:`_ClearWarp_IPJ'
         followed by `set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>` on the view.
         """
+        
         self._set_ipj(ipj)
         
 
@@ -4708,6 +5170,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_user_ipj(self, ipj):
         """
+        
         Set the user projection of the view.
         
         :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the view
@@ -4717,6 +5180,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_user_ipj(ipj)
         
 
@@ -4729,6 +5193,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_3d_group_flags(self, group_num):
         """
+        
         Get a 3D geometry group's 3D rendering flags.
         
         :param group_num:  Group number
@@ -4741,6 +5206,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_3d_group_flags(group_num)
         return ret_val
 
@@ -4749,6 +5215,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_3d_group_flags(self, group_num, flags):
         """
+        
         Set a 3D geometry group's 3D rendering flags.
         
         :param group_num:  Group number
@@ -4760,6 +5227,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_3d_group_flags(group_num, flags)
         
 
@@ -4768,6 +5236,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_group_freeze_scale(self, group_num, scale):
         """
+        
         Get a scale freezing value for the group (`rDUMMY <geosoft.gxapi.rDUMMY>` for disabled).
         
         :param group_num:  Group number
@@ -4779,6 +5248,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         scale.value = self._get_group_freeze_scale(group_num, scale.value)
         
 
@@ -4787,6 +5257,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_freeze_scale(self, scale):
         """
+        
         Set a scale freezing value into stream (`rDUMMY <geosoft.gxapi.rDUMMY>` for disabled).
         
         :param scale:  Freeze Scale value
@@ -4798,6 +5269,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** Objects written after this will override any scale freezing set for the group
         """
+        
         self._set_freeze_scale(scale)
         
 
@@ -4806,6 +5278,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_group_freeze_scale(self, group_num, scale):
         """
+        
         Set a scale freezing value for the group (`rDUMMY <geosoft.gxapi.rDUMMY>` for disabled).
         
         :param group_num:  Group number
@@ -4817,6 +5290,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_group_freeze_scale(group_num, scale)
         
 
@@ -4825,6 +5299,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def find_group(self, group_name):
         """
+        
         Find a Group by name.
         
         :param group_name:  Group name
@@ -4837,6 +5312,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._find_group(group_name.encode())
         return ret_val
 
@@ -4845,6 +5321,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def group_name(self, group_num, group_name):
         """
+        
         Get a group name
         
         :param group_num:   Group number, error if not valid
@@ -4856,6 +5333,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         group_name.value = self._group_name(group_num, group_name.value.encode())
         
 
@@ -4864,6 +5342,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def render(self, hdc, left, bottom, right, top, min_x, min_y, max_x, max_y):
         """
+        
         Render a specified area of view onto a Windows DC handle
         
         :param hdc:     DC Handle
@@ -4889,6 +5368,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._render(hdc, left, bottom, right, top, min_x, min_y, max_x, max_y)
         
 
@@ -4897,6 +5377,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def render_ex(self, hdc, left, bottom, right, top, min_x, min_y, max_x, max_y, asp, padding_pixel, text_rendering_hint):
         """
+        
         Render a specified area of view onto a Windows DC handle, setting the type of it and returning the new data extents
         
         :param hdc:                  DC Handle
@@ -4928,6 +5409,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._render_ex(hdc, left, bottom, right, top, min_x.value, min_y.value, max_x.value, max_y.value, asp, padding_pixel, text_rendering_hint)
         
 
@@ -4940,6 +5422,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_u_fac(self, hdc):
         """
+        
         Set the unit conversion of a view.
         
         :param hdc:    New UFac value
@@ -4949,6 +5432,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_u_fac(hdc)
         
 
@@ -4957,6 +5441,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def axis_x(self, y_loc, left, right, major_tick, minor_tick, tick_size):
         """
+        
         Draw an X axis
         
         :param y_loc:       Y location in view units
@@ -4982,6 +5467,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             rOptimumTick_MVIEW
         """
+        
         self._axis_x(y_loc, left, right, major_tick, minor_tick, tick_size)
         
 
@@ -4990,6 +5476,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def axis_y(self, x_loc, bottom, top, major_tick, minor_tick, tick_size):
         """
+        
         Draw a  Y axis
         
         :param x_loc:       X location in view units
@@ -5015,6 +5502,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             rOptimumTick_MVIEW
         """
+        
         self._axis_y(x_loc, bottom, top, major_tick, minor_tick, tick_size)
         
 
@@ -5023,6 +5511,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def grid(self, x_inc, y_inc, dx, dy, grid_type):
         """
+        
         Draw a grid in the current window
         
         :param x_inc:      X grid increment
@@ -5047,6 +5536,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `axis_x <geosoft.gxapi.GXMVIEW.axis_x>`, `axis_y <geosoft.gxapi.GXMVIEW.axis_y>`, `optimum_tick <geosoft.gxapi.GXMVIEW.optimum_tick>`
         """
+        
         self._grid(x_inc, y_inc, dx, dy, grid_type)
         
 
@@ -5055,6 +5545,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def label_fid(self, vv_x, fid_start, fid_incr, interval, y_loc, y_scale):
         """
+        
         Label fiducials on a profile
         
         :param vv_x:       X `GXVV <geosoft.gxapi.GXVV>`
@@ -5081,6 +5572,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         The incoming X `GXVV <geosoft.gxapi.GXVV>` is used to define the place for
         label.
         """
+        
         self._label_fid(vv_x, fid_start, fid_incr, interval, y_loc, y_scale)
         
 
@@ -5089,6 +5581,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def label_x(self, l_loc, left, right, lable_int, just, bound, orient):
         """
+        
         Label annotations on the X axis
         
         :param l_loc:      Y location in view units
@@ -5118,6 +5611,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `axis_x <geosoft.gxapi.GXMVIEW.axis_x>`, `axis_y <geosoft.gxapi.GXMVIEW.axis_y>`, `optimum_tick <geosoft.gxapi.GXMVIEW.optimum_tick>`
         """
+        
         self._label_x(l_loc, left, right, lable_int, just, bound, orient)
         
 
@@ -5126,6 +5620,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def label_y(self, x, bottom, top, lable_int, just, bound, orient):
         """
+        
         Label annotations on the Y axis
         
         :param x:          X location in view units
@@ -5155,6 +5650,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `axis_x <geosoft.gxapi.GXMVIEW.axis_x>`, `axis_y <geosoft.gxapi.GXMVIEW.axis_y>`, `optimum_tick <geosoft.gxapi.GXMVIEW.optimum_tick>`
         """
+        
         self._label_y(x, bottom, top, lable_int, just, bound, orient)
         
 
@@ -5163,6 +5659,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def optimum_tick(cls, min, max, sep):
         """
+        
         Return a default optimum tick interval
         
         :param min:  Minimum of range
@@ -5176,6 +5673,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         sep.value = gxapi_cy.WrapMVIEW._optimum_tick(GXContext._get_tls_geo(), min, max, sep.value)
         
 
@@ -5188,6 +5686,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def create(cls, map, name, mode):
         """
+        
         Create `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param map:   `GXMAP <geosoft.gxapi.GXMAP>` on which to place the view
@@ -5207,6 +5706,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** View scaling is set to mm on the map and the view
         origin is set to the map origin.
         """
+        
         ret_val = gxapi_cy.WrapMVIEW._create(GXContext._get_tls_geo(), map, name.encode(), mode)
         return GXMVIEW(ret_val)
 
@@ -5215,6 +5715,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def create_crooked_section(cls, map, ipj, name, x0, y0, xs, ys, scale, v_ex, dist0, elev, v_vxs, v_vx, v_vy):
         """
+        
         Creates a new crooked section view.
         
         :param map:    `GXMAP <geosoft.gxapi.GXMAP>` Object
@@ -5264,6 +5765,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         If the scale is set to `rDUMMY <geosoft.gxapi.rDUMMY>`, then it will be calculated so that
         the points will all fit horizontally.
         """
+        
         ret_val = gxapi_cy.WrapMVIEW._create_crooked_section(GXContext._get_tls_geo(), map, ipj, name.encode(), x0, y0, xs, ys, scale, v_ex, dist0, elev, v_vxs, v_vx, v_vy)
         return GXMVIEW(ret_val)
 
@@ -5272,6 +5774,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
     @classmethod
     def create_crooked_section_data_profile(cls, map, ipj, name, x0, y0, xs, ys, scale, dist0, min_z, max_z, log_z, v_vxs, v_vx, v_vy):
         """
+        
         Creates a new crooked section data profile view.
         
         :param map:    `GXMAP <geosoft.gxapi.GXMAP>` Object
@@ -5318,6 +5821,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         See Also: `create_crooked_section <geosoft.gxapi.GXMVIEW.create_crooked_section>`.
         """
+        
         ret_val = gxapi_cy.WrapMVIEW._create_crooked_section_data_profile(GXContext._get_tls_geo(), map, ipj, name.encode(), x0, y0, xs, ys, scale, dist0, min_z, max_z, log_z, v_vxs, v_vx, v_vy)
         return GXMVIEW(ret_val)
 
@@ -5328,6 +5832,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def extent(self, what, unit, min_x, min_y, max_x, max_y):
         """
+        
         Get the view extents
         
         :param what:   :ref:`MVIEW_EXTENT`
@@ -5359,6 +5864,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         The `MVIEW_EXTENT_VISIBLE <geosoft.gxapi.MVIEW_EXTENT_VISIBLE>` flag will return the union of the `MVIEW_EXTENT_CLIP <geosoft.gxapi.MVIEW_EXTENT_CLIP>` area and the
         extents of all non-masked visible groups in the view.
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._extent(what, unit, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -5367,6 +5873,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_map(self):
         """
+        
         Get the `GXMAP <geosoft.gxapi.GXMAP>` of the view.
         
 
@@ -5377,6 +5884,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_map()
         return GXMAP(ret_val)
 
@@ -5385,6 +5893,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_reg(self):
         """
+        
         Get the `GXREG <geosoft.gxapi.GXREG>` of the view.
         
 
@@ -5395,6 +5904,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_reg()
         return GXREG(ret_val)
 
@@ -5403,6 +5913,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_name(self, name):
         """
+        
         Gets the name of a view.
         
         :param name:   View name returned
@@ -5412,6 +5923,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._get_name(name.value.encode())
         
 
@@ -5420,6 +5932,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_guid(self, guid):
         """
+        
         Gets the GUID of the `GXMVIEW <geosoft.gxapi.GXMVIEW>`.
         
         :param guid:   GUID
@@ -5431,6 +5944,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **Note:** If a GUID was never queried a new one will be assigned and the map will be modified. Only if the map is saved will this value then persist.
         """
+        
         guid.value = self._get_guid(guid.value.encode())
         
 
@@ -5443,6 +5957,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def plot_to_view(self, x, y):
         """
+        
         Convert a plot coordinate in mm to a VIEW coordinate.
         
         :param x:      X in plot mm, returned in View coordinates
@@ -5454,6 +5969,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         x.value, y.value = self._plot_to_view(x.value, y.value)
         
 
@@ -5462,6 +5978,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_thin_res(self, thin):
         """
+        
         Set polyline/polygon thinning resolution
         
         :param thin:   Thinning resolution in mm, -1.0 to turn off.
@@ -5486,6 +6003,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         To turn off thinning after turning it on, call
         SetThinRes_MVIEW with a resolution of -1.
         """
+        
         self._set_thin_res(thin)
         
 
@@ -5494,6 +6012,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def view_to_plot(self, x, y):
         """
+        
         Convert a VIEW coordinate to a plot coordinate in mm.
         
         :param x:      X in View, returned in mm from plot origin
@@ -5505,6 +6024,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         x.value, y.value = self._view_to_plot(x.value, y.value)
         
 
@@ -5513,6 +6033,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def best_fit_window(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y, fit_view):
         """
+        
         Fit an area in ground coordinates centered to an area in mm on map or vise versa
         keeping X and Y scales the same.
         
@@ -5546,6 +6067,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `fit_window <geosoft.gxapi.GXMVIEW.fit_window>`
         """
+        
         m_min_x.value, m_min_y.value, m_max_x.value, m_max_y.value, v_min_x.value, v_min_y.value, v_max_x.value, v_max_y.value = self._best_fit_window(m_min_x.value, m_min_y.value, m_max_x.value, m_max_y.value, v_min_x.value, v_min_y.value, v_max_x.value, v_max_y.value, fit_view)
         
 
@@ -5554,6 +6076,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def fit_map_window_3d(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y):
         """
+        
         Set the 2D view window for a 3D view.
         
         :param m_min_x:  X minimum (mm) of the area in map relative to map origin
@@ -5589,6 +6112,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         established to fit the specified area within that
         map area.
         """
+        
         self._fit_map_window_3d(m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y)
         
 
@@ -5597,6 +6121,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def fit_window(self, m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y):
         """
+        
         Fit an area in ground coordinates to an area in mm on map.
         
         :param m_min_x:  X minimum (mm) of the area in map relative to map origin
@@ -5627,6 +6152,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `set_window <geosoft.gxapi.GXMVIEW.set_window>`
         """
+        
         self._fit_window(m_min_x, m_min_y, m_max_x, m_max_y, v_min_x, v_min_y, v_max_x, v_max_y)
         
 
@@ -5635,6 +6161,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_class_name(self, cl, name):
         """
+        
         Get a class name.
         
         :param cl:     Class
@@ -5650,6 +6177,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         names of certain classes in the view, such as "Plane"
         for the default drawing plane.
         """
+        
         name.value = self._get_class_name(cl.encode(), name.value.encode())
         
 
@@ -5658,6 +6186,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def map_origin(self, x_origin, y_origin):
         """
+        
         Get the map origin from a view
         
         :param x_origin:  Returned map origin - X
@@ -5669,6 +6198,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         x_origin.value, y_origin.value = self._map_origin(x_origin.value, y_origin.value)
         
 
@@ -5677,6 +6207,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def re_scale(self, scale):
         """
+        
         Change the scale of a view.
         
         :param scale:  Scale factor (> 0.0)
@@ -5690,6 +6221,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         The view location will move relative to the map origin
         by the scale factor.
         """
+        
         self._re_scale(scale)
         
 
@@ -5698,6 +6230,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def get_map_scale(self):
         """
+        
         Get the current map scale of the view
         
 
@@ -5708,6 +6241,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_map_scale()
         return ret_val
 
@@ -5716,6 +6250,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def scale_mm(self):
         """
+        
         Get the horizontal scale in view X units/mm
         
 
@@ -5731,6 +6266,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         would be text sizes, line thicknesses and line
         pitch.
         """
+        
         ret_val = self._scale_mm()
         return ret_val
 
@@ -5739,6 +6275,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def scale_pj_mm(self):
         """
+        
         Get horizontal scale in projected user units/mm
         
 
@@ -5755,6 +6292,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         pitch.
         Same as rScaleMM if working projection not defined
         """
+        
         ret_val = self._scale_pj_mm()
         return ret_val
 
@@ -5763,6 +6301,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def scale_ymm(self):
         """
+        
         Get the vertical scale in Y units/mm
         
 
@@ -5778,6 +6317,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         would be text sizes, line thicknesses and line
         pitch.
         """
+        
         ret_val = self._scale_ymm()
         return ret_val
 
@@ -5786,6 +6326,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def scale_all_group(self, xs, ys):
         """
+        
         Scale all groups (except for GRID) in a view
         
         :param xs:     X scale
@@ -5804,6 +6345,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         The view is then scaled back so that the view occupies the same
         area size as before.  The view's clip area is updated as well.
         """
+        
         self._scale_all_group(xs, ys)
         
 
@@ -5812,6 +6354,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def scale_window(self, min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, y_scal):
         """
+        
         Assign view coordinates to define a window.
         
         :param min_x:   X minimum in view coordinates
@@ -5843,6 +6386,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `set_window <geosoft.gxapi.GXMVIEW.set_window>`, `scale_window <geosoft.gxapi.GXMVIEW.scale_window>`, `tran_scale <geosoft.gxapi.GXMVIEW.tran_scale>`
         """
+        
         self._scale_window(min_x, min_y, max_x, max_y, bot_x, bot_y, x_scal, y_scal)
         
 
@@ -5851,6 +6395,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_class_name(self, cl, name):
         """
+        
         Set a class name.
         
         :param cl:     Class
@@ -5866,6 +6411,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         names of certain classes in the view, such as "Plane"
         for the default drawing plane.
         """
+        
         self._set_class_name(cl.encode(), name.encode())
         
 
@@ -5874,6 +6420,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def set_window(self, min_x, min_y, max_x, max_y, unit):
         """
+        
         Set the view window
         
         :param min_x:  X minimum
@@ -5898,6 +6445,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
             `fit_window <geosoft.gxapi.GXMVIEW.fit_window>`, `scale_window <geosoft.gxapi.GXMVIEW.scale_window>`, `extent <geosoft.gxapi.GXMVIEW.extent>`.
         """
+        
         self._set_window(min_x, min_y, max_x, max_y, unit)
         
 
@@ -5906,6 +6454,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def tran_scale(self, x, y, xs, ys):
         """
+        
         Set the view translation and scaling
         
         :param x:      X origin (user X to be placed at map 0)
@@ -5927,6 +6476,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         function in order to restore them. This will be addressed
         in v6.4.
         """
+        
         self._tran_scale(x, y, xs, ys)
         
 
@@ -5935,6 +6485,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def user_to_view(self, x, y):
         """
+        
         Convert a USERplot in mm to a VIEW coordinate
         
         :param x:      X in USER, returned in View coordinates
@@ -5951,6 +6502,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
             `set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`
             `get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>`
         """
+        
         x.value, y.value = self._user_to_view(x.value, y.value)
         
 
@@ -5959,6 +6511,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def view_to_user(self, x, y):
         """
+        
         Convert a VIEW coordinate to a USER coordinate.
         
         :param x:      X in View, returned in user coordinates
@@ -5975,18 +6528,266 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
             `set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`
             `get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>`
         """
+        
         x.value, y.value = self._view_to_user(x.value, y.value)
         
 
 
 
 
-# Obsolete
+# Deprecated
+
+
+
+    def draw_3d(self, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, index_vv):
+        """
+        
+        .. deprecated:: None None 
+        Draw a 3D object built from triangles
+        
+        :param vert_v_vx:  Verticies X
+        :param vert_v_vy:  Verticies Y
+        :param vert_v_vz:  Verticies Z
+        :param norm_v_vx:  Normals X
+        :param norm_v_vy:  Normals Y
+        :param norm_v_vz:  Normals Z
+        :param color_vv:   Colors `GXVV <geosoft.gxapi.GXVV>` or COL_ANY (can be NULL)
+        :param index_vv:   Long `GXVV <geosoft.gxapi.GXVV>` of triangle indexes,3 per triangle
+        :type  vert_v_vx:  GXVV
+        :type  vert_v_vy:  GXVV
+        :type  vert_v_vz:  GXVV
+        :type  norm_v_vx:  GXVV
+        :type  norm_v_vy:  GXVV
+        :type  norm_v_vz:  GXVV
+        :type  color_vv:   GXVV
+        :type  index_vv:   GXVV
+
+        .. versionadded:: 5.1.6
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This is a general 3D entity support command. You specify
+        all the verticies and the normals at the verticies and
+        possibly colors (optional). If the colors are not specified
+        the default fill color will be used. The triangles are then
+        composed using indexes into the vertices specified.
+        As of v6.4, this method creates a single group with the name
+        "surface". You should use the new Surface3D_MVIEW function,
+        which allows direct specification of a single color, and the
+        group name.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._draw_3d(vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, index_vv)
+        
+
+
+
+
+    def get_plane_ipj(self, plane, ipj):
+        """
+        
+        .. deprecated:: None None 
+        Get the Plane Projection
+        
+        :param plane:  Plane index
+        :param ipj:    Projection object returning Plane Projection
+        :type  plane:  int
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 6.3
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._get_plane_ipj(plane, ipj)
+        
+
+
+
+
+    def get_status_xyz(self, flag, z):
+        """
+        
+        .. deprecated:: None None 
+        Get current XYZ status display parameters.
+        
+        :param flag:   Enable XYZ in for status bar display
+        :param z:      Z value in viewed section coordinates (dummy if not defined).
+        :type  flag:   int_ref
+        :type  z:      float_ref
+
+        .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** See above `set_status_xyz <geosoft.gxapi.GXMVIEW.set_status_xyz>`.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        flag.value, z.value = self._get_status_xyz(flag.value, z.value)
+        
+
+
+
+
+    def poly_aggregate(self, pagg, name):
+        """
+        
+        .. deprecated:: None None 
+        Add a PolyAggregate to a view.
+        
+        :param pagg:   PolyAggregate
+        :param name:   PolyAggregate name (Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`)
+        :type  pagg:   GXAGG
+        :type  name:   str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This creates an animation on the map.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._poly_aggregate(pagg, name.encode())
+        
+
+
+
+
+    def set_plane_ipj(self, plane, ipj):
+        """
+        
+        .. deprecated:: None None 
+        Set the Plane Projection
+        
+        :param plane:  Plane index
+        :param ipj:    Projection
+        :type  plane:  int
+        :type  ipj:    GXIPJ
+
+        .. versionadded:: 5.1.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** By default it is the View's Clip Projection
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._set_plane_ipj(plane, ipj)
+        
+
+
+
+
+    def set_status_xyz(self, flag, z):
+        """
+        
+        .. deprecated:: None None 
+        Set parameters to enable XYZ status display.
+        
+        :param flag:   Enable XYZ in for status bar display
+        :param z:      Z value in viewed section coordinates
+        :type  flag:   int
+        :type  z:      float
+
+        .. versionadded:: 5.1.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** The view coordinates are displayed in X and Y, and normally
+        OE performs a `GXPJ.convert_xy <geosoft.gxapi.GXPJ.convert_xy>` on the (X, Y) value in the view
+        using the UserIPJ to display the current (X, Y) in the
+        status bar. In some views, however, (for instance sections
+        in Wholeplot), A 3D conversion is required. In a Wholeplot
+        section, the "Z" axis is perpendicular to the screen, and
+        the section center has a Z value of 0.0. The User `GXIPJ <geosoft.gxapi.GXIPJ>`
+        uses the current X,Y, and the Z supplied in this function to
+        do a proper 3D conversion and display the X,Y and Z value at
+        the specific location in the view.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._set_status_xyz(flag, z)
+        
+
+
+
+
+    def surface(self, sur, min_x, min_y, max_x, max_y, name):
+        """
+        
+        .. deprecated:: None None 
+        Add an 3d Surface to a view.
+        
+        :param sur:    Surface
+        :param min_x:  Min X of location on map
+        :param min_y:  Min Y of location on map
+        :param max_x:  Max X of location on map
+        :param max_y:  Max Y of location on map
+        :param name:   Surface name (Maximum length is `MVIEW_NAME_LENGTH <geosoft.gxapi.MVIEW_NAME_LENGTH>`)
+        :type  sur:    GXSURFACE
+        :type  min_x:  float
+        :type  min_y:  float
+        :type  max_x:  float
+        :type  max_y:  float
+        :type  name:   str
+
+        .. versionadded:: 5.0.5
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._surface(sur, min_x, min_y, max_x, max_y, name.encode())
+        
+
+
+
+
+    def draw_surface_3d(self, group_name, vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, color, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
+        """
+        
+        .. deprecated:: None None 
+        Draw a 3D object built from triangles
+        
+        :param group_name:  Group name
+        :param vert_v_vx:   Vertices X (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param vert_v_vy:   Vertices Y (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param vert_v_vz:   Vertices Z (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param norm_v_vx:   Normals X (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param norm_v_vy:   Normals Y (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param norm_v_vz:   Normals Z (`GS_REAL <geosoft.gxapi.GS_REAL>`)
+        :param color_vv:    Colors `GXVV <geosoft.gxapi.GXVV>` (`GS_INT <geosoft.gxapi.GS_INT>`) [can be NULL]
+        :param color:       Color used if above `GXVV <geosoft.gxapi.GXVV>` is NULL [0 for `GXMVIEW <geosoft.gxapi.GXMVIEW>`'s fill color]
+        :param tri_vv_pt1:  Triangles Point 1 (`GS_INT <geosoft.gxapi.GS_INT>`)
+        :param tri_vv_pt2:  Triangles Point 2 (`GS_INT <geosoft.gxapi.GS_INT>`)
+        :param tri_vv_pt3:  Triangles Point 3 (`GS_INT <geosoft.gxapi.GS_INT>`)
+        :type  group_name:  str
+        :type  vert_v_vx:   GXVV
+        :type  vert_v_vy:   GXVV
+        :type  vert_v_vz:   GXVV
+        :type  norm_v_vx:   GXVV
+        :type  norm_v_vy:   GXVV
+        :type  norm_v_vz:   GXVV
+        :type  color_vv:    GXVV
+        :type  color:       int
+        :type  tri_vv_pt1:  GXVV
+        :type  tri_vv_pt2:  GXVV
+        :type  tri_vv_pt3:  GXVV
+
+        .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Provide one normal per vertex.
+        Triangles are defined by indices into the set of vertices.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._draw_surface_3d(group_name.encode(), vert_v_vx, vert_v_vy, vert_v_vz, norm_v_vx, norm_v_vy, norm_v_vz, color_vv, color, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
+        
+
 
 
 
     def get_surface_filename(self, group, filename):
         """
+        
         Get the surface filename.
         
         :param group:     Group name
@@ -6001,6 +6802,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
         **Note:** The group must be a `GXSURFACE <geosoft.gxapi.GXSURFACE>` group. Check this using
         `is_group <geosoft.gxapi.GXMVIEW.is_group>` and `MVIEW_IS_GENSURF <geosoft.gxapi.MVIEW_IS_GENSURF>` or `MVIEW_IS_VOXSURF <geosoft.gxapi.MVIEW_IS_VOXSURF>` .
         """
+        
         filename.value = self._get_surface_filename(group.encode(), filename.value.encode())
         
 
@@ -6009,6 +6811,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
     def is_surface_item_visible(self, group, guid):
         """
+        
         Is the surface item visible?
         
         :param group:  Group name
@@ -6021,6 +6824,7 @@ class GXMVIEW(gxapi_cy.WrapMVIEW):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_surface_item_visible(group.encode(), guid.encode())
         return ret_val
 

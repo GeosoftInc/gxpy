@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
     @classmethod
     def create(cls, type, name):
         """
+        
         Create a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>`
         
         :param type:  Type
@@ -73,6 +74,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `set_properties <geosoft.gxapi.GXSURFACEITEM.set_properties>` and `set_default_render_properties <geosoft.gxapi.GXSURFACEITEM.set_default_render_properties>`
         """
+        
         ret_val = gxapi_cy.WrapSURFACEITEM._create(GXContext._get_tls_geo(), type.encode(), name.encode())
         return GXSURFACEITEM(ret_val)
 
@@ -83,6 +85,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_guid(self, guid):
         """
+        
         Gets the GUID of the surface item.
         
         :param guid:         GUID
@@ -94,6 +97,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **Note:** The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item <geosoft.gxapi.GXSURFACE.add_surface_item>`.
         """
+        
         guid.value = self._get_guid(guid.value.encode())
         
 
@@ -102,6 +106,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def set_properties(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_measure):
         """
+        
         Sets the properties of the surface item.
         
         :param type:                      Type
@@ -129,6 +134,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
+        
         self._set_properties(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_measure)
         
 
@@ -137,6 +143,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def set_properties_ex(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_option, secondary_source_measure, secondary_source_measure2):
         """
+        
         Sets the properties of the surface item (includes new properties introduced in 8.5).
         
         :param type:                       Type
@@ -168,6 +175,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
+        
         self._set_properties_ex(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_option, secondary_source_measure, secondary_source_measure2)
         
 
@@ -176,6 +184,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_properties(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_measure):
         """
+        
         Gets the properties of the surface item.
         
         :param type:                      Type
@@ -199,6 +208,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_measure.value = self._get_properties(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_measure.value)
         
 
@@ -207,6 +217,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_properties_ex(self, type, name, source_guid, source_name, source_measure, secondary_source_guid, secondary_source_name, secondary_source_option, secondary_source_measure, secondary_source_measure2):
         """
+        
         Gets the properties of the surface item  (includes new properties introduced in 8.5).
         
         :param type:                       Type
@@ -234,6 +245,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value = self._get_properties_ex(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value)
         
 
@@ -242,6 +254,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def set_default_render_properties(self, color, transparency, render_mode):
         """
+        
         Sets default render properties of the surface item.
         
         :param color:         Color
@@ -259,6 +272,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>`
         """
+        
         self._set_default_render_properties(color, transparency, render_mode)
         
 
@@ -267,6 +281,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_default_render_properties(self, color, transparency, render_mode):
         """
+        
         Gets default render properties of the surface item.
         
         :param color:         Color
@@ -284,6 +299,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `GXMVIEW.color <geosoft.gxapi.GXMVIEW.color>`
         """
+        
         color.value, transparency.value, render_mode.value = self._get_default_render_properties(color.value, transparency.value, render_mode.value)
         
 
@@ -292,6 +308,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def num_components(self):
         """
+        
         Get the number of components in the surface item.
         
 
@@ -302,6 +319,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._num_components()
         return ret_val
 
@@ -310,6 +328,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def add_mesh(self, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
+        
         Adds a triangular polyhedral mesh component to the surface item.
         
         :param vert_v_vx:    Vertices X location
@@ -332,6 +351,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._add_mesh(vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
         return ret_val
 
@@ -340,15 +360,16 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_mesh(self, index, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
+        
         Gets a triangular polyhedral mesh of a component in the surface item.
         
         :param index:        Index of the component
-        :param vert_v_vx:    Vertices X
-        :param vert_v_vy:    Vertices Y
-        :param vert_v_vz:    Vertices Z
-        :param tri_vv_pt1:   Triangles 1st Vertex
-        :param tri_vv_pt2:   Triangles 2nd Vertex
-        :param tri_vv_pt3:   Triangles 3rd Vertex
+        :param vert_v_vx:    Vertices X - VV double type
+        :param vert_v_vy:    Vertices Y - VV double type
+        :param vert_v_vz:    Vertices Z - VV double type
+        :param tri_vv_pt1:   Triangles 1st Vertex - VV unsigned int32 type
+        :param tri_vv_pt2:   Triangles 2nd Vertex - VV unsigned int32 type
+        :param tri_vv_pt3:   Triangles 3rd Vertex - VV unsigned int32 type
         :type  index:        int
         :type  vert_v_vx:    GXVV
         :type  vert_v_vy:    GXVV
@@ -361,6 +382,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_mesh(index, vert_v_vx, vert_v_vy, vert_v_vz, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
         
 
@@ -369,6 +391,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_extents(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the spatial range of the the surface item.
         
         :param min_x:        Minimum valid data in X.
@@ -388,6 +411,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_extents(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -396,6 +420,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_mesh_info(self, index, closed, n_inner_comps, area, volume, volume_confidence_interval):
         """
+        
         Gets information about a triangular polyhedral mesh component in the surface item.
         
         :param index:                       Index of the component
@@ -415,6 +440,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value = self._get_mesh_info(index, closed.value, n_inner_comps.value, area.value, volume.value, volume_confidence_interval.value)
         
 
@@ -423,6 +449,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_info(self, closed, area, volume, volume_confidence_interval):
         """
+        
         Gets information about the surface item.
         
         :param closed:                      indicating if all meshes in item is closed
@@ -438,6 +465,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         closed.value, area.value, volume.value, volume_confidence_interval.value = self._get_info(closed.value, area.value, volume.value, volume_confidence_interval.value)
         
 
@@ -446,6 +474,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def get_geometry_info(self, vertices, triangles):
         """
+        
         Get the total number of vertices and triangles of all mesh components in item.
         
         :param vertices:     Total number of vertices
@@ -457,6 +486,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         vertices.value, triangles.value = self._get_geometry_info(vertices.value, triangles.value)
         
 
@@ -465,6 +495,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def compute_extended_info(self, components, vertices, edges, triangles, inconsistent, invalid, intersectiona):
         """
+        
         Compute more information (including validation) about of all mesh components in the surface item.
         
         :param components:     Number of inner components (recomputed)
@@ -486,6 +517,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value = self._compute_extended_info(components.value, vertices.value, edges.value, triangles.value, inconsistent.value, invalid.value, intersectiona.value)
         
 
@@ -494,6 +526,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def compute_poly_line_intersections(self, vv_x, vv_y, vv_z, vv_x_out, vv_y_out, vv_z_out):
         """
+        
         Compute intersections of a 3D PolyLine with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
         
         :param vv_x:         X coordinates.
@@ -513,6 +546,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._compute_poly_line_intersections(vv_x, vv_y, vv_z, vv_x_out, vv_y_out, vv_z_out)
         
 
@@ -521,6 +555,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
     def intersects_bounding_box(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Checks intersections of a bounding box with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
         
         :param min_x:        Min X
@@ -541,6 +576,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._intersects_bounding_box(min_x, min_y, min_z, max_x, max_y, max_z)
         return ret_val
 

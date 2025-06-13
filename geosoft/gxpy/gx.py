@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 """
 GX Context and related methods required for Geosoft Python.
 
@@ -401,7 +401,7 @@ class GXpyContext:
         self._temp_file_folder = None
         self._keep_temp_files = True
 
-        self._start = datetime.datetime.utcnow()
+        self._start = datetime.datetime.now(datetime.timezone.utc)
         self._gxid = gxu.uuid()
         self._entitlements = None
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXPG import GXPG
@@ -58,6 +58,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def calc_stats(self, st):
         """
+        
         Calculate Statistics
         
         :param st:   `GXST <geosoft.gxapi.GXST>` Object
@@ -67,6 +68,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._calc_stats(st)
         
 
@@ -75,6 +77,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def create(cls, name):
         """
+        
         Create a handle to an `GXVOX <geosoft.gxapi.GXVOX>` object
         
         :param name:  File Name
@@ -87,6 +90,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._create(GXContext._get_tls_geo(), name.encode())
         return GXVOX(ret_val)
 
@@ -95,6 +99,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def create_pg(self):
         """
+        
         Create a 3D `GXPG <geosoft.gxapi.GXPG>` from a `GXVOX <geosoft.gxapi.GXVOX>` object
         
 
@@ -105,6 +110,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create_pg()
         return GXPG(ret_val)
 
@@ -113,6 +119,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def create_type_pg(self, type):
         """
+        
         Create a 3D `GXPG <geosoft.gxapi.GXPG>` from a `GXVOX <geosoft.gxapi.GXVOX>` object with a specific Type
         
         :param type:  :ref:`GS_TYPES`
@@ -125,6 +132,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._create_type_pg(type)
         return GXPG(ret_val)
 
@@ -135,6 +143,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def dump(self, name):
         """
+        
         Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` in all directions.
         
         :param name:  Name of grids (each layers adds _Dir_Z to the name)
@@ -144,6 +153,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._dump(name.encode())
         
 
@@ -152,6 +162,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def export_img(self, name, dir):
         """
+        
         Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` into grid files.
         
         :param name:  Name of grids (each layers adds _Number to the name)
@@ -163,6 +174,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_img(name.encode(), dir)
         
 
@@ -171,6 +183,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def export_to_grids(self, name, dir, start, incr, num, cell_size, interp):
         """
+        
         Export all layers of this `GXVOX <geosoft.gxapi.GXVOX>` into grid files, with optional cell size.
         
         :param name:       Name of grids (each layers adds _Number to the name)
@@ -196,6 +209,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         1. If the cell sizes are uniform in a given direction, that size is used
         2. If the cell sizes are variable in a given direction, then the smallest size is used
         """
+        
         self._export_to_grids(name.encode(), dir, start, incr, num, cell_size, interp)
         
 
@@ -204,6 +218,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def export_xml(cls, voxel, crc, file):
         """
+        
         Export a `GXVOX <geosoft.gxapi.GXVOX>` to a compressed XML file
         
         :param voxel:  Voxel file name
@@ -217,6 +232,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         crc.value = gxapi_cy.WrapVOX._export_xml(GXContext._get_tls_geo(), voxel.encode(), crc.value, file.encode())
         
 
@@ -225,6 +241,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def export_seg_y(self, output_segy_filename, sample_interval):
         """
+        
         Export a voxel to a depth SEG-Y file
         
         :param output_segy_filename:  SEG-Y filename to create
@@ -236,6 +253,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_seg_y(output_segy_filename.encode(), sample_interval)
         
 
@@ -244,6 +262,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def export_ji_gs_xml(cls, voxel, file):
         """
+        
         Export a `GXVOX <geosoft.gxapi.GXVOX>` to a compressed XML file. Verbose version.
         
         :param voxel:  Voxel file name
@@ -255,6 +274,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVOX._export_ji_gs_xml(GXContext._get_tls_geo(), voxel.encode(), file.encode())
         
 
@@ -263,6 +283,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def export_xyz(self, xyz, dir, rev_x, rev_y, rev_z, dummies):
         """
+        
         Export a Voxel to an XYZ File
         
         :param xyz:      File Name
@@ -282,6 +303,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._export_xyz(xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
         
 
@@ -290,6 +312,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def filter(self, filter, filter_file, n_passes, interpolate_dummies, output_vox):
         """
+        
         Apply a 3D filter to a voxel.
         
         :param filter:               :ref:`VOX_FILTER3D`
@@ -307,6 +330,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._filter(filter, filter_file.encode(), n_passes, interpolate_dummies, output_vox.encode())
         
 
@@ -315,6 +339,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_db(cls, voxel_file, db, symb):
         """
+        
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a Database
         
         :param voxel_file:  Voxel Name
@@ -328,6 +353,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVOX._generate_db(GXContext._get_tls_geo(), voxel_file.encode(), db, symb)
         
 
@@ -336,6 +362,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_vector_voxel_from_db(cls, voxel_file, db, type, symb_x, symb_y, symb_z, inc, dec):
         """
+        
         Generate a vector voxel `GXVOX <geosoft.gxapi.GXVOX>` from a Database
         
         :param voxel_file:  Voxel Name
@@ -359,6 +386,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVOX._generate_vector_voxel_from_db(GXContext._get_tls_geo(), voxel_file.encode(), db, type, symb_x, symb_y, symb_z, inc, dec)
         
 
@@ -367,6 +395,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_pg(cls, name, pg, ox, oy, oz, cx, cy, cz, ipj, meta):
         """
+        
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a 3D Pager
         
         :param name:  Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -397,6 +426,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._generate_pg(GXContext._get_tls_geo(), name.encode(), pg, ox, oy, oz, cx, cy, cz, ipj, meta)
         return GXVOX(ret_val)
 
@@ -405,6 +435,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_pgvv(cls, name, pg, ox, oy, oz, cx, cy, cz, ipj, meta):
         """
+        
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a 3D Pager, cells sizes passed in VVs.
         
         :param name:  Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -437,7 +468,37 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** The input cell size VVs' lengths must match the input `GXPG <geosoft.gxapi.GXPG>` dimensions.
         """
+        
         ret_val = gxapi_cy.WrapVOX._generate_pgvv(GXContext._get_tls_geo(), name.encode(), pg, ox, oy, oz, cx, cy, cz, ipj, meta)
+        return GXVOX(ret_val)
+
+
+
+    @classmethod
+    def generate_from_grid(cls, grid_name, vox_name, constantValue):
+        """
+        
+        Create a single-layer VOX object from a grid
+        
+        :param grid_name:      Input Grid File Name
+        :param vox_name:       Output Voxel File Name
+        :param constantValue:  Constant value for output voxel if NOT DUMMY
+        :type  grid_name:      str
+        :type  vox_name:       str
+        :type  constantValue:  float
+
+        :returns:              `GXVOX <geosoft.gxapi.GXVOX>` handle, terminates if creation fails
+        :rtype:                GXVOX
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Data type, cell sizes and projection are defined from the input grid; values set to the input grid values,
+        or to the input "constant" value if it is not dummy.
+        """
+        
+        ret_val = gxapi_cy.WrapVOX._generate_from_grid(GXContext._get_tls_geo(), grid_name.encode(), vox_name.encode(), constantValue)
         return GXVOX(ret_val)
 
 
@@ -445,6 +506,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def init_generate_by_subset_pg(cls, data_type, nx, ny, nz):
         """
+        
         Initialize the generate of a `GXVOX <geosoft.gxapi.GXVOX>` from a series of 3D subset pagers
         
         :param data_type:  :ref:`GS_TYPES`
@@ -466,6 +528,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** Call `init_generate_by_subset_pg <geosoft.gxapi.GXVOX.init_generate_by_subset_pg>` first, then add a series of subset PGs using `add_generate_by_subset_pg <geosoft.gxapi.GXVOX.add_generate_by_subset_pg>`, and finally
         serialize using `end_generate_by_subset_pg <geosoft.gxapi.GXVOX.end_generate_by_subset_pg>`
         """
+        
         ret_val = gxapi_cy.WrapVOX._init_generate_by_subset_pg(GXContext._get_tls_geo(), data_type, nx, ny, nz)
         return GXVOX(ret_val)
 
@@ -474,6 +537,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def add_generate_by_subset_pg(self, pg, dir, offset):
         """
+        
         Add a subset 3D  pagers. These should be "slabs", 16 wide in the input direction, and the size of the
         full voxel in the other two directions.
         
@@ -490,6 +554,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** See `init_generate_by_subset_pg <geosoft.gxapi.GXVOX.init_generate_by_subset_pg>` and `end_generate_by_subset_pg <geosoft.gxapi.GXVOX.end_generate_by_subset_pg>`.
         """
+        
         self._add_generate_by_subset_pg(pg, dir, offset)
         
 
@@ -498,6 +563,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def end_generate_by_subset_pg(self, name, ox, oy, oz, cx, cy, cz, ipj, meta):
         """
+        
         Output the voxel, after adding all the subset PGs.
         
         :param name:  Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -525,6 +591,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** You must begin by calling `init_generate_by_subset_pg <geosoft.gxapi.GXVOX.init_generate_by_subset_pg>` and add data using `add_generate_by_subset_pg <geosoft.gxapi.GXVOX.add_generate_by_subset_pg>`.
         """
+        
         self._end_generate_by_subset_pg(name.encode(), ox, oy, oz, cx, cy, cz, ipj, meta)
         
 
@@ -533,6 +600,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_area(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the area of the voxel.
         
         :param min_x:  Min X
@@ -552,6 +620,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_area(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -560,6 +629,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_gocad_location(self, origin_x, origin_y, origin_z, vect_xx, vect_xy, vect_xz, vect_yx, vect_yy, vect_yz, vect_zx, vect_zy, vect_zz):
         """
+        
         Get the location of a voxel with origin and scaled xyz vectors for use with GOCAD.
         
         :param origin_x:  Origin X
@@ -594,6 +664,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** This is used for GOCAD voxel calculations, and begins with the
         origin at (0,0,0), not the actual location of the corner point.
         """
+        
         origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value = self._get_gocad_location(origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value)
         
 
@@ -602,6 +673,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_grid_section_cell_sizes(self, az, cell_size_x, cell_size_y):
         """
+        
         Get default cell sizes in X and Y for a section grid.
         
         :param az:           Input section azimuth (degrees CCW from North)
@@ -632,6 +704,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         then the returned "X" cells size is equal to the voxel's minimum "Y" cell size.
         The grid's "Y" cell size is set to the voxel's minimum "Z" cell size.
         """
+        
         cell_size_x.value, cell_size_y.value = self._get_grid_section_cell_sizes(az, cell_size_x.value, cell_size_y.value)
         
 
@@ -640,6 +713,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_info(self, type, array, x, y, z):
         """
+        
         Get information about a voxel.
         
         :param type:   Data Type
@@ -657,6 +731,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         type.value, array.value, x.value, y.value, z.value = self._get_info(type.value, array.value, x.value, y.value, z.value)
         
 
@@ -665,6 +740,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_ipj(self, ipj):
         """
+        
         Get the projection of the voxel.
         
         :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` object to save `GXVOX <geosoft.gxapi.GXVOX>`'s meta to
@@ -674,6 +750,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -682,6 +759,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_limits(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the range of indices with non-dummy data.
         
         :param min_x:  Index of minimum valid data in X.
@@ -704,6 +782,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** Find the non-dummy volume of a `GXVOX <geosoft.gxapi.GXVOX>` object. If the voxel is all dummies,
         returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_limits(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -712,6 +791,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_limits_xyz(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the range in true XYZ of non-dummy data.
         
         :param min_x:  Minimum valid data in X.
@@ -738,6 +818,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         center points. If the voxel is all dummies,
         returns `rMAX <geosoft.gxapi.rMAX>` for the minima, and `rMIN <geosoft.gxapi.rMIN>` for the maxima.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_limits_xyz(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -746,6 +827,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_location(self, origin_x, origin_y, origin_z, vv_x, vv_y, vv_z):
         """
+        
         Get Location information
         
         :param origin_x:  Origin X
@@ -765,6 +847,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         origin_x.value, origin_y.value, origin_z.value = self._get_location(origin_x.value, origin_y.value, origin_z.value, vv_x, vv_y, vv_z)
         
 
@@ -773,6 +856,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_location_points(self, vv_x, vv_y, vv_z):
         """
+        
         Get the computed location points.
         
         :param vv_x:  Locations in X
@@ -786,6 +870,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_location_points(vv_x, vv_y, vv_z)
         
 
@@ -794,6 +879,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_meta(self, meta):
         """
+        
         Get the metadata of a voxel.
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to save `GXVOX <geosoft.gxapi.GXVOX>`'s meta to
@@ -803,6 +889,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_meta(meta)
         
 
@@ -811,6 +898,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_double_location(self, origin_x, origin_y, origin_z, vect_xx, vect_xy, vect_xz, vect_yx, vect_yy, vect_yz, vect_zx, vect_zy, vect_zz):
         """
+        
         Get the location of a voxel with origin and scaled xyz vectors
         
         :param origin_x:  Origin X
@@ -842,6 +930,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value = self._get_double_location(origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value)
         
 
@@ -850,6 +939,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_simple_location(self, origin_x, origin_y, origin_z, cell_x, cell_y, cell_z):
         """
+        
         Get Simple Location information
         
         :param origin_x:  Origin X
@@ -869,6 +959,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         origin_x.value, origin_y.value, origin_z.value, cell_x.value, cell_y.value, cell_z.value = self._get_simple_location(origin_x.value, origin_y.value, origin_z.value, cell_x.value, cell_y.value, cell_z.value)
         
 
@@ -877,6 +968,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_stats(self):
         """
+        
         Get precomputed statistics on this object.
         
 
@@ -887,6 +979,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_stats()
         return GXST(ret_val)
 
@@ -895,6 +988,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_tpat(self, tpat):
         """
+        
         Get a copy of a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         
         :param tpat:  `GXTPAT <geosoft.gxapi.GXTPAT>` object to get
@@ -911,6 +1005,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         or COLOR info can be changed.
         The `GXTPAT <geosoft.gxapi.GXTPAT>` object is stored inside the `GXVOX <geosoft.gxapi.GXVOX>` `GXMETA <geosoft.gxapi.GXMETA>` object.
         """
+        
         self._get_tpat(tpat)
         
 
@@ -919,6 +1014,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def grid_points(cls, name, error, cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
+        
         Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s.
         
         :param name:        Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -968,6 +1064,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._grid_points(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
@@ -976,6 +1073,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def grid_points_z(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
+        
         Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s (using variable Z's)
         
         :param name:         Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -1027,6 +1125,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._grid_points_z(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
@@ -1035,6 +1134,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
+        
         Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s (using variable Z's)
         
         :param name:                 Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -1096,6 +1196,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX._grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
@@ -1104,6 +1205,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def can_append_to(self, surface_file):
         """
+        
         Check if this voxel can append to a surface file.
         
         :param surface_file:  Surface file
@@ -1116,6 +1218,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._can_append_to(surface_file.encode())
         return ret_val
 
@@ -1124,6 +1227,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def get_cell_size_strings(self, loc_x, loc_y, loc_z, scale_x, scale_y, scale_z):
         """
+        
         Get the Location Strings
         
         :param loc_x:    X String
@@ -1143,6 +1247,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         loc_x.value, loc_y.value, loc_z.value = self._get_cell_size_strings(loc_x.value.encode(), loc_y.value.encode(), loc_z.value.encode(), scale_x, scale_y, scale_z)
         
 
@@ -1151,6 +1256,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def is_thematic(self):
         """
+        
         Is this a thematic voxel?
         
 
@@ -1167,6 +1273,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         normal numerical operations, such as applying ITRs for display,
         are not valid.
         """
+        
         ret_val = self._is_thematic()
         return ret_val
 
@@ -1175,6 +1282,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def is_vector_voxel(self):
         """
+        
         Is this a vector voxel?
         
 
@@ -1188,6 +1296,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** A vector voxel is one where each data element consists of 3 4-byte float values.
         Vector voxels normally have the file type "geosoft_vectorvoxel".
         """
+        
         ret_val = self._is_vector_voxel()
         return ret_val
 
@@ -1196,6 +1305,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def set_cell_size_strings(self, loc_x, loc_y, loc_z):
         """
+        
         Set the Location Strings
         
         :param loc_x:  X String
@@ -1213,6 +1323,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._set_cell_size_strings(loc_x.encode(), loc_y.encode(), loc_z.encode())
         return ret_val
 
@@ -1221,6 +1332,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def log_grid_points_z_ex(cls, name, error, cell_size, cell_size_z, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
+        
         Log grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s (using variable Z's)
         
         :param name:                 Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -1286,6 +1398,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX._log_grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
@@ -1294,6 +1407,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def krig(cls, name, cell_size, type, vv_x, vv_y, vv_z, vv_d, ipj, reg):
         """
+        
         A more compact and extensible form of `log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`.
         
         :param name:       Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -1351,6 +1465,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`. Only the most
         basic parameters are entered directly. Optional parameters are passed via a `GXREG <geosoft.gxapi.GXREG>` object.
         """
+        
         ret_val = gxapi_cy.WrapVOX._krig(GXContext._get_tls_geo(), name.encode(), cell_size, type, vv_x, vv_y, vv_z, vv_d, ipj, reg)
         return GXVOX(ret_val)
 
@@ -1359,6 +1474,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def math(cls, master, mastervar, output, outvar, formula, lst):
         """
+        
         Produces a new voxes using a formula on existing voxels/Grids
         
         :param master:     Master `GXVOX <geosoft.gxapi.GXVOX>` Name
@@ -1383,6 +1499,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** The input voxels must all be of the same type.
         """
+        
         ret_val = gxapi_cy.WrapVOX._math(GXContext._get_tls_geo(), master.encode(), mastervar.encode(), output.encode(), outvar.encode(), formula.encode(), lst)
         return GXVOX(ret_val)
 
@@ -1391,6 +1508,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def merge(self, vox2, reg, output_vox):
         """
+        
         Merge two Voxels.
         
         :param vox2:        `GXVOX <geosoft.gxapi.GXVOX>` object
@@ -1404,6 +1522,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._merge(vox2, reg, output_vox.encode())
         
 
@@ -1412,6 +1531,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def nearest_neighbour_grid(cls, name, cell_size, max_radius, type, vv_x, vv_y, vv_z, vv_d, ipj):
         """
+        
         Grid a `GXVOX <geosoft.gxapi.GXVOX>` from point `GXVV <geosoft.gxapi.GXVV>`'s using the Nearest Neighbours method.
         
         :param name:        Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -1439,6 +1559,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._nearest_neighbour_grid(GXContext._get_tls_geo(), name.encode(), cell_size, max_radius, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
@@ -1447,6 +1568,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def compute_cell_size(cls, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Compute the Cell size based on specific Area
         
         :param min_x:  MinX
@@ -1469,6 +1591,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._compute_cell_size(GXContext._get_tls_geo(), min_x, min_y, min_z, max_x, max_y, max_z)
         return ret_val
 
@@ -1477,6 +1600,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def re_grid(self, vox_to_regrid, reg, output_vox):
         """
+        
         Regrid a Voxel.
         
         :param vox_to_regrid:  `GXVOX <geosoft.gxapi.GXVOX>` object to regrid
@@ -1490,6 +1614,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._re_grid(vox_to_regrid, reg, output_vox.encode())
         
 
@@ -1498,6 +1623,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def resample_pg(self, ipj, orig_x, orig_y, orig_z, spacing_x, spacing_y, spacing_z, size_x, size_y, size_z, min_z, max_z, interp):
         """
+        
         Resample a voxel over an input volume to a `GXPG <geosoft.gxapi.GXPG>`.
         
         :param ipj:        Projection to use for Origin, Spacing values
@@ -1538,6 +1664,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         dimensions, then resamples the voxel to the pager
         at the locations determined by input projection, origin and spacings.
         """
+        
         ret_val = self._resample_pg(ipj, orig_x, orig_y, orig_z, spacing_x, spacing_y, spacing_z, size_x, size_y, size_z, min_z, max_z, interp)
         return GXPG(ret_val)
 
@@ -1546,6 +1673,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def rescale_cell_sizes(self, scale):
         """
+        
         Multiply all cell sizes by a fixed factor.
         
         :param scale:  Scaling factor (>0)
@@ -1560,6 +1688,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         and the projection's unit changes, since the voxel inherits
         its projection's units.
         """
+        
         self._rescale_cell_sizes(scale)
         
 
@@ -1568,6 +1697,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def sample_cdi(self, db, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, out_ch):
         """
+        
         Sample a voxel at locations/elevations in a CDI database.
         
         :param db:                    CDI Database handle
@@ -1602,6 +1732,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         default; use the "Negative depths down" parameter if the depths
         become more negative as you go deeper.
         """
+        
         self._sample_cdi(db, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, out_ch.encode())
         
 
@@ -1610,6 +1741,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def sample_cdi_to_topography(self, db, line, x_ch, y_ch, zvv, mode, out_ch, topo_ch):
         """
+        
         Sample a voxel at fixed elevations along a path in a CDI database, and output them to an array channel, deleting leading dummy values, and
         writing the elevation of the first non-dummy item to a topography channel.
         
@@ -1634,6 +1766,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._sample_cdi_to_topography(db, line, x_ch, y_ch, zvv, mode, out_ch.encode(), topo_ch.encode())
         
 
@@ -1642,6 +1775,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def sample_vv(self, xvv, yvv, zvv, interp, dvv):
         """
+        
         Sample a voxel at multiple locations.
         
         :param xvv:     X locations (input)
@@ -1661,6 +1795,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** Sample at voxel at XYZ locations input in VVs. Values returned in a `GXVV <geosoft.gxapi.GXVV>`.
         """
+        
         self._sample_vv(xvv, yvv, zvv, interp, dvv)
         
 
@@ -1669,6 +1804,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def set_ipj(self, ipj):
         """
+        
         Set the projection of the voxel.
         
         :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` object to save `GXVOX <geosoft.gxapi.GXVOX>`'s meta to
@@ -1678,6 +1814,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_ipj(ipj)
         
 
@@ -1686,6 +1823,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def set_location(self, origin_x, origin_y, origin_z, vv_x, vv_y, vv_z):
         """
+        
         Set Location information
         
         :param origin_x:  Origin X
@@ -1705,6 +1843,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_location(origin_x, origin_y, origin_z, vv_x, vv_y, vv_z)
         
 
@@ -1713,6 +1852,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def set_meta(self, meta):
         """
+        
         Set the metadata of a voxel.
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to add to `GXVOX <geosoft.gxapi.GXVOX>`'s meta
@@ -1722,6 +1862,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta(meta)
         
 
@@ -1730,6 +1871,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def set_origin(self, origin, origin_x, origin_y, origin_z):
         """
+        
         Set the Voxel Origin
         
         :param origin:    Type of origin being set :ref:`VOX_ORIGIN`
@@ -1745,6 +1887,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_origin(origin, origin_x, origin_y, origin_z)
         
 
@@ -1753,6 +1896,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def set_simple_location(self, origin_x, origin_y, origin_z, cell_x, cell_y, cell_z):
         """
+        
         Set Simple Location information
         
         :param origin_x:  Origin X
@@ -1772,6 +1916,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_simple_location(origin_x, origin_y, origin_z, cell_x, cell_y, cell_z)
         
 
@@ -1780,6 +1925,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def set_tpat(self, tpat):
         """
+        
         Set a thematic voxel's `GXTPAT <geosoft.gxapi.GXTPAT>` object.
         
         :param tpat:  `GXTPAT <geosoft.gxapi.GXTPAT>` object to store
@@ -1796,6 +1942,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         or COLOR info can be changed.
         The `GXTPAT <geosoft.gxapi.GXTPAT>` object is stored inside the `GXVOX <geosoft.gxapi.GXVOX>` `GXMETA <geosoft.gxapi.GXMETA>` object.
         """
+        
         self._set_tpat(tpat)
         
 
@@ -1804,6 +1951,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def slice_ipj(self, name, ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y):
         """
+        
         Extract a slice of a voxel based on an `GXIPJ <geosoft.gxapi.GXIPJ>`
         
         :param name:         Grid Name
@@ -1829,6 +1977,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._slice_ipj(name.encode(), ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y)
         
 
@@ -1837,6 +1986,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def slice_multi_layer_ipj(self, name, ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y, layers, start_elev, elev_inc):
         """
+        
         Extract multiple slices of a voxel based on an `GXIPJ <geosoft.gxapi.GXIPJ>`
         
         :param name:         Grid Name
@@ -1868,6 +2018,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._slice_multi_layer_ipj(name.encode(), ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y, layers, start_elev, elev_inc)
         
 
@@ -1876,6 +2027,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def subset_to_double_extents(self, output_vox):
         """
+        
         Subset a `GXVOX <geosoft.gxapi.GXVOX>` to real extents.
         
         :param output_vox:  Output voxel file name.
@@ -1885,6 +2037,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._subset_to_double_extents(output_vox.encode())
         
 
@@ -1893,6 +2046,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def sync(cls, name):
         """
+        
         Syncronize the Metadata for this Voxel
         
         :param name:  Voxel name
@@ -1902,6 +2056,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVOX._sync(GXContext._get_tls_geo(), name.encode())
         
 
@@ -1910,6 +2065,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def window_ply(self, pply, mask, min_z, max_z, output_vox, clip_dummies):
         """
+        
         Window a `GXVOX <geosoft.gxapi.GXVOX>` to a `GXPLY <geosoft.gxapi.GXPLY>` file and Z.
         
         :param pply:          `GXPLY <geosoft.gxapi.GXPLY>` object
@@ -1933,6 +2089,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         Optionally, it will be windowed to the input Z range as well.
         The output can be clipped to the non-dummied cells.
         """
+        
         self._window_ply(pply, mask, min_z, max_z, output_vox.encode(), clip_dummies)
         
 
@@ -1941,6 +2098,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def window_xyz(self, min_x, min_y, min_z, max_x, max_y, max_z, output_vox, clip_dummies):
         """
+        
         Window a `GXVOX <geosoft.gxapi.GXVOX>` to ranges in X, Y and Z.
         
         :param min_x:         Minimum X (optional, `rDUMMY <geosoft.gxapi.rDUMMY>` for no minimum)
@@ -1967,6 +2125,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** The six minima and maxima are optional.
         The output can be clipped to the non-dummied cells.
         """
+        
         self._window_xyz(min_x, min_y, min_z, max_x, max_y, max_z, output_vox.encode(), clip_dummies)
         
 
@@ -1975,6 +2134,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def write_xml(self, file):
         """
+        
         Export the `GXVOX <geosoft.gxapi.GXVOX>` to XML
         
         :param file:  XML file to create
@@ -1984,6 +2144,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_xml(file.encode())
         
 
@@ -1992,6 +2153,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def convert_numeric_to_thematic(self, vv_translate, output_vox):
         """
+        
         Convert numeric voxel to thematic (lithology) voxel
         
         :param vv_translate:  Translation `GXVV <geosoft.gxapi.GXVV>` handle.
@@ -2003,6 +2165,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._convert_numeric_to_thematic(vv_translate, output_vox.encode())
         
 
@@ -2011,6 +2174,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def convert_thematic_to_numeric(self, vv_translate, output_vox):
         """
+        
         Convert thematic (lithology) voxel to numeric voxel
         
         :param vv_translate:  Translation `GXVV <geosoft.gxapi.GXVV>` handle.
@@ -2022,6 +2186,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._convert_thematic_to_numeric(vv_translate, output_vox.encode())
         
 
@@ -2030,6 +2195,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def convert_velocity_to_density(self, input_scaling_factor, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename):
         """
+        
         Produces a density voxel using the velocity values in this voxel.
         
         :param input_scaling_factor:   1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.
@@ -2055,6 +2221,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._convert_velocity_to_density(input_scaling_factor, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
         
 
@@ -2063,6 +2230,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def convert_velocity_in_range_to_density(self, input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename):
         """
+        
         Produces a density voxel using the velocity values in this voxel, as long as the velocity values are in range.
         
         :param input_scaling_factor:   1.0, if this voxel is in meters per second. Otherwise, a value by which each input cell is multiplied to convert it into meters per second.
@@ -2092,6 +2260,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._convert_velocity_in_range_to_density(input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
         
 
@@ -2100,6 +2269,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def convert_density_to_velocity(self, input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename):
         """
+        
         Produces a velocity voxel using the density values in this voxel.
         
         :param input_scaling_factor:   1.0, if this voxel is in g/cm^3. Otherwise, a value by which each input cell is multiplied to convert it into g/cm^3.
@@ -2129,6 +2299,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._convert_density_to_velocity(input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
         
 
@@ -2137,6 +2308,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def invert_z(self, output_voxel_filename):
         """
+        
         Convert an inverted voxel to normal orientation
         
         :param output_voxel_filename:  Output voxel file name.
@@ -2146,6 +2318,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._invert_z(output_voxel_filename.encode())
         
 
@@ -2154,6 +2327,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def dw_grid_db(cls, voxel, db, x, y, z, data, reg):
         """
+        
         `dw_grid_db <geosoft.gxapi.GXVOX.dw_grid_db>`     Inverse-distance weighting gridding method, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
         
         :param voxel:  Output voxel name
@@ -2195,6 +2369,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         LOG_BASE: One of `VV_LOG_BASE_10 <geosoft.gxapi.VV_LOG_BASE_10>` (default) or `VV_LOG_BASE_E <geosoft.gxapi.VV_LOG_BASE_E>`
         LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO <geosoft.gxapi.VV_LOG_NEGATIVE_NO>` (default) or `VV_LOG_NEGATIVE_YES <geosoft.gxapi.VV_LOG_NEGATIVE_YES>`
         """
+        
         gxapi_cy.WrapVOX._dw_grid_db(GXContext._get_tls_geo(), voxel.encode(), db, x, y, z, data, reg)
         
 
@@ -2203,6 +2378,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def tin_grid_db(cls, voxel, db, x, y, z, data, method, z_cell, reg):
         """
+        
         `tin_grid_db <geosoft.gxapi.GXVOX.tin_grid_db>`   `GXTIN <geosoft.gxapi.GXTIN>`-Gridding, `GXDB <geosoft.gxapi.GXDB>` version, 3D.
         
         :param voxel:   Output voxel name
@@ -2238,6 +2414,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         NX, NY, NZ: Voxel dimensions.
         DZ and NZ are used only if the input cell sizes `GXVV <geosoft.gxapi.GXVV>` is of zero length.
         """
+        
         gxapi_cy.WrapVOX._tin_grid_db(GXContext._get_tls_geo(), voxel.encode(), db, x, y, z, data, method, z_cell, reg)
         
 
@@ -2246,6 +2423,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def get_multi_voxset_guid(cls, voxel_file, p_uuid_string):
         """
+        
         Get the UUID
         
         :param voxel_file:     Input Voxel file
@@ -2257,6 +2435,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         p_uuid_string.value = gxapi_cy.WrapVOX._get_multi_voxset_guid(GXContext._get_tls_geo(), voxel_file.encode(), p_uuid_string.value.encode())
         
 
@@ -2265,6 +2444,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_gocad(cls, name, header, property, ipj):
         """
+        
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a GOCAD File
         
         :param name:      Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -2282,6 +2462,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._generate_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj)
         return GXVOX(ret_val)
 
@@ -2290,6 +2471,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_oriented_gocad(cls, name, header, property, ipj, orientation):
         """
+        
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a GOCAD File
         
         :param name:         Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -2311,6 +2493,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** Allows the Orientation flag to be specified.
         """
+        
         ret_val = gxapi_cy.WrapVOX._generate_oriented_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj, orientation)
         return GXVOX(ret_val)
 
@@ -2319,6 +2502,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_ubc(cls, name, mesh, mod, dummy, ipj):
         """
+        
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from a UBC File
         
         :param name:   Name of output `GXVOX <geosoft.gxapi.GXVOX>`
@@ -2339,6 +2523,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapVOX._generate_ubc(GXContext._get_tls_geo(), name.encode(), mesh.encode(), mod.encode(), dummy, ipj)
         return GXVOX(ret_val)
 
@@ -2347,6 +2532,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def generate_xyz(cls, name, ra, type, ipj):
         """
+        
         Generate a `GXVOX <geosoft.gxapi.GXVOX>` from an XYZ File
         
         :param name:  Voxel Name
@@ -2362,6 +2548,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVOX._generate_xyz(GXContext._get_tls_geo(), name.encode(), ra, type, ipj)
         
 
@@ -2370,6 +2557,7 @@ class GXVOX(gxapi_cy.WrapVOX):
     @classmethod
     def list_gocad_properties(cls, header, lst):
         """
+        
         List all the properties available in this GOCAD file.
         
         :param header:  Name of GOCAD Voxel file
@@ -2381,6 +2569,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapVOX._list_gocad_properties(GXContext._get_tls_geo(), header.encode(), lst)
         
 
@@ -2389,6 +2578,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
     def export_db(self, db, chan, dir, rev_x, rev_y, rev_z, dummies):
         """
+        
         Export a Voxel to a database
         
         :param db:       Database
@@ -2412,7 +2602,134 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** The database lines contain a slice of the voxel at a time.
         """
+        
         self._export_db(db, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        
+
+
+
+
+# Deprecated
+
+
+    @classmethod
+    def generate_constant_value(cls, name, value, type, ox, oy, oz, cx, cy, cz, cell_count_x, cell_count_y, cell_count_z, ipj, meta):
+        """
+        
+        .. deprecated:: None None 
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` with a constant value
+        
+        :param name:          Name of output `GXVOX <geosoft.gxapi.GXVOX>`
+        :param value:         Value to use
+        :param type:          :ref:`GS_TYPES`
+        :param ox:            Origin X
+        :param oy:            Origin Y
+        :param oz:            Origin Z
+        :param cx:            Cell Size X
+        :param cy:            Cell Size Y
+        :param cz:            Cell Size Z
+        :param cell_count_x:  Cell Count X
+        :param cell_count_y:  Cell Count Y
+        :param cell_count_z:  Cell Count Z
+        :param ipj:           Projection
+        :param meta:          Metadata
+        :type  name:          str
+        :type  value:         float
+        :type  type:          int
+        :type  ox:            float
+        :type  oy:            float
+        :type  oz:            float
+        :type  cx:            float
+        :type  cy:            float
+        :type  cz:            float
+        :type  cell_count_x:  int
+        :type  cell_count_y:  int
+        :type  cell_count_z:  int
+        :type  ipj:           GXIPJ
+        :type  meta:          GXMETA
+
+        :returns:             `GXVOX <geosoft.gxapi.GXVOX>` Object
+        :rtype:               GXVOX
+
+        .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = gxapi_cy.WrapVOX._generate_constant_value(GXContext._get_tls_geo(), name.encode(), value, type, ox, oy, oz, cx, cy, cz, cell_count_x, cell_count_y, cell_count_z, ipj, meta)
+        return GXVOX(ret_val)
+
+
+
+    @classmethod
+    def generate_constant_value_vv(cls, name, value, type, ox, oy, oz, cx, cy, cz, ipj, meta):
+        """
+        
+        .. deprecated:: None None 
+        Generate a `GXVOX <geosoft.gxapi.GXVOX>` with a constant value, cells sizes passed in VVs.
+        
+        :param name:   Name of output `GXVOX <geosoft.gxapi.GXVOX>`
+        :param value:  The Value to use
+        :param type:   :ref:`GS_TYPES`
+        :param ox:     Origin X
+        :param oy:     Origin Y
+        :param oz:     Origin Z
+        :param cx:     Cell Sizes X
+        :param cy:     Cell Sizes Y
+        :param cz:     Cell Sizes Z
+        :param ipj:    Projection
+        :param meta:   Metadata
+        :type  name:   str
+        :type  value:  float
+        :type  type:   int
+        :type  ox:     float
+        :type  oy:     float
+        :type  oz:     float
+        :type  cx:     GXVV
+        :type  cy:     GXVV
+        :type  cz:     GXVV
+        :type  ipj:    GXIPJ
+        :type  meta:   GXMETA
+
+        :returns:      `GXVOX <geosoft.gxapi.GXVOX>` Object
+        :rtype:        GXVOX
+
+        .. versionadded:: 8.4
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = gxapi_cy.WrapVOX._generate_constant_value_vv(GXContext._get_tls_geo(), name.encode(), value, type, ox, oy, oz, cx, cy, cz, ipj, meta)
+        return GXVOX(ret_val)
+
+
+
+
+    def sample(self, pg, vv_x, vv_y, vv_z, vv_d):
+        """
+        
+        .. deprecated:: None None 
+        Sample the Voxel
+        
+        :param pg:    `GXVOX <geosoft.gxapi.GXVOX>` `GXPG <geosoft.gxapi.GXPG>` Data
+        :param vv_x:  `GXVV <geosoft.gxapi.GXVV>` X Location     (must be a DOUBLE)
+        :param vv_y:  `GXVV <geosoft.gxapi.GXVV>` Y Location     (must be a DOUBLE)
+        :param vv_z:  `GXVV <geosoft.gxapi.GXVV>` Z Location     (must be a DOUBLE)
+        :param vv_d:  `GXVV <geosoft.gxapi.GXVV>` Data Returned  (must be a DOUBLE)
+        :type  pg:    GXPG
+        :type  vv_x:  GXVV
+        :type  vv_y:  GXVV
+        :type  vv_z:  GXVV
+        :type  vv_d:  GXVV
+
+        .. versionadded:: 6.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Never properly implemented. Use `GXVOXE.profile <geosoft.gxapi.GXVOXE.profile>` instead.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._sample(pg, vv_x, vv_y, vv_z, vv_d)
         
 
 

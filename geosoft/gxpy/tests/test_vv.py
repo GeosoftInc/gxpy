@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 import numpy as np
 import os
 import unittest
@@ -18,12 +18,12 @@ class Test(GXPYTest):
 
         self.assertEqual(gxvv.__version__, geosoft.__version__)
 
-        with gxvv.GXvv(dtype=np.float_) as vv:
+        with gxvv.GXvv(dtype=np.float64) as vv:
             self.assertTrue(vv.gxvv, gxapi.GXVV)
             self.assertEqual(vv.fid, (0.0, 1.0))
 
         fid = (10.1,0.99)
-        with gxvv.GXvv(dtype=np.float_, fid=fid) as vv:
+        with gxvv.GXvv(dtype=np.float64, fid=fid) as vv:
             self.assertTrue(vv.is_float)
             self.assertFalse(vv.is_int)
             self.assertFalse(vv.is_string)
@@ -74,7 +74,7 @@ class Test(GXPYTest):
 
     def test_init_len(self):
         self.start()
-        with gxvv.GXvv(dtype=np.float_, len=10) as vv:
+        with gxvv.GXvv(dtype=np.float64, len=10) as vv:
             self.assertEqual(vv.length, 10)
 
     def test_np(self):
@@ -108,7 +108,7 @@ class Test(GXPYTest):
             np3= vv.get_data(dtype=np.int64)
             self.assertEqual(np3[0][0],1)
             self.assertEqual(np3[0][6],7)
-            np3 = vv.get_data(np.float_)
+            np3 = vv.get_data(np.float64)
             self.assertEqual(np3[0][0],1.)
             self.assertEqual(np3[0][6],7.)
 
@@ -117,7 +117,7 @@ class Test(GXPYTest):
             self.assertEqual(len(np3), 4)
             self.assertEqual(np3[0], 4)
             self.assertEqual(np3[3], 7)
-            np3,fid = vv.get_data(np.float_)
+            np3,fid = vv.get_data(np.float64)
             self.assertEqual(np3[0], 4.)
             self.assertEqual(np3[3], 7.)
 
@@ -127,7 +127,7 @@ class Test(GXPYTest):
             self.assertEqual(len(np3), 4)
             self.assertEqual(np3[0], '4')
             self.assertEqual(np3[3], '7')
-            np3, fid = vv3.get_data(np.float_)
+            np3, fid = vv3.get_data(np.float64)
             self.assertEqual(np3[0], 4.)
             self.assertEqual(np3[3], 7.)
 
@@ -140,7 +140,7 @@ class Test(GXPYTest):
             self.assertEqual(len(npf), 4)
             self.assertEqual(npf[0], '4000')
             self.assertEqual(npf[3], '-70')
-            npf, fid = vv3.get_data(np.float_)
+            npf, fid = vv3.get_data(np.float64)
             self.assertEqual(npf[0], 4000.)
             self.assertEqual(npf[3], -70.)
             self.assertEqual(vv3.min_max(), (-70., 4000.))
@@ -182,7 +182,7 @@ class Test(GXPYTest):
 
         npdata = np.array(["1","2","3","4000","*"])
         with gxvv.GXvv(npdata, fid=fid) as vv:
-            npd,fid = vv.get_data(np.float_)
+            npd,fid = vv.get_data(np.float64)
             self.assertEqual(npd[0],1.0)
             self.assertEqual(npd[1],2.0)
             self.assertEqual(npd[2],3.0)
@@ -199,7 +199,7 @@ class Test(GXPYTest):
             self.assertEqual(npd[4],40000)
             self.assertEqual(npd[5],gxapi.iDUMMY)
 
-        with gxvv.GXvv(npdata, fid=fid, dtype=np.float_) as vv:
+        with gxvv.GXvv(npdata, fid=fid, dtype=np.float64) as vv:
             npd, fid = vv.get_data(np.int_)
             self.assertEqual(npd[0],1)
             self.assertEqual(npd[1],2)
@@ -211,7 +211,7 @@ class Test(GXPYTest):
             self.assertEqual(npd[5], gxapi.GS_S4DM)
             npd, fid = vv.get_data(np.int64)
             self.assertEqual(npd[5], gxapi.GS_S8DM)
-            npd, fid = vv.get_data(np.float_)
+            npd, fid = vv.get_data(np.float64)
             self.assertTrue(np.isnan(npd[5]))
             npd, fid = vv.get_data(np.float32)
             self.assertTrue(np.isnan(npd[5]))
@@ -227,7 +227,7 @@ class Test(GXPYTest):
             self.assertTrue(np.isnan(npd[5]))
 
         with gxvv.GXvv(npdata, fid=fid, dtype=np.int64) as vv:
-            npd, fid = vv.get_data(np.float_)
+            npd, fid = vv.get_data(np.float64)
             self.assertTrue(np.isnan(npd[5]))
 
         npdata = np.array(["1","2","3","4000","40000","*"])

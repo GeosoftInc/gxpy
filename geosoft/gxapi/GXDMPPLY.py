@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def clear(self):
         """
+        
         Clear/remove all polygons from the `GXDMPPLY <geosoft.gxapi.GXDMPPLY>`.
         
 
@@ -60,6 +61,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._clear()
         
 
@@ -68,6 +70,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def copy(self, source):
         """
+        
         Copy
         
         :param source:  Source
@@ -77,6 +80,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._copy(source)
         
 
@@ -85,6 +89,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
     @classmethod
     def create(cls):
         """
+        
         Creates a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         
 
@@ -95,6 +100,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDMPPLY._create(GXContext._get_tls_geo())
         return GXDMPPLY(ret_val)
 
@@ -105,6 +111,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def get_azimuth(self, p, az):
         """
+        
         Get the azimuth of a given polygon.
         
         :param p:       Polygon number (1 to NP)
@@ -120,6 +127,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         equal to the azimuth of the normal vector plus
         90 degrees.
         """
+        
         az.value = self._get_azimuth(p, az.value)
         
 
@@ -128,6 +136,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def get_extents(self, p, x, y, z, w, h):
         """
+        
         Get the center, width and height of a given polygon.
         
         :param p:       Polygon number (1 to NP)
@@ -147,6 +156,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         x.value, y.value, z.value, w.value, h.value = self._get_extents(p, x.value, y.value, z.value, w.value, h.value)
         
 
@@ -155,6 +165,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def get_joins(self, p, vv):
         """
+        
         Get join lines for each vertex in a specific polygon.
         
         :param p:       Polygon number (1 to N)
@@ -170,6 +181,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         If the vertex is joined, then the index of the join line (1 to NJoins)
         is returned.
         """
+        
         self._get_joins(p, vv)
         
 
@@ -178,6 +190,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def get_normal_vectors(self, p, x1, y1, z1, x2, y2, z2, x3, y3, z3):
         """
+        
         Get the normal vectors of a given polygon.
         
         :param p:       Polygon number (1 to NP)
@@ -211,6 +224,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         "down-dip" direction.
         The third is the normal vector to the polygon plane.
         """
+        
         x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value = self._get_normal_vectors(p, x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value)
         
 
@@ -219,6 +233,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def get_poly(self, p, vv_x, vv_y, vv_z):
         """
+        
         Get a specific polygon from a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         
         :param p:       Polygon number (1 to NP) (i)
@@ -236,6 +251,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **Note:** Get the number of points from the `GXVV <geosoft.gxapi.GXVV>` length.
         """
+        
         self._get_poly(p, vv_x, vv_y, vv_z)
         
 
@@ -244,6 +260,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def get_swing(self, p, az):
         """
+        
         Get the swing of a given polygon.
         
         :param p:       Polygon number (1 to NP)
@@ -259,6 +276,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         equal to zero for vertical plates, and increasing
         as the normal vector goes from horizontal upward.
         """
+        
         az.value = self._get_swing(p, az.value)
         
 
@@ -267,6 +285,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def get_vertex(self, p, v, x, y, z):
         """
+        
         Get a vertex location from a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         
         :param p:       Polygon number (1 to NP)
@@ -284,6 +303,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         x.value, y.value, z.value = self._get_vertex(p, v, x.value, y.value, z.value)
         
 
@@ -292,6 +312,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def num_joins(self):
         """
+        
         Get the number of joining lines in a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         
 
@@ -302,6 +323,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._num_joins()
         return ret_val
 
@@ -310,6 +332,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def num_polys(self):
         """
+        
         Get the number of polygons in a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         
 
@@ -323,6 +346,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         **Note:** The value returned is the "NP" used in function descriptions
         below.
         """
+        
         ret_val = self._num_polys()
         return ret_val
 
@@ -331,6 +355,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def num_vertices(self, p):
         """
+        
         Get the number of vertices in a polygon.
         
         :param p:       Polygon number (1 to NP)
@@ -346,6 +371,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         **Note:** The value returned is the "NV" used in function descriptions
         below.
         """
+        
         ret_val = self._num_vertices(p)
         return ret_val
 
@@ -354,6 +380,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def load(self, file):
         """
+        
         Loads a Datamine polygon file.
         
         :param file:    Name of the file to load
@@ -363,6 +390,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._load(file.encode())
         
 
@@ -371,6 +399,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def move_vertex(self, p, v, x, y, z):
         """
+        
         Moves a vertex and any associated lines.
         
         :param p:       Polygon number (1 to NP)
@@ -388,6 +417,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._move_vertex(p, v, x, y, z)
         
 
@@ -396,6 +426,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def project_poly(self, p, xp, yp, zp, az, swing, vv_x, vv_y, vv_z):
         """
+        
         Project a polygon onto a vertical plane.
         
         :param p:       Polygon number (1 to NP)
@@ -428,6 +459,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
                           Y - "vertical" in plane (can be a swing)
                           Z - horizontal, "perpendicular" to plane (RH)
         """
+        
         self._project_poly(p, xp, yp, zp, az, swing, vv_x, vv_y, vv_z)
         
 
@@ -436,6 +468,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def re_project_poly(self, p, xp, yp, zp, az, vv_x, vv_y, vv_x3, vv_y3, vv_z3):
         """
+        
         Recover polygon locations from 2D locations on vertical plane.
         
         :param p:       Polygon number (1 to lNP) (i)
@@ -468,6 +501,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         Input the 2D locations on the projected vertical plane. These locations
         are projected back onto the original polygon plane.
         """
+        
         self._re_project_poly(p, xp, yp, zp, az, vv_x, vv_y, vv_x3, vv_y3, vv_z3)
         
 
@@ -476,6 +510,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def save(self, file):
         """
+        
         Save to a Datamine polygon file
         
         :param file:    Name of the file to save to
@@ -485,6 +520,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._save(file.encode())
         
 
@@ -493,6 +529,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
     def set_poly(self, p, vv_x, vv_y, vv_z):
         """
+        
         Set a specific polygon into a `GXDMPPLY <geosoft.gxapi.GXDMPPLY>` object.
         
         :param p:       Polygon number (1 to NP) (i)
@@ -510,6 +547,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **Note:** Get the number of points from the `GXVV <geosoft.gxapi.GXVV>` length.
         """
+        
         self._set_poly(p, vv_x, vv_y, vv_z)
         
 

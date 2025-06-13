@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -71,6 +71,7 @@ class GXVM(gxapi_cy.WrapVM):
     @classmethod
     def create(cls, type, elements):
         """
+        
         Create a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param type:      :ref:`GEO_VAR`
@@ -87,6 +88,7 @@ class GXVM(gxapi_cy.WrapVM):
 
         **Note:** The `GXVM <geosoft.gxapi.GXVM>` elements are initialized to dummies.
         """
+        
         ret_val = gxapi_cy.WrapVM._create(GXContext._get_tls_geo(), type, elements)
         return GXVM(ret_val)
 
@@ -95,6 +97,7 @@ class GXVM(gxapi_cy.WrapVM):
     @classmethod
     def create_ext(cls, type, elements):
         """
+        
         Create a `GXVM <geosoft.gxapi.GXVM>`, using one of the :ref:`GS_TYPES` special data types.
         
         :param type:      :ref:`GS_TYPES`
@@ -111,6 +114,7 @@ class GXVM(gxapi_cy.WrapVM):
 
         **Note:** The `GXVM <geosoft.gxapi.GXVM>` elements are initialized to dummies.
         """
+        
         ret_val = gxapi_cy.WrapVM._create_ext(GXContext._get_tls_geo(), type, elements)
         return GXVM(ret_val)
 
@@ -121,6 +125,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def get_int(self, element):
         """
+        
         Get an integer element from a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param element:  Element wanted
@@ -134,6 +139,7 @@ class GXVM(gxapi_cy.WrapVM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_int(element)
         return ret_val
 
@@ -142,6 +148,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def get_string(self, element, str_val):
         """
+        
         Get a string element from a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param element:  Element wanted
@@ -159,6 +166,7 @@ class GXVM(gxapi_cy.WrapVM):
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
+        
         str_val.value = self._get_string(element, str_val.value.encode())
         
 
@@ -167,6 +175,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def length(self):
         """
+        
         Returns current `GXVM <geosoft.gxapi.GXVM>` length.
         
 
@@ -177,6 +186,7 @@ class GXVM(gxapi_cy.WrapVM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._length()
         return ret_val
 
@@ -185,6 +195,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def re_size(self, newsize):
         """
+        
         Re-set the size of a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param newsize:  New size (number of elements)
@@ -196,6 +207,7 @@ class GXVM(gxapi_cy.WrapVM):
 
         **Note:** If increasing the `GXVM <geosoft.gxapi.GXVM>` size, new elements are set to dummies.
         """
+        
         self._re_size(newsize)
         
 
@@ -204,6 +216,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def get_double(self, element):
         """
+        
         Get a real element from a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param element:  Element wanted
@@ -217,6 +230,7 @@ class GXVM(gxapi_cy.WrapVM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_double(element)
         return ret_val
 
@@ -225,6 +239,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def set_int(self, element, value):
         """
+        
         Set an integer element in a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param element:  Element to set
@@ -242,6 +257,7 @@ class GXVM(gxapi_cy.WrapVM):
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
+        
         self._set_int(element, value)
         
 
@@ -250,6 +266,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def set_double(self, element, value):
         """
+        
         Set a real element in a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param element:  Element to set
@@ -267,6 +284,7 @@ class GXVM(gxapi_cy.WrapVM):
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
+        
         self._set_double(element, value)
         
 
@@ -275,6 +293,7 @@ class GXVM(gxapi_cy.WrapVM):
 
     def set_string(self, element, value):
         """
+        
         Set a string element in a `GXVM <geosoft.gxapi.GXVM>`.
         
         :param element:  Element to set
@@ -292,6 +311,7 @@ class GXVM(gxapi_cy.WrapVM):
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
+        
         self._set_string(element, value.encode())
         
 

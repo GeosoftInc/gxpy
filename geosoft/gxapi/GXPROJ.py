@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def drop_map_clip_data(cls, hglobal):
         """
+        
         Drop Map clipboard data in the current project (workspace background)
         
         :param hglobal:  Handle to Global Clipboard data
@@ -64,6 +65,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapPROJ._drop_map_clip_data(GXContext._get_tls_geo(), hglobal)
         
 
@@ -76,6 +78,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def add_document(cls, name, type, display):
         """
+        
         Adds (and opens) a document file in the current project.
         
         :param name:     Document name
@@ -111,6 +114,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             GMS3D         
             GMS2D
         """
+        
         ret_val = gxapi_cy.WrapPROJ._add_document(GXContext._get_tls_geo(), name.encode(), type.encode(), display)
         return ret_val
 
@@ -119,6 +123,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def add_document_without_opening(cls, name, type):
         """
+        
         Adds (and opens) a document file in the current project.
         
         :param name:  Document name
@@ -152,6 +157,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             GMS3D         
             GMS2D
         """
+        
         ret_val = gxapi_cy.WrapPROJ._add_document_without_opening(GXContext._get_tls_geo(), name.encode(), type.encode())
         return ret_val
 
@@ -160,6 +166,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def add_document_include_meta(cls, name, type, meta, display):
         """
+        
         Adds (and opens) a document file in the current project.
         
         :param name:     Document name
@@ -197,6 +204,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             GMS3D         
             GMS2D
         """
+        
         ret_val = gxapi_cy.WrapPROJ._add_document_include_meta(GXContext._get_tls_geo(), name.encode(), type.encode(), meta.encode(), display)
         return ret_val
 
@@ -205,6 +213,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def add_grid_document(cls, name, colors, method, display):
         """
+        
         Adds (and opens) a grid document file in the current project with a particular colour distribution and colour file.
         
         :param name:     Document name
@@ -229,6 +238,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         **Note:** The passed file name must be a valid Grid document
         with an extension and qualifiers (if applicable).
         """
+        
         ret_val = gxapi_cy.WrapPROJ._add_grid_document(GXContext._get_tls_geo(), name.encode(), colors.encode(), method, display)
         return ret_val
 
@@ -237,6 +247,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def add_grid_documents(cls, names, colors, method, display):
         """
+        
         Adds (and opens) multiple grid document files of the same type in the current project with a shared (same) colour distribution and colour file.
         
         :param names:    String VV with document names
@@ -262,6 +273,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         with an extension and qualifiers (if applicable).
         ALL grids must have the same extension and qualifier.
         """
+        
         ret_val = gxapi_cy.WrapPROJ._add_grid_documents(GXContext._get_tls_geo(), names, colors.encode(), method, display)
         return ret_val
 
@@ -270,6 +282,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_command_environment(cls):
         """
+        
         The current command environment
         
 
@@ -291,6 +304,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapPROJ._get_command_environment(GXContext._get_tls_geo())
         return ret_val
 
@@ -299,6 +313,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def list_documents(cls, gvv, type):
         """
+        
         Fills a `GXVV <geosoft.gxapi.GXVV>` with documents of a certain type.
         
         :param gvv:   `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`
@@ -328,6 +343,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         GMS2D            List GM-SYS 2D Models.
         All              Lists all files.
         """
+        
         ret_val = gxapi_cy.WrapPROJ._list_documents(GXContext._get_tls_geo(), gvv, type.encode())
         return ret_val
 
@@ -336,6 +352,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def list_loaded_documents(cls, gvv, type):
         """
+        
         Fills a `GXVV <geosoft.gxapi.GXVV>` with loaded documents of a certain type.
         
         :param gvv:   `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`>
@@ -365,6 +382,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         GMS2D            List GM-SYS 2D Models.
         All              Lists all files.
         """
+        
         ret_val = gxapi_cy.WrapPROJ._list_loaded_documents(GXContext._get_tls_geo(), gvv, type.encode())
         return ret_val
 
@@ -373,6 +391,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def current_document(cls, name, type):
         """
+        
         Get the name and type of the loaded document with focus.
         
         :param name:  Name (empty if none currently loaded)
@@ -386,6 +405,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         name.value, type.value = gxapi_cy.WrapPROJ._current_document(GXContext._get_tls_geo(), name.value.encode(), type.value.encode())
         
 
@@ -394,6 +414,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def current_document_of_type(cls, name, type):
         """
+        
         Get the name of a loaded document of a specific type.
         
         :param name:  Name (empty if none currently loaded)
@@ -407,6 +428,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         name.value = gxapi_cy.WrapPROJ._current_document_of_type(GXContext._get_tls_geo(), name.value.encode(), type.encode())
         
 
@@ -415,6 +437,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def list_tools(cls, lst, type):
         """
+        
         Fills an `GXLST <geosoft.gxapi.GXLST>` object with tools of a certain type and
         notes the current visibility setting.
         
@@ -438,6 +461,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         include whether the tool is currently visible in the value
         column (1=visible, 0-hidden).
         """
+        
         ret_val = gxapi_cy.WrapPROJ._list_tools(GXContext._get_tls_geo(), lst, type)
         return ret_val
 
@@ -446,6 +470,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def remove_document(cls, name):
         """
+        
         Removes (and closes if visible) a document from the current project.
         
         :param name:  Document name
@@ -465,6 +490,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         file name complete with an extension and
         qualifiers (if applicable).
         """
+        
         ret_val = gxapi_cy.WrapPROJ._remove_document(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
@@ -473,6 +499,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def remove_tool(cls, name):
         """
+        
         Removes (and closes if visible) a auxiliary tool from the current project.
         
         :param name:  Tool name
@@ -490,6 +517,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Nothing
         """
+        
         ret_val = gxapi_cy.WrapPROJ._remove_tool(GXContext._get_tls_geo(), name.encode())
         return ret_val
 
@@ -498,6 +526,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def save_close_documents(cls, type):
         """
+        
         Saves and closes (if visible) documents contained in the current project.
         
         :param type:  Type of document to save / close
@@ -531,6 +560,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             GMS2D
             All
         """
+        
         ret_val = gxapi_cy.WrapPROJ._save_close_documents(GXContext._get_tls_geo(), type.encode())
         return ret_val
 
@@ -539,6 +569,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_name(cls, name):
         """
+        
         Return the name of the project file.
         
         :param name:  name
@@ -552,6 +583,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Return the name of the project file.
         """
+        
         name.value = gxapi_cy.WrapPROJ._get_name(GXContext._get_tls_geo(), name.value.encode())
         
 
@@ -560,6 +592,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_server_and_project_guid(cls, server_id, project_id):
         """
+        
         Return the unique identifier of the project and server.
         
         :param server_id:   Server ID
@@ -575,6 +608,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Return the unique identifier of the project and server.
         """
+        
         server_id.value, project_id.value = gxapi_cy.WrapPROJ._get_server_and_project_guid(GXContext._get_tls_geo(), server_id.value.encode(), project_id.value.encode())
         
 
@@ -583,6 +617,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def set_central_project_information(cls, server_guid, project_guid, branch_id, revision_id, cs_info):
         """
+        
         Set Central project information.
         
         :param server_guid:   server guid
@@ -604,6 +639,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Set Central project information.
         """
+        
         gxapi_cy.WrapPROJ._set_central_project_information(GXContext._get_tls_geo(), server_guid.encode(), project_guid.encode(), branch_id, revision_id, cs_info.encode())
         
 
@@ -612,6 +648,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_central_project_information(cls, instance, project, crs, branch, rev_id, rev_date, rev_note, rev_stage, rev_author, rev_server_url, rev_proj_url):
         """
+        
         Get Central project information.
         
         :param instance:        Instance name
@@ -645,6 +682,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Get Central project information.
         """
+        
         instance.value, project.value, crs.value, branch.value, rev_id.value, rev_date.value, rev_note.value, rev_stage.value, rev_author.value, rev_server_url.value, rev_proj_url.value = gxapi_cy.WrapPROJ._get_central_project_information(GXContext._get_tls_geo(), instance.value.encode(), project.value.encode(), crs.value.encode(), branch.value.encode(), rev_id.value.encode(), rev_date.value.encode(), rev_note.value.encode(), rev_stage.value.encode(), rev_author.value.encode(), rev_server_url.value.encode(), rev_proj_url.value.encode())
         
 
@@ -653,6 +691,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def save_document_view(cls, name, meta_file):
         """
+        
         Save document view to a file.
         
         :param name:       Document name
@@ -668,6 +707,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Save document view to a file.
         """
+        
         gxapi_cy.WrapPROJ._save_document_view(GXContext._get_tls_geo(), name.encode(), meta_file.encode())
         
 
@@ -676,6 +716,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_default_project_path(cls, folder):
         """
+        
         Get default project folder.
         
         :param folder:  Returned default path
@@ -689,6 +730,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Get default project folder.
         """
+        
         folder.value = gxapi_cy.WrapPROJ._get_default_project_path(GXContext._get_tls_geo(), folder.value.encode())
         
 
@@ -697,6 +739,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def set_default_project_path(cls, folder):
         """
+        
         Set default project folder.
         
         :param folder:  Default path
@@ -710,6 +753,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Set default project folder.
         """
+        
         gxapi_cy.WrapPROJ._set_default_project_path(GXContext._get_tls_geo(), folder.encode())
         
 
@@ -718,6 +762,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def has_pending_central_publish_event(cls):
         """
+        
         Checks if there is a pending publish event.
         
         :rtype:      bool
@@ -730,6 +775,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Checks if there is a pending publish event.
         """
+        
         ret_val = gxapi_cy.WrapPROJ._has_pending_central_publish_event(GXContext._get_tls_geo())
         return ret_val
 
@@ -742,6 +788,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def register_background_script(cls, name, name2, script, log, save_log, output_files, file_to_delete, process_id):
         """
+        
         Register an OMS script launched from the project
         
         :param name:            Name for the process
@@ -769,6 +816,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Allows the project to track the progress/failure/success of scripts launched in the background
         """
+        
         gxapi_cy.WrapPROJ._register_background_script(GXContext._get_tls_geo(), name.encode(), name2.encode(), script.encode(), log.encode(), save_log, output_files, file_to_delete.encode(), process_id.encode())
         
 
@@ -777,6 +825,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def register_background_script_ex(cls, name, tooltip, script, log, output_log, error_log, save_log, output_files, output_file_types, file_to_delete, process_id):
         """
+        
         Register an OMS script launched from the project
         
         :param name:               Name of the job
@@ -810,6 +859,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Allows the project to track the progress/failure/success of scripts launched in the background
         """
+        
         gxapi_cy.WrapPROJ._register_background_script_ex(GXContext._get_tls_geo(), name.encode(), tooltip.encode(), script.encode(), log.encode(), output_log.encode(), error_log.encode(), save_log, output_files, output_file_types, file_to_delete.encode(), process_id.encode())
         
 
@@ -818,6 +868,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_registered_background_script(cls, index, date_time, name, name2, script, log, output_files, process_id):
         """
+        
         Retrieve info on a registered OMS script launched from the project
         
         :param index:         Index for the process (input) 0 to N-1
@@ -845,6 +896,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** reference by index
         """
+        
         date_time.value, name.value, name2.value, script.value, log.value, process_id.value = gxapi_cy.WrapPROJ._get_registered_background_script(GXContext._get_tls_geo(), index, date_time.value.encode(), name.value.encode(), name2.value.encode(), script.value.encode(), log.value.encode(), output_files, process_id.value.encode())
         
 
@@ -853,6 +905,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_registered_background_script_ex(cls, index, date_time, name, name2, script, log, output_file, error_file, output_files, output_file_types, process_id):
         """
+        
         Retrieve info on a registered OMS script launched from the project
         
         :param index:              Index for the process (input) 0 to N-1
@@ -886,6 +939,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** reference by index
         """
+        
         date_time.value, name.value, name2.value, script.value, log.value, output_file.value, error_file.value, process_id.value = gxapi_cy.WrapPROJ._get_registered_background_script_ex(GXContext._get_tls_geo(), index, date_time.value.encode(), name.value.encode(), name2.value.encode(), script.value.encode(), log.value.encode(), output_file.value.encode(), error_file.value.encode(), output_files, output_file_types, process_id.value.encode())
         
 
@@ -894,6 +948,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
     @classmethod
     def get_num_registered_background_scripts(cls):
         """
+        
         Register a OMS script launched from the project
         
 
@@ -908,7 +963,124 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Allows the project to track the progress/failure/success of scripts launched in the background
         """
+        
         ret_val = gxapi_cy.WrapPROJ._get_num_registered_background_scripts(GXContext._get_tls_geo())
+        return ret_val
+
+
+
+    @classmethod
+    def get_numeric_voxel_itr(cls, name, itr):
+        """
+        
+        Get a numeric voxel document's ITR from project metadata
+        
+        :param name:  Document name
+        :param itr:   `GXITR <geosoft.gxapi.GXITR>` Handle
+        :type  name:  str
+        :type  itr:   GXITR
+
+        :returns:     0 - Ok
+                      1 - Can not find ITR from the document
+        :rtype:       int
+
+        .. versionadded:: 2024.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** 
+        """
+        
+        ret_val = gxapi_cy.WrapPROJ._get_numeric_voxel_itr(GXContext._get_tls_geo(), name.encode(), itr)
+        return ret_val
+
+
+
+    @classmethod
+    def set_numeric_voxel_itr(cls, name, itr):
+        """
+        
+        Set a numeric voxel document's ITR into project metadata
+        
+        :param name:  Document name
+        :param itr:   `GXITR <geosoft.gxapi.GXITR>` Handle
+        :type  name:  str
+        :type  itr:   GXITR
+
+        :returns:     0 - Ok
+                      1 - Error
+        :rtype:       int
+
+        .. versionadded:: 2024.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** 
+        """
+        
+        ret_val = gxapi_cy.WrapPROJ._set_numeric_voxel_itr(GXContext._get_tls_geo(), name.encode(), itr)
+        return ret_val
+
+
+
+    @classmethod
+    def get_document_evo_object_metadata(cls, path, metadata):
+        """
+        
+        Get Evo object metadata associated with the document from project metadata
+        
+        :param path:      Document full path including name without qualifiers
+        :param metadata:  `GXEVOOBJMETA <geosoft.gxapi.GXEVOOBJMETA>` Handle
+        :type  path:      str
+        :type  metadata:  GXEVOOBJMETA
+
+        :returns:         0 - Ok
+                          1 - Can not find object metadata for the document
+        :rtype:           int
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** 
+        """
+        
+        ret_val = gxapi_cy.WrapPROJ._get_document_evo_object_metadata(GXContext._get_tls_geo(), path.encode(), metadata)
+        return ret_val
+
+
+
+    @classmethod
+    def set_document_evo_object_metadata(cls, path, metadata):
+        """
+        
+        Set evo object metadata associated with the document into project metadata
+        
+        :param path:      Document full path including name without qualifiers
+        :param metadata:  `GXEVOOBJMETA <geosoft.gxapi.GXEVOOBJMETA>` Handle
+        :type  path:      str
+        :type  metadata:  GXEVOOBJMETA
+
+        :returns:         0 - Ok
+                          1 - Error
+        :rtype:           int
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** 
+        """
+        
+        ret_val = gxapi_cy.WrapPROJ._set_document_evo_object_metadata(GXContext._get_tls_geo(), path.encode(), metadata)
         return ret_val
 
 

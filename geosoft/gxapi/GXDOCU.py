@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def copy(self, doc_us):
         """
+        
         Copy `GXDOCU <geosoft.gxapi.GXDOCU>`
         
         :param doc_us:  Source `GXDOCU <geosoft.gxapi.GXDOCU>`
@@ -62,6 +63,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(doc_us)
         
 
@@ -70,6 +72,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
     @classmethod
     def create(cls):
         """
+        
         Create a document onject
         
 
@@ -80,6 +83,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDOCU._create(GXContext._get_tls_geo())
         return GXDOCU(ret_val)
 
@@ -88,6 +92,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create from a serialized source
         
         :param bf:  `GXBF <geosoft.gxapi.GXBF>` from which to read `GXDOCU <geosoft.gxapi.GXDOCU>`
@@ -100,6 +105,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDOCU._create_s(GXContext._get_tls_geo(), bf)
         return GXDOCU(ret_val)
 
@@ -110,6 +116,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def get_file(self, file):
         """
+        
         Get the document and place in a file.
         
         :param file:  File to which to write document
@@ -119,6 +126,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_file(file.encode())
         
 
@@ -127,6 +135,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def get_file_meta(self, file):
         """
+        
         Get the document and place in a file with metadata.
         
         :param file:  File to which to write document
@@ -144,6 +153,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         support metadata, the metadata will be placed in an associated
         file "filename.extension.GeosoftMeta"
         """
+        
         self._get_file_meta(file.encode())
         
 
@@ -152,6 +162,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def get_meta(self, meta):
         """
+        
         Get the document's meta
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to fill in with the document's meta
@@ -161,6 +172,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_meta(meta)
         
 
@@ -169,6 +181,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def doc_name(self, name):
         """
+        
         The document name.
         
         :param name:  Buffer to fill with document name
@@ -178,6 +191,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._doc_name(name.value.encode())
         
 
@@ -186,6 +200,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def file_name(self, name):
         """
+        
         The original document file name.
         
         :param name:  Buffer to fill with document file name
@@ -195,6 +210,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = self._file_name(name.value.encode())
         
 
@@ -203,6 +219,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def have_meta(self):
         """
+        
         Checks if a document has metadata.
         
         :rtype:       bool
@@ -211,6 +228,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._have_meta()
         return ret_val
 
@@ -219,6 +237,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def is_reference(self):
         """
+        
         Is the document only a reference (a URL) ?
         
 
@@ -229,6 +248,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_reference()
         return ret_val
 
@@ -237,6 +257,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def open(self, mode):
         """
+        
         Open a document in the document viewer
         
         :param mode:  :ref:`DOCU_OPEN`
@@ -249,6 +270,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         **Note:** On Windows, the default application for the file extension is
         used to open the file.
         """
+        
         self._open(mode)
         
 
@@ -257,6 +279,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def serial(self, bf):
         """
+        
         Serialize `GXDOCU <geosoft.gxapi.GXDOCU>`
         
         :param bf:    `GXBF <geosoft.gxapi.GXBF>` in which to write object
@@ -266,6 +289,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -274,6 +298,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def set_file(self, type, name, file):
         """
+        
         Set the document from a file source.
         
         :param type:  Document type
@@ -320,6 +345,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         the `GXDOCU <geosoft.gxapi.GXDOCU>` class and the document can be retrieved using the sGetFile_DOCU
         method.
         """
+        
         self._set_file(type.encode(), name.encode(), file.encode())
         
 
@@ -328,6 +354,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def set_file_meta(self, type, name, file):
         """
+        
         Set the document from a file source with metadata.
         
         :param type:  Document type extension
@@ -357,6 +384,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
            "gdb"       Geosoft database
            "grd"       Geosoft grid file
         """
+        
         self._set_file_meta(type.encode(), name.encode(), file.encode())
         
 
@@ -365,6 +393,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
     def set_meta(self, meta):
         """
+        
         Set the document's meta
         
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` to add to the document's meta
@@ -374,6 +403,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta(meta)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXST2(gxapi_cy.WrapST2):
     @classmethod
     def create(cls):
         """
+        
         Creates a statistics object which is used to accumulate statistics.
         
 
@@ -66,6 +67,7 @@ class GXST2(gxapi_cy.WrapST2):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapST2._create(GXContext._get_tls_geo())
         return GXST2(ret_val)
 
@@ -74,6 +76,7 @@ class GXST2(gxapi_cy.WrapST2):
 
     def data_vv(self, vv_x, vv_y):
         """
+        
         Add all the values in VVx and VVy to `GXST2 <geosoft.gxapi.GXST2>` object.
         
         :param vv_x:  VVx handle
@@ -85,6 +88,7 @@ class GXST2(gxapi_cy.WrapST2):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._data_vv(vv_x, vv_y)
         
 
@@ -95,6 +99,7 @@ class GXST2(gxapi_cy.WrapST2):
 
     def items(self):
         """
+        
         Gets Number of items
         
 
@@ -105,6 +110,7 @@ class GXST2(gxapi_cy.WrapST2):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._items()
         return ret_val
 
@@ -113,6 +119,7 @@ class GXST2(gxapi_cy.WrapST2):
 
     def reset(self):
         """
+        
         Resets the Statistics.
         
 
@@ -120,6 +127,7 @@ class GXST2(gxapi_cy.WrapST2):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._reset()
         
 
@@ -128,6 +136,7 @@ class GXST2(gxapi_cy.WrapST2):
 
     def get(self, id):
         """
+        
         Gets correlation coeff. from the `GXST2 <geosoft.gxapi.GXST2>` object.
         
         :param id:   :ref:`ST2_CORRELATION`
@@ -141,6 +150,7 @@ class GXST2(gxapi_cy.WrapST2):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._get(id)
         return ret_val
 

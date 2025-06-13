@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def dipole_mag(cls, xyz_file, depth, inc, nx, ny, dx, dy):
         """
+        
         Calculate a dipole magnetic field into XYZ file
         
         :param xyz_file:  sXYZ
@@ -77,6 +78,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._dipole_mag(GXContext._get_tls_geo(), xyz_file.encode(), depth, inc, nx, ny, dx, dy)
         
 
@@ -85,6 +87,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def em_half_space_inv(cls, coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height, vv_in_phase, vv_quadrature, vv_res, inv, err, start_val):
         """
+        
         Inverts EM responses to the best halfspace model.
         
         :param coil_spacing:        Coil spacing: error if == 0
@@ -116,6 +119,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._em_half_space_inv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, tol, threshold, vv_height, vv_in_phase, vv_quadrature, vv_res, inv, err, start_val)
         
 
@@ -124,6 +128,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def em_half_space_vv(cls, coil_spacing, coil_frequency, coil_configuration, rvv, hvv, ivv, qvv):
         """
+        
         EM Halfspace forward model response.
         
         :param coil_spacing:        Coil separation
@@ -145,6 +150,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._em_half_space_vv(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_configuration, rvv, hvv, ivv, qvv)
         
 
@@ -153,6 +159,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def geometrics2_db(cls, db, ra, log_wa, survey_mode, line_dir, corner, bi_uni, corner_x, corner_y, mark_space, line_space):
         """
+        
         Convert a Geometrics STN file to a database.
         
         :param db:           `GXDB <geosoft.gxapi.GXDB>` handle
@@ -186,6 +193,7 @@ class GXGU(gxapi_cy.WrapGU):
         with names X, Y, Mag1, Mag2, Time, Date, and Mark will deleted and then created.  
         Existing lines will be erased and then created if they are the same as the new ones.
         """
+        
         gxapi_cy.WrapGU._geometrics2_db(GXContext._get_tls_geo(), db, ra, log_wa, survey_mode, line_dir, corner, bi_uni, corner_x, corner_y, mark_space, line_space)
         
 
@@ -194,6 +202,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def geometrics2_tbl(cls, ra, wa, log_wa):
         """
+        
         Convert a Geometrics station file (STN) to a table file (TBL)
         
         :param ra:      `GXRA <geosoft.gxapi.GXRA>` handle, input station file
@@ -207,6 +216,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._geometrics2_tbl(GXContext._get_tls_geo(), ra, wa, log_wa)
         
 
@@ -215,6 +225,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def geometrics_qc(cls, wa, line, in_vv, tol, min_coord, max_coord, out_vv, flag_vv):
         """
+        
         Correct reading positions in a database.
         
         :param wa:         Output error log file
@@ -300,6 +311,7 @@ class GXGU(gxapi_cy.WrapGU):
              Segments will pass the tolerance test if the number of readings
              falls within the Lower and Upper Bounds.
         """
+        
         gxapi_cy.WrapGU._geometrics_qc(GXContext._get_tls_geo(), wa, line.encode(), in_vv, tol, min_coord, max_coord, out_vv, flag_vv)
         
 
@@ -308,6 +320,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def geonics3138_dump2_db(cls, db, r_ah, r_ad, log_wa, line_mult, stat_mult):
         """
+        
         Convert a Geonics EM31/EM38 file in dump format to a database.
         
         :param db:         `GXDB <geosoft.gxapi.GXDB>` handle
@@ -332,6 +345,7 @@ class GXGU(gxapi_cy.WrapGU):
         and Time will deleted and then created.  Existing lines will
         be erased and then created if they are the same as the new ones.
         """
+        
         gxapi_cy.WrapGU._geonics3138_dump2_db(GXContext._get_tls_geo(), db, r_ah, r_ad, log_wa, line_mult, stat_mult)
         
 
@@ -340,6 +354,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def geonics61_dump2_db(cls, db, ra, log_wa, line_mult, stat_mult):
         """
+        
         Convert a Geonics EM61 file in dump format to a database.
         
         :param db:         `GXDB <geosoft.gxapi.GXDB>` handle
@@ -362,6 +377,7 @@ class GXGU(gxapi_cy.WrapGU):
         and Time will deleted and then created.  Existing lines will
         be erased and then created if they are the same as the new ones.
         """
+        
         gxapi_cy.WrapGU._geonics61_dump2_db(GXContext._get_tls_geo(), db, ra, log_wa, line_mult, stat_mult)
         
 
@@ -370,6 +386,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def geonics_dat2_db(cls, db, ra, log_wa, line_mult, stat_mult):
         """
+        
         Convert a Geonics EM31/EM38/EM61 file in `GXDAT <geosoft.gxapi.GXDAT>` format to a database.
         
         :param db:         `GXDB <geosoft.gxapi.GXDB>` handle
@@ -392,6 +409,7 @@ class GXGU(gxapi_cy.WrapGU):
         and Time will deleted and then created.  Existing lines will
         be erased and then created if they are the same as the new ones.
         """
+        
         gxapi_cy.WrapGU._geonics_dat2_db(GXContext._get_tls_geo(), db, ra, log_wa, line_mult, stat_mult)
         
 
@@ -400,6 +418,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def gr_curv_cor(cls, vv_elev, vv_lat, vv_boug):
         """
+        
         Gravity Curvature (Bullard B) Correction to Bouguer anomaly
         
         :param vv_elev:  Input Elevation `GXVV <geosoft.gxapi.GXVV>`
@@ -413,6 +432,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._gr_curv_cor(GXContext._get_tls_geo(), vv_elev, vv_lat, vv_boug)
         
 
@@ -421,6 +441,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def gr_curv_cor_ex(cls, vv_elev, vv_lat, vv_boug, rho):
         """
+        
         Gravity Curvature (Bullard B) Correction to Bouguer anomaly, with user input cap density.
         
         :param vv_elev:  Input Elevation `GXVV <geosoft.gxapi.GXVV>`
@@ -436,6 +457,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._gr_curv_cor_ex(GXContext._get_tls_geo(), vv_elev, vv_lat, vv_boug, rho)
         
 
@@ -444,6 +466,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def gr_demvv(cls, im_gdem, vv_x, vv_y, vv_z):
         """
+        
         Get gravity DEM grid `GXVV <geosoft.gxapi.GXVV>` for Bouguer anomaly
         
         :param im_gdem:  DEM grid
@@ -459,6 +482,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._gr_demvv(GXContext._get_tls_geo(), im_gdem, vv_x, vv_y, vv_z)
         
 
@@ -467,6 +491,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def gr_test(cls, xm, ym, zm, vv_x, vv_y, vv_g3, vv_g4, vv_g1, vv_g2):
         """
+        
         Test triangular prism gravity calculation
         
         :param xm:     dXm  - model dimension x
@@ -492,6 +517,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._gr_test(GXContext._get_tls_geo(), xm, ym, zm, vv_x, vv_y, vv_g3, vv_g4, vv_g1, vv_g2)
         
 
@@ -500,6 +526,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def gravity_still_reading_correction(cls, db, grav_in, date, time, still, grav_out):
         """
+        
         Gravity Still Reading Correction on selected lines.
         
         :param db:        Database
@@ -519,6 +546,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._gravity_still_reading_correction(GXContext._get_tls_geo(), db, grav_in, date, time, still.encode(), grav_out)
         
 
@@ -527,6 +555,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def gravity_still_reading_database_correction(cls, db, grav_in, date, time, stillDB, station_channel, date_channel, time_channel, readings_channel, grav_out):
         """
+        
         Gravity Still Reading Correction on selected lines, using a still readings database
         
         :param db:                Database
@@ -554,6 +583,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         gxapi_cy.WrapGU._gravity_still_reading_database_correction(GXContext._get_tls_geo(), db, grav_in, date, time, stillDB, station_channel.encode(), date_channel.encode(), time_channel.encode(), readings_channel.encode(), grav_out)
         
 
@@ -562,6 +592,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def despike_em_array(cls, vv_in, vv_noise, vv_out, num_removed):
         """
+        
         Despike a time-series with individual noise levels
         
         :param vv_in:        `GXVV <geosoft.gxapi.GXVV>` input time series)
@@ -580,6 +611,7 @@ class GXGU(gxapi_cy.WrapGU):
         **Note:** Remove spikes from a single EM time-series decay curve. Each point has its own noise level.
         The algorithm is to be determined.
         """
+        
         num_removed.value = gxapi_cy.WrapGU._despike_em_array(GXContext._get_tls_geo(), vv_in, vv_noise, vv_out, num_removed.value)
         
 
@@ -588,6 +620,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def em_layer(cls, coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, vv_thickness, vv_sigma, in_phase, quadrature):
         """
+        
         Calculate the EM response of a layered earth model.
         
         :param coil_spacing:        Coil spacing, error if == 0
@@ -617,6 +650,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val, in_phase.value, quadrature.value = gxapi_cy.WrapGU._em_layer(GXContext._get_tls_geo(), coil_spacing, coil_frequency, coil_height, coil_configuration, n_layers, vv_thickness, vv_sigma, in_phase.value, quadrature.value)
         return ret_val
 
@@ -625,6 +659,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def em_plate(cls, strike_length, dip_length, strike, dip, plunge, x_off, y_off, z_off, plate_depth, n_spons, sig_tvv, tx_orient, tx_freq, tx_dt, params, xivv, yivv, zivv, xqvv, yqvv, zqvv):
         """
+        
         Calculate the conductance of a thin plate model.
         
         :param strike_length:  Plate strike length (m)
@@ -678,6 +713,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapGU._em_plate(GXContext._get_tls_geo(), strike_length, dip_length, strike, dip, plunge, x_off, y_off, z_off, plate_depth, n_spons, sig_tvv, tx_orient, tx_freq, tx_dt, params, xivv, yivv, zivv, xqvv, yqvv, zqvv)
         return ret_val
 
@@ -686,6 +722,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def gen_ux_detect_symbols_group_name(cls, target_gdb, targets, ostr):
         """
+        
         Generate a group name string for UX-Detect symbols
         
         :param target_gdb:  Input Targets database name
@@ -709,6 +746,7 @@ class GXGU(gxapi_cy.WrapGU):
 
             `GXSTR.gen_group_name <geosoft.gxapi.GXSTR.gen_group_name>`
         """
+        
         ostr.value = gxapi_cy.WrapGU._gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode(), targets.encode(), ostr.value.encode())
         
 
@@ -717,6 +755,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def import_daarc500_ethernet(cls, file, output, bytes):
         """
+        
         Import Ethernet data from the RMS Instruments DAARC500.
         
         :param file:    File to import
@@ -735,6 +774,7 @@ class GXGU(gxapi_cy.WrapGU):
         to a new binary file, returning the number of bytes per
         block, to make it easier to import the data using the regular binary import.
         """
+        
         bytes.value = gxapi_cy.WrapGU._import_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), output.encode(), bytes.value)
         
 
@@ -743,6 +783,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def import_daarc500_serial(cls, file, channel, output, bytes):
         """
+        
         Import Serial data from the RMS Instruments DAARC500.
         
         :param file:     File to import
@@ -763,6 +804,7 @@ class GXGU(gxapi_cy.WrapGU):
         that channel to a new binary file, returning the number of bytes per
         block, to make it easier to import the data using the regular binary import.
         """
+        
         bytes.value = gxapi_cy.WrapGU._import_daarc500_serial(GXContext._get_tls_geo(), file.encode(), channel, output.encode(), bytes.value)
         
 
@@ -771,6 +813,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def import_p190(cls, db, file, rec_type, wa):
         """
+        
         Import navigation data in the P190 format.
         
         :param db:        Database handle
@@ -795,6 +838,7 @@ class GXGU(gxapi_cy.WrapGU):
         letter are imported, otherwise all records (except for the header "H"
         records) are imported.
         """
+        
         gxapi_cy.WrapGU._import_p190(GXContext._get_tls_geo(), db, file.encode(), rec_type.encode(), wa)
         
 
@@ -803,6 +847,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def lag_daarc500_gps(cls, mag_fid_vv, mag_event_vv, gps_fid_vv):
         """
+        
         Lag the GPS fid values for the DAARC500 import.
         
         :param mag_fid_vv:    Mag fid values   (`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`)
@@ -820,6 +865,7 @@ class GXGU(gxapi_cy.WrapGU):
         are delayed, and associated with the "wrong" fid value. They should actually
         be moved to the previous fid value in the mag data where the event flag is non-zero.
         """
+        
         gxapi_cy.WrapGU._lag_daarc500_gps(GXContext._get_tls_geo(), mag_fid_vv, mag_event_vv, gps_fid_vv)
         
 
@@ -828,6 +874,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def magnetic_tilt_depth(cls, tilt_deriv_grid, horiz_deriv_grid, database):
         """
+        
         Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.
         
         :param tilt_deriv_grid:   Tilt derivative grid
@@ -848,6 +895,7 @@ class GXGU(gxapi_cy.WrapGU):
         The 0-value contour of the tilt derivative grid is sampled to a new database, and the horizontal derivative
         grid is sampled at those locations. The inverse of the horizontal derivative values are output to the Tilt_Depth channel.
         """
+        
         gxapi_cy.WrapGU._magnetic_tilt_depth(GXContext._get_tls_geo(), tilt_deriv_grid.encode(), horiz_deriv_grid.encode(), database.encode())
         
 
@@ -856,6 +904,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def maxwell_plate_corners(cls, x, y, z, dip, dip_dir, plunge, length, width, x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4):
         """
+        
         Calculate the corner point locations for a Maxwell Plate.
         
         :param x:        Top-center point, X
@@ -906,6 +955,7 @@ class GXGU(gxapi_cy.WrapGU):
         **Note:** This routine calculates the corner locations of plates defined in the Maxwell Plate
         program, given the top-center location and plate geometry parameters.
         """
+        
         x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value = gxapi_cy.WrapGU._maxwell_plate_corners(GXContext._get_tls_geo(), x, y, z, dip, dip_dir, plunge, length, width, x1.value, y1.value, z1.value, x2.value, y2.value, z2.value, x3.value, y3.value, z3.value, x4.value, y4.value, z4.value)
         
 
@@ -914,6 +964,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def scan_daarc500_ethernet(cls, file, type, items):
         """
+        
         Scan Ethernet data from the RMS Instruments DAARC500.
         
         :param file:   File to import
@@ -930,6 +981,7 @@ class GXGU(gxapi_cy.WrapGU):
         **Note:** Scans the file to see what data type is in the Ethernet file.
         Currently only detects GR820 types.
         """
+        
         type.value, items.value = gxapi_cy.WrapGU._scan_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), type.value, items.value)
         
 
@@ -938,6 +990,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def scan_daarc500_serial(cls, file, vv_type, vv_items):
         """
+        
         Scan Serial data from the RMS Instruments DAARC500.
         
         :param file:      File to import
@@ -953,6 +1006,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **Note:** Scans the file to see which of the 8 serial channels were used to store data.
         """
+        
         gxapi_cy.WrapGU._scan_daarc500_serial(GXContext._get_tls_geo(), file.encode(), vv_type, vv_items)
         
 
@@ -961,6 +1015,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def vv_euler(cls, vv_xin, vv_yin, img_data, imgx, imgy, imgz, vv_xout, vv_yout, vv_depth, vvdc, vv_zer, vvx_yer, wnd_sz, si, wt_pow, x_yfit):
         """
+        
         Get Euler solutions of depth from VVs and grids.
         
         :param vv_xin:    Input X `GXVV <geosoft.gxapi.GXVV>`
@@ -1011,6 +1066,7 @@ class GXGU(gxapi_cy.WrapGU):
              c) The derived solution is outside the range
              d) The solution is invalid (singular matrix)
         """
+        
         gxapi_cy.WrapGU._vv_euler(GXContext._get_tls_geo(), vv_xin, vv_yin, img_data, imgx, imgy, imgz, vv_xout, vv_yout, vv_depth, vvdc, vv_zer, vvx_yer, wnd_sz, si, wt_pow, x_yfit)
         
 
@@ -1019,6 +1075,7 @@ class GXGU(gxapi_cy.WrapGU):
     @classmethod
     def vv_euler2(cls, vv_xin, vv_yin, img_data, imgx, imgy, imgz, vv_xout, vv_yout, vv_depth, vvdc, vv_zer, vvx_yer, vv_wnd, si, wt_pow, x_yfit):
         """
+        
         Get Euler solutions of depth from VVs and grids (method 2).
         
         :param vv_xin:    Input X `GXVV <geosoft.gxapi.GXVV>`
@@ -1064,6 +1121,7 @@ class GXGU(gxapi_cy.WrapGU):
 
             `vv_euler <geosoft.gxapi.GXGU.vv_euler>`
         """
+        
         gxapi_cy.WrapGU._vv_euler2(GXContext._get_tls_geo(), vv_xin, vv_yin, img_data, imgx, imgy, imgz, vv_xout, vv_yout, vv_depth, vvdc, vv_zer, vvx_yer, vv_wnd, si, wt_pow, x_yfit)
         
 

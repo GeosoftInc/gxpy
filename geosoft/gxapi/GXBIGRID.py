@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
     def clear(self):
         """
+        
         Clears all the parameters in a `GXBIGRID <geosoft.gxapi.GXBIGRID>` object
         
 
@@ -61,6 +62,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._clear()
         
 
@@ -69,6 +71,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
     @classmethod
     def create(cls):
         """
+        
         Create a handle to a Bigrid object
         
 
@@ -84,6 +87,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         to execute. Use the LoadParms_BIGRID method to get the
         control file parameters into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         """
+        
         ret_val = gxapi_cy.WrapBIGRID._create(GXContext._get_tls_geo())
         return GXBIGRID(ret_val)
 
@@ -94,6 +98,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
     def load_parms(self, file):
         """
+        
         Retrieves a Bigrid object's control parameters from a file,
         or sets the parameters to default if the file doesn't exist.
         
@@ -114,6 +119,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         """
+        
         ret_val = self._load_parms(file.encode())
         return ret_val
 
@@ -122,6 +128,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
     def load_warp(self, title, cell, warp):
         """
+        
         Load a warp projection.
         
         :param title:   New grid title
@@ -139,6 +146,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = self._load_warp(title.encode(), cell.encode(), warp.encode())
         return ret_val
 
@@ -147,6 +155,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
     def run(self, zchan, in_dat, out_dat):
         """
+        
         Executes the Bigrid program, using the input channel and
         output file parameters.
         
@@ -161,6 +170,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._run(zchan.encode(), in_dat, out_dat)
         
 
@@ -169,6 +179,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
     def run2(self, zchan, in_dat, out_dat, ipj):
         """
+        
         Executes the Bigrid program, using the input channel and
         output file parameters with a projection handle.
         
@@ -185,6 +196,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._run2(zchan.encode(), in_dat, out_dat, ipj)
         
 
@@ -193,6 +205,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
     def save_parms(self, name):
         """
+        
         Puts the Bigrid object's control parameters back into
         its control file.
         
@@ -206,6 +219,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
+        
         self._save_parms(name.encode())
         
 
@@ -214,6 +228,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
     @classmethod
     def get_defaults(cls, db, x, y, z, cell, maxLineSeparation, maxPointSeparation, trendAngle, lowPassWavelength, highPass, noneLinear, preFilter):
         """
+        
         Get default values for max line separation, max point separation and trend angle.
         
         :param db:                  Handle to a database
@@ -249,6 +264,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, maxLineSeparation.value, maxPointSeparation.value, trendAngle.value, lowPassWavelength.value, highPass.value, noneLinear.value, preFilter.value = gxapi_cy.WrapBIGRID._get_defaults(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), cell, maxLineSeparation.value, maxPointSeparation.value, trendAngle.value, lowPassWavelength.value, highPass.value, noneLinear.value, preFilter.value)
         return ret_val
 
@@ -257,6 +273,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
     @classmethod
     def get_default_cell_size(cls, db, x, y, z, cell):
         """
+        
         Get default cell size value.
         
         :param db:    Handle to a database
@@ -278,6 +295,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val, cell.value = gxapi_cy.WrapBIGRID._get_default_cell_size(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), cell.value)
         return ret_val
 

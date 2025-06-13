@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -58,6 +58,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def copy(self, source):
         """
+        
         Copy `GXTIN <geosoft.gxapi.GXTIN>`
         
         :param source:  Source `GXTIN <geosoft.gxapi.GXTIN>`
@@ -67,6 +68,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._copy(source)
         
 
@@ -75,6 +77,7 @@ class GXTIN(gxapi_cy.WrapTIN):
     @classmethod
     def create(cls, vv_x, vv_y, vv_z):
         """
+        
         This method creates a `GXTIN <geosoft.gxapi.GXTIN>` object.
         
         :param vv_x:  X positions
@@ -95,6 +98,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         The Z values are not required, and a 0-length `GXVV <geosoft.gxapi.GXVV>` can be used to indicate
         the values are not to be used.
         """
+        
         ret_val = gxapi_cy.WrapTIN._create(GXContext._get_tls_geo(), vv_x, vv_y, vv_z)
         return GXTIN(ret_val)
 
@@ -103,6 +107,7 @@ class GXTIN(gxapi_cy.WrapTIN):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create `GXTIN <geosoft.gxapi.GXTIN>` from a serialized source
         
         :param bf:  `GXBF <geosoft.gxapi.GXBF>` from which to read `GXTIN <geosoft.gxapi.GXTIN>`
@@ -115,6 +120,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTIN._create_s(GXContext._get_tls_geo(), bf)
         return GXTIN(ret_val)
 
@@ -125,6 +131,7 @@ class GXTIN(gxapi_cy.WrapTIN):
     @classmethod
     def export_xml(cls, tin, crc, file):
         """
+        
         Export a `GXTIN <geosoft.gxapi.GXTIN>` object as XML
         
         :param tin:   `GXTIN <geosoft.gxapi.GXTIN>` file
@@ -138,6 +145,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         crc.value = gxapi_cy.WrapTIN._export_xml(GXContext._get_tls_geo(), tin.encode(), crc.value, file.encode())
         
 
@@ -146,6 +154,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_convex_hull(self, ply):
         """
+        
         Get the convex hull of the `GXTIN <geosoft.gxapi.GXTIN>`.
         
         :param ply:  `GXPLY <geosoft.gxapi.GXPLY>` object
@@ -158,6 +167,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         **Note:** The convex hull is the outside boundary of the
         triangulated region.
         """
+        
         self._get_convex_hull(ply)
         
 
@@ -166,6 +176,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_ipj(self, ipj):
         """
+        
         Get the projection.
         
         :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the `GXTIN <geosoft.gxapi.GXTIN>` projection
@@ -175,6 +186,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -183,6 +195,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_joins(self, vv_joins, vv_index, vv_num):
         """
+        
         Get joins from a `GXTIN <geosoft.gxapi.GXTIN>` mesh.
         
         :param vv_joins:  Joins `GXVV <geosoft.gxapi.GXVV>` (adjacent nodes)
@@ -207,6 +220,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         All VVs must be type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
+        
         self._get_joins(vv_joins, vv_index, vv_num)
         
 
@@ -215,6 +229,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_mesh(self, vv):
         """
+        
         Get lines from a `GXTIN <geosoft.gxapi.GXTIN>` mesh.
         
         :param vv:   `GXVV <geosoft.gxapi.GXVV>` of type GS_D2LINE (returned)
@@ -224,6 +239,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._get_mesh(vv)
         
 
@@ -232,6 +248,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_nodes(self, vvx, vvy, vvz):
         """
+        
         Get the X,Y locations and Z values of the `GXTIN <geosoft.gxapi.GXTIN>` nodes.
         
         :param vvx:  X `GXVV <geosoft.gxapi.GXVV>`
@@ -248,6 +265,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         **Note:** If this is not a Z-valued `GXTIN <geosoft.gxapi.GXTIN>`, the Z values will
         be dummies.
         """
+        
         self._get_nodes(vvx, vvy, vvz)
         
 
@@ -256,6 +274,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_triangles(self, tri_vv_pt1, tri_vv_pt2, tri_vv_pt3):
         """
+        
         Get the triangle nodes.
         
         :param tri_vv_pt1:  Node 1 `GXVV <geosoft.gxapi.GXVV>`
@@ -269,6 +288,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._get_triangles(tri_vv_pt1, tri_vv_pt2, tri_vv_pt3)
         
 
@@ -277,6 +297,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_triangle(self, index, x0, y0, x1, y1, x2, y2):
         """
+        
         Get the locations of the vertices of a specific triangle
         
         :param index:  Triangle index [0...N-1]
@@ -298,6 +319,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         x0.value, y0.value, x1.value, y1.value, x2.value, y2.value = self._get_triangle(index, x0.value, y0.value, x1.value, y1.value, x2.value, y2.value)
         
 
@@ -306,6 +328,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def get_voronoi_edges(self, vv):
         """
+        
         Get line segments defining Voronoi cells.
         
         :param vv:   `GXVV <geosoft.gxapi.GXVV>` of GS_D2LINE type (create with type -32)
@@ -315,6 +338,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._get_voronoi_edges(vv)
         
 
@@ -323,6 +347,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def is_z_valued(self):
         """
+        
         Does the `GXTIN <geosoft.gxapi.GXTIN>` contain Z values with each X,Y?
         
 
@@ -333,6 +358,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._is_z_valued()
         return ret_val
 
@@ -341,6 +367,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def locate_triangle(self, t, x, y):
         """
+        
         Get the index of the triangle containing X, Y.
         
         :param t:    Seed triangle (can be iDummy or <0)
@@ -374,6 +401,7 @@ class GXTIN(gxapi_cy.WrapTIN):
                 inside a triangle, so do not rely on this result to determine
                 if a node position is input.
         """
+        
         ret_val = self._locate_triangle(t, x, y)
         return ret_val
 
@@ -382,6 +410,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def nodes(self):
         """
+        
         Returns the number of nodes in the `GXTIN <geosoft.gxapi.GXTIN>`
         
 
@@ -392,6 +421,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._nodes()
         return ret_val
 
@@ -400,6 +430,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def interp_vv(self, vvx, vvy, vvz):
         """
+        
         Interp TINned values using the natural neighbour method.
         
         :param vvx:  `GXVV <geosoft.gxapi.GXVV>` X locations to interpolate (`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`)
@@ -425,6 +456,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         data using natural neighbours:
         Geophysical Journal International, 122 p. 837-857.
         """
+        
         self._interp_vv(vvx, vvy, vvz)
         
 
@@ -433,6 +465,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def triangles(self):
         """
+        
         Returns the number of triangles in the `GXTIN <geosoft.gxapi.GXTIN>`.
         
 
@@ -443,6 +476,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._triangles()
         return ret_val
 
@@ -451,6 +485,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def linear_interp_vv(self, vvx, vvy, vvz):
         """
+        
         Interp TINned values using the linear interpolation
         
         :param vvx:  `GXVV <geosoft.gxapi.GXVV>` X locations to interpolate (`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`)
@@ -473,6 +508,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         The values are set assuming that each `GXTIN <geosoft.gxapi.GXTIN>` triangle defines a
         plane.
         """
+        
         self._linear_interp_vv(vvx, vvy, vvz)
         
 
@@ -481,6 +517,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def nearest_vv(self, vvx, vvy, vvz):
         """
+        
         Interp TINned values using the nearest neighbour.
         
         :param vvx:  `GXVV <geosoft.gxapi.GXVV>` X locations to interpolate (`GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`)
@@ -503,6 +540,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         Within each voronoi triangle, the Z value of node closest to the input
         X,Y location is returned.
         """
+        
         self._nearest_vv(vvx, vvy, vvz)
         
 
@@ -511,6 +549,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def range_xy(self, x_min, y_min, x_max, y_max):
         """
+        
         Find the range in X and Y of the TINned region.
         
         :param x_min:  Min X  (returned)
@@ -531,6 +570,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         X and Y range of the nodes themselves, if a full
         convex hull is not calculated.
         """
+        
         x_min.value, y_min.value, x_max.value, y_max.value = self._range_xy(x_min.value, y_min.value, x_max.value, y_max.value)
         
 
@@ -539,6 +579,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def serial(self, bf):
         """
+        
         Serialize `GXTIN <geosoft.gxapi.GXTIN>`
         
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` in which to write `GXTIN <geosoft.gxapi.GXTIN>`
@@ -548,6 +589,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -556,6 +598,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
     def set_ipj(self, ipj):
         """
+        
         Set the projection.
         
         :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the `GXTIN <geosoft.gxapi.GXTIN>`
@@ -565,6 +608,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._set_ipj(ipj)
         
 

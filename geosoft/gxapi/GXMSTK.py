@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXSTK import GXSTK
@@ -58,6 +58,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def add_stk(self):
         """
+        
         Create and add a `GXSTK <geosoft.gxapi.GXSTK>` object to `GXMSTK <geosoft.gxapi.GXMSTK>`
         
 
@@ -70,6 +71,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **Note:** Index to the added `GXSTK <geosoft.gxapi.GXSTK>` object is the last one in `GXMSTK <geosoft.gxapi.GXMSTK>` container.
         """
+        
         ret_val = self._add_stk()
         return GXSTK(ret_val)
 
@@ -78,6 +80,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def chan_list_vv(self, db, num_ch_vv, str_ch_vv, x_ch_vv, prof_ch_vv, prof_ch__un_used_vv):
         """
+        
         Save channel names in VVs based on channel types
         
         :param db:                   Database handle
@@ -100,6 +103,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         **Note:** Terms 'used' and 'unused' indicate that the a channel name
         in database also 'in' and 'not in' the `GXMSTK <geosoft.gxapi.GXMSTK>` object respectively
         """
+        
         self._chan_list_vv(db, num_ch_vv, str_ch_vv, x_ch_vv, prof_ch_vv, prof_ch__un_used_vv)
         
 
@@ -108,6 +112,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
     @classmethod
     def create(cls):
         """
+        
         Create `GXMSTK <geosoft.gxapi.GXMSTK>`.
         
 
@@ -118,6 +123,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMSTK._create(GXContext._get_tls_geo())
         return GXMSTK(ret_val)
 
@@ -128,6 +134,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def draw_profile(self, db, line, map):
         """
+        
         Draw multiple profiles in map
         
         :param db:    Database handle
@@ -141,6 +148,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._draw_profile(db, line, map)
         
 
@@ -149,6 +157,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def set_y_axis_direction(self, direction):
         """
+        
         Set the Y-axis direction - normal or inverted
         
         :param direction:  Y-axis direction: 0 - normal, 1 - inverted
@@ -158,6 +167,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._set_y_axis_direction(direction)
         
 
@@ -166,6 +176,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def find_stk2(self, str_val, index, vv_rtd):
         """
+        
         Find index of `GXSTK <geosoft.gxapi.GXSTK>` from a string of group names and X/Y channels
         
         :param str_val:  Input string (see notes above). Will be modified on return
@@ -186,6 +197,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
+        
         index.value = self._find_stk2(str_val.encode(), index.value, vv_rtd)
         
 
@@ -194,6 +206,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def get_stk(self, num):
         """
+        
         Get a specific `GXSTK <geosoft.gxapi.GXSTK>` object from a `GXMSTK <geosoft.gxapi.GXMSTK>` object
         (Index of 0 gets the first `GXSTK <geosoft.gxapi.GXSTK>` in the `GXMSTK <geosoft.gxapi.GXMSTK>`)
         
@@ -207,6 +220,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._get_stk(num)
         return GXSTK(ret_val)
 
@@ -215,6 +229,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def delete_stk(self, num):
         """
+        
         Delete a `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param num:   Index to `GXSTK <geosoft.gxapi.GXSTK>` to delete (0 is first one)
@@ -226,6 +241,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **Note:** 0 is the first one
         """
+        
         self._delete_stk(num)
         
 
@@ -234,6 +250,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def find_stk(self, str_val, index, group, x_ch, y_ch):
         """
+        
         Find index of `GXSTK <geosoft.gxapi.GXSTK>` from a string of group names and X/Y channels
         
         :param str_val:  Input string (see notes above). Will be modified on return
@@ -258,6 +275,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
+        
         index.value, group.value, x_ch.value, y_ch.value = self._find_stk(str_val.encode(), index.value, group.value.encode(), x_ch.value.encode(), y_ch.value.encode())
         
 
@@ -266,6 +284,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def get_num_stk(self):
         """
+        
         Get the number of `GXSTK <geosoft.gxapi.GXSTK>` objects in a `GXMSTK <geosoft.gxapi.GXMSTK>` object
         
 
@@ -276,6 +295,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._get_num_stk()
         return ret_val
 
@@ -284,6 +304,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def read_ini(self, ra):
         """
+        
         Read multiple profiles parameters from an INI file
         
         :param ra:    `GXRA <geosoft.gxapi.GXRA>` handle to an INI file
@@ -293,6 +314,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._read_ini(ra)
         
 
@@ -301,6 +323,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
     def save_profile(self, wa):
         """
+        
         Save multiple profile INI parameters in a `GXWA <geosoft.gxapi.GXWA>` file of INI format
         
         :param wa:    `GXWA <geosoft.gxapi.GXWA>` handle to an INI file
@@ -310,6 +333,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._save_profile(wa)
         
 

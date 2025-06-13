@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXSTRINGS(gxapi_cy.WrapSTRINGS):
     @classmethod
     def launch_digitization_ui(cls, stringfile, feature_guid):
         """
+        
         Launch Digitization modeless window
         
         :param stringfile:    String file
@@ -64,6 +65,7 @@ class GXSTRINGS(gxapi_cy.WrapSTRINGS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSTRINGS._launch_digitization_ui(GXContext._get_tls_geo(), stringfile.encode(), feature_guid.encode())
         
 

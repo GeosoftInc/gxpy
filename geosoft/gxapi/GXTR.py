@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXTR(gxapi_cy.WrapTR):
     @classmethod
     def create(cls, order):
         """
+        
         Creates a Trend object
         
         :param order:  Trend order (must >=0 and <=3)
@@ -67,6 +68,7 @@ class GXTR(gxapi_cy.WrapTR):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTR._create(GXContext._get_tls_geo(), order)
         return GXTR(ret_val)
 
@@ -77,6 +79,7 @@ class GXTR(gxapi_cy.WrapTR):
 
     def copy(self, t_rs):
         """
+        
         This method copies a table resource to another trend table resource.
         
         :param t_rs:  Source Trend Object to Copy
@@ -86,6 +89,7 @@ class GXTR(gxapi_cy.WrapTR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(t_rs)
         
 

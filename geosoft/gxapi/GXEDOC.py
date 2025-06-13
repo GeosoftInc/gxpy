@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def create_new_gms_3d(cls, name, nx, ny, type):
         """
+        
         Creates a new `GXGMSYS <geosoft.gxapi.GXGMSYS>` 3D Model into the workspace, flags as new.
         
         :param name:  Document to load.
@@ -79,6 +80,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         not to save changes, the document is deleted thus keeping the
         project folders clean.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._create_new_gms_3d(GXContext._get_tls_geo(), name.encode(), nx, ny, type)
         return GXEDOC(ret_val)
 
@@ -91,6 +93,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def current(cls, type):
         """
+        
         This method returns the Current Edited Document.
         
         :param type:  :ref:`EDOC_TYPE`
@@ -105,6 +108,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._current(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
@@ -113,6 +117,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def current_no_activate(cls, type):
         """
+        
         This method returns the Current Edited Document.
         
         :param type:  :ref:`EDOC_TYPE`
@@ -130,6 +135,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         **Note:** This function acts just like `current <geosoft.gxapi.GXEDOC.current>` except that the document is not activated (brought to foreground) and no
         				guarantee is given about which document is currently active.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._current_no_activate(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
@@ -138,6 +144,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def current_if_exists(cls, type):
         """
+        
         This method returns the Current Edited Document.
         
         :param type:  :ref:`EDOC_TYPE`
@@ -153,6 +160,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._current_if_exists(GXContext._get_tls_geo(), type)
         return GXEDOC(ret_val)
 
@@ -163,6 +171,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def get_documents_lst(cls, lst, path, type):
         """
+        
         Load the file names of open documents into a `GXLST <geosoft.gxapi.GXLST>`.
         
         :param lst:   `GXLST <geosoft.gxapi.GXLST>` to load
@@ -182,6 +191,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._get_documents_lst(GXContext._get_tls_geo(), lst, path, type)
         return ret_val
 
@@ -190,6 +200,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def get_name(self, name):
         """
+        
         Get the name of the document object of this `GXEDOC <geosoft.gxapi.GXEDOC>`.
         
         :param name:  Name returned
@@ -201,6 +212,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         name.value = self._get_name(name.value.encode())
         
 
@@ -209,6 +221,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def get_window_state(self):
         """
+        
         Retrieve the current state of the document window
         
 
@@ -221,6 +234,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._get_window_state()
         return ret_val
 
@@ -229,6 +243,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def have_current(cls, type):
         """
+        
         Returns true if a document is loaded
         
         :param type:  :ref:`EDOC_TYPE`
@@ -241,6 +256,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._have_current(GXContext._get_tls_geo(), type)
         return ret_val
 
@@ -249,6 +265,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def loaded(cls, name, type):
         """
+        
         Returns 1 if a document is loaded .
         
         :param name:  document name
@@ -265,6 +282,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._loaded(GXContext._get_tls_geo(), name.encode(), type)
         return ret_val
 
@@ -273,6 +291,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def get_window_position(self, left, top, right, bottom, state, is_floating):
         """
+        
         Get the map window's position and dock state
         
         :param left:         Window left position
@@ -294,6 +313,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         left.value, top.value, right.value, bottom.value, state.value, is_floating.value = self._get_window_position(left.value, top.value, right.value, bottom.value, state.value, is_floating.value)
         
 
@@ -302,6 +322,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def set_window_position(self, left, top, right, bottom, state, is_floating):
         """
+        
         Get the map window's position and dock state
         
         :param left:         Window left position
@@ -323,6 +344,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_window_position(left, top, right, bottom, state, is_floating)
         
 
@@ -331,6 +353,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def read_only(self):
         """
+        
         Checks if a document is currently opened in a read-only mode.
         
         :rtype:       bool
@@ -341,6 +364,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val = self._read_only()
         return ret_val
 
@@ -349,6 +373,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def load(cls, name, type):
         """
+        
         Loads a list of documents into the workspace
         
         :param name:  list of documents (';' or '|' delimited) to load.
@@ -372,6 +397,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._load(GXContext._get_tls_geo(), name.encode(), type)
         return GXEDOC(ret_val)
 
@@ -380,6 +406,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def load_no_activate(cls, name, type):
         """
+        
         Loads a list of documents into the workspace
         
         :param name:  list of documents (';' or '|' delimited) to load.
@@ -400,6 +427,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         **Note:** This function acts just like `load <geosoft.gxapi.GXEDOC.load>` except that the document(s) is not activated (brought to foreground) and no
         					guarantee is given about which document is currently active.
         """
+        
         ret_val = gxapi_cy.WrapEDOC._load_no_activate(GXContext._get_tls_geo(), name.encode(), type)
         return GXEDOC(ret_val)
 
@@ -408,6 +436,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def make_current(self):
         """
+        
         Makes this `GXEDOC <geosoft.gxapi.GXEDOC>` object the current active object to the user.
         
 
@@ -417,6 +446,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._make_current()
         
 
@@ -425,6 +455,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def set_window_state(self, state):
         """
+        
         Changes the state of the document window
         
         :param state:  :ref:`EDOC_WINDOW_STATE`
@@ -436,6 +467,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._set_window_state(state)
         
 
@@ -444,6 +476,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def sync(cls, file, type):
         """
+        
         Syncronize the Metadata of a document that is not currently open
         
         :param file:  Document file name
@@ -457,6 +490,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEDOC._sync(GXContext._get_tls_geo(), file.encode(), type)
         
 
@@ -465,6 +499,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def sync_open(self):
         """
+        
         Syncronize the Metadata of a document
         
 
@@ -474,6 +509,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         self._sync_open()
         
 
@@ -482,6 +518,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def un_load(cls, name, type):
         """
+        
         Unloads an edited document.
         
         :param name:  Name of document to unload
@@ -498,6 +535,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         **Note:** If the document is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEDOC.un_load_verify>` with FALSE to prompt save.
         """
+        
         gxapi_cy.WrapEDOC._un_load(GXContext._get_tls_geo(), name.encode(), type)
         
 
@@ -506,6 +544,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def un_load_all(cls, type):
         """
+        
         Unloads all opened documents
         
         :param type:  :ref:`EDOC_TYPE`
@@ -517,6 +556,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         gxapi_cy.WrapEDOC._un_load_all(GXContext._get_tls_geo(), type)
         
 
@@ -525,6 +565,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def un_load_discard(cls, name, type):
         """
+        
         Unloads a document in the workspace, discards changes.
         
         :param name:  Name of document to unload
@@ -540,6 +581,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Note:** If the document is not loaded, nothing happens.
         """
+        
         gxapi_cy.WrapEDOC._un_load_discard(GXContext._get_tls_geo(), name.encode(), type)
         
 
@@ -548,6 +590,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
     @classmethod
     def un_load_verify(cls, name, verify, type):
         """
+        
         Unloads an edited document, optional prompt to save.
         
         :param name:    Name of document to unload
@@ -567,18 +610,91 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         The user can be prompted to save before unloading.
         If `EDOC_UNLOAD_NO_PROMPT <geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT>`, data is always saved.
         """
+        
         gxapi_cy.WrapEDOC._un_load_verify(GXContext._get_tls_geo(), name.encode(), verify, type)
         
 
 
 
 
-# Obsolete
+# Deprecated
+
+
+
+    def get_window_area(self, min_x, min_y, max_x, max_y):
+        """
+        
+        .. deprecated:: None Use GetWindowPosition_EDOC, which includes multi-monitor support. 
+        Get the location of the document window within the frame.
+        
+        :param min_x:  X Min returned
+        :param min_y:  Y Min returned
+        :param max_x:  X Max returned
+        :param max_y:  Y Max returned
+        :type  min_x:  int_ref
+        :type  min_y:  int_ref
+        :type  max_x:  int_ref
+        :type  max_y:  int_ref
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The Coordinates are pixels with 0,0 being the bottom
+        left corner Oasis montaj frame window.
+
+        If the window is minimized, the max values will be
+        equal to the min values. If the window is maximized
+        X Min and Y min will be `iMIN <geosoft.gxapi.iMIN>` and X max and Y max
+        will be `iMAX <geosoft.gxapi.iMAX>`.
+        """
+        warnings.warn("""Deprecated since unknown, Use GetWindowPosition_EDOC, which includes multi-monitor support.""", )
+        min_x.value, min_y.value, max_x.value, max_y.value = self._get_window_area(min_x.value, min_y.value, max_x.value, max_y.value)
+        
+
+
+
+
+    def set_window_area(self, min_x, min_y, max_x, max_y):
+        """
+        
+        .. deprecated:: None Use GetWindowPosition_EDOC, which includes multi-monitor support. 
+        Set the location of the document window within the frame.
+        
+        :param min_x:  X Min
+        :param min_y:  Y Min
+        :param max_x:  X Max
+        :param max_y:  Y Max
+        :type  min_x:  int
+        :type  min_y:  int
+        :type  max_x:  int
+        :type  max_y:  int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The Coordinates are pixels with 0,0 being the bottom
+        left corner Oasis montaj frame window.
+
+        if the max values are equal or less than the min values
+        the window will be mimimized. If any Min values are `iMIN <geosoft.gxapi.iMIN>`
+        or any Max values are `iMAX <geosoft.gxapi.iMAX>`, the window is maximized.
+        """
+        warnings.warn("""Deprecated since unknown, Use GetWindowPosition_EDOC, which includes multi-monitor support.""", )
+        self._set_window_area(min_x, min_y, max_x, max_y)
+        
+
 
 
 
     def copy(self, output):
         """
+        
         Copies a managed document to another document.
         
         :param output:  Name of output document
@@ -593,6 +709,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Note:** Copies a managed document to another document.
         """
+        
         ret_val = self._copy(output.encode())
         return ret_val
 
@@ -601,6 +718,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
     def save(self):
         """
+        
         Save the managed document.
         
 
@@ -612,6 +730,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Note:** Save the managed document
         """
+        
         self._save()
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
     @classmethod
     def render(cls, mview, file_name, resolution, no_clipping):
         """
+        
         Render a voxel, voxsurf and/or gensurf to pdf
         
         :param mview:        `GXMVIEW <geosoft.gxapi.GXMVIEW>` handle
@@ -68,6 +69,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapPDF3D._render(GXContext._get_tls_geo(), mview, file_name.encode(), resolution, no_clipping)
         
 
@@ -76,6 +78,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
     @classmethod
     def render_to_page(cls, mview, file_name, page_number, resolution, no_clip):
         """
+        
         Render a voxel, voxsurf and/or gensurf to a specified page on a pdf
         
         :param mview:        `GXMVIEW <geosoft.gxapi.GXMVIEW>` handle
@@ -93,6 +96,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapPDF3D._render_to_page(GXContext._get_tls_geo(), mview, file_name.encode(), page_number, resolution, no_clip)
         
 
@@ -101,6 +105,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
     @classmethod
     def export_2d(cls, input_map, output_file, create_layersin_pdf, geospatial_pdf, open_pdf):
         """
+        
         Export a 2D map to a PDF file.
         
         :param input_map:            Input map file
@@ -118,6 +123,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapPDF3D._export_2d(GXContext._get_tls_geo(), input_map.encode(), output_file.encode(), create_layersin_pdf, geospatial_pdf, open_pdf)
         
 

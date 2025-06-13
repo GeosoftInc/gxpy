@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -62,6 +62,7 @@ class GXDAT(gxapi_cy.WrapDAT):
     @classmethod
     def create_db(cls, db, x_ch, y_ch, z_ch):
         """
+        
         Create a handle to a database `GXDAT <geosoft.gxapi.GXDAT>` object
         
         :param db:    Handle to database which `GXDAT <geosoft.gxapi.GXDAT>` is connected with
@@ -80,6 +81,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDAT._create_db(GXContext._get_tls_geo(), db, x_ch.encode(), y_ch.encode(), z_ch.encode())
         return GXDAT(ret_val)
 
@@ -88,6 +90,7 @@ class GXDAT(gxapi_cy.WrapDAT):
     @classmethod
     def create_xgd(cls, name, mode):
         """
+        
         Create a handle to a grid file `GXDAT <geosoft.gxapi.GXDAT>` object
         
         :param name:  Name of grid file to associate `GXDAT <geosoft.gxapi.GXDAT>` with
@@ -102,6 +105,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDAT._create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
         return GXDAT(ret_val)
 
@@ -112,6 +116,7 @@ class GXDAT(gxapi_cy.WrapDAT):
     @classmethod
     def get_lst(cls, lst, interface_name, flags, mode):
         """
+        
         Put available `GXDAT <geosoft.gxapi.GXDAT>` filters and qualifiers in a `GXLST <geosoft.gxapi.GXLST>`
         
         :param lst:             `GXLST <geosoft.gxapi.GXLST>` object to populate
@@ -131,6 +136,7 @@ class GXDAT(gxapi_cy.WrapDAT):
         in the "Name" of the `GXLST <geosoft.gxapi.GXLST>`, while the file qualifiers are stored in
         the "Value".
         """
+        
         gxapi_cy.WrapDAT._get_lst(GXContext._get_tls_geo(), lst, interface_name.encode(), flags, mode)
         
 
@@ -139,6 +145,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
     def range_xyz(self, min_x, min_y, min_z, max_x, max_y, max_z, num_non_dummy):
         """
+        
         Determine the range in X, Y and Z in the `GXDAT <geosoft.gxapi.GXDAT>` source
         
         :param min_x:          Minimum X (`rMAX <geosoft.gxapi.rMAX>` if none)
@@ -162,6 +169,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         **Note:** Terminates if unable to open an RPT `GXDAT <geosoft.gxapi.GXDAT>` interface.
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value = self._range_xyz(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value, num_non_dummy.value)
         
 

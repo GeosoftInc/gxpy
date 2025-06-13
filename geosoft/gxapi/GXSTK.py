@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -60,6 +60,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_trans_parms(self, x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp):
         """
+        
         Get transformation parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param x_trans_t:  Type of transformation for horizontal axis
@@ -89,6 +90,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         x_trans_t.value, x_log_min.value, y_trans_t.value, y_log_min.value = self._get_trans_parms(x_trans_t.value, x_log_min.value, xvv_lev, xvv_cmp, y_trans_t.value, y_log_min.value, yvv_lev, yvv_cmp)
         
 
@@ -97,6 +99,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_axis_format(self, xy):
         """
+        
         Get axis number display format.
         
         :param xy:   :ref:`STK_AXIS`
@@ -111,6 +114,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** By default, `DB_CHAN_FORMAT_NORMAL <geosoft.gxapi.DB_CHAN_FORMAT_NORMAL>`
         """
+        
         ret_val = self._get_axis_format(xy)
         return ret_val
 
@@ -119,6 +123,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_axis_parms(self, bar_draw, min_loc, max_loc, thick, color, tick_interval, tick_size1, tick_size2, min_tick, xy):
         """
+        
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing X/Y axis
         
         :param bar_draw:       ?BARDRAW: Bottom and/or Top, or Left and/or Right
@@ -149,6 +154,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
+        
         bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value, tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value = self._get_axis_parms(bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value.encode(), tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value, xy)
         
 
@@ -157,6 +163,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_fid_parms(self, fid_y_loc, fid_tick_size, fid_interval, fid_text_font, fid_text_size, fid_text_color):
         """
+        
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing fid ticks
         
         :param fid_y_loc:       Y location in data unit to draw Fid ticks. Default is the bottom of the stack
@@ -178,6 +185,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value, fid_text_size.value, fid_text_color.value = self._get_fid_parms(fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value.encode(), fid_text_size.value, fid_text_color.value.encode())
         
 
@@ -186,6 +194,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_flag(self, part):
         """
+        
         Get flag indicating part of `GXSTK <geosoft.gxapi.GXSTK>` object is to be drawn or not
         
         :param part:  :ref:`STK_FLAG`
@@ -199,6 +208,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         ret_val = self._get_flag(part)
         return ret_val
 
@@ -207,6 +217,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_gen_parms(self, x_ch, y_ch, grp_name, x_scale, y_scale, x_start, x_end, y_start, left, bottom, height):
         """
+        
         Get general parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param x_ch:      X channel name, REQUIRED
@@ -238,6 +249,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         x_ch.value, y_ch.value, grp_name.value, x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value = self._get_gen_parms(x_ch.value.encode(), y_ch.value.encode(), grp_name.value.encode(), x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value)
         
 
@@ -246,6 +258,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_grid_parms(self, grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color, grid12):
         """
+        
         Get background grid parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param grid:    Type of grid to draw:
@@ -278,6 +291,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
+        
         grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value = self._get_grid_parms(grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value.encode(), grid12)
         
 
@@ -286,6 +300,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_label_parms(self, axis, min_loc, min_orient, max_loc, max_orient, interval, font, text_size, color, bound, xy):
         """
+        
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis labels
         
         :param axis:        Which axes to draw: Bottom/Top or Left/Right axes
@@ -320,6 +335,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         Sets the label format to GSF_NORMAL. To override this,
         use the `set_axis_format <geosoft.gxapi.GXSTK.set_axis_format>` function AFTER calling this.
         """
+        
         axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value, text_size.value, color.value, bound.value = self._get_label_parms(axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value.encode(), text_size.value, color.value.encode(), bound.value, xy)
         
 
@@ -328,6 +344,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_profile(self, prof_type, pitch, thick, ln_clr, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
+        
         Get profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param prof_type:    Profile line type.    1 - solid (default)
@@ -365,6 +382,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         prof_type.value, pitch.value, thick.value, ln_clr.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._get_profile(prof_type.value, pitch.value, thick.value, ln_clr.value.encode(), wrap.value, clip.value, smooth.value, vv_ind, label.value.encode(), ref.value, font.value.encode(), text_size.value, text_clr.value.encode(), prof_va_num.value)
         
 
@@ -373,6 +391,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_profile_ex(self, prof_type, pitch, thick, ln_clr, break_dum, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
+        
         Get profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object (added Break on dummy option)
         
         :param prof_type:    Profile line type.    1 - solid (default)
@@ -412,6 +431,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         prof_type.value, pitch.value, thick.value, ln_clr.value, break_dum.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._get_profile_ex(prof_type.value, pitch.value, thick.value, ln_clr.value.encode(), break_dum.value, wrap.value, clip.value, smooth.value, vv_ind, label.value.encode(), ref.value, font.value.encode(), text_size.value, text_clr.value.encode(), prof_va_num.value)
         
 
@@ -420,6 +440,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font, text_size, text_clr):
         """
+        
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing symbols
         
         :param symb_font:   Font to use to draw symbols. Default is use 'symbols.gfn' font
@@ -457,6 +478,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         symb_font.value, symb_size.value, line_clr.value, fill_clr.value, wrap.value, clip.value, symb_y_loc.value, no_levels.value, label.value, text_font.value, text_size.value, text_clr.value = self._get_symb_parms(symb_font.value.encode(), symb_size.value, line_clr.value.encode(), fill_clr.value.encode(), wrap.value, clip.value, symb_y_loc.value, no_levels.value, vv_level, vv_type, label.value, text_font.value.encode(), text_size.value, text_clr.value.encode())
         
 
@@ -465,6 +487,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def get_title_parms(self, title1, title2, title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font, text_size, color, xy):
         """
+        
         Get parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis titles
         
         :param title1:         Title for bottom X axis/left Y axis. Default is no title.
@@ -499,6 +522,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
+        
         title1.value, title2.value, title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value, text_size.value, color.value = self._get_title_parms(title1.value.encode(), title2.value.encode(), title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value.encode(), text_size.value, color.value.encode(), xy)
         
 
@@ -507,6 +531,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_flag(self, flag, part):
         """
+        
         Set flag indicating part of `GXSTK <geosoft.gxapi.GXSTK>` object is to be drawn or not
         
         :param flag:  Flag to set (0 or 1)
@@ -518,6 +543,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._set_flag(flag, part)
         
 
@@ -526,6 +552,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_array_colors(self, itr):
         """
+        
         Set colors for individual channels in a `GXVA <geosoft.gxapi.GXVA>`, via an `GXITR <geosoft.gxapi.GXITR>`
         
         :param itr:  `GXITR <geosoft.gxapi.GXITR>` object for colors
@@ -539,6 +566,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         by the number of channels; hence the `GXITR <geosoft.gxapi.GXITR>` maximum values should
         be in the range: 0 > values >= 1.0.
         """
+        
         self._set_array_colors(itr)
         
 
@@ -547,6 +575,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_axis_format(self, format, xy):
         """
+        
         Set axis number display format.
         
         :param format:  :ref:`DB_CHAN_FORMAT`
@@ -561,6 +590,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** By default, `DB_CHAN_FORMAT_NORMAL <geosoft.gxapi.DB_CHAN_FORMAT_NORMAL>` is used to display the values,
         or for values > 1.e7, `DB_CHAN_FORMAT_EXP <geosoft.gxapi.DB_CHAN_FORMAT_EXP>`.
         """
+        
         self._set_axis_format(format, xy)
         
 
@@ -569,6 +599,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_axis_parms(self, bar_draw, min_loc, max_loc, thick, color, tick_interval, tick_size1, tick_size2, min_tick, xy):
         """
+        
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing X/Y axis
         
         :param bar_draw:       ?BARDRAW, :ref:`STK_AXIS_POS`
@@ -599,6 +630,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
+        
         self._set_axis_parms(bar_draw, min_loc, max_loc, thick, color.encode(), tick_interval, tick_size1, tick_size2, min_tick, xy)
         
 
@@ -607,6 +639,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_fid_parms(self, fid_y_loc, fid_tick_size, fid_interval, fid_text_font, fid_text_size, fid_text_color):
         """
+        
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing fid ticks
         
         :param fid_y_loc:       Y location in data unit to draw Fid ticks. Default is the bottom of the stack
@@ -628,6 +661,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_fid_parms(fid_y_loc, fid_tick_size, fid_interval, fid_text_font.encode(), fid_text_size, fid_text_color.encode())
         
 
@@ -636,6 +670,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_gen_parms(self, x_ch, y_ch, grp_name, x_scale, y_scale, x_start, x_end, y_start, left, bottom, height):
         """
+        
         Set general parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param x_ch:      X channel name, REQUIRED
@@ -667,6 +702,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_gen_parms(x_ch.encode(), y_ch.encode(), grp_name.encode(), x_scale, y_scale, x_start, x_end, y_start, left, bottom, height)
         
 
@@ -675,6 +711,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_grid_parms(self, grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color, grid12):
         """
+        
         Set background grid parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param grid:    Type of grid to draw:
@@ -707,6 +744,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
+        
         self._set_grid_parms(grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color.encode(), grid12)
         
 
@@ -715,6 +753,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_label_parms(self, axis, min_loc, min_orient, max_loc, max_orient, interval, font, text_size, color, bound, xy):
         """
+        
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis labels
         
         :param axis:        :ref:`STK_AXIS_POS`
@@ -749,6 +788,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         Sets the label format to GSF_NORMAL. To override this,
         use the `set_axis_format <geosoft.gxapi.GXSTK.set_axis_format>` function AFTER calling this.
         """
+        
         self._set_label_parms(axis, min_loc, min_orient, max_loc, max_orient, interval, font.encode(), text_size, color.encode(), bound, xy)
         
 
@@ -757,6 +797,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_line_parm(self, line):
         """
+        
         Set line parameter (of Y Chan) in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param line:  Line symb
@@ -768,6 +809,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_line_parm(line)
         
 
@@ -776,6 +818,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_profile(self, prof_type, pitch, thick, ln_clr, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
+        
         Set profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param prof_type:    Profile line type.    1 - solid (default)
@@ -813,6 +856,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_profile(prof_type, pitch, thick, ln_clr.encode(), wrap, clip, smooth, vv_ind, label.encode(), ref, font.encode(), text_size, text_clr.encode(), prof_va_num)
         
 
@@ -821,6 +865,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_profile_ex(self, prof_type, pitch, thick, ln_clr, break_dum, wrap, clip, smooth, vv_ind, label, ref, font, text_size, text_clr, prof_va_num):
         """
+        
         Set profile parameters in `GXSTK <geosoft.gxapi.GXSTK>` object (added Break on dummy option)
         
         :param prof_type:    Profile line type.    1 - solid (default)
@@ -860,6 +905,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_profile_ex(prof_type, pitch, thick, ln_clr.encode(), break_dum, wrap, clip, smooth, vv_ind, label.encode(), ref, font.encode(), text_size, text_clr.encode(), prof_va_num)
         
 
@@ -868,6 +914,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_symb_parms(self, symb_font, symb_size, line_clr, fill_clr, wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font, text_size, text_clr):
         """
+        
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating drawing symbols
         
         :param symb_font:   Font to use to draw symbols. Default is use 'symbols.gfn' font
@@ -905,6 +952,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_symb_parms(symb_font.encode(), symb_size, line_clr.encode(), fill_clr.encode(), wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font.encode(), text_size, text_clr.encode())
         
 
@@ -913,6 +961,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_title_parms(self, title1, title2, title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font, text_size, color, xy):
         """
+        
         Set parameters in `GXSTK <geosoft.gxapi.GXSTK>` object relating X/Y axis titles
         
         :param title1:         Title for bottom X axis/left Y axis. Default is no title.
@@ -947,6 +996,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
+        
         self._set_title_parms(title1.encode(), title2.encode(), title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font.encode(), text_size, color.encode(), xy)
         
 
@@ -955,6 +1005,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_trans_parms(self, x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp):
         """
+        
         Set transformation parameters in `GXSTK <geosoft.gxapi.GXSTK>` object
         
         :param x_trans_t:  Type of transformation for horizontal axis
@@ -983,6 +1034,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         transformation is log or loglinear. The same for Y channel.
         See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_trans_parms(x_trans_t, x_log_min, xvv_lev, xvv_cmp, y_trans_t, y_log_min, yvv_lev, yvv_cmp)
         
 
@@ -991,6 +1043,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_va_index_start(self, index0):
         """
+        
         Start array profile index labels at 0 or 1.
         
         :param index0:  Starting index (0 or 1)
@@ -1004,6 +1057,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         begin at 0. Use this function to start them at either 0
         or 1.
         """
+        
         self._set_va_index_start(index0)
         
 
@@ -1012,6 +1066,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
     def set_error_plot_params(self, enabled, error_channel, elements_csv):
         """
+        
         Set error bar plot parameters for the current profile.
         
         :param enabled:        Enable(1) or disable(0) error bar plot rendering.
@@ -1029,6 +1084,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         profile.
         See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
+        
         self._set_error_plot_params(enabled, error_channel.encode(), elements_csv.encode())
         
 

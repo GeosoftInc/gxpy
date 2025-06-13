@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 import unittest
 import numpy as np
 import os
@@ -27,13 +27,13 @@ class Test(GXPYTest):
         self.assertEqual(gxu.gx_dtype("<U18"),-72) # x4 for full range of UTF-8 characters
         self.assertEqual(gxu.gx_dtype('uint64'),gxapi.GS_ULONG64)
 
-        self.assertEqual(gxu.dtype_gx(gxapi.GS_DOUBLE), np.float_)
+        self.assertEqual(gxu.dtype_gx(gxapi.GS_DOUBLE), np.float64)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_FLOAT), np.float32)
         self.assertEqual(gxu.dtype_gx(gxapi.GS_LONG), np.int32)
         self.assertEqual(gxu.dtype_gx(-2000).str, "<U2000")
         self.assertEqual(gxu.dtype_gx(gxapi.GS_ULONG64), np.uint64)
 
-        self.assertEqual(gxu.gx_dummy(np.float_),gxapi.rDUMMY)
+        self.assertEqual(gxu.gx_dummy(np.float64),gxapi.rDUMMY)
         self.assertEqual(gxu.gx_dummy(np.int32),gxapi.iDUMMY)
         self.assertEqual(gxu.gx_dummy(np.int64),gxapi.GS_S8DM)
         self.assertEqual(gxu.gx_dummy(np.str_), '')

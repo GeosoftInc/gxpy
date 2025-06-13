@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -66,6 +66,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def copy(self, pgs):
         """
+        
         Copy the data from one pager to another.
         
         :param pgs:  Source `GXPG <geosoft.gxapi.GXPG>` object
@@ -75,6 +76,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(pgs)
         
 
@@ -83,6 +85,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def copy_subset(self, pgs, y_row_d, x_col_d, y_row_s, x_col_s, ny, nx):
         """
+        
         Copy a subset of data from one pager to another.
         
         :param pgs:      Source `GXPG <geosoft.gxapi.GXPG>` object
@@ -106,6 +109,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** 2D Only
         """
+        
         self._copy_subset(pgs, y_row_d, x_col_d, y_row_s, x_col_s, ny, nx)
         
 
@@ -114,6 +118,7 @@ class GXPG(gxapi_cy.WrapPG):
     @classmethod
     def create(cls, row, col, type):
         """
+        
         Creates a Pager object
         
         :param row:   # elements in y (# of row)
@@ -130,6 +135,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPG._create(GXContext._get_tls_geo(), row, col, type)
         return GXPG(ret_val)
 
@@ -138,6 +144,7 @@ class GXPG(gxapi_cy.WrapPG):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create a 2D `GXPG <geosoft.gxapi.GXPG>` from serialized source.
         
         :type  bf:  GXBF
@@ -151,6 +158,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** For 3D pagers, use CreateBF_PG.
         """
+        
         ret_val = gxapi_cy.WrapPG._create_s(GXContext._get_tls_geo(), bf)
         return GXPG(ret_val)
 
@@ -161,6 +169,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def dummy(self):
         """
+        
         Sets the Entire pager to dummy.
         
 
@@ -168,6 +177,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._dummy()
         
 
@@ -176,6 +186,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def e_type(self):
         """
+        
         Gets the type of pager.
         
 
@@ -186,6 +197,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._e_type()
         return ret_val
 
@@ -194,6 +206,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def n_cols(self):
         """
+        
         Gets the # of columns in pager.
         
 
@@ -204,6 +217,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._n_cols()
         return ret_val
 
@@ -212,6 +226,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def n_rows(self):
         """
+        
         Gets the # of rows in pager.
         
 
@@ -222,6 +237,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._n_rows()
         return ret_val
 
@@ -230,6 +246,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def n_slices(self):
         """
+        
         Gets the # of slices (z) in pager.
         
 
@@ -240,6 +257,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._n_slices()
         return ret_val
 
@@ -248,6 +266,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def range(self, min, max):
         """
+        
         Computes the range of the entire pager.
         
         :param min:  Minimum Data (Dummy if no range)
@@ -259,6 +278,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min.value, max.value = self._range(min.value, max.value)
         
 
@@ -267,6 +287,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def get(self, col, row):
         """
+        
         Read a single value from a 2D `GXPG <geosoft.gxapi.GXPG>`
         
         :param col:  iBx - element # in x (column #)
@@ -281,6 +302,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** This is a low-performance method.
         """
+        
         ret_val = self._get(col, row)
         return ret_val
 
@@ -289,6 +311,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def set(self, col, row, value):
         """
+        
         Write a single value to a 2D `GXPG <geosoft.gxapi.GXPG>`
         
         :param col:    iBx - element # in x (column #)
@@ -304,6 +327,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** This is a low-performance method.
         """
+        
         self._set(col, row, value)
         
 
@@ -312,6 +336,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def read_col(self, col, o, n, vv):
         """
+        
         Read a set of elements in X (column) from pager into vv
         
         :param col:  iBx - element # in x (column #)
@@ -327,6 +352,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._read_col(col, o, n, vv)
         
 
@@ -335,6 +361,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def read_row(self, row, o, n, vv):
         """
+        
         Read a set of elements in Y (row) from pager into vv
         
         :param row:  iBy - element # in y (row #)
@@ -350,6 +377,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._read_row(row, o, n, vv)
         
 
@@ -358,6 +386,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def re_allocate(self, n_row, n_col):
         """
+        
         Changes the size of Pager
         
         :param n_row:  Number of Y (rows) to reallocate
@@ -369,6 +398,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._re_allocate(n_row, n_col)
         
 
@@ -377,6 +407,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def serial(self, bf):
         """
+        
         Serialize a 2D `GXPG <geosoft.gxapi.GXPG>` to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :type  bf:  GXBF
@@ -387,6 +418,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** For 3D pagers, use `write_bf <geosoft.gxapi.GXPG.write_bf>`.
         """
+        
         self._serial(bf)
         
 
@@ -395,6 +427,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def statistics(self, st):
         """
+        
         Compute the statistics of a pager object.
         
         :param st:  hST - statistics object
@@ -404,6 +437,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
+        
         self._statistics(st)
         
 
@@ -412,6 +446,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_col(self, col, o, n, vv):
         """
+        
         Write a set of elements in X (column) from vv into pager
         
         :param col:  iBx - element # in x (column #)
@@ -427,6 +462,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_col(col, o, n, vv)
         
 
@@ -435,6 +471,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_row(self, row, o, n, vv):
         """
+        
         Write a set of elements in Y (row) from vv into pager
         
         :param row:  iBy - element # in y (row #)
@@ -450,6 +487,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_row(row, o, n, vv)
         
 
@@ -462,6 +500,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def copy_subset_3d(self, pgs, sliced, n, vv, slices, rows, cols, n_slice, n_row, n_col):
         """
+        
         Copy a subset of data from one pager to another.
         
         :param pgs:      Source `GXPG <geosoft.gxapi.GXPG>` object
@@ -491,6 +530,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** 2D Only
         """
+        
         self._copy_subset_3d(pgs, sliced, n, vv, slices, rows, cols, n_slice, n_row, n_col)
         
 
@@ -499,6 +539,7 @@ class GXPG(gxapi_cy.WrapPG):
     @classmethod
     def create_3d(cls, slice, row, col, type):
         """
+        
         Creates a Pager object
         
         :param slice:  # elements in z (# of slices)
@@ -517,6 +558,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPG._create_3d(GXContext._get_tls_geo(), slice, row, col, type)
         return GXPG(ret_val)
 
@@ -525,6 +567,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def read_col_3d(self, slice, col, o, n, vv):
         """
+        
         Read a set of elements in X (column) from pager into vv
         
         :param slice:  iBz - element # in z (slice #)
@@ -542,6 +585,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._read_col_3d(slice, col, o, n, vv)
         
 
@@ -550,6 +594,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def read_row_3d(self, slice, row, o, n, vv):
         """
+        
         Read a set of elements in Y (row) from pager into vv
         
         :param slice:  iBz - element # in z (slice #)
@@ -567,6 +612,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._read_row_3d(slice, row, o, n, vv)
         
 
@@ -575,6 +621,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def read_trace_3d(self, col, row, o, n, vv):
         """
+        
         Read a set of elements in Z (trace) from pager into vv
         
         :param col:  iBx - element # in x (column #)
@@ -592,6 +639,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._read_trace_3d(col, row, o, n, vv)
         
 
@@ -600,6 +648,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def re_allocate_3d(self, n_slice, n_row, n_col):
         """
+        
         Changes the size of 3D Pager
         
         :param n_slice:  Number of Z (slices) to reallocate
@@ -613,6 +662,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._re_allocate_3d(n_slice, n_row, n_col)
         
 
@@ -621,6 +671,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_col_3d(self, slice, col, o, n, vv):
         """
+        
         Write a set of elements in X (column) from vv into pager
         
         :param slice:  iBz - element # in z (slice #)
@@ -638,6 +689,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_col_3d(slice, col, o, n, vv)
         
 
@@ -646,6 +698,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_row_3d(self, slice, row, o, n, vv):
         """
+        
         Write a set of elements in Y (row) from vv into pager
         
         :param slice:  iBz - element # in z (slice #)
@@ -663,6 +716,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_row_3d(slice, row, o, n, vv)
         
 
@@ -671,6 +725,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_trace_3d(self, col, row, o, n, vv):
         """
+        
         Write a set of elements in Z (trace) from pager into vv
         
         :param col:  iBx - element # in x (column #)
@@ -688,6 +743,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_trace_3d(col, row, o, n, vv)
         
 
@@ -700,6 +756,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def read_bf(self, bf, dir, conv, rev_x, rev_y, rev_z):
         """
+        
         Read the contents of a 2D or 3D pager to from a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param bf:     `GXBF <geosoft.gxapi.GXBF>` to read from
@@ -719,6 +776,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._read_bf(bf, dir, conv, rev_x, rev_y, rev_z)
         
 
@@ -727,6 +785,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def read_ra(self, ra, dir, rev_x, rev_y, rev_z, dummy):
         """
+        
         Read the contents of a 2D or 3D pager to from an `GXRA <geosoft.gxapi.GXRA>`.
         
         :param ra:     `GXRA <geosoft.gxapi.GXRA>` to read from
@@ -748,6 +807,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** Each line must hold only 1 value
         """
+        
         self._read_ra(ra, dir, rev_x, rev_y, rev_z, dummy.encode())
         
 
@@ -756,6 +816,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_bf(self, bf, dir, conv, rev_x, rev_y, rev_z):
         """
+        
         Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param bf:     `GXBF <geosoft.gxapi.GXBF>` to write to
@@ -775,6 +836,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_bf(bf, dir, conv, rev_x, rev_y, rev_z)
         
 
@@ -783,6 +845,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_bf_ex(self, bf, dir, conv, rev_x, rev_y, rev_z, p_dummy):
         """
+        
         Write the contents of a 2D or 3D pager to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param bf:       `GXBF <geosoft.gxapi.GXBF>` to write to
@@ -804,6 +867,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._write_bf_ex(bf, dir, conv, rev_x, rev_y, rev_z, p_dummy)
         
 
@@ -812,6 +876,7 @@ class GXPG(gxapi_cy.WrapPG):
 
     def write_wa(self, wa, dir, rev_x, rev_y, rev_z, dummy):
         """
+        
         Write the contents of a 2D or 3D pager to a `GXWA <geosoft.gxapi.GXWA>`
         
         :param wa:     `GXWA <geosoft.gxapi.GXWA>` to write to
@@ -833,6 +898,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** Each line will hold only 1 value
         """
+        
         self._write_wa(wa, dir, rev_x, rev_y, rev_z, dummy.encode())
         
 

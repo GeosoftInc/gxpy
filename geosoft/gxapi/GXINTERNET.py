@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
     @classmethod
     def download_http(cls, url, file, size):
         """
+        
         Download `GXHTTP <geosoft.gxapi.GXHTTP>` file from the internet to file.
         
         :param url:   `GXHTTP <geosoft.gxapi.GXHTTP>` URL
@@ -79,6 +80,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
 
             iserver.gxh internet class.
         """
+        
         ret_val = gxapi_cy.WrapINTERNET._download_http(GXContext._get_tls_geo(), url.encode(), file.encode(), size)
         return ret_val
 
@@ -87,6 +89,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
     @classmethod
     def send_mail(cls, recipient, p2, p3, p4, p5, p6, p7, p8):
         """
+        
         Prepaire an email for the user.
         
         :param recipient:  Recipient Name        ("" for none)
@@ -113,6 +116,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
         **Note:** Requires a MAPI complient mail system to be installed
         on the client machine.
         """
+        
         gxapi_cy.WrapINTERNET._send_mail(GXContext._get_tls_geo(), recipient.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -58,6 +58,7 @@ class GXTC(gxapi_cy.WrapTC):
     @classmethod
     def create(cls, img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt):
         """
+        
         Creates a Terrain Correction object
         
         :param img:        Topo (DEM) grid
@@ -88,6 +89,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTC._create(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt)
         return GXTC(ret_val)
 
@@ -96,6 +98,7 @@ class GXTC(gxapi_cy.WrapTC):
     @classmethod
     def create_ex(cls, img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type):
         """
+        
         Creates a Terrain Correction object	with surveytype
         
         :param img:          Topo (DEM) grid
@@ -128,6 +131,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTC._create_ex(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type)
         return GXTC(ret_val)
 
@@ -136,6 +140,7 @@ class GXTC(gxapi_cy.WrapTC):
     @classmethod
     def create_ex2(cls, img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type, img2):
         """
+        
         Creates a Terrain Correction object with surveytype and topo surface elevation grid
         
         :param img:          Topo (Rock Surface DEM) grid
@@ -170,6 +175,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapTC._create_ex2(GXContext._get_tls_geo(), img, elev_unit, dinner, douter, dens_t, dens_w, elev_w, edge, edge_elev, opt, survey_type, img2)
         return GXTC(ret_val)
 
@@ -180,6 +186,7 @@ class GXTC(gxapi_cy.WrapTC):
 
     def grregter(self, im_gi, im_go):
         """
+        
         Create a terrain correction grid for a topo grid.
         
         :param im_gi:  Input `GXIMG <geosoft.gxapi.GXIMG>` (local DEM topo grid used for station elevation)
@@ -191,6 +198,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._grregter(im_gi, im_go)
         
 
@@ -199,6 +207,7 @@ class GXTC(gxapi_cy.WrapTC):
 
     def grterain(self, gv_vx, gv_vy, gv_velev, gv_vslop, gv_vtcor, im_gcor, dens_t):
         """
+        
         Calculate terrain corrections.
         
         :param gv_vx:     Input X channel data (in topo grid projection units, default in metres)
@@ -220,6 +229,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._grterain(gv_vx, gv_vy, gv_velev, gv_vslop, gv_vtcor, im_gcor, dens_t)
         
 
@@ -228,6 +238,7 @@ class GXTC(gxapi_cy.WrapTC):
 
     def grterain2(self, gv_vx, gv_vy, gv_velev, gv_vslop, gv_vwater, gv_vtcor, im_gcor, dens_t):
         """
+        
         Calculate terrain corrections (work for marine gravity too).
         
         :param gv_vx:      Input X channel data (in topo grid projection units, default in metres)
@@ -251,6 +262,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._grterain2(gv_vx, gv_vy, gv_velev, gv_vslop, gv_vwater, gv_vtcor, im_gcor, dens_t)
         
 
@@ -259,6 +271,7 @@ class GXTC(gxapi_cy.WrapTC):
 
     def g_gterain(self, gv_vx, p3, p4, p5, p6, p7, p8):
         """
+        
         Calculate GG terrain corrections
         
         :param gv_vx:  Input X channel data (in topo grid projection units, default in metres)
@@ -280,6 +293,7 @@ class GXTC(gxapi_cy.WrapTC):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
+        
         self._g_gterain(gv_vx, p3, p4, p5, p6, p7, p8)
         
 

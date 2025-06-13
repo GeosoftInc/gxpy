@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -57,6 +57,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def clear(self):
         """
+        
         Clears all the parameters in a `GXREG <geosoft.gxapi.GXREG>` object
         
 
@@ -64,6 +65,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clear()
         
 
@@ -72,6 +74,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def copy(self, srce):
         """
+        
         Copy
         
         :param srce:  Source
@@ -81,6 +84,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(srce)
         
 
@@ -89,6 +93,7 @@ class GXREG(gxapi_cy.WrapREG):
     @classmethod
     def create(cls, l_parm_length):
         """
+        
         Create a handle to a `GXREG <geosoft.gxapi.GXREG>` object
         
         :param l_parm_length:  Maximum size of "parameter=setting" string.
@@ -101,6 +106,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapREG._create(GXContext._get_tls_geo(), l_parm_length)
         return GXREG(ret_val)
 
@@ -109,6 +115,7 @@ class GXREG(gxapi_cy.WrapREG):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create a handle to a `GXREG <geosoft.gxapi.GXREG>` object from a `GXBF <geosoft.gxapi.GXBF>`
         
         :param bf:  `GXBF <geosoft.gxapi.GXBF>` handle for file containing serialized `GXREG <geosoft.gxapi.GXREG>`
@@ -121,6 +128,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapREG._create_s(GXContext._get_tls_geo(), bf)
         return GXREG(ret_val)
 
@@ -131,6 +139,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def get_maker_xml(self, parm):
         """
+        
         Gets the MAKER handle from the REG object.
         
         :param parm:  XML file name
@@ -140,6 +149,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_maker_xml(parm.encode())
         
 
@@ -148,6 +158,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def get(self, parm, data):
         """
+        
         Gets a string for a specified parameter in the `GXREG <geosoft.gxapi.GXREG>` object
         
         :param parm:  Name of the parameter
@@ -159,6 +170,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         data.value = self._get(parm.encode(), data.value.encode())
         
 
@@ -167,6 +179,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def get_int(self, parm, data):
         """
+        
         Gets an int for a specified parameter in the `GXREG <geosoft.gxapi.GXREG>` object
         
         :param parm:  Name of the parameter
@@ -180,6 +193,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **Note:** If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `iDUMMY <geosoft.gxapi.iDUMMY>` is returned.
         """
+        
         data.value = self._get_int(parm.encode(), data.value)
         
 
@@ -188,6 +202,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def get_one(self, loc, parm, data):
         """
+        
         Gets n-th entry of the `GXREG <geosoft.gxapi.GXREG>` object
         
         :param loc:   Sequential number of `GXREG <geosoft.gxapi.GXREG>` entry
@@ -201,6 +216,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         parm.value, data.value = self._get_one(loc, parm.value.encode(), data.value.encode())
         
 
@@ -209,6 +225,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def get_double(self, parm, data):
         """
+        
         Gets an real for a specified parameter in the `GXREG <geosoft.gxapi.GXREG>` object
         
         :param parm:  Name of the parameter
@@ -222,6 +239,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **Note:** If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `rDUMMY <geosoft.gxapi.rDUMMY>` is returned.
         """
+        
         data.value = self._get_double(parm.encode(), data.value)
         
 
@@ -230,6 +248,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def entries(self):
         """
+        
         Get the number of parms in a `GXREG <geosoft.gxapi.GXREG>` object
         
 
@@ -240,6 +259,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._entries()
         return ret_val
 
@@ -248,6 +268,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def load_ini(self, ini):
         """
+        
         Load a registry from an INI file.
         
         :param ini:  INI file name
@@ -259,6 +280,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **Note:** Items are loaded into the `GXREG <geosoft.gxapi.GXREG>` in the format "GROUP.ITEM".
         """
+        
         self._load_ini(ini.encode())
         
 
@@ -267,6 +289,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def match_string(self, parm, data):
         """
+        
         Replace a string with reg settings.
         
         :param parm:  String to Replace
@@ -278,6 +301,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         data.value = self._match_string(parm.encode(), data.value.encode())
         
 
@@ -286,6 +310,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def merge(self, srce, type):
         """
+        
         Merge
         
         :param srce:  Source
@@ -297,6 +322,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._merge(srce, type)
         
 
@@ -305,6 +331,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def save_ini(self, ini):
         """
+        
         Save a `GXREG <geosoft.gxapi.GXREG>` to an INI file.
         
         :param ini:  INI file name
@@ -319,6 +346,7 @@ class GXREG(gxapi_cy.WrapREG):
         which groups items under [GROUP] headings.
         Single-word items (without a separating period) are skipped.
         """
+        
         self._save_ini(ini.encode())
         
 
@@ -327,6 +355,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def serial(self, bf):
         """
+        
         Serialize a `GXREG <geosoft.gxapi.GXREG>` object into a file.
         
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` to serialize `GXREG <geosoft.gxapi.GXREG>` into
@@ -336,6 +365,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -344,6 +374,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def set(self, parm, data):
         """
+        
         Sets a string parameter in the `GXREG <geosoft.gxapi.GXREG>` object
         
         :param parm:  Name of the parameter
@@ -362,6 +393,7 @@ class GXREG(gxapi_cy.WrapREG):
         or
         `set_double <geosoft.gxapi.GXREG.set_double>`(Reg, sParam, `rDUMMY <geosoft.gxapi.rDUMMY>`);
         """
+        
         self._set(parm.encode(), data.encode())
         
 
@@ -370,6 +402,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def set_int(self, parm, data):
         """
+        
         Sets an int for a specified parameter in the `GXREG <geosoft.gxapi.GXREG>` object
         
         :param parm:  Name of the parameter
@@ -381,6 +414,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_int(parm.encode(), data)
         
 
@@ -389,6 +423,7 @@ class GXREG(gxapi_cy.WrapREG):
 
     def set_double(self, parm, p3):
         """
+        
         Sets an real for a specified parameter in the `GXREG <geosoft.gxapi.GXREG>` object
         
         :param parm:  Name of the parameter
@@ -400,6 +435,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_double(parm.encode(), p3)
         
 

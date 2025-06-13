@@ -1,8 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +56,7 @@ class GXSHD(gxapi_cy.WrapSHD):
 
     def refresh(self, grid_path, inclination, declination, scale, contrast, brightness, wet_look):
         """
+        
         Refresh the SHD with new shading parameters.
         
         :param grid_path:    Grid path returned
@@ -78,6 +80,7 @@ class GXSHD(gxapi_cy.WrapSHD):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         contrast.value, brightness.value = self._refresh(grid_path.encode(), inclination, declination, scale, contrast.value, brightness.value, wet_look)
         
 
@@ -86,6 +89,7 @@ class GXSHD(gxapi_cy.WrapSHD):
 
     def track_interactive(self, constraint, inclination, declination):
         """
+        
         Track a line on map and get shading parameters based on its length and direction.
         
         :param constraint:   :ref:`SHD_FIX`
@@ -105,6 +109,7 @@ class GXSHD(gxapi_cy.WrapSHD):
 
         **Limitations:** May not be available while executing a command line program.
         """
+        
         ret_val, inclination.value, declination.value = self._track_interactive(constraint, inclination.value, declination.value)
         return ret_val
 
@@ -113,6 +118,7 @@ class GXSHD(gxapi_cy.WrapSHD):
 
     def end_shading(self, apply_changes):
         """
+        
         This ends interactive shading and must be called if any interactive changes should be applied. Passing false to apply changes is equivalent to simply disposing handle.
         
         :param apply_changes:  Apply changes to map.
@@ -128,6 +134,7 @@ class GXSHD(gxapi_cy.WrapSHD):
 
             StartShading_EMAP
         """
+        
         self._end_shading(apply_changes)
         
 

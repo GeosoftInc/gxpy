@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -56,6 +56,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
 
     def calc(self, el, lon, lat, str_val, inc, dec):
         """
+        
         Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model.
         
         :param el:       Elevation (metres)
@@ -79,6 +80,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model. The model used will be the same as that
         obtained with `create <geosoft.gxapi.GXIGRF.create>`.
         """
+        
         str_val.value, inc.value, dec.value = self._calc(el, lon, lat, str_val.value, inc.value, dec.value)
         
 
@@ -87,6 +89,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
 
     def calc_vv(self, gv_vel, gv_vlon, gv_vlat, gv_vfs, gv_vinc, gv_vdec):
         """
+        
         Calculate `GXIGRF <geosoft.gxapi.GXIGRF>` data `GXVV <geosoft.gxapi.GXVV>`'s for a given `GXIGRF <geosoft.gxapi.GXIGRF>` model.
         
         :param gv_vel:   Input elevation data (metres)
@@ -118,6 +121,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         These values will be converted to the types contained in the
         output `GXVV <geosoft.gxapi.GXVV>`'s.
         """
+        
         self._calc_vv(gv_vel, gv_vlon, gv_vlat, gv_vfs, gv_vinc, gv_vdec)
         
 
@@ -126,6 +130,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
     @classmethod
     def create(cls, date, year, filename):
         """
+        
         Create an `GXIGRF <geosoft.gxapi.GXIGRF>`.
         
         :param date:      Date required
@@ -146,6 +151,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         the `GXIGRF <geosoft.gxapi.GXIGRF>` year nearest to the line's date will
         be used. Otherwise, the specified year is used.
         """
+        
         ret_val = gxapi_cy.WrapIGRF._create(GXContext._get_tls_geo(), date, year, filename.encode())
         return GXIGRF(ret_val)
 
@@ -154,6 +160,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
     @classmethod
     def date_range(cls, file_name, min, max):
         """
+        
         Determine the range of years covered by an `GXIGRF <geosoft.gxapi.GXIGRF>` or DGRF file
         
         :param file_name:  Model data file name
@@ -171,6 +178,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         up only to calculate for years within the date range, and will
         return an error otherwise.
         """
+        
         min.value, max.value = gxapi_cy.WrapIGRF._date_range(GXContext._get_tls_geo(), file_name.encode(), min.value, max.value)
         
 

@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def cross_product_(cls, x1, y1, z1, x2, y2, z2, x3, y3, z3):
         """
+        
         Cross product of two vectors.
         
         :param x1:  X1 component
@@ -80,6 +81,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         x3.value, y3.value, z3.value = gxapi_cy.WrapMATH._cross_product_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2, x3.value, y3.value, z3.value)
         
 
@@ -88,6 +90,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def abs_int_(cls, n):
         """
+        
         Calculate absolute value
         
         :param n:  Integer
@@ -102,6 +105,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._abs_int_(GXContext._get_tls_geo(), n)
         return ret_val
 
@@ -110,6 +114,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def and_(cls, pi_val1, pi_val2):
         """
+        
         Return the unary operation result of A & B
 
         Returns			an integer number
@@ -126,6 +131,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMATH._and_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
 
@@ -134,6 +140,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def mod_int_(cls, a, b):
         """
+        
         Calculates the modulus of two integers
         
         :param a:  A
@@ -150,6 +157,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** If A or B is a dummy, returns dummy.
         """
+        
         ret_val = gxapi_cy.WrapMATH._mod_int_(GXContext._get_tls_geo(), a, b)
         return ret_val
 
@@ -158,6 +166,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def or_(cls, pi_val1, pi_val2):
         """
+        
         Return the unary operation result of A | B
 
         Returns			an integer number
@@ -174,6 +183,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMATH._or_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
 
@@ -182,6 +192,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def round_int_(cls, z):
         """
+        
         Round to the nearest whole number
         
         :param z:  Round
@@ -198,6 +209,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         Positive values with decimal parts larger than .5 round up (1.5 -> 2.0)
         Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._round_int_(GXContext._get_tls_geo(), z)
         return ret_val
 
@@ -206,6 +218,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def xor_(cls, pi_val1, pi_val2):
         """
+        
         Return the unary operation result of A ^ B
 
         Returns			an integer number
@@ -222,6 +235,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMATH._xor_(GXContext._get_tls_geo(), pi_val1, pi_val2)
         return ret_val
 
@@ -230,6 +244,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def nicer_log_scale_(cls, min, max, fine):
         """
+        
         Finds nicer min, max values for logarithmic plot scales.
         
         :param min:   Min value (changed)
@@ -256,6 +271,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         For example,  the values (.034, 23) return (.03, 30) for
         fine scaling, and (0.01, 100) for coarse scaling.
         """
+        
         min.value, max.value = gxapi_cy.WrapMATH._nicer_log_scale_(GXContext._get_tls_geo(), min.value, max.value, fine)
         
 
@@ -264,6 +280,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def nicer_scale_(cls, min, max, inc, pow):
         """
+        
         Compute a nicer scale for a given min and max.
         
         :param min:  Min value (changed)
@@ -279,6 +296,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min.value, max.value, inc.value, pow.value = gxapi_cy.WrapMATH._nicer_scale_(GXContext._get_tls_geo(), min.value, max.value, inc.value, pow.value)
         
 
@@ -287,6 +305,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def normalise_3d_(cls, x, y, z):
         """
+        
         Scale a vector to unit length.
         
         :param x:  X component (altered)
@@ -303,6 +322,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         **Note:** Divides each component by the vector
         magnitude.
         """
+        
         x.value, y.value, z.value = gxapi_cy.WrapMATH._normalise_3d_(GXContext._get_tls_geo(), x.value, y.value, z.value)
         
 
@@ -311,6 +331,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def abs_double_(cls, z):
         """
+        
         Calculate absolute value
         
         :param z:  Real
@@ -325,6 +346,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._abs_double_(GXContext._get_tls_geo(), z)
         return ret_val
 
@@ -333,6 +355,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def arc_cos_(cls, val):
         """
+        
         Calculate the arccosine
         
         :param val:  Real
@@ -347,6 +370,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values or values < -1 or > 1 return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._arc_cos_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -355,6 +379,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def arc_sin_(cls, val):
         """
+        
         Calculate the arcsin
         
         :param val:  Real
@@ -369,6 +394,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values or values < -1 or > 1 return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._arc_sin_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -377,6 +403,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def arc_tan_(cls, val):
         """
+        
         Calculate the arctan
         
         :param val:  Real
@@ -391,6 +418,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._arc_tan_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -399,6 +427,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def arc_tan2_(cls, y, x):
         """
+        
         Calculate ArcTan(Y/X)
         
         :param y:  Y
@@ -415,6 +444,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** If either X or Y is a dummy, returns dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._arc_tan2_(GXContext._get_tls_geo(), y, x)
         return ret_val
 
@@ -423,6 +453,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def ceil_(cls, z):
         """
+        
         Calculates the ceiling of the value
         
         :param z:  Real
@@ -437,6 +468,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._ceil_(GXContext._get_tls_geo(), z)
         return ret_val
 
@@ -445,6 +477,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def cos_(cls, val):
         """
+        
         Calculate the cosine
         
         :param val:  Angle in radians
@@ -459,6 +492,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._cos_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -467,6 +501,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def dot_product_3d_(cls, x1, y1, z1, x2, y2, z2):
         """
+        
         Compute Dot product of two vectors.
         
         :param x1:  X1 component
@@ -489,6 +524,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapMATH._dot_product_3d_(GXContext._get_tls_geo(), x1, y1, z1, x2, y2, z2)
         return ret_val
 
@@ -497,6 +533,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def exp_(cls, val):
         """
+        
         Calculate e raised to the power of X
         
         :param val:  X
@@ -511,6 +548,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._exp_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -519,6 +557,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def floor_(cls, z):
         """
+        
         Calculates the floor of the value
         
         :param z:  Real
@@ -533,6 +572,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._floor_(GXContext._get_tls_geo(), z)
         return ret_val
 
@@ -541,6 +581,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def hypot_(cls, x, y):
         """
+        
         sqrt(X*X + Y*Y)
         
         :param x:  X
@@ -557,6 +598,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** If either X or Y is a dummy, the returned value is dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._hypot_(GXContext._get_tls_geo(), x, y)
         return ret_val
 
@@ -565,6 +607,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def lambda_trans_(cls, z, lda):
         """
+        
         Performs lambda transform on a value.
         
         :param z:    Z Value
@@ -588,6 +631,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
             `lambda_trans_rev_ <geosoft.gxapi.GXMATH.lambda_trans_rev_>`
         """
+        
         ret_val = gxapi_cy.WrapMATH._lambda_trans_(GXContext._get_tls_geo(), z, lda)
         return ret_val
 
@@ -596,6 +640,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def lambda_trans_rev_(cls, z, lda):
         """
+        
         Performs a reverse lambda transform on a value.
         
         :param z:    Lambda transformed Z Value
@@ -616,6 +661,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
             `lambda_trans_ <geosoft.gxapi.GXMATH.lambda_trans_>`
         """
+        
         ret_val = gxapi_cy.WrapMATH._lambda_trans_rev_(GXContext._get_tls_geo(), z, lda)
         return ret_val
 
@@ -624,6 +670,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def log_(cls, val):
         """
+        
         Calculate the natural log
         
         :param val:  Real
@@ -638,6 +685,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._log_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -646,6 +694,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def log10_(cls, val):
         """
+        
         Calculate the base 10 log
         
         :param val:  Real
@@ -660,6 +709,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._log10_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -668,6 +718,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def log_z_(cls, z, mode, min):
         """
+        
         Given a Z value and the Log style and Log Minimum this
         function will return the log value.
         
@@ -705,6 +756,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
             `un_log_z_ <geosoft.gxapi.GXMATH.un_log_z_>`
         """
+        
         ret_val = gxapi_cy.WrapMATH._log_z_(GXContext._get_tls_geo(), z, mode, min)
         return ret_val
 
@@ -713,6 +765,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def mod_double_(cls, a, b):
         """
+        
         Calculates the modulus of two reals (A mod B)
         
         :param a:  A
@@ -737,6 +790,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         f A or B is a dummy, returns dummy.
         """
+        
         ret_val = gxapi_cy.WrapMATH._mod_double_(GXContext._get_tls_geo(), a, b)
         return ret_val
 
@@ -745,6 +799,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def rotate_vector_(cls, x1, y1, z1, angle, x2, y2, z2, x3, y3, z3):
         """
+        
         Rotate a vector about an axis.
         
         :param x1:     X1 component (vector to rotate)
@@ -776,6 +831,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         Angles are measured clockwise looking along the axis (away from the origin).
         Assumes a right hand coordinate system.
         """
+        
         x3.value, y3.value, z3.value = gxapi_cy.WrapMATH._rotate_vector_(GXContext._get_tls_geo(), x1, y1, z1, angle, x2, y2, z2, x3.value, y3.value, z3.value)
         
 
@@ -784,6 +840,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def pow_(cls, x, y):
         """
+        
         Calculate X raised to the power of Y
         
         :param x:  X
@@ -800,6 +857,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** If either X or Y is a dummy, returns dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._pow_(GXContext._get_tls_geo(), x, y)
         return ret_val
 
@@ -808,6 +866,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def rand_(cls):
         """
+        
         Get a  random number between 0 and 1
         
 
@@ -822,6 +881,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         calls to this function are made.
         The standard "C" function rand() is called.
         """
+        
         ret_val = gxapi_cy.WrapMATH._rand_(GXContext._get_tls_geo())
         return ret_val
 
@@ -830,6 +890,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def round_double_(cls, z, n):
         """
+        
         Round to n significant digits
         
         :param z:  Real
@@ -848,6 +909,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         Positive values ending in 5XXX to n sig digits round up
         Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._round_double_(GXContext._get_tls_geo(), z, n)
         return ret_val
 
@@ -856,6 +918,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def sign_(cls, z_sign, z_val):
         """
+        
         Determine return value based on value of Z1
         
         :param z_sign:  Z1
@@ -872,6 +935,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._sign_(GXContext._get_tls_geo(), z_sign, z_val)
         return ret_val
 
@@ -880,6 +944,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def sin_(cls, val):
         """
+        
         Calculate the sin
         
         :param val:  Angle in radians
@@ -894,6 +959,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._sin_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -902,6 +968,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def sqrt_(cls, val):
         """
+        
         Calculate the square root
         
         :param val:  Real
@@ -916,6 +983,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._sqrt_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -924,6 +992,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def tan_(cls, val):
         """
+        
         Calculate the tangent
         
         :param val:  Angle in radians
@@ -938,6 +1007,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
         **Note:** Dummy values return dummy
         """
+        
         ret_val = gxapi_cy.WrapMATH._tan_(GXContext._get_tls_geo(), val)
         return ret_val
 
@@ -946,6 +1016,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def un_log_z_(cls, z, mode, min):
         """
+        
         Inverse of rLogZ
         
         :param z:     Log value
@@ -968,6 +1039,7 @@ class GXMATH(gxapi_cy.WrapMATH):
 
             `log_z_ <geosoft.gxapi.GXMATH.log_z_>`
         """
+        
         ret_val = gxapi_cy.WrapMATH._un_log_z_(GXContext._get_tls_geo(), z, mode, min)
         return ret_val
 
@@ -976,6 +1048,7 @@ class GXMATH(gxapi_cy.WrapMATH):
     @classmethod
     def s_rand_(cls):
         """
+        
         Seed the random-number generator with current time
         
 
@@ -986,6 +1059,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         **Note:** Use the `rand_ <geosoft.gxapi.GXMATH.rand_>` function to create a random number between  0 and 1.
         The standard "C" function srand() is called.
         """
+        
         gxapi_cy.WrapMATH._s_rand_(GXContext._get_tls_geo())
         
 

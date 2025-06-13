@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -53,6 +53,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
     @classmethod
     def open(cls, name):
         """
+        
         Open a project storage.
         
         :param name:  Project File Name
@@ -62,6 +63,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSTORAGEPROJECT._open(GXContext._get_tls_geo(), name.encode())
         
 
@@ -70,6 +72,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
     @classmethod
     def close(cls):
         """
+        
         Close the project storage.
         
 
@@ -77,6 +80,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSTORAGEPROJECT._close(GXContext._get_tls_geo())
         
 
@@ -85,6 +89,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
     @classmethod
     def remove_dataset(cls, name):
         """
+        
         Remove this dataset from the project.
         
         :param name:  Dataset File Name
@@ -94,6 +99,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapSTORAGEPROJECT._remove_dataset(GXContext._get_tls_geo(), name.encode())
         
 

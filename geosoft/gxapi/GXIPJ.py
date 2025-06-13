@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -66,6 +66,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def clear_warp(self):
         """
+        
         Clear warp parameters (if any) from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
 
@@ -73,6 +74,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clear_warp()
         
 
@@ -81,6 +83,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def make_geographic(self):
         """
+        
         Remove a projected coordinate system from an `GXIPJ <geosoft.gxapi.GXIPJ>`
         
 
@@ -90,6 +93,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** This function does nothing if the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system.
         """
+        
         self._make_geographic()
         
 
@@ -98,6 +102,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def make_wgs84(self):
         """
+        
         Make a WGS 84 geographic projection
         
 
@@ -105,6 +110,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._make_wgs84()
         
 
@@ -113,6 +119,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_units(self, scale, str_val):
         """
+        
         Set unit parameters
         
         :param scale:    Factor to meters, must be >= 0.0
@@ -124,6 +131,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_units(scale, str_val.encode())
         
 
@@ -132,6 +140,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def add_exagg_warp(self, x_exag, y_exag, z_exag, x_orig, y_orig, z_orig):
         """
+        
         Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>` to exaggerate X, Y and Z.
         
         :param x_exag:  X exaggeration, must be > 0.0
@@ -151,6 +160,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_exagg_warp(x_exag, y_exag, z_exag, x_orig, y_orig, z_orig)
         
 
@@ -159,6 +169,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def add_log_warp(self, x, y):
         """
+        
         Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>` to log one or both coordinantes
         
         :param x:    Log in X?
@@ -170,6 +181,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_log_warp(x, y)
         
 
@@ -178,6 +190,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def add_matrix_warp(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
+        
         Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>` using a matrix
         
         :param v00:  Row 0 Element 0
@@ -217,6 +230,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_matrix_warp(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
         
 
@@ -225,6 +239,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def add_warp(self, type, vv_x_old, vv_y_old, vv_x_new, vv_y_new):
         """
+        
         Add a warp to `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         :param type:      :ref:`IPJ_TYPE`
@@ -252,6 +267,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         Cannot be used with WARP_MATRIX or WARP_LOG
         """
+        
         self._add_warp(type, vv_x_old, vv_y_old, vv_x_new, vv_y_new)
         
 
@@ -260,6 +276,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def clear_coordinate_system(self):
         """
+        
         Clear coordinate sytsem, except for units
         
 
@@ -270,6 +287,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** Clears the Datum, Local Datum and Projection info.
         Leaves units, any warp or orientation warp unchanged.
         """
+        
         self._clear_coordinate_system()
         
 
@@ -278,6 +296,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def clear_orientation(self):
         """
+        
         Clear any orientation and/or warp from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
 
@@ -285,6 +304,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._clear_orientation()
         
 
@@ -293,6 +313,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def copy_orientation(self, ip_jd):
         """
+        
         Copy any orientation and/or warp from one `GXIPJ <geosoft.gxapi.GXIPJ>` to another.
         
         :param ip_jd:  Destination `GXIPJ <geosoft.gxapi.GXIPJ>`
@@ -302,6 +323,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy_orientation(ip_jd)
         
 
@@ -310,6 +332,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def convert_orientation_warp_vv(self, vv_x, vv_y, vv_z, f_forward):
         """
+        
         Convert X,Y and Z VVs using the orientation warp from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
         :param vv_x:       X `GXVV <geosoft.gxapi.GXVV>` coordinates converted on output
@@ -325,6 +348,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._convert_orientation_warp_vv(vv_x, vv_y, vv_z, f_forward)
         
 
@@ -333,6 +357,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def copy(self, ip_jd):
         """
+        
         Copy IPJs
         
         :param ip_jd:  Destination `GXIPJ <geosoft.gxapi.GXIPJ>`
@@ -342,6 +367,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._copy(ip_jd)
         
 
@@ -350,6 +376,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def copy_projection(self, ip_jd):
         """
+        
         Copy the projection from one `GXIPJ <geosoft.gxapi.GXIPJ>` to another
         
         :param ip_jd:  Source
@@ -362,6 +389,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** Copies the projection parameters, while leaving the rest
         (e.g. Datum, Local Datum Transform) unchanged.
         """
+        
         self._copy_projection(ip_jd)
         
 
@@ -370,6 +398,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def create(cls):
         """
+        
         This method creates a projection object.
         
 
@@ -380,6 +409,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapIPJ._create(GXContext._get_tls_geo())
         return GXIPJ(ret_val)
 
@@ -388,6 +418,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def create_s(cls, bf):
         """
+        
         Create `GXIPJ <geosoft.gxapi.GXIPJ>` from serialized source.
         
         :type  bf:  GXBF
@@ -399,6 +430,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapIPJ._create_s(GXContext._get_tls_geo(), bf)
         return GXIPJ(ret_val)
 
@@ -407,6 +439,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def create_xml(cls, file):
         """
+        
         Create an `GXIPJ <geosoft.gxapi.GXIPJ>` from serialized Geosoft MetaData XML file
         
         :param file:  File Name
@@ -419,6 +452,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapIPJ._create_xml(GXContext._get_tls_geo(), file.encode())
         return GXIPJ(ret_val)
 
@@ -429,6 +463,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_3d_view(self, x, y, z, rx, ry, rz, sx, sy, str_val):
         """
+        
         Get 3D orientation parameters
         
         :param x:        X location of view origin
@@ -456,6 +491,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** The view must have a 3D orientation
         """
+        
         x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value = self._get_3d_view(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value)
         
 
@@ -464,6 +500,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_3d_view_ex(self, x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags):
         """
+        
         Get 3D orientation parameters with new flags
         
         :param x:        X location of view origin
@@ -495,6 +532,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** The view must have a 3D orientation
         """
+        
         x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value = self._get_3d_view_ex(x.value, y.value, z.value, rx.value, ry.value, rz.value, sx.value, sy.value, str_val.value, rotate.value, flags.value)
         
 
@@ -503,6 +541,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_crooked_section_view_v_vs(self, dist_vv, xvv, yvv, log_z):
         """
+        
         Get the crooked section path.
         
         :param dist_vv:  Section X locations (e.g. distance along the curve)
@@ -520,6 +559,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** Returns the orignal VVs used to set up the crooked section path.
         """
+        
         log_z.value = self._get_crooked_section_view_v_vs(dist_vv, xvv, yvv, log_z.value)
         
 
@@ -528,6 +568,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def get_list(cls, parm, datum, lst):
         """
+        
         Get a list of parameters.
         
         :param parm:   :ref:`IPJ_PARM_LST`
@@ -544,6 +585,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** The datum filter string, if specified, will limit the requested
         list to those valid for the spacified datum.
         """
+        
         gxapi_cy.WrapIPJ._get_list(GXContext._get_tls_geo(), parm, datum.encode(), lst)
         
 
@@ -552,6 +594,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_orientation_info(self, x, y, z, az, swing):
         """
+        
         Get `GXIPJ <geosoft.gxapi.GXIPJ>` orientation parameters.
         
         :param x:      Plane Origin X
@@ -587,6 +630,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         HORIZONTALLY onto the viewing plan in order to
         preserve elevations, even if the section has a swing.
         """
+        
         x.value, y.value, z.value, az.value, swing.value = self._get_orientation_info(x.value, y.value, z.value, az.value, swing.value)
         
 
@@ -595,6 +639,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_plane_equation(self, min_x, min_y, max_x, max_y, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
+        
         Get the equation of a plane
         
         :param min_x:    Min X of surface
@@ -634,6 +679,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         In practice, use the current view extents, or the corners
         of a grid.
         """
+        
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_plane_equation(min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
@@ -642,6 +688,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_plane_equation2(self, ip_jo, min_x, min_y, max_x, max_y, pitch, yaw, roll, x, y, z, sx, sy, str_val):
         """
+        
         Get the equation of a plane with reprojection.
         
         :param ip_jo:    `GXIPJ <geosoft.gxapi.GXIPJ>` object for the output values
@@ -688,6 +735,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         If the two input IPJs share the same PCS then the `get_plane_equation <geosoft.gxapi.GXIPJ.get_plane_equation>`
         function is called directly, using the input `GXIPJ <geosoft.gxapi.GXIPJ>`.
         """
+        
         pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value = self._get_plane_equation2(ip_jo, min_x, min_y, max_x, max_y, pitch.value, yaw.value, roll.value, x.value, y.value, z.value, sx.value, sy.value, str_val.value)
         
 
@@ -696,6 +744,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def compare_datums(self, ipj2):
         """
+        
         Compare the datums of two coordinate systems?
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -718,6 +767,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         local datum transform is still possible, but only the effect of
         ellipsoid shape will be modelled in the transform.
         """
+        
         ret_val = self._compare_datums(ipj2)
         return ret_val
 
@@ -726,6 +776,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def compare_datums_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, str_val):
         """
+        
         Compare the datums of two coordinate systems, but allows for a specified accuracy and returns the reason if they are different
         
         :param ipj2:        `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -752,6 +803,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         local datum transform is still possible, but only the effect of
         ellipsoid shape will be modelled in the transform.
         """
+        
         ret_val, str_val.value = self._compare_datums_to_specified_tolerance_with_feedback(ipj2, sig_digits, str_val.value.encode())
         return ret_val
 
@@ -760,6 +812,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def convert_warp(self, x, y, z, f_forward):
         """
+        
         Converts a point X, Y, Z to the new `GXIPJ <geosoft.gxapi.GXIPJ>` plane.
         
         :param x:          X coordinates converted on output
@@ -778,6 +831,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, x.value, y.value, z.value = self._convert_warp(x.value, y.value, z.value, f_forward)
         return ret_val
 
@@ -786,6 +840,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def convert_warp_vv(self, vv_x, vv_y, f_forward):
         """
+        
         Converts a set of X & Y VVs to the new `GXIPJ <geosoft.gxapi.GXIPJ>` plane. The Z is assumed to be 0
         
         :param vv_x:       X `GXVV <geosoft.gxapi.GXVV>` coordinates converted on output
@@ -802,6 +857,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._convert_warp_vv(vv_x, vv_y, f_forward)
         return ret_val
 
@@ -810,6 +866,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def coordinate_systems_are_the_same(self, ipj2):
         """
+        
         Are these two coordinate systems the same?
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -825,6 +882,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** This does not compare LDT information (use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for that).
         """
+        
         ret_val = self._coordinate_systems_are_the_same(ipj2)
         return ret_val
 
@@ -833,6 +891,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def coordinate_systems_are_the_same_within_a_small_tolerance(self, ipj2):
         """
+        
         Same as `coordinate_systems_are_the_same <geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same>`, but allows for small numerical differences
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -846,6 +905,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._coordinate_systems_are_the_same_within_a_small_tolerance(ipj2)
         return ret_val
 
@@ -854,6 +914,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def coordinate_systems_are_the_same_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, sig_digits_EN, str_val):
         """
+        
         Same as `coordinate_systems_are_the_same <geosoft.gxapi.GXIPJ.coordinate_systems_are_the_same>`, but allows for a specified accuracy and returns the reason if they are different
         
         :param ipj2:           `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -873,6 +934,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, str_val.value = self._coordinate_systems_are_the_same_to_specified_tolerance_with_feedback(ipj2, sig_digits, sig_digits_EN, str_val.value.encode())
         return ret_val
 
@@ -881,6 +943,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_display_name(self, str_val):
         """
+        
         Get a name for display purposes from `GXIPJ <geosoft.gxapi.GXIPJ>`
         
         :param str_val:  Name returned
@@ -890,6 +953,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = self._get_display_name(str_val.value.encode())
         
 
@@ -898,6 +962,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_esri(self, esri):
         """
+        
         Store coordinate system in an ESRI prj coordinate string
         
         :param esri:  ESRI projection string returned
@@ -910,6 +975,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** If the projection is not supported in ESRI, the projection
         string will be empty.
         """
+        
         esri.value = self._get_esri(esri.value.encode())
         
 
@@ -918,6 +984,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_gxf(self, str1, str2, str3, str4, str5):
         """
+        
         Store coordinate system in GXF style strings.
         
         :param str1:  Projection name
@@ -939,6 +1006,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         All strings must be the same length, 160 (`STR_GXF <geosoft.gxapi.STR_GXF>`) recommended.
         Strings too short will be truncated.
         """
+        
         str1.value, str2.value, str3.value, str4.value, str5.value = self._get_gxf(str1.value.encode(), str2.value.encode(), str3.value.encode(), str4.value.encode(), str5.value.encode())
         
 
@@ -947,6 +1015,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_mi_coord_sys(self, coord, units):
         """
+        
         Store coordinate system in MapInfo coordsys pair
         
         :param coord:  MapInfo coordsys string returned
@@ -958,6 +1027,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         coord.value, units.value = self._get_mi_coord_sys(coord.value.encode(), units.value.encode())
         
 
@@ -966,6 +1036,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_name(self, type, str_val):
         """
+        
         Get an `GXIPJ <geosoft.gxapi.GXIPJ>` name
         
         :param type:     :ref:`IPJ_NAME`
@@ -977,6 +1048,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = self._get_name(type, str_val.value.encode())
         
 
@@ -985,6 +1057,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_vcs(self, str_val):
         """
+        
         Set the Vertical Coordinate System in the `GXIPJ <geosoft.gxapi.GXIPJ>` name string
         
         :param str_val:  New name (See Valid inputs above).
@@ -1010,6 +1083,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
              "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
              ""                - Clears the vcs
         """
+        
         self._set_vcs(str_val.encode())
         
 
@@ -1018,6 +1092,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_orientation(self):
         """
+        
         Get `GXIPJ <geosoft.gxapi.GXIPJ>` orientation in space.
         
 
@@ -1031,6 +1106,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** Projections can be created oriented horizontally (e.g. in plan maps)
         or vertically (in section maps - Wholeplot and `GXIP <geosoft.gxapi.GXIP>`).
         """
+        
         ret_val = self._get_orientation()
         return ret_val
 
@@ -1039,6 +1115,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_orientation_name(self, str_val):
         """
+        
         Get a name for display purposes from `GXIPJ <geosoft.gxapi.GXIPJ>`
         
         :param str_val:  Name returned
@@ -1048,6 +1125,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = self._get_orientation_name(str_val.value.encode())
         
 
@@ -1056,6 +1134,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_units(self, scale, str_val):
         """
+        
         Get unit parameters
         
         :param scale:    Factor to meters
@@ -1067,6 +1146,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         scale.value, str_val.value = self._get_units(scale.value, str_val.value.encode())
         
 
@@ -1075,6 +1155,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_xml(self, str_val):
         """
+        
         Get an Geosoft Metadata XML string from an `GXIPJ <geosoft.gxapi.GXIPJ>`
         
         :param str_val:  XML string returned
@@ -1084,6 +1165,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = self._get_xml(str_val.value.encode())
         
 
@@ -1092,6 +1174,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def has_projection(self):
         """
+        
         Does the `GXIPJ <geosoft.gxapi.GXIPJ>` object contain a projection?
         
 
@@ -1103,6 +1186,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._has_projection()
         return ret_val
 
@@ -1111,6 +1195,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def is_3d_inverted(self):
         """
+        
         Is this 3D View inverted ?
         
 
@@ -1122,6 +1207,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_3d_inverted()
         return ret_val
 
@@ -1130,6 +1216,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def is_3d_inverted_angles(self):
         """
+        
         Are the angles in this 3D View inverted ?
         
 
@@ -1141,6 +1228,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_3d_inverted_angles()
         return ret_val
 
@@ -1149,6 +1237,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def is_geographic(self):
         """
+        
         See if this projection is geographic
         
 
@@ -1160,6 +1249,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._is_geographic()
         return ret_val
 
@@ -1168,6 +1258,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def orientations_are_the_same(self, ipj2):
         """
+        
         Are these two orientations the same?
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -1181,6 +1272,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._orientations_are_the_same(ipj2)
         return ret_val
 
@@ -1189,6 +1281,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def orientations_are_the_same_within_a_small_tolerance(self, ipj2):
         """
+        
         Same as `orientations_are_the_same <geosoft.gxapi.GXIPJ.orientations_are_the_same>`, but allows for small numerical differences
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -1202,6 +1295,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._orientations_are_the_same_within_a_small_tolerance(ipj2)
         return ret_val
 
@@ -1210,6 +1304,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def orientations_are_the_same_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, str_val):
         """
+        
         Same as `orientations_are_the_same <geosoft.gxapi.GXIPJ.orientations_are_the_same>`, but allows for small numerical differences
         
         :param ipj2:        `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -1227,6 +1322,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, str_val.value = self._orientations_are_the_same_to_specified_tolerance_with_feedback(ipj2, sig_digits, str_val.value.encode())
         return ret_val
 
@@ -1235,6 +1331,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def has_section_orientation(self):
         """
+        
         Does this projection contain an orientation used by section plots?
         
 
@@ -1260,6 +1357,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         It is sometimes important to ignore the section orientation, for instance
         when rendering a grid in 3D where it has been located on a plane.
         """
+        
         ret_val = self._has_section_orientation()
         return ret_val
 
@@ -1268,6 +1366,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def projection_type_is_fully_supported(self):
         """
+        
         Is the projection type fully supported?
         
 
@@ -1285,6 +1384,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         This function does not test the validity of datums or local
         datum transforms.
         """
+        
         ret_val = self._projection_type_is_fully_supported()
         return ret_val
 
@@ -1293,6 +1393,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_gxf_safe(self, str1, str2, str3, str4, str5):
         """
+        
         Same as `set_gxf <geosoft.gxapi.GXIPJ.set_gxf>`, but fails gracefully.
         
         :param str1:  "projection name" or PCS_NAME from ipj_pcs.csv (datum / projection) or EPSG coordinate system code number or "<file.prj>" projection file name or "<file.wrp>" warp file name
@@ -1318,6 +1419,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         parameter). If this function fails, it simply returns 0 and leaves the
         `GXIPJ <geosoft.gxapi.GXIPJ>` unchanged.
         """
+        
         ret_val = self._set_gxf_safe(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
         return ret_val
 
@@ -1326,6 +1428,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def source_type(self):
         """
+        
         Get `GXIPJ <geosoft.gxapi.GXIPJ>` source type
         
 
@@ -1336,6 +1439,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._source_type()
         return ret_val
 
@@ -1344,6 +1448,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def support_datum_transform(self, ipj2):
         """
+        
         Can we transform between these two datums?
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -1367,6 +1472,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         local datum transform is still possible, but only the effect of
         ellipsoid shape will be modelled in the transform.
         """
+        
         ret_val = self._support_datum_transform(ipj2)
         return ret_val
 
@@ -1375,6 +1481,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def unit_name(cls, val, type, name):
         """
+        
         Get a unit name given a scale factor
         
         :param val:   Factor to meters
@@ -1388,6 +1495,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         name.value = gxapi_cy.WrapIPJ._unit_name(GXContext._get_tls_geo(), val, type, name.value.encode())
         
 
@@ -1396,6 +1504,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def warped(self):
         """
+        
         Does `GXIPJ <geosoft.gxapi.GXIPJ>` contain a warp?
         
         :rtype:      bool
@@ -1404,6 +1513,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._warped()
         return ret_val
 
@@ -1412,6 +1522,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def warps_are_the_same(self, ipj2):
         """
+        
         Are these two warps the same?
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -1425,6 +1536,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._warps_are_the_same(ipj2)
         return ret_val
 
@@ -1433,6 +1545,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def warps_are_the_same_within_a_small_tolerance(self, ipj2):
         """
+        
         Same as `warps_are_the_same <geosoft.gxapi.GXIPJ.warps_are_the_same>`, but allows for small numerical differences
         
         :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -1446,6 +1559,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._warps_are_the_same_within_a_small_tolerance(ipj2)
         return ret_val
 
@@ -1454,6 +1568,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def warps_are_the_same_to_specified_tolerance_with_feedback(self, ipj2, sig_digits, str_val):
         """
+        
         Same as `warps_are_the_same <geosoft.gxapi.GXIPJ.warps_are_the_same>`, but allows for a specified accuracy and returns the reason if they are different
         
         :param ipj2:        `GXIPJ <geosoft.gxapi.GXIPJ>` 2
@@ -1471,6 +1586,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, str_val.value = self._warps_are_the_same_to_specified_tolerance_with_feedback(ipj2, sig_digits, str_val.value.encode())
         return ret_val
 
@@ -1479,6 +1595,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def warp_type(self):
         """
+        
         Obtain the warp type of an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
 
@@ -1489,6 +1606,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._warp_type()
         return ret_val
 
@@ -1497,6 +1615,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def make_projected(self, min_lon, min_lat, max_lon, max_lat):
         """
+        
         Create a default projected coordinate system from lat-long ranges.
         
         :param min_lon:  Minimum longitude
@@ -1519,6 +1638,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         for the map. Global maps outside of +/- 70 degrees latitude are not
         supported.
         """
+        
         self._make_projected(min_lon, min_lat, max_lon, max_lat)
         
 
@@ -1527,6 +1647,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def new_box_resolution(self, ip_jo, res, min_x, min_y, max_x, max_y, min_res, max_res, diag_res):
         """
+        
         Determine a data resolution in a new coordinate system
         
         :param ip_jo:     New `GXIPJ <geosoft.gxapi.GXIPJ>`
@@ -1556,6 +1677,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         dummy.  The conversion to new resolution is based on measurements
         along the four edges and two diagonals.
         """
+        
         min_res.value, max_res.value, diag_res.value = self._new_box_resolution(ip_jo, res, min_x, min_y, max_x, max_y, min_res.value, max_res.value, diag_res.value)
         
 
@@ -1564,6 +1686,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def read(self, type, str1, str2, str3):
         """
+        
         Read and define an `GXIPJ <geosoft.gxapi.GXIPJ>` from a standard file.
         
         :param type:  :ref:`IPJ_TYPE`
@@ -1579,6 +1702,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._read(type, str1.encode(), str2.encode(), str3.encode())
         
 
@@ -1587,6 +1711,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_method_parm(self, parm):
         """
+        
         Get projection method parameter
         
         :param parm:  :ref:`IPJ_CSP`
@@ -1599,6 +1724,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_method_parm(parm)
         return ret_val
 
@@ -1607,6 +1733,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_north_azimuth(self, x, y):
         """
+        
         Return the azimuth of geographic North at a point.
         
         :param x:    Input X location
@@ -1624,6 +1751,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** If the `GXIPJ <geosoft.gxapi.GXIPJ>` is not a projected coordinate system
         then the returned azimuth is `GS_R8DM <geosoft.gxapi.GS_R8DM>`;
         """
+        
         ret_val = self._get_north_azimuth(x, y)
         return ret_val
 
@@ -1632,6 +1760,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def unit_scale(cls, name, default):
         """
+        
         Get a unit scale (m/unit) given a name
         
         :param name:     Unit name, abbreviation or full name
@@ -1648,6 +1777,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** If name cannot be found, returns default.
         """
+        
         ret_val = gxapi_cy.WrapIPJ._unit_scale(GXContext._get_tls_geo(), name.encode(), default)
         return ret_val
 
@@ -1656,6 +1786,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def serial(self, bf):
         """
+        
         Serialize `GXIPJ <geosoft.gxapi.GXIPJ>` to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :type  bf:   GXBF
@@ -1664,6 +1795,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(bf)
         
 
@@ -1672,6 +1804,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def serial_fgdcxml(self, file):
         """
+        
         Write the `GXIPJ <geosoft.gxapi.GXIPJ>` as a FDGC MetaData XML object
         
         :param file:  Name of file to export to
@@ -1681,6 +1814,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial_fgdcxml(file.encode())
         
 
@@ -1689,6 +1823,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def serial_isoxml(self, file):
         """
+        
         Write the `GXIPJ <geosoft.gxapi.GXIPJ>` as a ISO MetaData XML object
         
         :param file:  Name of file to export to
@@ -1698,6 +1833,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial_isoxml(file.encode())
         
 
@@ -1706,6 +1842,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def serial_xml(self, file):
         """
+        
         Write the `GXIPJ <geosoft.gxapi.GXIPJ>` as a Geosoft MetaData XML object
         
         :param file:  Name of file to export to
@@ -1715,6 +1852,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial_xml(file.encode())
         
 
@@ -1723,6 +1861,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_3d_inverted(self, inverted):
         """
+        
         Set whether a view is inverted (must be 3D already)
         
         :param inverted:  Inverted (0 or 1)
@@ -1732,6 +1871,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_3d_inverted(inverted)
         
 
@@ -1740,6 +1880,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_3d_inverted_angles(self, inverted):
         """
+        
         Set whether the angles in this view are inverted (must be 3D already)
         
         :param inverted:  Inverted (0 or 1)
@@ -1749,6 +1890,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_3d_inverted_angles(inverted)
         
 
@@ -1757,6 +1899,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_3d_view(self, x, y, z, rx, ry, rz, sx, sy, str_val):
         """
+        
         Set 3D orientation parameters
         
         :param x:        X location of view origin
@@ -1785,6 +1928,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** Sets up translation, scaling and rotation in all three directions
         for 3D objects.
         """
+        
         self._set_3d_view(x, y, z, rx, ry, rz, sx, sy, str_val)
         
 
@@ -1793,6 +1937,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_3d_view_ex(self, x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags):
         """
+        
         Set 3D orientation parameters with new flags
         
         :param x:        X location of view origin
@@ -1825,6 +1970,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** Sets up translation, scaling and rotation in all three directions
         for 3D objects.
         """
+        
         self._set_3d_view_ex(x, y, z, rx, ry, rz, sx, sy, str_val, rotate, flags)
         
 
@@ -1833,6 +1979,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_3d_view_from_axes(self, x, y, z, x1, x2, x3, y1, y2, y3, sx, sy, str_val):
         """
+        
         Set 3D orientation parameters
         
         :param x:        X location of view origin
@@ -1867,6 +2014,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** Sets up translation, scaling and rotation in all three directions
         for 3D objects, based on input origin and X and Y axis vectors.
         """
+        
         self._set_3d_view_from_axes(x, y, z, x1, x2, x3, y1, y2, y3, sx, sy, str_val)
         
 
@@ -1875,6 +2023,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_crooked_section_view(self, dist_vv, xvv, yvv, log_z):
         """
+        
         Set up the crooked section view.
         
         :param dist_vv:  Section X locations (e.g. distance along the curve)
@@ -1893,6 +2042,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** A non-plane section. It is a vertical section which curves along a path in
         (X, Y).
         """
+        
         self._set_crooked_section_view(dist_vv, xvv, yvv, log_z)
         
 
@@ -1901,6 +2051,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_depth_section_view(self, depth):
         """
+        
         Set depth section orientation parameters
         
         :param depth:  View Y value for Depth = 0.0.
@@ -1910,6 +2061,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_depth_section_view(depth)
         
 
@@ -1918,6 +2070,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_esri(self, esri):
         """
+        
         Set coordinate system from an ESRI prj coordinate string
         
         :param esri:  ESRI prj format projection string
@@ -1930,6 +2083,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** If the projection is not supported in Geosoft, the
         `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
         """
+        
         self._set_esri(esri.encode())
         
 
@@ -1938,6 +2092,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_gxf(self, str1, str2, str3, str4, str5):
         """
+        
         Set coordinate system from GXF style strings.
         
         :param str1:  "projection name" or PCS_NAME from ipj_pcs.csv (datum / projection) or EPSG coordinate system code number or "<file.prj>" projection file name or "<file.wrp>" warp file name
@@ -2090,6 +2245,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
             "<525000,2500000,0,0,0,15>","4210","16137","",""
             ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
         """
+        
         self._set_gxf(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
         
 
@@ -2098,6 +2254,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_method_parm(self, parm, parm_value):
         """
+        
         Set projection method parameter
         
         :param parm:        :ref:`IPJ_CSP`
@@ -2111,6 +2268,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** If parameter is not valid, nothing happens.
         """
+        
         self._set_method_parm(parm, parm_value)
         
 
@@ -2119,6 +2277,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_mi_coord_sys(self, coord, units):
         """
+        
         Set coordinate system from a MapInfo coordsys command
         
         :param coord:  MapInfo Coordinate System
@@ -2130,6 +2289,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_mi_coord_sys(coord.encode(), units.encode())
         
 
@@ -2138,6 +2298,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_normal_section_view(self, x, y, z, azimuth, swing):
         """
+        
         Set normal section orientation parameters
         
         :param x:        X location of view origin
@@ -2159,6 +2320,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         normal to the section, and the "Y" values in a grid
         do not necessarily correspond to the elvations for a swung section.
         """
+        
         self._set_normal_section_view(x, y, z, azimuth, swing)
         
 
@@ -2167,6 +2329,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_plan_view(self, x, y, z, rot):
         """
+        
         Set plan orientation parameters.
         
         :param x:    X location of view rotation point
@@ -2197,6 +2360,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         will show up in the output string for the orientation, so it makes sense to
         default them to (0, 0).
         """
+        
         self._set_plan_view(x, y, z, rot)
         
 
@@ -2205,6 +2369,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_section_view(self, x, y, z, azimuth, swing):
         """
+        
         Set section orientation parameters
         
         :param x:        X location of view origin
@@ -2235,6 +2400,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         This function is NOT suitable for simply creating
         an orientation for a dipping grid or view.
         """
+        
         self._set_section_view(x, y, z, azimuth, swing)
         
 
@@ -2243,6 +2409,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_wms_coord_sys(self, coord, min_x, min_y, max_x, max_y):
         """
+        
         Set coordinate system from a WMS coordsys string.
         
         :param coord:  WMS style coordinate string
@@ -2283,6 +2450,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         units of the projection.  Normally, this is from
         long/lat (9102) to metres (9001).
         """
+        
         self._set_wms_coord_sys(coord.encode(), min_x, min_y, max_x, max_y)
         
 
@@ -2291,6 +2459,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_xml(self, str_val):
         """
+        
         Set an `GXIPJ <geosoft.gxapi.GXIPJ>` from a Geosoft Metadata XML string
         
         :param str_val:  XML string to set
@@ -2300,6 +2469,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_xml(str_val.encode())
         
 
@@ -2308,6 +2478,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_from_binary_as_string(self, str_val):
         """
+        
         Set `GXIPJ <geosoft.gxapi.GXIPJ>` from binary-as-string
         
         :param str_val:  Binary as string
@@ -2317,6 +2488,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_from_binary_as_string(str_val.encode())
         
 
@@ -2325,6 +2497,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_from_binary_as_string(self, str_val):
         """
+        
         Get `GXIPJ <geosoft.gxapi.GXIPJ>` from binary-as-string
         
         :param str_val:  Binary as string returned
@@ -2334,6 +2507,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         str_val.value = self._get_from_binary_as_string(str_val.value.encode())
         
 
@@ -2342,6 +2516,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_3d_matrix_orientation(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
+        
         Gets the coefficients of a 3D matrix orientation.
         
         :param v00:  Row 0 Element 0
@@ -2381,6 +2556,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value = self._get_3d_matrix_orientation(v00.value, v01.value, v02.value, v03.value, v10.value, v11.value, v12.value, v13.value, v20.value, v21.value, v22.value, v23.value, v30.value, v31.value, v32.value, v33.value)
         
 
@@ -2389,6 +2565,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def set_3d_matrix_orientation(self, v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33):
         """
+        
         Apply a 3D orientation directly using matrix coefficients.
         
         :param v00:  Row 0 Element 0
@@ -2428,6 +2605,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_3d_matrix_orientation(v00, v01, v02, v03, v10, v11, v12, v13, v20, v21, v22, v23, v30, v31, v32, v33)
         
 
@@ -2436,6 +2614,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def reproject_section_grid(self, output_ipj, x0, y0, dx, dy, rot):
         """
+        
         Reproject a section grid
         
         :param output_ipj:  Reprojected `GXIPJ <geosoft.gxapi.GXIPJ>` on input (need not include an orientation). On output contains the same
@@ -2459,6 +2638,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** Reproject a section grid to a new `GXIPJ <geosoft.gxapi.GXIPJ>`, adjusting its orientation and registration so that
         it remains in the same location.
         """
+        
         x0.value, y0.value, dx.value, dy.value, rot.value = self._reproject_section_grid(output_ipj, x0.value, y0.value, dx.value, dy.value, rot.value)
         
 
@@ -2467,6 +2647,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_authority_id(self, authority):
         """
+        
         Get Authority ID (e.g. EPSG, ESRI) for coordinate system or `iDUMMY <geosoft.gxapi.iDUMMY>` if unknown.
         
         :param authority:  Authority ID (e.g. EPSG and ESRI)
@@ -2479,6 +2660,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, authority.value = self._get_authority_id(authority.value.encode())
         return ret_val
 
@@ -2487,6 +2669,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def get_epsgid_for_datum(self):
         """
+        
         Get EPSG ID for datum of coordinate system or `iDUMMY <geosoft.gxapi.iDUMMY>` if unknown.
         
 
@@ -2497,6 +2680,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_epsgid_for_datum()
         return ret_val
 
@@ -2505,6 +2689,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
     def add_as_favourite_coordinate_system(self):
         """
+        
         Add as favourite coordinate system to Settings.
         
 
@@ -2512,6 +2697,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._add_as_favourite_coordinate_system()
         
 
@@ -2520,6 +2706,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def get_number_of_favourite_coordinate_systems(cls):
         """
+        
         Get number of favourite coordinate systems in Settings.
         
         :rtype:      int
@@ -2528,6 +2715,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapIPJ._get_number_of_favourite_coordinate_systems(GXContext._get_tls_geo())
         return ret_val
 
@@ -2536,6 +2724,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def get_favourite_coordinate_system(cls, index):
         """
+        
         Get a favourite coordinate system from Settings.
         
         :param index:  Index of item.
@@ -2546,6 +2735,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapIPJ._get_favourite_coordinate_system(GXContext._get_tls_geo(), index)
         return GXIPJ(ret_val)
 
@@ -2554,6 +2744,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
     @classmethod
     def remove_favourite_coordinate_system(cls, index):
         """
+        
         Remove favourite coordinate system from Settings.
         
         :param index:  Index of item.
@@ -2563,8 +2754,184 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapIPJ._remove_favourite_coordinate_system(GXContext._get_tls_geo(), index)
         
+
+
+
+
+    def read_wkt(self, wkt):
+        """
+        
+        Set coordinate system from a WKT PROJ coordinate string
+        
+        :param wkt:  WKT PROJ format projection string
+        :type  wkt:  str
+
+        .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If the projection is not supported in Geosoft, the
+        `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
+        """
+        
+        self._read_wkt(wkt.encode())
+        
+
+
+
+
+    def read_proj_string(self, projStr):
+        """
+        
+        Set coordinate system from a PROJ string command
+        
+        :param projStr:  PROJ string
+        :type  projStr:  str
+
+        .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If the projection is not supported in Geosoft, the
+        `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
+        """
+        
+        self._read_proj_string(projStr.encode())
+        
+
+
+
+
+    def compare_to(self, ipj2, message):
+        """
+        
+        Get a string with differences between PROJ created IPJs
+        
+        :param ipj2:     `GXIPJ <geosoft.gxapi.GXIPJ>` object
+        :param message:  :output message string
+        :type  ipj2:     GXIPJ
+        :type  message:  str_ref
+
+        .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** If the projection is not supported in Geosoft, the
+        `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
+        """
+        
+        message.value = self._compare_to(ipj2, message.value.encode())
+        
+
+
+
+
+# Deprecated
+
+
+
+    def clear_projection(self):
+        """
+        
+        .. deprecated:: None None 
+        Clear a projection except for units
+        
+
+        .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Clears the Datum, Local Datum and Projection info.
+        Leaves units, any warp or orientation warp unchanged.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._clear_projection()
+        
+
+
+
+
+    def equivalent(self, ipj2):
+        """
+        
+        .. deprecated:: None None 
+        Compare if two IPJs the equivalent (allows for small numerical differences)
+        
+        :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
+        :type  ipj2:  GXIPJ
+
+        :returns:     0 - No
+                      1 - Yes
+
+                      Notes
+                           This does not compare LDT information in the `GXIPJ <geosoft.gxapi.GXIPJ>`, use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for a full comparison.
+        :rtype:       int
+
+        .. versionadded:: 7.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = self._equivalent(ipj2)
+        return ret_val
+
+
+
+
+    def same(self, ipj2):
+        """
+        
+        .. deprecated:: None None 
+        Compare if two IPJs are identical or if either is undefined
+        
+        :param ipj2:  `GXIPJ <geosoft.gxapi.GXIPJ>` 2
+        :type  ipj2:  GXIPJ
+
+        :returns:     0 - No
+                      1 - If the IPJs are the same, or if either `GXIPJ <geosoft.gxapi.GXIPJ>` is IPJ_CS_UNKNOWN.
+
+                      Notes
+                           This does not compare LDT information in the `GXIPJ <geosoft.gxapi.GXIPJ>`, use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for a full comparison.
+        :rtype:       int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = self._same(ipj2)
+        return ret_val
+
+
+
+
+    def supported(self):
+        """
+        
+        .. deprecated:: None None 
+        Is this coordinate system fully supported?
+        
+
+        :returns:    0 - No
+                     1 - Yes
+        :rtype:      int
+
+        .. versionadded:: 6.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This function checks only the projected coordinated system
+        in the `GXIPJ <geosoft.gxapi.GXIPJ>` object, so should only be used with projections
+        of type `IPJ_TYPE_PCS <geosoft.gxapi.IPJ_TYPE_PCS>`.
+        This function does not test the validity of datums or local
+        datum transforms.
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        ret_val = self._supported()
+        return ret_val
 
 
 

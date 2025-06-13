@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -58,6 +58,7 @@ class GXPAT(gxapi_cy.WrapPAT):
     @classmethod
     def create(cls):
         """
+        
         Creates a pattern object with current default patterns.
         
 
@@ -68,6 +69,7 @@ class GXPAT(gxapi_cy.WrapPAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapPAT._create(GXContext._get_tls_geo())
         return GXPAT(ret_val)
 
@@ -78,6 +80,7 @@ class GXPAT(gxapi_cy.WrapPAT):
 
     def get_lst(self, cl, lst):
         """
+        
         Copies all pattern names into a `GXLST <geosoft.gxapi.GXLST>` object.
         
         :param cl:   Class name ("" for all classes)
@@ -93,7 +96,56 @@ class GXPAT(gxapi_cy.WrapPAT):
         There will always be at least two items,
         "None" and "Solid Fill"
         """
+        
         self._get_lst(cl.encode(), lst)
+        
+
+
+
+
+# Deprecated
+
+
+
+    def copy(self, source):
+        """
+        
+        .. deprecated:: None None 
+        Copy one `GXPAT <geosoft.gxapi.GXPAT>` object to another.
+        
+        :param source:  Source `GXPAT <geosoft.gxapi.GXPAT>` to Copy from
+        :type  source:  GXPAT
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was not correctly implemented or used
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._copy(source)
+        
+
+
+
+
+    def load(self, file):
+        """
+        
+        .. deprecated:: None None 
+        Load patterns from a file
+        
+        :param file:  Pattern file name
+        :type  file:  str
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Was not correctly implemented or used
+        """
+        warnings.warn("""Deprecated since unknown, """, )
+        self._load(file.encode())
         
 
 

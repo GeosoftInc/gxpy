@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -54,6 +54,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
     @classmethod
     def create(cls, format):
         """
+        
         Creates an empty `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` object
         
         :param format:  :ref:`USERMETA_FORMAT` Type of Meta to create
@@ -66,6 +67,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapUSERMETA._create(GXContext._get_tls_geo(), format)
         return GXUSERMETA(ret_val)
 
@@ -74,6 +76,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
     @classmethod
     def create_s(cls, file):
         """
+        
         Create a `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` from a file
         
         :param file:  File Name
@@ -86,6 +89,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapUSERMETA._create_s(GXContext._get_tls_geo(), file.encode())
         return GXUSERMETA(ret_val)
 
@@ -96,6 +100,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_data_creation_date(self, date):
         """
+        
         Get the Data Creation Date
         
         :param date:      Date
@@ -105,6 +110,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         date.value = self._get_data_creation_date(date.value)
         
 
@@ -113,6 +119,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_extents2d(self, min_x, min_y, max_x, max_y):
         """
+        
         Get the 2d Extents
         
         :param min_x:     MinX
@@ -128,6 +135,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, max_x.value, max_y.value = self._get_extents2d(min_x.value, min_y.value, max_x.value, max_y.value)
         
 
@@ -136,6 +144,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_extents3d(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Get the 3d Extents
         
         :param min_x:     MinX
@@ -155,6 +164,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_extents3d(min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
@@ -163,6 +173,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_ipj(self, ipj):
         """
+        
         Get the `GXIPJ <geosoft.gxapi.GXIPJ>`
         
         :param ipj:       Date
@@ -172,6 +183,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._get_ipj(ipj)
         
 
@@ -180,6 +192,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_meta_creation_date(self, date):
         """
+        
         Get the Meta Creation Date
         
         :param date:      Date
@@ -189,6 +202,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         date.value = self._get_meta_creation_date(date.value)
         
 
@@ -197,6 +211,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_xml_format(self, format):
         """
+        
         Get the XML Format
         
         :param format:    :ref:`USERMETA_FORMAT`
@@ -206,6 +221,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         format.value = self._get_xml_format(format.value)
         
 
@@ -214,6 +230,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_xml_format(self, format):
         """
+        
         Get the XML Format
         
         :param format:    :ref:`USERMETA_FORMAT`
@@ -223,6 +240,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_xml_format(format)
         
 
@@ -231,6 +249,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def compare(self, usermeta2):
         """
+        
         Compare 2 `GXUSERMETA <geosoft.gxapi.GXUSERMETA>`'s
         
         :param usermeta2:  Second UERMETA
@@ -244,6 +263,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._compare(usermeta2)
         return ret_val
 
@@ -252,6 +272,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_data_creator(self, data_creator):
         """
+        
         Get the Data Creator
         
         :param data_creator:  DataCreator returned
@@ -261,6 +282,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         data_creator.value = self._get_data_creator(data_creator.value.encode())
         
 
@@ -269,6 +291,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_format(self, format):
         """
+        
         Get the File Format
         
         :param format:    Title returned
@@ -278,6 +301,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         format.value = self._get_format(format.value.encode())
         
 
@@ -286,6 +310,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_meta_creator(self, meta_creator):
         """
+        
         Get the Meta Creator
         
         :param meta_creator:  MetaCreator returned
@@ -295,6 +320,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         meta_creator.value = self._get_meta_creator(meta_creator.value.encode())
         
 
@@ -303,6 +329,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_project(self, project):
         """
+        
         Get the File Project
         
         :param project:   Title returned
@@ -312,6 +339,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         project.value = self._get_project(project.value.encode())
         
 
@@ -320,6 +348,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def get_title(self, title):
         """
+        
         Get the Title
         
         :param title:     Title returned
@@ -329,6 +358,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         title.value = self._get_title(title.value.encode())
         
 
@@ -337,6 +367,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def serial(self, save_geo, file):
         """
+        
         Serialize `GXUSERMETA <geosoft.gxapi.GXUSERMETA>` to a `GXBF <geosoft.gxapi.GXBF>`.
         
         :param save_geo:  Output Geosoft Metadata?
@@ -348,6 +379,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._serial(save_geo, file.encode())
         
 
@@ -356,6 +388,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_data_creation_date(self, date):
         """
+        
         Set the Data Creation Date
         
         :param date:      Date
@@ -365,6 +398,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_data_creation_date(date)
         
 
@@ -373,6 +407,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_data_creator(self, data_creator):
         """
+        
         Set the Data Creator
         
         :param data_creator:  DataCreator
@@ -382,6 +417,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_data_creator(data_creator.encode())
         
 
@@ -390,6 +426,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_extents2d(self, min_x, min_y, max_x, max_y):
         """
+        
         Set the 2d Extents
         
         :param min_x:     MinX
@@ -405,6 +442,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_extents2d(min_x, min_y, max_x, max_y)
         
 
@@ -413,6 +451,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_extents3d(self, min_x, min_y, min_z, max_x, max_y, max_z):
         """
+        
         Set the 3d Extents
         
         :param min_x:     MinX
@@ -432,6 +471,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_extents3d(min_x, min_y, min_z, max_x, max_y, max_z)
         
 
@@ -440,6 +480,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_format(self, format):
         """
+        
         Set the File Format
         
         :param format:    Format
@@ -449,6 +490,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_format(format.encode())
         
 
@@ -457,6 +499,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_ipj(self, ipj):
         """
+        
         Set the `GXIPJ <geosoft.gxapi.GXIPJ>`
         
         :param ipj:       Date
@@ -466,6 +509,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_ipj(ipj)
         
 
@@ -474,6 +518,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_meta_creation_date(self, date):
         """
+        
         Set the Meta Creation Date
         
         :param date:      Date
@@ -483,6 +528,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta_creation_date(date)
         
 
@@ -491,6 +537,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_meta_creator(self, meta_creator):
         """
+        
         Set the Meta Creator
         
         :param meta_creator:  MetaCreator
@@ -500,6 +547,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_meta_creator(meta_creator.encode())
         
 
@@ -508,6 +556,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_project(self, project):
         """
+        
         Set the File Project
         
         :param project:   Project
@@ -517,6 +566,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_project(project.encode())
         
 
@@ -525,6 +575,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
     def set_title(self, title):
         """
+        
         Set the Title
         
         :param title:     Title
@@ -534,6 +585,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_title(title.encode())
         
 
@@ -542,6 +594,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
     @classmethod
     def update_extents_2d(cls, filename, ipj, min_x, min_y, max_x, max_y):
         """
+        
         Edit an existing XML metadata file by
         changing the extents and projection data
         
@@ -562,6 +615,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapUSERMETA._update_extents_2d(GXContext._get_tls_geo(), filename.encode(), ipj, min_x, min_y, max_x, max_y)
         
 
@@ -570,6 +624,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
     @classmethod
     def update_file_type(cls, file_name, new_file_type):
         """
+        
         Edit an existing XML metadata file by
         changing the file type
         
@@ -582,6 +637,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapUSERMETA._update_file_type(GXContext._get_tls_geo(), file_name.encode(), new_file_type.encode())
         
 
@@ -590,6 +646,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
     @classmethod
     def save_file_lineage(cls, file_name, save_geo):
         """
+        
         Add lineage to XML
         
         :param file_name:  Filename of existing metadata to update
@@ -601,6 +658,7 @@ class GXUSERMETA(gxapi_cy.WrapUSERMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         gxapi_cy.WrapUSERMETA._save_file_lineage(GXContext._get_tls_geo(), file_name.encode(), save_geo)
         
 

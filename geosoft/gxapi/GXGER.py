@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -78,6 +78,7 @@ class GXGER(gxapi_cy.WrapGER):
     @classmethod
     def create(cls, file):
         """
+        
         Opens an ASCII error file to read from.
         
         :param file:  `GXGER <geosoft.gxapi.GXGER>` file name.
@@ -93,6 +94,7 @@ class GXGER(gxapi_cy.WrapGER):
         **Note:** The `GXGER <geosoft.gxapi.GXGER>` file may be in the local directory or the GEOSOFT
         directory.
         """
+        
         ret_val = gxapi_cy.WrapGER._create(GXContext._get_tls_geo(), file.encode())
         return GXGER(ret_val)
 
@@ -103,6 +105,7 @@ class GXGER(gxapi_cy.WrapGER):
 
     def get(self, num, message):
         """
+        
         Get a message string.
         
         :param num:      Message number
@@ -118,6 +121,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val, message.value = self._get(num, message.value.encode())
         return ret_val
 
@@ -126,6 +130,7 @@ class GXGER(gxapi_cy.WrapGER):
 
     def set_int(self, parm, set):
         """
+        
         Set a replacement string value to an int.
         
         :param parm:  Replacement string (ie. "%1")
@@ -137,6 +142,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_int(parm.encode(), set)
         
 
@@ -145,6 +151,7 @@ class GXGER(gxapi_cy.WrapGER):
 
     def set_double(self, parm, set):
         """
+        
         Set a replacement string value to a real.
         
         :param parm:  Replacement string (ie. "%1")
@@ -156,6 +163,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_double(parm.encode(), set)
         
 
@@ -164,6 +172,7 @@ class GXGER(gxapi_cy.WrapGER):
 
     def set_string(self, parm, set):
         """
+        
         Set a replacement string value.
         
         :param parm:  Replacement string (ie. "%1")
@@ -175,6 +184,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._set_string(parm.encode(), set.encode())
         
 

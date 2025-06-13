@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 from .GXDB import GXDB
@@ -59,6 +59,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
     @classmethod
     def create(cls, db):
         """
+        
         Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
         Add channels using the `add_channel <geosoft.gxapi.GXDBWRITE.add_channel>` method.channel.
         
@@ -72,6 +73,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDBWRITE._create(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
 
@@ -80,6 +82,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
     @classmethod
     def create_xy(cls, db):
         """
+        
         Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object for a XY-located data. Add channels using the
         `add_channel <geosoft.gxapi.GXDBWRITE.add_channel>` method.
         
@@ -93,6 +96,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDBWRITE._create_xy(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
 
@@ -101,6 +105,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
     @classmethod
     def create_xyz(cls, db):
         """
+        
         Create a `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object for a XYZ-located data.
         Add channels using the `add_channel <geosoft.gxapi.GXDBWRITE.add_channel>` method.channel
         
@@ -114,6 +119,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = gxapi_cy.WrapDBWRITE._create_xyz(GXContext._get_tls_geo(), db)
         return GXDBWRITE(ret_val)
 
@@ -124,6 +130,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def add_channel(self, chan):
         """
+        
         Add a data channel to the `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object.
         
         :param chan:     Channel handle (does not need to be locked, but can be.)
@@ -136,6 +143,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._add_channel(chan)
         return ret_val
 
@@ -148,6 +156,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def get_db(self):
         """
+        
         Get the output `GXDB <geosoft.gxapi.GXDB>` handle from the `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object.
         
 
@@ -158,6 +167,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         ret_val = self._get_db()
         return GXDB(ret_val)
 
@@ -166,6 +176,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def get_vv(self, chan):
         """
+        
         Get the `GXVV <geosoft.gxapi.GXVV>` handle for a channel.
         
         :param chan:     Index of channel to access.
@@ -179,8 +190,9 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call only for single-column (regular) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
-        function to find the number fo columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
+        function to find the number of columns in a given channel. The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
+        
         ret_val = self._get_vv(chan)
         return GXVV(ret_val)
 
@@ -189,6 +201,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def get_va(self, chan):
         """
+        
         Get the `GXVA <geosoft.gxapi.GXVA>` handle for an array channel.
         
         :param chan:     Index of channel to access.
@@ -202,9 +215,10 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
         **Note:** Call only for array (multi-column) channels. You can call the `get_chan_array_size <geosoft.gxapi.GXDBWRITE.get_chan_array_size>`
-        function to find the number fo columns in a given channel, or you can call `GXVA.col <geosoft.gxapi.GXVA.col>` on the returned `GXVA <geosoft.gxapi.GXVA>` handle.
+        function to find the number of columns in a given channel, or you can call `GXVA.col <geosoft.gxapi.GXVA.col>` on the returned `GXVA <geosoft.gxapi.GXVA>` handle.
         The `GXVA <geosoft.gxapi.GXVA>` is filled anew for each block served up.
         """
+        
         ret_val = self._get_va(chan)
         return GXVA(ret_val)
 
@@ -213,6 +227,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def get_v_vx(self):
         """
+        
         Get the X channel `GXVV <geosoft.gxapi.GXVV>` handle.
         
 
@@ -226,6 +241,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
+        
         ret_val = self._get_v_vx()
         return GXVV(ret_val)
 
@@ -234,6 +250,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def get_v_vy(self):
         """
+        
         Get the Y channel `GXVV <geosoft.gxapi.GXVV>` handle.
         
 
@@ -247,6 +264,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         **Note:** Only available for the CreateXY or CreateXYZ methods.
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         """
+        
         ret_val = self._get_v_vy()
         return GXVV(ret_val)
 
@@ -255,6 +273,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def get_v_vz(self):
         """
+        
         Get the Z channel `GXVV <geosoft.gxapi.GXVV>` handle.
         
 
@@ -269,6 +288,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         The `GXVV <geosoft.gxapi.GXVV>` is filled anew for each block served up.
         If the Z channel is an array channel, the returned `GXVV <geosoft.gxapi.GXVV>` is the "base" `GXVV <geosoft.gxapi.GXVV>` of the `GXVA <geosoft.gxapi.GXVA>` and contains all items sequentially.
         """
+        
         ret_val = self._get_v_vz()
         return GXVV(ret_val)
 
@@ -277,6 +297,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def get_chan_array_size(self, chan):
         """
+        
         Get the number of columns of data in a channel.
         
         :param chan:     Index of channel to access.
@@ -293,6 +314,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         This function should be called to determine whether to use `get_vv <geosoft.gxapi.GXDBWRITE.get_vv>` or `get_va <geosoft.gxapi.GXDBWRITE.get_va>` to access data
         for a channel.
         """
+        
         ret_val = self._get_chan_array_size(chan)
         return ret_val
 
@@ -305,6 +327,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def add_block(self, line):
         """
+        
         Add the current block of data.
         
         :param line:     Line
@@ -316,6 +339,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **Note:** First, set up the data for each channel by copying values into the individual channel VVs and VAs.
         """
+        
         self._add_block(line)
         
 
@@ -324,6 +348,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def commit(self):
         """
+        
         Commit remaining data to the database.
         
 
@@ -331,6 +356,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
+        
         self._commit()
         
 
@@ -339,6 +365,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
     def test_func(self, ra):
         """
+        
         Temporary test function.
         
         :param ra:       `GXRA <geosoft.gxapi.GXRA>` handle to text file to import.
@@ -350,6 +377,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
 
         **Note:** Designed to import the "Massive.xyz" file, which has data in the format "X Y Z Data".
         """
+        
         self._test_func(ra)
         
 

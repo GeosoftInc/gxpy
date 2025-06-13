@@ -1,9 +1,9 @@
 #  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code
+import warnings
 from . import gxapi_cy
 from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
@@ -55,6 +55,7 @@ class GXLL2(gxapi_cy.WrapLL2):
     @classmethod
     def create(cls, lon0, lat0, lon, lat, nlon, nlat, in_ipj, out_ipj):
         """
+        
         Create an empty `GXLL2 <geosoft.gxapi.GXLL2>` table to be filled
         
         :param lon0:     Longitude origin
@@ -85,6 +86,7 @@ class GXLL2(gxapi_cy.WrapLL2):
 
             `destroy <geosoft.gxapi.GXLL2.destroy>`, `set_row <geosoft.gxapi.GXLL2.set_row>`, `save <geosoft.gxapi.GXLL2.save>`
         """
+        
         ret_val = gxapi_cy.WrapLL2._create(GXContext._get_tls_geo(), lon0, lat0, lon, lat, nlon, nlat, in_ipj, out_ipj)
         return GXLL2(ret_val)
 
@@ -95,6 +97,7 @@ class GXLL2(gxapi_cy.WrapLL2):
 
     def save(self, name):
         """
+        
         Save an `GXLL2 <geosoft.gxapi.GXLL2>` to a named resource
         
         :param name:    Named resource
@@ -108,6 +111,7 @@ class GXLL2(gxapi_cy.WrapLL2):
         inside square brackets in the datum transform name in the
         datumtrf table.
         """
+        
         self._save(name.encode())
         
 
@@ -116,6 +120,7 @@ class GXLL2(gxapi_cy.WrapLL2):
 
     def set_row(self, row, lon_vv, lat_vv):
         """
+        
         Define a row of the `GXLL2 <geosoft.gxapi.GXLL2>`
         
         :param row:     The row to set
@@ -135,6 +140,7 @@ class GXLL2(gxapi_cy.WrapLL2):
         The `GXVV <geosoft.gxapi.GXVV>` lengths must be equal to #longitudes defined
         by `create <geosoft.gxapi.GXLL2.create>`.
         """
+        
         self._set_row(row, lon_vv, lat_vv)
         
 
