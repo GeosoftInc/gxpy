@@ -20,9 +20,6 @@ see https://www.riverbankcomputing.com/software/pyqt/intro for PyQt copyright.
 #TODO: add some Help
 #TODO: graphics - show the som adjusting as it goes.
 
-#import pydevd
-#pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
-
 import os
 import sys
 import math
@@ -30,11 +27,13 @@ import json
 import numpy as np
 import argparse as argp
 
-from PyQt5 import QtGui, QtWidgets
-
 import geosoft.gxpy.gx as gxp
 import geosoft.gxpy.gdb as gxgdb
 import geosoft.gxpy.utility as gxu
+gxc = gxp.GXpy()
+
+from PyQt5 import QtGui, QtWidgets
+
 
 try:
     sys.path.append(os.path.split(__file__)[0])  
@@ -349,7 +348,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print("GeoSOM copyright 2016 Geosoft Inc.\n")
 
-    gxc = gxp.GXpy()
     settings = gxu.get_shared_dict()
     print(settings)
     #input('continue...')
