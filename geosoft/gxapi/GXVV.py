@@ -12,6 +12,8 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+from . import gxapi_cy_extend
+import numpy as np
 ### endblock Header
 
 ### block ClassImplementation
@@ -2080,6 +2082,21 @@ class GXVV(gxapi_cy.WrapVV):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+    def get_data_np(self, start: int, num_elements: int, np_dtype: type(np.dtype)):
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(np_dtype)
+        return np.asarray(self.get_data_array(start, num_elements, gs_type))
+
+    def set_data_np(self, start: int, np_array: type(np.ndarray)):
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(np_array.dtype)
+        num_elements = np.prod(np_array.shape)
+        if not np_array.flags['C_CONTIGUOUS']:
+            np_array = np.ascontiguousarray(np_array)
+        self._set_data(start, num_elements, np_array.data.tobytes(), gs_type)
+    
+    def get_data_array(self, start: int, num_elements: int, gs_type: int):
+        return gxapi_cy_extend.GXMemMethods.get_data_array_vv(GXContext._internal_p(), self._internal_handle(), start, num_elements, gs_type)
 ### endblock ClassExtend
 
 
