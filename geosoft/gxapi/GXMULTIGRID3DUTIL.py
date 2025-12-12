@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -13,6 +13,7 @@ from .GXMULTIGRID3D import GXMULTIGRID3D
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -1827,6 +1828,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock ClassExtend
 
 

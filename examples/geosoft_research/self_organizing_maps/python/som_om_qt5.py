@@ -20,6 +20,9 @@ see https://www.riverbankcomputing.com/software/pyqt/intro for PyQt copyright.
 #TODO: add some Help
 #TODO: graphics - show the som adjusting as it goes.
 
+#import pydevd
+#pydevd.settrace('localhost', port=34765, stdoutToServer=True, stderrToServer=True)
+
 import os
 import sys
 import math

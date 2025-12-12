@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -13,6 +13,7 @@ from .GXLST import GXLST
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -4682,29 +4683,6 @@ class GXDB(gxapi_cy.WrapDB):
 
 
 
-    def is_wholeplot(self):
-        """
-        
-        Is this a Wholeplot database?
-        
-
-        :returns:    1 if it is a Wholeplot database
-                    0 if it is not.
-        :rtype:      int
-
-        .. versionadded:: 5.0
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-
-        **Note:** Currently checks to see if the DH_COLLAR line exists.
-        """
-        
-        ret_val = self._is_wholeplot()
-        return ret_val
-
-
-
-
     def put_chan_va(self, line, chan, va):
         """
         
@@ -5107,10 +5085,36 @@ class GXDB(gxapi_cy.WrapDB):
 
 
 
+    def is_wholeplot(self):
+        """
+        
+        Is this a Wholeplot database?
+        
+
+        :returns:    1 if it is a Wholeplot database
+                    0 if it is not.
+        :rtype:      int
+
+        .. versionadded:: 5.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This function returned false-positives - you could have a database that shared the naming convention
+        of a drill project, but had no lines named after holes, and it would return true.
+        Superceded by : iIsADrillholeProjectDatabase_DH, that does more extensive checks.
+        """
+        
+        ret_val = self._is_wholeplot()
+        return ret_val
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock ClassExtend
 
 

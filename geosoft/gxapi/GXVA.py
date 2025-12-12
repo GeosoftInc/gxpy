@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -13,6 +13,10 @@ from .GXVV import GXVV
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
+import numpy as np
+from . import gxapi_cy_extend
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -1066,10 +1070,88 @@ class GXVA(gxapi_cy.WrapVA):
 
 
 
+    def decimate(self, n, method):
+        """
+        
+        Decimate a `GXVA <geosoft.gxapi.GXVA>`.
+        
+        :param n:       number of columns to combine into each single output column
+        :param method:  decimation method :ref:`VA_DECIMATE`
+        :type  n:       int
+        :type  method:  int
+
+        :returns:       `GXVA <geosoft.gxapi.GXVA>` Object
+        :rtype:         GXVA
+
+        .. versionadded:: 2025.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This method decimates a `GXVA <geosoft.gxapi.GXVA>` by selecting every 'N' items and replacing them
+        with a value given by the decimation method, one of :ref:`VA_DECIMATE`
+        """
+        
+        ret_val = self._decimate(n, method)
+        return GXVA(ret_val)
+
+
+
+
+    def expand(self, n, interp_method, extrap_method):
+        """
+        
+        Expand a `GXVA <geosoft.gxapi.GXVA>`.
+        
+        :param n:              number of columns replacing each single input column
+        :param interp_method:  interpolation method :ref:`VA_INTERPOLATE`
+        :param extrap_method:  extrapolation method :ref:`VA_EXTRAPOLATE`
+        :type  n:              int
+        :type  interp_method:  int
+        :type  extrap_method:  int
+
+        :returns:              `GXVA <geosoft.gxapi.GXVA>` Object
+        :rtype:                GXVA
+
+        .. versionadded:: 2025.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This method expands a `GXVA <geosoft.gxapi.GXVA>` by replacing each input column with 'N' items, using the
+        selected interpolation method, one of :ref:`VA_INTERPOLATE`. Extrapolation is used at the start of
+        the first column and at the end of the last column, using the
+        selected extrapolation method, one of :ref:`VA_EXTRAPOLATE`.
+        """
+        
+        ret_val = self._expand(n, interp_method, extrap_method)
+        return GXVA(ret_val)
+
+
+
+
 
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
+    def get_array_np(self, start_row: int, start_col: int, rows: int, cols: int, np_dtype: type(np.dtype)):
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(np_dtype)
+        return np.asarray(self.get_data_array(start_row, start_col, rows, cols, gs_type))
+
+    def set_array_np(self, start_row: int, start_col: int, np_array: type(np.ndarray)):
+        from .GXNumpy import gs_from_np
+        gs_type = gs_from_np(np_array.dtype)
+        if np_array.ndim != 2:
+            raise GXAPIError("Only 2D Numpy arrays supported for this method");
+        rows = np_array.shape[0];
+        columns = np_array.shape[1];
+        if not np_array.flags['C_CONTIGUOUS']:
+            np_array = np.ascontiguousarray(np_array)
+        self.set_array(start_row, start_col, rows, columns, np_array.data.tobytes(), gs_type)
+    
+    def get_data_array(self, start_row: int, start_col: int, rows: int, cols: int, gs_type: int):
+        return gxapi_cy_extend.GXMemMethods.get_array_data_va(GXContext._internal_p(), self._internal_handle(), start_row, start_col, rows, cols, gs_type)
+
 ### endblock ClassExtend
 
 

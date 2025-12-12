@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -12,6 +12,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -156,7 +157,7 @@ class GXDU(gxapi_cy.WrapDU):
         reference and a secondary reference table.
         
         :param db:     Database
-        :param line:   Line Handle
+        :param line:   Line Handle (NULLSYMB for all selected lines
         :param val:    Lookup primary reference value
         :param i_ch:   Lookup secondary reference channel [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param o_ch:   Output Channel Token [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
@@ -514,7 +515,7 @@ class GXDU(gxapi_cy.WrapDU):
         line/channel and places the output in the output channel.
         
         :param db:        Database
-        :param line:      Line handle
+        :param line:      Line handle (NULLSYMB for all selected lines)
         :param i_ch:      Input channel to filter [`DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>`]
         :param o_ch:      Output filtered channel [`DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`]
         :param sw:        Short wavelength cutoff, 0 for highpass
@@ -5878,6 +5879,7 @@ class GXDU(gxapi_cy.WrapDU):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock ClassExtend
 
 

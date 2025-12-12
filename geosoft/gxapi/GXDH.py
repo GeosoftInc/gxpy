@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -15,6 +15,7 @@ from .GXREG import GXREG
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -589,6 +590,33 @@ class GXDH(gxapi_cy.WrapDH):
 
 
 # Miscellaneous
+
+
+    @classmethod
+    def is_a_drillhole_project_database(cls, database):
+        """
+        
+        Is the database part of a drill project, with collar table etc.?
+        
+        :param database:  database to test
+        :type  database:  GXDB
+
+        :returns:         0 - if No
+                          1 - if Yes
+        :rtype:           int
+
+        .. versionadded:: 2025.2
+
+        **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
+
+        **Note:** This function checks if the input database has the collar table. It then opens
+        a DH object with the collar table and, if the database has been added as a survey
+        or assay database, it checks to see if any of the database lines are hole names.
+        """
+        
+        ret_val = gxapi_cy.WrapDH._is_a_drillhole_project_database(GXContext._get_tls_geo(), database)
+        return ret_val
+
 
 
 
@@ -4811,6 +4839,7 @@ class GXDH(gxapi_cy.WrapDH):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock ClassExtend
 
 
