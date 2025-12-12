@@ -960,6 +960,87 @@ New Functions
 
 
   
+Version 2025.2
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDH.is_a_drillhole_project_database` Is the database part of a drill project, with collar table etc.?
+
+:func:`geosoft.gxapi.GXNASVD.create` Create an NASVD object and perform SVD analysis
+
+:func:`geosoft.gxapi.GXNASVD.deserialize` Create an NASVD object and perform SVD analysis
+
+:func:`geosoft.gxapi.GXNASVD.get_cumulative_eigenvector_contribution` Calculate the variance explained by each component
+
+:func:`geosoft.gxapi.GXNASVD.get_eigen_vector` Get eigenvector data for a specific component
+
+:func:`geosoft.gxapi.GXNASVD.get_maximum_element_count` Get the maximum number of elements that can be processed by NASVD
+
+:func:`geosoft.gxapi.GXNASVD.get_num_components` Get the number of components calculated during SVD analysis
+
+:func:`geosoft.gxapi.GXNASVD.get_partition_details` Get the number of pass-through (head and tail) channels, and the total number of channels (head + data + tail).
+
+:func:`geosoft.gxapi.GXNASVD.get_scores` Get score data for a specific component
+
+:func:`geosoft.gxapi.GXNASVD.get_singular_value` Get a specific singular value
+
+:func:`geosoft.gxapi.GXNASVD.reconstruct_spectrum` Reconstruct spectral data using selected components
+
+:func:`geosoft.gxapi.GXNASVD.serialize` Serialize the NASVD object
+
+:func:`geosoft.gxapi.GXPROJ.expand_document_node` Expands/collapses a document node in the project manager.
+
+:func:`geosoft.gxapi.GXRPS.altitude_attenuation` Apply altitude attenuation for a radioelement
+
+:func:`geosoft.gxapi.GXRPS.compton_stripping` Perform Compton Stripping
+
+:func:`geosoft.gxapi.GXRPS.convert_to_elemental` Convert a radio-channels' data to ELemental concentrations
+
+:func:`geosoft.gxapi.GXRPS.dead_time_correction` Apply the Dead-time correction to a channel for a line in a database
+
+:func:`geosoft.gxapi.GXRPS.full_spectral_analysis` Apply Medusa's Full Spectral Analysis algorithm to extract the radionuclide channels from the spectral data
+
+:func:`geosoft.gxapi.GXRPS.live_time_correction` Apply the Live-time correction to a channel for a line in a database
+
+:func:`geosoft.gxapi.GXRPS.radio_element_bandpass_filter` Applies a band-pass filter for up to three elements simultaneously
+
+:func:`geosoft.gxapi.GXRPS.radio_element_ground_exposure_rate` Applies ground level exposure rate
+
+:func:`geosoft.gxapi.GXRPS.radio_element_minimum_concentration_filter` Minimum Concentration Filtering
+
+:func:`geosoft.gxapi.GXRPS.radio_element_ratios` Calculate radioelement ratios
+
+:func:`geosoft.gxapi.GXRPS.radon_aircraft_cosmic_correction` Remove effects of aircraft and cosmic stripping
+
+:func:`geosoft.gxapi.GXRPS.radon_background_table` Calculate the Radon Background using a Background Table
+
+:func:`geosoft.gxapi.GXRPS.radon_overwater_background_correction` Overwater Radon correction method: Calculate radon correction levels from the reference channel
+
+:func:`geosoft.gxapi.GXRPS.radon_overwater_create_background_table` Create the table (TB) file used for the overwater radon removal method
+
+:func:`geosoft.gxapi.GXRPS.radon_overwater_reference_channels` Overwater Radon removel method: Calculate radon reference levels from the filtered data
+
+:func:`geosoft.gxapi.GXRPS.radon_upward_removal_apply` Remove the calculated Radon Background using the 'upward' method
+
+:func:`geosoft.gxapi.GXRPS.radon_upward_removal_calculate` Calculate the Radon Background to remove using the 'upward' method
+
+:func:`geosoft.gxapi.GXRPS.stp_correction_from_barometric_altitude` Apply the Standard Temperature/Pressure (STP) correction to the altimeter channel for a line in a database
+
+:func:`geosoft.gxapi.GXRPS.stp_correction_from_pressure` Apply the Standard Temperature/Pressure (STP) correction to the altimeter channel for a line in a database
+
+:func:`geosoft.gxapi.GXRPS.window_spectrum_to_channel` Window radiometric data channel on a line in a database
+
+:func:`geosoft.gxapi.GXSYS.modeless_dialog_parameter_file_name` Internal function used to allow modeless dialogs to be scripted
+
+:func:`geosoft.gxapi.GXVA.decimate` Decimate a `GXVA <geosoft.gxapi.GXVA>`.
+
+:func:`geosoft.gxapi.GXVA.expand` Expand a `GXVA <geosoft.gxapi.GXVA>`.
+
+
+  
 Version 2025.1
 -----------------
 
@@ -984,6 +1065,8 @@ New Functions
 :func:`geosoft.gxapi.GXEVOOBJMETA.get_object_id` Return the Evo object Id.
 
 :func:`geosoft.gxapi.GXEVOOBJMETA.get_workspace_id` Return the Evo workspace Id.
+
+:func:`geosoft.gxapi.GXIPJ.apply_local_datum_transforms_in_pj` If a PJ (reprojection) object is created with this IPJ, account for local datum differences
 
 :func:`geosoft.gxapi.GXITR.get_shade` Get the shading parameters of the `GXITR <geosoft.gxapi.GXITR>`
 

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXVA &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>geosoft.gxapi.GXVA &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVA</a></li> 
@@ -60,7 +60,7 @@
           <div class="body" role="main">
             
   <h1>Source code for geosoft.gxapi.GXVA</h1><div class="highlight"><pre>
-<span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+<span></span><span class="c1">#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.</span>
 
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
@@ -75,6 +75,10 @@
 
 <span class="c1">### block Header</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy_extend</span>
+
 <span class="c1">### endblock Header</span>
 
 <span class="c1">### block ClassImplementation</span>
@@ -1251,7 +1255,70 @@
         
         <span class="n">ret_val</span><span class="p">,</span> <span class="n">bad_row</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bad_col</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_for_repeating2</span><span class="p">(</span><span class="n">vv_t</span><span class="p">,</span> <span class="n">subtract_vv</span><span class="p">,</span> <span class="n">vv_sub</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">bad_row</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">bad_col</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
-</div>
+
+
+
+
+
+<div class="viewcode-block" id="GXVA.decimate">
+<a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.decimate">[docs]</a>
+    <span class="k">def</span> <span class="nf">decimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Decimate a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param n:       number of columns to combine into each single output column</span>
+<span class="sd">        :param method:  decimation method :ref:`VA_DECIMATE`</span>
+<span class="sd">        :type  n:       int</span>
+<span class="sd">        :type  method:  int</span>
+
+<span class="sd">        :returns:       `GXVA &lt;geosoft.gxapi.GXVA&gt;` Object</span>
+<span class="sd">        :rtype:         GXVA</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This method decimates a `GXVA &lt;geosoft.gxapi.GXVA&gt;` by selecting every &#39;N&#39; items and replacing them</span>
+<span class="sd">        with a value given by the decimation method, one of :ref:`VA_DECIMATE`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decimate</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXVA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXVA.expand">
+<a class="viewcode-back" href="../../../GXVA.html#geosoft.gxapi.GXVA.expand">[docs]</a>
+    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">interp_method</span><span class="p">,</span> <span class="n">extrap_method</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Expand a `GXVA &lt;geosoft.gxapi.GXVA&gt;`.</span>
+<span class="sd">        </span>
+<span class="sd">        :param n:              number of columns replacing each single input column</span>
+<span class="sd">        :param interp_method:  interpolation method :ref:`VA_INTERPOLATE`</span>
+<span class="sd">        :param extrap_method:  extrapolation method :ref:`VA_EXTRAPOLATE`</span>
+<span class="sd">        :type  n:              int</span>
+<span class="sd">        :type  interp_method:  int</span>
+<span class="sd">        :type  extrap_method:  int</span>
+
+<span class="sd">        :returns:              `GXVA &lt;geosoft.gxapi.GXVA&gt;` Object</span>
+<span class="sd">        :rtype:                GXVA</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This method expands a `GXVA &lt;geosoft.gxapi.GXVA&gt;` by replacing each input column with &#39;N&#39; items, using the</span>
+<span class="sd">        selected interpolation method, one of :ref:`VA_INTERPOLATE`. Extrapolation is used at the start of</span>
+<span class="sd">        the first column and at the end of the last column, using the</span>
+<span class="sd">        selected extrapolation method, one of :ref:`VA_EXTRAPOLATE`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">interp_method</span><span class="p">,</span> <span class="n">extrap_method</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GXVA</span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span></div>
 
 
 
@@ -1261,6 +1328,27 @@
 <span class="c1">### endblock ClassImplementation</span>
 <span class="c1">### block ClassExtend</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
+    <span class="k">def</span> <span class="nf">get_array_np</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">start_col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">np_dtype</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">)):</span>
+        <span class="kn">from</span> <span class="nn">.GXNumpy</span> <span class="kn">import</span> <span class="n">gs_from_np</span>
+        <span class="n">gs_type</span> <span class="o">=</span> <span class="n">gs_from_np</span><span class="p">(</span><span class="n">np_dtype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_data_array</span><span class="p">(</span><span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">set_array_np</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">start_col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">np_array</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+        <span class="kn">from</span> <span class="nn">.GXNumpy</span> <span class="kn">import</span> <span class="n">gs_from_np</span>
+        <span class="n">gs_type</span> <span class="o">=</span> <span class="n">gs_from_np</span><span class="p">(</span><span class="n">np_array</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np_array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">GXAPIError</span><span class="p">(</span><span class="s2">&quot;Only 2D Numpy arrays supported for this method&quot;</span><span class="p">);</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">np_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">np_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np_array</span><span class="o">.</span><span class="n">flags</span><span class="p">[</span><span class="s1">&#39;C_CONTIGUOUS&#39;</span><span class="p">]:</span>
+            <span class="n">np_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_array</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">np_array</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">tobytes</span><span class="p">(),</span> <span class="n">gs_type</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">get_data_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">start_col</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">gxapi_cy_extend</span><span class="o">.</span><span class="n">GXMemMethods</span><span class="o">.</span><span class="n">get_array_data_va</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_internal_p</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">(),</span> <span class="n">start_row</span><span class="p">,</span> <span class="n">start_col</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">gs_type</span><span class="p">)</span></div>
+
+
 <span class="c1">### endblock ClassExtend</span>
 
 
@@ -1281,7 +1369,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXVA</a></li> 

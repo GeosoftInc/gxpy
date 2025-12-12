@@ -1,0 +1,1363 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geosoft.gxapi.GXRPS &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
+    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXRPS</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Introduction</a></li>
+    <li><a href="../../index.html">Module code</a></li>
+    <li><a href="../gxapi.html">geosoft.gxapi</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for geosoft.gxapi.GXRPS</h1><div class="highlight"><pre>
+<span></span><span class="c1">#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.</span>
+
+<span class="c1">### extends &#39;class_empty.py&#39;</span>
+<span class="c1">### block ClassImports</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+
+
+<span class="c1">### endblock ClassImports</span>
+
+<span class="c1">### block Header</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
+<span class="c1">### endblock Header</span>
+
+<span class="c1">### block ClassImplementation</span>
+<span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
+<div class="viewcode-block" id="GXRPS">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS">[docs]</a>
+<span class="k">class</span> <span class="nc">GXRPS</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GXRPS class.</span>
+
+<span class="sd">    Not a class. A catch-all group of functions performing</span>
+<span class="sd">    various Radiometric Processing System tasks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GXRPS.__init__">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GXRPS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GXRPS.null">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.null">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A null (undefined) instance of `GXRPS &lt;geosoft.gxapi.GXRPS&gt;`</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: A null `GXRPS &lt;geosoft.gxapi.GXRPS&gt;`</span>
+<span class="sd">        :rtype:   GXRPS</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">GXRPS</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="GXRPS.is_null">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.is_null">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if this is a null (undefined) instance</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: True if this is a null (undefined) instance, False otherwise.</span>
+<span class="sd">        :rtype:   bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_internal_handle</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span></div>
+
+
+
+
+<span class="c1"># Miscellaneous</span>
+
+
+<div class="viewcode-block" id="GXRPS.window_spectrum_to_channel">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.window_spectrum_to_channel">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">window_spectrum_to_channel</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">spectral_data</span><span class="p">,</span> <span class="n">start_window</span><span class="p">,</span> <span class="n">end_window</span><span class="p">,</span> <span class="n">output_channel</span><span class="p">,</span> <span class="n">channel_description</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Window radiometric data channel on a line in a database</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                   `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:                 Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param spectral_data:        Spectral data channel handle (READONLY)</span>
+<span class="sd">        :param start_window:         Starting fractional window index (0 to N)</span>
+<span class="sd">        :param end_window:           Ending fractional window index (0 to N), &gt;= Starting window</span>
+<span class="sd">        :param output_channel:       Output channel handle (READWRITE)</span>
+<span class="sd">        :param channel_description:  Output channel description for output/errors etc</span>
+<span class="sd">        :type  db:                   GXDB</span>
+<span class="sd">        :type  line:                 int</span>
+<span class="sd">        :type  spectral_data:        int</span>
+<span class="sd">        :type  start_window:         float</span>
+<span class="sd">        :type  end_window:           float</span>
+<span class="sd">        :type  output_channel:       int</span>
+<span class="sd">        :type  channel_description:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The average value of the windows in the given fractional index range is </span>
+<span class="sd">        written to the specified output channel.</span>
+<span class="sd">        For instance, if you specified 0.5 to 1.5, then half values in the first</span>
+<span class="sd">        window would be added to half the values in the second window. To specify</span>
+<span class="sd">        a single window &#39;i&#39; you need to specify the range i to i+1.</span>
+
+<span class="sd">        Ref:  See the RPSWINDOW.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_window_spectrum_to_channel</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">spectral_data</span><span class="p">,</span> <span class="n">start_window</span><span class="p">,</span> <span class="n">end_window</span><span class="p">,</span> <span class="n">output_channel</span><span class="p">,</span> <span class="n">channel_description</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.full_spectral_analysis">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.full_spectral_analysis">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">full_spectral_analysis</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">spectral_data_channel</span><span class="p">,</span> <span class="n">livetime_channel</span><span class="p">,</span> <span class="n">altitude_channel</span><span class="p">,</span> <span class="n">start_window</span><span class="p">,</span> <span class="n">end_window</span><span class="p">,</span> <span class="n">fit_mode</span><span class="p">,</span> <span class="n">output_channel_suffix</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Apply Medusa&#39;s Full Spectral Analysis algorithm to extract the radionuclide channels from the spectral data</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                     `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:                   Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param spectral_data_channel:  Spectral data channel name</span>
+<span class="sd">        :param livetime_channel:       Livetime channel name - assumes 1.0 if left blank</span>
+<span class="sd">        :param altitude_channel:       Altitude (e.g. radar altimeter) channel name - assumes 0 if left blank</span>
+<span class="sd">        :param start_window:           Index of the first window to include in the analysis (0 to N/4)</span>
+<span class="sd">        :param end_window:             Index of the last window to include in the analysis (3N/4 to N-1)</span>
+<span class="sd">        :param fit_mode:               :ref:`RPS_FITMODE`</span>
+<span class="sd">        :param output_channel_suffix:  Suffix for output channels</span>
+<span class="sd">        :type  db:                     GXDB</span>
+<span class="sd">        :type  line:                   int</span>
+<span class="sd">        :type  spectral_data_channel:  str</span>
+<span class="sd">        :type  livetime_channel:       str</span>
+<span class="sd">        :type  altitude_channel:       str</span>
+<span class="sd">        :type  start_window:           int</span>
+<span class="sd">        :type  end_window:             int</span>
+<span class="sd">        :type  fit_mode:               int</span>
+<span class="sd">        :type  output_channel_suffix:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_full_spectral_analysis</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">spectral_data_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">livetime_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">altitude_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">start_window</span><span class="p">,</span> <span class="n">end_window</span><span class="p">,</span> <span class="n">fit_mode</span><span class="p">,</span> <span class="n">output_channel_suffix</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.dead_time_correction">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.dead_time_correction">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">dead_time_correction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_channel</span><span class="p">,</span> <span class="n">raw_tc_channel</span><span class="p">,</span> <span class="n">deadtime_factor</span><span class="p">,</span> <span class="n">deadtime_corr_channel</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Apply the Dead-time correction to a channel for a line in a database</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                     `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:                   Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param raw_channel:            Input raw channel name</span>
+<span class="sd">        :param raw_tc_channel:         Input raw total count channel name</span>
+<span class="sd">        :param deadtime_factor:        Dead time factor (microseconds/pulse</span>
+<span class="sd">        :param deadtime_corr_channel:  Output deadtime corrected channel name</span>
+<span class="sd">        :type  db:                     GXDB</span>
+<span class="sd">        :type  line:                   int</span>
+<span class="sd">        :type  raw_channel:            str</span>
+<span class="sd">        :type  raw_tc_channel:         str</span>
+<span class="sd">        :type  deadtime_factor:        float</span>
+<span class="sd">        :type  deadtime_corr_channel:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The output dead-time corrected channel is calculated using the formula:</span>
+
+<span class="sd">        deadtime_value = raw_value / (1 - raw_TC * dead_time * 0.000001)</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        deadtime_value = output dead-time corrected value</span>
+<span class="sd">        raw_value = raw channel value (counts)</span>
+<span class="sd">        raw_TC = raw total count channel value</span>
+<span class="sd">        dead_time = dead-time factor (microseconds/pulse)</span>
+
+<span class="sd">        Ref:  See the RPSFILT.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_dead_time_correction</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">raw_tc_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">deadtime_factor</span><span class="p">,</span> <span class="n">deadtime_corr_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.live_time_correction">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.live_time_correction">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">live_time_correction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_channel</span><span class="p">,</span> <span class="n">livetime_channel</span><span class="p">,</span> <span class="n">livetime_corr_channel</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Apply the Live-time correction to a channel for a line in a database</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                     `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:                   Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param raw_channel:            Input raw channel name</span>
+<span class="sd">        :param livetime_channel:       Live time channel name (milliseconds)</span>
+<span class="sd">        :param livetime_corr_channel:  Output livetime corrected channel name</span>
+<span class="sd">        :type  db:                     GXDB</span>
+<span class="sd">        :type  line:                   int</span>
+<span class="sd">        :type  raw_channel:            str</span>
+<span class="sd">        :type  livetime_channel:       str</span>
+<span class="sd">        :type  livetime_corr_channel:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The output live-time corrected channel is calculated using the formula:</span>
+
+<span class="sd">        livetime_value = 1000 * raw_value / livetime_value</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        livetime_value = output dead-time corrected value</span>
+<span class="sd">        raw_value = raw channel value (counts)</span>
+<span class="sd">        livetime_value = live time channel value (milliseconds)</span>
+
+<span class="sd">        Ref:  See the RPSFILT.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_live_time_correction</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">livetime_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">livetime_corr_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.stp_correction_from_barometric_altitude">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.stp_correction_from_barometric_altitude">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">stp_correction_from_barometric_altitude</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_radar_altimeter</span><span class="p">,</span> <span class="n">raw_barometric_altimeter_channel</span><span class="p">,</span> <span class="n">temperature_channel</span><span class="p">,</span> <span class="n">stp_alt_channel</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Apply the Standard Temperature/Pressure (STP) correction to the altimeter channel for a line in a database</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                                `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:                              Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param raw_radar_altimeter:               Input (BP-filtered) radar altimeter channel name</span>
+<span class="sd">        :param raw_barometric_altimeter_channel:  Input raw barometric altimeter channel name</span>
+<span class="sd">        :param temperature_channel:               Input temperature channel name (degrees Celsius)</span>
+<span class="sd">        :param stp_alt_channel:                   Output STP corrected altimeter channel name</span>
+<span class="sd">        :type  db:                                GXDB</span>
+<span class="sd">        :type  line:                              int</span>
+<span class="sd">        :type  raw_radar_altimeter:               str</span>
+<span class="sd">        :type  raw_barometric_altimeter_channel:  str</span>
+<span class="sd">        :type  temperature_channel:               str</span>
+<span class="sd">        :type  stp_alt_channel:                   str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The output STP corrected altitude is calculated using the formula:</span>
+
+<span class="sd">        STP_Altitude = (273.15 * radar_alt * exp(-1.0/8581.0 * barometric_alt))/(273.15 + temp)</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        STP_Altitude = STP corrected altitude (m)</span>
+<span class="sd">        radar_alt = raw radar altimeter channel value (m)</span>
+<span class="sd">        barometric_alt = raw barometric altimeter channel value (m)</span>
+<span class="sd">        temp = temperature channel value (degrees Celsius)</span>
+
+<span class="sd">        Ref:  See the RPSFILT.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_stp_correction_from_barometric_altitude</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_radar_altimeter</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">raw_barometric_altimeter_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temperature_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">stp_alt_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.stp_correction_from_pressure">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.stp_correction_from_pressure">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">stp_correction_from_pressure</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_radar_altimeter</span><span class="p">,</span> <span class="n">pressure_channel</span><span class="p">,</span> <span class="n">temperature_channel</span><span class="p">,</span> <span class="n">stp_alt_channel</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Apply the Standard Temperature/Pressure (STP) correction to the altimeter channel for a line in a database</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                   `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:                 Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param raw_radar_altimeter:  Input (BP-filtered) radar altimeter channel name</span>
+<span class="sd">        :param pressure_channel:     Input pressure channel name (kPa)</span>
+<span class="sd">        :param temperature_channel:  Input temperature channel name (degrees Celsius)</span>
+<span class="sd">        :param stp_alt_channel:      Output STP corrected altimeter channel name</span>
+<span class="sd">        :type  db:                   GXDB</span>
+<span class="sd">        :type  line:                 int</span>
+<span class="sd">        :type  raw_radar_altimeter:  str</span>
+<span class="sd">        :type  pressure_channel:     str</span>
+<span class="sd">        :type  temperature_channel:  str</span>
+<span class="sd">        :type  stp_alt_channel:      str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The output STP corrected altitude is calculated using the formula:</span>
+
+<span class="sd">        STP_Altitude = (273.15 * radar_alt * P))/((273.15 + temp) * 101.325)</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        STP_Altitude = STP corrected altitude (m)</span>
+<span class="sd">        radar_alt = raw radar altimeter channel value (m)</span>
+<span class="sd">        P = raw pressure channel value (kPa)</span>
+<span class="sd">        temp = temperature channel value (degrees Celsius)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_stp_correction_from_pressure</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">raw_radar_altimeter</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pressure_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">temperature_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">stp_alt_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.altitude_attenuation">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.altitude_attenuation">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">altitude_attenuation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">input_channel</span><span class="p">,</span> <span class="n">height_att_coeff</span><span class="p">,</span> <span class="n">nom_altimeter</span><span class="p">,</span> <span class="n">stp_alt_channel</span><span class="p">,</span> <span class="n">output_channel</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Apply altitude attenuation for a radioelement</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:              Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param input_channel:     Input channel name</span>
+<span class="sd">        :param height_att_coeff:  Height attenuation coefficient (per metre at STP)</span>
+<span class="sd">        :param nom_altimeter:     Nominal survey altitude (m)</span>
+<span class="sd">        :param stp_alt_channel:   Input STP corrected altimeter channel name</span>
+<span class="sd">        :param output_channel:    Output channel name (can be same channel as input)</span>
+<span class="sd">        :type  db:                GXDB</span>
+<span class="sd">        :type  line:              int</span>
+<span class="sd">        :type  input_channel:     str</span>
+<span class="sd">        :type  height_att_coeff:  float</span>
+<span class="sd">        :type  nom_altimeter:     float</span>
+<span class="sd">        :type  stp_alt_channel:   str</span>
+<span class="sd">        :type  output_channel:    str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The altitude attenuation is calculated using the formula:</span>
+
+<span class="sd">        Ns = Nm * exp(k * (H0 - H)) =&gt; Ns = Nm * exp(-k * (H - H0))</span>
+
+<span class="sd">        where:</span>
+<span class="sd">        Ns = the count rate normalized to the nominal survey altitude, H0,</span>
+<span class="sd">        Nm = the background corrected, stripped count rate at effective height H,</span>
+<span class="sd">        k = height attenuation coefficient (per metre at STP)</span>
+<span class="sd">        H = effective altitude (m)</span>
+<span class="sd">        H0 = nominal survey altitude (m)</span>
+
+<span class="sd">        The effective height was determined by applying Compton Stripping.</span>
+
+<span class="sd">        HEIGHT ATTENUATION COEFF:   Total Count  (Recommended: -0.0070)</span>
+<span class="sd">        (per metre at STP)          Potassium    (Recommended: -0.0088)</span>
+<span class="sd">                                    Uranium      (Recommended: -0.0082)</span>
+<span class="sd">                                    Thorium      (Recommended: -0.0070)</span>
+
+<span class="sd">        Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_altitude_attenuation</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">input_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">height_att_coeff</span><span class="p">,</span> <span class="n">nom_altimeter</span><span class="p">,</span> <span class="n">stp_alt_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">output_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.compton_stripping">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.compton_stripping">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">compton_stripping</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">stp_alt_channel</span><span class="p">,</span> <span class="n">K_levl</span><span class="p">,</span> <span class="n">U_levl</span><span class="p">,</span> <span class="n">Th_levl</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">k_strip</span><span class="p">,</span> <span class="n">u_strip</span><span class="p">,</span> <span class="n">th_strip</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Perform Compton Stripping</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:               `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:             Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param stp_alt_channel:  Input STP corrected altimeter channel name</span>
+<span class="sd">        :param K_levl:           Input Postassium levelelled count channel</span>
+<span class="sd">        :param U_levl:           Input Uranium levelelled count channel</span>
+<span class="sd">        :param Th_levl:          Input Thorium levelelled count channel</span>
+<span class="sd">        :param alpha:            Input Compton Stripping ratio alpha (default: 0.24)</span>
+<span class="sd">        :param beta:             Input Compton Stripping ratio beta (default: 0.37)</span>
+<span class="sd">        :param gamma:            Input Compton Stripping ratio gamma (default: 0.70)</span>
+<span class="sd">        :param a:                Input Compton Stripping ratio a (default: 0.05)</span>
+<span class="sd">        :param b:                Input Compton Stripping ratio b (default: 0.0)</span>
+<span class="sd">        :param g:                Input Compton Stripping ratio g (default: 0.0)</span>
+<span class="sd">        :param k_strip:          Output Compton Stripped Potassium channel (can be same channel as input)</span>
+<span class="sd">        :param u_strip:          Output Compton Stripped Uranium channel (can be same channel as input)</span>
+<span class="sd">        :param th_strip:         Output Compton Stripped Thorium channel (can be same channel as input)</span>
+<span class="sd">        :type  db:               GXDB</span>
+<span class="sd">        :type  line:             int</span>
+<span class="sd">        :type  stp_alt_channel:  str</span>
+<span class="sd">        :type  K_levl:           str</span>
+<span class="sd">        :type  U_levl:           str</span>
+<span class="sd">        :type  Th_levl:          str</span>
+<span class="sd">        :type  alpha:            float</span>
+<span class="sd">        :type  beta:             float</span>
+<span class="sd">        :type  gamma:            float</span>
+<span class="sd">        :type  a:                float</span>
+<span class="sd">        :type  b:                float</span>
+<span class="sd">        :type  g:                float</span>
+<span class="sd">        :type  k_strip:          str</span>
+<span class="sd">        :type  u_strip:          str</span>
+<span class="sd">        :type  th_strip:         str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Compton stripping is calculated using the formula:</span>
+
+<span class="sd">        KSTRIP = (BK*THLEVL + CK*ULEVL + DK*KLEVL) / A</span>
+<span class="sd">        USTRIP = (BU*THLEVL + CU*ULEVL + DU*KLEVL) / A</span>
+<span class="sd">        THSTRIP = (BTH*THLEVL + CTH*ULEVL + DTH*KLEVL) / A</span>
+
+<span class="sd">        where</span>
+
+<span class="sd">        KSTRIP = Output Compton stripped potassium (can be same channel as input)</span>
+<span class="sd">        USTRIP = Output Compton stripped uranium (can be same channel as input)</span>
+<span class="sd">        THSTRIP = Output Compton stripped thorium (can be same channel as input)</span>
+
+<span class="sd">        and where:</span>
+
+<span class="sd">        KLEVL = Input potassium levelled count channel (e.g. &quot;KLEVL&quot;)</span>
+<span class="sd">        ULEVL = Input uranium levelled count channel (e.g. &quot;ULEVL&quot;)</span>
+<span class="sd">        THLEVL = Input thorium levelled count channel (e.g. &quot;THLEVL&quot;)</span>
+
+<span class="sd">        BK = ALPHA2*GAMMA2-BETA2;</span>
+<span class="sd">        CK = ASTRIP*BETA2-GAMMA2;</span>
+<span class="sd">        DK = 1-ASTRIP*ALPHA2;</span>
+
+<span class="sd">        BU = GSTRIP*BETA-ALPHA</span>
+<span class="sd">        CU = 1-BSTRIP*BETA</span>
+<span class="sd">        DU = BSTRIP*ALPHA-GSTRIP</span>
+
+<span class="sd">        BTH = 1-GSTRIP*GAMMA2;</span>
+<span class="sd">        CTH = BSTRIP*GAMMA2-ASTRIP;</span>
+<span class="sd">        DTH = ASTRIP*GSTRIP-BSTRIP;</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        ALPHA2 = ALPHA + 0.0004895*RALTSTP</span>
+<span class="sd">        BETA2 = BETA + 0.0006469*RALTSTP</span>
+<span class="sd">        GAMMA2 = GAMMA + 0.0006874*RALTSTP</span>
+
+<span class="sd">        and:</span>
+
+<span class="sd">        RALTSTP = Input STP corrected radar altimeter channel value (m)</span>
+<span class="sd">        ALPHA = Input Compton stripping alpha factor (default: 0.24)</span>
+<span class="sd">        BETA = Input Compton stripping beta factor (default: 0.37)</span>
+<span class="sd">        GAMMA = Input Compton stripping gamma factor (default: 0.70)</span>
+<span class="sd">        ASTRIP = Input Compton stripping a factor (default: 0.05)</span>
+<span class="sd">        BSTRIP = Input Compton stripping b factor (default: 0.0)</span>
+<span class="sd">        GSTRIP = Input Compton stripping g factor (default: 0.0)</span>
+
+<span class="sd">        and where:</span>
+
+<span class="sd">        A = 1-GSTRIP*GAMMA2 - ASTRIP*(ALPHA2 - GSTRIP*BETA2) -</span>
+<span class="sd">               BSTRIP*(BETA2-ALPHA2*GAMMA2)</span>
+
+<span class="sd">        Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_compton_stripping</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">stp_alt_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">k_strip</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">u_strip</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">th_strip</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.convert_to_elemental">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.convert_to_elemental">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">convert_to_elemental</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">Th</span><span class="p">,</span> <span class="n">TC</span><span class="p">,</span> <span class="n">k_sens</span><span class="p">,</span> <span class="n">u_sens</span><span class="p">,</span> <span class="n">th_sens</span><span class="p">,</span> <span class="n">tc_sens</span><span class="p">,</span> <span class="n">k_conc</span><span class="p">,</span> <span class="n">u_conc</span><span class="p">,</span> <span class="n">th_conc</span><span class="p">,</span> <span class="n">TC_conc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Convert a radio-channels&#39; data to ELemental concentrations</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:       `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:     Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K:        Input Postassium count channel</span>
+<span class="sd">        :param U:        Input Uranium count channel</span>
+<span class="sd">        :param Th:       Input Thorium count channel</span>
+<span class="sd">        :param TC:       Input Total Count channel</span>
+<span class="sd">        :param k_sens:   Potassium broad source sensitivity (default: 75 (cps/%))</span>
+<span class="sd">        :param u_sens:   Uranium broad source sensitivity (default: 7.5 (cps/ppm))</span>
+<span class="sd">        :param th_sens:  Thorium broad source sensitivity (default: 4.5 (cps/ppm))</span>
+<span class="sd">        :param tc_sens:  Total count broad source sensitivity (default: 23 (uR/hr))</span>
+<span class="sd">        :param k_conc:   Output elemental concentration Potassium channel (can be same channel as input)</span>
+<span class="sd">        :param u_conc:   Output elemental concentration Uranium channel (can be same channel as input)</span>
+<span class="sd">        :param th_conc:  Output elemental concentration Thorium channel (can be same channel as input)</span>
+<span class="sd">        :param TC_conc:  Output elemental concentration Total Count channel (can be same channel as input)</span>
+<span class="sd">        :type  db:       GXDB</span>
+<span class="sd">        :type  line:     int</span>
+<span class="sd">        :type  K:        str</span>
+<span class="sd">        :type  U:        str</span>
+<span class="sd">        :type  Th:       str</span>
+<span class="sd">        :type  TC:       str</span>
+<span class="sd">        :type  k_sens:   float</span>
+<span class="sd">        :type  u_sens:   float</span>
+<span class="sd">        :type  th_sens:  float</span>
+<span class="sd">        :type  tc_sens:  float</span>
+<span class="sd">        :type  k_conc:   str</span>
+<span class="sd">        :type  u_conc:   str</span>
+<span class="sd">        :type  th_conc:  str</span>
+<span class="sd">        :type  TC_conc:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The conversions are calculated using the formulae:</span>
+
+<span class="sd">        OutputK = InputK / SensK</span>
+<span class="sd">        OutputU = InputU / SensU</span>
+<span class="sd">        OutputTh = InputTh / SensTh</span>
+<span class="sd">        OutputTC = Input TC / SensTC</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        OutputK = Output potassium channel expressed in elemental concentration</span>
+<span class="sd">        OutputU = Output uranium channel expressed in elemental concentration</span>
+<span class="sd">        OutputTh = Output thorium channel expressed in elemental concentration</span>
+<span class="sd">        OutputTC = Output total count channel expressed in elemental concentration</span>
+
+<span class="sd">        InputK = Input potassium channel expressed in counts</span>
+<span class="sd">        InputU = Input uranium channel expressed in counts</span>
+<span class="sd">        InputTh = Input thorium channel expressed in counts</span>
+<span class="sd">        InputTC = Input total count channel expressed in counts</span>
+
+<span class="sd">        SensK = Input Potassium Broad source sensitivity (default: 75 (cps/%))</span>
+<span class="sd">        SensU = Input Uranium Broad source sensitivity (default: 7.5 (cps/ppm))</span>
+<span class="sd">        SensTh = Input Thorium Broad source sensitivity (default: 4.5 (cps/ppm))</span>
+<span class="sd">        SensTC = Input Total Count Broad source sensitivity (default: 23 (uR/hr))</span>
+
+<span class="sd">        Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_convert_to_elemental</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">k_sens</span><span class="p">,</span> <span class="n">u_sens</span><span class="p">,</span> <span class="n">th_sens</span><span class="p">,</span> <span class="n">tc_sens</span><span class="p">,</span> <span class="n">k_conc</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">u_conc</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">th_conc</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_conc</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radon_background_table">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radon_background_table">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radon_background_table</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">ref_field</span><span class="p">,</span> <span class="n">K_field</span><span class="p">,</span> <span class="n">U_field</span><span class="p">,</span> <span class="n">Th_field</span><span class="p">,</span> <span class="n">TC_field</span><span class="p">,</span> <span class="n">ref_channel</span><span class="p">,</span> <span class="n">K_channel</span><span class="p">,</span> <span class="n">U_channel</span><span class="p">,</span> <span class="n">Th_channel</span><span class="p">,</span> <span class="n">TC_channel</span><span class="p">,</span> <span class="n">interp_mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Calculate the Radon Background using a Background Table</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:           `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:         Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param table:        Reference background look-up table (e.g. &quot;rpsbackg.tbl&quot;</span>
+<span class="sd">        :param ref_field:    Reference field name in table</span>
+<span class="sd">        :param K_field:      Potassium field name in table</span>
+<span class="sd">        :param U_field:      Uranium field name in table</span>
+<span class="sd">        :param Th_field:     Thorium field name in table</span>
+<span class="sd">        :param TC_field:     Total count field name in table</span>
+<span class="sd">        :param ref_channel:  Reference channel handle (READONLY)</span>
+<span class="sd">        :param K_channel:    Output potassium channel handle (READWRITE)</span>
+<span class="sd">        :param U_channel:    Output uranium channel handle (READWRITE)</span>
+<span class="sd">        :param Th_channel:   Output thorium channel handle (READWRITE)</span>
+<span class="sd">        :param TC_channel:   Output total count channel handle (READWRITE)</span>
+<span class="sd">        :param interp_mode:  :ref:`DU_LOOKUP`</span>
+<span class="sd">        :type  db:           GXDB</span>
+<span class="sd">        :type  line:         int</span>
+<span class="sd">        :type  table:        GXTB</span>
+<span class="sd">        :type  ref_field:    str</span>
+<span class="sd">        :type  K_field:      str</span>
+<span class="sd">        :type  U_field:      str</span>
+<span class="sd">        :type  Th_field:     str</span>
+<span class="sd">        :type  TC_field:     str</span>
+<span class="sd">        :type  ref_channel:  int</span>
+<span class="sd">        :type  K_channel:    int</span>
+<span class="sd">        :type  U_channel:    int</span>
+<span class="sd">        :type  Th_channel:   int</span>
+<span class="sd">        :type  TC_channel:   int</span>
+<span class="sd">        :type  interp_mode:  int</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Background levels for K, U, Th and TC are calculated obtained by table-lookup using a reference channel.</span>
+
+<span class="sd">        Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radon_background_table</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">ref_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_field</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">ref_channel</span><span class="p">,</span> <span class="n">K_channel</span><span class="p">,</span> <span class="n">U_channel</span><span class="p">,</span> <span class="n">Th_channel</span><span class="p">,</span> <span class="n">TC_channel</span><span class="p">,</span> <span class="n">interp_mode</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radon_upward_removal_calculate">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radon_upward_removal_calculate">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radon_upward_removal_calculate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">U_filt</span><span class="p">,</span> <span class="n">Th_filt</span><span class="p">,</span> <span class="n">U_upward_filt</span><span class="p">,</span> <span class="n">skyshine_A1</span><span class="p">,</span> <span class="n">skyshine_A2</span><span class="p">,</span> <span class="n">ak</span><span class="p">,</span> <span class="n">ath</span><span class="p">,</span> <span class="n">au</span><span class="p">,</span> <span class="n">atc</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">bu</span><span class="p">,</span> <span class="n">bth</span><span class="p">,</span> <span class="n">btc</span><span class="p">,</span> <span class="n">K_back</span><span class="p">,</span> <span class="n">U_back</span><span class="p">,</span> <span class="n">Th_back</span><span class="p">,</span> <span class="n">TC_back</span><span class="p">,</span> <span class="n">U_upward_back</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Calculate the Radon Background to remove using the &#39;upward&#39; method</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:             `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:           Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param U_filt:         Input Low-pass filtered uranium channel</span>
+<span class="sd">        :param Th_filt:        Input Low-pass filtered thorium channel</span>
+<span class="sd">        :param U_upward_filt:  Input Low-pass filtered upward uranium channel</span>
+<span class="sd">        :param skyshine_A1:    Input Skyshine coefficient A1 (default: 0.036)</span>
+<span class="sd">        :param skyshine_A2:    Input Skyshine coefficient A2 (default: 0.022)</span>
+<span class="sd">        :param ak:             Input calibration factor ak - potassium (default: 0.8)</span>
+<span class="sd">        :param ath:            Input calibration factor ath - thorium (default: 0.1)</span>
+<span class="sd">        :param au:             Input calibration factor au - uranium (default: 0.25)</span>
+<span class="sd">        :param atc:            Input calibration factor atc - total count (default: 12)</span>
+<span class="sd">        :param bk:             Input calibration factor bk - potassium (default: 0)</span>
+<span class="sd">        :param bu:             Input calibration factor bu - uranium (default: 0)</span>
+<span class="sd">        :param bth:            Input calibration factor bth - thorium (default: 0)</span>
+<span class="sd">        :param btc:            Input calibration factor btc - total count  (default: 0)</span>
+<span class="sd">        :param K_back:         Output potassium background to remove (channel)</span>
+<span class="sd">        :param U_back:         Output uranium background to remove (channel)</span>
+<span class="sd">        :param Th_back:        Output thorium channel background to remove (channel)</span>
+<span class="sd">        :param TC_back:        Output total count background to remove (channel)</span>
+<span class="sd">        :param U_upward_back:  Output upward uranium background to remove (channel)</span>
+<span class="sd">        :type  db:             GXDB</span>
+<span class="sd">        :type  line:           int</span>
+<span class="sd">        :type  U_filt:         str</span>
+<span class="sd">        :type  Th_filt:        str</span>
+<span class="sd">        :type  U_upward_filt:  str</span>
+<span class="sd">        :type  skyshine_A1:    float</span>
+<span class="sd">        :type  skyshine_A2:    float</span>
+<span class="sd">        :type  ak:             float</span>
+<span class="sd">        :type  ath:            float</span>
+<span class="sd">        :type  au:             float</span>
+<span class="sd">        :type  atc:            float</span>
+<span class="sd">        :type  bk:             float</span>
+<span class="sd">        :type  bu:             float</span>
+<span class="sd">        :type  bth:            float</span>
+<span class="sd">        :type  btc:            float</span>
+<span class="sd">        :type  K_back:         str</span>
+<span class="sd">        :type  U_back:         str</span>
+<span class="sd">        :type  Th_back:        str</span>
+<span class="sd">        :type  TC_back:        str</span>
+<span class="sd">        :type  U_upward_back:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The Upward method of radon-removal is applied to the low-pass filtered data,</span>
+<span class="sd">         using the formula:</span>
+
+<span class="sd">        KRADREF   = AK * URADREF + BK       Output potassium background to remove (channel)</span>
+<span class="sd">        THRADREF  = ATH * URADREF + BTH       Output thorium background to remove (channel)</span>
+<span class="sd">        TCRADREF  = ATC * URADREF + BTC     Output total count background to remove (channel)</span>
+<span class="sd">        UPURADREF = AU * URADREF + BU       Output upward uranium background to remove (channel)</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">         AK  = Input calibration factor ak (default: 0.8)</span>
+<span class="sd">         BK  = Input calibration factor bk (default: 0)</span>
+<span class="sd">         ATH  = Input calibration factor at (default: 0.1)</span>
+<span class="sd">         BTH  = Input calibration factor bt (default: 0)</span>
+<span class="sd">         ATC = Input calibration factor atc (default: 12)</span>
+<span class="sd">         BTC = Input calibration factor btc (default: 0)</span>
+<span class="sd">         AU  = Input calibration factor au (default: 0.25)</span>
+<span class="sd">         BU  = Input calibration factor bu (default: 0)</span>
+
+<span class="sd">        and:</span>
+
+<span class="sd">         URADREF = Output uranium background to remove (channel)</span>
+
+<span class="sd">        where</span>
+
+<span class="sd">         URADREF = (UPUFILT - A1*UFILT - A2*THFILT + A2*BT - BU)/</span>
+<span class="sd">                                            (AU-A1 - A2*AT)</span>
+
+<span class="sd">         THFILT  = Input Low-pass filtered thorium channel</span>
+<span class="sd">         UFILT   = Input Low-pass filtered uranium channel</span>
+<span class="sd">         UPUFILT = Input Low-pass filtered upward uranium channel</span>
+
+<span class="sd">        and</span>
+
+<span class="sd">         A1 = Input Skyshine coefficient A1 (default: 0.036)</span>
+<span class="sd">         A2 = Input Skyshine coefficient A2 (default: 0.022)</span>
+
+<span class="sd">        Ref: See the RPSLEVLU.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radon_upward_removal_calculate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">U_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_upward_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">skyshine_A1</span><span class="p">,</span> <span class="n">skyshine_A2</span><span class="p">,</span> <span class="n">ak</span><span class="p">,</span> <span class="n">ath</span><span class="p">,</span> <span class="n">au</span><span class="p">,</span> <span class="n">atc</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">bu</span><span class="p">,</span> <span class="n">bth</span><span class="p">,</span> <span class="n">btc</span><span class="p">,</span> <span class="n">K_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_upward_back</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radon_upward_removal_apply">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radon_upward_removal_apply">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radon_upward_removal_apply</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_filt</span><span class="p">,</span> <span class="n">U_filt</span><span class="p">,</span> <span class="n">Th_filt</span><span class="p">,</span> <span class="n">TC_filt</span><span class="p">,</span> <span class="n">U_upward_filt</span><span class="p">,</span> <span class="n">K_back</span><span class="p">,</span> <span class="n">U_back</span><span class="p">,</span> <span class="n">Th_back</span><span class="p">,</span> <span class="n">TC_back</span><span class="p">,</span> <span class="n">U_upward_back</span><span class="p">,</span> <span class="n">K_out</span><span class="p">,</span> <span class="n">U_out</span><span class="p">,</span> <span class="n">Th_out</span><span class="p">,</span> <span class="n">TC_out</span><span class="p">,</span> <span class="n">U_upward_out</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Remove the calculated Radon Background using the &#39;upward&#39; method</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:             `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:           Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K_filt:         Input Low-pass filtered potassium channel</span>
+<span class="sd">        :param U_filt:         Input Low-pass filtered uranium channel</span>
+<span class="sd">        :param Th_filt:        Input Low-pass filtered thorium channel</span>
+<span class="sd">        :param TC_filt:        Input Low-pass filtered total count channel</span>
+<span class="sd">        :param U_upward_filt:  Input Low-pass filtered upward uranium channel</span>
+<span class="sd">        :param K_back:         Input potassium background to remove (channel)</span>
+<span class="sd">        :param U_back:         Input uranium background to remove (channel)</span>
+<span class="sd">        :param Th_back:        Input thorium channel background to remove (channel)</span>
+<span class="sd">        :param TC_back:        Input total count background to remove (channel)</span>
+<span class="sd">        :param U_upward_back:  Input upward uranium background to remove (channel)</span>
+<span class="sd">        :param K_out:          Output potassium channel with background radon removed</span>
+<span class="sd">        :param U_out:          Output uranium channel with background radon removed</span>
+<span class="sd">        :param Th_out:         Output thorium channel with background radon removed</span>
+<span class="sd">        :param TC_out:         Output total count channel with background radon removed</span>
+<span class="sd">        :param U_upward_out:   Output upward uranium channel with background radon removed</span>
+<span class="sd">        :type  db:             GXDB</span>
+<span class="sd">        :type  line:           int</span>
+<span class="sd">        :type  K_filt:         str</span>
+<span class="sd">        :type  U_filt:         str</span>
+<span class="sd">        :type  Th_filt:        str</span>
+<span class="sd">        :type  TC_filt:        str</span>
+<span class="sd">        :type  U_upward_filt:  str</span>
+<span class="sd">        :type  K_back:         str</span>
+<span class="sd">        :type  U_back:         str</span>
+<span class="sd">        :type  Th_back:        str</span>
+<span class="sd">        :type  TC_back:        str</span>
+<span class="sd">        :type  U_upward_back:  str</span>
+<span class="sd">        :type  K_out:          str</span>
+<span class="sd">        :type  U_out:          str</span>
+<span class="sd">        :type  Th_out:         str</span>
+<span class="sd">        :type  TC_out:         str</span>
+<span class="sd">        :type  U_upward_out:   str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The calculated Radon Background to remove is applied to the data channels using the formula:</span>
+
+<span class="sd">         KOUT = KFILT - KRADREF           Output potassium channel with radon background removed</span>
+<span class="sd">         UOUT = UFILT - URADREF           Output uranium channel with radon background removed</span>
+<span class="sd">         THOUT = THFILT - THRADREF        Output thorium channel with radon background removed</span>
+<span class="sd">         TCOUT = TCFILT - TCRADREF        Output total count channel with radon background removed</span>
+<span class="sd">         UPUOUT = UPUFILT - UPURADREF     Output upward uranium channel with radon background removed</span>
+
+<span class="sd">         where:</span>
+
+<span class="sd">         KFILT   = Input Low-pass filtered potassium channel</span>
+<span class="sd">         UFILT   = Input Low-pass filtered uranium channel</span>
+<span class="sd">         THFILT  = Input Low-pass filtered thorium channel</span>
+<span class="sd">         TCFILT  = Input Low-pass filtered total count channel</span>
+<span class="sd">         UPUFILT = Input Low-pass filtered upward uranium channel</span>
+
+<span class="sd">         and the following calculated using the RadonUpwardRemovalCalculate_RPS method:</span>
+
+<span class="sd">        KRADREF   = Input potassium background to remove (channel)</span>
+<span class="sd">        URADREF   = Input uranium background to remove (channel)</span>
+<span class="sd">        THRADREF  = Input uranium background to remove (channel)</span>
+<span class="sd">        TCRADREF  = Input thorium background to remove (channel)</span>
+<span class="sd">        UPURADREF = Input upward uranium background to remove (channel)</span>
+
+<span class="sd">        Ref: See the RPSLEVLU.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radon_upward_removal_apply</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_upward_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_upward_back</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_out</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_upward_out</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radon_overwater_reference_channels">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radon_overwater_reference_channels">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radon_overwater_reference_channels</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_levl</span><span class="p">,</span> <span class="n">U_levl</span><span class="p">,</span> <span class="n">Th_levl</span><span class="p">,</span> <span class="n">TC_levl</span><span class="p">,</span> <span class="n">water_back_ref_channel</span><span class="p">,</span> <span class="n">K_ref</span><span class="p">,</span> <span class="n">U_ref</span><span class="p">,</span> <span class="n">Th_ref</span><span class="p">,</span> <span class="n">TC_ref</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Overwater Radon removel method: Calculate radon reference levels from the filtered data</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                      `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:                    Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K_levl:                  Input levelled Potassium data channel</span>
+<span class="sd">        :param U_levl:                  Input levelled Uranium data channel</span>
+<span class="sd">        :param Th_levl:                 Input levelled Thorium data channel</span>
+<span class="sd">        :param TC_levl:                 Input levelled Total Count data channel</span>
+<span class="sd">        :param water_back_ref_channel:  Input Water Background Reference channel name</span>
+<span class="sd">        :param K_ref:                   Output Potassium Radon reference channel</span>
+<span class="sd">        :param U_ref:                   Output Uranium Radon reference channel</span>
+<span class="sd">        :param Th_ref:                  Output Thorium Radon reference channel</span>
+<span class="sd">        :param TC_ref:                  Output Total Count Radon reference channel</span>
+<span class="sd">        :type  db:                      GXDB</span>
+<span class="sd">        :type  line:                    int</span>
+<span class="sd">        :type  K_levl:                  str</span>
+<span class="sd">        :type  U_levl:                  str</span>
+<span class="sd">        :type  Th_levl:                 str</span>
+<span class="sd">        :type  TC_levl:                 str</span>
+<span class="sd">        :type  water_back_ref_channel:  str</span>
+<span class="sd">        :type  K_ref:                   str</span>
+<span class="sd">        :type  U_ref:                   str</span>
+<span class="sd">        :type  Th_ref:                  str</span>
+<span class="sd">        :type  TC_ref:                  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Radon reference channels are calculate via simple multiplication with the water background reference channel:</span>
+
+<span class="sd">        KREF = KLEV * WREF     Output Potassium Radon reference channel</span>
+<span class="sd">        UREF = ULEV * WREF     Output Uranium Radon reference channel </span>
+<span class="sd">        THREF = THLEV * WREF   Output Thorium Radon reference channel</span>
+<span class="sd">        TCREF = TCLEV * WREF   Output Total Count Radon reference channe</span>
+
+<span class="sd">        where</span>
+
+<span class="sd">        KLEV = Input Potassium levelled count channel</span>
+<span class="sd">        ULEV = Input Uranium levelled count channel</span>
+<span class="sd">        THLEV = Input Thorium levelled count channel</span>
+<span class="sd">        TCLEV = Input Total Count levelled count channel</span>
+
+<span class="sd">        and</span>
+
+<span class="sd">        WREF = Input Water Background Reference channel</span>
+
+<span class="sd">        Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radon_overwater_reference_channels</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">water_back_ref_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radon_overwater_create_background_table">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radon_overwater_create_background_table">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radon_overwater_create_background_table</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">flight_ref_channel</span><span class="p">,</span> <span class="n">water_back_ref_channel</span><span class="p">,</span> <span class="n">K_ref</span><span class="p">,</span> <span class="n">U_ref</span><span class="p">,</span> <span class="n">Th_ref</span><span class="p">,</span> <span class="n">TC_ref</span><span class="p">,</span> <span class="n">fid_ref</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Create the table (TB) file used for the overwater radon removal method</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                      `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param flight_ref_channel:      Input Flight Reference table column name (.e.g &quot;_RpsFlight_&quot;</span>
+<span class="sd">        :param water_back_ref_channel:  Input Water Background Reference channel name</span>
+<span class="sd">        :param K_ref:                   Input Potassium Radon reference channel</span>
+<span class="sd">        :param U_ref:                   Input Uranium Radon reference channel</span>
+<span class="sd">        :param Th_ref:                  Input Thorium Radon reference channel</span>
+<span class="sd">        :param TC_ref:                  Input Total Count Radon reference channel</span>
+<span class="sd">        :param fid_ref:                 Reference (e.g. FID) channel name (created)</span>
+<span class="sd">        :param table:                   Output Radon reference table name</span>
+<span class="sd">        :type  db:                      GXDB</span>
+<span class="sd">        :type  flight_ref_channel:      str</span>
+<span class="sd">        :type  water_back_ref_channel:  str</span>
+<span class="sd">        :type  K_ref:                   str</span>
+<span class="sd">        :type  U_ref:                   str</span>
+<span class="sd">        :type  Th_ref:                  str</span>
+<span class="sd">        :type  TC_ref:                  str</span>
+<span class="sd">        :type  fid_ref:                 str</span>
+<span class="sd">        :type  table:                   str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The Radon reference channels are scanned to produce a table of background values.</span>
+<span class="sd">        The table is created for all selected lines.</span>
+
+<span class="sd">        Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radon_overwater_create_background_table</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">flight_ref_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">water_back_ref_channel</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">fid_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">table</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radon_overwater_background_correction">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radon_overwater_background_correction">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radon_overwater_background_correction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_bg</span><span class="p">,</span> <span class="n">U_bg</span><span class="p">,</span> <span class="n">Th_bg</span><span class="p">,</span> <span class="n">TC_bg</span><span class="p">,</span> <span class="n">K_ref</span><span class="p">,</span> <span class="n">U_ref</span><span class="p">,</span> <span class="n">Th_ref</span><span class="p">,</span> <span class="n">TC_ref</span><span class="p">,</span> <span class="n">K_rad</span><span class="p">,</span> <span class="n">U_rad</span><span class="p">,</span> <span class="n">Th_rad</span><span class="p">,</span> <span class="n">TC_rad</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Overwater Radon correction method: Calculate radon correction levels from the reference channel</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:      `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:    Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K_bg:    Input Potassium channel</span>
+<span class="sd">        :param U_bg:    Input Uranium channel</span>
+<span class="sd">        :param Th_bg:   Input Thorium channel</span>
+<span class="sd">        :param TC_bg:   Input Total Count channel</span>
+<span class="sd">        :param K_ref:   Input Potassium Radon reference channel</span>
+<span class="sd">        :param U_ref:   Input Uranium Radon reference channel</span>
+<span class="sd">        :param Th_ref:  Input Thorium Radon reference channel</span>
+<span class="sd">        :param TC_ref:  Input Total Count Radon reference channel</span>
+<span class="sd">        :param K_rad:   Output Potassium channel</span>
+<span class="sd">        :param U_rad:   Output Uranium channel</span>
+<span class="sd">        :param Th_rad:  Output Thorium channel</span>
+<span class="sd">        :param TC_rad:  Output Total Count channel</span>
+<span class="sd">        :type  db:      GXDB</span>
+<span class="sd">        :type  line:    int</span>
+<span class="sd">        :type  K_bg:    str</span>
+<span class="sd">        :type  U_bg:    str</span>
+<span class="sd">        :type  Th_bg:   str</span>
+<span class="sd">        :type  TC_bg:   str</span>
+<span class="sd">        :type  K_ref:   str</span>
+<span class="sd">        :type  U_ref:   str</span>
+<span class="sd">        :type  Th_ref:  str</span>
+<span class="sd">        :type  TC_ref:  str</span>
+<span class="sd">        :type  K_rad:   str</span>
+<span class="sd">        :type  U_rad:   str</span>
+<span class="sd">        :type  Th_rad:  str</span>
+<span class="sd">        :type  TC_rad:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Radon water background correction channel:</span>
+
+<span class="sd">        K_rad = K_bg - KREF      Output Potassium Radon background correction channel</span>
+<span class="sd">        U_rad = U_bg - UREF      Output Uranium Radon background correction channel </span>
+<span class="sd">        Th_rad = TH_bg - THREF   Output Thorium Radon background correction channel</span>
+<span class="sd">        TC_rad = TC_bg - TCREF   Output Total Count Radon background correction channe</span>
+
+<span class="sd">        where</span>
+
+<span class="sd">        K_bg = Input Potassium levelled count channel</span>
+<span class="sd">        U_bg = Input Uranium levelled count channel</span>
+<span class="sd">        TH_bg = Input Thorium levelled count channel</span>
+<span class="sd">        TC_bg = Input Total Count levelled count channel</span>
+
+<span class="sd">        and</span>
+
+<span class="sd">        KREF = Input Radon background reference channel</span>
+<span class="sd">        UREF = Input Radon background reference channel</span>
+<span class="sd">        THREF = Input Radon background reference channel</span>
+<span class="sd">        TCREF = Input Radon background reference channel</span>
+
+<span class="sd">        Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radon_overwater_background_correction</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_bg</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_bg</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_bg</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_bg</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_ref</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">K_rad</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_rad</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_rad</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_rad</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radon_aircraft_cosmic_correction">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radon_aircraft_cosmic_correction">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radon_aircraft_cosmic_correction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_filt</span><span class="p">,</span> <span class="n">U_filt</span><span class="p">,</span> <span class="n">Th_filt</span><span class="p">,</span> <span class="n">TC_filt</span><span class="p">,</span> <span class="n">U_upward_filt</span><span class="p">,</span> <span class="n">Cosmic_filt</span><span class="p">,</span> <span class="n">aircraft_k</span><span class="p">,</span> <span class="n">aircraft_u</span><span class="p">,</span> <span class="n">aircraft_th</span><span class="p">,</span> <span class="n">aircraft_tc</span><span class="p">,</span> <span class="n">aircraft_upu</span><span class="p">,</span> <span class="n">cosmic_k</span><span class="p">,</span> <span class="n">cosmic_u</span><span class="p">,</span> <span class="n">cosmic_th</span><span class="p">,</span> <span class="n">cosmic_tc</span><span class="p">,</span> <span class="n">cosmic_upu</span><span class="p">,</span> <span class="n">K_levl</span><span class="p">,</span> <span class="n">U_levl</span><span class="p">,</span> <span class="n">Th_levl</span><span class="p">,</span> <span class="n">TC_levl</span><span class="p">,</span> <span class="n">U_upward_levl</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Remove effects of aircraft and cosmic stripping</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:             `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:           Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K_filt:         Input filtered potassium channel</span>
+<span class="sd">        :param U_filt:         Input filtered uranium channel</span>
+<span class="sd">        :param Th_filt:        Input filtered thorium channel</span>
+<span class="sd">        :param TC_filt:        Input filtered total count channel</span>
+<span class="sd">        :param U_upward_filt:  Input filtered upward uranium channel (optional - can be left blank)</span>
+<span class="sd">        :param Cosmic_filt:    Input filtered cosmic channel</span>
+<span class="sd">        :param aircraft_k:     Aircraft background value for potassium (cps). (Default = 12)</span>
+<span class="sd">        :param aircraft_u:     Aircraft background value for uranium (cps). (Default = 2.2)</span>
+<span class="sd">        :param aircraft_th:    Aircraft background value for thorium (cps). (Default = 1.5)</span>
+<span class="sd">        :param aircraft_tc:    Aircraft background value for total count (cps). (Default = 90)</span>
+<span class="sd">        :param aircraft_upu:   Aircraft background value for upward uranium (cps) (optional - can be left blank). (Default = 0.6)</span>
+<span class="sd">        :param cosmic_k:       Cosmic stripping ratio for potassium (cps/cosmic cps). (Default = 0.032)</span>
+<span class="sd">        :param cosmic_u:       Cosmic stripping ratio for uranium (cps/cosmic cps). (Default = 0.026)</span>
+<span class="sd">        :param cosmic_th:      Cosmic stripping ratio for thorium (cps/cosmic cps). (Default = 0.03)</span>
+<span class="sd">        :param cosmic_tc:      Cosmic stripping ratio for total count (cps/cosmic cps). (Default = 0.6)</span>
+<span class="sd">        :param cosmic_upu:     Cosmic stripping ratio for upward uranium (cps/cosmic cps) (optional - can be left blank). (Default = 0.008)</span>
+<span class="sd">        :param K_levl:         Output levelled potassium channel</span>
+<span class="sd">        :param U_levl:         Output levelled uranium channel</span>
+<span class="sd">        :param Th_levl:        Output levelled thorium channel</span>
+<span class="sd">        :param TC_levl:        Output levelled total count channel</span>
+<span class="sd">        :param U_upward_levl:  Output levelled upward uranium channel (optional - can be left blank)</span>
+<span class="sd">        :type  db:             GXDB</span>
+<span class="sd">        :type  line:           int</span>
+<span class="sd">        :type  K_filt:         str</span>
+<span class="sd">        :type  U_filt:         str</span>
+<span class="sd">        :type  Th_filt:        str</span>
+<span class="sd">        :type  TC_filt:        str</span>
+<span class="sd">        :type  U_upward_filt:  str</span>
+<span class="sd">        :type  Cosmic_filt:    str</span>
+<span class="sd">        :type  aircraft_k:     float</span>
+<span class="sd">        :type  aircraft_u:     float</span>
+<span class="sd">        :type  aircraft_th:    float</span>
+<span class="sd">        :type  aircraft_tc:    float</span>
+<span class="sd">        :type  aircraft_upu:   float</span>
+<span class="sd">        :type  cosmic_k:       float</span>
+<span class="sd">        :type  cosmic_u:       float</span>
+<span class="sd">        :type  cosmic_th:      float</span>
+<span class="sd">        :type  cosmic_tc:      float</span>
+<span class="sd">        :type  cosmic_upu:     float</span>
+<span class="sd">        :type  K_levl:         str</span>
+<span class="sd">        :type  U_levl:         str</span>
+<span class="sd">        :type  Th_levl:        str</span>
+<span class="sd">        :type  TC_levl:        str</span>
+<span class="sd">        :type  U_upward_levl:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This wrapper performs the following simple operation:</span>
+
+<span class="sd">        LEVL = FILT - (AIRBACK + COS_STRIP * COSFILT)</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        LEVL = Output levelled element channel</span>
+<span class="sd">        FILT = Input filtered element channel</span>
+<span class="sd">        AIRBACK = Input Air Background value for that element</span>
+<span class="sd">        COS_STRIP = Input Cosmic Stripping factor for that element</span>
+<span class="sd">        COSFILT = Input filtered cosmic channel</span>
+
+<span class="sd">        The Upward uranium parameters are optional and can be left blank if not required,</span>
+<span class="sd">        but all three should be defined for the Upward method.</span>
+
+<span class="sd">        Ref:  See the RPSLEVU.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radon_aircraft_cosmic_correction</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_upward_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Cosmic_filt</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">aircraft_k</span><span class="p">,</span> <span class="n">aircraft_u</span><span class="p">,</span> <span class="n">aircraft_th</span><span class="p">,</span> <span class="n">aircraft_tc</span><span class="p">,</span> <span class="n">aircraft_upu</span><span class="p">,</span> <span class="n">cosmic_k</span><span class="p">,</span> <span class="n">cosmic_u</span><span class="p">,</span> <span class="n">cosmic_th</span><span class="p">,</span> <span class="n">cosmic_tc</span><span class="p">,</span> <span class="n">cosmic_upu</span><span class="p">,</span> <span class="n">K_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">TC_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_upward_levl</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radio_element_bandpass_filter">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radio_element_bandpass_filter">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radio_element_bandpass_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">inputCh1</span><span class="p">,</span> <span class="n">inputCh2</span><span class="p">,</span> <span class="n">inputCh3</span><span class="p">,</span> <span class="n">ch1_short_cutoff</span><span class="p">,</span> <span class="n">ch1_high_cutoff</span><span class="p">,</span> <span class="n">ch2_short_cutoff</span><span class="p">,</span> <span class="n">ch2_high_cutoff</span><span class="p">,</span> <span class="n">ch3_short_cutoff</span><span class="p">,</span> <span class="n">ch3_high_cutoff</span><span class="p">,</span> <span class="n">outputCh1</span><span class="p">,</span> <span class="n">outputCh2</span><span class="p">,</span> <span class="n">outputCh3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Applies a band-pass filter for up to three elements simultaneously</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:              Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param inputCh1:          Input channel 1 handle (READONLY) (can be NULLSYMB to skip channel 1)</span>
+<span class="sd">        :param inputCh2:          Input channel 2 handle (READONLY) (can be NULLSYMB to skip channel 2)</span>
+<span class="sd">        :param inputCh3:          Input channel 3 handle (READONLY) (can be NULLSYMB to skip channel 3)</span>
+<span class="sd">        :param ch1_short_cutoff:  Channel 1 short wavelength cutoff</span>
+<span class="sd">        :param ch1_high_cutoff:   Channel 1 high wavelength cutoff</span>
+<span class="sd">        :param ch2_short_cutoff:  Channel 2 short wavelength cutoff</span>
+<span class="sd">        :param ch2_high_cutoff:   Channel 2 high wavelength cutoff</span>
+<span class="sd">        :param ch3_short_cutoff:  Channel 3 short wavelength cutoff</span>
+<span class="sd">        :param ch3_high_cutoff:   Channel 3 high wavelength cutoff</span>
+<span class="sd">        :param outputCh1:         Output filtered channel 1 handle (READWRITE)</span>
+<span class="sd">        :param outputCh2:         Output filtered channel 2 handle (READWRITE)</span>
+<span class="sd">        :param outputCh3:         Output filtered channel 3 handle (READWRITE)</span>
+<span class="sd">        :type  db:                GXDB</span>
+<span class="sd">        :type  line:              int</span>
+<span class="sd">        :type  inputCh1:          int</span>
+<span class="sd">        :type  inputCh2:          int</span>
+<span class="sd">        :type  inputCh3:          int</span>
+<span class="sd">        :type  ch1_short_cutoff:  float</span>
+<span class="sd">        :type  ch1_high_cutoff:   float</span>
+<span class="sd">        :type  ch2_short_cutoff:  float</span>
+<span class="sd">        :type  ch2_high_cutoff:   float</span>
+<span class="sd">        :type  ch3_short_cutoff:  float</span>
+<span class="sd">        :type  ch3_high_cutoff:   float</span>
+<span class="sd">        :type  outputCh1:         int</span>
+<span class="sd">        :type  outputCh2:         int</span>
+<span class="sd">        :type  outputCh3:         int</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Use short wavelength = 0 for highpass.</span>
+<span class="sd">        is simply copied to the output channel without filtering.       </span>
+
+<span class="sd">        Ref: See the RPSFILT.GXC, RPSLEVLT.GXC, RPSLEVLU.GXC and RPSRATIO.GXC files</span>
+<span class="sd">            for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radio_element_bandpass_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">inputCh1</span><span class="p">,</span> <span class="n">inputCh2</span><span class="p">,</span> <span class="n">inputCh3</span><span class="p">,</span> <span class="n">ch1_short_cutoff</span><span class="p">,</span> <span class="n">ch1_high_cutoff</span><span class="p">,</span> <span class="n">ch2_short_cutoff</span><span class="p">,</span> <span class="n">ch2_high_cutoff</span><span class="p">,</span> <span class="n">ch3_short_cutoff</span><span class="p">,</span> <span class="n">ch3_high_cutoff</span><span class="p">,</span> <span class="n">outputCh1</span><span class="p">,</span> <span class="n">outputCh2</span><span class="p">,</span> <span class="n">outputCh3</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radio_element_ratios">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radio_element_ratios">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radio_element_ratios</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_in</span><span class="p">,</span> <span class="n">U_in</span><span class="p">,</span> <span class="n">Th_in</span><span class="p">,</span> <span class="n">uk_ratio</span><span class="p">,</span> <span class="n">uth_ratio</span><span class="p">,</span> <span class="n">thk_ratio</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Calculate radioelement ratios</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:         `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:       Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K_in:       Input filtered Postassium channel</span>
+<span class="sd">        :param U_in:       Input filtered Uranium channel</span>
+<span class="sd">        :param Th_in:      Input filtered Thorium channel</span>
+<span class="sd">        :param uk_ratio:   Output Uranium/Potassium ratio channel name</span>
+<span class="sd">        :param uth_ratio:  Output Uranium/Thorium ratio channel name</span>
+<span class="sd">        :param thk_ratio:  Output Thorium/Potassium ratio channel name</span>
+<span class="sd">        :type  db:         GXDB</span>
+<span class="sd">        :type  line:       int</span>
+<span class="sd">        :type  K_in:       str</span>
+<span class="sd">        :type  U_in:       str</span>
+<span class="sd">        :type  Th_in:      str</span>
+<span class="sd">        :type  uk_ratio:   str</span>
+<span class="sd">        :type  uth_ratio:  str</span>
+<span class="sd">        :type  thk_ratio:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The conversions are calculated using the formulae:</span>
+
+<span class="sd">        OutputUKRatio = InputU /InputK</span>
+<span class="sd">        OutputUThRatio = InputU / InputTh</span>
+<span class="sd">        OutputThKRatio = InputTh /InputK</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        InputK = Filtering Potassium</span>
+<span class="sd">        InputU = Filtering Uranium</span>
+<span class="sd">        InputTh = Filtering Thorium</span>
+
+<span class="sd">        Ref: See the RPSRATIO.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radio_element_ratios</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K_in</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U_in</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th_in</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">uk_ratio</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">uth_ratio</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">thk_ratio</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radio_element_minimum_concentration_filter">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radio_element_minimum_concentration_filter">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radio_element_minimum_concentration_filter</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">Th</span><span class="p">,</span> <span class="n">potassium_percent</span><span class="p">,</span> <span class="n">uranium_ppm</span><span class="p">,</span> <span class="n">thorium_ppm</span><span class="p">,</span> <span class="n">threshold_method</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Minimum Concentration Filtering</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:                 `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:               Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K:                  Input/Output Postassium channel</span>
+<span class="sd">        :param U:                  Input/Output Uranium channel</span>
+<span class="sd">        :param Th:                 Input/Output Thorium channel</span>
+<span class="sd">        :param potassium_percent:  Input min. potassium ratio (default: 1.0)</span>
+<span class="sd">        :param uranium_ppm:        Input min. uranium ratio (default: 1.0)</span>
+<span class="sd">        :param thorium_ppm:        Input min. thorium ratio (default: 1.0)</span>
+<span class="sd">        :param threshold_method:   min. threshold method (0: Clip, 1: DUMMY)</span>
+<span class="sd">        :type  db:                 GXDB</span>
+<span class="sd">        :type  line:               int</span>
+<span class="sd">        :type  K:                  str</span>
+<span class="sd">        :type  U:                  str</span>
+<span class="sd">        :type  Th:                 str</span>
+<span class="sd">        :type  potassium_percent:  float</span>
+<span class="sd">        :type  uranium_ppm:        float</span>
+<span class="sd">        :type  thorium_ppm:        float</span>
+<span class="sd">        :type  threshold_method:   int</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** The conversions are calculated using the formulae: (Clip)</span>
+<span class="sd">        if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = KMIN;</span>
+<span class="sd">        if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = UMIN;</span>
+<span class="sd">        if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = THMIN;</span>
+
+
+<span class="sd">        The conversions are calculated using the formulae: (Dummy)</span>
+<span class="sd">        if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = DUMMY;</span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        KMIN = Min Potassium in %K ppm (Default is 1.0)</span>
+<span class="sd">        UMIN = Min Uranium in eU ppm (Default is 1.0)</span>
+<span class="sd">        THMIN = Min Thorium in eTH ppm (Default is 1.0)</span>
+
+<span class="sd">        Ref: See the RPSRATIO.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radio_element_minimum_concentration_filter</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">potassium_percent</span><span class="p">,</span> <span class="n">uranium_ppm</span><span class="p">,</span> <span class="n">thorium_ppm</span><span class="p">,</span> <span class="n">threshold_method</span><span class="p">)</span></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GXRPS.radio_element_ground_exposure_rate">
+<a class="viewcode-back" href="../../../GXRPS.html#geosoft.gxapi.GXRPS.radio_element_ground_exposure_rate">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">radio_element_ground_exposure_rate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">Th</span><span class="p">,</span> <span class="n">Exposure</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Applies ground level exposure rate</span>
+<span class="sd">        </span>
+<span class="sd">        :param db:        `GXDB &lt;geosoft.gxapi.GXDB&gt;` Object</span>
+<span class="sd">        :param line:      Line to process (NULLSYMB for all selected lines)</span>
+<span class="sd">        :param K:         Input Potassium corrected channel</span>
+<span class="sd">        :param U:         Input Uranium corrected channel</span>
+<span class="sd">        :param Th:        Input Thorium corrected channel</span>
+<span class="sd">        :param Exposure:  Output ground level exposure rate channel</span>
+<span class="sd">        :type  db:        GXDB</span>
+<span class="sd">        :type  line:      int</span>
+<span class="sd">        :type  K:         str</span>
+<span class="sd">        :type  U:         str</span>
+<span class="sd">        :type  Th:        str</span>
+<span class="sd">        :type  Exposure:  str</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft End-User License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic&gt;`_</span>
+
+<span class="sd">        **Note:** Ground exposure rate gives the measure of the rate of ionizations</span>
+<span class="sd">        produced in air by photon radiation, which is the amount of exposure received.       </span>
+
+<span class="sd">        E = 1.505𝐾(%) + 0.653𝑒𝑈(𝑝𝑝𝑚)+ 0.287𝑒𝑇ℎ(𝑝𝑝𝑚) </span>
+
+<span class="sd">        where:</span>
+
+<span class="sd">        𝐾 = Corrected Potassium</span>
+<span class="sd">        𝑒𝑈 = Corrected Uranium</span>
+<span class="sd">        𝑒𝑇ℎ = Corrected Thorium  </span>
+
+<span class="sd">        Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapRPS</span><span class="o">.</span><span class="n">_radio_element_ground_exposure_rate</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">db</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">U</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Th</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">Exposure</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
+</div>
+
+        
+
+
+
+
+
+<span class="c1">### endblock ClassImplementation</span>
+<span class="c1">### block ClassExtend</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
+<span class="c1">### endblock ClassExtend</span>
+
+
+<span class="c1">### block Footer</span>
+<span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+<span class="c1">### endblock Footer</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXRPS</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

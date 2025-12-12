@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/maki.css?v=ea9b3600" />
-    <script src="../../_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
@@ -2044,7 +2044,7 @@
 
 <span class="c1">#: &quot;PLT&quot;    Geosoft Plot (``*.plt``)         Plot</span>
 <span class="n">MAP_EXPORT_FORMAT_PLT</span> <span class="o">=</span> <span class="s2">&quot;PLT&quot;</span>
-<span class="c1">#: &quot;`GXSHP &lt;geosoft.gxapi.GXSHP&gt;`&quot;    ArcView Shapfile (``*.shp``)     Plot</span>
+<span class="c1">#: &quot;`GXSHP &lt;geosoft.gxapi.GXSHP&gt;`&quot;    ArcGIS Shapfile (``*.shp``)     Plot</span>
 <span class="n">MAP_EXPORT_FORMAT_SHP</span> <span class="o">=</span> <span class="s2">&quot;SHP&quot;</span>
 <span class="c1">#: &quot;DXF12&quot;  AutoCad12 (``*.dxf``)            Plot</span>
 <span class="n">MAP_EXPORT_FORMAT_DXF12</span> <span class="o">=</span> <span class="s2">&quot;DXF12&quot;</span>
@@ -4173,6 +4173,50 @@
 <span class="n">VA_AVERAGE_COLUMNS</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="c1">#</span>
+<span class="c1"># VA_DECIMATE constants</span>
+<span class="c1">#</span>
+<span class="c1"># `GXVA &lt;geosoft.gxapi.GXVA&gt;` Object to decimate</span>
+
+<span class="c1">#: Replace with the sum of the set of values</span>
+<span class="n">VA_DECIMATE_SUM</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Replace with the average of the set of values</span>
+<span class="n">VA_DECIMATE_AVERAGE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Replace with the median of the values. For even numbers, the average of the middle sorted values</span>
+<span class="n">VA_DECIMATE_MEDIAN</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#: Replace with the first value in each set of values</span>
+<span class="n">VA_DECIMATE_FIRST</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1">#</span>
+<span class="c1"># VA_INTERPOLATE constants</span>
+<span class="c1">#</span>
+<span class="c1"># `GXVA &lt;geosoft.gxapi.GXVA&gt;` Object to expand and interpolate between values. Values mirror VVU_INTERP</span>
+
+<span class="c1">#: Outputs equal input nearest column values</span>
+<span class="n">VA_INTERPOLATE_NEAREST</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Use linear interpolation</span>
+<span class="n">VA_INTERPOLATE_LINEAR</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#: Use cubic interpolation</span>
+<span class="n">VA_INTERPOLATE_CUBIC</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1">#: Use akima interpolation</span>
+<span class="n">VA_INTERPOLATE_AKIMA</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1">#: Use prediction interpolation</span>
+<span class="n">VA_INTERPOLATE_PREDICT</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1">#</span>
+<span class="c1"># VA_EXTRAPOLATE constants</span>
+<span class="c1">#</span>
+<span class="c1"># `GXVA &lt;geosoft.gxapi.GXVA&gt;` Object to expand and extrapolate end values. Values mirror VVU_INTERP_EDGE</span>
+
+<span class="c1">#: Outputs equal input single values</span>
+<span class="n">VA_EXTRAPOLATE_NONE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Use same method as interpolation</span>
+<span class="n">VA_EXTRAPOLATE_SAME</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Outputs equal edge single values</span>
+<span class="n">VA_EXTRAPOLATE_NEAREST</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#: Use linear interpolation</span>
+<span class="n">VA_EXTRAPOLATE_LINEAR</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1">#</span>
 <span class="c1"># VA_OBJECT constants</span>
 <span class="c1">#</span>
 <span class="c1"># `GXVA &lt;geosoft.gxapi.GXVA&gt;` Object to select</span>
@@ -6137,7 +6181,7 @@
 <span class="n">FILE_FILTER_ERS</span> <span class="o">=</span> <span class="mi">29</span>
 <span class="c1">#: EPS files              ``*.eps``                LOCAL</span>
 <span class="n">FILE_FILTER_EPS</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="c1">#: ArcView Shape files    ``*.shp``                LOCAL</span>
+<span class="c1">#: ArcGIS Shapefiles    ``*.shp``                LOCAL</span>
 <span class="n">FILE_FILTER_SHP</span> <span class="o">=</span> <span class="mi">31</span>
 <span class="c1">#: CGM files              ``*.cgm``                LOCAL</span>
 <span class="n">FILE_FILTER_CGM</span> <span class="o">=</span> <span class="mi">32</span>
@@ -6849,6 +6893,12 @@
 <span class="n">MVG_WRAP_YES</span> <span class="o">=</span> <span class="mi">1</span>	
 
 <span class="c1">#</span>
+<span class="c1"># GXNASVD Constants</span>
+<span class="c1"># </span>
+
+	
+
+<span class="c1">#</span>
 <span class="c1"># GXPDF3D Constants</span>
 <span class="c1"># </span>
 
@@ -6991,6 +7041,16 @@
 <span class="n">PROJ_DISPLAY_ALWAYS</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="c1">#</span>
+<span class="c1"># PROJ_NODE constants</span>
+<span class="c1">#</span>
+<span class="c1"># Expand or Collapse a document node in the document manager</span>
+
+<span class="c1">#: Collapse the document node - hide all the documents</span>
+<span class="n">PROJ_NODE_COLLAPSE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Expand the document node - show all the documents</span>
+<span class="n">PROJ_NODE_EXPAND</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#</span>
 <span class="c1"># PROJ_OMS constants</span>
 <span class="c1">#</span>
 <span class="c1"># Script registration</span>
@@ -7007,6 +7067,22 @@
 <span class="c1"># </span>
 
 	
+
+<span class="c1">#</span>
+<span class="c1"># GXRPS Constants</span>
+<span class="c1"># </span>
+
+
+
+<span class="c1">#</span>
+<span class="c1"># RPS_FITMODE constants</span>
+<span class="c1">#</span>
+<span class="c1"># Full spectrum analysis fit mode</span>
+
+<span class="c1">#: Least squares</span>
+<span class="n">RPS_FITMODE_LEAST_SQUARES</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#: Non negative least squares</span>
+<span class="n">RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES</span> <span class="o">=</span> <span class="mi">1</span>	
 
 <span class="c1">#</span>
 <span class="c1"># GXSEMPLOT Constants</span>
@@ -7651,12 +7727,14 @@
     <span class="s1">&#39;GXMISC&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXMSTK&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXMVG&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GXNASVD&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXPDF3D&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXPGEXP&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXPGU&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXPRAGA3&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXPROJ&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXRGRD&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GXRPS&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXSEMPLOT&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXSHD&#39;</span><span class="p">,</span>
     <span class="s1">&#39;GXSHP&#39;</span><span class="p">,</span>
@@ -7791,12 +7869,14 @@
 <span class="kn">from</span> <span class="nn">.GXMISC</span> <span class="kn">import</span> <span class="n">GXMISC</span>
 <span class="kn">from</span> <span class="nn">.GXMSTK</span> <span class="kn">import</span> <span class="n">GXMSTK</span>
 <span class="kn">from</span> <span class="nn">.GXMVG</span> <span class="kn">import</span> <span class="n">GXMVG</span>
+<span class="kn">from</span> <span class="nn">.GXNASVD</span> <span class="kn">import</span> <span class="n">GXNASVD</span>
 <span class="kn">from</span> <span class="nn">.GXPDF3D</span> <span class="kn">import</span> <span class="n">GXPDF3D</span>
 <span class="kn">from</span> <span class="nn">.GXPGEXP</span> <span class="kn">import</span> <span class="n">GXPGEXP</span>
 <span class="kn">from</span> <span class="nn">.GXPGU</span> <span class="kn">import</span> <span class="n">GXPGU</span>
 <span class="kn">from</span> <span class="nn">.GXPRAGA3</span> <span class="kn">import</span> <span class="n">GXPRAGA3</span>
 <span class="kn">from</span> <span class="nn">.GXPROJ</span> <span class="kn">import</span> <span class="n">GXPROJ</span>
 <span class="kn">from</span> <span class="nn">.GXRGRD</span> <span class="kn">import</span> <span class="n">GXRGRD</span>
+<span class="kn">from</span> <span class="nn">.GXRPS</span> <span class="kn">import</span> <span class="n">GXRPS</span>
 <span class="kn">from</span> <span class="nn">.GXSEMPLOT</span> <span class="kn">import</span> <span class="n">GXSEMPLOT</span>
 <span class="kn">from</span> <span class="nn">.GXSHD</span> <span class="kn">import</span> <span class="n">GXSHD</span>
 <span class="kn">from</span> <span class="nn">.GXSHP</span> <span class="kn">import</span> <span class="n">GXSHP</span>
@@ -7832,7 +7912,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>

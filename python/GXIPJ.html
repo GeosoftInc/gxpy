@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXIPJ class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>GXIPJ class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="_static/documentation_options.js?v=f788092f"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIPJ class</a></li> 
       </ul>
     </div>
@@ -45,6 +45,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.add_log_warp"><code class="docutils literal notranslate"><span class="pre">GXIPJ.add_log_warp()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.add_matrix_warp"><code class="docutils literal notranslate"><span class="pre">GXIPJ.add_matrix_warp()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.add_warp"><code class="docutils literal notranslate"><span class="pre">GXIPJ.add_warp()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.apply_local_datum_transforms_in_pj"><code class="docutils literal notranslate"><span class="pre">GXIPJ.apply_local_datum_transforms_in_pj()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.clear_coordinate_system"><code class="docutils literal notranslate"><span class="pre">GXIPJ.clear_coordinate_system()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.clear_orientation"><code class="docutils literal notranslate"><span class="pre">GXIPJ.clear_orientation()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.clear_projection"><code class="docutils literal notranslate"><span class="pre">GXIPJ.clear_projection()</span></code></a></li>
@@ -105,7 +106,6 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.orientations_are_the_same_within_a_small_tolerance"><code class="docutils literal notranslate"><span class="pre">GXIPJ.orientations_are_the_same_within_a_small_tolerance()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.projection_type_is_fully_supported"><code class="docutils literal notranslate"><span class="pre">GXIPJ.projection_type_is_fully_supported()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.read"><code class="docutils literal notranslate"><span class="pre">GXIPJ.read()</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.read_proj_string"><code class="docutils literal notranslate"><span class="pre">GXIPJ.read_proj_string()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.read_wkt"><code class="docutils literal notranslate"><span class="pre">GXIPJ.read_wkt()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.remove_favourite_coordinate_system"><code class="docutils literal notranslate"><span class="pre">GXIPJ.remove_favourite_coordinate_system()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXIPJ.reproject_section_grid"><code class="docutils literal notranslate"><span class="pre">GXIPJ.reproject_section_grid()</span></code></a></li>
@@ -485,6 +485,16 @@ the warp will be determined by least-square fitting
 to the warp surface for all but the 4-point warp.
 The 4-point ward requires exactly 4 points.</p>
 <p>Cannot be used with WARP_MATRIX or WARP_LOG</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXIPJ.apply_local_datum_transforms_in_pj">
+<span class="sig-name descname"><span class="pre">apply_local_datum_transforms_in_pj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIPJ.html#GXIPJ.apply_local_datum_transforms_in_pj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIPJ.apply_local_datum_transforms_in_pj" title="Link to this definition">¶</a></dt>
+<dd><p>If a PJ (reprojection) object is created with this IPJ, account for local datum differences</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.1.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1746,23 +1756,6 @@ datum transforms.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="geosoft.gxapi.GXIPJ.read_proj_string">
-<span class="sig-name descname"><span class="pre">read_proj_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projStr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXIPJ.html#GXIPJ.read_proj_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXIPJ.read_proj_string" title="Link to this definition">¶</a></dt>
-<dd><p>Set coordinate system from a PROJ string command</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>projStr</strong> (<em>str</em>) – PROJ string</p>
-</dd>
-</dl>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.</span></p>
-</div>
-<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> If the projection is not supported in Geosoft, the
-<a class="reference internal" href="#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> will be unknown.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3649,7 +3642,7 @@ string 3 - not currently used</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXIPJ class</a></li> 
       </ul>
     </div>
