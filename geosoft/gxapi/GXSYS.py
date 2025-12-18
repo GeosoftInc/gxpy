@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -15,6 +15,7 @@ from .GXWA import GXWA
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -1620,6 +1621,30 @@ class GXSYS(gxapi_cy.WrapSYS):
         
         ret_val = gxapi_cy.WrapSYS._make_file_writable(GXContext._get_tls_geo(), file.encode())
         return ret_val
+
+
+
+    @classmethod
+    def modeless_dialog_parameter_file_name(cls, out):
+        """
+        
+        Internal function used to allow modeless dialogs to be scripted
+        
+        :param out:  Output name
+        :type  out:  str_ref
+
+        .. versionadded:: 2025.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** This function is used to allow modeless dialogs to be scripted.
+        It should not be used in normal programming.
+        The modeless dialog writes its parameters to this temp file that is used by the
+        scripting engine on closing to include those parameters in the script.
+        """
+        
+        out.value = gxapi_cy.WrapSYS._modeless_dialog_parameter_file_name(GXContext._get_tls_geo(), out.value.encode())
+        
 
 
 
@@ -5219,6 +5244,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock ClassExtend
 
 

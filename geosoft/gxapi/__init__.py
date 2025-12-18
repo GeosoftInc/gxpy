@@ -1960,7 +1960,7 @@ MAP_EXPORT_BITS_DEFAULT = 0
 
 #: "PLT"    Geosoft Plot (``*.plt``)         Plot
 MAP_EXPORT_FORMAT_PLT = "PLT"
-#: "`GXSHP <geosoft.gxapi.GXSHP>`"    ArcView Shapfile (``*.shp``)     Plot
+#: "`GXSHP <geosoft.gxapi.GXSHP>`"    ArcGIS Shapfile (``*.shp``)     Plot
 MAP_EXPORT_FORMAT_SHP = "SHP"
 #: "DXF12"  AutoCad12 (``*.dxf``)            Plot
 MAP_EXPORT_FORMAT_DXF12 = "DXF12"
@@ -4089,6 +4089,50 @@ VA_AVERAGE_ROWS = 0
 VA_AVERAGE_COLUMNS = 1
 
 #
+# VA_DECIMATE constants
+#
+# `GXVA <geosoft.gxapi.GXVA>` Object to decimate
+
+#: Replace with the sum of the set of values
+VA_DECIMATE_SUM = 0
+#: Replace with the average of the set of values
+VA_DECIMATE_AVERAGE = 1
+#: Replace with the median of the values. For even numbers, the average of the middle sorted values
+VA_DECIMATE_MEDIAN = 2
+#: Replace with the first value in each set of values
+VA_DECIMATE_FIRST = 3
+
+#
+# VA_INTERPOLATE constants
+#
+# `GXVA <geosoft.gxapi.GXVA>` Object to expand and interpolate between values. Values mirror VVU_INTERP
+
+#: Outputs equal input nearest column values
+VA_INTERPOLATE_NEAREST = 1
+#: Use linear interpolation
+VA_INTERPOLATE_LINEAR = 2
+#: Use cubic interpolation
+VA_INTERPOLATE_CUBIC = 3
+#: Use akima interpolation
+VA_INTERPOLATE_AKIMA = 4
+#: Use prediction interpolation
+VA_INTERPOLATE_PREDICT = 5
+
+#
+# VA_EXTRAPOLATE constants
+#
+# `GXVA <geosoft.gxapi.GXVA>` Object to expand and extrapolate end values. Values mirror VVU_INTERP_EDGE
+
+#: Outputs equal input single values
+VA_EXTRAPOLATE_NONE = 0
+#: Use same method as interpolation
+VA_EXTRAPOLATE_SAME = 1
+#: Outputs equal edge single values
+VA_EXTRAPOLATE_NEAREST = 2
+#: Use linear interpolation
+VA_EXTRAPOLATE_LINEAR = 3
+
+#
 # VA_OBJECT constants
 #
 # `GXVA <geosoft.gxapi.GXVA>` Object to select
@@ -6053,7 +6097,7 @@ FILE_FILTER_GRD = 28
 FILE_FILTER_ERS = 29
 #: EPS files              ``*.eps``                LOCAL
 FILE_FILTER_EPS = 30
-#: ArcView Shape files    ``*.shp``                LOCAL
+#: ArcGIS Shapefiles    ``*.shp``                LOCAL
 FILE_FILTER_SHP = 31
 #: CGM files              ``*.cgm``                LOCAL
 FILE_FILTER_CGM = 32
@@ -6765,6 +6809,12 @@ MVG_WRAP_NO = 0
 MVG_WRAP_YES = 1	
 
 #
+# GXNASVD Constants
+# 
+
+	
+
+#
 # GXPDF3D Constants
 # 
 
@@ -6907,6 +6957,16 @@ PROJ_DISPLAY_YES = 1
 PROJ_DISPLAY_ALWAYS = 2
 
 #
+# PROJ_NODE constants
+#
+# Expand or Collapse a document node in the document manager
+
+#: Collapse the document node - hide all the documents
+PROJ_NODE_COLLAPSE = 0
+#: Expand the document node - show all the documents
+PROJ_NODE_EXPAND = 1
+
+#
 # PROJ_OMS constants
 #
 # Script registration
@@ -6923,6 +6983,22 @@ PROJ_OMS_PROCESSID_SIZE = 16
 # 
 
 	
+
+#
+# GXRPS Constants
+# 
+
+
+
+#
+# RPS_FITMODE constants
+#
+# Full spectrum analysis fit mode
+
+#: Least squares
+RPS_FITMODE_LEAST_SQUARES = 0
+#: Non negative least squares
+RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES = 1	
 
 #
 # GXSEMPLOT Constants
@@ -7567,12 +7643,14 @@ __all__ = [
     'GXMISC',
     'GXMSTK',
     'GXMVG',
+    'GXNASVD',
     'GXPDF3D',
     'GXPGEXP',
     'GXPGU',
     'GXPRAGA3',
     'GXPROJ',
     'GXRGRD',
+    'GXRPS',
     'GXSEMPLOT',
     'GXSHD',
     'GXSHP',
@@ -7707,12 +7785,14 @@ from .GXLMSG import GXLMSG
 from .GXMISC import GXMISC
 from .GXMSTK import GXMSTK
 from .GXMVG import GXMVG
+from .GXNASVD import GXNASVD
 from .GXPDF3D import GXPDF3D
 from .GXPGEXP import GXPGEXP
 from .GXPGU import GXPGU
 from .GXPRAGA3 import GXPRAGA3
 from .GXPROJ import GXPROJ
 from .GXRGRD import GXRGRD
+from .GXRPS import GXRPS
 from .GXSEMPLOT import GXSEMPLOT
 from .GXSHD import GXSHD
 from .GXSHP import GXSHP

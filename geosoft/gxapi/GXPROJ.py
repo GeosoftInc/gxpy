@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -12,6 +12,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -567,6 +568,41 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
 
     @classmethod
+    def expand_document_node(cls, type, display):
+        """
+        
+        Expands/collapses a document node in the project manager.
+        
+        :param type:     Document node to expand/collapse
+        :param display:  :ref:`PROJ_NODE`
+        :type  type:     str
+        :type  display:  int
+
+        .. versionadded:: 2025.2
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The type string can be one of the following:
+
+            Database      
+            Grid          
+            Map           
+            3DView        
+            Geosurface
+            Voxel         
+            VoxelInversion
+            GMS3D         
+            GMS2D
+        """
+        
+        gxapi_cy.WrapPROJ._expand_document_node(GXContext._get_tls_geo(), type.encode(), display)
+        
+
+
+
+    @classmethod
     def get_name(cls, name):
         """
         
@@ -1090,6 +1126,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock ClassExtend
 
 

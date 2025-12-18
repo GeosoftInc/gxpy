@@ -1,4 +1,4 @@
-#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
+#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
 
 ### extends 'class_empty.py'
 ### block ClassImports
@@ -12,6 +12,7 @@ from geosoft.gxapi import GXContext, float_ref, int_ref, str_ref
 
 ### block Header
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock Header
 
 ### block ClassImplementation
@@ -269,6 +270,23 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         """
         
         self._add_warp(type, vv_x_old, vv_y_old, vv_x_new, vv_y_new)
+        
+
+
+
+
+    def apply_local_datum_transforms_in_pj(self):
+        """
+        
+        If a PJ (reprojection) object is created with this IPJ, account for local datum differences
+        
+
+        .. versionadded:: 2025.1
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+        """
+        
+        self._apply_local_datum_transforms_in_pj()
         
 
 
@@ -2783,28 +2801,6 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
 
 
-    def read_proj_string(self, projStr):
-        """
-        
-        Set coordinate system from a PROJ string command
-        
-        :param projStr:  PROJ string
-        :type  projStr:  str
-
-        .. versionadded:: 6.0
-
-        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
-
-        **Note:** If the projection is not supported in Geosoft, the
-        `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
-        """
-        
-        self._read_proj_string(projStr.encode())
-        
-
-
-
-
     def compare_to(self, ipj2, message):
         """
         
@@ -2940,6 +2936,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 ### endblock ClassImplementation
 ### block ClassExtend
 # NOTICE: The code generator will not replace the code in this block
+
 ### endblock ClassExtend
 
 

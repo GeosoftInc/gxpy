@@ -29,7 +29,6 @@ for f in glob("geosoft/*.pyd"):
         raise Exception("An application is using a file we need to change: \n {}".format(str(e)))
 
 
-dependencies = ['numpy', 'pandas', 'requests']
 if 'bdist_wheel' in sys.argv:
     # Have to specify python-tag to specify which module
     for arg in sys.argv:
@@ -87,7 +86,6 @@ package_data={
 }
 
 install_requires=[
-    "numpy>=2.2.1", 
     "pandas>=2.2.3", 
     "requests>=2.31.0",
     "jdcal>=1.3"
@@ -95,7 +93,12 @@ install_requires=[
 
 if sys.version_info >= (3, 12):
     install_requires.append('setuptools>=75.8.0')
-
+    
+if sys.version_info[:2] == (3, 9):
+    install_requires.append('numpy>=2.0.0')
+else:
+    install_requires.append('numpy>=2.2.1')
+    
 setup(
     name='geosoft',
     version=version_tag,
