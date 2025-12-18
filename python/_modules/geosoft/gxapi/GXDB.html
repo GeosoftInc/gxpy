@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDB &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>geosoft.gxapi.GXDB &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDB</a></li> 
@@ -60,7 +60,7 @@
           <div class="body" role="main">
             
   <h1>Source code for geosoft.gxapi.GXDB</h1><div class="highlight"><pre>
-<span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+<span></span><span class="c1">#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.</span>
 
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
@@ -75,6 +75,7 @@
 
 <span class="c1">### block Header</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock Header</span>
 
 <span class="c1">### block ClassImplementation</span>
@@ -5280,32 +5281,6 @@
 
 
 
-<div class="viewcode-block" id="GXDB.is_wholeplot">
-<a class="viewcode-back" href="../../../GXDB.html#geosoft.gxapi.GXDB.is_wholeplot">[docs]</a>
-    <span class="k">def</span> <span class="nf">is_wholeplot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        </span>
-<span class="sd">        Is this a Wholeplot database?</span>
-<span class="sd">        </span>
-
-<span class="sd">        :returns:    1 if it is a Wholeplot database</span>
-<span class="sd">                    0 if it is not.</span>
-<span class="sd">        :rtype:      int</span>
-
-<span class="sd">        .. versionadded:: 5.0</span>
-
-<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
-
-<span class="sd">        **Note:** Currently checks to see if the DH_COLLAR line exists.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        
-        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_wholeplot</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">ret_val</span></div>
-
-
-
-
-
 <div class="viewcode-block" id="GXDB.put_chan_va">
 <a class="viewcode-back" href="../../../GXDB.html#geosoft.gxapi.GXDB.put_chan_va">[docs]</a>
     <span class="k">def</span> <span class="nf">put_chan_va</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">va</span><span class="p">):</span>
@@ -5742,6 +5717,34 @@
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Deprecated since unknown, &quot;&quot;&quot;</span><span class="p">,</span> <span class="p">)</span>
         <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_length</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">chan</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_val</span></div>
+
+
+
+
+
+<div class="viewcode-block" id="GXDB.is_wholeplot">
+<a class="viewcode-back" href="../../../GXDB.html#geosoft.gxapi.GXDB.is_wholeplot">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_wholeplot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Is this a Wholeplot database?</span>
+<span class="sd">        </span>
+
+<span class="sd">        :returns:    1 if it is a Wholeplot database</span>
+<span class="sd">                    0 if it is not.</span>
+<span class="sd">        :rtype:      int</span>
+
+<span class="sd">        .. versionadded:: 5.0</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Note:** This function returned false-positives - you could have a database that shared the naming convention</span>
+<span class="sd">        of a drill project, but had no lines named after holes, and it would return true.</span>
+<span class="sd">        Superceded by : iIsADrillholeProjectDatabase_DH, that does more extensive checks.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">ret_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_wholeplot</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ret_val</span></div>
 </div>
 
 
@@ -5752,6 +5755,7 @@
 <span class="c1">### endblock ClassImplementation</span>
 <span class="c1">### block ClassExtend</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock ClassExtend</span>
 
 
@@ -5772,7 +5776,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDB</a></li> 

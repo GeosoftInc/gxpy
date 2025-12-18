@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>geosoft.gxapi.GXPROJ &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 
@@ -60,7 +60,7 @@
           <div class="body" role="main">
             
   <h1>Source code for geosoft.gxapi.GXPROJ</h1><div class="highlight"><pre>
-<span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+<span></span><span class="c1">#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.</span>
 
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
@@ -74,6 +74,7 @@
 
 <span class="c1">### block Header</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock Header</span>
 
 <span class="c1">### block ClassImplementation</span>
@@ -684,6 +685,44 @@
 
 
 
+<div class="viewcode-block" id="GXPROJ.expand_document_node">
+<a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.expand_document_node">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">expand_document_node</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">display</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Expands/collapses a document node in the project manager.</span>
+<span class="sd">        </span>
+<span class="sd">        :param type:     Document node to expand/collapse</span>
+<span class="sd">        :param display:  :ref:`PROJ_NODE`</span>
+<span class="sd">        :type  type:     str</span>
+<span class="sd">        :type  display:  int</span>
+
+<span class="sd">        .. versionadded:: 2025.2</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+
+<span class="sd">        **Limitations:** May not be available while executing a command line program.</span>
+
+<span class="sd">        **Note:** The type string can be one of the following:</span>
+
+<span class="sd">            Database      </span>
+<span class="sd">            Grid          </span>
+<span class="sd">            Map           </span>
+<span class="sd">            3DView        </span>
+<span class="sd">            Geosurface</span>
+<span class="sd">            Voxel         </span>
+<span class="sd">            VoxelInversion</span>
+<span class="sd">            GMS3D         </span>
+<span class="sd">            GMS2D</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapPROJ</span><span class="o">.</span><span class="n">_expand_document_node</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="nb">type</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">display</span><span class="p">)</span></div>
+
+        
+
+
+
 <div class="viewcode-block" id="GXPROJ.get_name">
 <a class="viewcode-back" href="../../../GXPROJ.html#geosoft.gxapi.GXPROJ.get_name">[docs]</a>
     <span class="nd">@classmethod</span>
@@ -1260,6 +1299,7 @@
 <span class="c1">### endblock ClassImplementation</span>
 <span class="c1">### block ClassExtend</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock ClassExtend</span>
 
 
@@ -1280,7 +1320,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXPROJ</a></li> 

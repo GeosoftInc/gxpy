@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>geosoft.gxapi.GXDU &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 
@@ -60,7 +60,7 @@
           <div class="body" role="main">
             
   <h1>Source code for geosoft.gxapi.GXDU</h1><div class="highlight"><pre>
-<span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+<span></span><span class="c1">#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.</span>
 
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
@@ -74,6 +74,7 @@
 
 <span class="c1">### block Header</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock Header</span>
 
 <span class="c1">### block ClassImplementation</span>
@@ -237,7 +238,7 @@
 <span class="sd">        reference and a secondary reference table.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:     Database</span>
-<span class="sd">        :param line:   Line Handle</span>
+<span class="sd">        :param line:   Line Handle (NULLSYMB for all selected lines</span>
 <span class="sd">        :param val:    Lookup primary reference value</span>
 <span class="sd">        :param i_ch:   Lookup secondary reference channel [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
 <span class="sd">        :param o_ch:   Output Channel Token [`DB_LOCK_READWRITE &lt;geosoft.gxapi.DB_LOCK_READWRITE&gt;`]</span>
@@ -628,7 +629,7 @@
 <span class="sd">        line/channel and places the output in the output channel.</span>
 <span class="sd">        </span>
 <span class="sd">        :param db:        Database</span>
-<span class="sd">        :param line:      Line handle</span>
+<span class="sd">        :param line:      Line handle (NULLSYMB for all selected lines)</span>
 <span class="sd">        :param i_ch:      Input channel to filter [`DB_LOCK_READONLY &lt;geosoft.gxapi.DB_LOCK_READONLY&gt;`]</span>
 <span class="sd">        :param o_ch:      Output filtered channel [`DB_LOCK_READWRITE &lt;geosoft.gxapi.DB_LOCK_READWRITE&gt;`]</span>
 <span class="sd">        :param sw:        Short wavelength cutoff, 0 for highpass</span>
@@ -6462,6 +6463,7 @@
 <span class="c1">### endblock ClassImplementation</span>
 <span class="c1">### block ClassExtend</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock ClassExtend</span>
 
 
@@ -6482,7 +6484,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDU</a></li> 

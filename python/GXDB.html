@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXDB class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>GXDB class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="_static/documentation_options.js?v=f788092f"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDB class</a></li> 
       </ul>
     </div>
@@ -3064,7 +3064,9 @@ the Line methods is a valid line.</p>
 <p><span class="versionmodified added">New in version 5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
-<p><strong>Note:</strong> Currently checks to see if the DH_COLLAR line exists.</p>
+<p><strong>Note:</strong> This function returned false-positives - you could have a database that shared the naming convention
+of a drill project, but had no lines named after holes, and it would return true.
+Superceded by : iIsADrillholeProjectDatabase_DH, that does more extensive checks.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -5932,7 +5934,7 @@ Use the GS_SIMPLE_TYPE() macro to convert to INT,REAL or string.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXDB class</a></li> 
       </ul>
     </div>

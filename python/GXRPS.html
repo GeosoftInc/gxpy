@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GXRPS class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
+    <script src="_static/documentation_options.js?v=f788092f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-87443115-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXRPS class</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">GXRPS class</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS"><code class="docutils literal notranslate"><span class="pre">GXRPS</span></code></a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.__init__"><code class="docutils literal notranslate"><span class="pre">GXRPS.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.altitude_attenuation"><code class="docutils literal notranslate"><span class="pre">GXRPS.altitude_attenuation()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.compton_stripping"><code class="docutils literal notranslate"><span class="pre">GXRPS.compton_stripping()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.convert_to_elemental"><code class="docutils literal notranslate"><span class="pre">GXRPS.convert_to_elemental()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.dead_time_correction"><code class="docutils literal notranslate"><span class="pre">GXRPS.dead_time_correction()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.full_spectral_analysis"><code class="docutils literal notranslate"><span class="pre">GXRPS.full_spectral_analysis()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.is_null"><code class="docutils literal notranslate"><span class="pre">GXRPS.is_null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.live_time_correction"><code class="docutils literal notranslate"><span class="pre">GXRPS.live_time_correction()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.null"><code class="docutils literal notranslate"><span class="pre">GXRPS.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radio_element_bandpass_filter"><code class="docutils literal notranslate"><span class="pre">GXRPS.radio_element_bandpass_filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radio_element_ground_exposure_rate"><code class="docutils literal notranslate"><span class="pre">GXRPS.radio_element_ground_exposure_rate()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radio_element_minimum_concentration_filter"><code class="docutils literal notranslate"><span class="pre">GXRPS.radio_element_minimum_concentration_filter()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radio_element_ratios"><code class="docutils literal notranslate"><span class="pre">GXRPS.radio_element_ratios()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radon_aircraft_cosmic_correction"><code class="docutils literal notranslate"><span class="pre">GXRPS.radon_aircraft_cosmic_correction()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radon_background_table"><code class="docutils literal notranslate"><span class="pre">GXRPS.radon_background_table()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radon_overwater_background_correction"><code class="docutils literal notranslate"><span class="pre">GXRPS.radon_overwater_background_correction()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radon_overwater_create_background_table"><code class="docutils literal notranslate"><span class="pre">GXRPS.radon_overwater_create_background_table()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radon_overwater_reference_channels"><code class="docutils literal notranslate"><span class="pre">GXRPS.radon_overwater_reference_channels()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radon_upward_removal_apply"><code class="docutils literal notranslate"><span class="pre">GXRPS.radon_upward_removal_apply()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.radon_upward_removal_calculate"><code class="docutils literal notranslate"><span class="pre">GXRPS.radon_upward_removal_calculate()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.stp_correction_from_barometric_altitude"><code class="docutils literal notranslate"><span class="pre">GXRPS.stp_correction_from_barometric_altitude()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.stp_correction_from_pressure"><code class="docutils literal notranslate"><span class="pre">GXRPS.stp_correction_from_pressure()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXRPS.window_spectrum_to_channel"><code class="docutils literal notranslate"><span class="pre">GXRPS.window_spectrum_to_channel()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rps-fitmode-constants">RPS_FITMODE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.RPS_FITMODE_LEAST_SQUARES"><code class="docutils literal notranslate"><span class="pre">RPS_FITMODE_LEAST_SQUARES</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.RPS_FITMODE_LEAST_SQUARES</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES"><code class="docutils literal notranslate"><span class="pre">RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/GXRPS.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gxrps-class">
+<span id="gxrps"></span><h1>GXRPS class<a class="headerlink" href="#gxrps-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXRPS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS" title="Link to this definition">¶</a></dt>
+<dd><p>GXRPS class.</p>
+<p>Not a class. A catch-all group of functions performing
+various Radiometric Processing System tasks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.altitude_attenuation">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">altitude_attenuation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height_att_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nom_altimeter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stp_alt_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.altitude_attenuation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.altitude_attenuation" title="Link to this definition">¶</a></dt>
+<dd><p>Apply altitude attenuation for a radioelement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>input_channel</strong> (<em>str</em>) – Input channel name</p></li>
+<li><p><strong>height_att_coeff</strong> (<em>float</em>) – Height attenuation coefficient (per metre at STP)</p></li>
+<li><p><strong>nom_altimeter</strong> (<em>float</em>) – Nominal survey altitude (m)</p></li>
+<li><p><strong>stp_alt_channel</strong> (<em>str</em>) – Input STP corrected altimeter channel name</p></li>
+<li><p><strong>output_channel</strong> (<em>str</em>) – Output channel name (can be same channel as input)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The altitude attenuation is calculated using the formula:</p>
+<p>Ns = Nm * exp(k * (H0 - H)) =&gt; Ns = Nm * exp(-k * (H - H0))</p>
+<p>where:
+Ns = the count rate normalized to the nominal survey altitude, H0,
+Nm = the background corrected, stripped count rate at effective height H,
+k = height attenuation coefficient (per metre at STP)
+H = effective altitude (m)
+H0 = nominal survey altitude (m)</p>
+<p>The effective height was determined by applying Compton Stripping.</p>
+<p>HEIGHT ATTENUATION COEFF:   Total Count  (Recommended: -0.0070)
+(per metre at STP)          Potassium    (Recommended: -0.0088)</p>
+<blockquote>
+<div><p>Uranium      (Recommended: -0.0082)
+Thorium      (Recommended: -0.0070)</p>
+</div></blockquote>
+<p>Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.compton_stripping">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compton_stripping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stp_alt_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_strip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_strip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_strip</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.compton_stripping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.compton_stripping" title="Link to this definition">¶</a></dt>
+<dd><p>Perform Compton Stripping</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>stp_alt_channel</strong> (<em>str</em>) – Input STP corrected altimeter channel name</p></li>
+<li><p><strong>K_levl</strong> (<em>str</em>) – Input Postassium levelelled count channel</p></li>
+<li><p><strong>U_levl</strong> (<em>str</em>) – Input Uranium levelelled count channel</p></li>
+<li><p><strong>Th_levl</strong> (<em>str</em>) – Input Thorium levelelled count channel</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Input Compton Stripping ratio alpha (default: 0.24)</p></li>
+<li><p><strong>beta</strong> (<em>float</em>) – Input Compton Stripping ratio beta (default: 0.37)</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – Input Compton Stripping ratio gamma (default: 0.70)</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – Input Compton Stripping ratio a (default: 0.05)</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – Input Compton Stripping ratio b (default: 0.0)</p></li>
+<li><p><strong>g</strong> (<em>float</em>) – Input Compton Stripping ratio g (default: 0.0)</p></li>
+<li><p><strong>k_strip</strong> (<em>str</em>) – Output Compton Stripped Potassium channel (can be same channel as input)</p></li>
+<li><p><strong>u_strip</strong> (<em>str</em>) – Output Compton Stripped Uranium channel (can be same channel as input)</p></li>
+<li><p><strong>th_strip</strong> (<em>str</em>) – Output Compton Stripped Thorium channel (can be same channel as input)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Compton stripping is calculated using the formula:</p>
+<p>KSTRIP = (BK*THLEVL + CK*ULEVL + DK*KLEVL) / A
+USTRIP = (BU*THLEVL + CU*ULEVL + DU*KLEVL) / A
+THSTRIP = (BTH*THLEVL + CTH*ULEVL + DTH*KLEVL) / A</p>
+<p>where</p>
+<p>KSTRIP = Output Compton stripped potassium (can be same channel as input)
+USTRIP = Output Compton stripped uranium (can be same channel as input)
+THSTRIP = Output Compton stripped thorium (can be same channel as input)</p>
+<p>and where:</p>
+<p>KLEVL = Input potassium levelled count channel (e.g. “KLEVL”)
+ULEVL = Input uranium levelled count channel (e.g. “ULEVL”)
+THLEVL = Input thorium levelled count channel (e.g. “THLEVL”)</p>
+<p>BK = ALPHA2*GAMMA2-BETA2;
+CK = ASTRIP*BETA2-GAMMA2;
+DK = 1-ASTRIP*ALPHA2;</p>
+<p>BU = GSTRIP*BETA-ALPHA
+CU = 1-BSTRIP*BETA
+DU = BSTRIP*ALPHA-GSTRIP</p>
+<p>BTH = 1-GSTRIP*GAMMA2;
+CTH = BSTRIP*GAMMA2-ASTRIP;
+DTH = ASTRIP*GSTRIP-BSTRIP;</p>
+<p>where:</p>
+<p>ALPHA2 = ALPHA + 0.0004895*RALTSTP
+BETA2 = BETA + 0.0006469*RALTSTP
+GAMMA2 = GAMMA + 0.0006874*RALTSTP</p>
+<p>and:</p>
+<p>RALTSTP = Input STP corrected radar altimeter channel value (m)
+ALPHA = Input Compton stripping alpha factor (default: 0.24)
+BETA = Input Compton stripping beta factor (default: 0.37)
+GAMMA = Input Compton stripping gamma factor (default: 0.70)
+ASTRIP = Input Compton stripping a factor (default: 0.05)
+BSTRIP = Input Compton stripping b factor (default: 0.0)
+GSTRIP = Input Compton stripping g factor (default: 0.0)</p>
+<p>and where:</p>
+<dl class="simple">
+<dt>A = 1-GSTRIP*GAMMA2 - ASTRIP*(ALPHA2 - GSTRIP*BETA2) -</dt><dd><p>BSTRIP*(BETA2-ALPHA2*GAMMA2)</p>
+</dd>
+</dl>
+<p>Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.convert_to_elemental">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_to_elemental</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_sens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_sens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_sens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc_sens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_conc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_conc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th_conc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_conc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.convert_to_elemental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.convert_to_elemental" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a radio-channels’ data to ELemental concentrations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K</strong> (<em>str</em>) – Input Postassium count channel</p></li>
+<li><p><strong>U</strong> (<em>str</em>) – Input Uranium count channel</p></li>
+<li><p><strong>Th</strong> (<em>str</em>) – Input Thorium count channel</p></li>
+<li><p><strong>TC</strong> (<em>str</em>) – Input Total Count channel</p></li>
+<li><p><strong>k_sens</strong> (<em>float</em>) – Potassium broad source sensitivity (default: 75 (cps/%))</p></li>
+<li><p><strong>u_sens</strong> (<em>float</em>) – Uranium broad source sensitivity (default: 7.5 (cps/ppm))</p></li>
+<li><p><strong>th_sens</strong> (<em>float</em>) – Thorium broad source sensitivity (default: 4.5 (cps/ppm))</p></li>
+<li><p><strong>tc_sens</strong> (<em>float</em>) – Total count broad source sensitivity (default: 23 (uR/hr))</p></li>
+<li><p><strong>k_conc</strong> (<em>str</em>) – Output elemental concentration Potassium channel (can be same channel as input)</p></li>
+<li><p><strong>u_conc</strong> (<em>str</em>) – Output elemental concentration Uranium channel (can be same channel as input)</p></li>
+<li><p><strong>th_conc</strong> (<em>str</em>) – Output elemental concentration Thorium channel (can be same channel as input)</p></li>
+<li><p><strong>TC_conc</strong> (<em>str</em>) – Output elemental concentration Total Count channel (can be same channel as input)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The conversions are calculated using the formulae:</p>
+<p>OutputK = InputK / SensK
+OutputU = InputU / SensU
+OutputTh = InputTh / SensTh
+OutputTC = Input TC / SensTC</p>
+<p>where:</p>
+<p>OutputK = Output potassium channel expressed in elemental concentration
+OutputU = Output uranium channel expressed in elemental concentration
+OutputTh = Output thorium channel expressed in elemental concentration
+OutputTC = Output total count channel expressed in elemental concentration</p>
+<p>InputK = Input potassium channel expressed in counts
+InputU = Input uranium channel expressed in counts
+InputTh = Input thorium channel expressed in counts
+InputTC = Input total count channel expressed in counts</p>
+<p>SensK = Input Potassium Broad source sensitivity (default: 75 (cps/%))
+SensU = Input Uranium Broad source sensitivity (default: 7.5 (cps/ppm))
+SensTh = Input Thorium Broad source sensitivity (default: 4.5 (cps/ppm))
+SensTC = Input Total Count Broad source sensitivity (default: 23 (uR/hr))</p>
+<p>Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.dead_time_correction">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dead_time_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_tc_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deadtime_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deadtime_corr_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.dead_time_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.dead_time_correction" title="Link to this definition">¶</a></dt>
+<dd><p>Apply the Dead-time correction to a channel for a line in a database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>raw_channel</strong> (<em>str</em>) – Input raw channel name</p></li>
+<li><p><strong>raw_tc_channel</strong> (<em>str</em>) – Input raw total count channel name</p></li>
+<li><p><strong>deadtime_factor</strong> (<em>float</em>) – Dead time factor (microseconds/pulse</p></li>
+<li><p><strong>deadtime_corr_channel</strong> (<em>str</em>) – Output deadtime corrected channel name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The output dead-time corrected channel is calculated using the formula:</p>
+<p>deadtime_value = raw_value / (1 - raw_TC * dead_time * 0.000001)</p>
+<p>where:</p>
+<p>deadtime_value = output dead-time corrected value
+raw_value = raw channel value (counts)
+raw_TC = raw total count channel value
+dead_time = dead-time factor (microseconds/pulse)</p>
+<p>Ref:  See the RPSFILT.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.full_spectral_analysis">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">full_spectral_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_data_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livetime_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">altitude_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_channel_suffix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.full_spectral_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.full_spectral_analysis" title="Link to this definition">¶</a></dt>
+<dd><p>Apply Medusa’s Full Spectral Analysis algorithm to extract the radionuclide channels from the spectral data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>spectral_data_channel</strong> (<em>str</em>) – Spectral data channel name</p></li>
+<li><p><strong>livetime_channel</strong> (<em>str</em>) – Livetime channel name - assumes 1.0 if left blank</p></li>
+<li><p><strong>altitude_channel</strong> (<em>str</em>) – Altitude (e.g. radar altimeter) channel name - assumes 0 if left blank</p></li>
+<li><p><strong>start_window</strong> (<em>int</em>) – Index of the first window to include in the analysis (0 to N/4)</p></li>
+<li><p><strong>end_window</strong> (<em>int</em>) – Index of the last window to include in the analysis (3N/4 to N-1)</p></li>
+<li><p><strong>fit_mode</strong> (<em>int</em>) – <a class="reference internal" href="#rps-fitmode"><span class="std std-ref">RPS_FITMODE constants</span></a></p></li>
+<li><p><strong>output_channel_suffix</strong> (<em>str</em>) – Suffix for output channels</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.is_null">
+<span class="sig-name descname"><span class="pre">is_null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.is_null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.is_null" title="Link to this definition">¶</a></dt>
+<dd><p>Check if this is a null (undefined) instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is a null (undefined) instance, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.live_time_correction">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">live_time_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livetime_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livetime_corr_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.live_time_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.live_time_correction" title="Link to this definition">¶</a></dt>
+<dd><p>Apply the Live-time correction to a channel for a line in a database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>raw_channel</strong> (<em>str</em>) – Input raw channel name</p></li>
+<li><p><strong>livetime_channel</strong> (<em>str</em>) – Live time channel name (milliseconds)</p></li>
+<li><p><strong>livetime_corr_channel</strong> (<em>str</em>) – Output livetime corrected channel name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The output live-time corrected channel is calculated using the formula:</p>
+<p>livetime_value = 1000 * raw_value / livetime_value</p>
+<p>where:</p>
+<p>livetime_value = output dead-time corrected value
+raw_value = raw channel value (counts)
+livetime_value = live time channel value (milliseconds)</p>
+<p>Ref:  See the RPSFILT.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.null">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.null" title="Link to this definition">¶</a></dt>
+<dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXRPS" title="geosoft.gxapi.GXRPS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXRPS</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A null <a class="reference internal" href="#geosoft.gxapi.GXRPS" title="geosoft.gxapi.GXRPS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXRPS</span></code></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXRPS" title="geosoft.gxapi.GXRPS.GXRPS">GXRPS</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radio_element_bandpass_filter">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radio_element_bandpass_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputCh1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputCh2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputCh3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch1_short_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch1_high_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch2_short_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch2_high_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch3_short_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch3_high_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputCh1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputCh2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputCh3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radio_element_bandpass_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radio_element_bandpass_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Applies a band-pass filter for up to three elements simultaneously</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>inputCh1</strong> (<em>int</em>) – Input channel 1 handle (READONLY) (can be NULLSYMB to skip channel 1)</p></li>
+<li><p><strong>inputCh2</strong> (<em>int</em>) – Input channel 2 handle (READONLY) (can be NULLSYMB to skip channel 2)</p></li>
+<li><p><strong>inputCh3</strong> (<em>int</em>) – Input channel 3 handle (READONLY) (can be NULLSYMB to skip channel 3)</p></li>
+<li><p><strong>ch1_short_cutoff</strong> (<em>float</em>) – Channel 1 short wavelength cutoff</p></li>
+<li><p><strong>ch1_high_cutoff</strong> (<em>float</em>) – Channel 1 high wavelength cutoff</p></li>
+<li><p><strong>ch2_short_cutoff</strong> (<em>float</em>) – Channel 2 short wavelength cutoff</p></li>
+<li><p><strong>ch2_high_cutoff</strong> (<em>float</em>) – Channel 2 high wavelength cutoff</p></li>
+<li><p><strong>ch3_short_cutoff</strong> (<em>float</em>) – Channel 3 short wavelength cutoff</p></li>
+<li><p><strong>ch3_high_cutoff</strong> (<em>float</em>) – Channel 3 high wavelength cutoff</p></li>
+<li><p><strong>outputCh1</strong> (<em>int</em>) – Output filtered channel 1 handle (READWRITE)</p></li>
+<li><p><strong>outputCh2</strong> (<em>int</em>) – Output filtered channel 2 handle (READWRITE)</p></li>
+<li><p><strong>outputCh3</strong> (<em>int</em>) – Output filtered channel 3 handle (READWRITE)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Use short wavelength = 0 for highpass.
+is simply copied to the output channel without filtering.</p>
+<dl class="simple">
+<dt>Ref: See the RPSFILT.GXC, RPSLEVLT.GXC, RPSLEVLU.GXC and RPSRATIO.GXC files</dt><dd><p>for details and implementation of the algorithm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radio_element_ground_exposure_rate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radio_element_ground_exposure_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Exposure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radio_element_ground_exposure_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radio_element_ground_exposure_rate" title="Link to this definition">¶</a></dt>
+<dd><p>Applies ground level exposure rate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K</strong> (<em>str</em>) – Input Potassium corrected channel</p></li>
+<li><p><strong>U</strong> (<em>str</em>) – Input Uranium corrected channel</p></li>
+<li><p><strong>Th</strong> (<em>str</em>) – Input Thorium corrected channel</p></li>
+<li><p><strong>Exposure</strong> (<em>str</em>) – Output ground level exposure rate channel</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Ground exposure rate gives the measure of the rate of ionizations
+produced in air by photon radiation, which is the amount of exposure received.</p>
+<p>E = 1.505𝐾(%) + 0.653𝑒𝑈(𝑝𝑝𝑚)+ 0.287𝑒𝑇ℎ(𝑝𝑝𝑚)</p>
+<p>where:</p>
+<p>𝐾 = Corrected Potassium
+𝑒𝑈 = Corrected Uranium
+𝑒𝑇ℎ = Corrected Thorium</p>
+<p>Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radio_element_minimum_concentration_filter">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radio_element_minimum_concentration_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potassium_percent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uranium_ppm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thorium_ppm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radio_element_minimum_concentration_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radio_element_minimum_concentration_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Minimum Concentration Filtering</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K</strong> (<em>str</em>) – Input/Output Postassium channel</p></li>
+<li><p><strong>U</strong> (<em>str</em>) – Input/Output Uranium channel</p></li>
+<li><p><strong>Th</strong> (<em>str</em>) – Input/Output Thorium channel</p></li>
+<li><p><strong>potassium_percent</strong> (<em>float</em>) – Input min. potassium ratio (default: 1.0)</p></li>
+<li><p><strong>uranium_ppm</strong> (<em>float</em>) – Input min. uranium ratio (default: 1.0)</p></li>
+<li><p><strong>thorium_ppm</strong> (<em>float</em>) – Input min. thorium ratio (default: 1.0)</p></li>
+<li><p><strong>threshold_method</strong> (<em>int</em>) – min. threshold method (0: Clip, 1: DUMMY)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The conversions are calculated using the formulae: (Clip)
+if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = KMIN;
+if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = UMIN;
+if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = THMIN;</p>
+<p>The conversions are calculated using the formulae: (Dummy)
+if(( %s &lt;= 0.0 || %s &lt; %lf ) &amp;&amp; %s != DUMMY)  %s = DUMMY;</p>
+<p>where:</p>
+<p>KMIN = Min Potassium in %K ppm (Default is 1.0)
+UMIN = Min Uranium in eU ppm (Default is 1.0)
+THMIN = Min Thorium in eTH ppm (Default is 1.0)</p>
+<p>Ref: See the RPSRATIO.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radio_element_ratios">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radio_element_ratios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uk_ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uth_ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thk_ratio</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radio_element_ratios"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radio_element_ratios" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate radioelement ratios</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K_in</strong> (<em>str</em>) – Input filtered Postassium channel</p></li>
+<li><p><strong>U_in</strong> (<em>str</em>) – Input filtered Uranium channel</p></li>
+<li><p><strong>Th_in</strong> (<em>str</em>) – Input filtered Thorium channel</p></li>
+<li><p><strong>uk_ratio</strong> (<em>str</em>) – Output Uranium/Potassium ratio channel name</p></li>
+<li><p><strong>uth_ratio</strong> (<em>str</em>) – Output Uranium/Thorium ratio channel name</p></li>
+<li><p><strong>thk_ratio</strong> (<em>str</em>) – Output Thorium/Potassium ratio channel name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The conversions are calculated using the formulae:</p>
+<p>OutputUKRatio = InputU /InputK
+OutputUThRatio = InputU / InputTh
+OutputThKRatio = InputTh /InputK</p>
+<p>where:</p>
+<p>InputK = Filtering Potassium
+InputU = Filtering Uranium
+InputTh = Filtering Thorium</p>
+<p>Ref: See the RPSRATIO.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radon_aircraft_cosmic_correction">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radon_aircraft_cosmic_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_upward_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cosmic_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aircraft_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aircraft_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aircraft_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aircraft_tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aircraft_upu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cosmic_k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cosmic_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cosmic_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cosmic_tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cosmic_upu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_upward_levl</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radon_aircraft_cosmic_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radon_aircraft_cosmic_correction" title="Link to this definition">¶</a></dt>
+<dd><p>Remove effects of aircraft and cosmic stripping</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K_filt</strong> (<em>str</em>) – Input filtered potassium channel</p></li>
+<li><p><strong>U_filt</strong> (<em>str</em>) – Input filtered uranium channel</p></li>
+<li><p><strong>Th_filt</strong> (<em>str</em>) – Input filtered thorium channel</p></li>
+<li><p><strong>TC_filt</strong> (<em>str</em>) – Input filtered total count channel</p></li>
+<li><p><strong>U_upward_filt</strong> (<em>str</em>) – Input filtered upward uranium channel (optional - can be left blank)</p></li>
+<li><p><strong>Cosmic_filt</strong> (<em>str</em>) – Input filtered cosmic channel</p></li>
+<li><p><strong>aircraft_k</strong> (<em>float</em>) – Aircraft background value for potassium (cps). (Default = 12)</p></li>
+<li><p><strong>aircraft_u</strong> (<em>float</em>) – Aircraft background value for uranium (cps). (Default = 2.2)</p></li>
+<li><p><strong>aircraft_th</strong> (<em>float</em>) – Aircraft background value for thorium (cps). (Default = 1.5)</p></li>
+<li><p><strong>aircraft_tc</strong> (<em>float</em>) – Aircraft background value for total count (cps). (Default = 90)</p></li>
+<li><p><strong>aircraft_upu</strong> (<em>float</em>) – Aircraft background value for upward uranium (cps) (optional - can be left blank). (Default = 0.6)</p></li>
+<li><p><strong>cosmic_k</strong> (<em>float</em>) – Cosmic stripping ratio for potassium (cps/cosmic cps). (Default = 0.032)</p></li>
+<li><p><strong>cosmic_u</strong> (<em>float</em>) – Cosmic stripping ratio for uranium (cps/cosmic cps). (Default = 0.026)</p></li>
+<li><p><strong>cosmic_th</strong> (<em>float</em>) – Cosmic stripping ratio for thorium (cps/cosmic cps). (Default = 0.03)</p></li>
+<li><p><strong>cosmic_tc</strong> (<em>float</em>) – Cosmic stripping ratio for total count (cps/cosmic cps). (Default = 0.6)</p></li>
+<li><p><strong>cosmic_upu</strong> (<em>float</em>) – Cosmic stripping ratio for upward uranium (cps/cosmic cps) (optional - can be left blank). (Default = 0.008)</p></li>
+<li><p><strong>K_levl</strong> (<em>str</em>) – Output levelled potassium channel</p></li>
+<li><p><strong>U_levl</strong> (<em>str</em>) – Output levelled uranium channel</p></li>
+<li><p><strong>Th_levl</strong> (<em>str</em>) – Output levelled thorium channel</p></li>
+<li><p><strong>TC_levl</strong> (<em>str</em>) – Output levelled total count channel</p></li>
+<li><p><strong>U_upward_levl</strong> (<em>str</em>) – Output levelled upward uranium channel (optional - can be left blank)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> This wrapper performs the following simple operation:</p>
+<p>LEVL = FILT - (AIRBACK + COS_STRIP * COSFILT)</p>
+<p>where:</p>
+<p>LEVL = Output levelled element channel
+FILT = Input filtered element channel
+AIRBACK = Input Air Background value for that element
+COS_STRIP = Input Cosmic Stripping factor for that element
+COSFILT = Input filtered cosmic channel</p>
+<p>The Upward uranium parameters are optional and can be left blank if not required,
+but all three should be defined for the Upward method.</p>
+<p>Ref:  See the RPSLEVU.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radon_background_table">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radon_background_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp_mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radon_background_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radon_background_table" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the Radon Background using a Background Table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>table</strong> (<a class="reference internal" href="GXTB.html#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><em>GXTB</em></a>) – Reference background look-up table (e.g. “rpsbackg.tbl”</p></li>
+<li><p><strong>ref_field</strong> (<em>str</em>) – Reference field name in table</p></li>
+<li><p><strong>K_field</strong> (<em>str</em>) – Potassium field name in table</p></li>
+<li><p><strong>U_field</strong> (<em>str</em>) – Uranium field name in table</p></li>
+<li><p><strong>Th_field</strong> (<em>str</em>) – Thorium field name in table</p></li>
+<li><p><strong>TC_field</strong> (<em>str</em>) – Total count field name in table</p></li>
+<li><p><strong>ref_channel</strong> (<em>int</em>) – Reference channel handle (READONLY)</p></li>
+<li><p><strong>K_channel</strong> (<em>int</em>) – Output potassium channel handle (READWRITE)</p></li>
+<li><p><strong>U_channel</strong> (<em>int</em>) – Output uranium channel handle (READWRITE)</p></li>
+<li><p><strong>Th_channel</strong> (<em>int</em>) – Output thorium channel handle (READWRITE)</p></li>
+<li><p><strong>TC_channel</strong> (<em>int</em>) – Output total count channel handle (READWRITE)</p></li>
+<li><p><strong>interp_mode</strong> (<em>int</em>) – <a class="reference internal" href="GXDU.html#du-lookup"><span class="std std-ref">DU_LOOKUP constants</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Background levels for K, U, Th and TC are calculated obtained by table-lookup using a reference channel.</p>
+<p>Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radon_overwater_background_correction">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radon_overwater_background_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_bg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_bg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_bg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_bg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_rad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_rad</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radon_overwater_background_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radon_overwater_background_correction" title="Link to this definition">¶</a></dt>
+<dd><p>Overwater Radon correction method: Calculate radon correction levels from the reference channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K_bg</strong> (<em>str</em>) – Input Potassium channel</p></li>
+<li><p><strong>U_bg</strong> (<em>str</em>) – Input Uranium channel</p></li>
+<li><p><strong>Th_bg</strong> (<em>str</em>) – Input Thorium channel</p></li>
+<li><p><strong>TC_bg</strong> (<em>str</em>) – Input Total Count channel</p></li>
+<li><p><strong>K_ref</strong> (<em>str</em>) – Input Potassium Radon reference channel</p></li>
+<li><p><strong>U_ref</strong> (<em>str</em>) – Input Uranium Radon reference channel</p></li>
+<li><p><strong>Th_ref</strong> (<em>str</em>) – Input Thorium Radon reference channel</p></li>
+<li><p><strong>TC_ref</strong> (<em>str</em>) – Input Total Count Radon reference channel</p></li>
+<li><p><strong>K_rad</strong> (<em>str</em>) – Output Potassium channel</p></li>
+<li><p><strong>U_rad</strong> (<em>str</em>) – Output Uranium channel</p></li>
+<li><p><strong>Th_rad</strong> (<em>str</em>) – Output Thorium channel</p></li>
+<li><p><strong>TC_rad</strong> (<em>str</em>) – Output Total Count channel</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Radon water background correction channel:</p>
+<p>K_rad = K_bg - KREF      Output Potassium Radon background correction channel
+U_rad = U_bg - UREF      Output Uranium Radon background correction channel 
+Th_rad = TH_bg - THREF   Output Thorium Radon background correction channel
+TC_rad = TC_bg - TCREF   Output Total Count Radon background correction channe</p>
+<p>where</p>
+<p>K_bg = Input Potassium levelled count channel
+U_bg = Input Uranium levelled count channel
+TH_bg = Input Thorium levelled count channel
+TC_bg = Input Total Count levelled count channel</p>
+<p>and</p>
+<p>KREF = Input Radon background reference channel
+UREF = Input Radon background reference channel
+THREF = Input Radon background reference channel
+TCREF = Input Radon background reference channel</p>
+<p>Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radon_overwater_create_background_table">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radon_overwater_create_background_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight_ref_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water_back_ref_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fid_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radon_overwater_create_background_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radon_overwater_create_background_table" title="Link to this definition">¶</a></dt>
+<dd><p>Create the table (TB) file used for the overwater radon removal method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>flight_ref_channel</strong> (<em>str</em>) – Input Flight Reference table column name (.e.g “_RpsFlight_”</p></li>
+<li><p><strong>water_back_ref_channel</strong> (<em>str</em>) – Input Water Background Reference channel name</p></li>
+<li><p><strong>K_ref</strong> (<em>str</em>) – Input Potassium Radon reference channel</p></li>
+<li><p><strong>U_ref</strong> (<em>str</em>) – Input Uranium Radon reference channel</p></li>
+<li><p><strong>Th_ref</strong> (<em>str</em>) – Input Thorium Radon reference channel</p></li>
+<li><p><strong>TC_ref</strong> (<em>str</em>) – Input Total Count Radon reference channel</p></li>
+<li><p><strong>fid_ref</strong> (<em>str</em>) – Reference (e.g. FID) channel name (created)</p></li>
+<li><p><strong>table</strong> (<em>str</em>) – Output Radon reference table name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The Radon reference channels are scanned to produce a table of background values.
+The table is created for all selected lines.</p>
+<p>Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radon_overwater_reference_channels">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radon_overwater_reference_channels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_levl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water_back_ref_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_ref</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radon_overwater_reference_channels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radon_overwater_reference_channels" title="Link to this definition">¶</a></dt>
+<dd><p>Overwater Radon removel method: Calculate radon reference levels from the filtered data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K_levl</strong> (<em>str</em>) – Input levelled Potassium data channel</p></li>
+<li><p><strong>U_levl</strong> (<em>str</em>) – Input levelled Uranium data channel</p></li>
+<li><p><strong>Th_levl</strong> (<em>str</em>) – Input levelled Thorium data channel</p></li>
+<li><p><strong>TC_levl</strong> (<em>str</em>) – Input levelled Total Count data channel</p></li>
+<li><p><strong>water_back_ref_channel</strong> (<em>str</em>) – Input Water Background Reference channel name</p></li>
+<li><p><strong>K_ref</strong> (<em>str</em>) – Output Potassium Radon reference channel</p></li>
+<li><p><strong>U_ref</strong> (<em>str</em>) – Output Uranium Radon reference channel</p></li>
+<li><p><strong>Th_ref</strong> (<em>str</em>) – Output Thorium Radon reference channel</p></li>
+<li><p><strong>TC_ref</strong> (<em>str</em>) – Output Total Count Radon reference channel</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> Radon reference channels are calculate via simple multiplication with the water background reference channel:</p>
+<p>KREF = KLEV * WREF     Output Potassium Radon reference channel
+UREF = ULEV * WREF     Output Uranium Radon reference channel 
+THREF = THLEV * WREF   Output Thorium Radon reference channel
+TCREF = TCLEV * WREF   Output Total Count Radon reference channe</p>
+<p>where</p>
+<p>KLEV = Input Potassium levelled count channel
+ULEV = Input Uranium levelled count channel
+THLEV = Input Thorium levelled count channel
+TCLEV = Input Total Count levelled count channel</p>
+<p>and</p>
+<p>WREF = Input Water Background Reference channel</p>
+<p>Ref:  See the RPSLEVT.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radon_upward_removal_apply">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radon_upward_removal_apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_upward_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_upward_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_upward_out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radon_upward_removal_apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radon_upward_removal_apply" title="Link to this definition">¶</a></dt>
+<dd><p>Remove the calculated Radon Background using the ‘upward’ method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>K_filt</strong> (<em>str</em>) – Input Low-pass filtered potassium channel</p></li>
+<li><p><strong>U_filt</strong> (<em>str</em>) – Input Low-pass filtered uranium channel</p></li>
+<li><p><strong>Th_filt</strong> (<em>str</em>) – Input Low-pass filtered thorium channel</p></li>
+<li><p><strong>TC_filt</strong> (<em>str</em>) – Input Low-pass filtered total count channel</p></li>
+<li><p><strong>U_upward_filt</strong> (<em>str</em>) – Input Low-pass filtered upward uranium channel</p></li>
+<li><p><strong>K_back</strong> (<em>str</em>) – Input potassium background to remove (channel)</p></li>
+<li><p><strong>U_back</strong> (<em>str</em>) – Input uranium background to remove (channel)</p></li>
+<li><p><strong>Th_back</strong> (<em>str</em>) – Input thorium channel background to remove (channel)</p></li>
+<li><p><strong>TC_back</strong> (<em>str</em>) – Input total count background to remove (channel)</p></li>
+<li><p><strong>U_upward_back</strong> (<em>str</em>) – Input upward uranium background to remove (channel)</p></li>
+<li><p><strong>K_out</strong> (<em>str</em>) – Output potassium channel with background radon removed</p></li>
+<li><p><strong>U_out</strong> (<em>str</em>) – Output uranium channel with background radon removed</p></li>
+<li><p><strong>Th_out</strong> (<em>str</em>) – Output thorium channel with background radon removed</p></li>
+<li><p><strong>TC_out</strong> (<em>str</em>) – Output total count channel with background radon removed</p></li>
+<li><p><strong>U_upward_out</strong> (<em>str</em>) – Output upward uranium channel with background radon removed</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The calculated Radon Background to remove is applied to the data channels using the formula:</p>
+<blockquote>
+<div><p>KOUT = KFILT - KRADREF           Output potassium channel with radon background removed
+UOUT = UFILT - URADREF           Output uranium channel with radon background removed
+THOUT = THFILT - THRADREF        Output thorium channel with radon background removed
+TCOUT = TCFILT - TCRADREF        Output total count channel with radon background removed
+UPUOUT = UPUFILT - UPURADREF     Output upward uranium channel with radon background removed</p>
+<p>where:</p>
+<p>KFILT   = Input Low-pass filtered potassium channel
+UFILT   = Input Low-pass filtered uranium channel
+THFILT  = Input Low-pass filtered thorium channel
+TCFILT  = Input Low-pass filtered total count channel
+UPUFILT = Input Low-pass filtered upward uranium channel</p>
+<p>and the following calculated using the RadonUpwardRemovalCalculate_RPS method:</p>
+</div></blockquote>
+<p>KRADREF   = Input potassium background to remove (channel)
+URADREF   = Input uranium background to remove (channel)
+THRADREF  = Input uranium background to remove (channel)
+TCRADREF  = Input thorium background to remove (channel)
+UPURADREF = Input upward uranium background to remove (channel)</p>
+<p>Ref: See the RPSLEVLU.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.radon_upward_removal_calculate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radon_upward_removal_calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_upward_filt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skyshine_A1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skyshine_A2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ak</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">au</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">btc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TC_back</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_upward_back</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.radon_upward_removal_calculate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.radon_upward_removal_calculate" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the Radon Background to remove using the ‘upward’ method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>U_filt</strong> (<em>str</em>) – Input Low-pass filtered uranium channel</p></li>
+<li><p><strong>Th_filt</strong> (<em>str</em>) – Input Low-pass filtered thorium channel</p></li>
+<li><p><strong>U_upward_filt</strong> (<em>str</em>) – Input Low-pass filtered upward uranium channel</p></li>
+<li><p><strong>skyshine_A1</strong> (<em>float</em>) – Input Skyshine coefficient A1 (default: 0.036)</p></li>
+<li><p><strong>skyshine_A2</strong> (<em>float</em>) – Input Skyshine coefficient A2 (default: 0.022)</p></li>
+<li><p><strong>ak</strong> (<em>float</em>) – Input calibration factor ak - potassium (default: 0.8)</p></li>
+<li><p><strong>ath</strong> (<em>float</em>) – Input calibration factor ath - thorium (default: 0.1)</p></li>
+<li><p><strong>au</strong> (<em>float</em>) – Input calibration factor au - uranium (default: 0.25)</p></li>
+<li><p><strong>atc</strong> (<em>float</em>) – Input calibration factor atc - total count (default: 12)</p></li>
+<li><p><strong>bk</strong> (<em>float</em>) – Input calibration factor bk - potassium (default: 0)</p></li>
+<li><p><strong>bu</strong> (<em>float</em>) – Input calibration factor bu - uranium (default: 0)</p></li>
+<li><p><strong>bth</strong> (<em>float</em>) – Input calibration factor bth - thorium (default: 0)</p></li>
+<li><p><strong>btc</strong> (<em>float</em>) – Input calibration factor btc - total count  (default: 0)</p></li>
+<li><p><strong>K_back</strong> (<em>str</em>) – Output potassium background to remove (channel)</p></li>
+<li><p><strong>U_back</strong> (<em>str</em>) – Output uranium background to remove (channel)</p></li>
+<li><p><strong>Th_back</strong> (<em>str</em>) – Output thorium channel background to remove (channel)</p></li>
+<li><p><strong>TC_back</strong> (<em>str</em>) – Output total count background to remove (channel)</p></li>
+<li><p><strong>U_upward_back</strong> (<em>str</em>) – Output upward uranium background to remove (channel)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<dl class="simple">
+<dt><strong>Note:</strong> The Upward method of radon-removal is applied to the low-pass filtered data,</dt><dd><p>using the formula:</p>
+</dd>
+</dl>
+<p>KRADREF   = AK * URADREF + BK       Output potassium background to remove (channel)
+THRADREF  = ATH * URADREF + BTH       Output thorium background to remove (channel)
+TCRADREF  = ATC * URADREF + BTC     Output total count background to remove (channel)
+UPURADREF = AU * URADREF + BU       Output upward uranium background to remove (channel)</p>
+<p>where:</p>
+<blockquote>
+<div><p>AK  = Input calibration factor ak (default: 0.8)
+BK  = Input calibration factor bk (default: 0)
+ATH  = Input calibration factor at (default: 0.1)
+BTH  = Input calibration factor bt (default: 0)
+ATC = Input calibration factor atc (default: 12)
+BTC = Input calibration factor btc (default: 0)
+AU  = Input calibration factor au (default: 0.25)
+BU  = Input calibration factor bu (default: 0)</p>
+</div></blockquote>
+<p>and:</p>
+<blockquote>
+<div><p>URADREF = Output uranium background to remove (channel)</p>
+</div></blockquote>
+<p>where</p>
+<blockquote>
+<div><dl class="simple">
+<dt>URADREF = (UPUFILT - A1*UFILT - A2*THFILT + A2*BT - BU)/</dt><dd><p>(AU-A1 - A2*AT)</p>
+</dd>
+</dl>
+<p>THFILT  = Input Low-pass filtered thorium channel
+UFILT   = Input Low-pass filtered uranium channel
+UPUFILT = Input Low-pass filtered upward uranium channel</p>
+</div></blockquote>
+<p>and</p>
+<blockquote>
+<div><p>A1 = Input Skyshine coefficient A1 (default: 0.036)
+A2 = Input Skyshine coefficient A2 (default: 0.022)</p>
+</div></blockquote>
+<p>Ref: See the RPSLEVLU.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.stp_correction_from_barometric_altitude">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stp_correction_from_barometric_altitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_radar_altimeter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_barometric_altimeter_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stp_alt_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.stp_correction_from_barometric_altitude"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.stp_correction_from_barometric_altitude" title="Link to this definition">¶</a></dt>
+<dd><p>Apply the Standard Temperature/Pressure (STP) correction to the altimeter channel for a line in a database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>raw_radar_altimeter</strong> (<em>str</em>) – Input (BP-filtered) radar altimeter channel name</p></li>
+<li><p><strong>raw_barometric_altimeter_channel</strong> (<em>str</em>) – Input raw barometric altimeter channel name</p></li>
+<li><p><strong>temperature_channel</strong> (<em>str</em>) – Input temperature channel name (degrees Celsius)</p></li>
+<li><p><strong>stp_alt_channel</strong> (<em>str</em>) – Output STP corrected altimeter channel name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The output STP corrected altitude is calculated using the formula:</p>
+<p>STP_Altitude = (273.15 * radar_alt * exp(-1.0/8581.0 * barometric_alt))/(273.15 + temp)</p>
+<p>where:</p>
+<p>STP_Altitude = STP corrected altitude (m)
+radar_alt = raw radar altimeter channel value (m)
+barometric_alt = raw barometric altimeter channel value (m)
+temp = temperature channel value (degrees Celsius)</p>
+<p>Ref:  See the RPSFILT.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.stp_correction_from_pressure">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stp_correction_from_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_radar_altimeter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stp_alt_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.stp_correction_from_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.stp_correction_from_pressure" title="Link to this definition">¶</a></dt>
+<dd><p>Apply the Standard Temperature/Pressure (STP) correction to the altimeter channel for a line in a database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>raw_radar_altimeter</strong> (<em>str</em>) – Input (BP-filtered) radar altimeter channel name</p></li>
+<li><p><strong>pressure_channel</strong> (<em>str</em>) – Input pressure channel name (kPa)</p></li>
+<li><p><strong>temperature_channel</strong> (<em>str</em>) – Input temperature channel name (degrees Celsius)</p></li>
+<li><p><strong>stp_alt_channel</strong> (<em>str</em>) – Output STP corrected altimeter channel name</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The output STP corrected altitude is calculated using the formula:</p>
+<p>STP_Altitude = (273.15 * radar_alt * P))/((273.15 + temp) * 101.325)</p>
+<p>where:</p>
+<p>STP_Altitude = STP corrected altitude (m)
+radar_alt = raw radar altimeter channel value (m)
+P = raw pressure channel value (kPa)
+temp = temperature channel value (degrees Celsius)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXRPS.window_spectrum_to_channel">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">window_spectrum_to_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXRPS.html#GXRPS.window_spectrum_to_channel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXRPS.window_spectrum_to_channel" title="Link to this definition">¶</a></dt>
+<dd><p>Window radiometric data channel on a line in a database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>line</strong> (<em>int</em>) – Line to process (NULLSYMB for all selected lines)</p></li>
+<li><p><strong>spectral_data</strong> (<em>int</em>) – Spectral data channel handle (READONLY)</p></li>
+<li><p><strong>start_window</strong> (<em>float</em>) – Starting fractional window index (0 to N)</p></li>
+<li><p><strong>end_window</strong> (<em>float</em>) – Ending fractional window index (0 to N), &gt;= Starting window</p></li>
+<li><p><strong>output_channel</strong> (<em>int</em>) – Output channel handle (READWRITE)</p></li>
+<li><p><strong>channel_description</strong> (<em>str</em>) – Output channel description for output/errors etc</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong> The average value of the windows in the given fractional index range is 
+written to the specified output channel.
+For instance, if you specified 0.5 to 1.5, then half values in the first
+window would be added to half the values in the second window. To specify
+a single window ‘i’ you need to specify the range i to i+1.</p>
+<p>Ref:  See the RPSWINDOW.GXC file for details and implementation of the algorithm.</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="rps-fitmode-constants">
+<span id="rps-fitmode"></span><h2>RPS_FITMODE constants<a class="headerlink" href="#rps-fitmode-constants" title="Link to this heading">¶</a></h2>
+<p>Full spectrum analysis fit mode</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.RPS_FITMODE_LEAST_SQUARES">
+<span class="sig-name descname"><span class="pre">RPS_FITMODE_LEAST_SQUARES</span></span><a class="headerlink" href="#geosoft.gxapi.RPS_FITMODE_LEAST_SQUARES" title="Link to this definition">¶</a></dt>
+<dd><p>Least squares</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">RPS_FITMODE_LEAST_SQUARES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES">
+<span class="sig-name descname"><span class="pre">RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES</span></span><a class="headerlink" href="#geosoft.gxapi.RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES" title="Link to this definition">¶</a></dt>
+<dd><p>Non negative least squares</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">RPS_FITMODE_NON_NEGATIVE_LEAST_SQUARES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GXRPS class</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+</div>
+
+  </body>
+</html>

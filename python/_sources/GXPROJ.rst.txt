@@ -68,6 +68,23 @@ How to display an object
     .. autoattribute:: geosoft.gxapi.PROJ_DISPLAY_ALWAYS
 
 
+.. _PROJ_NODE:
+
+PROJ_NODE constants
+-----------------------------------------------------------------------
+
+Expand or Collapse a document node in the document manager
+
+.. autodata:: geosoft.gxapi.PROJ_NODE_COLLAPSE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PROJ_NODE_COLLAPSE
+.. autodata:: geosoft.gxapi.PROJ_NODE_EXPAND
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.PROJ_NODE_EXPAND
+
+
 .. _PROJ_OMS:
 
 PROJ_OMS constants

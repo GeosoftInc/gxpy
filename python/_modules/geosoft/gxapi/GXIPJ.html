@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXIPJ &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>geosoft.gxapi.GXIPJ &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -27,7 +27,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIPJ</a></li> 
@@ -60,7 +60,7 @@
           <div class="body" role="main">
             
   <h1>Source code for geosoft.gxapi.GXIPJ</h1><div class="highlight"><pre>
-<span></span><span class="c1">#  Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.</span>
+<span></span><span class="c1">#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.</span>
 
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
@@ -74,6 +74,7 @@
 
 <span class="c1">### block Header</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock Header</span>
 
 <span class="c1">### block ClassImplementation</span>
@@ -365,6 +366,26 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_warp</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">vv_x_old</span><span class="p">,</span> <span class="n">vv_y_old</span><span class="p">,</span> <span class="n">vv_x_new</span><span class="p">,</span> <span class="n">vv_y_new</span><span class="p">)</span></div>
+
+        
+
+
+
+
+<div class="viewcode-block" id="GXIPJ.apply_local_datum_transforms_in_pj">
+<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.apply_local_datum_transforms_in_pj">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_local_datum_transforms_in_pj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        If a PJ (reprojection) object is created with this IPJ, account for local datum differences</span>
+<span class="sd">        </span>
+
+<span class="sd">        .. versionadded:: 2025.1</span>
+
+<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_apply_local_datum_transforms_in_pj</span><span class="p">()</span></div>
 
         
 
@@ -3147,31 +3168,6 @@
 
 
 
-<div class="viewcode-block" id="GXIPJ.read_proj_string">
-<a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.read_proj_string">[docs]</a>
-    <span class="k">def</span> <span class="nf">read_proj_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projStr</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        </span>
-<span class="sd">        Set coordinate system from a PROJ string command</span>
-<span class="sd">        </span>
-<span class="sd">        :param projStr:  PROJ string</span>
-<span class="sd">        :type  projStr:  str</span>
-
-<span class="sd">        .. versionadded:: 6.0</span>
-
-<span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
-
-<span class="sd">        **Note:** If the projection is not supported in Geosoft, the</span>
-<span class="sd">        `GXIPJ &lt;geosoft.gxapi.GXIPJ&gt;` will be unknown.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        
-        <span class="bp">self</span><span class="o">.</span><span class="n">_read_proj_string</span><span class="p">(</span><span class="n">projStr</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span></div>
-
-        
-
-
-
-
 <div class="viewcode-block" id="GXIPJ.compare_to">
 <a class="viewcode-back" href="../../../GXIPJ.html#geosoft.gxapi.GXIPJ.compare_to">[docs]</a>
     <span class="k">def</span> <span class="nf">compare_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipj2</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
@@ -3323,6 +3319,7 @@
 <span class="c1">### endblock ClassImplementation</span>
 <span class="c1">### block ClassExtend</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
+
 <span class="c1">### endblock ClassExtend</span>
 
 
@@ -3343,7 +3340,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXIPJ</a></li> 

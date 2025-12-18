@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXVA class &#8212; Geosoft GX Python API 2025.1.0 documentation</title>
+    <title>GXVA class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=65f7d7c4"></script>
+    <script src="_static/documentation_options.js?v=f788092f"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
       </ul>
     </div>
@@ -51,6 +51,8 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXVA.create"><code class="docutils literal notranslate"><span class="pre">GXVA.create()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVA.create_ext"><code class="docutils literal notranslate"><span class="pre">GXVA.create_ext()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVA.create_vv"><code class="docutils literal notranslate"><span class="pre">GXVA.create_vv()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVA.decimate"><code class="docutils literal notranslate"><span class="pre">GXVA.decimate()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXVA.expand"><code class="docutils literal notranslate"><span class="pre">GXVA.expand()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVA.get_array"><code class="docutils literal notranslate"><span class="pre">GXVA.get_array()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVA.get_double"><code class="docutils literal notranslate"><span class="pre">GXVA.get_double()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXVA.get_fid_incr"><code class="docutils literal notranslate"><span class="pre">GXVA.get_fid_incr()</span></code></a></li>
@@ -87,14 +89,49 @@
 <li><a class="reference internal" href="#geosoft.gxapi.VA_AVERAGE_ROWS"><code class="docutils literal notranslate"><span class="pre">VA_AVERAGE_ROWS</span></code></a></li>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_AVERAGE_ROWS</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VA_AVERAGE_COLUMNS"><code class="docutils literal notranslate"><span class="pre">VA_AVERAGE_COLUMNS</span></code></a></li>
-<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_AVERAGE_COLUMNS</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_AVERAGE_COLUMNS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#va-decimate-constants">VA_DECIMATE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_SUM"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_SUM</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_SUM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_AVERAGE"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_AVERAGE</span></code></a></li>
+<li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_AVERAGE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_MEDIAN"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_MEDIAN</span></code></a></li>
+<li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_MEDIAN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_FIRST"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_FIRST</span></code></a></li>
+<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_FIRST</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#va-interpolate-constants">VA_INTERPOLATE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_CUBIC"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_CUBIC</span></code></a></li>
+<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_CUBIC</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_AKIMA"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_AKIMA</span></code></a></li>
+<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_AKIMA</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_PREDICT"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_PREDICT</span></code></a></li>
+<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_PREDICT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#va-extrapolate-constants">VA_EXTRAPOLATE constants</a><ul>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_NONE"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_NONE</span></code></a></li>
+<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_NONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_SAME"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_SAME</span></code></a></li>
+<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_SAME</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_LINEAR</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#va-object-constants">VA_OBJECT constants</a><ul>
 <li><a class="reference internal" href="#geosoft.gxapi.VA_ROW"><code class="docutils literal notranslate"><span class="pre">VA_ROW</span></code></a></li>
-<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_ROW</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_ROW</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.VA_COL"><code class="docutils literal notranslate"><span class="pre">VA_COL</span></code></a></li>
-<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_COL</span></code></a></li>
+<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_COL</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -410,6 +447,61 @@ Convert_GS if necessary.</p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.create" title="geosoft.gxapi.GXVV.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV.create</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVA.decimate">
+<span class="sig-name descname"><span class="pre">decimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.decimate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.decimate" title="Link to this definition">¶</a></dt>
+<dd><p>Decimate a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – number of columns to combine into each single output column</p></li>
+<li><p><strong>method</strong> (<em>int</em>) – decimation method <a class="reference internal" href="#va-decimate"><span class="std std-ref">VA_DECIMATE constants</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA.GXVA">GXVA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This method decimates a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> by selecting every ‘N’ items and replacing them
+with a value given by the decimation method, one of <a class="reference internal" href="#va-decimate"><span class="std std-ref">VA_DECIMATE constants</span></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXVA.expand">
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrap_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.expand" title="Link to this definition">¶</a></dt>
+<dd><p>Expand a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – number of columns replacing each single input column</p></li>
+<li><p><strong>interp_method</strong> (<em>int</em>) – interpolation method <a class="reference internal" href="#va-interpolate"><span class="std std-ref">VA_INTERPOLATE constants</span></a></p></li>
+<li><p><strong>extrap_method</strong> (<em>int</em>) – extrapolation method <a class="reference internal" href="#va-extrapolate"><span class="std std-ref">VA_EXTRAPOLATE constants</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA.GXVA">GXVA</a></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2025.2.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> This method expands a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> by replacing each input column with ‘N’ items, using the
+selected interpolation method, one of <a class="reference internal" href="#va-interpolate"><span class="std std-ref">VA_INTERPOLATE constants</span></a>. Extrapolation is used at the start of
+the first column and at the end of the last column, using the
+selected extrapolation method, one of <a class="reference internal" href="#va-extrapolate"><span class="std std-ref">VA_EXTRAPOLATE constants</span></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1032,8 +1124,163 @@ If any values are dummy, the result will be dummy.</p>
 <span class="sig-name descname"><span class="pre">VA_AVERAGE_COLUMNS</span></span><a class="headerlink" href="#geosoft.gxapi.VA_AVERAGE_COLUMNS" title="Link to this definition">¶</a></dt>
 <dd><p>Average the Columns</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id38">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_AVERAGE_COLUMNS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id40">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_AVERAGE_COLUMNS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="va-decimate-constants">
+<span id="va-decimate"></span><h2>VA_DECIMATE constants<a class="headerlink" href="#va-decimate-constants" title="Link to this heading">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object to decimate</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_DECIMATE_SUM">
+<span class="sig-name descname"><span class="pre">VA_DECIMATE_SUM</span></span><a class="headerlink" href="#geosoft.gxapi.VA_DECIMATE_SUM" title="Link to this definition">¶</a></dt>
+<dd><p>Replace with the sum of the set of values</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id41">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_SUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_DECIMATE_AVERAGE">
+<span class="sig-name descname"><span class="pre">VA_DECIMATE_AVERAGE</span></span><a class="headerlink" href="#geosoft.gxapi.VA_DECIMATE_AVERAGE" title="Link to this definition">¶</a></dt>
+<dd><p>Replace with the average of the set of values</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id42">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_AVERAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_DECIMATE_MEDIAN">
+<span class="sig-name descname"><span class="pre">VA_DECIMATE_MEDIAN</span></span><a class="headerlink" href="#geosoft.gxapi.VA_DECIMATE_MEDIAN" title="Link to this definition">¶</a></dt>
+<dd><p>Replace with the median of the values. For even numbers, the average of the middle sorted values</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id43">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_MEDIAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_DECIMATE_FIRST">
+<span class="sig-name descname"><span class="pre">VA_DECIMATE_FIRST</span></span><a class="headerlink" href="#geosoft.gxapi.VA_DECIMATE_FIRST" title="Link to this definition">¶</a></dt>
+<dd><p>Replace with the first value in each set of values</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id44">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="va-interpolate-constants">
+<span id="va-interpolate"></span><h2>VA_INTERPOLATE constants<a class="headerlink" href="#va-interpolate-constants" title="Link to this heading">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object to expand and interpolate between values. Values mirror VVU_INTERP</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_INTERPOLATE_NEAREST">
+<span class="sig-name descname"><span class="pre">VA_INTERPOLATE_NEAREST</span></span><a class="headerlink" href="#geosoft.gxapi.VA_INTERPOLATE_NEAREST" title="Link to this definition">¶</a></dt>
+<dd><p>Outputs equal input nearest column values</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id45">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_INTERPOLATE_LINEAR">
+<span class="sig-name descname"><span class="pre">VA_INTERPOLATE_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VA_INTERPOLATE_LINEAR" title="Link to this definition">¶</a></dt>
+<dd><p>Use linear interpolation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id46">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_INTERPOLATE_CUBIC">
+<span class="sig-name descname"><span class="pre">VA_INTERPOLATE_CUBIC</span></span><a class="headerlink" href="#geosoft.gxapi.VA_INTERPOLATE_CUBIC" title="Link to this definition">¶</a></dt>
+<dd><p>Use cubic interpolation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id47">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_CUBIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_INTERPOLATE_AKIMA">
+<span class="sig-name descname"><span class="pre">VA_INTERPOLATE_AKIMA</span></span><a class="headerlink" href="#geosoft.gxapi.VA_INTERPOLATE_AKIMA" title="Link to this definition">¶</a></dt>
+<dd><p>Use akima interpolation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id48">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_AKIMA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_INTERPOLATE_PREDICT">
+<span class="sig-name descname"><span class="pre">VA_INTERPOLATE_PREDICT</span></span><a class="headerlink" href="#geosoft.gxapi.VA_INTERPOLATE_PREDICT" title="Link to this definition">¶</a></dt>
+<dd><p>Use prediction interpolation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id49">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_PREDICT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="va-extrapolate-constants">
+<span id="va-extrapolate"></span><h2>VA_EXTRAPOLATE constants<a class="headerlink" href="#va-extrapolate-constants" title="Link to this heading">¶</a></h2>
+<p><a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> Object to expand and extrapolate end values. Values mirror VVU_INTERP_EDGE</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_EXTRAPOLATE_NONE">
+<span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NONE</span></span><a class="headerlink" href="#geosoft.gxapi.VA_EXTRAPOLATE_NONE" title="Link to this definition">¶</a></dt>
+<dd><p>Outputs equal input single values</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id50">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_EXTRAPOLATE_SAME">
+<span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_SAME</span></span><a class="headerlink" href="#geosoft.gxapi.VA_EXTRAPOLATE_SAME" title="Link to this definition">¶</a></dt>
+<dd><p>Use same method as interpolation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id51">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_SAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_EXTRAPOLATE_NEAREST">
+<span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NEAREST</span></span><a class="headerlink" href="#geosoft.gxapi.VA_EXTRAPOLATE_NEAREST" title="Link to this definition">¶</a></dt>
+<dd><p>Outputs equal edge single values</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id52">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geosoft.gxapi.VA_EXTRAPOLATE_LINEAR">
+<span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_LINEAR</span></span><a class="headerlink" href="#geosoft.gxapi.VA_EXTRAPOLATE_LINEAR" title="Link to this definition">¶</a></dt>
+<dd><p>Use linear interpolation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id53">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1047,8 +1294,8 @@ If any values are dummy, the result will be dummy.</p>
 <span class="sig-name descname"><span class="pre">VA_ROW</span></span><a class="headerlink" href="#geosoft.gxapi.VA_ROW" title="Link to this definition">¶</a></dt>
 <dd><p>Row</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id39">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_ROW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id54">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_ROW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1058,8 +1305,8 @@ If any values are dummy, the result will be dummy.</p>
 <span class="sig-name descname"><span class="pre">VA_COL</span></span><a class="headerlink" href="#geosoft.gxapi.VA_COL" title="Link to this definition">¶</a></dt>
 <dd><p>Column</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id40">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_COL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id55">
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_COL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1080,7 +1327,7 @@ If any values are dummy, the result will be dummy.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
       </ul>
     </div>
