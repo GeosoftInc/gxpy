@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.gx
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -24,10 +19,6 @@
       pop_resource
       track_resource
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
@@ -35,17 +26,9 @@
       GXpyContext
       TLSGlobals
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       GXException
    
-   
-
-
-

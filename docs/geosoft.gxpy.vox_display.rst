@@ -1,0 +1,24 @@
+﻿geosoft.gxpy.vox\_display
+=========================
+
+.. automodule:: geosoft.gxpy.vox_display
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      VoxDisplay
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      VoxDisplayException
+   

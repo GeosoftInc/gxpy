@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXMVG class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXMVG class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMVG class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -56,62 +56,100 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#mvg-draw-constants">MVG_DRAW constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_DRAW_POLYLINE"><code class="docutils literal notranslate"><span class="pre">MVG_DRAW_POLYLINE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_DRAW_POLYLINE"><code class="docutils literal notranslate"><span class="pre">MVG_DRAW_POLYLINE</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_DRAW_POLYLINE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_DRAW_POLYGON"><code class="docutils literal notranslate"><span class="pre">MVG_DRAW_POLYGON</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_DRAW_POLYGON"><code class="docutils literal notranslate"><span class="pre">MVG_DRAW_POLYGON</span></code></a><ul>
 <li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_DRAW_POLYGON</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mvg-grid-constants">MVG_GRID constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_GRID_DOT"><code class="docutils literal notranslate"><span class="pre">MVG_GRID_DOT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_GRID_DOT"><code class="docutils literal notranslate"><span class="pre">MVG_GRID_DOT</span></code></a><ul>
 <li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_GRID_DOT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_GRID_LINE"><code class="docutils literal notranslate"><span class="pre">MVG_GRID_LINE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_GRID_LINE"><code class="docutils literal notranslate"><span class="pre">MVG_GRID_LINE</span></code></a><ul>
 <li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_GRID_LINE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_GRID_CROSS"><code class="docutils literal notranslate"><span class="pre">MVG_GRID_CROSS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_GRID_CROSS"><code class="docutils literal notranslate"><span class="pre">MVG_GRID_CROSS</span></code></a><ul>
 <li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_GRID_CROSS</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mvg-label-bound-constants">MVG_LABEL_BOUND constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_BOUND_NO"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_BOUND_NO</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_BOUND_NO"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_BOUND_NO</span></code></a><ul>
 <li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_BOUND_NO</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_BOUND_YES"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_BOUND_YES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_BOUND_YES"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_BOUND_YES</span></code></a><ul>
 <li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_BOUND_YES</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mvg-label-just-constants">MVG_LABEL_JUST constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_TOP"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_TOP</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_TOP"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_TOP</span></code></a><ul>
 <li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_JUST_TOP</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_BOTTOM"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_BOTTOM</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_BOTTOM"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_BOTTOM</span></code></a><ul>
 <li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_JUST_BOTTOM</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_LEFT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_LEFT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_LEFT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_LEFT</span></code></a><ul>
 <li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_JUST_LEFT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_RIGHT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_RIGHT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_JUST_RIGHT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_JUST_RIGHT</span></code></a><ul>
 <li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_JUST_RIGHT</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mvg-label-orient-constants">MVG_LABEL_ORIENT constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_ORIENT_HORIZONTAL"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_ORIENT_HORIZONTAL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_ORIENT_HORIZONTAL"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_ORIENT_HORIZONTAL</span></code></a><ul>
 <li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_ORIENT_HORIZONTAL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_RIGHT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_ORIENT_TOP_RIGHT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_RIGHT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_ORIENT_TOP_RIGHT</span></code></a><ul>
 <li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_ORIENT_TOP_RIGHT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_LEFT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_ORIENT_TOP_LEFT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_LABEL_ORIENT_TOP_LEFT"><code class="docutils literal notranslate"><span class="pre">MVG_LABEL_ORIENT_TOP_LEFT</span></code></a><ul>
 <li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_LABEL_ORIENT_TOP_LEFT</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mvg-scale-constants">MVG_SCALE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_SCALE_LINEAR"><code class="docutils literal notranslate"><span class="pre">MVG_SCALE_LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_SCALE_LINEAR"><code class="docutils literal notranslate"><span class="pre">MVG_SCALE_LINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_SCALE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_SCALE_LOG"><code class="docutils literal notranslate"><span class="pre">MVG_SCALE_LOG</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_SCALE_LOG"><code class="docutils literal notranslate"><span class="pre">MVG_SCALE_LOG</span></code></a><ul>
 <li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_SCALE_LOG</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_SCALE_LOGLINEAR"><code class="docutils literal notranslate"><span class="pre">MVG_SCALE_LOGLINEAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_SCALE_LOGLINEAR"><code class="docutils literal notranslate"><span class="pre">MVG_SCALE_LOGLINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_SCALE_LOGLINEAR</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mvg-wrap-constants">MVG_WRAP constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_WRAP_NO"><code class="docutils literal notranslate"><span class="pre">MVG_WRAP_NO</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_WRAP_NO"><code class="docutils literal notranslate"><span class="pre">MVG_WRAP_NO</span></code></a><ul>
 <li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_WRAP_NO</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MVG_WRAP_YES"><code class="docutils literal notranslate"><span class="pre">MVG_WRAP_YES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MVG_WRAP_YES"><code class="docutils literal notranslate"><span class="pre">MVG_WRAP_YES</span></code></a><ul>
 <li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.MVG_WRAP_YES</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -119,7 +157,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -127,7 +165,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -148,7 +186,7 @@
 <span id="gxmvg"></span><h1>GXMVG class<a class="headerlink" href="#gxmvg-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMVG">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXMVG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVG.html#GXMVG"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVG" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXMVG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVG.html#GXMVG"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVG" title="Link to this definition">¶</a></dt>
 <dd><p>GXMVG class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> class provides the ability to create view graphs.</p>
 <dl class="py method">
@@ -173,7 +211,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When Log annotation is applied, nice tick intervals will be
@@ -197,7 +235,7 @@ calculated</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When Log annotation is applied, nice tick intervals will be
@@ -206,7 +244,7 @@ calculated</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMVG.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax_u</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVG.html#GXMVG.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVG.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax_u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax_u</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVG.html#GXMVG.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVG.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a> object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -231,7 +269,7 @@ calculated</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -249,7 +287,7 @@ calculated</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -272,7 +310,7 @@ calculated</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> The grid will be drawn in the current window.</p>
@@ -313,7 +351,7 @@ ignored.  In addition, grid lines at 0 (zero) and LOGMIN will be drawn.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Label bounding will justify edge labels to be inside
@@ -343,7 +381,7 @@ the bar limits.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Label bounding will justify edge labels to be inside
@@ -357,7 +395,7 @@ the bar limits.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMVG.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVG.html#GXMVG.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVG.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMVG.html#GXMVG.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMVG.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMVG" title="geosoft.gxapi.GXMVG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVG</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -385,7 +423,7 @@ the bar limits.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> If the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> contains dummies, the polylines
@@ -410,7 +448,7 @@ only POLYLINES are drawn.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> If the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> contains dummies, the polylines
@@ -435,7 +473,7 @@ only POLYLINES are drawn.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When RescaleX_MVG is used, only the scaling information
@@ -457,7 +495,7 @@ related to X axis will be considered</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> When RescaleY_MVG is used, only the scaling information
@@ -475,7 +513,7 @@ related to Y axis will be considered</p>
 <dd><p>Polyline</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_DRAW_POLYLINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_DRAW_POLYLINE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -486,7 +524,7 @@ related to Y axis will be considered</p>
 <dd><p>Polygon</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id11">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_DRAW_POLYGON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_DRAW_POLYGON</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -501,7 +539,7 @@ related to Y axis will be considered</p>
 <dd><p>Dot</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id12">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_GRID_DOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_GRID_DOT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -512,7 +550,7 @@ related to Y axis will be considered</p>
 <dd><p>Line</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id13">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_GRID_LINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_GRID_LINE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -523,7 +561,7 @@ related to Y axis will be considered</p>
 <dd><p>Cross</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id14">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_GRID_CROSS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_GRID_CROSS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -538,7 +576,7 @@ related to Y axis will be considered</p>
 <dd><p>No</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id15">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_BOUND_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_BOUND_NO</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -549,7 +587,7 @@ related to Y axis will be considered</p>
 <dd><p>Yes</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id16">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_BOUND_YES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_BOUND_YES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -564,7 +602,7 @@ related to Y axis will be considered</p>
 <dd><p>Top</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id17">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_TOP</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -575,7 +613,7 @@ related to Y axis will be considered</p>
 <dd><p>Bottom</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id18">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_BOTTOM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -586,7 +624,7 @@ related to Y axis will be considered</p>
 <dd><p>Left</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id19">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_LEFT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -597,7 +635,7 @@ related to Y axis will be considered</p>
 <dd><p>Right</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id20">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_JUST_RIGHT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -612,7 +650,7 @@ related to Y axis will be considered</p>
 <dd><p>Horizontal</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id21">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_ORIENT_HORIZONTAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_ORIENT_HORIZONTAL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -623,7 +661,7 @@ related to Y axis will be considered</p>
 <dd><p>Top right</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id22">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_ORIENT_TOP_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_ORIENT_TOP_RIGHT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -634,7 +672,7 @@ related to Y axis will be considered</p>
 <dd><p>Top left</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id23">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_ORIENT_TOP_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_LABEL_ORIENT_TOP_LEFT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -649,7 +687,7 @@ related to Y axis will be considered</p>
 <dd><p>Linear</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id24">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_SCALE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_SCALE_LINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -660,7 +698,7 @@ related to Y axis will be considered</p>
 <dd><p>Log</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id25">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_SCALE_LOG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_SCALE_LOG</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -671,7 +709,7 @@ related to Y axis will be considered</p>
 <dd><p>Loglinear</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id26">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_SCALE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_SCALE_LOGLINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -686,7 +724,7 @@ related to Y axis will be considered</p>
 <dd><p>No</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id27">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_WRAP_NO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_WRAP_NO</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -697,7 +735,7 @@ related to Y axis will be considered</p>
 <dd><p>Yes</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id28">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_WRAP_YES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MVG_WRAP_YES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -712,20 +750,20 @@ related to Y axis will be considered</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMVG class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

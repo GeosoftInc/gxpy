@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.geometry
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -17,10 +12,6 @@
       _t
       extent_union
       first_coordinate_system
-   
-   
-
-   
    
    .. rubric:: Classes
 
@@ -32,17 +23,9 @@
       Point
       Point2
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       GeometryException
    
-   
-
-
-

@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXPLY class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXPLY class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPLY class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -73,34 +73,56 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#ply-clip-constants">PLY_CLIP constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_NO_INTERSECT"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_NO_INTERSECT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_NO_INTERSECT"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_NO_INTERSECT</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_CLIP_NO_INTERSECT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_INTERSECT"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_INTERSECT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_INTERSECT"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_INTERSECT</span></code></a><ul>
 <li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_CLIP_INTERSECT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_A_IN_B"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_A_IN_B</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_A_IN_B"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_A_IN_B</span></code></a><ul>
 <li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_CLIP_A_IN_B</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_B_IN_A"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_B_IN_A</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_CLIP_B_IN_A"><code class="docutils literal notranslate"><span class="pre">PLY_CLIP_B_IN_A</span></code></a><ul>
 <li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_CLIP_B_IN_A</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#ply-point-clip-constants">PLY_POINT_CLIP constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_INSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_INSIDE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_INSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_INSIDE</span></code></a><ul>
 <li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_POINT_CLIP_INSIDE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_OUTSIDE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_OUTSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_OUTSIDE</span></code></a><ul>
 <li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_POINT_CLIP_OUTSIDE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_ERROR"><code class="docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_ERROR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_POINT_CLIP_ERROR"><code class="docutils literal notranslate"><span class="pre">PLY_POINT_CLIP_ERROR</span></code></a><ul>
 <li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_POINT_CLIP_ERROR</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#ply-line-clip-constants">PLY_LINE_CLIP constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_INSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_INSIDE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_INSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_INSIDE</span></code></a><ul>
 <li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_LINE_CLIP_INSIDE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_NO_INTERSECT"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_NO_INTERSECT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_NO_INTERSECT"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_NO_INTERSECT</span></code></a><ul>
 <li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_LINE_CLIP_NO_INTERSECT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_OUTSIDE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_OUTSIDE"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_OUTSIDE</span></code></a><ul>
 <li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_LINE_CLIP_OUTSIDE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_ERROR"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_ERROR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PLY_LINE_CLIP_ERROR"><code class="docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_ERROR</span></code></a><ul>
 <li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.PLY_LINE_CLIP_ERROR</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -108,7 +130,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -116,7 +138,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -137,7 +159,7 @@
 <span id="gxply"></span><h1>GXPLY class<a class="headerlink" href="#gxply-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPLY">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXPLY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXPLY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY" title="Link to this definition">¶</a></dt>
 <dd><p>GXPLY class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> object contains the definitions for one or more
 polygons, and does import and export of polygon files.</p>
@@ -159,7 +181,7 @@ polygons, and does import and export of polygon files.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -178,7 +200,7 @@ polygons, and does import and export of polygon files.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -196,7 +218,7 @@ polygons, and does import and export of polygon files.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Excluded polygons have negative area.</p>
@@ -212,7 +234,7 @@ polygons, and does import and export of polygon files.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.5.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> is re-projected to the new projection.</p>
@@ -223,7 +245,7 @@ polygons, and does import and export of polygon files.</p>
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.clear" title="Link to this definition">¶</a></dt>
 <dd><p>Clear/remove all polygons from the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.8.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -249,7 +271,7 @@ polygons, and does import and export of polygon files.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -257,7 +279,7 @@ polygons, and does import and export of polygon files.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPLY.clip_line_int">
 <span class="sig-name descname"><span class="pre">clip_line_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.clip_line_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.clip_line_int" title="Link to this definition">¶</a></dt>
-<dd><p>Clips a line in or out of the polygons for intersections (<a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>).
+<dd><p>Clips a line in or out of the polygons for intersections (<a class="reference internal" href="GXGEOSOFT.html#id79" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>).
 Intersections are returned as fiducials down the line stored in <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>
 starting at the first point of the line.
 Examples:
@@ -286,7 +308,7 @@ Starts inside, ends outside : <a class="reference internal" href="#id34" title="
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified added">Added in version 6.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -310,7 +332,7 @@ Starts inside, ends outside : <a class="reference internal" href="#id34" title="
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Resulting clipped polygon only has inclusive
@@ -340,7 +362,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.6.</span></p>
+<p><span class="versionmodified added">Added in version 9.6.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -358,7 +380,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -373,14 +395,14 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPLY.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a Polygon Object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -391,14 +413,14 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPLY.create_s">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_s</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.create_s"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.create_s" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_s</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.create_s"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.create_s" title="Link to this definition">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> Object from a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -412,7 +434,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -432,7 +454,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If there are no polygons in the <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a> object, returns dummies.</p>
@@ -448,7 +470,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -463,7 +485,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.5.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -482,7 +504,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -502,7 +524,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -531,7 +553,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -546,14 +568,14 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPLY.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPLY.html#GXPLY.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPLY.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPLY" title="geosoft.gxapi.GXPLY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPLY</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -578,7 +600,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -598,7 +620,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.5.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -617,7 +639,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -632,7 +654,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -647,7 +669,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -662,7 +684,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -677,7 +699,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.5.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This changes the projection information only.</p>
@@ -693,7 +715,7 @@ An error occurred: <a class="reference internal" href="#id33" title="geosoft.gxa
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Points on the polygon that deviate from a line drawn between
@@ -712,7 +734,7 @@ be removed.</p>
 <dd><p>The polygons do not intersect</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_NO_INTERSECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_NO_INTERSECT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -723,7 +745,7 @@ be removed.</p>
 <dd><p>The polygons do intersect</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id28">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_INTERSECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_INTERSECT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -734,7 +756,7 @@ be removed.</p>
 <dd><p>Polygon A is completely inside polygon B</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id29">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_A_IN_B</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_A_IN_B</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -745,7 +767,7 @@ be removed.</p>
 <dd><p>Polygon B is completely inside polygon A</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id30">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_B_IN_A</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_CLIP_B_IN_A</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -760,7 +782,7 @@ be removed.</p>
 <dd><p>The point is inside the polygon</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id31">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_POINT_CLIP_INSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_POINT_CLIP_INSIDE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -771,7 +793,7 @@ be removed.</p>
 <dd><p>The point is outside the polygon</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id32">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_POINT_CLIP_OUTSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_POINT_CLIP_OUTSIDE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -782,7 +804,7 @@ be removed.</p>
 <dd><p>An error occurred</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id33">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_POINT_CLIP_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_POINT_CLIP_ERROR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -797,7 +819,7 @@ be removed.</p>
 <dd><p>The start point of the line is inside</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id34">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_INSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_INSIDE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -808,7 +830,7 @@ be removed.</p>
 <dd><p>This name is a misnomer - it should have been <a class="reference internal" href="#id34" title="geosoft.gxapi.PLY_LINE_CLIP_INSIDE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLY_LINE_CLIP_INSIDE</span></code></a>, but is retained to support legacy code</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id35">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_NO_INTERSECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_NO_INTERSECT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -819,7 +841,7 @@ be removed.</p>
 <dd><p>The start point of the line is outside</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id36">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_OUTSIDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_OUTSIDE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -830,7 +852,7 @@ be removed.</p>
 <dd><p>Error</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id37">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PLY_LINE_CLIP_ERROR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -845,20 +867,20 @@ be removed.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPLY class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

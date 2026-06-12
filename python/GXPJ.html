@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXPJ class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXPJ class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPJ class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -64,19 +64,29 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#pj-elevation-constants">PJ_ELEVATION constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_NONE"><code class="docutils literal notranslate"><span class="pre">PJ_ELEVATION_NONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_NONE"><code class="docutils literal notranslate"><span class="pre">PJ_ELEVATION_NONE</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.PJ_ELEVATION_NONE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_GEOCENTRIC"><code class="docutils literal notranslate"><span class="pre">PJ_ELEVATION_GEOCENTRIC</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_GEOCENTRIC"><code class="docutils literal notranslate"><span class="pre">PJ_ELEVATION_GEOCENTRIC</span></code></a><ul>
 <li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.PJ_ELEVATION_GEOCENTRIC</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_GEOID"><code class="docutils literal notranslate"><span class="pre">PJ_ELEVATION_GEOID</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PJ_ELEVATION_GEOID"><code class="docutils literal notranslate"><span class="pre">PJ_ELEVATION_GEOID</span></code></a><ul>
 <li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.PJ_ELEVATION_GEOID</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#pj-rect-constants">PJ_RECT constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.PJ_RECT_XY2LL"><code class="docutils literal notranslate"><span class="pre">PJ_RECT_XY2LL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PJ_RECT_XY2LL"><code class="docutils literal notranslate"><span class="pre">PJ_RECT_XY2LL</span></code></a><ul>
 <li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.PJ_RECT_XY2LL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PJ_RECT_LL2XY"><code class="docutils literal notranslate"><span class="pre">PJ_RECT_LL2XY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PJ_RECT_LL2XY"><code class="docutils literal notranslate"><span class="pre">PJ_RECT_LL2XY</span></code></a><ul>
 <li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.PJ_RECT_LL2XY</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -84,7 +94,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -92,7 +102,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -113,7 +123,7 @@
 <span id="gxpj"></span><h1>GXPJ class<a class="headerlink" href="#gxpj-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPJ">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXPJ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXPJ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ" title="Link to this definition">¶</a></dt>
 <dd><p>GXPJ class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPJ</span></code></a> object is created from two <a class="reference internal" href="GXIPJ.html#geosoft.gxapi.GXIPJ" title="geosoft.gxapi.GXIPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIPJ</span></code></a> objects,
 and is used for converting data in an OASIS database
@@ -141,7 +151,7 @@ system to another.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> A rectangular area from (MinX, MinY) to (MaxX, MaxY)
@@ -166,7 +176,7 @@ only co-linear points would be removed).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project" title="geosoft.gxapi.GXVV.project"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV.project</span></code></a>.</p>
@@ -186,7 +196,7 @@ only co-linear points would be removed).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This function is equivalent to <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.project_3d" title="geosoft.gxapi.GXVV.project_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV.project_3d</span></code></a>.</p>
@@ -205,7 +215,7 @@ only co-linear points would be removed).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -224,7 +234,7 @@ only co-linear points would be removed).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.3.</span></p>
+<p><span class="versionmodified added">Added in version 7.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This function is used (for instance) when projecting voxel model locations
@@ -250,14 +260,14 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified added">Added in version 6.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPJ.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.create" title="Link to this definition">¶</a></dt>
 <dd><p>This method creates a projection object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -274,14 +284,14 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPJ.create_ipj">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ipj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_jin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip_jout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.create_ipj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.create_ipj" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_ipj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_jin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip_jout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.create_ipj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.create_ipj" title="Link to this definition">¶</a></dt>
 <dd><p>This method creates a projection object from IPJs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -298,7 +308,7 @@ the normal <a class="reference internal" href="#geosoft.gxapi.GXPJ.convert_xy" t
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If converting to/from long/lat in the natural coordinate
@@ -308,7 +318,7 @@ can be passed as (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.G
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPJ.create_rectified">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_rectified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.create_rectified"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.create_rectified" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_rectified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.create_rectified"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.create_rectified" title="Link to this definition">¶</a></dt>
 <dd><p>Create a rectified <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPJ</span></code></a> from lon,lat,rotation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -329,7 +339,7 @@ can be passed as (<a class="reference internal" href="GXIPJ.html#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Given an X,Y coordinate system, the lat/lon origin and
@@ -353,7 +363,7 @@ of the coordinates on a WGS 84 datum.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> To determine the model in use, refer to the datum_trf column in the
@@ -381,7 +391,7 @@ return <a class="reference internal" href="#id0" title="geosoft.gxapi.PJ_ELEVATI
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -414,14 +424,14 @@ return <a class="reference internal" href="#id0" title="geosoft.gxapi.PJ_ELEVATI
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXPJ.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPJ</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -448,7 +458,7 @@ return <a class="reference internal" href="#id0" title="geosoft.gxapi.PJ_ELEVATI
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.4.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> A rectangular area from (dMinX, dMinY) to (dMaxX, dMaxY)
@@ -475,7 +485,7 @@ smaller than the true region.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle" title="geosoft.gxapi.GXPJ.project_bounding_rectangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_bounding_rectangle</span></code></a> except that the bounding
@@ -499,7 +509,7 @@ performed to an accuracy better than the specified error tolerance.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.8.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.8.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This function behaves just like ProjBoundingRectangle_PJ
@@ -525,7 +535,7 @@ resolution.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This is the same as <a class="reference internal" href="#geosoft.gxapi.GXPJ.project_bounding_rectangle_res" title="geosoft.gxapi.GXPJ.project_bounding_rectangle_res"><code class="xref py py-obj docutils literal notranslate"><span class="pre">project_bounding_rectangle_res</span></code></a> except that the bounding
@@ -550,7 +560,7 @@ performed to an accuracy better than the specified error tolerance.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -574,7 +584,7 @@ performed to an accuracy better than the specified error tolerance.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The bounding rectangle will be limited to no larger
@@ -592,7 +602,7 @@ in the target projection.</p>
 <span class="sig-name descname"><span class="pre">setup_ldt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXPJ.html#GXPJ.setup_ldt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXPJ.setup_ldt" title="Link to this definition">¶</a></dt>
 <dd><p>Setup the <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPJ</span></code></a> with LDT check.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> By default, a <a class="reference internal" href="#geosoft.gxapi.GXPJ" title="geosoft.gxapi.GXPJ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXPJ</span></code></a> on the same datum will not apply a LDT,
@@ -618,7 +628,7 @@ and combine in WGS84.</p>
 <dd><p>Elevation transform not supported.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_ELEVATION_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_ELEVATION_NONE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -630,7 +640,7 @@ and combine in WGS84.</p>
 and is not accurate.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id19">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_ELEVATION_GEOCENTRIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_ELEVATION_GEOCENTRIC</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -642,7 +652,7 @@ and is not accurate.</p>
 and is as accurate as the geoid data.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id20">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_ELEVATION_GEOID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_ELEVATION_GEOID</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -657,7 +667,7 @@ and is as accurate as the geoid data.</p>
 <dd><p>Xy2ll</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id21">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_RECT_XY2LL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_RECT_XY2LL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -668,7 +678,7 @@ and is as accurate as the geoid data.</p>
 <dd><p>Ll2xy</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id22">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_RECT_LL2XY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PJ_RECT_LL2XY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -683,20 +693,20 @@ and is as accurate as the geoid data.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXPJ class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

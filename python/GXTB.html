@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXTB class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXTB class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXTB class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -68,17 +68,25 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#tb-search-constants">TB_SEARCH constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.TB_SEARCH_BINARY"><code class="docutils literal notranslate"><span class="pre">TB_SEARCH_BINARY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TB_SEARCH_BINARY"><code class="docutils literal notranslate"><span class="pre">TB_SEARCH_BINARY</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.TB_SEARCH_BINARY</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.TB_SEARCH_LINEAR"><code class="docutils literal notranslate"><span class="pre">TB_SEARCH_LINEAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.TB_SEARCH_LINEAR"><code class="docutils literal notranslate"><span class="pre">TB_SEARCH_LINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.TB_SEARCH_LINEAR</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#tb-sort-constants">TB_SORT constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.TB_SORT_UNIQUE"><code class="docutils literal notranslate"><span class="pre">TB_SORT_UNIQUE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TB_SORT_UNIQUE"><code class="docutils literal notranslate"><span class="pre">TB_SORT_UNIQUE</span></code></a><ul>
 <li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">gxapi.TB_SORT_UNIQUE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES"><code class="docutils literal notranslate"><span class="pre">TB_SORT_ALLOW_DUPLICATES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.TB_SORT_ALLOW_DUPLICATES"><code class="docutils literal notranslate"><span class="pre">TB_SORT_ALLOW_DUPLICATES</span></code></a><ul>
 <li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">gxapi.TB_SORT_ALLOW_DUPLICATES</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -86,7 +94,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -94,7 +102,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -115,7 +123,7 @@
 <span id="gxtb"></span><h1>GXTB class<a class="headerlink" href="#gxtb-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTB">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXTB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXTB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB" title="Link to this definition">¶</a></dt>
 <dd><p>GXTB class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a> class is a high-performance table class used to
 perform table-based processing, such as leveling data in
@@ -129,7 +137,7 @@ different geographic projections and their defining parameters.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTB.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.create" title="Link to this definition">¶</a></dt>
 <dd><p>Loads a table into memory and return a table handle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -143,7 +151,7 @@ different geographic projections and their defining parameters.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the table contains fewer data columns than are defined by the
@@ -153,7 +161,7 @@ the elements of the missing data columns.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTB.create_db">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.create_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.create_db" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.create_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.create_db" title="Link to this definition">¶</a></dt>
 <dd><p>Create a table from a database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -167,7 +175,7 @@ the elements of the missing data columns.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table will contain fields for all channels in
@@ -178,7 +186,7 @@ function to load data into the table.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTB.create_ltb">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ltb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ltb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.create_ltb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.create_ltb" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_ltb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ltb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.create_ltb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.create_ltb" title="Link to this definition">¶</a></dt>
 <dd><p>Create a table from an <a class="reference internal" href="GXLTB.html#geosoft.gxapi.GXLTB" title="geosoft.gxapi.GXLTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXLTB</span></code></a> database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -192,7 +200,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -213,7 +221,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -234,7 +242,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -252,7 +260,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -274,7 +282,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -295,7 +303,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -319,7 +327,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -343,7 +351,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -362,7 +370,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -394,7 +402,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The line is appended to the data already in the table.</p>
@@ -402,7 +410,7 @@ function to load data into the table.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTB.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTB.html#GXTB.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTB.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXTB" title="geosoft.gxapi.GXTB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTB</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -427,7 +435,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -445,7 +453,7 @@ function to load data into the table.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -461,7 +469,7 @@ in ASCII and the data will be in BINARY format.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -479,7 +487,7 @@ in ASCII and the data will be in BINARY format.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Missing channels are created.
@@ -497,7 +505,7 @@ in ASCII and the data will be in ASCII format.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -516,12 +524,12 @@ in ASCII and the data will be in ASCII format.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table field containing the element to be set MUST be
-of type <a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a> or <a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>.
-If the field is <a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a> the new data value will cause an
+of type <a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a> or <a class="reference internal" href="GXGEOSOFT.html#id79" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>.
+If the field is <a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_FLOAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_FLOAT</span></code></a> the new data value will cause an
 overflow if the value is out of range of the data type.
 The new element value will then be invalid.</p>
 <p>If the row of the new element exceeds the number of rows in
@@ -547,12 +555,12 @@ invalid data.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table field containing the element to be set MUST be
-of type <a class="reference internal" href="GXGEOSOFT.html#id73" title="geosoft.gxapi.GS_BYTE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_BYTE</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id74" title="geosoft.gxapi.GS_USHORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_USHORT</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id75" title="geosoft.gxapi.GS_SHORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_SHORT</span></code></a>, or <a class="reference internal" href="GXGEOSOFT.html#id76" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a>.
-If the field is <a class="reference internal" href="GXGEOSOFT.html#id73" title="geosoft.gxapi.GS_BYTE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_BYTE</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id74" title="geosoft.gxapi.GS_USHORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_USHORT</span></code></a>, or <a class="reference internal" href="GXGEOSOFT.html#id76" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a>, the new data
+of type <a class="reference internal" href="GXGEOSOFT.html#id74" title="geosoft.gxapi.GS_BYTE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_BYTE</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id75" title="geosoft.gxapi.GS_USHORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_USHORT</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id76" title="geosoft.gxapi.GS_SHORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_SHORT</span></code></a>, or <a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a>.
+If the field is <a class="reference internal" href="GXGEOSOFT.html#id74" title="geosoft.gxapi.GS_BYTE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_BYTE</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id75" title="geosoft.gxapi.GS_USHORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_USHORT</span></code></a>, or <a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a>, the new data
 value will cause an overflow if the value is out of range of
 the data type. The new element value will then be invalid.</p>
 <p>If the row of the new element exceeds the number of rows in
@@ -574,7 +582,7 @@ invalid data.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If performance is an issue, you may want to test which search
@@ -591,7 +599,7 @@ mode provides the best performance with typical data.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.1.</span></p>
+<p><span class="versionmodified added">Added in version 9.3.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -610,7 +618,7 @@ mode provides the best performance with typical data.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The table field containing the element to be set MUST be
@@ -634,7 +642,7 @@ invalid data.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the column to sort by contains duplicated values, the
@@ -658,7 +666,7 @@ table.</p>
 <dd><p>Random searches in a table.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SEARCH_BINARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SEARCH_BINARY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -669,7 +677,7 @@ table.</p>
 <dd><p>Linear searches up or down a table (Default).</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id23">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SEARCH_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SEARCH_LINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -684,7 +692,7 @@ table.</p>
 <dd><p>Unique values only when sorting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id24">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SORT_UNIQUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SORT_UNIQUE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -695,7 +703,7 @@ table.</p>
 <dd><p>Allow duplicates when sorting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id25">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SORT_ALLOW_DUPLICATES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TB_SORT_ALLOW_DUPLICATES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -710,20 +718,20 @@ table.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXTB class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -4,20 +4,11 @@
 .. automodule:: geosoft.gxpy.grid_fft
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
    
       _t
-   
-   
-
-   
    
    .. rubric:: Classes
 
@@ -25,17 +16,9 @@
    
       GridFFT
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       GridFFTException
    
-   
-
-
-

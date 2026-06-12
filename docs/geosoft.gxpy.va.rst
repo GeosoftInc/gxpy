@@ -1,0 +1,24 @@
+﻿geosoft.gxpy.va
+===============
+
+.. automodule:: geosoft.gxpy.va
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      GXva
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      VAException
+   

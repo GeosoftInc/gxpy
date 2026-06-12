@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXTC class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXTC class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXTC class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -52,32 +52,52 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#tc-opt-constants">TC_OPT constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.TC_OPT_NONE"><code class="docutils literal notranslate"><span class="pre">TC_OPT_NONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TC_OPT_NONE"><code class="docutils literal notranslate"><span class="pre">TC_OPT_NONE</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.TC_OPT_NONE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.TC_OPT_MAX"><code class="docutils literal notranslate"><span class="pre">TC_OPT_MAX</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.TC_OPT_MAX"><code class="docutils literal notranslate"><span class="pre">TC_OPT_MAX</span></code></a><ul>
 <li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">gxapi.TC_OPT_MAX</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#tc-surveytype-constants">TC_SURVEYTYPE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.TC_SURVEYTYPE_GROUND"><code class="docutils literal notranslate"><span class="pre">TC_SURVEYTYPE_GROUND</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.TC_SURVEYTYPE_GROUND"><code class="docutils literal notranslate"><span class="pre">TC_SURVEYTYPE_GROUND</span></code></a><ul>
 <li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">gxapi.TC_SURVEYTYPE_GROUND</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.TC_SURVEYTYPE_SHIPBORNE"><code class="docutils literal notranslate"><span class="pre">TC_SURVEYTYPE_SHIPBORNE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.TC_SURVEYTYPE_SHIPBORNE"><code class="docutils literal notranslate"><span class="pre">TC_SURVEYTYPE_SHIPBORNE</span></code></a><ul>
 <li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">gxapi.TC_SURVEYTYPE_SHIPBORNE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.TC_SURVEYTYPE_AIRBORNE"><code class="docutils literal notranslate"><span class="pre">TC_SURVEYTYPE_AIRBORNE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.TC_SURVEYTYPE_AIRBORNE"><code class="docutils literal notranslate"><span class="pre">TC_SURVEYTYPE_AIRBORNE</span></code></a><ul>
 <li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">gxapi.TC_SURVEYTYPE_AIRBORNE</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#gg-element-constants">GG_ELEMENT constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_XX"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_XX</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_XX"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_XX</span></code></a><ul>
 <li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">gxapi.GG_ELEMENT_XX</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_YY"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_YY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_YY"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_YY</span></code></a><ul>
 <li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">gxapi.GG_ELEMENT_YY</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_XY"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_XY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_XY"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_XY</span></code></a><ul>
 <li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">gxapi.GG_ELEMENT_XY</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_XZ"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_XZ</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_XZ"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_XZ</span></code></a><ul>
 <li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">gxapi.GG_ELEMENT_XZ</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_YZ"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_YZ</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GG_ELEMENT_YZ"><code class="docutils literal notranslate"><span class="pre">GG_ELEMENT_YZ</span></code></a><ul>
 <li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.GG_ELEMENT_YZ</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -85,7 +105,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -93,7 +113,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -114,7 +134,7 @@
 <span id="gxtc"></span><h1>GXTC class<a class="headerlink" href="#gxtc-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTC">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC" title="Link to this definition">¶</a></dt>
 <dd><p>GXTC class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTC</span></code></a> object is used in gravitational modelling to create
 a terrain correction grid from a topography grid. This is
@@ -129,7 +149,7 @@ the input positions.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTC.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dinner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">douter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dinner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">douter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a Terrain Correction object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -154,14 +174,14 @@ the input positions.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTC.create_ex">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dinner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">douter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.create_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.create_ex" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dinner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">douter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.create_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.create_ex" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a Terrain Correction object     with surveytype</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -187,14 +207,14 @@ the input positions.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTC.create_ex2">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ex2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dinner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">douter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.create_ex2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.create_ex2" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_ex2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dinner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">douter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.create_ex2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.create_ex2" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a Terrain Correction object with surveytype and topo surface elevation grid</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -221,7 +241,7 @@ the input positions.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.9.</span></p>
+<p><span class="versionmodified added">Added in version 9.9.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
@@ -244,7 +264,7 @@ the input positions.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
@@ -262,7 +282,7 @@ the input positions.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
@@ -285,7 +305,7 @@ the input positions.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
@@ -309,7 +329,7 @@ the input positions.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic">Geosoft Extended End-User License</a></p>
 </dd></dl>
@@ -330,7 +350,7 @@ the input positions.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXTC.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXTC.html#GXTC.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXTC.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXTC" title="geosoft.gxapi.GXTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXTC</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -353,7 +373,7 @@ the input positions.</p>
 <dd><p>(slow)    no optimization</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_OPT_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_OPT_NONE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -365,7 +385,7 @@ the input positions.</p>
 on coarser averaged grid</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id7">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_OPT_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_OPT_MAX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -380,7 +400,7 @@ on coarser averaged grid</p>
 <dd><p>Ground</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id8">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_SURVEYTYPE_GROUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_SURVEYTYPE_GROUND</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -391,7 +411,7 @@ on coarser averaged grid</p>
 <dd><p>Shipborne</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id9">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_SURVEYTYPE_SHIPBORNE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_SURVEYTYPE_SHIPBORNE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -402,7 +422,7 @@ on coarser averaged grid</p>
 <dd><p>Airborne</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id10">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_SURVEYTYPE_AIRBORNE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">TC_SURVEYTYPE_AIRBORNE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -417,7 +437,7 @@ on coarser averaged grid</p>
 <dd><p>Gxx</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id11">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_XX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_XX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -428,7 +448,7 @@ on coarser averaged grid</p>
 <dd><p>Gyy</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id12">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_YY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_YY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -439,7 +459,7 @@ on coarser averaged grid</p>
 <dd><p>Gxy</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id13">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_XY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_XY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -450,7 +470,7 @@ on coarser averaged grid</p>
 <dd><p>Gxz</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id14">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_XZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_XZ</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -461,7 +481,7 @@ on coarser averaged grid</p>
 <dd><p>Gyz</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id15">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_YZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GG_ELEMENT_YZ</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -476,20 +496,20 @@ on coarser averaged grid</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXTC class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

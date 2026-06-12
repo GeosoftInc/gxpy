@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.utility
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -72,21 +67,9 @@
       yearFromJulianDay2
       year_from_datetime
    
-   
-
-   
-   
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       UtilityException
    
-   
-
-
-

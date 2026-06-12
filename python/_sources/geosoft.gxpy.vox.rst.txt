@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.vox
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -20,19 +15,11 @@
       elevation_from_depth
       locations_from_cells
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
    
       Vox
-   
-   
-
-   
    
    .. rubric:: Exceptions
 
@@ -40,7 +27,3 @@
    
       VoxException
    
-   
-
-
-

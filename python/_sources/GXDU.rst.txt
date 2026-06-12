@@ -418,6 +418,10 @@ Fid Update Options
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.DU_MODFID_DELETE
+.. autodata:: geosoft.gxapi.DU_MODFID_DELETE_ADJUST_FIDSTART
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.DU_MODFID_DELETE_ADJUST_FIDSTART
 .. autodata:: geosoft.gxapi.DU_MODFID_APPEND
     :annotation:
     

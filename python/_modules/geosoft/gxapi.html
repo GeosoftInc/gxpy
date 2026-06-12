@@ -5,12 +5,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <title>geosoft.gxapi &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/maki.css?v=ea9b3600" />
-    <script src="../../_static/documentation_options.js?v=f788092f"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/documentation_options.js?v=b916904f"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
  
@@ -21,25 +21,25 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Introduction</a></li>
     <li><a href="../index.html">Module code</a></li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
@@ -47,7 +47,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
@@ -66,52 +66,52 @@
 <span class="c1">### block Header</span>
 <span class="c1"># NOTICE: The code generator will not replace the code in this block</span>
 
-<span class="kn">import</span> <span class="nn">geosoft</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geosoft</span>
 
-<span class="k">class</span> <span class="nc">ref_value</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ref_value</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
 
     <span class="nd">@value</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
 
 <div class="viewcode-block" id="bool_ref">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.bool_ref">[docs]</a>
-<span class="k">class</span> <span class="nc">bool_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">bool_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
 
 
 <div class="viewcode-block" id="int_ref">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.int_ref">[docs]</a>
-<span class="k">class</span> <span class="nc">int_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">int_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
 
     
 <div class="viewcode-block" id="float_ref">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.float_ref">[docs]</a>
-<span class="k">class</span> <span class="nc">float_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">float_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
 
 
 <div class="viewcode-block" id="str_ref">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.str_ref">[docs]</a>
-<span class="k">class</span> <span class="nc">str_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">str_ref</span><span class="p">(</span><span class="n">ref_value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span></div>
 
 
 
 <div class="viewcode-block" id="GXCancel">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXCancel">[docs]</a>
-<span class="k">class</span> <span class="nc">GXCancel</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GXCancel</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `SystemExit &lt;https://docs.python.org/3/library/exceptions.html#SystemExit&gt;`_ which is raised when a </span>
 <span class="sd">    script should cleanly exit due to a cancellation condition. Generally not caught since it will have the same effect </span>
@@ -125,7 +125,7 @@
 
 <div class="viewcode-block" id="GXExit">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXExit">[docs]</a>
-<span class="k">class</span> <span class="nc">GXExit</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GXExit</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `SystemExit &lt;https://docs.python.org/3/library/exceptions.html#SystemExit&gt;`_ which is raised when a </span>
 <span class="sd">    script should cleanly exit due to a completion condition. Generally not caught since it will have the same effect as </span>
@@ -139,7 +139,7 @@
 
 <div class="viewcode-block" id="GXAPIError">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXAPIError">[docs]</a>
-<span class="k">class</span> <span class="nc">GXAPIError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GXAPIError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `RuntimeError &lt;https://docs.python.org/3/library/exceptions.html#RuntimeError&gt;`_ which is raised whenever </span>
 <span class="sd">    the GX Python API encounters initialization issues or other API violations. It generally indicates a bug in Python code.</span>
@@ -152,7 +152,7 @@
 
 <div class="viewcode-block" id="GXError">
 <a class="viewcode-back" href="../../geosoft.gxapi.html#geosoft.gxapi.GXError">[docs]</a>
-<span class="k">class</span> <span class="nc">GXError</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GXError</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A subclass of `RuntimeError &lt;https://docs.python.org/3/library/exceptions.html#RuntimeError&gt;`_ which is raised whenever </span>
 <span class="sd">    a GX Python API call encounters an error. Often the message string of these errors are informative to the user (e.g. File </span>
@@ -164,7 +164,7 @@
 <span class="sd">    .. versionadded:: 9.1</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="n">error_number</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="n">error_number</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">geosoft</span><span class="o">.</span><span class="n">GXRuntimeError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="o">=</span> <span class="n">module</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">error_number</span> <span class="o">=</span> <span class="n">error_number</span></div>
@@ -176,7 +176,7 @@
 <span class="c1">### block Constants</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
 
-<span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
 
 <span class="c1">#</span>
 <span class="c1"># GX3DC Constants</span>
@@ -586,7 +586,7 @@
 <span class="c1"># Class name max size</span>
 
 <span class="c1">#: Db group class size</span>
-<span class="n">DB_GROUP_CLASS_SIZE</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">DB_GROUP_CLASS_SIZE</span> <span class="o">=</span> <span class="mi">256</span>
 
 <span class="c1">#</span>
 <span class="c1"># DB_INFO constants</span>
@@ -1059,6 +1059,8 @@
 <span class="n">FORMAT_GEOGRAPHIC_2</span> <span class="o">=</span> <span class="mi">11</span>
 <span class="c1">#: GeoGraph (DEGMMmmmm or DEGMM.mmmm or DEG.MM.mmmm)  (mmmm: decimal minute)</span>
 <span class="n">FORMAT_GEOGRAPHIC_3</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="c1">#: Hexadecimal number (ffffd8fe)</span>
+<span class="n">FORMAT_HEXADECIMAL</span> <span class="o">=</span> <span class="mi">13</span>
 
 <span class="c1">#</span>
 <span class="c1"># GS_TYPES constants</span>
@@ -3989,6 +3991,8 @@
 <span class="n">SYS_RUN_TYPE_EXE</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="c1">#: Windows applications that do not require a console window.</span>
 <span class="n">SYS_RUN_TYPE_WINDOWS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#: Run directly from command line (ie. notepad.exe &#39;file.txt&#39;)</span>
+<span class="n">SYS_RUN_TYPE_CMD_LINE</span> <span class="o">=</span> <span class="mi">4</span>
 
 <span class="c1">#</span>
 <span class="c1"># SYS_RUN_WIN constants</span>
@@ -5358,6 +5362,10 @@
 <span class="n">DU_MODFID_INSERT</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="c1">#: Will delete the range of fids.</span>
 <span class="n">DU_MODFID_DELETE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#: Will delete the range of fids. </span>
+<span class="c1">#: If the deletion occurs at the start of the data, </span>
+<span class="c1">#: the fid start is adjusted.</span>
+<span class="n">DU_MODFID_DELETE_ADJUST_FIDSTART</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="c1">#: Is like INSERT, except that it is only used to</span>
 <span class="c1">#: add fids to the start or end of the existing data.  The</span>
 <span class="c1">#: data is not moved with repect to the current fid locations.</span>
@@ -6391,6 +6399,8 @@
 <span class="n">FILE_FILTER_ARGIS_LYRX</span> <span class="o">=</span> <span class="mi">134</span>
 <span class="c1">#: ArcGIS Stylx files  ``*.stylx``  LOCAL</span>
 <span class="n">FILE_FILTER_ARGIS_STYLX</span> <span class="o">=</span> <span class="mi">135</span>
+<span class="c1">#: Medusa calibration files  ``*.mcf``  LOCAL</span>
+<span class="n">FILE_FILTER_MCF</span> <span class="o">=</span> <span class="mi">136</span>
 
 <span class="c1">#</span>
 <span class="c1"># FILE_FORM constants</span>
@@ -7752,146 +7762,146 @@
     <span class="s1">&#39;GXVVU&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="kn">from</span> <span class="nn">.GXContext</span> <span class="kn">import</span> <span class="n">GXContext</span>
-<span class="kn">from</span> <span class="nn">.GX3DC</span> <span class="kn">import</span> <span class="n">GX3DC</span>
-<span class="kn">from</span> <span class="nn">.GX3DN</span> <span class="kn">import</span> <span class="n">GX3DN</span>
-<span class="kn">from</span> <span class="nn">.GX3DV</span> <span class="kn">import</span> <span class="n">GX3DV</span>
-<span class="kn">from</span> <span class="nn">.GXAGG</span> <span class="kn">import</span> <span class="n">GXAGG</span>
-<span class="kn">from</span> <span class="nn">.GXBF</span> <span class="kn">import</span> <span class="n">GXBF</span>
-<span class="kn">from</span> <span class="nn">.GXCSYMB</span> <span class="kn">import</span> <span class="n">GXCSYMB</span>
-<span class="kn">from</span> <span class="nn">.GXCSYMB3D</span> <span class="kn">import</span> <span class="n">GXCSYMB3D</span>
-<span class="kn">from</span> <span class="nn">.GXDAT</span> <span class="kn">import</span> <span class="n">GXDAT</span>
-<span class="kn">from</span> <span class="nn">.GXDATALINKD</span> <span class="kn">import</span> <span class="n">GXDATALINKD</span>
-<span class="kn">from</span> <span class="nn">.GXDATAMINE</span> <span class="kn">import</span> <span class="n">GXDATAMINE</span>
-<span class="kn">from</span> <span class="nn">.GXDB</span> <span class="kn">import</span> <span class="n">GXDB</span>
-<span class="kn">from</span> <span class="nn">.GXDBREAD</span> <span class="kn">import</span> <span class="n">GXDBREAD</span>
-<span class="kn">from</span> <span class="nn">.GXDBWRITE</span> <span class="kn">import</span> <span class="n">GXDBWRITE</span>
-<span class="kn">from</span> <span class="nn">.GXDSEL</span> <span class="kn">import</span> <span class="n">GXDSEL</span>
-<span class="kn">from</span> <span class="nn">.GXE3DV</span> <span class="kn">import</span> <span class="n">GXE3DV</span>
-<span class="kn">from</span> <span class="nn">.GXEVOOBJMETA</span> <span class="kn">import</span> <span class="n">GXEVOOBJMETA</span>
-<span class="kn">from</span> <span class="nn">.GXEXT</span> <span class="kn">import</span> <span class="n">GXEXT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXContext</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXContext</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GX3DC</span><span class="w"> </span><span class="kn">import</span> <span class="n">GX3DC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GX3DN</span><span class="w"> </span><span class="kn">import</span> <span class="n">GX3DN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GX3DV</span><span class="w"> </span><span class="kn">import</span> <span class="n">GX3DV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXAGG</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXAGG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXBF</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXBF</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXCSYMB</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXCSYMB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXCSYMB3D</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXCSYMB3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDAT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDAT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDATALINKD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDATALINKD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDATAMINE</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDATAMINE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDB</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDBREAD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDBREAD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDBWRITE</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDBWRITE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDSEL</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDSEL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXE3DV</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXE3DV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEVOOBJMETA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEVOOBJMETA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEXT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEXT</span>
 
 
-<span class="kn">from</span> <span class="nn">.GXGEOSTRING</span> <span class="kn">import</span> <span class="n">GXGEOSTRING</span>
-<span class="kn">from</span> <span class="nn">.GXGIS</span> <span class="kn">import</span> <span class="n">GXGIS</span>
-<span class="kn">from</span> <span class="nn">.GXGRID3D</span> <span class="kn">import</span> <span class="n">GXGRID3D</span>
-<span class="kn">from</span> <span class="nn">.GXHGD</span> <span class="kn">import</span> <span class="n">GXHGD</span>
-<span class="kn">from</span> <span class="nn">.GXHXYZ</span> <span class="kn">import</span> <span class="n">GXHXYZ</span>
-<span class="kn">from</span> <span class="nn">.GXIGRF</span> <span class="kn">import</span> <span class="n">GXIGRF</span>
-<span class="kn">from</span> <span class="nn">.GXIMG</span> <span class="kn">import</span> <span class="n">GXIMG</span>
-<span class="kn">from</span> <span class="nn">.GXIMU</span> <span class="kn">import</span> <span class="n">GXIMU</span>
-<span class="kn">from</span> <span class="nn">.GXIPJ</span> <span class="kn">import</span> <span class="n">GXIPJ</span>
-<span class="kn">from</span> <span class="nn">.GXITR</span> <span class="kn">import</span> <span class="n">GXITR</span>
-<span class="kn">from</span> <span class="nn">.GXKML</span> <span class="kn">import</span> <span class="n">GXKML</span>
-<span class="kn">from</span> <span class="nn">.GXLAYOUT</span> <span class="kn">import</span> <span class="n">GXLAYOUT</span>
-<span class="kn">from</span> <span class="nn">.GXLL2</span> <span class="kn">import</span> <span class="n">GXLL2</span>
-<span class="kn">from</span> <span class="nn">.GXLPT</span> <span class="kn">import</span> <span class="n">GXLPT</span>
-<span class="kn">from</span> <span class="nn">.GXLST</span> <span class="kn">import</span> <span class="n">GXLST</span>
-<span class="kn">from</span> <span class="nn">.GXLTB</span> <span class="kn">import</span> <span class="n">GXLTB</span>
-<span class="kn">from</span> <span class="nn">.GXMAP</span> <span class="kn">import</span> <span class="n">GXMAP</span>
-<span class="kn">from</span> <span class="nn">.GXMAPL</span> <span class="kn">import</span> <span class="n">GXMAPL</span>
-<span class="kn">from</span> <span class="nn">.GXMAPTEMPLATE</span> <span class="kn">import</span> <span class="n">GXMAPTEMPLATE</span>
-<span class="kn">from</span> <span class="nn">.GXMATH</span> <span class="kn">import</span> <span class="n">GXMATH</span>
-<span class="kn">from</span> <span class="nn">.GXMESH</span> <span class="kn">import</span> <span class="n">GXMESH</span>
-<span class="kn">from</span> <span class="nn">.GXMESHUTIL</span> <span class="kn">import</span> <span class="n">GXMESHUTIL</span>
-<span class="kn">from</span> <span class="nn">.GXMETA</span> <span class="kn">import</span> <span class="n">GXMETA</span>
-<span class="kn">from</span> <span class="nn">.GXMPLY</span> <span class="kn">import</span> <span class="n">GXMPLY</span>
-<span class="kn">from</span> <span class="nn">.GXMULTIGRID3D</span> <span class="kn">import</span> <span class="n">GXMULTIGRID3D</span>
-<span class="kn">from</span> <span class="nn">.GXMULTIGRID3DUTIL</span> <span class="kn">import</span> <span class="n">GXMULTIGRID3DUTIL</span>
-<span class="kn">from</span> <span class="nn">.GXMVIEW</span> <span class="kn">import</span> <span class="n">GXMVIEW</span>
-<span class="kn">from</span> <span class="nn">.GXMVU</span> <span class="kn">import</span> <span class="n">GXMVU</span>
-<span class="kn">from</span> <span class="nn">.GXMXD</span> <span class="kn">import</span> <span class="n">GXMXD</span>
-<span class="kn">from</span> <span class="nn">.GXPAT</span> <span class="kn">import</span> <span class="n">GXPAT</span>
-<span class="kn">from</span> <span class="nn">.GXPG</span> <span class="kn">import</span> <span class="n">GXPG</span>
-<span class="kn">from</span> <span class="nn">.GXPJ</span> <span class="kn">import</span> <span class="n">GXPJ</span>
-<span class="kn">from</span> <span class="nn">.GXPLY</span> <span class="kn">import</span> <span class="n">GXPLY</span>
-<span class="kn">from</span> <span class="nn">.GXRA</span> <span class="kn">import</span> <span class="n">GXRA</span>
-<span class="kn">from</span> <span class="nn">.GXREG</span> <span class="kn">import</span> <span class="n">GXREG</span>
-<span class="kn">from</span> <span class="nn">.GXSBF</span> <span class="kn">import</span> <span class="n">GXSBF</span>
-<span class="kn">from</span> <span class="nn">.GXSEGYREADER</span> <span class="kn">import</span> <span class="n">GXSEGYREADER</span>
-<span class="kn">from</span> <span class="nn">.GXST</span> <span class="kn">import</span> <span class="n">GXST</span>
-<span class="kn">from</span> <span class="nn">.GXST2</span> <span class="kn">import</span> <span class="n">GXST2</span>
-<span class="kn">from</span> <span class="nn">.GXSTORAGEPROJECT</span> <span class="kn">import</span> <span class="n">GXSTORAGEPROJECT</span>
-<span class="kn">from</span> <span class="nn">.GXSTR</span> <span class="kn">import</span> <span class="n">GXSTR</span>
-<span class="kn">from</span> <span class="nn">.GXSURFACE</span> <span class="kn">import</span> <span class="n">GXSURFACE</span>
-<span class="kn">from</span> <span class="nn">.GXSURFACEITEM</span> <span class="kn">import</span> <span class="n">GXSURFACEITEM</span>
-<span class="kn">from</span> <span class="nn">.GXSYS</span> <span class="kn">import</span> <span class="n">GXSYS</span>
-<span class="kn">from</span> <span class="nn">.GXTB</span> <span class="kn">import</span> <span class="n">GXTB</span>
-<span class="kn">from</span> <span class="nn">.GXTPAT</span> <span class="kn">import</span> <span class="n">GXTPAT</span>
-<span class="kn">from</span> <span class="nn">.GXTR</span> <span class="kn">import</span> <span class="n">GXTR</span>
-<span class="kn">from</span> <span class="nn">.GXUSERMETA</span> <span class="kn">import</span> <span class="n">GXUSERMETA</span>
-<span class="kn">from</span> <span class="nn">.GXVA</span> <span class="kn">import</span> <span class="n">GXVA</span>
-<span class="kn">from</span> <span class="nn">.GXVECTOR3D</span> <span class="kn">import</span> <span class="n">GXVECTOR3D</span>
-<span class="kn">from</span> <span class="nn">.GXVM</span> <span class="kn">import</span> <span class="n">GXVM</span>
-<span class="kn">from</span> <span class="nn">.GXVOX</span> <span class="kn">import</span> <span class="n">GXVOX</span>
-<span class="kn">from</span> <span class="nn">.GXVOXD</span> <span class="kn">import</span> <span class="n">GXVOXD</span>
-<span class="kn">from</span> <span class="nn">.GXVOXE</span> <span class="kn">import</span> <span class="n">GXVOXE</span>
-<span class="kn">from</span> <span class="nn">.GXVULCAN</span> <span class="kn">import</span> <span class="n">GXVULCAN</span>
-<span class="kn">from</span> <span class="nn">.GXVV</span> <span class="kn">import</span> <span class="n">GXVV</span>
-<span class="kn">from</span> <span class="nn">.GXWA</span> <span class="kn">import</span> <span class="n">GXWA</span>
-<span class="kn">from</span> <span class="nn">.GXACQUIRE</span> <span class="kn">import</span> <span class="n">GXACQUIRE</span>
-<span class="kn">from</span> <span class="nn">.GXARCDB</span> <span class="kn">import</span> <span class="n">GXARCDB</span>
-<span class="kn">from</span> <span class="nn">.GXARCDH</span> <span class="kn">import</span> <span class="n">GXARCDH</span>
-<span class="kn">from</span> <span class="nn">.GXARCMAP</span> <span class="kn">import</span> <span class="n">GXARCMAP</span>
-<span class="kn">from</span> <span class="nn">.GXARCPY</span> <span class="kn">import</span> <span class="n">GXARCPY</span>
-<span class="kn">from</span> <span class="nn">.GXARCSYS</span> <span class="kn">import</span> <span class="n">GXARCSYS</span>
-<span class="kn">from</span> <span class="nn">.GXBIGRID</span> <span class="kn">import</span> <span class="n">GXBIGRID</span>
-<span class="kn">from</span> <span class="nn">.GXCHIMERA</span> <span class="kn">import</span> <span class="n">GXCHIMERA</span>
-<span class="kn">from</span> <span class="nn">.GXCOM</span> <span class="kn">import</span> <span class="n">GXCOM</span>
-<span class="kn">from</span> <span class="nn">.GXDCOL</span> <span class="kn">import</span> <span class="n">GXDCOL</span>
-<span class="kn">from</span> <span class="nn">.GXDGW</span> <span class="kn">import</span> <span class="n">GXDGW</span>
-<span class="kn">from</span> <span class="nn">.GXDH</span> <span class="kn">import</span> <span class="n">GXDH</span>
-<span class="kn">from</span> <span class="nn">.GXDMPPLY</span> <span class="kn">import</span> <span class="n">GXDMPPLY</span>
-<span class="kn">from</span> <span class="nn">.GXDOCU</span> <span class="kn">import</span> <span class="n">GXDOCU</span>
-<span class="kn">from</span> <span class="nn">.GXDU</span> <span class="kn">import</span> <span class="n">GXDU</span>
-<span class="kn">from</span> <span class="nn">.GXDXFI</span> <span class="kn">import</span> <span class="n">GXDXFI</span>
-<span class="kn">from</span> <span class="nn">.GXEDB</span> <span class="kn">import</span> <span class="n">GXEDB</span>
-<span class="kn">from</span> <span class="nn">.GXEDOC</span> <span class="kn">import</span> <span class="n">GXEDOC</span>
-<span class="kn">from</span> <span class="nn">.GXEMAP</span> <span class="kn">import</span> <span class="n">GXEMAP</span>
-<span class="kn">from</span> <span class="nn">.GXEMAPTEMPLATE</span> <span class="kn">import</span> <span class="n">GXEMAPTEMPLATE</span>
-<span class="kn">from</span> <span class="nn">.GXEUL3</span> <span class="kn">import</span> <span class="n">GXEUL3</span>
-<span class="kn">from</span> <span class="nn">.GXEXP</span> <span class="kn">import</span> <span class="n">GXEXP</span>
-<span class="kn">from</span> <span class="nn">.GXFFT</span> <span class="kn">import</span> <span class="n">GXFFT</span>
-<span class="kn">from</span> <span class="nn">.GXFFT2</span> <span class="kn">import</span> <span class="n">GXFFT2</span>
-<span class="kn">from</span> <span class="nn">.GXFLT</span> <span class="kn">import</span> <span class="n">GXFLT</span>
-<span class="kn">from</span> <span class="nn">.GXGD</span> <span class="kn">import</span> <span class="n">GXGD</span>
-<span class="kn">from</span> <span class="nn">.GXGER</span> <span class="kn">import</span> <span class="n">GXGER</span>
-<span class="kn">from</span> <span class="nn">.GXGMSYS</span> <span class="kn">import</span> <span class="n">GXGMSYS</span>
-<span class="kn">from</span> <span class="nn">.GXGU</span> <span class="kn">import</span> <span class="n">GXGU</span>
-<span class="kn">from</span> <span class="nn">.GXGUI</span> <span class="kn">import</span> <span class="n">GXGUI</span>
-<span class="kn">from</span> <span class="nn">.GXHTTP</span> <span class="kn">import</span> <span class="n">GXHTTP</span>
-<span class="kn">from</span> <span class="nn">.GXIEXP</span> <span class="kn">import</span> <span class="n">GXIEXP</span>
-<span class="kn">from</span> <span class="nn">.GXINTERNET</span> <span class="kn">import</span> <span class="n">GXINTERNET</span>
-<span class="kn">from</span> <span class="nn">.GXIP</span> <span class="kn">import</span> <span class="n">GXIP</span>
-<span class="kn">from</span> <span class="nn">.GXIPGUI</span> <span class="kn">import</span> <span class="n">GXIPGUI</span>
-<span class="kn">from</span> <span class="nn">.GXKGRD</span> <span class="kn">import</span> <span class="n">GXKGRD</span>
-<span class="kn">from</span> <span class="nn">.GXLMSG</span> <span class="kn">import</span> <span class="n">GXLMSG</span>
-<span class="kn">from</span> <span class="nn">.GXMISC</span> <span class="kn">import</span> <span class="n">GXMISC</span>
-<span class="kn">from</span> <span class="nn">.GXMSTK</span> <span class="kn">import</span> <span class="n">GXMSTK</span>
-<span class="kn">from</span> <span class="nn">.GXMVG</span> <span class="kn">import</span> <span class="n">GXMVG</span>
-<span class="kn">from</span> <span class="nn">.GXNASVD</span> <span class="kn">import</span> <span class="n">GXNASVD</span>
-<span class="kn">from</span> <span class="nn">.GXPDF3D</span> <span class="kn">import</span> <span class="n">GXPDF3D</span>
-<span class="kn">from</span> <span class="nn">.GXPGEXP</span> <span class="kn">import</span> <span class="n">GXPGEXP</span>
-<span class="kn">from</span> <span class="nn">.GXPGU</span> <span class="kn">import</span> <span class="n">GXPGU</span>
-<span class="kn">from</span> <span class="nn">.GXPRAGA3</span> <span class="kn">import</span> <span class="n">GXPRAGA3</span>
-<span class="kn">from</span> <span class="nn">.GXPROJ</span> <span class="kn">import</span> <span class="n">GXPROJ</span>
-<span class="kn">from</span> <span class="nn">.GXRGRD</span> <span class="kn">import</span> <span class="n">GXRGRD</span>
-<span class="kn">from</span> <span class="nn">.GXRPS</span> <span class="kn">import</span> <span class="n">GXRPS</span>
-<span class="kn">from</span> <span class="nn">.GXSEMPLOT</span> <span class="kn">import</span> <span class="n">GXSEMPLOT</span>
-<span class="kn">from</span> <span class="nn">.GXSHD</span> <span class="kn">import</span> <span class="n">GXSHD</span>
-<span class="kn">from</span> <span class="nn">.GXSHP</span> <span class="kn">import</span> <span class="n">GXSHP</span>
-<span class="kn">from</span> <span class="nn">.GXSQLSRV</span> <span class="kn">import</span> <span class="n">GXSQLSRV</span>
-<span class="kn">from</span> <span class="nn">.GXSTK</span> <span class="kn">import</span> <span class="n">GXSTK</span>
-<span class="kn">from</span> <span class="nn">.GXSTRINGS</span> <span class="kn">import</span> <span class="n">GXSTRINGS</span>
-<span class="kn">from</span> <span class="nn">.GXTC</span> <span class="kn">import</span> <span class="n">GXTC</span>
-<span class="kn">from</span> <span class="nn">.GXTEST</span> <span class="kn">import</span> <span class="n">GXTEST</span>
-<span class="kn">from</span> <span class="nn">.GXTIN</span> <span class="kn">import</span> <span class="n">GXTIN</span>
-<span class="kn">from</span> <span class="nn">.GXTRANSFORMLAYER</span> <span class="kn">import</span> <span class="n">GXTRANSFORMLAYER</span>
-<span class="kn">from</span> <span class="nn">.GXTRND</span> <span class="kn">import</span> <span class="n">GXTRND</span>
-<span class="kn">from</span> <span class="nn">.GXUNC</span> <span class="kn">import</span> <span class="n">GXUNC</span>
-<span class="kn">from</span> <span class="nn">.GXVAU</span> <span class="kn">import</span> <span class="n">GXVAU</span>
-<span class="kn">from</span> <span class="nn">.GXVVEXP</span> <span class="kn">import</span> <span class="n">GXVVEXP</span>
-<span class="kn">from</span> <span class="nn">.GXVVU</span> <span class="kn">import</span> <span class="n">GXVVU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGEOSTRING</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGEOSTRING</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGIS</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGIS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGRID3D</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGRID3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXHGD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXHGD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXHXYZ</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXHXYZ</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXIGRF</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXIGRF</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXIMG</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXIMG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXIMU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXIMU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXIPJ</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXIPJ</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXITR</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXITR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXKML</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXKML</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXLAYOUT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXLAYOUT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXLL2</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXLL2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXLPT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXLPT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXLST</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXLST</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXLTB</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXLTB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMAP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMAP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMAPL</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMAPL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMAPTEMPLATE</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMAPTEMPLATE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMATH</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMATH</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMESH</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMESH</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMESHUTIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMESHUTIL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMETA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMETA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMPLY</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMPLY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMULTIGRID3D</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMULTIGRID3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMULTIGRID3DUTIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMULTIGRID3DUTIL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMVIEW</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMVIEW</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMVU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMVU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMXD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMXD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPAT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPAT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPG</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPJ</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPJ</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPLY</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPLY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXRA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXRA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXREG</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXREG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSBF</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSBF</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSEGYREADER</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSEGYREADER</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXST</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXST</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXST2</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXST2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSTORAGEPROJECT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSTORAGEPROJECT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSTR</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSTR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSURFACE</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSURFACE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSURFACEITEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSURFACEITEM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSYS</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSYS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTB</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTPAT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTPAT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTR</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXUSERMETA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXUSERMETA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVECTOR3D</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVECTOR3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVM</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVOX</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVOX</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVOXD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVOXD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVOXE</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVOXE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVULCAN</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVULCAN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVV</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXWA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXWA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXACQUIRE</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXACQUIRE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXARCDB</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXARCDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXARCDH</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXARCDH</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXARCMAP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXARCMAP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXARCPY</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXARCPY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXARCSYS</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXARCSYS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXBIGRID</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXBIGRID</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXCHIMERA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXCHIMERA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXCOM</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXCOM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDCOL</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDCOL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDGW</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDGW</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDH</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDH</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDMPPLY</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDMPPLY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDOCU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDOCU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXDXFI</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXDXFI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEDB</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEDOC</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEDOC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEMAP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEMAP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEMAPTEMPLATE</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEMAPTEMPLATE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEUL3</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEUL3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXEXP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXEXP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXFFT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXFFT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXFFT2</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXFFT2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXFLT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXFLT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGER</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGER</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGMSYS</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGMSYS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXGUI</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXGUI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXHTTP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXHTTP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXIEXP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXIEXP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXINTERNET</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXINTERNET</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXIP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXIP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXIPGUI</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXIPGUI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXKGRD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXKGRD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXLMSG</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXLMSG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMISC</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMISC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMSTK</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMSTK</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXMVG</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXMVG</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXNASVD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXNASVD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPDF3D</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPDF3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPGEXP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPGEXP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPGU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPGU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPRAGA3</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPRAGA3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXPROJ</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXPROJ</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXRGRD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXRGRD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXRPS</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXRPS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSEMPLOT</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSEMPLOT</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSHD</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSHD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSHP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSHP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSQLSRV</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSQLSRV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSTK</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSTK</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXSTRINGS</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXSTRINGS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTC</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTEST</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTEST</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTIN</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTIN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTRANSFORMLAYER</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTRANSFORMLAYER</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXTRND</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXTRND</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXUNC</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXUNC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVAU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVAU</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVVEXP</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVVEXP</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVVU</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVVU</span>
 <span class="c1">### endblock ClassImports</span>
 
 
@@ -7906,21 +7916,21 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

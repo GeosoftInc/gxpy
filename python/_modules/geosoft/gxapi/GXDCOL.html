@@ -5,12 +5,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDCOL &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <title>geosoft.gxapi.GXDCOL &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/documentation_options.js?v=b916904f"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -21,19 +21,19 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDCOL</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h3>Related Topics</h3>
 <ul>
@@ -41,7 +41,7 @@
     <li><a href="../../index.html">Module code</a></li>
     <li><a href="../gxapi.html">geosoft.gxapi</a></li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
@@ -49,7 +49,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
@@ -65,11 +65,11 @@
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
-<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
-<span class="kn">from</span> <span class="nn">.GXST</span> <span class="kn">import</span> <span class="n">GXST</span>
-<span class="kn">from</span> <span class="nn">.GXVV</span> <span class="kn">import</span> <span class="n">GXVV</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geosoft.gxapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXST</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXST</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVV</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVV</span>
 
 
 <span class="c1">### endblock ClassImports</span>
@@ -83,7 +83,7 @@
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
 <div class="viewcode-block" id="GXDCOL">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL">[docs]</a>
-<span class="k">class</span> <span class="nc">GXDCOL</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDCOL</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GXDCOL</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDCOL</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXDCOL class.</span>
 
@@ -92,14 +92,14 @@
 
 <div class="viewcode-block" id="GXDCOL.__init__">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXDCOL</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="GXDCOL.null">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.null">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXDCOL &lt;geosoft.gxapi.GXDCOL&gt;`</span>
 <span class="sd">        </span>
@@ -111,7 +111,7 @@
 
 <div class="viewcode-block" id="GXDCOL.is_null">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.is_null">[docs]</a>
-    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
@@ -129,7 +129,7 @@
 
 <div class="viewcode-block" id="GXDCOL.number_of_layers">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.number_of_layers">[docs]</a>
-    <span class="k">def</span> <span class="nf">number_of_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">number_of_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the number of layers.</span>
@@ -138,7 +138,7 @@
 <span class="sd">        :returns:     The number of layers (often just one).</span>
 <span class="sd">        :rtype:       int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -154,7 +154,7 @@
 
 <div class="viewcode-block" id="GXDCOL.get_type">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_type">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get a layer&#39;s type</span>
@@ -163,7 +163,7 @@
 <span class="sd">        :returns:     :ref:`DCOL_TYPE`</span>
 <span class="sd">        :rtype:       int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -179,7 +179,7 @@
 
 <div class="viewcode-block" id="GXDCOL.get_layer_info">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_layer_info">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_layer_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_layer_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get a layer&#39;s information</span>
@@ -191,7 +191,7 @@
 <span class="sd">        :type  itr:         GXITR</span>
 <span class="sd">        :type  layer_name:  str_ref</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -207,7 +207,7 @@
 
 <div class="viewcode-block" id="GXDCOL.get_layer_itr">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_layer_itr">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get a layer&#39;s ITR</span>
@@ -217,7 +217,7 @@
 <span class="sd">        :type  index:  int</span>
 <span class="sd">        :type  itr:    GXITR</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -233,7 +233,7 @@
 
 <div class="viewcode-block" id="GXDCOL.set_layer_itr">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.set_layer_itr">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">redrawMap</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">redrawMap</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Set a layer&#39;s ITR</span>
@@ -245,7 +245,7 @@
 <span class="sd">        :type  itr:        GXITR</span>
 <span class="sd">        :type  redrawMap:  int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -261,7 +261,7 @@
 
 <div class="viewcode-block" id="GXDCOL.set_itr_transform_from_layer">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.set_itr_transform_from_layer">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_itr_transform_from_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">transformType</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_itr_transform_from_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">transformType</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Set the input ITR transform to the provided type, based on the statistics of the chosen layer.</span>
@@ -277,7 +277,7 @@
 <span class="sd">                               1 - Cancel</span>
 <span class="sd">        :rtype:                int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -298,7 +298,7 @@
 
 <div class="viewcode-block" id="GXDCOL.update_zone_transform_type">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.update_zone_transform_type">[docs]</a>
-    <span class="k">def</span> <span class="nf">update_zone_transform_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">transformType</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_zone_transform_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">transformType</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Recalculate the layer&#39;s ITR to the provided type, based on the statistics of the chosen layer.</span>
@@ -312,7 +312,7 @@
 <span class="sd">                               1 - Cancel</span>
 <span class="sd">        :rtype:                int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -331,7 +331,7 @@
 
 <div class="viewcode-block" id="GXDCOL.update_zone_transform_parameters">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.update_zone_transform_parameters">[docs]</a>
-    <span class="k">def</span> <span class="nf">update_zone_transform_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_zone_transform_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Recalculate the layer&#39;s ITR, based on the current type of the `GXDCOL &lt;geosoft.gxapi.GXDCOL&gt;`. Launches anappropriate zone transform type parameter GUI based on the current selection.</span>
@@ -343,7 +343,7 @@
 <span class="sd">                       1 - Cancel</span>
 <span class="sd">        :rtype:        int</span>
 
-<span class="sd">        .. versionadded:: 2022.1</span>
+<span class="sd">        .. versionadded:: 2022.1.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -362,7 +362,7 @@
 
 <div class="viewcode-block" id="GXDCOL.get_layer_statistics">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_layer_statistics">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_layer_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_layer_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get a `GXST &lt;geosoft.gxapi.GXST&gt;` filled with layer statistics</span>
@@ -373,7 +373,7 @@
 <span class="sd">        :returns:      `GXST &lt;geosoft.gxapi.GXST&gt;` object</span>
 <span class="sd">        :rtype:        GXST</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -389,7 +389,7 @@
 
 <div class="viewcode-block" id="GXDCOL.get_layer_histogram">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_layer_histogram">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_layer_histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="nb">min</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_layer_histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">incr</span><span class="p">,</span> <span class="nb">min</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get a `GXVV &lt;geosoft.gxapi.GXVV&gt;` filled with histogram bin counts for each zone of the ITR</span>
@@ -404,7 +404,7 @@
 <span class="sd">        :returns:      `GXVV &lt;geosoft.gxapi.GXVV&gt;` object</span>
 <span class="sd">        :rtype:        GXVV</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -420,7 +420,7 @@
 
 <div class="viewcode-block" id="GXDCOL.save_layer_itr">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.save_layer_itr">[docs]</a>
-    <span class="k">def</span> <span class="nf">save_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_layer_itr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Save the layer&#39;s ITR to a file. A dialog prompts for the file name.</span>
@@ -428,7 +428,7 @@
 <span class="sd">        :param index:  Index of layer</span>
 <span class="sd">        :type  index:  int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -444,7 +444,7 @@
 
 <div class="viewcode-block" id="GXDCOL.get_brightness_type">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_brightness_type">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_brightness_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_brightness_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Is brightness set separately by layer and by object or just by object?</span>
@@ -454,7 +454,7 @@
 <span class="sd">                      BRIGHTNESS_ALL_AND_LAYERS - Set brightness either for the object as a whole or by layer</span>
 <span class="sd">        :rtype:       int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -473,7 +473,7 @@
 
 <div class="viewcode-block" id="GXDCOL.set_brightness">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.set_brightness">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brightness</span><span class="p">,</span> <span class="n">layerSelection</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brightness</span><span class="p">,</span> <span class="n">layerSelection</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Set the brightness of a single layer, or all the layers</span>
@@ -485,7 +485,7 @@
 <span class="sd">        :type  layerSelection:  int</span>
 <span class="sd">        :type  layer:           int</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -501,7 +501,7 @@
 
 <div class="viewcode-block" id="GXDCOL.get_brightness">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_brightness">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layerSelection</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_brightness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layerSelection</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the brightness of a single layer, or all the layers</span>
@@ -512,7 +512,7 @@
 <span class="sd">        :type  layer:           int</span>
 <span class="sd">        :rtype:                 float</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -528,7 +528,7 @@
 
 <div class="viewcode-block" id="GXDCOL.set_transparency">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.set_transparency">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_transparency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transparency</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_transparency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transparency</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Set the transparency. This is set for the entire map group.</span>
@@ -536,7 +536,7 @@
 <span class="sd">        :param transparency:  Transparency value (1.0 - Opaque, 0.0 - Transparent)</span>
 <span class="sd">        :type  transparency:  float</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -552,14 +552,14 @@
 
 <div class="viewcode-block" id="GXDCOL.get_transparency">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.get_transparency">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_transparency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_transparency</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the transparency. This is returned for the entire map group.</span>
 <span class="sd">        </span>
 <span class="sd">        :rtype:       float</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -575,13 +575,13 @@
 
 <div class="viewcode-block" id="GXDCOL.reset">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.reset">[docs]</a>
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Reset the AGG back to its initial state. Same as cancelling out of the colour tool and restarting; all layers are reset.</span>
 <span class="sd">        </span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -597,7 +597,7 @@
 
 <div class="viewcode-block" id="GXDCOL.end">
 <a class="viewcode-back" href="../../../GXDCOL.html#geosoft.gxapi.GXDCOL.end">[docs]</a>
-    <span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apply_changes</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apply_changes</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        TODO</span>
@@ -605,7 +605,7 @@
 <span class="sd">        :param apply_changes:  Apply changes to map.</span>
 <span class="sd">        :type  apply_changes:  bool</span>
 
-<span class="sd">        .. versionadded:: 2021.2</span>
+<span class="sd">        .. versionadded:: 2021.2.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -639,13 +639,13 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDCOL</a></li> 
@@ -653,8 +653,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

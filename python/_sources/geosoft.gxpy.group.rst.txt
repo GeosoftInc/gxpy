@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.group
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -29,10 +24,6 @@
       vertex_normals_np
       vertex_normals_vv
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
@@ -48,17 +39,9 @@
       Text_def
       VoxDisplayGroup
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       GroupException
    
-   
-
-
-

@@ -380,6 +380,10 @@ negative maximum string length (including NULL).
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.FORMAT_GEOGRAPHIC_3
+.. autodata:: geosoft.gxapi.FORMAT_HEXADECIMAL
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FORMAT_HEXADECIMAL
 
 
 .. _GS_TYPES:

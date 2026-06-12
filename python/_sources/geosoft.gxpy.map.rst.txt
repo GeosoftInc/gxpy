@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.map
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -19,10 +14,6 @@
       map_file_name
       save_as_image
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
@@ -30,17 +21,9 @@
       Map
       _Mapplot
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       MapException
    
-   
-
-
-

@@ -1,0 +1,24 @@
+﻿geosoft.gxpy.grid\_fft
+======================
+
+.. automodule:: geosoft.gxpy.grid_fft
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      GridFFT
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GridFFTException
+   

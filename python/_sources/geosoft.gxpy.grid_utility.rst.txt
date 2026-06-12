@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.grid_utility
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -26,21 +21,9 @@
       sample
       tilt_depth
    
-   
-
-   
-   
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       GridUtilityException
    
-   
-
-
-

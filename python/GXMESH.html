@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXMESH class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXMESH class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMESH class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -63,23 +63,37 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#attribute-data-type-constants">ATTRIBUTE_DATA_TYPE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_DOUBLE"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_DOUBLE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_DOUBLE"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_DOUBLE</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.ATTRIBUTE_DOUBLE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_THEMATIC"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_THEMATIC</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_THEMATIC"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_THEMATIC</span></code></a><ul>
 <li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">gxapi.ATTRIBUTE_THEMATIC</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_VECTOR"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_VECTOR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_VECTOR"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_VECTOR</span></code></a><ul>
 <li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">gxapi.ATTRIBUTE_VECTOR</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#attribute-type-constants">ATTRIBUTE_TYPE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_SINGLE"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_SINGLE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_SINGLE"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_SINGLE</span></code></a><ul>
 <li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">gxapi.ATTRIBUTE_SINGLE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_SURFACE_SIDES"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_SURFACE_SIDES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_SURFACE_SIDES"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_SURFACE_SIDES</span></code></a><ul>
 <li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">gxapi.ATTRIBUTE_SURFACE_SIDES</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_VERTICES"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_VERTICES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_VERTICES"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_VERTICES</span></code></a><ul>
 <li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">gxapi.ATTRIBUTE_VERTICES</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_FACES"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_FACES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ATTRIBUTE_FACES"><code class="docutils literal notranslate"><span class="pre">ATTRIBUTE_FACES</span></code></a><ul>
 <li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">gxapi.ATTRIBUTE_FACES</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -87,7 +101,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -95,7 +109,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -116,7 +130,7 @@
 <span id="gxmesh"></span><h1>GXMESH class<a class="headerlink" href="#gxmesh-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMESH">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXMESH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXMESH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH" title="Link to this definition">¶</a></dt>
 <dd><p>GXMESH class.</p>
 <p>High Performance Surface API.</p>
 <dl class="py method">
@@ -146,7 +160,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -173,14 +187,14 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMESH.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a new Mesh</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -194,7 +208,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -212,7 +226,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -234,7 +248,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -255,7 +269,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -283,7 +297,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -304,14 +318,14 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMESH.import_grid_to_mesh">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_grid_to_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geosurface_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.import_grid_to_mesh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.import_grid_to_mesh" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">import_grid_to_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geosurface_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.import_grid_to_mesh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.import_grid_to_mesh" title="Link to this definition">¶</a></dt>
 <dd><p>Imports a Grid to a Surface. Creates a new Geosurface file for the surface</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -329,7 +343,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -349,7 +363,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -370,7 +384,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -391,7 +405,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMESH.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMESH" title="geosoft.gxapi.GXMESH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMESH</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -422,7 +436,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -443,7 +457,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -467,14 +481,14 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMESH.open">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lstMeshNames</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.open" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lstMeshNames</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.open" title="Link to this definition">¶</a></dt>
 <dd><p>Opens an existing Mesh</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -491,7 +505,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -515,7 +529,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -525,7 +539,7 @@
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMESH.html#GXMESH.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMESH.save" title="Link to this definition">¶</a></dt>
 <dd><p>Saves Mesh to the Project Cache and Geosurface file</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -547,7 +561,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -563,7 +577,7 @@
 <dd><p>DOUBLE</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_DOUBLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_DOUBLE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -574,7 +588,7 @@
 <dd><p>THEMATIC</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id18">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_THEMATIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_THEMATIC</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -585,7 +599,7 @@
 <dd><p>VECTOR</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id19">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_VECTOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_VECTOR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -600,7 +614,7 @@
 <dd><p>Single Value Attribute</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id20">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_SINGLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_SINGLE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -611,7 +625,7 @@
 <dd><p>Surface Sides Attribute</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id21">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_SURFACE_SIDES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_SURFACE_SIDES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -622,7 +636,7 @@
 <dd><p>Vertices Attribute</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id22">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_VERTICES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_VERTICES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -633,7 +647,7 @@
 <dd><p>Faces Attribute</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id23">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_FACES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ATTRIBUTE_FACES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -648,20 +662,20 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMESH class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

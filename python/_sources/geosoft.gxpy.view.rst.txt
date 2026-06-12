@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.view
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -17,10 +12,6 @@
       _plane_err
       _t
       delete_files
-   
-   
-
-   
    
    .. rubric:: Classes
 
@@ -31,17 +22,9 @@
       View
       View_3d
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       ViewException
    
-   
-
-
-

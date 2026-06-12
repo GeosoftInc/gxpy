@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXNASVD class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXNASVD class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXNASVD class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -42,6 +42,7 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXNASVD.__init__"><code class="docutils literal notranslate"><span class="pre">GXNASVD.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXNASVD.create"><code class="docutils literal notranslate"><span class="pre">GXNASVD.create()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXNASVD.deserialize"><code class="docutils literal notranslate"><span class="pre">GXNASVD.deserialize()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXNASVD.deserialize_scores"><code class="docutils literal notranslate"><span class="pre">GXNASVD.deserialize_scores()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXNASVD.get_cumulative_eigenvector_contribution"><code class="docutils literal notranslate"><span class="pre">GXNASVD.get_cumulative_eigenvector_contribution()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXNASVD.get_eigen_vector"><code class="docutils literal notranslate"><span class="pre">GXNASVD.get_eigen_vector()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXNASVD.get_maximum_element_count"><code class="docutils literal notranslate"><span class="pre">GXNASVD.get_maximum_element_count()</span></code></a></li>
@@ -60,7 +61,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -68,7 +69,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -89,7 +90,7 @@
 <span id="gxnasvd"></span><h1>GXNASVD class<a class="headerlink" href="#gxnasvd-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXNASVD">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXNASVD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXNASVD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD" title="Link to this definition">¶</a></dt>
 <dd><p>GXNASVD class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXNASVD" title="geosoft.gxapi.GXNASVD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXNASVD</span></code></a> class provides functionality for Noise-Adjusted Singular Value Decomposition
 (NASVD) analysis of spectral data. This class wraps the GamMontaj library functions
@@ -103,7 +104,7 @@ so the database must remain valid for the lifetime of the NASVD object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXNASVD.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create an NASVD object and perform SVD analysis</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -124,7 +125,7 @@ so the database must remain valid for the lifetime of the NASVD object.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Creates an NASVD object and performs the initial Hovgaard-normalized SVD analysis
@@ -144,7 +145,7 @@ A dummy value in the mask channel indicates points not included. Valid data poin
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXNASVD.deserialize">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_directory</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.deserialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.deserialize" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_directory</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.deserialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.deserialize" title="Link to this definition">¶</a></dt>
 <dd><p>Create an NASVD object and perform SVD analysis</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -158,7 +159,33 @@ A dummy value in the mask channel indicates points not included. Valid data poin
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
+<p><strong>Note:</strong></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXNASVD.deserialize_scores">
+<span class="sig-name descname"><span class="pre">deserialize_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.deserialize_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.deserialize_scores" title="Link to this definition">¶</a></dt>
+<dd><p>Deserialize the scores matrix from file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
+<li><p><strong>directory_name</strong> (<em>str</em>) – The directory containing the serialized scores file. The directory must exist.</p></li>
+<li><p><strong>scores_channel</strong> (<em>str</em>) – scores_output channel name for reconstructed spectral data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Scores Object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong></p>
@@ -174,7 +201,7 @@ A dummy value in the mask channel indicates points not included. Valid data poin
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Calculates cumulative eigenvector contribution percentages  for each component 
@@ -195,7 +222,7 @@ are needed to achieve a desired level of accuracy in the reconstruction.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Retrieves the eigenvector data for the specified component index.
@@ -204,7 +231,7 @@ The eigenvector represents the spectral pattern for that component.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXNASVD.get_maximum_element_count">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_maximum_element_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.get_maximum_element_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.get_maximum_element_count" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_maximum_element_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.get_maximum_element_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.get_maximum_element_count" title="Link to this definition">¶</a></dt>
 <dd><p>Get the maximum number of elements that can be processed by NASVD</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -212,7 +239,7 @@ The eigenvector represents the spectral pattern for that component.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Returns the maximum number of elements that can be processed
@@ -233,7 +260,7 @@ value is stored as an advanced setting in Oasis montaj.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -252,7 +279,7 @@ value is stored as an advanced setting in Oasis montaj.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Retrieves the partition details for the specified NASVD object.
@@ -272,7 +299,7 @@ This includes the number of pass-through channels (head and tail) and the total 
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Retrieves the score data for the specified component index.
@@ -295,7 +322,7 @@ Scores represent the strength of each component at each spatial location.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -316,7 +343,7 @@ Scores represent the strength of each component at each spatial location.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXNASVD.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXNASVD" title="geosoft.gxapi.GXNASVD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXNASVD</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -330,7 +357,7 @@ Scores represent the strength of each component at each spatial location.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXNASVD.reconstruct_spectrum">
-<span class="sig-name descname"><span class="pre">reconstruct_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components_to_use</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.reconstruct_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.reconstruct_spectrum" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reconstruct_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components_to_use</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores_channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXNASVD.html#GXNASVD.reconstruct_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXNASVD.reconstruct_spectrum" title="Link to this definition">¶</a></dt>
 <dd><p>Reconstruct spectral data using selected components</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -338,11 +365,12 @@ Scores represent the strength of each component at each spatial location.</p>
 <li><p><strong>db</strong> (<a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><em>GXDB</em></a>) – <a class="reference internal" href="GXDB.html#geosoft.gxapi.GXDB" title="geosoft.gxapi.GXDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDB</span></code></a> Object</p></li>
 <li><p><strong>num_components_to_use</strong> (<em>int</em>) – Number of leading components to use for reconstruction</p></li>
 <li><p><strong>output_channel</strong> (<em>str</em>) – Output channel name for reconstructed spectral data</p></li>
+<li><p><strong>scores_channel</strong> (<em>str</em>) – scores_output channel name for reconstructed spectral data</p></li>
 </ul>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2026.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Performs spectral reconstruction using only the first N eigenvectors/components.
@@ -362,7 +390,7 @@ to create the NASVD object originally (see NASVD::Create, for more details).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Serializes the NASVD object to a format suitable for storage or transmission.</p>
@@ -379,20 +407,20 @@ to create the NASVD object originally (see NASVD::Create, for more details).</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXNASVD class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

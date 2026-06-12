@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.dap_client
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -16,10 +11,6 @@
       _decode_object
       _json_default
       _t
-   
-   
-
-   
    
    .. rubric:: Classes
 
@@ -36,17 +27,9 @@
       SearchFilter
       SearchParameters
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       DapClientException
    
-   
-
-
-

@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.viewer
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -17,21 +12,9 @@
       _t
       view_document
    
-   
-
-   
-   
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       ViewerException
    
-   
-
-
-

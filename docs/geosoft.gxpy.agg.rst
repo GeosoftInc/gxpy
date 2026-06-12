@@ -1,0 +1,24 @@
+﻿geosoft.gxpy.agg
+================
+
+.. automodule:: geosoft.gxpy.agg
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Aggregate_image
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      AggregateException
+   

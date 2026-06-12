@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXMULTIGRID3D class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXMULTIGRID3D class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMULTIGRID3D class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -88,68 +88,118 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#direction3d-constants">DIRECTION3D constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_XYZ"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_XYZ</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_XYZ"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_XYZ</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.DIRECTION3D_XYZ</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_YXZ"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_YXZ</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_YXZ"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_YXZ</span></code></a><ul>
 <li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.DIRECTION3D_YXZ</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_XZY"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_XZY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_XZY"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_XZY</span></code></a><ul>
 <li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.DIRECTION3D_XZY</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_YZX"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_YZX</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_YZX"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_YZX</span></code></a><ul>
 <li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.DIRECTION3D_YZX</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_ZXY"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_ZXY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_ZXY"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_ZXY</span></code></a><ul>
 <li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.DIRECTION3D_ZXY</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_ZYX"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_ZYX</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.DIRECTION3D_ZYX"><code class="docutils literal notranslate"><span class="pre">DIRECTION3D_ZYX</span></code></a><ul>
 <li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.DIRECTION3D_ZYX</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#gocad-orientation-constants">GOCAD_ORIENTATION constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_NORMAL</span></code></a><ul>
 <li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.GOCAD_ORIENTATIONS_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_INVERTED</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_INVERTED</span></code></a><ul>
 <li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.GOCAD_ORIENTATIONS_INVERTED</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL_ZFIRST"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_NORMAL_ZFIRST"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></code></a><ul>
 <li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED_ZFIRST"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GOCAD_ORIENTATIONS_INVERTED_ZFIRST"><code class="docutils literal notranslate"><span class="pre">GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></code></a><ul>
 <li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#vector-import-constants">VECTOR_IMPORT constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.VECTOR_IMPORT_XYZ"><code class="docutils literal notranslate"><span class="pre">VECTOR_IMPORT_XYZ</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VECTOR_IMPORT_XYZ"><code class="docutils literal notranslate"><span class="pre">VECTOR_IMPORT_XYZ</span></code></a><ul>
 <li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.VECTOR_IMPORT_XYZ</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VECTOR_IMPORT_UVW"><code class="docutils literal notranslate"><span class="pre">VECTOR_IMPORT_UVW</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VECTOR_IMPORT_UVW"><code class="docutils literal notranslate"><span class="pre">VECTOR_IMPORT_UVW</span></code></a><ul>
 <li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.VECTOR_IMPORT_UVW</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VECTOR_IMPORT_AID"><code class="docutils literal notranslate"><span class="pre">VECTOR_IMPORT_AID</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VECTOR_IMPORT_AID"><code class="docutils literal notranslate"><span class="pre">VECTOR_IMPORT_AID</span></code></a><ul>
 <li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.VECTOR_IMPORT_AID</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#filter3d-constants">FILTER3D constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_FILE"><code class="docutils literal notranslate"><span class="pre">FILTER3D_FILE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_FILE"><code class="docutils literal notranslate"><span class="pre">FILTER3D_FILE</span></code></a><ul>
 <li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.FILTER3D_FILE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_SMOOTHING"><code class="docutils literal notranslate"><span class="pre">FILTER3D_SMOOTHING</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_SMOOTHING"><code class="docutils literal notranslate"><span class="pre">FILTER3D_SMOOTHING</span></code></a><ul>
 <li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.FILTER3D_SMOOTHING</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_LAPLACE"><code class="docutils literal notranslate"><span class="pre">FILTER3D_LAPLACE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_LAPLACE"><code class="docutils literal notranslate"><span class="pre">FILTER3D_LAPLACE</span></code></a><ul>
 <li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.FILTER3D_LAPLACE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_X_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_X_GRADIENT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_X_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_X_GRADIENT</span></code></a><ul>
 <li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.FILTER3D_X_GRADIENT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_Y_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_Y_GRADIENT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_Y_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_Y_GRADIENT</span></code></a><ul>
 <li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.FILTER3D_Y_GRADIENT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_Z_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_Z_GRADIENT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_Z_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_Z_GRADIENT</span></code></a><ul>
 <li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.FILTER3D_Z_GRADIENT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_TOTAL_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_TOTAL_GRADIENT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.FILTER3D_TOTAL_GRADIENT"><code class="docutils literal notranslate"><span class="pre">FILTER3D_TOTAL_GRADIENT</span></code></a><ul>
 <li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.FILTER3D_TOTAL_GRADIENT</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#multigrid3d-directgrid-method-constants">MULTIGRID3D_DIRECTGRID_METHOD constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MINIMUM"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_MINIMUM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MINIMUM"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_MINIMUM</span></code></a><ul>
 <li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.MULTIGRID3D_DIRECTGRID_MINIMUM</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAXIMUM"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_MAXIMUM</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MAXIMUM"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_MAXIMUM</span></code></a><ul>
 <li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.MULTIGRID3D_DIRECTGRID_MAXIMUM</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_MEAN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_MEAN"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_MEAN</span></code></a><ul>
 <li><a class="reference internal" href="#id63"><code class="docutils literal notranslate"><span class="pre">gxapi.MULTIGRID3D_DIRECTGRID_MEAN</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_ITEMS"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_ITEMS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_ITEMS"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_ITEMS</span></code></a><ul>
 <li><a class="reference internal" href="#id64"><code class="docutils literal notranslate"><span class="pre">gxapi.MULTIGRID3D_DIRECTGRID_ITEMS</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_DUMMYITEMS"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_DUMMYITEMS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.MULTIGRID3D_DIRECTGRID_DUMMYITEMS"><code class="docutils literal notranslate"><span class="pre">MULTIGRID3D_DIRECTGRID_DUMMYITEMS</span></code></a><ul>
 <li><a class="reference internal" href="#id65"><code class="docutils literal notranslate"><span class="pre">gxapi.MULTIGRID3D_DIRECTGRID_DUMMYITEMS</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -157,7 +207,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -165,7 +215,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -186,7 +236,7 @@
 <span id="gxmultigrid3d"></span><h1>GXMULTIGRID3D class<a class="headerlink" href="#gxmultigrid3d-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMULTIGRID3D">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXMULTIGRID3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXMULTIGRID3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D" title="Link to this definition">¶</a></dt>
 <dd><p>GXMULTIGRID3D class.</p>
 <p>High Performance 3D Grid.</p>
 <dl class="py method">
@@ -196,7 +246,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMULTIGRID3D.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.create" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a new Multivoxset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -215,7 +265,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -236,7 +286,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -257,7 +307,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -280,7 +330,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -304,7 +354,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.7.</span></p>
+<p><span class="versionmodified added">Added in version 9.7.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -327,7 +377,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -345,7 +395,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -367,7 +417,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -382,7 +432,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -404,7 +454,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -423,7 +473,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -445,7 +495,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -460,7 +510,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -475,7 +525,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -490,7 +540,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -512,7 +562,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object. If the voxel is all dummies,
@@ -536,7 +586,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Find the non-dummy volume of a <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a> object. If the voxel is all dummies,
@@ -556,7 +606,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -571,7 +621,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -605,7 +655,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -624,7 +674,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -647,7 +697,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -662,7 +712,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -677,7 +727,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -692,7 +742,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -707,7 +757,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -722,7 +772,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -737,7 +787,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -756,7 +806,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -784,7 +834,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -813,7 +863,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -828,7 +878,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -843,14 +893,14 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMULTIGRID3D.modify">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.modify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.modify" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.modify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.modify" title="Link to this definition">¶</a></dt>
 <dd><p>Opens an existing Multivoxset with an plan to modify it</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -864,14 +914,14 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMULTIGRID3D.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXMULTIGRID3D" title="geosoft.gxapi.GXMULTIGRID3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMULTIGRID3D</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -885,7 +935,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXMULTIGRID3D.open">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.open" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXMULTIGRID3D.html#GXMULTIGRID3D.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXMULTIGRID3D.open" title="Link to this definition">¶</a></dt>
 <dd><p>Opens an existing Multivoxset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -899,7 +949,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -914,7 +964,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -929,7 +979,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -944,7 +994,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -959,7 +1009,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -978,7 +1028,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -993,7 +1043,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1008,7 +1058,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1023,7 +1073,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1039,7 +1089,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>XYZ</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_XYZ</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1050,7 +1100,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>YXZ</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id42">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_YXZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_YXZ</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1061,7 +1111,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>XZY</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id43">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_XZY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_XZY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1072,7 +1122,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>YZX</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id44">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_YZX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_YZX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1083,7 +1133,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>ZXY</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id45">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_ZXY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_ZXY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1094,7 +1144,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>ZYX</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id46">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_ZYX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">DIRECTION3D_ZYX</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1109,7 +1159,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Normal</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id47">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_NORMAL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1120,7 +1170,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Inverted (Z)</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id48">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_INVERTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_INVERTED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1131,7 +1181,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Normal (ZFirst)</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id49">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_NORMAL_ZFIRST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1142,7 +1192,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Inverted (Z) (ZFirst)</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id50">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GOCAD_ORIENTATIONS_INVERTED_ZFIRST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1157,7 +1207,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>X, Y and Z</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id51">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VECTOR_IMPORT_XYZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VECTOR_IMPORT_XYZ</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1168,7 +1218,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>U, V and W</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id52">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VECTOR_IMPORT_UVW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VECTOR_IMPORT_UVW</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1179,7 +1229,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Amplitude, Inclination and Declination</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id53">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VECTOR_IMPORT_AID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VECTOR_IMPORT_AID</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1194,7 +1244,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Specify a file containing the 27-point filter</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id54">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_FILE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1205,7 +1255,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Smoothing filter</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id55">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_SMOOTHING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_SMOOTHING</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1216,7 +1266,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Laplace filter</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id56">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_LAPLACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_LAPLACE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1227,7 +1277,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>X-Gradient filter</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id57">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_X_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_X_GRADIENT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1238,7 +1288,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Y-Gradient filter</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id58">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_Y_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_Y_GRADIENT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1249,7 +1299,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Z-Gradient filter</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id59">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_Z_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_Z_GRADIENT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1260,7 +1310,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Total-Gradient filter</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id60">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_TOTAL_GRADIENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">FILTER3D_TOTAL_GRADIENT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1275,7 +1325,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Select the minimum value found in each cell</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id61">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_MINIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_MINIMUM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1286,7 +1336,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Select the maximum value found in each cell</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id62">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_MAXIMUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_MAXIMUM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1297,7 +1347,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>Select the mean of all values found in each cell</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id63">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_MEAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_MEAN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1308,7 +1358,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>The number of valid (non-dummy) items found in each cell - 0 if no items found</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id64">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_ITEMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_ITEMS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1319,7 +1369,7 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
 <dd><p>The number of valid (non-dummy) items found in each cell - DUMMY if no items found</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id65">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_DUMMYITEMS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">MULTIGRID3D_DIRECTGRID_DUMMYITEMS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1334,20 +1384,20 @@ returns <a class="reference internal" href="GXGEOSOFT.html#id39" title="geosoft.
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXMULTIGRID3D class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

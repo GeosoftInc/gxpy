@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXITR class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXITR class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXITR class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -91,51 +91,87 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#itr-color-model-constants">ITR_COLOR_MODEL constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_HSV"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_HSV</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_HSV"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_HSV</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_HSV</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_RGB"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_RGB</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_RGB"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_RGB</span></code></a><ul>
 <li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_RGB</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_CMY"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_CMY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_COLOR_MODEL_CMY"><code class="docutils literal notranslate"><span class="pre">ITR_COLOR_MODEL_CMY</span></code></a><ul>
 <li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_COLOR_MODEL_CMY</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#itr-power-constants">ITR_POWER constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_POWER_10"><code class="docutils literal notranslate"><span class="pre">ITR_POWER_10</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_POWER_10"><code class="docutils literal notranslate"><span class="pre">ITR_POWER_10</span></code></a><ul>
 <li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_POWER_10</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_POWER_EXP"><code class="docutils literal notranslate"><span class="pre">ITR_POWER_EXP</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_POWER_EXP"><code class="docutils literal notranslate"><span class="pre">ITR_POWER_EXP</span></code></a><ul>
 <li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_POWER_EXP</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#itr-zone-constants">ITR_ZONE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_DEFAULT"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_DEFAULT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_DEFAULT"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_DEFAULT</span></code></a><ul>
 <li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_DEFAULT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_LINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_LINEAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_LINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_LINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_NORMAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_NORMAL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_NORMAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_NORMAL</span></code></a><ul>
 <li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_EQUALAREA"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_EQUALAREA</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_EQUALAREA"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_EQUALAREA</span></code></a><ul>
 <li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_EQUALAREA</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_SHADE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_SHADE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_SHADE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_SHADE</span></code></a><ul>
 <li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_SHADE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_LOGLINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_LOGLINEAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_LOGLINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_LOGLINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_LOGLINEAR</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#itr-zone-model-constants">ITR_ZONE_MODEL constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NOZONE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NOZONE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></code></a><ul>
 <li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NOZONE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NONE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NONE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NONE"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NONE</span></code></a><ul>
 <li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NONE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_LINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_LINEAR"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NORMAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_NORMAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></code></a><ul>
 <li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_NORMAL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_EQUAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_EQUAL"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></code></a><ul>
 <li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_EQUAL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_MODEL_LOGLIN"><code class="docutils literal notranslate"><span class="pre">ITR_MODEL_LOGLIN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_MODEL_LOGLIN"><code class="docutils literal notranslate"><span class="pre">ITR_MODEL_LOGLIN</span></code></a><ul>
 <li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_MODEL_LOGLIN</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_LOGLIN"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.ITR_ZONE_MODEL_LOGLIN"><code class="docutils literal notranslate"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></code></a><ul>
 <li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">gxapi.ITR_ZONE_MODEL_LOGLIN</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -143,7 +179,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -151,7 +187,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -172,7 +208,7 @@
 <span id="gxitr"></span><h1>GXITR class<a class="headerlink" href="#gxitr-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXITR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXITR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR" title="Link to this definition">¶</a></dt>
 <dd><p>GXITR class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> class provides access to <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> files. An <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> file maps
 ranges of values to specific colors. The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> object is typically
@@ -207,7 +243,7 @@ number of histogram bins much larger than the number of color zones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> 0.0 brightness does nothing.
@@ -231,7 +267,7 @@ number of histogram bins much larger than the number of color zones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -249,7 +285,7 @@ number of histogram bins much larger than the number of color zones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the input value is a dummy, then the output color
@@ -266,14 +302,14 @@ is 0 (no color).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -284,14 +320,14 @@ is 0 (no color).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.create_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_file" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_file" title="Link to this definition">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> object from an itr, tbl, zon, lut file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -305,14 +341,14 @@ is 0 (no color).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.create_img">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tbl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contour</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_img"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_img" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tbl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contour</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_img"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_img" title="Link to this definition">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> for an image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -330,7 +366,7 @@ is 0 (no color).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The <a class="reference internal" href="#id50" title="geosoft.gxapi.ITR_ZONE_DEFAULT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ITR_ZONE_DEFAULT</span></code></a> model will ask the <a class="reference internal" href="GXIMG.html#geosoft.gxapi.GXIMG" title="geosoft.gxapi.GXIMG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXIMG</span></code></a> to provide
@@ -343,7 +379,7 @@ added to the name part of the grid.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.create_map">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_map" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_map" title="Link to this definition">¶</a></dt>
 <dd><p>Create <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> from Map with <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXAGG</span></code></a> Group name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -360,14 +396,14 @@ added to the name part of the grid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.create_s">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_s</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_s"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_s" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_s</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.create_s"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.create_s" title="Link to this definition">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> object from a <a class="reference internal" href="GXBF.html#geosoft.gxapi.GXBF" title="geosoft.gxapi.GXBF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXBF</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -381,14 +417,14 @@ added to the name part of the grid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.default_color_method">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_color_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.default_color_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.default_color_method" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">default_color_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.default_color_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.default_color_method" title="Link to this definition">¶</a></dt>
 <dd><p>Return the user-defined global default color method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -399,7 +435,7 @@ added to the name part of the grid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.4.</span></p>
+<p><span class="versionmodified added">Added in version 9.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -417,7 +453,7 @@ added to the name part of the grid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the number of individual populated zones calculated using an equal-area ITR is less than the number
@@ -441,7 +477,7 @@ there is no valid data at all.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2022.2.</span></p>
+<p><span class="versionmodified added">Added in version 2022.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the number of individual populated zones calculated using an equal-area ITR is less than the number
@@ -465,7 +501,7 @@ there is no valid data at all.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Brightness can range from -1.0 (black) to 1.0 (white).
@@ -490,7 +526,7 @@ when the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosof
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The Linear, Normal and Equal-Area transforms accept a contour value as part of their definitions on creation.
@@ -511,7 +547,7 @@ This function returns the value defined, and rDUMMY if none is defined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Brightness can range from 0.0 (flat) to 1.0 (normal full contrast).</p>
@@ -534,7 +570,7 @@ This function returns the value defined, and rDUMMY if none is defined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> In some ITRs, especially those defined and
@@ -555,7 +591,7 @@ those cases dummy values will be returned.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -573,7 +609,7 @@ those cases dummy values will be returned.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -599,7 +635,7 @@ those cases dummy values will be returned.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -617,7 +653,7 @@ those cases dummy values will be returned.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -635,7 +671,7 @@ those cases dummy values will be returned.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Valid indices are 0 to N-1, where N is the size of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>.</p>
@@ -654,7 +690,7 @@ those cases dummy values will be returned.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Valid indices are 0 to N-1, where N is the size of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>.
@@ -674,7 +710,7 @@ The base colour is the colour in the ITR before any brightness is applied.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Valid indices are 0 to N-1, where N is the size of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>.</p>
@@ -693,7 +729,7 @@ The base colour is the colour in the ITR before any brightness is applied.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The following parameters are returned for the following values returned for <a class="reference internal" href="#itr-zone-model"><span class="std std-ref">ITR_ZONE_MODEL constants</span></a>:
@@ -717,7 +753,7 @@ All other types do not return any values (the VV will be empty).</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.4.</span></p>
+<p><span class="versionmodified added">Added in version 6.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This function may be used to determine if a color
@@ -740,7 +776,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Valid indices are 0 to N-2, where N is the size of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>.</p>
@@ -774,7 +810,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -789,7 +825,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -808,7 +844,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The function name is a misnomer. This is a pure log transform.</p>
@@ -829,14 +865,14 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -858,7 +894,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -873,7 +909,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.2.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -888,7 +924,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.2.</span></p>
+<p><span class="versionmodified added">Added in version 8.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -903,14 +939,14 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXITR.set_agg_map">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_agg_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.set_agg_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.set_agg_map" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">set_agg_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXITR.html#GXITR.set_agg_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXITR.set_agg_map" title="Link to this definition">¶</a></dt>
 <dd><p>Set <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> to an <a class="reference internal" href="GXAGG.html#geosoft.gxapi.GXAGG" title="geosoft.gxapi.GXAGG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXAGG</span></code></a> in map</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -922,7 +958,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See the <a class="reference internal" href="#geosoft.gxapi.GXITR.create_map" title="geosoft.gxapi.GXITR.create_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_map</span></code></a> function</p>
@@ -941,7 +977,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Brightness settings:
@@ -963,7 +999,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.2.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -981,7 +1017,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified added">Added in version 6.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -996,7 +1032,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1016,7 +1052,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1031,7 +1067,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1049,7 +1085,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Valid indices are 0 to N-1, where N is the size of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>.</p>
@@ -1068,7 +1104,7 @@ transform is included in an <a class="reference internal" href="#geosoft.gxapi.G
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <dl class="simple">
@@ -1093,7 +1129,7 @@ internal brightness remains unchanged.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <dl class="simple">
@@ -1118,7 +1154,7 @@ to zero, with all the “rendered” colours becoming the “base” colours.</p
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2021.2.</span></p>
+<p><span class="versionmodified added">Added in version 2021.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The following parameters are required for the following values of <a class="reference internal" href="#itr-zone-model"><span class="std std-ref">ITR_ZONE_MODEL constants</span></a>:
@@ -1144,7 +1180,7 @@ specification accurately reflects the actual ranges.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Valid indices are 0 to N-2, where N is the size of the <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a>.</p>
@@ -1161,7 +1197,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Hsv</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_HSV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_HSV</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1172,7 +1208,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Rgb</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id46">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_RGB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_RGB</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1183,7 +1219,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Cmy</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id47">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_CMY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_COLOR_MODEL_CMY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1198,7 +1234,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Power of 10</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id48">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_10</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_10</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1209,7 +1245,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Exponential</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id49">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_EXP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_POWER_EXP</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1224,7 +1260,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Default</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id50">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_DEFAULT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_DEFAULT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1235,7 +1271,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Linear</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id51">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1246,7 +1282,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Normal</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id52">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_NORMAL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1257,7 +1293,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Equalarea</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id53">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_EQUALAREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_EQUALAREA</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1268,7 +1304,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Shade</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id54">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_SHADE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_SHADE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1279,7 +1315,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>Loglinear</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id55">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LOGLINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_LOGLINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1294,7 +1330,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> has no numeric zones defined (e.g. from a TBL file)</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id56">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NOZONE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></span><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1305,7 +1341,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>There is no specific zone model defined.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id57">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NONE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1316,7 +1352,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a linear transform.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id58">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1327,7 +1363,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a normal distribution transform.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id59">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_NORMAL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1338,7 +1374,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with an equal area transform.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id60">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_EQUAL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1349,7 +1385,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a log-linear transform.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id61">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_MODEL_LOGLIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_MODEL_LOGLIN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1360,7 +1396,7 @@ specification accurately reflects the actual ranges.</p>
 <dd><p>The <a class="reference internal" href="#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is set up with a log-linear transform.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id62">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">ITR_ZONE_MODEL_LOGLIN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1375,20 +1411,20 @@ specification accurately reflects the actual ranges.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXITR class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -949,18 +949,82 @@ geosoft.gxapi module history
 ==========================================
 
   
-Version 2026.1
+Version 2026.2.0
 -----------------
 
 
 New Functions
 ^^^^^^^^^^^^^
 
-:func:`geosoft.gxapi.GXDH.re_survey_location_general` Call a resurveying method based on the input.
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_blob_hash_count` Return the number of blob hashes stored.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_blob_hash` Return a blob hash by index.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_manifest_hash` Return the manifest hash stored after translation.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.set_blob_hashes` Replace the blob hash list on an existing `GXEVOOBJMETA <geosoft.gxapi.GXEVOOBJMETA>` object.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.set_manifest_hash` Set the manifest hash on an existing `GXEVOOBJMETA <geosoft.gxapi.GXEVOOBJMETA>` object.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.set_source_checksum` Set the source file checksum on an existing `GXEVOOBJMETA <geosoft.gxapi.GXEVOOBJMETA>` object.
 
 
   
-Version 2025.2
+Version 2026.1.0
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXDH.get_mx_deposit_rights_info` Get MX Deposit Service API information via Geosoft ID rights.
+
+:func:`geosoft.gxapi.GXDH.re_survey_location_general` Call a resurveying method based on the input.
+
+:func:`geosoft.gxapi.GXEDB.get_multi_chans` Get a list of the all multiple selected channels.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_source_checksum` Return the source file checksum stored at publish time.
+
+:func:`geosoft.gxapi.GXEVOOBJMETA.get_version_id` Return the Evo object version Id.
+
+:func:`geosoft.gxapi.GXIMU.grid_stat_ext64` Reports statistics of a grid's elements (64-bit counts for large grids).
+
+:func:`geosoft.gxapi.GXLMSG.goto_line_fid` Sends a 'go to line and fiducial' message
+
+:func:`geosoft.gxapi.GXMAP.render_bitmap_ex` Render a map to a bitmap using extended options.
+
+:func:`geosoft.gxapi.GXNASVD.deserialize_scores` Deserialize the scores matrix from file
+
+:func:`geosoft.gxapi.GXNASVD.reconstruct_spectrum` Reconstruct spectral data using selected components
+
+:func:`geosoft.gxapi.GXRPS.compress_spectrum` Represent a spectrum with a different number of bins
+
+:func:`geosoft.gxapi.GXRPS.dead_time_correction_acq_channel` Apply the Dead-time correction to a channel for a line in a database, using an acquisition time channel.
+
+:func:`geosoft.gxapi.GXRPS.dead_time_correction_acq_value` Apply the Dead-time correction to a channel for a line in a database, using a constant acquisition time value
+
+:func:`geosoft.gxapi.GXRPS.full_spectral_analysis` Apply Medusa's Full Spectral Analysis algorithm to extract the radionuclide channels from the spectral data
+
+:func:`geosoft.gxapi.GXRPS.live_time_correction_acq_channel` Apply the Live-time correction to a channel for a line in a database, using an acquisition time channel
+
+:func:`geosoft.gxapi.GXRPS.live_time_correction_acq_value` Apply the Live-time correction to a channel for a line in a database, using a constant acquisition time value
+
+:func:`geosoft.gxapi.GXRPS.stabilize_spectra` Calculate the A1 stabilization factor and output the stabilized spectra used for Full Spectrum Analysis
+
+
+  
+Version 2026.0.1
+-----------------
+
+
+New Functions
+^^^^^^^^^^^^^
+
+:func:`geosoft.gxapi.GXSYS.script_level` Checks to see if we are running a script and how many levels down (scripts can run scripts)
+
+
+  
+Version 2025.2.0
 -----------------
 
 
@@ -987,8 +1051,6 @@ New Functions
 
 :func:`geosoft.gxapi.GXNASVD.get_singular_value` Get a specific singular value
 
-:func:`geosoft.gxapi.GXNASVD.reconstruct_spectrum` Reconstruct spectral data using selected components
-
 :func:`geosoft.gxapi.GXNASVD.serialize` Serialize the NASVD object
 
 :func:`geosoft.gxapi.GXPROJ.expand_document_node` Expands/collapses a document node in the project manager.
@@ -999,11 +1061,9 @@ New Functions
 
 :func:`geosoft.gxapi.GXRPS.convert_to_elemental` Convert a radio-channels' data to ELemental concentrations
 
-:func:`geosoft.gxapi.GXRPS.dead_time_correction` Apply the Dead-time correction to a channel for a line in a database
+:func:`geosoft.gxapi.GXRPS.dead_time_correction` Apply the Dead-time correction to a channel for a line in a database, assumes one second per pulse.
 
-:func:`geosoft.gxapi.GXRPS.full_spectral_analysis` Apply Medusa's Full Spectral Analysis algorithm to extract the radionuclide channels from the spectral data
-
-:func:`geosoft.gxapi.GXRPS.live_time_correction` Apply the Live-time correction to a channel for a line in a database
+:func:`geosoft.gxapi.GXRPS.live_time_correction` Apply the Live-time correction to a channel for a line in a database. Assumes one second per pulse.
 
 :func:`geosoft.gxapi.GXRPS.radio_element_bandpass_filter` Applies a band-pass filter for up to three elements simultaneously
 
@@ -1041,7 +1101,7 @@ New Functions
 
 
   
-Version 2025.1
+Version 2025.1.0
 -----------------
 
 
@@ -1084,7 +1144,7 @@ New Functions
 
 
   
-Version 2024.2
+Version 2024.2.0
 -----------------
 
 
@@ -1099,7 +1159,7 @@ New Functions
 
 
   
-Version 2024.1
+Version 2024.1.0
 -----------------
 
 
@@ -1176,7 +1236,7 @@ New Functions
 
 
   
-Version 2023.2
+Version 2023.2.0
 -----------------
 
 
@@ -1197,7 +1257,7 @@ New Functions
 
 
   
-Version 2023.1
+Version 2023.1.0
 -----------------
 
 
@@ -1218,7 +1278,7 @@ New Functions
 
 
   
-Version 2023.0
+Version 2023.0.0
 -----------------
 
 
@@ -1231,7 +1291,7 @@ New Functions
 
 
   
-Version 2022.2
+Version 2022.2.0
 -----------------
 
 
@@ -1272,7 +1332,7 @@ New Functions
 
 
   
-Version 2022.1
+Version 2022.1.0
 -----------------
 
 
@@ -1329,7 +1389,7 @@ New Functions
 
 
   
-Version 2021.2
+Version 2021.2.0
 -----------------
 
 
@@ -1434,7 +1494,7 @@ New Functions
 
 
   
-Version 2021.1
+Version 2021.1.0
 -----------------
 
 
@@ -1447,7 +1507,7 @@ New Functions
 
 
   
-Version 2014.1
+Version 2014.1.0
 -----------------
 
 
@@ -1458,7 +1518,7 @@ New Functions
 
 
   
-Version 9.10
+Version 9.10.0
 -----------------
 
 
@@ -1538,7 +1598,7 @@ New Functions
 
 
   
-Version 9.9
+Version 9.9.0
 -----------------
 
 
@@ -1577,7 +1637,7 @@ New Functions
 
 
   
-Version 9.8
+Version 9.8.0
 -----------------
 
 
@@ -1605,7 +1665,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXSURFACEITEM.intersects_bounding_box` Checks intersections of a bounding box with a `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
 
-:func:`geosoft.gxapi.GXSYS.get_view_service_url` .. deprecated:: 9.9 Seequent View was discontinued.
+:func:`geosoft.gxapi.GXSYS.get_view_service_url` .. deprecated:: 9.9.0 Seequent View was discontinued.
 
 
   
@@ -1706,9 +1766,9 @@ New Functions
 
 :func:`geosoft.gxapi.GXSEGYREADER.set_z_slice_indices` Which z slices to export to a section grid.
 
-:func:`geosoft.gxapi.GXSYS.get_api_key` .. deprecated:: 9.9 Seequent View was discontinued.
+:func:`geosoft.gxapi.GXSYS.get_api_key` .. deprecated:: 9.9.0 Seequent View was discontinued.
 
-:func:`geosoft.gxapi.GXSYS.get_view_url` .. deprecated:: 9.9 Seequent View was discontinued.
+:func:`geosoft.gxapi.GXSYS.get_view_url` .. deprecated:: 9.9.0 Seequent View was discontinued.
 
 
   
@@ -1728,8 +1788,6 @@ New Functions
 :func:`geosoft.gxapi.GXARCPY.add_message` Add informational message to output of current script
 
 :func:`geosoft.gxapi.GXARCPY.add_warning` Add warning message to output of current script
-
-:func:`geosoft.gxapi.GXDH.get_mx_deposit_rights_info` Get MX Deposit Service API information via Geosoft ID rights.
 
 :func:`geosoft.gxapi.GXDH.navigate_to_mx_deposit` Navigate to MX Deposit portal
 
@@ -1753,7 +1811,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXSEGYREADER.estimate_number_of_traces` Get the number of traces that would be in the SEG-Y file, given a trace length and data type.
 
-:func:`geosoft.gxapi.GXSEGYREADER.export_voxel_and_database` .. deprecated:: 9.7 Use SetGdbOutputName() and/or SetVoxelOutputName() followed by ExportFile() instead.
+:func:`geosoft.gxapi.GXSEGYREADER.export_voxel_and_database` .. deprecated:: 9.7.0 Use SetGdbOutputName() and/or SetVoxelOutputName() followed by ExportFile() instead.
 
 :func:`geosoft.gxapi.GXSEGYREADER.get_binary_header` Get the SEG Y file's binary header.
 
@@ -1878,7 +1936,7 @@ New Functions
 
 
   
-Version 9.5
+Version 9.5.0
 -----------------
 
 
@@ -1899,9 +1957,9 @@ New Functions
 
 :func:`geosoft.gxapi.GXGUI.import_drill_wizard_ex` Generate a template file for importing drill holes where type is known
 
-:func:`geosoft.gxapi.GXGUI.launch_va_view_multiple_tool` .. deprecated:: 9.6 Tool is now GX.Net
+:func:`geosoft.gxapi.GXGUI.launch_va_view_multiple_tool` .. deprecated:: 9.6.0 Tool is now GX.Net
 
-:func:`geosoft.gxapi.GXGUI.va_view_multiple_tool_exists` .. deprecated:: 9.6 Tool is now GX.Net
+:func:`geosoft.gxapi.GXGUI.va_view_multiple_tool_exists` .. deprecated:: 9.6.0 Tool is now GX.Net
 
 :func:`geosoft.gxapi.GXMESH.add_face` Adds a face to a patch in a mesh
 
@@ -2013,7 +2071,7 @@ New Functions
 
 
   
-Version 9.4
+Version 9.4.0
 -----------------
 
 
@@ -2074,7 +2132,7 @@ New Functions
 
 :func:`geosoft.gxapi.GXGRID3D.write_z` Write data to a GRID3D in the Z direction
 
-:func:`geosoft.gxapi.GXGUI.multiple_array_channel_profile_viewer` .. deprecated:: 9.5 Tool is now GX.Net
+:func:`geosoft.gxapi.GXGUI.multiple_array_channel_profile_viewer` .. deprecated:: 9.5.0 Tool is now GX.Net
 
 :func:`geosoft.gxapi.GXIMU.refresh_shad` Refresh a shaded relief image
 
@@ -2271,7 +2329,7 @@ New Functions
 
 
   
-Version 9.3
+Version 9.3.0
 -----------------
 
 
@@ -2344,7 +2402,7 @@ New Functions
 
 
   
-Version 9.2
+Version 9.2.0
 -----------------
 
 
@@ -2451,7 +2509,7 @@ New Functions
 
 
   
-Version 9.0
+Version 9.0.0
 -----------------
 
 
@@ -2586,7 +2644,7 @@ New Functions
 
 
   
-Version 8.5
+Version 8.5.0
 -----------------
 
 

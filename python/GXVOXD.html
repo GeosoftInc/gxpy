@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXVOXD class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXVOXD class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVOXD class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -60,14 +60,22 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#voxelrender-mode-constants">VOXELRENDER_MODE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_FILL"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_FILL</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_FILL"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_FILL</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.VOXELRENDER_FILL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_EDGES"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_EDGES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_EDGES"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_EDGES</span></code></a><ul>
 <li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.VOXELRENDER_EDGES</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_FILL_EDGES"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_FILL_EDGES</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_FILL_EDGES"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_FILL_EDGES</span></code></a><ul>
 <li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.VOXELRENDER_FILL_EDGES</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_SMOOTH"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_SMOOTH</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VOXELRENDER_SMOOTH"><code class="docutils literal notranslate"><span class="pre">VOXELRENDER_SMOOTH</span></code></a><ul>
 <li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">gxapi.VOXELRENDER_SMOOTH</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -75,7 +83,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -83,7 +91,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -104,7 +112,7 @@
 <span id="gxvoxd"></span><h1>GXVOXD class<a class="headerlink" href="#gxvoxd-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVOXD">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXVOXD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXVOXD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD" title="Link to this definition">¶</a></dt>
 <dd><p>GXVOXD class.</p>
 <p><a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> Display object.</p>
 <dl class="py method">
@@ -114,7 +122,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVOXD.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contour</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contour</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#geosoft.gxapi.GXVOXD" title="geosoft.gxapi.GXVOXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXD</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -133,7 +141,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Fails if the <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> object is NOT thematic.
@@ -142,7 +150,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVOXD.create_itr">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_itr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.create_itr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.create_itr" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_itr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.create_itr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.create_itr" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#geosoft.gxapi.GXVOXD" title="geosoft.gxapi.GXVOXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXD</span></code></a> with our own <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -159,7 +167,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Fails if the <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> object is thematic.
@@ -168,7 +176,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVOXD.create_thematic">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_thematic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vox</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.create_thematic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.create_thematic" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_thematic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vox</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.create_thematic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.create_thematic" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new <a class="reference internal" href="#geosoft.gxapi.GXVOXD" title="geosoft.gxapi.GXVOXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXD</span></code></a> for a thematic <a class="reference internal" href="GXVOX.html#geosoft.gxapi.GXVOX" title="geosoft.gxapi.GXVOX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOX</span></code></a> object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -182,7 +190,7 @@
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.0.</span></p>
+<p><span class="versionmodified added">Added in version 7.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> A thematic voxel is one where the stored integer values
@@ -214,7 +222,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -229,7 +237,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -244,7 +252,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.2.</span></p>
+<p><span class="versionmodified added">Added in version 8.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -259,7 +267,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -277,7 +285,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -295,7 +303,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.</span></p>
+<p><span class="versionmodified added">Added in version 9.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -327,7 +335,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.</span></p>
+<p><span class="versionmodified added">Added in version 9.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> A thematic voxel is one where the stored integer values
@@ -339,7 +347,7 @@ are not valid.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVOXD.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVOXD.html#GXVOXD.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVOXD.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVOXD" title="geosoft.gxapi.GXVOXD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVOXD</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -370,7 +378,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -385,7 +393,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -400,7 +408,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -418,7 +426,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -433,7 +441,7 @@ are not valid.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.3.</span></p>
+<p><span class="versionmodified added">Added in version 9.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -449,7 +457,7 @@ are not valid.</p>
 <dd><p>Render voxel cells</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_FILL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_FILL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -460,7 +468,7 @@ are not valid.</p>
 <dd><p>Render wireframe only</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id15">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_EDGES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_EDGES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -471,7 +479,7 @@ are not valid.</p>
 <dd><p>Render both voxel cells and wireframe</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id16">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_FILL_EDGES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_FILL_EDGES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -482,7 +490,7 @@ are not valid.</p>
 <dd><p>Trilinear interpolation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id17">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_SMOOTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VOXELRENDER_SMOOTH</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -497,20 +505,20 @@ are not valid.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVOXD class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

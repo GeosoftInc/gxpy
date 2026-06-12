@@ -4,20 +4,11 @@
 .. automodule:: geosoft.gxpy.vox_display
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
    
       _t
-   
-   
-
-   
    
    .. rubric:: Classes
 
@@ -25,17 +16,9 @@
    
       VoxDisplay
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       VoxDisplayException
    
-   
-
-
-

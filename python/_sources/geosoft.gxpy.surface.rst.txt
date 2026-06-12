@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.surface
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -19,10 +14,6 @@
       delete_files
       render
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
@@ -30,17 +21,9 @@
       Surface
       SurfaceDataset
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       SurfaceException
    
-   
-
-
-

@@ -5,12 +5,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geosoft.gxapi.GXDBREAD &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <title>geosoft.gxapi.GXDBREAD &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/maki.css?v=ea9b3600" />
-    <script src="../../../_static/documentation_options.js?v=f788092f"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/documentation_options.js?v=b916904f"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
  
@@ -21,19 +21,19 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" accesskey="U">geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDBREAD</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h3>Related Topics</h3>
 <ul>
@@ -41,7 +41,7 @@
     <li><a href="../../index.html">Module code</a></li>
     <li><a href="../gxapi.html">geosoft.gxapi</a></li>
 </ul>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
@@ -49,7 +49,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
@@ -65,11 +65,11 @@
 <span class="c1">### extends &#39;class_empty.py&#39;</span>
 <span class="c1">### block ClassImports</span>
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">gxapi_cy</span>
-<span class="kn">from</span> <span class="nn">geosoft.gxapi</span> <span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
-<span class="kn">from</span> <span class="nn">.GXVA</span> <span class="kn">import</span> <span class="n">GXVA</span>
-<span class="kn">from</span> <span class="nn">.GXVV</span> <span class="kn">import</span> <span class="n">GXVV</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">gxapi_cy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geosoft.gxapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXContext</span><span class="p">,</span> <span class="n">float_ref</span><span class="p">,</span> <span class="n">int_ref</span><span class="p">,</span> <span class="n">str_ref</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVA</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.GXVV</span><span class="w"> </span><span class="kn">import</span> <span class="n">GXVV</span>
 
 
 <span class="c1">### endblock ClassImports</span>
@@ -83,7 +83,7 @@
 <span class="c1"># NOTICE: Do not edit anything here, it is generated code</span>
 <div class="viewcode-block" id="GXDBREAD">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD">[docs]</a>
-<span class="k">class</span> <span class="nc">GXDBREAD</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDBREAD</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GXDBREAD</span><span class="p">(</span><span class="n">gxapi_cy</span><span class="o">.</span><span class="n">WrapDBREAD</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GXDBREAD class.</span>
 
@@ -95,14 +95,14 @@
 
 <div class="viewcode-block" id="GXDBREAD.__init__">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GXDBREAD</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">GXContext</span><span class="o">.</span><span class="n">_get_tls_geo</span><span class="p">(),</span> <span class="n">handle</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="GXDBREAD.null">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.null">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">null</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A null (undefined) instance of `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;`</span>
 <span class="sd">        </span>
@@ -114,7 +114,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.is_null">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.is_null">[docs]</a>
-    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if this is a null (undefined) instance</span>
 <span class="sd">        </span>
@@ -132,7 +132,7 @@
 <div class="viewcode-block" id="GXDBREAD.create">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.create">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Create a `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;` object</span>
@@ -146,7 +146,7 @@
 <span class="sd">        :returns:         `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;` object</span>
 <span class="sd">        :rtype:           GXDBREAD</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -160,7 +160,7 @@
 <div class="viewcode-block" id="GXDBREAD.create_xy">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.create_xy">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">create_xy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_xy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Create a `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;` object for a XY-located data. Add channels using the</span>
@@ -174,7 +174,7 @@
 <span class="sd">        :returns:         `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;` object</span>
 <span class="sd">        :rtype:           GXDBREAD</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -188,7 +188,7 @@
 <div class="viewcode-block" id="GXDBREAD.create_xyz">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.create_xyz">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">create_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_xyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">line_lst</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Create a `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;` object for a XYZ-located data.</span>
@@ -202,7 +202,7 @@
 <span class="sd">        :returns:         `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;` object</span>
 <span class="sd">        :rtype:           GXDBREAD</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -218,7 +218,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.add_channel">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.add_channel">[docs]</a>
-    <span class="k">def</span> <span class="nf">add_channel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_channel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Add a data channel to the `GXDBREAD &lt;geosoft.gxapi.GXDBREAD&gt;` object.</span>
@@ -229,7 +229,7 @@
 <span class="sd">        :returns:       Channel index. Use for getting the correct `GXVV &lt;geosoft.gxapi.GXVV&gt;` or `GXVA &lt;geosoft.gxapi.GXVA&gt;` object.</span>
 <span class="sd">        :rtype:         int</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -247,7 +247,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_vv">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_vv">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_vv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle for a channel.</span>
@@ -258,7 +258,7 @@
 <span class="sd">        :returns:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
 <span class="sd">        :rtype:         GXVV</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -276,7 +276,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_va">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_va">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_va</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_va</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the `GXVA &lt;geosoft.gxapi.GXVA&gt;` handle for an array channel.</span>
@@ -287,7 +287,7 @@
 <span class="sd">        :returns:       `GXVA &lt;geosoft.gxapi.GXVA&gt;` handle</span>
 <span class="sd">        :rtype:         GXVA</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -305,7 +305,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_v_vx">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_v_vx">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_v_vx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_v_vx</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the X channel `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
@@ -314,7 +314,7 @@
 <span class="sd">        :returns:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
 <span class="sd">        :rtype:         GXVV</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -331,7 +331,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_v_vy">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_v_vy">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_v_vy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_v_vy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the Y channel `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
@@ -340,7 +340,7 @@
 <span class="sd">        :returns:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
 <span class="sd">        :rtype:         GXVV</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -357,7 +357,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_v_vz">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_v_vz">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_v_vz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_v_vz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the Z channel `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle.</span>
@@ -366,7 +366,7 @@
 <span class="sd">        :returns:       `GXVV &lt;geosoft.gxapi.GXVV&gt;` handle</span>
 <span class="sd">        :rtype:         GXVV</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -384,7 +384,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_chan_array_size">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_chan_array_size">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_chan_array_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_chan_array_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the number of columns of data in a channel.</span>
@@ -395,7 +395,7 @@
 <span class="sd">        :returns:       The number of columns (array size) for a channel</span>
 <span class="sd">        :rtype:         int</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -413,7 +413,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_number_of_blocks_to_process">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_number_of_blocks_to_process">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_number_of_blocks_to_process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_number_of_blocks_to_process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the number of blocks to be served up.</span>
@@ -422,7 +422,7 @@
 <span class="sd">        :returns:       The number of blocks to process in the selected lines.</span>
 <span class="sd">        :rtype:         int</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -444,7 +444,7 @@
 
 <div class="viewcode-block" id="GXDBREAD.get_next_block">
 <a class="viewcode-back" href="../../../GXDBREAD.html#geosoft.gxapi.GXDBREAD.get_next_block">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_next_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">n_blocks</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_next_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">n_blocks</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        </span>
 <span class="sd">        Get the next block of data.</span>
@@ -459,7 +459,7 @@
 <span class="sd">        :returns:         Returns the current block index, or -1 if at end of file (no new data returned).</span>
 <span class="sd">        :rtype:           int</span>
 
-<span class="sd">        .. versionadded:: 8.5</span>
+<span class="sd">        .. versionadded:: 8.5.0</span>
 
 <span class="sd">        **License:** `Geosoft Open License &lt;https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic&gt;`_</span>
 
@@ -494,13 +494,13 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../gxapi.html" >geosoft.gxapi</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">geosoft.gxapi.GXDBREAD</a></li> 
@@ -508,8 +508,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

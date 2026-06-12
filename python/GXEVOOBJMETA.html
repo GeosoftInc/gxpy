@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXEVOOBJMETA class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXEVOOBJMETA class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEVOOBJMETA class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -42,12 +42,20 @@
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.__init__"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.create"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.create()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.create_default"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.create_default()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_blob_hash"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_blob_hash()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_blob_hash_count"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_blob_hash_count()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_bounding_box"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_bounding_box()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_manifest_hash"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_manifest_hash()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_modified_at"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_modified_at()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_object_id"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_object_id()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_source_checksum"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_source_checksum()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_version_id"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_version_id()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_workspace_id"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.get_workspace_id()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.is_null"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.is_null()</span></code></a></li>
 <li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.null"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.null()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.set_blob_hashes"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.set_blob_hashes()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.set_manifest_hash"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.set_manifest_hash()</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.set_source_checksum"><code class="docutils literal notranslate"><span class="pre">GXEVOOBJMETA.set_source_checksum()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -55,7 +63,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -63,7 +71,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -84,7 +92,7 @@
 <span id="gxevoobjmeta"></span><h1>GXEVOOBJMETA class<a class="headerlink" href="#gxevoobjmeta-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXEVOOBJMETA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXEVOOBJMETA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA" title="Link to this definition">¶</a></dt>
 <dd><p>GXEVOOBJMETA class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> class is used to create Evo object metadata including object uuid, object path,
 version id, created at, created by, etag, workspace id, modified at, modified by and bounding box properties.</p>
@@ -96,7 +104,7 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create an <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -110,14 +118,14 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.create_default">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.create_default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.create_default" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.create_default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.create_default" title="Link to this definition">¶</a></dt>
 <dd><p>Create an empty <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -128,9 +136,59 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.get_blob_hash">
+<span class="sig-name descname"><span class="pre">get_blob_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blob_hash</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.get_blob_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.get_blob_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Return a blob hash by index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – zero-based index of the blob hash to retrieve</p></li>
+<li><p><strong>blob_hash</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – blob content hash hex string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0 on success, 1 if index out of range</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.2.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns the blob hash at the specified index. Use <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.get_blob_hash_count" title="geosoft.gxapi.GXEVOOBJMETA.get_blob_hash_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_blob_hash_count</span></code></a>
+to determine the valid range of indices. Index 0 typically corresponds to the main
+data blob, with subsequent indices for auxiliary data (e.g., additional elevation
+grids or attributes).
+Returns 0 on success, 1 if the index is out of range.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.get_blob_hash_count">
+<span class="sig-name descname"><span class="pre">get_blob_hash_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.get_blob_hash_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.get_blob_hash_count" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of blob hashes stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of blob hashes</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.2.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns the count of blob content hashes stored in this metadata object.
+Blob hashes are the content-addressable identifiers for the Parquet data files
+that comprise the geoscience object.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -143,9 +201,28 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.get_manifest_hash">
+<span class="sig-name descname"><span class="pre">get_manifest_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest_hash</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.get_manifest_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.get_manifest_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Return the manifest hash stored after translation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manifest_hash</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SHA-256 hash hex string of the JSON manifest</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.2.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns the SHA-256 hash of the JSON manifest file that was computed after
+translating the source file to a geoscience object. The manifest hash uniquely
+identifies the translated object (structure + data references).
+Returns an empty string if no manifest hash has been stored.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -158,7 +235,7 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -173,7 +250,43 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.get_source_checksum">
+<span class="sig-name descname"><span class="pre">get_source_checksum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checksum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.get_source_checksum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.get_source_checksum" title="Link to this definition">¶</a></dt>
+<dd><p>Return the source file checksum stored at publish time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>checksum</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – SHA-256 checksum hex string of the source file</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.1.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Returns the SHA-256 checksum of the local source file (e.g. the Geosoft grid file)
+that was computed when the object was last published to the Evo workspace.
+Returns an empty string if no checksum has been stored.
+The checksum is stored in the metadata JSON via <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA.create" title="geosoft.gxapi.GXEVOOBJMETA.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create</span></code></a> and
+is not modifiable through a setter — to update it, create a new <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a>
+from an updated JSON string that includes the <code class="docutils literal notranslate"><span class="pre">source_checksum</span></code> field.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.get_version_id">
+<span class="sig-name descname"><span class="pre">get_version_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.get_version_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.get_version_id" title="Link to this definition">¶</a></dt>
+<dd><p>Return the Evo object version Id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version_id</strong> (<a class="reference internal" href="geosoft.gxapi.html#geosoft.gxapi.str_ref" title="geosoft.gxapi.str_ref"><em>str_ref</em></a>) – version id of the Evo object at the time of the last publish</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -188,7 +301,7 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.1.</span></p>
+<p><span class="versionmodified added">Added in version 2025.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -209,7 +322,7 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -219,6 +332,63 @@ version id, created at, created by, etag, workspace id, modified at, modified by
 <dd class="field-even"><p><a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA.GXEVOOBJMETA">GXEVOOBJMETA</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.set_blob_hashes">
+<span class="sig-name descname"><span class="pre">set_blob_hashes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blob_hashes_json</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.set_blob_hashes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.set_blob_hashes" title="Link to this definition">¶</a></dt>
+<dd><p>Replace the blob hash list on an existing <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>blob_hashes_json</strong> (<em>str</em>) – JSON array string of blob content hash hex strings, e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;hash1&quot;,&quot;hash2&quot;]</span></code></p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.2.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Replaces the entire <code class="docutils literal notranslate"><span class="pre">blob_hashes</span></code> list in a single call using a JSON array
+string (e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;hash1&quot;,&quot;hash2&quot;]</span></code>).  Passing an empty array (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) clears
+the list.  All other metadata fields are left unchanged.
+Blob hashes are the content-addressable identifiers for the Parquet data files
+that comprise the geoscience object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.set_manifest_hash">
+<span class="sig-name descname"><span class="pre">set_manifest_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest_hash</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.set_manifest_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.set_manifest_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Set the manifest hash on an existing <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manifest_hash</strong> (<em>str</em>) – SHA-256 hash hex string of the JSON manifest</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.2.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Updates the <code class="docutils literal notranslate"><span class="pre">manifest_hash</span></code> field in place without affecting any other fields.
+The manifest hash is the SHA-256 hash of the translated geoscience object’s JSON
+manifest and is used as the Tier 2 cache key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geosoft.gxapi.GXEVOOBJMETA.set_source_checksum">
+<span class="sig-name descname"><span class="pre">set_source_checksum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checksum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXEVOOBJMETA.html#GXEVOOBJMETA.set_source_checksum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXEVOOBJMETA.set_source_checksum" title="Link to this definition">¶</a></dt>
+<dd><p>Set the source file checksum on an existing <a class="reference internal" href="#geosoft.gxapi.GXEVOOBJMETA" title="geosoft.gxapi.GXEVOOBJMETA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXEVOOBJMETA</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>checksum</strong> (<em>str</em>) – SHA-256 checksum hex string of the source file</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2026.2.0.</span></p>
+</div>
+<p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
+<p><strong>Note:</strong> Updates the <code class="docutils literal notranslate"><span class="pre">source_checksum</span></code> field in place without affecting any other fields
+(object id, version id, workspace id, path, etc.). Intended for cache-update
+workflows where only the local-file checksum needs to be written back after a
+successful translation or publish, avoiding a full JSON round-trip.</p>
 </dd></dl>
 
 </dd></dl>
@@ -232,20 +402,20 @@ version id, created at, created by, etag, workspace id, modified at, modified by
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXEVOOBJMETA class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

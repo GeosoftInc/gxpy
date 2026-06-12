@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.coordinate_system
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -26,10 +21,6 @@
       parameters
       wkt_vcs
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
@@ -38,17 +29,9 @@
       Coordinate_translate
       Wkt
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       CSException
    
-   
-
-
-

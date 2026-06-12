@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.gdb
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -20,10 +15,6 @@
       delete_files
       is_valid_line_name
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
@@ -32,17 +23,9 @@
       Geosoft_gdb
       Line
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       GdbException
    
-   
-
-
-

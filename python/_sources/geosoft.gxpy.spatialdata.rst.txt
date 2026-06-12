@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.spatialdata
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -21,19 +16,11 @@
       extent_from_metadata_file
       find_meta_branch
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
    
       SpatialData
-   
-   
-
-   
    
    .. rubric:: Exceptions
 
@@ -41,7 +28,3 @@
    
       SpatialException
    
-   
-
-
-

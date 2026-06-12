@@ -4,7 +4,6 @@
 .. automodule:: geosoft.gxpy.metadata
 
    
-   
    .. rubric:: Module Attributes
 
    .. autosummary::
@@ -13,10 +12,6 @@
       META_TYPE_ATTRIBUTE
       META_INVALID
       META_ROOT_NODE
-   
-   
-
-   
    
    .. rubric:: Functions
 
@@ -27,19 +22,11 @@
       get_node_from_meta_dict
       set_node_in_meta_dict
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
    
       Metadata
-   
-   
-
-   
    
    .. rubric:: Exceptions
 
@@ -47,7 +34,3 @@
    
       MetadataException
    
-   
-
-
-

@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.system
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -26,21 +21,9 @@
       unzip
       wait_on_file
    
-   
-
-   
-   
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       GXSysException
    
-   
-
-
-

@@ -1,0 +1,19 @@
+﻿geosoft.gxpy.geometry\_utility
+==============================
+
+.. automodule:: geosoft.gxpy.geometry_utility
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      resample
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GeometryUtilityException
+   

@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXSTK class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXSTK class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSTK class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -73,57 +73,99 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#stk-axis-constants">STK_AXIS constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_X"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_X</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_X"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_X</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_X</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_Y"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_Y</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_Y"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_Y</span></code></a><ul>
 <li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_Y</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#stk-axis-pos-constants">STK_AXIS_POS constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_NONE"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_NONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_NONE"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_NONE</span></code></a><ul>
 <li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_NONE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_LEFT"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_LEFT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_LEFT"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_LEFT</span></code></a><ul>
 <li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_LEFT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_RIGHT"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_RIGHT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_RIGHT"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_RIGHT</span></code></a><ul>
 <li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_RIGHT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_BOTH"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_BOTH</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_BOTH"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_BOTH</span></code></a><ul>
 <li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_BOTH</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_BOTTOM"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_BOTTOM</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_BOTTOM"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_BOTTOM</span></code></a><ul>
 <li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_BOTTOM</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_TOP"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_TOP</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_AXIS_TOP"><code class="docutils literal notranslate"><span class="pre">STK_AXIS_TOP</span></code></a><ul>
 <li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_AXIS_TOP</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#stk-flag-constants">STK_FLAG constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_PROFILE"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_PROFILE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_PROFILE"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_PROFILE</span></code></a><ul>
 <li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_PROFILE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_FID"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_FID</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_FID"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_FID</span></code></a><ul>
 <li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_FID</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_SYMBOL"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_SYMBOL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_SYMBOL"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_SYMBOL</span></code></a><ul>
 <li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_SYMBOL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_XBAR"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_XBAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_XBAR"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_XBAR</span></code></a><ul>
 <li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_XBAR</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_XLABEL"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_XLABEL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_XLABEL"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_XLABEL</span></code></a><ul>
 <li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_XLABEL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_XTITLE"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_XTITLE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_XTITLE"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_XTITLE</span></code></a><ul>
 <li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_XTITLE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_YBAR"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_YBAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_YBAR"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_YBAR</span></code></a><ul>
 <li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_YBAR</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_YLABEL"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_YLABEL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_YLABEL"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_YLABEL</span></code></a><ul>
 <li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_YLABEL</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_YTITLE"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_YTITLE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_YTITLE"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_YTITLE</span></code></a><ul>
 <li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_YTITLE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_GRID1"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_GRID1</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_GRID1"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_GRID1</span></code></a><ul>
 <li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_GRID1</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_GRID2"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_GRID2</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_FLAG_GRID2"><code class="docutils literal notranslate"><span class="pre">STK_FLAG_GRID2</span></code></a><ul>
 <li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_FLAG_GRID2</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#stk-grid-constants">STK_GRID constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_GRID_PRIMARY"><code class="docutils literal notranslate"><span class="pre">STK_GRID_PRIMARY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_GRID_PRIMARY"><code class="docutils literal notranslate"><span class="pre">STK_GRID_PRIMARY</span></code></a><ul>
 <li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_GRID_PRIMARY</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.STK_GRID_SECONDARY"><code class="docutils literal notranslate"><span class="pre">STK_GRID_SECONDARY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.STK_GRID_SECONDARY"><code class="docutils literal notranslate"><span class="pre">STK_GRID_SECONDARY</span></code></a><ul>
 <li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.STK_GRID_SECONDARY</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -131,7 +173,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -139,7 +181,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -160,7 +202,7 @@
 <span id="gxstk"></span><h1>GXSTK class<a class="headerlink" href="#gxstk-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXSTK">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXSTK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSTK.html#GXSTK"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSTK" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXSTK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSTK.html#GXSTK"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSTK" title="Link to this definition">¶</a></dt>
 <dd><p>GXSTK class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a> class is used for plotting a single data profile in
 an <a class="reference internal" href="GXMVIEW.html#geosoft.gxapi.GXMVIEW" title="geosoft.gxapi.GXMVIEW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMVIEW</span></code></a>. The <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> class (see <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a>) is used to plot
@@ -189,7 +231,7 @@ using functions in this file</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> By default, <a class="reference internal" href="GXDB.html#id215" title="geosoft.gxapi.DB_CHAN_FORMAT_NORMAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_FORMAT_NORMAL</span></code></a></p>
@@ -216,7 +258,7 @@ using functions in this file</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -240,7 +282,7 @@ using functions in this file</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -263,7 +305,7 @@ TRUE  (1) if part of the object is drawn</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -290,7 +332,7 @@ TRUE  (1) if part of the object is drawn</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -318,7 +360,7 @@ TRUE  (1) if part of the object is drawn</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -347,7 +389,7 @@ TRUE  (1) if part of the object is drawn</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -381,7 +423,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -413,7 +455,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.3.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -444,7 +486,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -473,7 +515,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -499,7 +541,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See above full description of each parameters
@@ -524,7 +566,7 @@ transformation is log or loglinear. The same for Y channel.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXSTK.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSTK.html#GXSTK.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSTK.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXSTK.html#GXSTK.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXSTK.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXSTK" title="geosoft.gxapi.GXSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXSTK</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -546,7 +588,7 @@ transformation is log or loglinear. The same for Y channel.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> The <a class="reference internal" href="GXITR.html#geosoft.gxapi.GXITR" title="geosoft.gxapi.GXITR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXITR</span></code></a> is consulted by taking the channel index and dividing
@@ -567,7 +609,7 @@ be in the range: 0 &gt; values &gt;= 1.0.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> By default, <a class="reference internal" href="GXDB.html#id215" title="geosoft.gxapi.DB_CHAN_FORMAT_NORMAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DB_CHAN_FORMAT_NORMAL</span></code></a> is used to display the values,
@@ -595,7 +637,7 @@ or for values &gt; 1.e7, <a class="reference internal" href="GXDB.html#id216" ti
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -616,7 +658,7 @@ or for values &gt; 1.e7, <a class="reference internal" href="GXDB.html#id216" ti
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2022.2.</span></p>
+<p><span class="versionmodified added">Added in version 2022.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Set parameters for the error bar plot that is associated with the current
@@ -641,7 +683,7 @@ See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title=
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -660,7 +702,7 @@ See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title=
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
@@ -687,7 +729,7 @@ See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title=
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -715,7 +757,7 @@ See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title=
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -744,7 +786,7 @@ See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title=
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -763,7 +805,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -794,7 +836,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -826,7 +868,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.3.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -857,7 +899,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters</p>
@@ -886,7 +928,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title="geosoft.gxapi.GXMSTK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXMSTK</span></code></a> for detailed description of all function parameters
@@ -912,7 +954,7 @@ use the <a class="reference internal" href="#geosoft.gxapi.GXSTK.set_axis_format
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> See above full description of each parameters
@@ -931,7 +973,7 @@ See <a class="reference internal" href="GXMSTK.html#geosoft.gxapi.GXMSTK" title=
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 6.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> By default, the index labels for array channel profiles
@@ -950,7 +992,7 @@ or 1.</p>
 <dd><p>X Axis</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_X</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -961,7 +1003,7 @@ or 1.</p>
 <dd><p>Y Axis</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id28">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_Y</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_Y</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -976,7 +1018,7 @@ or 1.</p>
 <dd><p>Axis</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id29">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_NONE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -987,7 +1029,7 @@ or 1.</p>
 <dd><p>Left side only</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id30">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_LEFT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -998,7 +1040,7 @@ or 1.</p>
 <dd><p>Right side only</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id31">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_RIGHT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1009,7 +1051,7 @@ or 1.</p>
 <dd><p>Left and right sides</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id32">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_BOTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_BOTH</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1020,7 +1062,7 @@ or 1.</p>
 <dd><p>Bottom only</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id33">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_BOTTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_BOTTOM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1031,7 +1073,7 @@ or 1.</p>
 <dd><p>Top only</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id34">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_TOP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_AXIS_TOP</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1046,7 +1088,7 @@ or 1.</p>
 <dd><p>Profile</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id35">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_PROFILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_PROFILE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1057,7 +1099,7 @@ or 1.</p>
 <dd><p>Fid</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id36">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_FID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_FID</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1068,7 +1110,7 @@ or 1.</p>
 <dd><p>Symbol</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id37">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_SYMBOL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_SYMBOL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1079,7 +1121,7 @@ or 1.</p>
 <dd><p>Xbar</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id38">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_XBAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_XBAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1090,7 +1132,7 @@ or 1.</p>
 <dd><p>Xlabel</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id39">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_XLABEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_XLABEL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1101,7 +1143,7 @@ or 1.</p>
 <dd><p>Xtitle</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id40">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_XTITLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_XTITLE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1112,7 +1154,7 @@ or 1.</p>
 <dd><p>Ybar</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id41">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_YBAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_YBAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1123,7 +1165,7 @@ or 1.</p>
 <dd><p>Ylabel</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id42">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_YLABEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_YLABEL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></span><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1134,7 +1176,7 @@ or 1.</p>
 <dd><p>Ytitle</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id43">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_YTITLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_YTITLE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></span><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1145,7 +1187,7 @@ or 1.</p>
 <dd><p>Grid1</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id44">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_GRID1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_GRID1</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></span><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1156,7 +1198,7 @@ or 1.</p>
 <dd><p>Grid2</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id45">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_GRID2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_FLAG_GRID2</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></span><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1171,7 +1213,7 @@ or 1.</p>
 <dd><p>Primary Grid</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id46">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_GRID_PRIMARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_GRID_PRIMARY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1182,7 +1224,7 @@ or 1.</p>
 <dd><p>Secondary Grid</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id47">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_GRID_SECONDARY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">STK_GRID_SECONDARY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1197,20 +1239,20 @@ or 1.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXSTK class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

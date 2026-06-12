@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.project
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -22,19 +17,11 @@
       running_script
       user_message
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
    
       Geosoft_project
-   
-   
-
-   
    
    .. rubric:: Exceptions
 
@@ -42,7 +29,3 @@
    
       ProjectException
    
-   
-
-
-

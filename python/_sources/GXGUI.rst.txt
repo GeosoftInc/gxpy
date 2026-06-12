@@ -633,6 +633,10 @@ File filters
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.FILE_FILTER_ARGIS_STYLX
+.. autodata:: geosoft.gxapi.FILE_FILTER_MCF
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.FILE_FILTER_MCF
 
 
 .. _FILE_FORM:

@@ -1,0 +1,20 @@
+﻿geosoft.gxpy.viewer
+===================
+
+.. automodule:: geosoft.gxpy.viewer
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _get_default_gd_exe
+      _t
+      view_document
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      ViewerException
+   

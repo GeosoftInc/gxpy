@@ -1,0 +1,19 @@
+﻿geosoft.gxpy.segy\_reader
+=========================
+
+.. automodule:: geosoft.gxpy.segy_reader
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DataType
+      Endianess
+      FieldMapping
+      InlineCrosslineSanity
+      SegyReader
+      TraceConfigField
+      TraceFieldConfiguration
+      ZType
+   

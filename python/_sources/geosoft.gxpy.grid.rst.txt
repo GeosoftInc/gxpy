@@ -4,11 +4,6 @@
 .. automodule:: geosoft.gxpy.grid
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -27,19 +22,11 @@
       name_parts
       reopen
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
    
       Grid
-   
-   
-
-   
    
    .. rubric:: Exceptions
 
@@ -47,7 +34,3 @@
    
       GridException
    
-   
-
-
-

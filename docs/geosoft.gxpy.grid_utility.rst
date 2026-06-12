@@ -1,0 +1,29 @@
+﻿geosoft.gxpy.grid\_utility
+==========================
+
+.. automodule:: geosoft.gxpy.grid_utility
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      _t
+      calculate_slope_standard_deviation
+      contour_points
+      derivative
+      expression
+      feather
+      flood
+      grid_bool
+      grid_mosaic
+      remove_trend
+      sample
+      tilt_depth
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      GridUtilityException
+   

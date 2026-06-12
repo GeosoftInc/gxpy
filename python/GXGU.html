@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXGU class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXGU class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGU class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -74,59 +74,97 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#em-err-constants">EM_ERR constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.EM_ERR_UNSCALED"><code class="docutils literal notranslate"><span class="pre">EM_ERR_UNSCALED</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EM_ERR_UNSCALED"><code class="docutils literal notranslate"><span class="pre">EM_ERR_UNSCALED</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.EM_ERR_UNSCALED</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.EM_ERR_LOGSCALING"><code class="docutils literal notranslate"><span class="pre">EM_ERR_LOGSCALING</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.EM_ERR_LOGSCALING"><code class="docutils literal notranslate"><span class="pre">EM_ERR_LOGSCALING</span></code></a><ul>
 <li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">gxapi.EM_ERR_LOGSCALING</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#em-inv-constants">EM_INV constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.EM_INV_INPHASE"><code class="docutils literal notranslate"><span class="pre">EM_INV_INPHASE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EM_INV_INPHASE"><code class="docutils literal notranslate"><span class="pre">EM_INV_INPHASE</span></code></a><ul>
 <li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">gxapi.EM_INV_INPHASE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.EM_INV_QUADRATURE"><code class="docutils literal notranslate"><span class="pre">EM_INV_QUADRATURE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.EM_INV_QUADRATURE"><code class="docutils literal notranslate"><span class="pre">EM_INV_QUADRATURE</span></code></a><ul>
 <li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">gxapi.EM_INV_QUADRATURE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.EM_INV_BOTH"><code class="docutils literal notranslate"><span class="pre">EM_INV_BOTH</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.EM_INV_BOTH"><code class="docutils literal notranslate"><span class="pre">EM_INV_BOTH</span></code></a><ul>
 <li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">gxapi.EM_INV_BOTH</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#emplate-domain-constants">EMPLATE_DOMAIN constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_FREQUENCY"><code class="docutils literal notranslate"><span class="pre">EMPLATE_FREQUENCY</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_FREQUENCY"><code class="docutils literal notranslate"><span class="pre">EMPLATE_FREQUENCY</span></code></a><ul>
 <li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">gxapi.EMPLATE_FREQUENCY</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TIME"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TIME</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TIME"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TIME</span></code></a><ul>
 <li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">gxapi.EMPLATE_TIME</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#emplate-tx-constants">EMPLATE_TX constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TX_X"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TX_X</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TX_X"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TX_X</span></code></a><ul>
 <li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">gxapi.EMPLATE_TX_X</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TX_Y"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TX_Y</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TX_Y"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TX_Y</span></code></a><ul>
 <li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">gxapi.EMPLATE_TX_Y</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TX_Z"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TX_Z</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.EMPLATE_TX_Z"><code class="docutils literal notranslate"><span class="pre">EMPLATE_TX_Z</span></code></a><ul>
 <li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">gxapi.EMPLATE_TX_Z</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#gu-daarc500-datatype-constants">GU_DAARC500_DATATYPE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_UNKNOWN"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_UNKNOWN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_UNKNOWN"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_UNKNOWN</span></code></a><ul>
 <li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">gxapi.GU_DAARC500_UNKNOWN</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GENERIC_ASCII"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GENERIC_ASCII</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GENERIC_ASCII"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GENERIC_ASCII</span></code></a><ul>
 <li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">gxapi.GU_DAARC500_GENERIC_ASCII</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GPS"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GPS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GPS"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GPS</span></code></a><ul>
 <li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">gxapi.GU_DAARC500_GPS</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GR820_256D"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GR820_256D</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GR820_256D"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GR820_256D</span></code></a><ul>
 <li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.GU_DAARC500_GR820_256D</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GR820_256DU"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GR820_256DU</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GR820_256DU"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GR820_256DU</span></code></a><ul>
 <li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.GU_DAARC500_GR820_256DU</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GR820_512DU"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GR820_512DU</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_GR820_512DU"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_GR820_512DU</span></code></a><ul>
 <li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.GU_DAARC500_GR820_512DU</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_NAV"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_NAV</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GU_DAARC500_NAV"><code class="docutils literal notranslate"><span class="pre">GU_DAARC500_NAV</span></code></a><ul>
 <li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.GU_DAARC500_NAV</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#peakeuler-xy-constants">PEAKEULER_XY constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.PEAKEULER_XY_NOFIT"><code class="docutils literal notranslate"><span class="pre">PEAKEULER_XY_NOFIT</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.PEAKEULER_XY_NOFIT"><code class="docutils literal notranslate"><span class="pre">PEAKEULER_XY_NOFIT</span></code></a><ul>
 <li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.PEAKEULER_XY_NOFIT</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.PEAKEULER_XY_FIT"><code class="docutils literal notranslate"><span class="pre">PEAKEULER_XY_FIT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.PEAKEULER_XY_FIT"><code class="docutils literal notranslate"><span class="pre">PEAKEULER_XY_FIT</span></code></a><ul>
 <li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.PEAKEULER_XY_FIT</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -134,7 +172,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -142,7 +180,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -163,7 +201,7 @@
 <span id="gxgu"></span><h1>GXGU class<a class="headerlink" href="#gxgu-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXGU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXGU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU" title="Link to this definition">¶</a></dt>
 <dd><p>GXGU class.</p>
 <p>Not a class. A catch-all group of functions performing
 various geophysical processes, including the calculation
@@ -176,7 +214,7 @@ file imports, and 2D Euler deconvolution.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.despike_em_array">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">despike_em_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_noise</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_removed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.despike_em_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.despike_em_array" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">despike_em_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_noise</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_removed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.despike_em_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.despike_em_array" title="Link to this definition">¶</a></dt>
 <dd><p>Despike a time-series with individual noise levels</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -189,7 +227,7 @@ file imports, and 2D Euler deconvolution.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.5.</span></p>
+<p><span class="versionmodified added">Added in version 9.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Remove spikes from a single EM time-series decay curve. Each point has its own noise level.
@@ -198,7 +236,7 @@ The algorithm is to be determined.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.dipole_mag">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dipole_mag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.dipole_mag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.dipole_mag" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">dipole_mag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.dipole_mag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.dipole_mag" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate a dipole magnetic field into XYZ file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -214,14 +252,14 @@ The algorithm is to be determined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.6.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.6.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.em_half_space_inv">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">em_half_space_inv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_in_phase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_quadrature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_half_space_inv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_half_space_inv" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">em_half_space_inv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_in_phase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_quadrature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_half_space_inv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_half_space_inv" title="Link to this definition">¶</a></dt>
 <dd><p>Inverts EM responses to the best halfspace model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -242,14 +280,14 @@ The algorithm is to be determined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.em_half_space_vv">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">em_half_space_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qvv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_half_space_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_half_space_vv" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">em_half_space_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qvv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_half_space_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_half_space_vv" title="Link to this definition">¶</a></dt>
 <dd><p>EM Halfspace forward model response.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -265,14 +303,14 @@ The algorithm is to be determined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.em_layer">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">em_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_thickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_phase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_layer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_layer" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">em_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coil_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coil_configuration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_thickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_phase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quadrature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_layer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_layer" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the EM response of a layered earth model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -297,14 +335,14 @@ The algorithm is to be determined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.em_plate">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">em_plate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strike_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plunge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plate_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_spons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_tvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx_orient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx_freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx_dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xqvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yqvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zqvv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_plate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_plate" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">em_plate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strike_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plunge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plate_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_spons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_tvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx_orient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx_freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx_dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zivv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xqvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yqvv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zqvv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.em_plate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.em_plate" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the conductance of a thin plate model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -341,14 +379,14 @@ The algorithm is to be determined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.gen_ux_detect_symbols_group_name">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gen_ux_detect_symbols_group_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_gdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ostr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gen_ux_detect_symbols_group_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gen_ux_detect_symbols_group_name" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gen_ux_detect_symbols_group_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_gdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ostr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gen_ux_detect_symbols_group_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gen_ux_detect_symbols_group_name" title="Link to this definition">¶</a></dt>
 <dd><p>Generate a group name string for UX-Detect symbols</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -360,7 +398,7 @@ The algorithm is to be determined.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified added">Added in version 6.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Start a new group for the symbols in the UX-Detect system.
@@ -376,7 +414,7 @@ Names like “SYMBOLS_UxData_Targets_Targets”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.geometrics2_db">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geometrics2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bi_uni</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mark_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_space</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geometrics2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics2_db" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">geometrics2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bi_uni</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mark_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_space</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geometrics2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics2_db" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a Geometrics STN file to a database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -396,7 +434,7 @@ Names like “SYMBOLS_UxData_Targets_Targets”.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Assumes that the database is new and empty. If not, existing channels
@@ -406,7 +444,7 @@ Existing lines will be erased and then created if they are the same as the new o
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.geometrics2_tbl">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geometrics2_tbl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geometrics2_tbl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics2_tbl" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">geometrics2_tbl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geometrics2_tbl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics2_tbl" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a Geometrics station file (STN) to a table file (TBL)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -418,31 +456,31 @@ Existing lines will be erased and then created if they are the same as the new o
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.geometrics_qc">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geometrics_qc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geometrics_qc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics_qc" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">geometrics_qc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geometrics_qc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geometrics_qc" title="Link to this definition">¶</a></dt>
 <dd><p>Correct reading positions in a database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>wa</strong> (<a class="reference internal" href="GXWA.html#geosoft.gxapi.GXWA" title="geosoft.gxapi.GXWA"><em>GXWA</em></a>) – Output error log file</p></li>
 <li><p><strong>line</strong> (<em>str</em>) – Database line number. For output to log file only</p></li>
-<li><p><strong>in_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a></p></li>
+<li><p><strong>in_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Input <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id79" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a></p></li>
 <li><p><strong>tol</strong> (<em>float</em>) – Tolerance defined as percentage, say 50.0 means 50%. Must be &gt;=0.0 Lower bound = (Normal Density) - (Normal Density)*Tolerance Upper bound = (Normal Density) + (Normal Density)*Tolerance</p></li>
 <li><p><strong>min_coord</strong> (<em>float</em>) – Minimum coordinate (X or Y)</p></li>
 <li><p><strong>max_coord</strong> (<em>float</em>) – Maximum coordinate (X or Y)</p></li>
-<li><p><strong>out_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a></p></li>
-<li><p><strong>flag_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Flag <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id76" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a></p></li>
+<li><p><strong>out_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id79" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a></p></li>
+<li><p><strong>flag_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Output Flag <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> There are six cases to consider:</p>
@@ -534,7 +572,7 @@ falls within the Lower and Upper Bounds.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.geonics3138_dump2_db">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geonics3138_dump2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ah</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_mult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_mult</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geonics3138_dump2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geonics3138_dump2_db" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">geonics3138_dump2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ah</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_mult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_mult</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geonics3138_dump2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geonics3138_dump2_db" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a Geonics EM31/EM38 file in dump format to a database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -549,7 +587,7 @@ falls within the Lower and Upper Bounds.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Assumes that the database is new and empty. If not, existing channels
@@ -560,7 +598,7 @@ be erased and then created if they are the same as the new ones.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.geonics61_dump2_db">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geonics61_dump2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_mult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_mult</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geonics61_dump2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geonics61_dump2_db" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">geonics61_dump2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_mult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_mult</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geonics61_dump2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geonics61_dump2_db" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a Geonics EM61 file in dump format to a database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -574,7 +612,7 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Assumes that the database is new and empty. If not, existing channels
@@ -585,7 +623,7 @@ be erased and then created if they are the same as the new ones.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.geonics_dat2_db">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geonics_dat2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_mult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_mult</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geonics_dat2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geonics_dat2_db" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">geonics_dat2_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_wa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_mult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_mult</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.geonics_dat2_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.geonics_dat2_db" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a Geonics EM31/EM38/EM61 file in <a class="reference internal" href="GXDAT.html#geosoft.gxapi.GXDAT" title="geosoft.gxapi.GXDAT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXDAT</span></code></a> format to a database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -599,7 +637,7 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Assumes that the database is new and empty. If not, existing channels
@@ -610,7 +648,7 @@ be erased and then created if they are the same as the new ones.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.gr_curv_cor">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gr_curv_cor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_boug</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_curv_cor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_curv_cor" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gr_curv_cor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_boug</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_curv_cor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_curv_cor" title="Link to this definition">¶</a></dt>
 <dd><p>Gravity Curvature (Bullard B) Correction to Bouguer anomaly</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -622,14 +660,14 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.gr_curv_cor_ex">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gr_curv_cor_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_boug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_curv_cor_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_curv_cor_ex" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gr_curv_cor_ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_elev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_boug</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_curv_cor_ex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_curv_cor_ex" title="Link to this definition">¶</a></dt>
 <dd><p>Gravity Curvature (Bullard B) Correction to Bouguer anomaly, with user input cap density.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -642,14 +680,14 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.0.1.</span></p>
+<p><span class="versionmodified added">Added in version 8.0.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.gr_demvv">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gr_demvv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im_gdem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_demvv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_demvv" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gr_demvv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im_gdem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_demvv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_demvv" title="Link to this definition">¶</a></dt>
 <dd><p>Get gravity DEM grid <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> for Bouguer anomaly</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -662,14 +700,14 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.gr_test">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gr_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ym</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_test" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gr_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ym</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_g2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gr_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gr_test" title="Link to this definition">¶</a></dt>
 <dd><p>Test triangular prism gravity calculation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -687,14 +725,14 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.4.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.4.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.gravity_still_reading_correction">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gravity_still_reading_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">still</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gravity_still_reading_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gravity_still_reading_correction" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gravity_still_reading_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">still</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gravity_still_reading_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gravity_still_reading_correction" title="Link to this definition">¶</a></dt>
 <dd><p>Gravity Still Reading Correction on selected lines.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -709,14 +747,14 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.5.</span></p>
+<p><span class="versionmodified added">Added in version 8.5.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.gravity_still_reading_database_correction">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gravity_still_reading_database_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stillDB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readings_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gravity_still_reading_database_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gravity_still_reading_database_correction" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gravity_still_reading_database_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stillDB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readings_channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grav_out</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.gravity_still_reading_database_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.gravity_still_reading_database_correction" title="Link to this definition">¶</a></dt>
 <dd><p>Gravity Still Reading Correction on selected lines, using a still readings database</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -735,14 +773,14 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.7.</span></p>
+<p><span class="versionmodified added">Added in version 9.7.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.import_daarc500_ethernet">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_daarc500_ethernet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.import_daarc500_ethernet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.import_daarc500_ethernet" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">import_daarc500_ethernet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.import_daarc500_ethernet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.import_daarc500_ethernet" title="Link to this definition">¶</a></dt>
 <dd><p>Import Ethernet data from the RMS Instruments DAARC500.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -754,7 +792,7 @@ be erased and then created if they are the same as the new ones.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Imports Ethernet data recorded
@@ -765,7 +803,7 @@ block, to make it easier to import the data using the regular binary import.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.import_daarc500_serial">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_daarc500_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.import_daarc500_serial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.import_daarc500_serial" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">import_daarc500_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.import_daarc500_serial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.import_daarc500_serial" title="Link to this definition">¶</a></dt>
 <dd><p>Import Serial data from the RMS Instruments DAARC500.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -778,7 +816,7 @@ block, to make it easier to import the data using the regular binary import.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Imports a single channel of the up to 8 serial data channels recorded
@@ -789,7 +827,7 @@ block, to make it easier to import the data using the regular binary import.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.import_p190">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">import_p190</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rec_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wa</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.import_p190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.import_p190" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">import_p190</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rec_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wa</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.import_p190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.import_p190" title="Link to this definition">¶</a></dt>
 <dd><p>Import navigation data in the P190 format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -802,7 +840,7 @@ block, to make it easier to import the data using the regular binary import.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.3.</span></p>
+<p><span class="versionmodified added">Added in version 6.3.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Imports the data, and, if projection information is included
@@ -831,19 +869,19 @@ records) are imported.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.lag_daarc500_gps">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lag_daarc500_gps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mag_fid_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_event_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gps_fid_vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.lag_daarc500_gps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.lag_daarc500_gps" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">lag_daarc500_gps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mag_fid_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_event_vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gps_fid_vv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.lag_daarc500_gps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.lag_daarc500_gps" title="Link to this definition">¶</a></dt>
 <dd><p>Lag the GPS fid values for the DAARC500 import.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mag_fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mag fid values   (<a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>)</p></li>
-<li><p><strong>mag_event_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mag event values (<a class="reference internal" href="GXGEOSOFT.html#id76" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a>)</p></li>
-<li><p><strong>gps_fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – GPS fid values (<a class="reference internal" href="GXGEOSOFT.html#id78" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>, altered on return)</p></li>
+<li><p><strong>mag_fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mag fid values   (<a class="reference internal" href="GXGEOSOFT.html#id79" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>)</p></li>
+<li><p><strong>mag_event_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – Mag event values (<a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a>)</p></li>
+<li><p><strong>gps_fid_vv</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – GPS fid values (<a class="reference internal" href="GXGEOSOFT.html#id79" title="geosoft.gxapi.GS_DOUBLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_DOUBLE</span></code></a>, altered on return)</p></li>
 </ul>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The fiducial times recorded for the GPS in the RMS Instrument DAARC500
@@ -853,7 +891,7 @@ be moved to the previous fid value in the mag data where the event flag is non-z
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.magnetic_tilt_depth">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">magnetic_tilt_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tilt_deriv_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horiz_deriv_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.magnetic_tilt_depth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.magnetic_tilt_depth" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">magnetic_tilt_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tilt_deriv_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horiz_deriv_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.magnetic_tilt_depth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.magnetic_tilt_depth" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -865,7 +903,7 @@ be moved to the previous fid value in the mag data where the event flag is non-z
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.9.</span></p>
+<p><span class="versionmodified added">Added in version 9.9.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Tilt-Depth is a magnetic depth estimation method that lends itself to rapid mapping of sedimentary basins without the complexity of unraveling the depth solutions from methods that give multiple solutions (e.g. Euler deconvolution).
@@ -878,7 +916,7 @@ grid is sampled at those locations. The inverse of the horizontal derivative val
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.maxwell_plate_corners">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maxwell_plate_corners</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plunge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.maxwell_plate_corners"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.maxwell_plate_corners" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">maxwell_plate_corners</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dip_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plunge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.maxwell_plate_corners"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.maxwell_plate_corners" title="Link to this definition">¶</a></dt>
 <dd><p>Calculate the corner point locations for a Maxwell Plate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -907,7 +945,7 @@ grid is sampled at those locations. The inverse of the horizontal derivative val
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.1.</span></p>
+<p><span class="versionmodified added">Added in version 6.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> This routine calculates the corner locations of plates defined in the Maxwell Plate
@@ -916,7 +954,7 @@ program, given the top-center location and plate geometry parameters.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGU" title="geosoft.gxapi.GXGU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGU</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -930,7 +968,7 @@ program, given the top-center location and plate geometry parameters.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.scan_daarc500_ethernet">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scan_daarc500_ethernet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.scan_daarc500_ethernet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.scan_daarc500_ethernet" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">scan_daarc500_ethernet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.scan_daarc500_ethernet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.scan_daarc500_ethernet" title="Link to this definition">¶</a></dt>
 <dd><p>Scan Ethernet data from the RMS Instruments DAARC500.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -942,7 +980,7 @@ program, given the top-center location and plate geometry parameters.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Scans the file to see what data type is in the Ethernet file.
@@ -951,19 +989,19 @@ Currently only detects GR820 types.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.scan_daarc500_serial">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scan_daarc500_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.scan_daarc500_serial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.scan_daarc500_serial" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">scan_daarc500_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.scan_daarc500_serial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.scan_daarc500_serial" title="Link to this definition">¶</a></dt>
 <dd><p>Scan Serial data from the RMS Instruments DAARC500.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file</strong> (<em>str</em>) – File to import</p></li>
-<li><p><strong>vv_type</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – 8 Recognized types - <a class="reference internal" href="GXGEOSOFT.html#id76" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a></p></li>
-<li><p><strong>vv_items</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – 8 Numbers of items - <a class="reference internal" href="GXGEOSOFT.html#id76" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a></p></li>
+<li><p><strong>vv_type</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – 8 Recognized types - <a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a></p></li>
+<li><p><strong>vv_items</strong> (<a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><em>GXVV</em></a>) – 8 Numbers of items - <a class="reference internal" href="GXGEOSOFT.html#id77" title="geosoft.gxapi.GS_LONG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GS_LONG</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Scans the file to see which of the 8 serial channels were used to store data.</p>
@@ -971,7 +1009,7 @@ Currently only detects GR820 types.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.vv_euler">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vv_euler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_xin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_xout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvdc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_zer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvx_yer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wnd_sz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">si</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wt_pow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_yfit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.vv_euler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.vv_euler" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">vv_euler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_xin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_xout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvdc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_zer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvx_yer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wnd_sz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">si</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wt_pow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_yfit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.vv_euler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.vv_euler" title="Link to this definition">¶</a></dt>
 <dd><p>Get Euler solutions of depth from VVs and grids.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -996,7 +1034,7 @@ Currently only detects GR820 types.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> All VVs must be REAL</p>
@@ -1015,7 +1053,7 @@ output values are set to dummy if:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGU.vv_euler2">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vv_euler2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_xin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_xout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvdc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_zer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvx_yer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_wnd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">si</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wt_pow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_yfit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.vv_euler2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.vv_euler2" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">vv_euler2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv_xin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_xout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_yout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvdc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_zer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vvx_yer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vv_wnd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">si</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wt_pow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_yfit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGU.html#GXGU.vv_euler2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGU.vv_euler2" title="Link to this definition">¶</a></dt>
 <dd><p>Get Euler solutions of depth from VVs and grids (method 2).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1040,7 +1078,7 @@ output values are set to dummy if:</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> All VVs must be REAL</p>
@@ -1061,7 +1099,7 @@ output values are set to dummy if:</p>
 <dd><p>Unscaled</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_ERR_UNSCALED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_ERR_UNSCALED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1072,7 +1110,7 @@ output values are set to dummy if:</p>
 <dd><p>Logscaling</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id28">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_ERR_LOGSCALING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_ERR_LOGSCALING</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1087,7 +1125,7 @@ output values are set to dummy if:</p>
 <dd><p>Inphase</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id29">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_INV_INPHASE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_INV_INPHASE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1098,7 +1136,7 @@ output values are set to dummy if:</p>
 <dd><p>Quadrature</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id30">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_INV_QUADRATURE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_INV_QUADRATURE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1109,7 +1147,7 @@ output values are set to dummy if:</p>
 <dd><p>Both</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id31">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_INV_BOTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EM_INV_BOTH</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1124,7 +1162,7 @@ output values are set to dummy if:</p>
 <dd><p>Emplate frequency</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id32">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_FREQUENCY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_FREQUENCY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1135,7 +1173,7 @@ output values are set to dummy if:</p>
 <dd><p>Emplate time</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id33">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TIME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TIME</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></span><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1150,7 +1188,7 @@ output values are set to dummy if:</p>
 <dd><p>X</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id34">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TX_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TX_X</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1161,7 +1199,7 @@ output values are set to dummy if:</p>
 <dd><p>Y</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id35">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TX_Y</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TX_Y</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1172,7 +1210,7 @@ output values are set to dummy if:</p>
 <dd><p>Z</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id36">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TX_Z</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">EMPLATE_TX_Z</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1187,7 +1225,7 @@ output values are set to dummy if:</p>
 <dd><p>Gu daarc500 unknown</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id37">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_UNKNOWN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1198,7 +1236,7 @@ output values are set to dummy if:</p>
 <dd><p>Gu daarc500 generic ascii</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id38">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GENERIC_ASCII</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GENERIC_ASCII</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1209,7 +1247,7 @@ output values are set to dummy if:</p>
 <dd><p>Gu daarc500 gps</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id39">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GPS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1220,7 +1258,7 @@ output values are set to dummy if:</p>
 <dd><p>Gu daarc500 gr820 256d</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id40">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GR820_256D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GR820_256D</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1231,7 +1269,7 @@ output values are set to dummy if:</p>
 <dd><p>Gu daarc500 gr820 256du</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id41">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GR820_256DU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GR820_256DU</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1242,7 +1280,7 @@ output values are set to dummy if:</p>
 <dd><p>Gu daarc500 gr820 512du</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id42">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GR820_512DU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_GR820_512DU</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1253,7 +1291,7 @@ output values are set to dummy if:</p>
 <dd><p>Gu daarc500 nav</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id43">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_NAV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GU_DAARC500_NAV</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></span><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1268,7 +1306,7 @@ output values are set to dummy if:</p>
 <dd><p>Nofit</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id44">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PEAKEULER_XY_NOFIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PEAKEULER_XY_NOFIT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1279,7 +1317,7 @@ output values are set to dummy if:</p>
 <dd><p>Fit</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id45">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PEAKEULER_XY_FIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">PEAKEULER_XY_FIT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1294,20 +1332,20 @@ output values are set to dummy if:</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGU class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

@@ -1,0 +1,21 @@
+﻿geosoft.gxpy.dataframe
+======================
+
+.. automodule:: geosoft.gxpy.dataframe
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      Data_frame
+      _t
+      table_column
+      table_record
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      DfException
+   

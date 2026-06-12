@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXGEOSTRING class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXGEOSTRING class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGEOSTRING class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -56,23 +56,37 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#geostring-open-constants">GEOSTRING_OPEN constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.GEOSTRING_OPEN_READ"><code class="docutils literal notranslate"><span class="pre">GEOSTRING_OPEN_READ</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.GEOSTRING_OPEN_READ"><code class="docutils literal notranslate"><span class="pre">GEOSTRING_OPEN_READ</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.GEOSTRING_OPEN_READ</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.GEOSTRING_OPEN_READWRITE"><code class="docutils literal notranslate"><span class="pre">GEOSTRING_OPEN_READWRITE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.GEOSTRING_OPEN_READWRITE"><code class="docutils literal notranslate"><span class="pre">GEOSTRING_OPEN_READWRITE</span></code></a><ul>
 <li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">gxapi.GEOSTRING_OPEN_READWRITE</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#section-orientation-constants">SECTION_ORIENTATION constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_UNKNOWN"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_UNKNOWN</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_UNKNOWN"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_UNKNOWN</span></code></a><ul>
 <li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">gxapi.SECTION_ORIENTATION_UNKNOWN</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_PLAN"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_PLAN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_PLAN"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_PLAN</span></code></a><ul>
 <li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">gxapi.SECTION_ORIENTATION_PLAN</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_SECTION"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_SECTION</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_SECTION"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_SECTION</span></code></a><ul>
 <li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">gxapi.SECTION_ORIENTATION_SECTION</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_CROOKED"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_CROOKED</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_CROOKED"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_CROOKED</span></code></a><ul>
 <li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">gxapi.SECTION_ORIENTATION_CROOKED</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_GMSYS"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_GMSYS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.SECTION_ORIENTATION_GMSYS"><code class="docutils literal notranslate"><span class="pre">SECTION_ORIENTATION_GMSYS</span></code></a><ul>
 <li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">gxapi.SECTION_ORIENTATION_GMSYS</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -80,7 +94,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -88,7 +102,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -109,7 +123,7 @@
 <span id="gxgeostring"></span><h1>GXGEOSTRING class<a class="headerlink" href="#gxgeostring-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGEOSTRING">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXGEOSTRING</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGEOSTRING.html#GXGEOSTRING"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXGEOSTRING</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGEOSTRING.html#GXGEOSTRING"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING" title="Link to this definition">¶</a></dt>
 <dd><p>GXGEOSTRING class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a> class is used to read information stored in Geostring files 
 (<code class="docutils literal notranslate"><span class="pre">*.geosoft_string</span></code>). Geosoft geostrings are 3D vector files that store digitized 
@@ -131,7 +145,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -161,7 +175,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -176,7 +190,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> List items are returned with feature GUID in name and feature name in value.</p>
@@ -192,7 +206,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -221,7 +235,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -236,7 +250,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> List items are returned with section GUID in name and section name in value.</p>
@@ -259,7 +273,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -277,7 +291,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -296,7 +310,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -314,7 +328,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -335,7 +349,7 @@ but read/write support could be added in the future.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGEOSTRING.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGEOSTRING.html#GXGEOSTRING.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGEOSTRING.html#GXGEOSTRING.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXGEOSTRING" title="geosoft.gxapi.GXGEOSTRING"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXGEOSTRING</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -349,7 +363,7 @@ but read/write support could be added in the future.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXGEOSTRING.open">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geostring_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGEOSTRING.html#GXGEOSTRING.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.open" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geostring_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXGEOSTRING.html#GXGEOSTRING.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXGEOSTRING.open" title="Link to this definition">¶</a></dt>
 <dd><p>Open a Geostring file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -366,7 +380,7 @@ but read/write support could be added in the future.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.4.</span></p>
+<p><span class="versionmodified added">Added in version 8.4.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -382,7 +396,7 @@ but read/write support could be added in the future.</p>
 <dd><p>Read</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GEOSTRING_OPEN_READ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GEOSTRING_OPEN_READ</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -393,7 +407,7 @@ but read/write support could be added in the future.</p>
 <dd><p>Readwrite</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id11">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GEOSTRING_OPEN_READWRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">GEOSTRING_OPEN_READWRITE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -408,7 +422,7 @@ but read/write support could be added in the future.</p>
 <dd><p>Unknown</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id12">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_UNKNOWN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -419,7 +433,7 @@ but read/write support could be added in the future.</p>
 <dd><p>Plan</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id13">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_PLAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_PLAN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -430,7 +444,7 @@ but read/write support could be added in the future.</p>
 <dd><p>Section</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id14">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_SECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_SECTION</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -441,7 +455,7 @@ but read/write support could be added in the future.</p>
 <dd><p>Crooked</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id15">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_CROOKED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_CROOKED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -452,7 +466,7 @@ but read/write support could be added in the future.</p>
 <dd><p>Gmsys</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id16">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_GMSYS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">SECTION_ORIENTATION_GMSYS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -467,20 +481,20 @@ but read/write support could be added in the future.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXGEOSTRING class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

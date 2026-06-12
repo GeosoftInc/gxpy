@@ -4,20 +4,11 @@
 .. automodule:: geosoft.gxpy.va
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
    
       _t
-   
-   
-
-   
    
    .. rubric:: Classes
 
@@ -25,17 +16,9 @@
    
       GXva
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       VAException
    
-   
-
-
-

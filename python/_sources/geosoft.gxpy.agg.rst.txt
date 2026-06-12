@@ -4,20 +4,11 @@
 .. automodule:: geosoft.gxpy.agg
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
    
       _t
-   
-   
-
-   
    
    .. rubric:: Classes
 
@@ -25,17 +16,9 @@
    
       Aggregate_image
    
-   
-
-   
-   
    .. rubric:: Exceptions
 
    .. autosummary::
    
       AggregateException
    
-   
-
-
-

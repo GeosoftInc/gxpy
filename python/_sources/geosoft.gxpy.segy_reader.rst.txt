@@ -4,15 +4,6 @@
 .. automodule:: geosoft.gxpy.segy_reader
 
    
-   
-   
-
-   
-   
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
@@ -26,11 +17,3 @@
       TraceFieldConfiguration
       ZType
    
-   
-
-   
-   
-   
-
-
-

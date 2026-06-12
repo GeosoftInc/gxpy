@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GXVA class &#8212; Geosoft GX Python API 2025.2.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>GXVA class &#8212; Geosoft GX Python API 2026.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/maki.css?v=ea9b3600" />
-    <script src="_static/documentation_options.js?v=f788092f"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/documentation_options.js?v=b916904f"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
  
@@ -22,17 +22,17 @@
 </script>
 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
@@ -86,52 +86,86 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#va-average-constants">VA_AVERAGE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_AVERAGE_ROWS"><code class="docutils literal notranslate"><span class="pre">VA_AVERAGE_ROWS</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_AVERAGE_ROWS"><code class="docutils literal notranslate"><span class="pre">VA_AVERAGE_ROWS</span></code></a><ul>
 <li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_AVERAGE_ROWS</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_AVERAGE_COLUMNS"><code class="docutils literal notranslate"><span class="pre">VA_AVERAGE_COLUMNS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_AVERAGE_COLUMNS"><code class="docutils literal notranslate"><span class="pre">VA_AVERAGE_COLUMNS</span></code></a><ul>
 <li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_AVERAGE_COLUMNS</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#va-decimate-constants">VA_DECIMATE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_SUM"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_SUM</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_SUM"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_SUM</span></code></a><ul>
 <li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_SUM</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_AVERAGE"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_AVERAGE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_AVERAGE"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_AVERAGE</span></code></a><ul>
 <li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_AVERAGE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_MEDIAN"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_MEDIAN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_MEDIAN"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_MEDIAN</span></code></a><ul>
 <li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_MEDIAN</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_FIRST"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_FIRST</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_DECIMATE_FIRST"><code class="docutils literal notranslate"><span class="pre">VA_DECIMATE_FIRST</span></code></a><ul>
 <li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_DECIMATE_FIRST</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#va-interpolate-constants">VA_INTERPOLATE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_NEAREST</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_NEAREST</span></code></a><ul>
 <li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_NEAREST</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_LINEAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_LINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_LINEAR</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_CUBIC"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_CUBIC</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_CUBIC"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_CUBIC</span></code></a><ul>
 <li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_CUBIC</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_AKIMA"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_AKIMA</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_AKIMA"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_AKIMA</span></code></a><ul>
 <li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_AKIMA</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_PREDICT"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_PREDICT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_INTERPOLATE_PREDICT"><code class="docutils literal notranslate"><span class="pre">VA_INTERPOLATE_PREDICT</span></code></a><ul>
 <li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_INTERPOLATE_PREDICT</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#va-extrapolate-constants">VA_EXTRAPOLATE constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_NONE"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_NONE</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_NONE"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_NONE</span></code></a><ul>
 <li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_NONE</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_SAME"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_SAME</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_SAME"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_SAME</span></code></a><ul>
 <li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_SAME</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_NEAREST</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_NEAREST"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_NEAREST</span></code></a><ul>
 <li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_NEAREST</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_LINEAR</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_EXTRAPOLATE_LINEAR"><code class="docutils literal notranslate"><span class="pre">VA_EXTRAPOLATE_LINEAR</span></code></a><ul>
 <li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_EXTRAPOLATE_LINEAR</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a class="reference internal" href="#va-object-constants">VA_OBJECT constants</a><ul>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_ROW"><code class="docutils literal notranslate"><span class="pre">VA_ROW</span></code></a></li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_ROW"><code class="docutils literal notranslate"><span class="pre">VA_ROW</span></code></a><ul>
 <li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_ROW</span></code></a></li>
-<li><a class="reference internal" href="#geosoft.gxapi.VA_COL"><code class="docutils literal notranslate"><span class="pre">VA_COL</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#geosoft.gxapi.VA_COL"><code class="docutils literal notranslate"><span class="pre">VA_COL</span></code></a><ul>
 <li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">gxapi.VA_COL</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -139,7 +173,7 @@
 </ul>
 
   </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -147,7 +181,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -168,7 +202,7 @@
 <span id="gxva"></span><h1>GXVA class<a class="headerlink" href="#gxva-class" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVA">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GXVA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GXVA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA" title="Link to this definition">¶</a></dt>
 <dd><p>GXVA class.</p>
 <p>The <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> class is the 2-Dimensional analogue to the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> class.
 When displayed in a database, <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> objects are displayed graphically
@@ -199,7 +233,7 @@ be stored in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="g
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Adds each value in an input elevation <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> to all the values at
@@ -217,7 +251,7 @@ the same fid in a depths <a class="reference internal" href="#geosoft.gxapi.GXVA
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.3.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.3.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> If the VAs have different numbers of columns, the smaller number
@@ -237,7 +271,7 @@ is used in the copy operation.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The output <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> will be dimensioned by the number of
@@ -267,7 +301,7 @@ rows or columns in the input <a class="reference internal" href="GXVV.html#geoso
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.2.</span></p>
+<p><span class="versionmodified added">Added in version 8.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Returns 1 if all rows contain values which match the input values.
@@ -300,7 +334,7 @@ An absolute tolerance can be specified to ignore numerical noise.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 8.2.</span></p>
+<p><span class="versionmodified added">Added in version 8.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Returns 1 if all rows contain values which match the input values.
@@ -324,7 +358,7 @@ This version returns the row and column index of first mismatch.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> <a class="reference internal" href="#geosoft.gxapi.GXVA.len" title="geosoft.gxapi.GXVA.len"><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code></a> returns the number of rows.</p>
@@ -340,7 +374,7 @@ This version returns the row and column index of first mismatch.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -363,7 +397,7 @@ This version returns the row and column index of first mismatch.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> 1. Unlike <a class="reference internal" href="#geosoft.gxapi.GXVA.copy" title="geosoft.gxapi.GXVA.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a> destination <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is not reallocated, nor are
@@ -374,7 +408,7 @@ Convert_GS if necessary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVA.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create" title="Link to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -392,14 +426,14 @@ Convert_GS if necessary.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVA.create_ext">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create_ext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create_ext" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create_ext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create_ext" title="Link to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>, using one of the <a class="reference internal" href="GXGEOSOFT.html#gs-types"><span class="std std-ref">GS_TYPES constants</span></a> special data types.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -417,7 +451,7 @@ Convert_GS if necessary.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.create" title="geosoft.gxapi.GXVV.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV.create</span></code></a></p>
@@ -425,7 +459,7 @@ Convert_GS if necessary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVA.create_vv">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create_vv" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create_vv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.create_vv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.create_vv" title="Link to this definition">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> using the data in a <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -443,7 +477,7 @@ Convert_GS if necessary.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.1.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.1.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> See <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV.create" title="geosoft.gxapi.GXVV.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV.create</span></code></a></p>
@@ -468,7 +502,7 @@ Convert_GS if necessary.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This method decimates a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> by selecting every ‘N’ items and replacing them
@@ -495,7 +529,7 @@ with a value given by the decimation method, one of <a class="reference internal
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2025.2.</span></p>
+<p><span class="versionmodified added">Added in version 2025.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> This method expands a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> by replacing each input column with ‘N’ items, using the
@@ -521,7 +555,7 @@ selected extrapolation method, one of <a class="reference internal" href="#va-ex
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -546,7 +580,7 @@ if the value is dummy or outside of the range of data.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Type conversions are performed if necessary.  Dummy values
@@ -566,7 +600,7 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -584,7 +618,7 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -602,7 +636,7 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> No data is copied, this is the handle to the data <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> in the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.
@@ -631,7 +665,7 @@ if the value is dummy or outside of the range of data.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Type conversions are performed if necessary.  Dummy values
@@ -652,7 +686,7 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Returns element wanted, <a class="reference internal" href="GXGEOSOFT.html#id5" title="geosoft.gxapi.rDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rDUMMY</span></code></a>, <a class="reference internal" href="GXGEOSOFT.html#id4" title="geosoft.gxapi.iDUMMY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iDUMMY</span></code></a> or blank string
@@ -675,14 +709,14 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVA.index_order">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">index_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">va</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.index_order"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.index_order" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">index_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">va</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.index_order"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.index_order" title="Link to this definition">¶</a></dt>
 <dd><p>Reorder a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> based on an index <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -693,7 +727,7 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Given a row index <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> (of type INT), this method reorders a
@@ -727,7 +761,7 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> <a class="reference internal" href="#geosoft.gxapi.GXVA.col" title="geosoft.gxapi.GXVA.col"><code class="xref py py-obj docutils literal notranslate"><span class="pre">col</span></code></a> returns the number of columns.</p>
@@ -746,7 +780,7 @@ are converted to “*” string.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 6.4.2.</span></p>
+<p><span class="versionmodified added">Added in version 6.4.2.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Fractional values in the <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a> will interpolate between the value
@@ -756,7 +790,7 @@ if outside the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="g
 
 <dl class="py method">
 <dt class="sig sig-object py" id="geosoft.gxapi.GXVA.null">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.null" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.null" title="Link to this definition">¶</a></dt>
 <dd><p>A null (undefined) instance of <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -786,7 +820,7 @@ in a vector while ignoring dummies, for a range of columns and rows.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.6.</span></p>
+<p><span class="versionmodified added">Added in version 9.6.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -809,7 +843,7 @@ for a range of columns and rows.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 9.6.</span></p>
+<p><span class="versionmodified added">Added in version 9.6.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -828,7 +862,7 @@ in a vector while ignoring dummies.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -847,7 +881,7 @@ in a vector while ignoring dummies.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -857,7 +891,7 @@ in a vector while ignoring dummies.</p>
 <span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geosoft/gxapi/GXVA.html#GXVA.reverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geosoft.gxapi.GXVA.reverse" title="Link to this definition">¶</a></dt>
 <dd><p>Reverses the order of the rows in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a>.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.1.5.</span></p>
+<p><span class="versionmodified added">Added in version 5.1.5.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -879,7 +913,7 @@ in a vector while ignoring dummies.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -898,7 +932,7 @@ in a vector while ignoring dummies.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Element being set cannot be &lt; 0.
@@ -916,7 +950,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -931,7 +965,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -950,7 +984,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Element being set cannot be &lt; 0.
@@ -972,7 +1006,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 2023.2.</span></p>
+<p><span class="versionmodified added">Added in version 2023.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Element row starting index being set cannot be &lt; 0.
@@ -990,7 +1024,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The number of columns in a <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> is fixed, and cannot be
@@ -1011,7 +1045,7 @@ altered once the <a class="reference internal" href="#geosoft.gxapi.GXVA" title=
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> Element being set cannot be &lt; 0.
@@ -1033,7 +1067,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 </dd></dl>
@@ -1051,7 +1085,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 7.2.</span></p>
+<p><span class="versionmodified added">Added in version 7.2.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic">Geosoft End-User License</a></p>
 <p><strong>Note:</strong> Supports all <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> types using an internal double <a class="reference internal" href="GXVV.html#geosoft.gxapi.GXVV" title="geosoft.gxapi.GXVV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVV</span></code></a>.</p>
@@ -1071,7 +1105,7 @@ increased.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The defined window must be within the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> element dimensions.
@@ -1094,7 +1128,7 @@ If any values are dummy, the result will be dummy.</p>
 </dd>
 </dl>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 5.0.</span></p>
+<p><span class="versionmodified added">Added in version 5.0.0.</span></p>
 </div>
 <p><strong>License:</strong> <a class="reference external" href="https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic">Geosoft Open License</a></p>
 <p><strong>Note:</strong> The defined window must be within the <a class="reference internal" href="#geosoft.gxapi.GXVA" title="geosoft.gxapi.GXVA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GXVA</span></code></a> element dimensions.
@@ -1114,7 +1148,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Average the Rows</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_AVERAGE_ROWS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_AVERAGE_ROWS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1125,7 +1159,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Average the Columns</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id40">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_AVERAGE_COLUMNS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_AVERAGE_COLUMNS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1140,7 +1174,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Replace with the sum of the set of values</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id41">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_SUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_SUM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1151,7 +1185,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Replace with the average of the set of values</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id42">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_AVERAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_AVERAGE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1162,7 +1196,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Replace with the median of the values. For even numbers, the average of the middle sorted values</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id43">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_MEDIAN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_MEDIAN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1173,7 +1207,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Replace with the first value in each set of values</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id44">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_FIRST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_DECIMATE_FIRST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1188,7 +1222,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Outputs equal input nearest column values</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id45">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_NEAREST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1199,7 +1233,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Use linear interpolation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id46">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_LINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1210,7 +1244,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Use cubic interpolation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id47">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_CUBIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_CUBIC</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1221,7 +1255,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Use akima interpolation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id48">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_AKIMA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_AKIMA</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></span><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1232,7 +1266,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Use prediction interpolation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id49">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_PREDICT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_INTERPOLATE_PREDICT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></span><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1247,7 +1281,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Outputs equal input single values</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id50">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NONE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1258,7 +1292,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Use same method as interpolation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id51">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_SAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_SAME</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1269,7 +1303,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Outputs equal edge single values</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id52">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NEAREST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_NEAREST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></span><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1280,7 +1314,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Use linear interpolation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id53">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_EXTRAPOLATE_LINEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1295,7 +1329,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Row</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id54">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_ROW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_ROW</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></span><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1306,7 +1340,7 @@ If any values are dummy, the result will be dummy.</p>
 <dd><p>Column</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id55">
-<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_COL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">gxapi.</span></span><span class="sig-name descname"><span class="pre">VA_COL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></span><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1321,20 +1355,20 @@ If any values are dummy, the result will be dummy.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2025.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Geosoft GX Python API 2026.1.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">GXVA class</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2025, Geosoft Inc.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    &#169; Copyright 2026, Geosoft Inc.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking
