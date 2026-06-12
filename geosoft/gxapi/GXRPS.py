@@ -73,7 +73,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  output_channel:       int
         :type  channel_description:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -92,7 +92,7 @@ class GXRPS(gxapi_cy.WrapRPS):
 
 
     @classmethod
-    def full_spectral_analysis(cls, db, line, spectral_data_channel, livetime_channel, altitude_channel, start_window, end_window, fit_mode, output_channel_suffix):
+    def full_spectral_analysis(cls, db, line, spectral_data_channel, livetime_channel, altitude_channel, mcf_file, fit_mode, output_channel_suffix):
         """
         
         Apply Medusa's Full Spectral Analysis algorithm to extract the radionuclide channels from the spectral data
@@ -102,8 +102,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :param spectral_data_channel:  Spectral data channel name
         :param livetime_channel:       Livetime channel name - assumes 1.0 if left blank
         :param altitude_channel:       Altitude (e.g. radar altimeter) channel name - assumes 0 if left blank
-        :param start_window:           Index of the first window to include in the analysis (0 to N/4)
-        :param end_window:             Index of the last window to include in the analysis (3N/4 to N-1)
+        :param mcf_file:               MCF file
         :param fit_mode:               :ref:`RPS_FITMODE`
         :param output_channel_suffix:  Suffix for output channels
         :type  db:                     GXDB
@@ -111,19 +110,18 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  spectral_data_channel:  str
         :type  livetime_channel:       str
         :type  altitude_channel:       str
-        :type  start_window:           int
-        :type  end_window:             int
+        :type  mcf_file:               str
         :type  fit_mode:               int
         :type  output_channel_suffix:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2026.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** 
         """
         
-        gxapi_cy.WrapRPS._full_spectral_analysis(GXContext._get_tls_geo(), db, line, spectral_data_channel.encode(), livetime_channel.encode(), altitude_channel.encode(), start_window, end_window, fit_mode, output_channel_suffix.encode())
+        gxapi_cy.WrapRPS._full_spectral_analysis(GXContext._get_tls_geo(), db, line, spectral_data_channel.encode(), livetime_channel.encode(), altitude_channel.encode(), mcf_file.encode(), fit_mode, output_channel_suffix.encode())
         
 
 
@@ -132,7 +130,7 @@ class GXRPS(gxapi_cy.WrapRPS):
     def dead_time_correction(cls, db, line, raw_channel, raw_tc_channel, deadtime_factor, deadtime_corr_channel):
         """
         
-        Apply the Dead-time correction to a channel for a line in a database
+        Apply the Dead-time correction to a channel for a line in a database, assumes one second per pulse.
         
         :param db:                     `GXDB <geosoft.gxapi.GXDB>` Object
         :param line:                   Line to process (NULLSYMB for all selected lines)
@@ -147,17 +145,17 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  deadtime_factor:        float
         :type  deadtime_corr_channel:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The output dead-time corrected channel is calculated using the formula:
 
-        deadtime_value = raw_value / (1 - raw_TC * dead_time * 0.000001)
+        deadtime_corrected_value = raw_value / (1 - raw_TC * dead_time * 0.000001)
 
         where:
 
-        deadtime_value = output dead-time corrected value
+        deadtime_corrected_value = output dead-time corrected value
         raw_value = raw channel value (counts)
         raw_TC = raw total count channel value
         dead_time = dead-time factor (microseconds/pulse)
@@ -171,10 +169,92 @@ class GXRPS(gxapi_cy.WrapRPS):
 
 
     @classmethod
+    def dead_time_correction_acq_channel(cls, db, line, raw_channel, deadtime_channel, acqtime_channel, deadtime_corr_channel):
+        """
+        
+        Apply the Dead-time correction to a channel for a line in a database, using an acquisition time channel.
+        
+        :param db:                     `GXDB <geosoft.gxapi.GXDB>` Object
+        :param line:                   Line to process (NULLSYMB for all selected lines)
+        :param raw_channel:            Input raw channel name
+        :param deadtime_channel:       Dead time channel name (same units as the acquisition time channel)
+        :param acqtime_channel:        Acquisition dead channel name (same units as the dead time channel)
+        :param deadtime_corr_channel:  Output deadtime corrected channel name
+        :type  db:                     GXDB
+        :type  line:                   int
+        :type  raw_channel:            str
+        :type  deadtime_channel:       str
+        :type  acqtime_channel:        str
+        :type  deadtime_corr_channel:  str
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The output dead-time corrected channel is calculated using the formula:
+
+        deadtime_corrected_value = raw_value * (acq_time_value / (acq_time_value - deadtime_value))
+
+        where:
+
+        deadtime_corrected_value = output dead-time corrected value
+        raw_value = raw channel value (counts)
+        acq_time_value = input acquisition-time channel value (same units as the dead time value)
+        deadtime_value = dead time channel value (same units as the acquisition time value)
+
+        Ref:  See the RPSFILT.GXC file for details and implementation of the algorithm.
+        """
+        
+        gxapi_cy.WrapRPS._dead_time_correction_acq_channel(GXContext._get_tls_geo(), db, line, raw_channel.encode(), deadtime_channel.encode(), acqtime_channel.encode(), deadtime_corr_channel.encode())
+        
+
+
+
+    @classmethod
+    def dead_time_correction_acq_value(cls, db, line, raw_channel, deadtime_channel, acqtime_constant_value, deadtime_corr_channel):
+        """
+        
+        Apply the Dead-time correction to a channel for a line in a database, using a constant acquisition time value
+        
+        :param db:                      `GXDB <geosoft.gxapi.GXDB>` Object
+        :param line:                    Line to process (NULLSYMB for all selected lines)
+        :param raw_channel:             Input raw channel name
+        :param deadtime_channel:        Dead time channel name (same units as acqtime_constant_value)
+        :param acqtime_constant_value:  Acquisition time constant value (same units as livetime_channel)
+        :param deadtime_corr_channel:   Output livetime corrected channel name
+        :type  db:                      GXDB
+        :type  line:                    int
+        :type  raw_channel:             str
+        :type  deadtime_channel:        str
+        :type  acqtime_constant_value:  float
+        :type  deadtime_corr_channel:   str
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The output dead-time corrected channel is calculated using the formula:
+
+        deadtime_corrected_value = raw_value * (acq_time_value / (acq_time_value - deadtime_value))
+
+        where:
+
+        deadtime_corrected_value = output dead-time corrected value
+        raw_value = raw channel value (counts)
+        acq_time_value = input acquisition-time constant value (same units as the dead time value)
+        deadtime_value = dead time channel (same units as the acquisition time value)
+        """
+        
+        gxapi_cy.WrapRPS._dead_time_correction_acq_value(GXContext._get_tls_geo(), db, line, raw_channel.encode(), deadtime_channel.encode(), acqtime_constant_value, deadtime_corr_channel.encode())
+        
+
+
+
+    @classmethod
     def live_time_correction(cls, db, line, raw_channel, livetime_channel, livetime_corr_channel):
         """
         
-        Apply the Live-time correction to a channel for a line in a database
+        Apply the Live-time correction to a channel for a line in a database. Assumes one second per pulse.
         
         :param db:                     `GXDB <geosoft.gxapi.GXDB>` Object
         :param line:                   Line to process (NULLSYMB for all selected lines)
@@ -187,17 +267,17 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  livetime_channel:       str
         :type  livetime_corr_channel:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
         **Note:** The output live-time corrected channel is calculated using the formula:
 
-        livetime_value = 1000 * raw_value / livetime_value
+        livetime_corrected_value = 1000 * raw_value / livetime_value
 
         where:
 
-        livetime_value = output dead-time corrected value
+        livetime_corrected_value = output live-time corrected value
         raw_value = raw channel value (counts)
         livetime_value = live time channel value (milliseconds)
 
@@ -205,6 +285,86 @@ class GXRPS(gxapi_cy.WrapRPS):
         """
         
         gxapi_cy.WrapRPS._live_time_correction(GXContext._get_tls_geo(), db, line, raw_channel.encode(), livetime_channel.encode(), livetime_corr_channel.encode())
+        
+
+
+
+    @classmethod
+    def live_time_correction_acq_channel(cls, db, line, raw_channel, livetime_channel, acqtime_channel, livetime_corr_channel):
+        """
+        
+        Apply the Live-time correction to a channel for a line in a database, using an acquisition time channel
+        
+        :param db:                     `GXDB <geosoft.gxapi.GXDB>` Object
+        :param line:                   Line to process (NULLSYMB for all selected lines)
+        :param raw_channel:            Input raw channel name
+        :param livetime_channel:       Live time channel name (same units as the acquisition time channel)
+        :param acqtime_channel:        Acquisition time channel name (same units as the live time channel)
+        :param livetime_corr_channel:  Output livetime corrected channel name
+        :type  db:                     GXDB
+        :type  line:                   int
+        :type  raw_channel:            str
+        :type  livetime_channel:       str
+        :type  acqtime_channel:        str
+        :type  livetime_corr_channel:  str
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The output live-time corrected channel is calculated using the formula:
+
+        livetime_corrected_value = acq_time_value * raw_value / livetime_value
+
+        where:
+
+        livetime_corrected_value = output live-time corrected value
+        acq_time_value = input acquisition-time channel value (same units as the live time value)
+        raw_value = raw channel value (counts)
+        livetime_value = live time channel value (same units as the acquisition time value)
+        """
+        
+        gxapi_cy.WrapRPS._live_time_correction_acq_channel(GXContext._get_tls_geo(), db, line, raw_channel.encode(), livetime_channel.encode(), acqtime_channel.encode(), livetime_corr_channel.encode())
+        
+
+
+
+    @classmethod
+    def live_time_correction_acq_value(cls, db, line, raw_channel, livetime_channel, acqtime_constant_value, livetime_corr_channel):
+        """
+        
+        Apply the Live-time correction to a channel for a line in a database, using a constant acquisition time value
+        
+        :param db:                      `GXDB <geosoft.gxapi.GXDB>` Object
+        :param line:                    Line to process (NULLSYMB for all selected lines)
+        :param raw_channel:             Input raw channel name
+        :param livetime_channel:        Live time channel name (same units as acqtime_constant_value)
+        :param acqtime_constant_value:  Acquisition time constant value (same units as livetime_channel)
+        :param livetime_corr_channel:   Output livetime corrected channel name
+        :type  db:                      GXDB
+        :type  line:                    int
+        :type  raw_channel:             str
+        :type  livetime_channel:        str
+        :type  acqtime_constant_value:  float
+        :type  livetime_corr_channel:   str
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** The output live-time corrected channel is calculated using the formula:
+
+        livetime_corrected_value = acq_time_value * raw_value / livetime_value
+
+        where:
+
+        livetime_corrected_value = output live-time corrected value
+        acq_time_value = input acquisition-time constant value (same units as the live time value)
+        raw_value = raw channel value (counts)
+        livetime_value = live time channel value (same units as the acquisition time value)
+        """
+        
+        gxapi_cy.WrapRPS._live_time_correction_acq_value(GXContext._get_tls_geo(), db, line, raw_channel.encode(), livetime_channel.encode(), acqtime_constant_value, livetime_corr_channel.encode())
         
 
 
@@ -228,7 +388,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  temperature_channel:               str
         :type  stp_alt_channel:                   str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -270,7 +430,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  temperature_channel:  str
         :type  stp_alt_channel:      str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -312,7 +472,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  stp_alt_channel:   str
         :type  output_channel:    str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -354,12 +514,12 @@ class GXRPS(gxapi_cy.WrapRPS):
         :param K_levl:           Input Postassium levelelled count channel
         :param U_levl:           Input Uranium levelelled count channel
         :param Th_levl:          Input Thorium levelelled count channel
-        :param alpha:            Input Compton Stripping ratio alpha (default: 0.24)
-        :param beta:             Input Compton Stripping ratio beta (default: 0.37)
-        :param gamma:            Input Compton Stripping ratio gamma (default: 0.70)
-        :param a:                Input Compton Stripping ratio a (default: 0.05)
-        :param b:                Input Compton Stripping ratio b (default: 0.0)
-        :param g:                Input Compton Stripping ratio g (default: 0.0)
+        :param alpha:            Input Compton Stripping ratio alpha
+        :param beta:             Input Compton Stripping ratio beta
+        :param gamma:            Input Compton Stripping ratio gamma
+        :param a:                Input Compton Stripping ratio a
+        :param b:                Input Compton Stripping ratio b
+        :param g:                Input Compton Stripping ratio g
         :param k_strip:          Output Compton Stripped Potassium channel (can be same channel as input)
         :param u_strip:          Output Compton Stripped Uranium channel (can be same channel as input)
         :param th_strip:         Output Compton Stripped Thorium channel (can be same channel as input)
@@ -379,7 +539,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  u_strip:          str
         :type  th_strip:         str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -422,12 +582,12 @@ class GXRPS(gxapi_cy.WrapRPS):
         and:
 
         RALTSTP = Input STP corrected radar altimeter channel value (m)
-        ALPHA = Input Compton stripping alpha factor (default: 0.24)
-        BETA = Input Compton stripping beta factor (default: 0.37)
-        GAMMA = Input Compton stripping gamma factor (default: 0.70)
-        ASTRIP = Input Compton stripping a factor (default: 0.05)
-        BSTRIP = Input Compton stripping b factor (default: 0.0)
-        GSTRIP = Input Compton stripping g factor (default: 0.0)
+        ALPHA = Input Compton stripping alpha factor
+        BETA = Input Compton stripping beta factor
+        GAMMA = Input Compton stripping gamma factor
+        ASTRIP = Input Compton stripping a factor
+        BSTRIP = Input Compton stripping b factor
+        GSTRIP = Input Compton stripping g factor
 
         and where:
 
@@ -454,10 +614,10 @@ class GXRPS(gxapi_cy.WrapRPS):
         :param U:        Input Uranium count channel
         :param Th:       Input Thorium count channel
         :param TC:       Input Total Count channel
-        :param k_sens:   Potassium broad source sensitivity (default: 75 (cps/%))
-        :param u_sens:   Uranium broad source sensitivity (default: 7.5 (cps/ppm))
-        :param th_sens:  Thorium broad source sensitivity (default: 4.5 (cps/ppm))
-        :param tc_sens:  Total count broad source sensitivity (default: 23 (uR/hr))
+        :param k_sens:   Potassium broad source sensitivity (units (cps/%))
+        :param u_sens:   Uranium broad source sensitivity (units (cps/ppm))
+        :param th_sens:  Thorium broad source sensitivity (units (cps/ppm))
+        :param tc_sens:  Total count broad source sensitivity (units (uR/hr))
         :param k_conc:   Output elemental concentration Potassium channel (can be same channel as input)
         :param u_conc:   Output elemental concentration Uranium channel (can be same channel as input)
         :param th_conc:  Output elemental concentration Thorium channel (can be same channel as input)
@@ -477,7 +637,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  th_conc:  str
         :type  TC_conc:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -500,10 +660,10 @@ class GXRPS(gxapi_cy.WrapRPS):
         InputTh = Input thorium channel expressed in counts
         InputTC = Input total count channel expressed in counts
 
-        SensK = Input Potassium Broad source sensitivity (default: 75 (cps/%))
-        SensU = Input Uranium Broad source sensitivity (default: 7.5 (cps/ppm))
-        SensTh = Input Thorium Broad source sensitivity (default: 4.5 (cps/ppm))
-        SensTC = Input Total Count Broad source sensitivity (default: 23 (uR/hr))
+        SensK = Input Potassium Broad source sensitivity (units: (cps/%))
+        SensU = Input Uranium Broad source sensitivity (units: (cps/ppm))
+        SensTh = Input Thorium Broad source sensitivity (units: (cps/ppm))
+        SensTC = Input Total Count Broad source sensitivity (units: (uR/hr))
 
         Ref:  See the RPSCORR.GXC file for details and implementation of the algorithm.
         """
@@ -548,7 +708,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  TC_channel:   int
         :type  interp_mode:  int
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -573,16 +733,16 @@ class GXRPS(gxapi_cy.WrapRPS):
         :param U_filt:         Input Low-pass filtered uranium channel
         :param Th_filt:        Input Low-pass filtered thorium channel
         :param U_upward_filt:  Input Low-pass filtered upward uranium channel
-        :param skyshine_A1:    Input Skyshine coefficient A1 (default: 0.036)
-        :param skyshine_A2:    Input Skyshine coefficient A2 (default: 0.022)
-        :param ak:             Input calibration factor ak - potassium (default: 0.8)
-        :param ath:            Input calibration factor ath - thorium (default: 0.1)
-        :param au:             Input calibration factor au - uranium (default: 0.25)
-        :param atc:            Input calibration factor atc - total count (default: 12)
-        :param bk:             Input calibration factor bk - potassium (default: 0)
-        :param bu:             Input calibration factor bu - uranium (default: 0)
-        :param bth:            Input calibration factor bth - thorium (default: 0)
-        :param btc:            Input calibration factor btc - total count  (default: 0)
+        :param skyshine_A1:    Input Skyshine coefficient A1
+        :param skyshine_A2:    Input Skyshine coefficient A2
+        :param ak:             Input calibration factor ak - potassium
+        :param ath:            Input calibration factor ath - thorium
+        :param au:             Input calibration factor au - uranium
+        :param atc:            Input calibration factor atc - total count
+        :param bk:             Input calibration factor bk - potassium
+        :param bu:             Input calibration factor bu - uranium
+        :param bth:            Input calibration factor bth - thorium
+        :param btc:            Input calibration factor btc - total count
         :param K_back:         Output potassium background to remove (channel)
         :param U_back:         Output uranium background to remove (channel)
         :param Th_back:        Output thorium channel background to remove (channel)
@@ -609,7 +769,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  TC_back:        str
         :type  U_upward_back:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -623,14 +783,14 @@ class GXRPS(gxapi_cy.WrapRPS):
 
         where:
 
-         AK  = Input calibration factor ak (default: 0.8)
-         BK  = Input calibration factor bk (default: 0)
-         ATH  = Input calibration factor at (default: 0.1)
-         BTH  = Input calibration factor bt (default: 0)
-         ATC = Input calibration factor atc (default: 12)
-         BTC = Input calibration factor btc (default: 0)
-         AU  = Input calibration factor au (default: 0.25)
-         BU  = Input calibration factor bu (default: 0)
+         AK  = Input calibration factor ak
+         BK  = Input calibration factor bk
+         ATH  = Input calibration factor at
+         BTH  = Input calibration factor bt
+         ATC = Input calibration factor atc
+         BTC = Input calibration factor btc
+         AU  = Input calibration factor au
+         BU  = Input calibration factor bu
 
         and:
 
@@ -638,8 +798,8 @@ class GXRPS(gxapi_cy.WrapRPS):
 
         where
 
-         URADREF = (UPUFILT - A1*UFILT - A2*THFILT + A2*BT - BU)/
-                                            (AU-A1 - A2*AT)
+         URADREF = (UPUFILT - A1*UFILT - A2*THFILT + A2*BTH - BU)/
+                                            (AU-A1 - A2*ATH)
 
          THFILT  = Input Low-pass filtered thorium channel
          UFILT   = Input Low-pass filtered uranium channel
@@ -647,8 +807,8 @@ class GXRPS(gxapi_cy.WrapRPS):
 
         and
 
-         A1 = Input Skyshine coefficient A1 (default: 0.036)
-         A2 = Input Skyshine coefficient A2 (default: 0.022)
+         A1 = Input Skyshine coefficient A1
+         A2 = Input Skyshine coefficient A2
 
         Ref: See the RPSLEVLU.GXC file for details and implementation of the algorithm.
         """
@@ -699,7 +859,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  TC_out:         str
         :type  U_upward_out:   str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -764,7 +924,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  Th_ref:                  str
         :type  TC_ref:                  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -819,7 +979,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  fid_ref:                 str
         :type  table:                   str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -869,7 +1029,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  Th_rad:  str
         :type  TC_rad:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -916,21 +1076,21 @@ class GXRPS(gxapi_cy.WrapRPS):
         :param TC_filt:        Input filtered total count channel
         :param U_upward_filt:  Input filtered upward uranium channel (optional - can be left blank)
         :param Cosmic_filt:    Input filtered cosmic channel
-        :param aircraft_k:     Aircraft background value for potassium (cps). (Default = 12)
-        :param aircraft_u:     Aircraft background value for uranium (cps). (Default = 2.2)
-        :param aircraft_th:    Aircraft background value for thorium (cps). (Default = 1.5)
-        :param aircraft_tc:    Aircraft background value for total count (cps). (Default = 90)
-        :param aircraft_upu:   Aircraft background value for upward uranium (cps) (optional - can be left blank). (Default = 0.6)
-        :param cosmic_k:       Cosmic stripping ratio for potassium (cps/cosmic cps). (Default = 0.032)
-        :param cosmic_u:       Cosmic stripping ratio for uranium (cps/cosmic cps). (Default = 0.026)
-        :param cosmic_th:      Cosmic stripping ratio for thorium (cps/cosmic cps). (Default = 0.03)
-        :param cosmic_tc:      Cosmic stripping ratio for total count (cps/cosmic cps). (Default = 0.6)
-        :param cosmic_upu:     Cosmic stripping ratio for upward uranium (cps/cosmic cps) (optional - can be left blank). (Default = 0.008)
+        :param aircraft_k:     Aircraft background value for potassium (cps).
+        :param aircraft_u:     Aircraft background value for uranium (cps).
+        :param aircraft_th:    Aircraft background value for thorium (cps).
+        :param aircraft_tc:    Aircraft background value for total count (cps).
+        :param aircraft_upu:   Aircraft background value for upward uranium (cps) (optional - can be left blank if no upward channel is defined).
+        :param cosmic_k:       Cosmic stripping ratio for potassium (cps/cosmic cps).
+        :param cosmic_u:       Cosmic stripping ratio for uranium (cps/cosmic cps).
+        :param cosmic_th:      Cosmic stripping ratio for thorium (cps/cosmic cps).
+        :param cosmic_tc:      Cosmic stripping ratio for total count (cps/cosmic cps).
+        :param cosmic_upu:     Cosmic stripping ratio for upward uranium (cps/cosmic cps) (optional - can be left blank if no upward channel is defined).
         :param K_levl:         Output levelled potassium channel
         :param U_levl:         Output levelled uranium channel
         :param Th_levl:        Output levelled thorium channel
         :param TC_levl:        Output levelled total count channel
-        :param U_upward_levl:  Output levelled upward uranium channel (optional - can be left blank)
+        :param U_upward_levl:  Output levelled upward uranium channel (optional - can be left blank if no upward channel is defined)
         :type  db:             GXDB
         :type  line:           int
         :type  K_filt:         str
@@ -955,7 +1115,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  TC_levl:        str
         :type  U_upward_levl:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1017,7 +1177,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  outputCh2:         int
         :type  outputCh3:         int
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1056,7 +1216,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  uth_ratio:  str
         :type  thk_ratio:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1105,7 +1265,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  thorium_ppm:        float
         :type  threshold_method:   int
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1151,7 +1311,7 @@ class GXRPS(gxapi_cy.WrapRPS):
         :type  Th:        str
         :type  Exposure:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1170,6 +1330,70 @@ class GXRPS(gxapi_cy.WrapRPS):
         """
         
         gxapi_cy.WrapRPS._radio_element_ground_exposure_rate(GXContext._get_tls_geo(), db, line, K.encode(), U.encode(), Th.encode(), Exposure.encode())
+        
+
+
+
+    @classmethod
+    def compress_spectrum(cls, va_dest, va_src, cosmic):
+        """
+        
+        Represent a spectrum with a different number of bins
+        
+        :param va_dest:  `GXVA <geosoft.gxapi.GXVA>` to receive the compressed output
+        :param va_src:   `GXVA <geosoft.gxapi.GXVA>` to compress
+        :param cosmic:   Copy the cosmic counts bin without modification
+        :type  va_dest:  GXVA
+        :type  va_src:   GXVA
+        :type  cosmic:   int
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** In radiometric spectra, with n bins, the first n-1 bins represent counts from 0 to 3 MeV,
+        while the last bin represents counts above 3 MeV (cosmic count). 
+        This method uses fractional summation of bins to convert a spectrum with n bins into a spectrum with m bins,
+        while maintaining the original 0 to 3 MeV range in the first m-1 bins and the cosmic count in the last bin.
+        This method works even if n is not a multiple of m, or if n is less than m.
+        """
+        
+        gxapi_cy.WrapRPS._compress_spectrum(GXContext._get_tls_geo(), va_dest, va_src, cosmic)
+        
+
+
+
+    @classmethod
+    def stabilize_spectra(cls, db, line, data_channel, mcf_file, A1_channel, AverageSpectrum_channel, output_channel):
+        """
+        
+        Calculate the A1 stabilization factor and output the stabilized spectra used for Full Spectrum Analysis
+        
+        :param db:                       `GXDB <geosoft.gxapi.GXDB>` Object
+        :param line:                     Line to process (NULLSYMB for all selected lines)
+        :param data_channel:             Input (unstabilized) spectrum channel name
+        :param mcf_file:                 MCF file
+        :param A1_channel:               Output A1 factor channel name (optional, can be blank)
+        :param AverageSpectrum_channel:  Output averaged spectrum   channel name (optional, can be blank)
+        :param output_channel:           Output (stabilized) spectrum channel name
+        :type  db:                       GXDB
+        :type  line:                     int
+        :type  data_channel:             str
+        :type  mcf_file:                 str
+        :type  A1_channel:               str
+        :type  AverageSpectrum_channel:  str
+        :type  output_channel:           str
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** Calculate the A1 stabilization factor and output the stabilized spectra used for Full Spectrum Analysis.
+        The stabilization factor is calculated on a per-line basis. 
+        The number of array elements in the output stabilized spectrum channel is less than the number of elements in the input
+        """
+        
+        gxapi_cy.WrapRPS._stabilize_spectra(GXContext._get_tls_geo(), db, line, data_channel.encode(), mcf_file.encode(), A1_channel.encode(), AverageSpectrum_channel.encode(), output_channel.encode())
         
 
 

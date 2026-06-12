@@ -64,7 +64,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  geosurface_filename:  str
         :type  surface_name:         str
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -100,7 +100,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :returns:                       Surface clip status
         :rtype:                         int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -140,7 +140,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :returns:                  Surface clip status
         :rtype:                    int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -172,7 +172,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :returns:                  Surface clip status
         :rtype:                    int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -201,7 +201,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  outputSurfaceFile:     str
         :type  outputSurface:         str
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -230,7 +230,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  outputSurfaceFile:     str
         :type  outputSurface:         str
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -259,7 +259,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  outputSurfaceFile:     str
         :type  outputSurface:         str
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -284,7 +284,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  outputSurfaceFile:  str
         :type  outputSurface:      str
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -309,7 +309,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  outputSurfaceFile:  str
         :type  outputSurface:      str
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -337,7 +337,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :returns:                     Returns 1 if intersects, 0 if surfaces do not intersect
         :rtype:                       int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -361,7 +361,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :returns:            Returns 1 if surface self intersects, 0 if surface has no self-intersections
         :rtype:              int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -390,7 +390,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  contourMax:   float
         :type  close:        bool
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -413,7 +413,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  output_surface_filename:  str
         :type  ipj:                      GXIPJ
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -440,7 +440,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  projection_method:    int
         :type  output_grid:          str
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -463,7 +463,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  surface_name:             str
         :type  output_surface_filename:  str
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -496,7 +496,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
         :type  y:                     float
         :type  z:                     float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

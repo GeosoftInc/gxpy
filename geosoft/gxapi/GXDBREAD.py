@@ -71,7 +71,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:         `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
         :rtype:           GXDBREAD
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -96,7 +96,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:         `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
         :rtype:           GXDBREAD
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -121,7 +121,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:         `GXDBREAD <geosoft.gxapi.GXDBREAD>` object
         :rtype:           GXDBREAD
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -145,7 +145,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       Channel index. Use for getting the correct `GXVV <geosoft.gxapi.GXVV>` or `GXVA <geosoft.gxapi.GXVA>` object.
         :rtype:         int
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -171,7 +171,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:         GXVV
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -197,7 +197,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       `GXVA <geosoft.gxapi.GXVA>` handle
         :rtype:         GXVA
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -221,7 +221,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:         GXVV
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -244,7 +244,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:         GXVV
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -267,7 +267,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:         GXVV
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -293,7 +293,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       The number of columns (array size) for a channel
         :rtype:         int
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -317,7 +317,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:       The number of blocks to process in the selected lines.
         :rtype:         int
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -351,7 +351,7 @@ class GXDBREAD(gxapi_cy.WrapDBREAD):
         :returns:         Returns the current block index, or -1 if at end of file (no new data returned).
         :rtype:           int
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -73,7 +73,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
                            -1 - User Cancelled
         :rtype:            int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -96,7 +96,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
         :type  line:  str
         :type  chan:  str
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -121,7 +121,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
         :type  line:  str
         :type  chan:  str
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -143,7 +143,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
         :returns:    0 if not open, 1 if open
         :rtype:      int
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -166,7 +166,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
         :type  db:   str
         :type  map:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 

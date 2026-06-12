@@ -60,7 +60,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :param hglobal:  Handle to Global Clipboard data
         :type  hglobal:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -93,7 +93,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                          1 - Error
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -136,7 +136,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                       1 - Error
         :rtype:       int
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -183,7 +183,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                          1 - Error
         :rtype:          int
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -230,7 +230,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                          1 - Error
         :rtype:          int
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -264,7 +264,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                          1 - Error
         :rtype:          int
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -299,7 +299,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                   in geogxgui\\gxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.core\\include\\obj\\objgp.h.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -325,7 +325,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :returns:     The number of documents listed in the `GXVV <geosoft.gxapi.GXVV>`.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -400,7 +400,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  name:  str_ref
         :type  type:  str_ref
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -423,7 +423,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  name:  str_ref
         :type  type:  str
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -450,7 +450,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :returns:     The number of tools found.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -481,7 +481,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                       1 - Document not found in project
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -510,7 +510,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                       1 - Tool not found in project
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -538,7 +538,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                       1  - Error
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -578,7 +578,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  type:     str
         :type  display:  int
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -611,7 +611,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :param name:  name
         :type  name:  str_ref
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -636,7 +636,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  server_id:   str_ref
         :type  project_id:  str_ref
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -667,7 +667,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  revision_id:   int
         :type  cs_info:       str
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -710,7 +710,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  rev_server_url:  str_ref
         :type  rev_proj_url:    str_ref
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -735,7 +735,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  name:       str
         :type  meta_file:  str
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -758,7 +758,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :param folder:  Returned default path
         :type  folder:  str_ref
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -781,7 +781,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :param folder:  Default path
         :type  folder:  str
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -803,7 +803,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         
         :rtype:      bool
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -844,7 +844,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  file_to_delete:  str
         :type  process_id:      str
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -887,7 +887,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  file_to_delete:     str
         :type  process_id:         str
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -924,7 +924,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  output_files:  GXVV
         :type  process_id:    str_ref
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -967,7 +967,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :type  output_file_types:  GXLST
         :type  process_id:         str_ref
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -991,7 +991,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         :returns:    The number of registered background scripts: in progress, finished, failed, deleted etc.
         :rtype:      int
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1020,7 +1020,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                       1 - Can not find ITR from the document
         :rtype:       int
 
-        .. versionadded:: 2024.2
+        .. versionadded:: 2024.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1049,7 +1049,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                       1 - Error
         :rtype:       int
 
-        .. versionadded:: 2024.2
+        .. versionadded:: 2024.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1078,7 +1078,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                           1 - Can not find object metadata for the document
         :rtype:           int
 
-        .. versionadded:: 2025.1
+        .. versionadded:: 2025.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1107,7 +1107,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
                           1 - Error
         :rtype:           int
 
-        .. versionadded:: 2025.1
+        .. versionadded:: 2025.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -69,7 +69,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :returns:        `GXVOXD <geosoft.gxapi.GXVOXD>` handle, terminates if creation fails
         :rtype:          GXVOXD
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -96,7 +96,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :returns:    `GXVOXD <geosoft.gxapi.GXVOXD>` handle, terminates if creation fails
         :rtype:      GXVOXD
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -121,7 +121,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :returns:    `GXVOXD <geosoft.gxapi.GXVOXD>` handle, terminates if creation fails
         :rtype:      GXVOXD
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -152,7 +152,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :returns:     1 if `GXVOX <geosoft.gxapi.GXVOX>` is thematic
         :rtype:       int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -179,7 +179,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :type  tpat:  GXTPAT
         :type  vv:    GXVV
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -198,7 +198,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :param vv:    `GXVV <geosoft.gxapi.GXVV>` (int) object to set the current selections to
         :type  vv:    GXVV
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -233,7 +233,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :type  max_y:  float_ref
         :type  max_z:  float_ref
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -252,7 +252,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :param name:  File name returned
         :type  name:  str_ref
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -271,7 +271,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :param itr:   `GXITR <geosoft.gxapi.GXITR>` object
         :type  itr:   GXITR
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -292,7 +292,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :type  min:   float_ref
         :type  max:   float_ref
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -325,7 +325,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :type  max_y:  float
         :type  max_z:  float
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -344,7 +344,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :param itr:   `GXITR <geosoft.gxapi.GXITR>` object
         :type  itr:   GXITR
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -365,7 +365,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :type  min:   float
         :type  max:   float
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -384,7 +384,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :param render_mode:  :ref:`VOXELRENDER_MODE`
         :type  render_mode:  int_ref
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -403,7 +403,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         :param render_mode:  :ref:`VOXELRENDER_MODE`
         :type  render_mode:  int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

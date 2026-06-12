@@ -86,7 +86,7 @@ class GXVAU(gxapi_cy.WrapVAU):
         :type  r_moment:  float
         :type  array:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -109,7 +109,7 @@ class GXVAU(gxapi_cy.WrapVAU):
         :type  vv_r:  GXVV
         :type  o:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -139,7 +139,7 @@ class GXVAU(gxapi_cy.WrapVAU):
         :type  section:   float
         :type  out_vv:    GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -164,7 +164,7 @@ class GXVAU(gxapi_cy.WrapVAU):
         :type  zva:  GXVA
         :type  tva:  GXVA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

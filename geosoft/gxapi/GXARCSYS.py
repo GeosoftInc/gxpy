@@ -61,7 +61,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
         :param path:  Path String
         :type  path:  str_ref
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -84,7 +84,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
         :param path:  Path String
         :type  path:  str_ref
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -105,7 +105,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
         :param path:  Path String
         :type  path:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

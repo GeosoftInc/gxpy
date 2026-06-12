@@ -840,6 +840,10 @@ Type of application to run
     :annotation:
     
     .. autoattribute:: geosoft.gxapi.SYS_RUN_TYPE_WINDOWS
+.. autodata:: geosoft.gxapi.SYS_RUN_TYPE_CMD_LINE
+    :annotation:
+    
+    .. autoattribute:: geosoft.gxapi.SYS_RUN_TYPE_CMD_LINE
 
 
 .. _SYS_RUN_WIN:

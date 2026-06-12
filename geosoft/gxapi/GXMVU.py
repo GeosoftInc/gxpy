@@ -76,7 +76,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  angle:  float
         :type  type:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -115,7 +115,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  point:      int
         :type  thickness:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -195,7 +195,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  widthm:        float
         :type  heightm:       float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -224,7 +224,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  xvv:      GXVV
         :type  itr:      GXITR
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -263,7 +263,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  yvv:      GXVV
         :type  itr:      GXITR
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -302,7 +302,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  x:        float
         :type  y:        float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -336,7 +336,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  x:        float
         :type  y:        float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -375,7 +375,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  y:        float
         :type  style:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -413,7 +413,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  y:             float
         :type  label_orient:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -458,7 +458,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  y:             float
         :type  label_orient:  int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -499,7 +499,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  style:         int
         :type  label_orient:  int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -539,7 +539,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  style:         int
         :type  label_orient:  int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -574,7 +574,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  y:        float
         :type  style:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -675,7 +675,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  con:    str
         :type  grid:   str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -738,7 +738,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  title:       str
         :type  sub_title:   str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -809,7 +809,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  line_style:  int
         :type  line_color:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -841,7 +841,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  loc:    float
         :type  align:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -897,7 +897,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  lin_log:             int
         :type  var:                 int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -930,7 +930,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  lst:    GXLST
         :type  file:   str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -963,7 +963,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  lst:    GXLST
         :type  wa:     GXWA
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -994,7 +994,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  str_wa:     GXWA
         :type  styles_wa:  GXWA
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1028,7 +1028,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  lst:    GXLST
         :type  db:     GXDB
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1063,7 +1063,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  loff:    float
         :type  voff:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1116,7 +1116,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  pat_vv:  GXVV
         :type  pitch:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1157,7 +1157,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  max_y:  float_ref
         :type  max_z:  float_ref
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1213,7 +1213,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  fill_color:  int
         :type  st_box:      GXST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1283,7 +1283,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  st_box:         GXST
         :type  x_marker:       float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1345,7 +1345,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  stat_decimal:  int
         :type  st_box:        GXST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1404,7 +1404,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  stat_decimal:  int
         :type  st_box:        GXST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1467,7 +1467,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  st_box:        GXST
         :type  itr:           GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1493,7 +1493,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :returns:      The number of groups in the `GXLST <geosoft.gxapi.GXLST>`.
         :rtype:        int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1547,7 +1547,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :returns:          ``True`` if the parameters are good.
         :rtype:            bool
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1600,7 +1600,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :returns:          ``True`` if the parameters are good.
         :rtype:            bool
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1625,7 +1625,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  file:   str
         :type  col:    int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1651,7 +1651,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  map:   GXMAP
         :type  name:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1680,7 +1680,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  mpx:   float
         :type  mpy:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1711,7 +1711,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  mdf:   str
         :type  data:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1762,7 +1762,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  marg_ymax:  float
         :type  inside:     float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1815,7 +1815,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  marg_ymax:  float
         :type  inside:     float
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1840,7 +1840,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  base:  str
         :type  data:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1877,7 +1877,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  voff:    float
         :type  gap:     float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1923,7 +1923,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  voff:     float
         :type  gap:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2011,7 +2011,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  dmax:     float
         :type  res:      float
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2041,7 +2041,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  col:         int
         :type  line_thick:  float
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2078,7 +2078,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  transparency:  float
         :type  surface_name:  str
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2121,7 +2121,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  transparency:  float
         :type  surface_name:  str
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2160,7 +2160,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  ref:       int
         :type  angle:     float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2217,7 +2217,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  ref_ang:     float
         :type  up:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2309,7 +2309,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  scale:   float
         :type  join:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2358,7 +2358,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  pos_f_color:  str
         :type  neg_f_color:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2425,7 +2425,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  mview:  GXMVIEW
         :type  lines:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2467,7 +2467,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  x_off:  float
         :type  y_off:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2503,7 +2503,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  space:  float
         :type  type:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2536,7 +2536,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  mt_size:  float
         :type  mt_mod:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2571,7 +2571,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  mt_mod:   float
         :type  gap:      float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2598,7 +2598,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  min_sect:  int
         :type  min_dist:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2650,7 +2650,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  enclose_cells_less_than_surface_value:             bool
         :type  exclude_objects_with_volume_less_than_this_value:  float
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2694,7 +2694,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  xs:       float
         :type  ys:       float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -2770,7 +2770,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  use_linear_vert_axis_scaling:   int
         :type  symbol_size:                    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -2850,7 +2850,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  p30:  int
         :type  p31:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -2888,7 +2888,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         :type  width:   float
         :type  height:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

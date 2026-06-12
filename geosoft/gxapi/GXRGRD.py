@@ -61,7 +61,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         Clears all the parameters in a `GXRGRD <geosoft.gxapi.GXRGRD>` object
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -83,7 +83,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         :returns:    `GXRGRD <geosoft.gxapi.GXRGRD>` Object
         :rtype:      GXRGRD
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -270,7 +270,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         :returns:    0, always.
         :rtype:      int
 
-        .. versionadded:: 2023.2
+        .. versionadded:: 2023.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -325,7 +325,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         :type  ctl:   str
         :type  grd:   str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -352,7 +352,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         :type  ctl:  str
         :type  grd:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

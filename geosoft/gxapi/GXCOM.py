@@ -75,7 +75,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :returns:             `GXCOM <geosoft.gxapi.GXCOM>` Object
         :rtype:               GXCOM
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -109,7 +109,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :returns:             `GXCOM <geosoft.gxapi.GXCOM>` Object
         :rtype:               GXCOM
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -176,7 +176,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :param line:  String for line
         :type  line:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -235,7 +235,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :param line:  String for characters
         :type  line:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -256,7 +256,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :type  lines:  int
         :type  wa:     GXWA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -275,7 +275,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :param wa:   Where to put lines
         :type  wa:   GXWA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -296,7 +296,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :type  lines:  int
         :type  wa:     GXWA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -315,7 +315,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :param time_out:  Timeout in Ms (500)
         :type  time_out:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -334,7 +334,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :param line:  Line to write
         :type  line:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -353,7 +353,7 @@ class GXCOM(gxapi_cy.WrapCOM):
         :param line:  Line to write
         :type  line:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

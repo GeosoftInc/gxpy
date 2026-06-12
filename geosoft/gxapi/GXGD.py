@@ -67,7 +67,7 @@ class GXGD(gxapi_cy.WrapGD):
         :returns:     Handle to the `GXGD <geosoft.gxapi.GXGD>` object
         :rtype:       GXGD
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

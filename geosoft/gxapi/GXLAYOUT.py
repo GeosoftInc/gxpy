@@ -77,7 +77,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :type  max_x:   float_ref
         :type  max_y:   float_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -98,7 +98,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         Remove all children and constraints from layout
         
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -115,7 +115,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         Remove all constraints from layout
         
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -139,7 +139,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :returns:     `GXLAYOUT <geosoft.gxapi.GXLAYOUT>` object.
         :rtype:       GXLAYOUT
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -168,7 +168,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :type  max_x:   float_ref
         :type  max_y:   float_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -189,7 +189,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :type  rect:    int
         :type  name:    str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -222,7 +222,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
                              1 - Error
         :rtype:              int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -282,7 +282,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :returns:       Rectangle number, -1 on error
         :rtype:         int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -302,7 +302,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :returns:       Number of rectangles not counting the parent
         :rtype:         int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -329,7 +329,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :type  max_x:   float
         :type  max_y:   float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -350,7 +350,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
         :type  rect:    int
         :type  p3:      str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

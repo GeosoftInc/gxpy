@@ -88,7 +88,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  cz:          float
         :type  reciprocal:  int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -113,7 +113,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  ini:   str
         :type  type:  int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -189,7 +189,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  alphas:      str
         :type  wts:         str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -242,7 +242,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  alphas:               str
         :type  wts:                  str
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -277,7 +277,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  topo:          str
         :type  version:       float
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -321,7 +321,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  alphas:      str
         :type  wts:         str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -370,7 +370,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  alphas:               str
         :type  wts:                  str
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -438,7 +438,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:     `GXPG <geosoft.gxapi.GXPG>` Object
         :rtype:       GXPG
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -469,7 +469,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  vv_x:  GXVV
         :type  vv_z:  GXVV
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -496,7 +496,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  vv_x:   GXVV
         :type  vv_z:   GXVV
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -520,7 +520,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  job:   str
         :type  type:  int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -541,7 +541,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  job:   str
         :type  type:  int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -575,7 +575,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:        `GXPG <geosoft.gxapi.GXPG>` Object
         :rtype:          GXPG
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -599,7 +599,7 @@ class GXIP(gxapi_cy.WrapIP):
         :param db:  `GXDB <geosoft.gxapi.GXDB>` object
         :type  db:  GXDB
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -653,7 +653,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  qc_chan:  str
         :type  out:      int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -680,7 +680,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:    `GXIP <geosoft.gxapi.GXIP>` Object
         :rtype:      GXIP
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -721,7 +721,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  res_poly:   str
         :type  ip_poly:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -746,7 +746,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  chan:   str
         :type  title:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -771,7 +771,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  title:  str
         :type  dir:    str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -806,7 +806,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  stn2:    float
         :type  max_n:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -847,7 +847,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  max_n:   int
         :type  dir:     str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -901,7 +901,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  chan:   str
         :type  chan2:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -922,7 +922,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:   GXDB
         :type  lst:  GXLST
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1003,7 +1003,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  label:  str_ref
         :type  units:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1032,7 +1032,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  n_windows:  int_ref
         :type  vv:         GXVV
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1061,7 +1061,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  n_windows:  int
         :type  vv:         GXVV
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1084,7 +1084,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:         GXDB
         :type  dump_file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1107,7 +1107,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  grid:  str
         :type  chan:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1152,7 +1152,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  ip_poly:    str
         :type  mode:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1200,7 +1200,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  ip_zonge:   str
         :type  mode:       int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1224,7 +1224,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:    GXDB
         :type  file:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1247,7 +1247,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  file:  str
         :type  chan:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1272,7 +1272,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  chan:   str
         :type  chan2:  str
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1302,7 +1302,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  file:  str
         :type  chan:  str
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1352,7 +1352,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:    GXDB
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1373,7 +1373,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:   GXDB
         :type  csv:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1397,7 +1397,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:    GXDB
         :type  grid:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1427,7 +1427,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  scale:  int
         :type  mult:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1454,7 +1454,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  scale:  int
         :type  mult:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1485,7 +1485,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  mask:      str
         :type  pr_n_val:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1513,7 +1513,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  cur_line:  str
         :type  map:       str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1575,7 +1575,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  map:       str
         :type  dir:       str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1603,7 +1603,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  con_file:  str
         :type  map:       str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1633,7 +1633,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  type:      int
         :type  map:       str
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1662,7 +1662,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  map:       str
         :type  dir:       str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1683,7 +1683,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:   GXDB
         :type  lst:  GXLST
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1705,7 +1705,7 @@ class GXIP(gxapi_cy.WrapIP):
         :param db:  Database
         :type  db:  GXDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1744,7 +1744,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  db:               GXDB
         :type  recalculate_xyz:  int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1772,7 +1772,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  channel_list:     GXLST
         :type  recalculate_xyz:  int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1890,7 +1890,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  syn_chg_chan:  str
         :type  inv_chg_chan:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1915,7 +1915,7 @@ class GXIP(gxapi_cy.WrapIP):
         :param line:  Line name
         :type  line:  str
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1936,7 +1936,7 @@ class GXIP(gxapi_cy.WrapIP):
         :param append:  0: Overwrite, 1: Append
         :type  append:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1967,7 +1967,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  chan:     str
         :type  windows:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1993,7 +1993,7 @@ class GXIP(gxapi_cy.WrapIP):
         :param lst:  List of channels
         :type  lst:  GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2038,7 +2038,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:     1 if the line is a valid `GXIP <geosoft.gxapi.GXIP>` line, 0 if not
         :rtype:       int
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2062,7 +2062,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:     :ref:`IP_ARRAY`
         :rtype:       int
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2087,7 +2087,7 @@ class GXIP(gxapi_cy.WrapIP):
                       				 This value could be `rDUMMY <geosoft.gxapi.rDUMMY>` for some arrays (such as 3D) where no A-Spacing is explicitly defined.
         :rtype:       float
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2107,7 +2107,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:    The user's PLDP plot point convention :ref:`IP_PLDP_CONV`
         :rtype:      int
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2138,7 +2138,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  v_vm1:  GXVV
         :type  v_vm2:  GXVV
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2174,7 +2174,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  v_vm2:     GXVV
         :type  v_vlines:  GXVV
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2208,7 +2208,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  v_vm1:  GXVV
         :type  v_vm2:  GXVV
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2241,7 +2241,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  v_vy:     GXVV
         :type  v_vm:     GXVV
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2269,7 +2269,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:        Channel handle,  `NULLSYMB <geosoft.gxapi.NULLSYMB>` if not found
         :rtype:          int
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2311,7 +2311,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  tx2y:      str
         :type  sym_size:  float
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2364,7 +2364,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  tx2z:      str
         :type  sym_size:  float
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2390,7 +2390,7 @@ class GXIP(gxapi_cy.WrapIP):
         :returns:    `GXVV <geosoft.gxapi.GXVV>` Object
         :rtype:      GXVV
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2437,7 +2437,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  data:       str
         :type  vv_data:    GXVV
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2467,7 +2467,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  chan:  str
         :type  out:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2501,7 +2501,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  obs:   str
         :type  topo:  str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2567,7 +2567,7 @@ class GXIP(gxapi_cy.WrapIP):
         :type  obs:           str
         :type  topo:          str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 

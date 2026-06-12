@@ -78,7 +78,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :returns:               NASVD Object
         :rtype:                 GXNASVD
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -125,7 +125,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :returns:      Number of components available
         :rtype:        int
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -147,7 +147,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :returns:          The singular value
         :rtype:            float
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -168,7 +168,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :type  component:  int
         :type  vv:         GXVV
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -192,7 +192,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :type  component:  int
         :type  vv:         GXVV
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -218,7 +218,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :type  tail:   int_ref
         :type  total:  int_ref
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -236,7 +236,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
 
 
 
-    def reconstruct_spectrum(self, db, num_components_to_use, output_channel):
+    def reconstruct_spectrum(self, db, num_components_to_use, output_channel, scores_channel):
         """
         
         Reconstruct spectral data using selected components
@@ -244,11 +244,13 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :param db:                     `GXDB <geosoft.gxapi.GXDB>` Object
         :param num_components_to_use:  Number of leading components to use for reconstruction
         :param output_channel:         Output channel name for reconstructed spectral data
+        :param scores_channel:         scores_output channel name for reconstructed spectral data
         :type  db:                     GXDB
         :type  num_components_to_use:  int
         :type  output_channel:         str
+        :type  scores_channel:         str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2026.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -260,7 +262,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         to create the NASVD object originally (see NASVD::Create, for more details).
         """
         
-        self._reconstruct_spectrum(db, num_components_to_use, output_channel.encode())
+        self._reconstruct_spectrum(db, num_components_to_use, output_channel.encode(), scores_channel.encode())
         
 
 
@@ -278,7 +280,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :param vv:     VV to receive cumulative eigenvector contribution percentages
         :type  vv:     GXVV
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -301,7 +303,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :param maximum:  Maximum number of elements (rows * columns) that can be processed by NASVD
         :type  maximum:  int_ref
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -328,7 +330,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :param output_directory:  The output directory to place the serialized files. A new directory will be created if it does not exist. Any existing files in the directory will be overwritten.
         :type  output_directory:  str
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -352,7 +354,7 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         :returns:                 NASVD Object
         :rtype:                   GXNASVD
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -361,6 +363,34 @@ class GXNASVD(gxapi_cy.WrapNASVD):
         
         ret_val = gxapi_cy.WrapNASVD._deserialize(GXContext._get_tls_geo(), output_directory.encode())
         return GXNASVD(ret_val)
+
+
+
+
+    def deserialize_scores(self, db, directory_name, scores_channel):
+        """
+        
+        Deserialize the scores matrix from file
+        
+        :param db:              `GXDB <geosoft.gxapi.GXDB>` Object
+        :param directory_name:  The directory containing the serialized scores file. The directory must exist.
+        :param scores_channel:  scores_output channel name for reconstructed spectral data
+        :type  db:              GXDB
+        :type  directory_name:  str
+        :type  scores_channel:  str
+
+        :returns:               Scores Object
+        :rtype:                 int
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+
+        **Note:** 
+        """
+        
+        ret_val = self._deserialize_scores(db, directory_name.encode(), scores_channel.encode())
+        return ret_val
 
 
 

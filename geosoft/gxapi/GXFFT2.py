@@ -70,7 +70,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  normalise:  int
         :type  pgo:        GXPG
 
-        .. versionadded:: 2023.2
+        .. versionadded:: 2023.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -93,7 +93,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  trn_fil:  str
         :type  spc_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -122,7 +122,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  dy:       float
         :type  rot:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -145,7 +145,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  out_fil:  str
         :type  con_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -168,7 +168,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  out_fil:  str
         :type  con_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -189,7 +189,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  im_gi:    GXIMG
         :type  spc_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -210,7 +210,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  im_gi:    GXIMG
         :type  spc_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -231,7 +231,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  im_gi:    GXIMG
         :type  spc_fil:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -252,7 +252,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  img:  GXIMG
         :type  vv:   GXVV
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -279,7 +279,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  v_vst:  GXVV
         :type  opt:    int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -325,7 +325,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  pg:   GXPG
         :type  opt:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -354,7 +354,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
         :type  output_vv:   GXVV
         :type  profile_vv:  GXVV
 
-        .. versionadded:: 9.9
+        .. versionadded:: 9.9.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

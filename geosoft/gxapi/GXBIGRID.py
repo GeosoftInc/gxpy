@@ -59,7 +59,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         Clears all the parameters in a `GXBIGRID <geosoft.gxapi.GXBIGRID>` object
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -79,7 +79,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         :returns:    `GXBIGRID <geosoft.gxapi.GXBIGRID>` Object
         :rtype:      GXBIGRID
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -110,7 +110,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
                         1 - Error
         :rtype:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -143,7 +143,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
                         1 - Error
         :rtype:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -167,7 +167,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         :type  in_dat:   GXDAT
         :type  out_dat:  GXDAT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -193,7 +193,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         :type  out_dat:  GXDAT
         :type  ipj:      GXIPJ
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -213,7 +213,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         :param name:    Name of file to put the parameter settings into
         :type  name:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -261,7 +261,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
                                     1 - Error
         :rtype:                     int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -292,7 +292,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
                       1 - Error
         :rtype:       int
 
-        .. versionadded:: 2023.1
+        .. versionadded:: 2023.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

@@ -78,7 +78,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :type  y3:  float_ref
         :type  z3:  float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -128,7 +128,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :type  pi_val2:  int
         :rtype:          int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -180,7 +180,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :type  pi_val2:  int
         :rtype:          int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -232,7 +232,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :type  pi_val2:  int
         :rtype:          int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -316,7 +316,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :type  y:  float_ref
         :type  z:  float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -521,7 +521,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :returns:    Dot product
         :rtype:      float
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -824,7 +824,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :type  y3:     float_ref
         :type  z3:     float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -874,7 +874,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         :returns:    A real number
         :rtype:      float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1053,7 +1053,7 @@ class GXMATH(gxapi_cy.WrapMATH):
         Seed the random-number generator with current time
         
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -70,7 +70,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :returns:     `GXGIS <geosoft.gxapi.GXGIS>` Object
         :rtype:       GXGIS
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -95,7 +95,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :type  ipj:        GXIPJ
         :type  map2_d:     int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -121,7 +121,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :type  file:  str
         :type  lst:   GXLST
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -154,7 +154,7 @@ class GXGIS(gxapi_cy.WrapGIS):
                      NULL if error
         :rtype:      GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -177,7 +177,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param meta:  Meta object to store `GXGIS <geosoft.gxapi.GXGIS>` meta information
         :type  meta:  GXMETA
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -206,7 +206,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :type  z_min:  float_ref
         :type  z_max:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -228,7 +228,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :returns:     Datamine file types - bitwise AND of types.
         :rtype:       int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -252,7 +252,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param name:  Returned file name
         :type  name:  str_ref
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -275,7 +275,7 @@ class GXGIS(gxapi_cy.WrapGIS):
                      1 if it is.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -302,7 +302,7 @@ class GXGIS(gxapi_cy.WrapGIS):
                      1 if it is.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -325,7 +325,7 @@ class GXGIS(gxapi_cy.WrapGIS):
                      1 if it is (see conditions below).
         :rtype:      int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -357,7 +357,7 @@ class GXGIS(gxapi_cy.WrapGIS):
                      1 if the `GXSHP <geosoft.gxapi.GXSHP>` file is of type POINTZ, ARCZ, POLYGONZ or MULTIPOINTZ
         :rtype:      int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -381,7 +381,7 @@ class GXGIS(gxapi_cy.WrapGIS):
                      if the `GXSHP <geosoft.gxapi.GXSHP>` file is of type POINT or POINTZ
         :rtype:      int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -403,7 +403,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :returns:    The number of attribute fields
         :rtype:      int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -423,7 +423,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :returns:    The number of shape entities
         :rtype:      int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -446,7 +446,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :type  file:  str_ref
         :type  ipj:   GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -467,7 +467,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param wa:   `GXWA <geosoft.gxapi.GXWA>` object
         :type  wa:   GXWA
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -491,7 +491,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param db:   Database
         :type  db:   GXDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -520,7 +520,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param mview:  View in which to place `GXGIS <geosoft.gxapi.GXGIS>` drawing.
         :type  mview:  GXMVIEW
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -543,7 +543,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :type  map:        GXMAP
         :type  view_name:  str
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -615,7 +615,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param db:   Database
         :type  db:   GXDB
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -646,7 +646,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param file:  Name of the wireframe point file
         :type  file:  str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -671,7 +671,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param ipj:  `GXIPJ <geosoft.gxapi.GXIPJ>` to save
         :type  ipj:  GXIPJ
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -690,7 +690,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` object to save to `GXGIS <geosoft.gxapi.GXGIS>` `GXLST <geosoft.gxapi.GXLST>`.
         :type  lst:  GXLST
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -713,7 +713,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to save to `GXGIS <geosoft.gxapi.GXGIS>` meta
         :type  meta:  GXMETA
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -732,7 +732,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :param i_toi:  Triangulation object index
         :type  i_toi:  int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -758,7 +758,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         :type  ipj:  GXIPJ
         :type  ny:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

@@ -66,7 +66,7 @@ class GXPAT(gxapi_cy.WrapPAT):
         :returns:    `GXPAT <geosoft.gxapi.GXPAT>` object
         :rtype:      GXPAT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -89,7 +89,7 @@ class GXPAT(gxapi_cy.WrapPAT):
         :type  cl:   str
         :type  lst:  GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -117,7 +117,7 @@ class GXPAT(gxapi_cy.WrapPAT):
         :param source:  Source `GXPAT <geosoft.gxapi.GXPAT>` to Copy from
         :type  source:  GXPAT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -139,7 +139,7 @@ class GXPAT(gxapi_cy.WrapPAT):
         :param file:  Pattern file name
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

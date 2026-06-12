@@ -82,7 +82,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  data:      bytearray
         :type  gs_type:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -107,7 +107,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  data:      bytearray
         :type  gs_type:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -126,7 +126,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param vv_s:  Source
         :type  vv_s:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -151,7 +151,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  source:  int
         :type  n:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -180,7 +180,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  log_mode:  int
         :type  log_min:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -202,7 +202,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param log_min:  Minimum value
         :type  log_min:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -233,7 +233,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param vv_m:  Mask `GXVV <geosoft.gxapi.GXVV>`
         :type  vv_m:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -275,7 +275,7 @@ class GXVV(gxapi_cy.WrapVV):
         
         :type  bf:   GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -296,7 +296,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  base:  float
         :type  mult:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -315,7 +315,7 @@ class GXVV(gxapi_cy.WrapVV):
         Take the absolute value of values in a `GXVV <geosoft.gxapi.GXVV>`.
         
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -382,7 +382,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param vv_a:  `GXVV <geosoft.gxapi.GXVV>` to append
         :type  vv_a:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -404,7 +404,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:        CRC Value
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -432,7 +432,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:            CRC Value
         :rtype:              int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -459,7 +459,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:         `GXVV <geosoft.gxapi.GXVV>` Object
         :rtype:           GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -496,7 +496,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:         `GXVV <geosoft.gxapi.GXVV>` Object
         :rtype:           GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -523,7 +523,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    `GXVV <geosoft.gxapi.GXVV>` Object
         :rtype:      GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -544,7 +544,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param n:   Number of differences
         :type  n:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -589,7 +589,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param vv2:  `GXVV <geosoft.gxapi.GXVV>` to resample
         :type  vv2:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -612,7 +612,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param value:  Value to fill with
         :type  value:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -631,7 +631,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param val:  Value to fill with
         :type  val:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -650,7 +650,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param str_val:  String
         :type  str_val:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -674,7 +674,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:      The count
         :rtype:        int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -703,7 +703,7 @@ class GXVV(gxapi_cy.WrapVV):
                        -1 if not found, 0 if the length of the `GXVV <geosoft.gxapi.GXVV>` is 0.
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -727,7 +727,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    Number of expanions for this `GXVV <geosoft.gxapi.GXVV>` (see `re_fid_vv <geosoft.gxapi.GXVV.re_fid_vv>`)
         :rtype:      int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -750,7 +750,7 @@ class GXVV(gxapi_cy.WrapVV):
                          if the value is dummy or outside of the range of data.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -771,7 +771,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  element:  int
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -797,7 +797,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    The internal VV data type :ref:`GS_TYPES`
         :rtype:      int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -819,7 +819,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    Index of the maximum value, `iDUMMY <geosoft.gxapi.iDUMMY>` if no valid data.
         :rtype:      int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -842,7 +842,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    # of elements in the `GXVV <geosoft.gxapi.GXVV>`.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -863,7 +863,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  vv_d:  GXVV
         :type  vv_i:  GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -899,7 +899,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param vv_d:  `GXVV <geosoft.gxapi.GXVV>` to order
         :type  vv_d:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -921,7 +921,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param n:   Final length of `GXVV <geosoft.gxapi.GXVV>` (-1 to use current length).
         :type  n:   int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -948,7 +948,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  log_mode:  int
         :type  log_min:   float
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -972,7 +972,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    :ref:`VV_ORDER`
         :rtype:      int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -993,7 +993,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1021,7 +1021,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  vvi:  GXVV
         :type  vvr:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1134,7 +1134,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  vv_m:     GXVV
         :type  str_val:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1234,7 +1234,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1260,7 +1260,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  vv_y:  GXVV
         :type  vv_z:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1283,7 +1283,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  min:  float_ref
         :type  max:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1308,7 +1308,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  incr:    float
         :type  length:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1327,7 +1327,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param vv_m:  `GXVV <geosoft.gxapi.GXVV>` model (fid increment and start)
         :type  vv_m:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1379,7 +1379,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    Fiducial increment of the `GXVV <geosoft.gxapi.GXVV>`.
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1399,7 +1399,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    Fiducial start of the `GXVV <geosoft.gxapi.GXVV>`.
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1422,7 +1422,7 @@ class GXVV(gxapi_cy.WrapVV):
                          if the value is dummy or outside of the range of data.
         :rtype:          float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1445,7 +1445,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:    The sum of the elements.
         :rtype:      float
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1469,7 +1469,7 @@ class GXVV(gxapi_cy.WrapVV):
         :returns:            The weighted average of the values.
         :rtype:              float
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1490,7 +1490,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param expand:  Expansion setting (1 or greater)
         :type  expand:  int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1509,7 +1509,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param incr:  New increment
         :type  incr:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1528,7 +1528,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param start:  New start
         :type  start:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1549,7 +1549,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  element:  int
         :type  value:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1582,7 +1582,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  n:      int
         :type  value:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1605,7 +1605,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param size:  New length (number of elements)
         :type  size:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1635,7 +1635,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  element:  int
         :type  value:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1668,7 +1668,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  n:      int
         :type  value:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1693,7 +1693,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  element:  int
         :type  value:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1726,7 +1726,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  n:      int
         :type  value:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1755,7 +1755,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  mode:   int
         :type  space:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1817,7 +1817,7 @@ class GXVV(gxapi_cy.WrapVV):
         :param ivv:  Index `GXVV <geosoft.gxapi.GXVV>` of type INT
         :type  ivv:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1982,7 +1982,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  st:  GXST
         :type  vv:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -2023,7 +2023,7 @@ class GXVV(gxapi_cy.WrapVV):
         created data.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -2046,7 +2046,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  max:   float
         :type  mode:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -2069,7 +2069,7 @@ class GXVV(gxapi_cy.WrapVV):
         :type  format:   int
         :type  decimal:  int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

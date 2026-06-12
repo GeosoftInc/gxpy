@@ -60,12 +60,33 @@ class GXLMSG(gxapi_cy.WrapLMSG):
         :param line:  Line name
         :type  line:  str
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
         
         gxapi_cy.WrapLMSG._goto_line(GXContext._get_tls_geo(), line.encode())
+        
+
+
+
+    @classmethod
+    def goto_line_fid(cls, line, fiducial):
+        """
+        
+        Sends a 'go to line and fiducial' message
+        
+        :param line:      Line name
+        :param fiducial:  Fiducial value
+        :type  line:      str
+        :type  fiducial:  float
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
+        """
+        
+        gxapi_cy.WrapLMSG._goto_line_fid(GXContext._get_tls_geo(), line.encode(), fiducial)
         
 
 

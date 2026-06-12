@@ -101,7 +101,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :returns:     Handle to the `GXDGW <geosoft.gxapi.GXDGW>` object.
         :rtype:       GXDGW
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -131,7 +131,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :type  meta_obj:      int
         :type  meta_attrib:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -159,7 +159,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :type  group:  str
         :type  field:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -184,7 +184,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :returns:    The List Object
         :rtype:      GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -210,7 +210,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :type  info:  int
         :type  buff:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -232,7 +232,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :returns:    The Exit Code of the Dialog window.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -258,7 +258,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :type  info:  int
         :type  buff:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -286,7 +286,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :type  meta_obj:      int
         :type  meta_attrib:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -315,7 +315,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :type  group:  str
         :type  field:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -336,7 +336,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         :param title:  Title to set
         :type  title:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

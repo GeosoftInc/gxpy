@@ -78,7 +78,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :returns:         x - Attribute Token
         :rtype:           int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -171,7 +171,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :returns:         x - Class Token
         :rtype:           int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -374,7 +374,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  value:      int_ref
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -397,7 +397,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  value:      float_ref
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -420,7 +420,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  value:      str_ref
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -631,7 +631,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  obj:        int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -654,7 +654,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  obj:        int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -727,7 +727,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  value:      int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -750,7 +750,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  value:      float
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -773,7 +773,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_attrib:  int
         :type  value:      str
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -794,7 +794,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :type  ph_object:  int
         :type  ph_attrib:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -980,7 +980,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         :returns:         x - Type Token
         :rtype:           int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1066,7 +1066,7 @@ class GXMETA(gxapi_cy.WrapMETA):
                       `H_META_INVALID_TOKEN <geosoft.gxapi.H_META_INVALID_TOKEN>` - Not found
         :rtype:       int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

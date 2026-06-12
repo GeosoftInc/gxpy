@@ -83,7 +83,7 @@ class GXVM(gxapi_cy.WrapVM):
         :returns:         `GXVM <geosoft.gxapi.GXVM>` Object
         :rtype:           GXVM
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -136,7 +136,7 @@ class GXVM(gxapi_cy.WrapVM):
                          if the value is dummy or outside of the range of data.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -157,7 +157,7 @@ class GXVM(gxapi_cy.WrapVM):
         :type  element:  int
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -183,7 +183,7 @@ class GXVM(gxapi_cy.WrapVM):
         :returns:    # of elements in the `GXVM <geosoft.gxapi.GXVM>`.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -202,7 +202,7 @@ class GXVM(gxapi_cy.WrapVM):
         :param newsize:  New size (number of elements)
         :type  newsize:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -227,7 +227,7 @@ class GXVM(gxapi_cy.WrapVM):
                          if the value is dummy or outside of the range of data.
         :rtype:          float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -248,7 +248,7 @@ class GXVM(gxapi_cy.WrapVM):
         :type  element:  int
         :type  value:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -275,7 +275,7 @@ class GXVM(gxapi_cy.WrapVM):
         :type  element:  int
         :type  value:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -302,7 +302,7 @@ class GXVM(gxapi_cy.WrapVM):
         :type  element:  int
         :type  value:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

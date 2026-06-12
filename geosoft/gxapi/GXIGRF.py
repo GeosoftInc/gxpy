@@ -73,7 +73,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         :type  inc:      float_ref
         :type  dec:      float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -106,7 +106,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         :type  gv_vinc:  GXVV
         :type  gv_vdec:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -144,7 +144,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         :returns:         `GXIGRF <geosoft.gxapi.GXIGRF>` Object
         :rtype:           GXIGRF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -171,7 +171,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         :type  min:        float_ref
         :type  max:        float_ref
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

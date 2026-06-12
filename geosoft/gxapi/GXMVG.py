@@ -71,7 +71,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  d_min_int:  float
         :type  d_size:     float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -103,7 +103,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  d_min_int:  float
         :type  d_size:     float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -146,7 +146,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :returns:       `GXMVG <geosoft.gxapi.GXMVG>` handle (NULL if error)
         :rtype:         GXMVG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -168,7 +168,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :returns:    `GXMVIEW <geosoft.gxapi.GXMVIEW>` Handle
         :rtype:      GXMVIEW
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -199,7 +199,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  d_dy:    float
         :type  l_type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -236,7 +236,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  bound:    int
         :type  orient:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -276,7 +276,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  bound:    int
         :type  orient:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -312,7 +312,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  va:        GXVA
         :type  vv_array:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -344,7 +344,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -376,7 +376,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  max:      float
         :type  log_min:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -404,7 +404,7 @@ class GXMVG(gxapi_cy.WrapMVG):
         :type  max:      float
         :type  log_min:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

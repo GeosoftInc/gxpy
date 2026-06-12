@@ -63,7 +63,7 @@ class GXBF(gxapi_cy.WrapBF):
         :param size:  New length in bytes
         :type  size:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -84,7 +84,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  offset:  int
         :type  ref:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -106,7 +106,7 @@ class GXBF(gxapi_cy.WrapBF):
         :param b_fw:  Destination `GXBF <geosoft.gxapi.GXBF>`
         :type  b_fw:  GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -130,7 +130,7 @@ class GXBF(gxapi_cy.WrapBF):
         :returns:     CRC Value
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -154,7 +154,7 @@ class GXBF(gxapi_cy.WrapBF):
         :returns:       `GXBF <geosoft.gxapi.GXBF>` Object
         :rtype:         GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -192,7 +192,7 @@ class GXBF(gxapi_cy.WrapBF):
         :returns:       `GXBF <geosoft.gxapi.GXBF>` Object
         :rtype:         GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -219,7 +219,7 @@ class GXBF(gxapi_cy.WrapBF):
                     0 if not at the end of the file
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -263,7 +263,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  encoding:  int
         :type  data:      str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -283,7 +283,7 @@ class GXBF(gxapi_cy.WrapBF):
         :returns:    File size in bytes.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -303,7 +303,7 @@ class GXBF(gxapi_cy.WrapBF):
         :returns:    Current file pointer location
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -324,7 +324,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  data:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -356,7 +356,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  data:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -388,7 +388,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  vv:    GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -418,7 +418,7 @@ class GXBF(gxapi_cy.WrapBF):
         :param status:  :ref:`BF_CLOSE`
         :type  status:  int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -439,7 +439,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  encoding:  int
         :type  data:      str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -456,7 +456,7 @@ class GXBF(gxapi_cy.WrapBF):
         Writes a null byte (0) to `GXBF <geosoft.gxapi.GXBF>`
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -477,7 +477,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  data:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -504,7 +504,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  data:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -531,7 +531,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  vv:    GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -586,7 +586,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  data:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -617,7 +617,7 @@ class GXBF(gxapi_cy.WrapBF):
         :param data:  Data string to write (no nulls)
         :type  data:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -639,7 +639,7 @@ class GXBF(gxapi_cy.WrapBF):
         :type  type:  int
         :type  p3:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

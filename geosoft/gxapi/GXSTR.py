@@ -198,7 +198,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  qual:       str
         :type  file_name:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -223,7 +223,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  ofile:  str_ref
         :type  opt:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -246,7 +246,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  file_part:  str_ref
         :type  part:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -269,7 +269,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  out_str:  str_ref
         :type  index:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -320,7 +320,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  buff:     str_ref
         :type  width:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -345,7 +345,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  width:  int
         :type  type:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -368,7 +368,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  buff:   str_ref
         :type  width:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -393,7 +393,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  width:  int
         :type  sig:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -418,7 +418,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  width:  int
         :type  sig:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -445,7 +445,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  width:  int
         :type  dec:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -472,7 +472,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  deci:   int
         :type  type:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -538,7 +538,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        ASCII value of first character in string.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -565,7 +565,7 @@ class GXSTR(gxapi_cy.WrapSTR):
                          The first character is 0.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -590,7 +590,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  width:    int
         :type  just:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -693,7 +693,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  ch:       str
         :type  split:    str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -725,7 +725,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  dest:  str_ref
         :type  orig:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -753,7 +753,7 @@ class GXSTR(gxapi_cy.WrapSTR):
                                 A  >  B            1
         :rtype:                 int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -774,7 +774,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  dest:  str_ref
         :type  orig:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -799,7 +799,7 @@ class GXSTR(gxapi_cy.WrapSTR):
                       1 if string matches mask.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -853,7 +853,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        String length.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -878,7 +878,7 @@ class GXSTR(gxapi_cy.WrapSTR):
                       1 if string matches mask.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -906,7 +906,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        String length.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -934,7 +934,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        String length.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1016,7 +1016,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  start:   int
         :type  length:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1039,7 +1039,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :param str_val:  String
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1058,7 +1058,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :param str_val:  String
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1079,7 +1079,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  line:  str
         :type  xyz:   str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1121,7 +1121,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  dest:  str_ref
         :type  mask:  str
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1144,7 +1144,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  old:       str
         :type  new_char:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1170,7 +1170,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  old:       str
         :type  new_char:  str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1221,7 +1221,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  str_val:  str_ref
         :type  rpl:      str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1264,7 +1264,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :param str_val:  String to trim
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1294,7 +1294,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  str_val:  str_ref
         :type  trim:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1317,7 +1317,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :param str_val:  String to unquote
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1392,7 +1392,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        Number of tokens in the string.
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1422,7 +1422,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  orig:  str
         :type  tok:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1465,7 +1465,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        Number of tokens
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1523,7 +1523,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        Number of tokens, maximum is 2048
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1564,7 +1564,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :returns:        Number of Tokens
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1627,7 +1627,7 @@ class GXSTR(gxapi_cy.WrapSTR):
         :type  orig:   str
         :type  start:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -84,7 +84,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  key:  str
         :type  rec:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -110,7 +110,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                        NULL - Error of some kind
         :rtype:        GXLTB
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -148,7 +148,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                        NULL - Error of some kind
         :rtype:        GXLTB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -183,7 +183,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                                 NULL - Error of some kind
         :rtype:                 GXLTB
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -216,7 +216,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                                 NULL - Error of some kind
         :rtype:                 GXLTB
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -237,7 +237,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :param rec:  Record number to delete
         :type  rec:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -267,7 +267,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  match_type:  int
         :type  lst:         GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -292,7 +292,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  fld:  int
         :type  lst:  GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -319,7 +319,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  fld_v:  int
         :type  lst:    GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -343,7 +343,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :returns:    Number of fields in the `GXLTB <geosoft.gxapi.GXLTB>`.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -366,7 +366,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                        field number if field does exist.
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -389,7 +389,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                      record number if key does exist.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -410,7 +410,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  field_num:  int
         :type  field:      str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -437,7 +437,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                         an empty string or dummy value is returned.
         :rtype:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -460,7 +460,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  field:   int
         :type  token:   str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -486,7 +486,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  field:   int
         :type  token:   str_ref
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -509,7 +509,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :returns:    Number of records in the `GXLTB <geosoft.gxapi.GXLTB>`.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -536,7 +536,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                        record number if search succeeds
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -559,7 +559,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                        NULL - Error of some kind
         :rtype:        GXLTB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -600,7 +600,7 @@ class GXLTB(gxapi_cy.WrapLTB):
                         an empty string or dummy value is returned.
         :rtype:         float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -619,7 +619,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :param file:  File name, .csv assumed.  If "", save to original file.
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -640,7 +640,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  file:   str
         :type  crypt:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -663,7 +663,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  field:   int
         :type  data:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -686,7 +686,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  field:   int
         :type  data:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -709,7 +709,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         :type  field:   int
         :type  token:   str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

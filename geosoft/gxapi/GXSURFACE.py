@@ -68,7 +68,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :returns:             `GXSURFACE <geosoft.gxapi.GXSURFACE>` Object
         :rtype:               GXSURFACE
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -92,7 +92,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :returns:             `GXSURFACE <geosoft.gxapi.GXSURFACE>` Object
         :rtype:               GXSURFACE
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -113,7 +113,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :param ipj:      `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the Geosurface coordinate system
         :type  ipj:      GXIPJ
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -132,7 +132,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :param ipj:      `GXIPJ <geosoft.gxapi.GXIPJ>` containing the new coordinate system of the Geosurface
         :type  ipj:      GXIPJ
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -151,7 +151,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :param lst:      `GXLST <geosoft.gxapi.GXLST>` to fill
         :type  lst:      GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -173,7 +173,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :returns:        `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
         :rtype:          GXSURFACEITEM
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -192,7 +192,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :param surfaceitem:  `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` to add
         :type  surfaceitem:  GXSURFACEITEM
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -213,7 +213,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  surface_file:  str
         :type  lst:           GXLST
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -234,7 +234,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  surface_file:  str
         :type  lst:           GXLST
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -255,7 +255,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  surface_file:  str
         :type  lst:           GXLST
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -284,7 +284,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  max_y:    float_ref
         :type  max_z:    float_ref
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -310,7 +310,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :returns:             CRC Value (always 0)
         :rtype:               int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -329,7 +329,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :param name:  Geosurface file
         :type  name:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -351,7 +351,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  surface_file:  str
         :type  dxf_file:      str
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -373,7 +373,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  ipj:                 GXIPJ
         :type  surface_file:        str
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -395,7 +395,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  ipj:                 GXIPJ
         :type  surface_file:        str
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -416,7 +416,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
         :type  surface_filename:  str
         :type  text_filename:     str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

@@ -63,7 +63,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg:       GXPG
         :type  ref_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -92,7 +92,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  ex_x:     int
         :type  ex_y:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -133,7 +133,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  fl_npass:      int
         :type  ref_fil:       str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -210,7 +210,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  file:     str
         :type  vv:       GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -237,7 +237,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_y:  GXVV
         :type  vv_z:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -265,7 +265,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  dat:  GXDAT
         :type  reg:  GXREG
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -290,7 +290,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  dat:  GXDAT
         :type  reg:  GXREG
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -321,7 +321,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  z:    int
         :type  reg:  GXREG
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -372,7 +372,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  data:  int
         :type  reg:   GXREG
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -419,7 +419,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_z:  GXVV
         :type  reg:   GXREG
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -446,7 +446,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv:    GXVV
         :type  pg_o:  GXPG
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -548,7 +548,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg:       GXPG
         :type  ref_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -592,7 +592,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  ipj:   GXIPJ
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -619,7 +619,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv:    GXVV
         :type  pg_o:  GXPG
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -662,7 +662,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  dx:        float
         :type  dy:        float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -687,7 +687,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg:      GXPG
         :type  scalar:  float
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -710,7 +710,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg:      GXPG
         :type  scalar:  float
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -737,7 +737,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg_u:  GXPG
         :type  pg_o:  GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -786,7 +786,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg_i:  GXPG
         :type  pg_o:  GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -814,7 +814,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_d:      GXVV
         :type  pg_eigen:  GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -842,7 +842,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_b:    GXVV
         :type  vv_sol:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -872,7 +872,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg_o:     GXPG
         :type  vv_perm:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -910,7 +910,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  transpose:    int
         :type  pg_uv:        GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -940,7 +940,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_x:  GXVV
         :type  vv_o:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -976,7 +976,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_w:  GXVV
         :type  pg_v:  GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1018,7 +1018,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  min_w:  float
         :type  pg_a:   GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1059,7 +1059,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg_i:  GXPG
         :type  vv_c:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1084,7 +1084,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg_x:         GXPG
         :type  pg_loadings:  GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1141,7 +1141,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg_loadings:  GXPG
         :type  pg_scores:    GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1174,7 +1174,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_s:  GXVV
         :type  dir:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1236,7 +1236,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  vv_t:  GXVV
         :type  dir:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1267,7 +1267,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg_i:  GXPG
         :type  pg_o:  GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1301,7 +1301,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :returns:             Maximum Terrain Steepness Computation.
         :rtype:               float
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1352,7 +1352,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  wt:     float
         :type  slope:  float
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1389,7 +1389,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  d_dy:     float
         :type  d_rot:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1411,7 +1411,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  pg:      GXPG
         :type  option:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1450,7 +1450,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  z:       int
         :type  method:  int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1496,7 +1496,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  z:       int
         :type  method:  int
 
-        .. versionadded:: 2023.1
+        .. versionadded:: 2023.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1544,7 +1544,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  data:    int
         :type  method:  int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1584,7 +1584,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         :type  v_vz:    GXVV
         :type  method:  int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

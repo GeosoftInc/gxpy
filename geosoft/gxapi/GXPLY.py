@@ -63,7 +63,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -86,7 +86,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :type  vv_y:     GXVV
         :type  exclude:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -143,7 +143,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :param srce:  Source
         :type  srce:  GXPLY
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -161,7 +161,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         
         :rtype:       int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -182,7 +182,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :type  srce:     GXPLY
         :type  exclude:  int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -202,7 +202,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :returns:    `GXPLY <geosoft.gxapi.GXPLY>` Handle
         :rtype:      GXPLY
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -224,7 +224,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :returns:    `GXPLY <geosoft.gxapi.GXPLY>` Handle
         :rtype:      GXPLY
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -251,7 +251,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :type  max_x:  float_ref
         :type  max_y:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -295,7 +295,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :type  vv_y:  GXVV
         :type  poly:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -320,7 +320,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :type  poly:     int
         :type  exclude:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -390,7 +390,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :returns:      0, Terminates on error (you can ignore this value)
         :rtype:        int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -445,7 +445,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :returns:     :ref:`PLY_POINT_CLIP`
         :rtype:       int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -464,7 +464,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :param desc:  Polygon description
         :type  desc:  str_ref
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -484,7 +484,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :returns:     Number of polygons in the `GXPLY <geosoft.gxapi.GXPLY>`.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -503,7 +503,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :param table:  Name of the polygon file File contains coordinates of one or more polygons
         :type  table:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -573,7 +573,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :type  y:     float
         :type  rot:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -592,7 +592,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :param table:  Name of the polygon file
         :type  table:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -611,7 +611,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` to serialize to
         :type  bf:   GXBF
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -630,7 +630,7 @@ class GXPLY(gxapi_cy.WrapPLY):
         :param desc:  Polygon description
         :type  desc:  str
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

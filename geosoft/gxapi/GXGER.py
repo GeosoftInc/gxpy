@@ -88,7 +88,7 @@ class GXGER(gxapi_cy.WrapGER):
         :returns:     `GXGER <geosoft.gxapi.GXGER>` Object
         :rtype:       GXGER
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -118,7 +118,7 @@ class GXGER(gxapi_cy.WrapGER):
                          1 if no message, passed message remains unchanged
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -139,7 +139,7 @@ class GXGER(gxapi_cy.WrapGER):
         :type  parm:  str
         :type  set:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -160,7 +160,7 @@ class GXGER(gxapi_cy.WrapGER):
         :type  parm:  str
         :type  set:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -181,7 +181,7 @@ class GXGER(gxapi_cy.WrapGER):
         :type  parm:  str
         :type  set:   str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

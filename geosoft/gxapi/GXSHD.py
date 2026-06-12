@@ -75,7 +75,7 @@ class GXSHD(gxapi_cy.WrapSHD):
         :type  brightness:   float_ref
         :type  wet_look:     bool
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -104,7 +104,7 @@ class GXSHD(gxapi_cy.WrapSHD):
                              1 if user cancelled or tracking failed.
         :rtype:              int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -125,7 +125,7 @@ class GXSHD(gxapi_cy.WrapSHD):
         :param apply_changes:  Apply changes to map.
         :type  apply_changes:  bool
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -89,7 +89,7 @@ class GXST(gxapi_cy.WrapST):
         :returns:    `GXST <geosoft.gxapi.GXST>` Object
         :rtype:      GXST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -129,7 +129,7 @@ class GXST(gxapi_cy.WrapST):
         :param val:  Value to Add
         :type  val:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -148,7 +148,7 @@ class GXST(gxapi_cy.WrapST):
         :param vv:  `GXVV <geosoft.gxapi.GXVV>` object
         :type  vv:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -169,7 +169,7 @@ class GXST(gxapi_cy.WrapST):
         :param vv:  `GXVV <geosoft.gxapi.GXVV>` for numbers of items
         :type  vv:  GXVV
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -196,7 +196,7 @@ class GXST(gxapi_cy.WrapST):
         :type  min:  float_ref
         :type  max:  float_ref
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -220,7 +220,7 @@ class GXST(gxapi_cy.WrapST):
         :param bins:  # of bins
         :type  bins:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -257,7 +257,7 @@ class GXST(gxapi_cy.WrapST):
         :type  min:   float
         :type  max:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -330,7 +330,7 @@ class GXST(gxapi_cy.WrapST):
         Resets the Statistics.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -354,7 +354,7 @@ class GXST(gxapi_cy.WrapST):
                     `GS_R8DM <geosoft.gxapi.GS_R8DM>` for none
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -386,7 +386,7 @@ class GXST(gxapi_cy.WrapST):
                    mit to about 5 standard deviations
         :rtype:      float
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -412,7 +412,7 @@ class GXST(gxapi_cy.WrapST):
                          mit to about 5 standard deviations
         :rtype:          float
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -433,7 +433,7 @@ class GXST(gxapi_cy.WrapST):
                     Terminates if no histogram in the `GXST <geosoft.gxapi.GXST>` object.
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

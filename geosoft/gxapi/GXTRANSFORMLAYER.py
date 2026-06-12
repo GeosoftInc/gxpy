@@ -60,7 +60,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         :param applyChanges:  Apply changes to layer.
         :type  applyChanges:  bool
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -79,7 +79,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         Cancel changes done in the transform layer
         
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -98,7 +98,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         Undo one step of editing in the transform layer
         
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -117,7 +117,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         Redo one step of editing in the transform layer
         
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -137,7 +137,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         
         :rtype:             int
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -157,7 +157,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         
         :rtype:             int
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -178,7 +178,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         :param sGrid:       output grid path
         :type  sGrid:       str
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -199,7 +199,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         :param elevation:   change in elevation to apply
         :type  elevation:   float
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -220,7 +220,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         :param nodeIdx:     node index
         :type  nodeIdx:     int
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -239,7 +239,7 @@ class GXTRANSFORMLAYER(gxapi_cy.WrapTRANSFORMLAYER):
         Clear the section status of every node
         
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

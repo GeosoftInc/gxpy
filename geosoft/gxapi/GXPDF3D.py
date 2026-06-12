@@ -93,7 +93,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
         :type  resolution:   int
         :type  no_clip:      int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -120,7 +120,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
         :type  geospatial_pdf:       int
         :type  open_pdf:             int
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

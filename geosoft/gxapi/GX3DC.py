@@ -67,7 +67,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
         :returns:       `GX3DC <geosoft.gxapi.GX3DC>` object
         :rtype:         GX3DC
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -89,7 +89,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
         
         :rtype:       9
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -106,7 +106,7 @@ class GX3DC(gxapi_cy.Wrap3DC):
         Destroys a 3D container object and cleans up any unmanaged resources.
         
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

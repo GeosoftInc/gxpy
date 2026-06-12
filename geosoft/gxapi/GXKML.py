@@ -77,7 +77,7 @@ class GXKML(gxapi_cy.WrapKML):
         :type  extruded:  bool
         :rtype:           int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -111,7 +111,7 @@ class GXKML(gxapi_cy.WrapKML):
         :type  extruded:  bool
         :rtype:           int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -64,7 +64,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
         :returns:    `GXVOXE <geosoft.gxapi.GXVOXE>` handle, terminates if creation fails
         :rtype:      GXVOXE
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -93,7 +93,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
         :type  vv_d:    GXVV
         :type  interp:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -121,7 +121,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
         :returns:       Value at the point or DUMMY if not valid
         :rtype:         float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -154,7 +154,7 @@ class GXVOXE(gxapi_cy.WrapVOXE):
         :type  vv:      GXVV
         :type  interp:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

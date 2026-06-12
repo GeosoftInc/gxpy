@@ -66,7 +66,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :returns:         `GXSEGYREADER <geosoft.gxapi.GXSEGYREADER>` handle, terminates if creation fails.
         :rtype:           GXSEGYREADER
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -85,7 +85,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param is_3d:        True is file is 3D, false for 2D.
         :type  is_3d:        bool
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -103,7 +103,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:              bool
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -121,7 +121,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:              bool
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -140,7 +140,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param is_little_endian:  True is file is little endian, false for big endian.
         :type  is_little_endian:  bool
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -159,7 +159,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param xy_units:     The name of the units.
         :type  xy_units:     str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -178,7 +178,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_type:       Either "DEPTH" or "TIME".
         :type  z_type:       str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -197,7 +197,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_type:       Either "DEPTH" or "TIME".
         :type  z_type:       str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -216,7 +216,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_units_list:  List of possible z-units,separated by newlines
         :type  z_units_list:  str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -235,7 +235,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_units:      The name of the z-units.
         :type  z_units:      str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -254,7 +254,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_units:      The Z units. Must be one of the strings returned by `GetPossibleZUnits()`.
         :type  z_units:      str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -273,7 +273,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_units:      List of possible z-units,separated by newlines
         :type  z_units:      str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -292,7 +292,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_units:      The Z units. Must be one of the strings returned by `GetPossibleZUnits()`.
         :type  z_units:      str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -311,7 +311,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param value:        Out-parameter containing the depth of the last sample in the traces.
         :type  value:        float_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -329,7 +329,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:      GXLTB
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -347,7 +347,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:      GXLTB
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -366,7 +366,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param text:         The text header contents.
         :type  text:         str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -386,7 +386,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :returns:            :class:'LTB' containing three columns: the field name, offset, and value. The value column will be in text form, suitable for display to the end user.
         :rtype:              GXLTB
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -414,7 +414,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :returns:                  :class:'VV' containing the data from the traces
         :rtype:                    GXVV
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -442,7 +442,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :returns:                  :class:'VV' containing the data from the trace header
         :rtype:                    GXVV
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -464,7 +464,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  number_of_samples:  int
         :rtype:                    int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -482,7 +482,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:      int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -503,7 +503,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  index:  int
         :type  name:   str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -524,7 +524,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  index:  int
         :type  name:   str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -543,7 +543,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param name:         The name of data type.
         :type  name:         str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -562,7 +562,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param name:         The name of data type.
         :type  name:         str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -583,7 +583,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  which_header:  str_ref
         :type  location:      int_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -604,7 +604,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  which_header:       str
         :type  location_or_value:  int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -622,7 +622,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:              int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -643,7 +643,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  which_header:  str_ref
         :type  location:      int_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -666,7 +666,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  location:           int
         :type  location_or_value:  float
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -685,7 +685,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param sample_interval:  output parameter for sample interval
         :type  sample_interval:  float_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -706,7 +706,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  which_header:  str_ref
         :type  location:      int_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -729,7 +729,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  location:      int
         :type  value:         float
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -748,7 +748,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param z_offset:     The z offset/time delay
         :type  z_offset:     float_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -765,7 +765,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Scans the SEG Y file, and attempts to guess the layout.
         
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -785,7 +785,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :returns:            :class:'LTB' containing trace header information
         :rtype:              GXLTB
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -804,7 +804,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param configuration:  `GXLTB <geosoft.gxapi.GXLTB>` following the same format as returned by `GetFieldConfiguration()`.
         :type  configuration:  GXLTB
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -823,7 +823,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param count:        Trace count
         :type  count:        int_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -846,7 +846,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  possibly_swapped:  bool_ref
         :type  only_one_line:     bool_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -869,7 +869,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  y:            int_ref
         :type  z:            int_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -892,7 +892,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  y:            float_ref
         :type  z:            float_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -909,7 +909,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Set the XY cell size of the voxel that would be exported to the dimensions calculated from the tie points..
         
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -930,7 +930,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  x:            float
         :type  y:            float
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -948,7 +948,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:              GXIPJ
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -966,7 +966,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :type  ipj:          GXIPJ
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -993,7 +993,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  in_line:      int_ref
         :type  cross_line:   int_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1020,7 +1020,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  in_line:      int
         :type  cross_line:   int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1037,7 +1037,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Recalculate georeferencing; call after configuration has changed.
         
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1054,7 +1054,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Discard user-supplied tie points and auto-choose new ones..
         
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1075,7 +1075,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  inline_azimuth:     float_ref
         :type  crossline_azimuth:  float_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1089,7 +1089,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
     def export_voxel_and_database(self, voxel_filename, gdb_filename):
         """
         
-        .. deprecated:: 9.7 Use SetGdbOutputName() and/or SetVoxelOutputName() followed by ExportFile() instead. 
+        .. deprecated:: 9.7.0 Use SetGdbOutputName() and/or SetVoxelOutputName() followed by ExportFile() instead. 
         Exports contents of SEG Y file to voxel and/or database.
         
         :param voxel_filename:  Output voxel file name
@@ -1097,11 +1097,11 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  voxel_filename:  str
         :type  gdb_filename:    str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        warnings.warn("""Deprecated since 9.7, Use SetGdbOutputName() and/or SetVoxelOutputName() followed by ExportFile() instead.""", )
+        warnings.warn("""Deprecated since 9.7.0, Use SetGdbOutputName() and/or SetVoxelOutputName() followed by ExportFile() instead.""", )
         self._export_voxel_and_database(voxel_filename.encode(), gdb_filename.encode())
         
 
@@ -1116,7 +1116,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param filename:     Output database file name
         :type  filename:     str
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1135,7 +1135,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param filename:     Output voxel file name
         :type  filename:     str
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1154,7 +1154,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param filename:     Output crooked section file name
         :type  filename:     str
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1173,7 +1173,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param prefix:       Output section file name prefix
         :type  prefix:       str
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1192,7 +1192,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param indices:      Which inline values to export.
         :type  indices:      GXVV
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1211,7 +1211,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param indices:      Which crossline values to export.
         :type  indices:      GXVV
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1230,7 +1230,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param indices:      Which z values to export.
         :type  indices:      GXVV
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1249,7 +1249,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param filename_list:  List of filenames,separated by newlines
         :type  filename_list:  str_ref
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1268,7 +1268,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param factor:       Decimation factor
         :type  factor:       int
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1289,7 +1289,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  z_min:        float
         :type  z_max:        float
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1306,7 +1306,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Clears Z-range to clamp to, disbling z-clamping.
         
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1331,7 +1331,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  inline_stride:  int
         :type  factor:         int
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1356,7 +1356,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  crossline_stride:  int
         :type  factor:            int
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1373,7 +1373,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Clears inline and crossline ranges to clamp to.
         
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1392,7 +1392,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :param dummy_value:  trace dummy value
         :type  dummy_value:  float
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1409,7 +1409,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Disables the trace dummy value.
         
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1436,7 +1436,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  y_min:          float_ref
         :type  y_max:          float_ref
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1461,7 +1461,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  value2:       int
         :type  constraint:   str
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1478,7 +1478,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Remove all active trace filters.
         
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1496,7 +1496,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         
         :rtype:              int
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1519,7 +1519,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  x_coordinates:     GXVV
         :type  y_coordinates:     GXVV
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1536,7 +1536,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         Exports contents of SEG Y file to voxel and/or database.
         
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1557,7 +1557,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :type  trace_number:  int
         :type  text:          str_ref
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1579,7 +1579,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
         :returns:             :class:'VV' containing the data from the trace header
         :rtype:               GXVV
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

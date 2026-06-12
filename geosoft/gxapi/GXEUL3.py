@@ -59,7 +59,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
         Destroys a `GXEUL3 <geosoft.gxapi.GXEUL3>` object.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -101,7 +101,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
         :returns:         `GXEUL3 <geosoft.gxapi.GXEUL3>` Object
         :rtype:           GXEUL3
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -122,7 +122,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
         :type  vv_r:          GXVV
         :type  pi_res_field:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -141,7 +141,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
         :param out_fil:  Output File Name
         :type  out_fil:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -175,7 +175,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
         :returns:        0 for OK, -1 for Error
         :rtype:          int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -235,7 +235,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
         :returns:    >0 for OK, -1 for Error
         :rtype:      int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

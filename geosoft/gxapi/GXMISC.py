@@ -65,7 +65,7 @@ class GXMISC(gxapi_cy.WrapMISC):
         :type  raw:            str
         :type  tide_corr_opt:  int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -88,7 +88,7 @@ class GXMISC(gxapi_cy.WrapMISC):
         :type  raw:            str
         :type  tide_corr_opt:  int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -111,7 +111,7 @@ class GXMISC(gxapi_cy.WrapMISC):
         :type  alias:  str
         :type  tbl:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -147,7 +147,7 @@ class GXMISC(gxapi_cy.WrapMISC):
         :type  cg3:  str
         :type  raw:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

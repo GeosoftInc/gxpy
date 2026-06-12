@@ -71,7 +71,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         Clear warp parameters (if any) from an `GXIPJ <geosoft.gxapi.GXIPJ>`.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -128,7 +128,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  scale:    float
         :type  str_val:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -157,7 +157,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  y_orig:  float
         :type  z_orig:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -178,7 +178,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  x:    int
         :type  y:    int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -227,7 +227,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  v32:  float
         :type  v33:  float
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -254,7 +254,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  vv_x_new:  GXVV
         :type  vv_y_new:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -281,7 +281,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         If a PJ (reprojection) object is created with this IPJ, account for local datum differences
         
 
-        .. versionadded:: 2025.1
+        .. versionadded:: 2025.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -298,7 +298,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         Clear coordinate sytsem, except for units
         
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -337,7 +337,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param ip_jd:  Destination `GXIPJ <geosoft.gxapi.GXIPJ>`
         :type  ip_jd:  GXIPJ
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -362,7 +362,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  vv_z:       GXVV
         :type  f_forward:  int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -381,7 +381,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param ip_jd:  Destination `GXIPJ <geosoft.gxapi.GXIPJ>`
         :type  ip_jd:  GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -400,7 +400,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param ip_jd:  Source
         :type  ip_jd:  GXIPJ
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -423,7 +423,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:    `GXIPJ <geosoft.gxapi.GXIPJ>` Object
         :rtype:      GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -444,7 +444,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:    `GXIPJ <geosoft.gxapi.GXIPJ>` Object
         :rtype:      GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -466,7 +466,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:     `GXIPJ <geosoft.gxapi.GXIPJ>` Object
         :rtype:       GXIPJ
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -503,7 +503,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  sy:       float_ref
         :type  str_val:  float_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -544,7 +544,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  rotate:   int_ref
         :type  flags:    int_ref
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -571,7 +571,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  yvv:      GXVV
         :type  log_z:    int_ref
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -596,7 +596,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  datum:  str
         :type  lst:    GXLST
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -773,7 +773,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       2 - Datums and LTD are the same
         :rtype:       int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -809,7 +809,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                             2 - Datums and LTD are the same
         :rtype:             int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -845,7 +845,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:          0 if ok - 1 otherwise
         :rtype:            int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -871,7 +871,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:          0 if ok - 1 otherwise
         :rtype:            int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -894,7 +894,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       1 - Yes
         :rtype:       int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -919,7 +919,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       1 - Yes
         :rtype:       int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -948,7 +948,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                                1 - Yes
         :rtype:                int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -967,7 +967,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param str_val:  Name returned
         :type  str_val:  str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1016,7 +1016,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  str4:  str_ref
         :type  str5:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1041,7 +1041,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  coord:  str_ref
         :type  units:  str_ref
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1062,7 +1062,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  type:     int
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1081,7 +1081,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param str_val:  New name (See Valid inputs above).
         :type  str_val:  str
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1139,7 +1139,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param str_val:  Name returned
         :type  str_val:  str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1160,7 +1160,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  scale:    float_ref
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1179,7 +1179,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param str_val:  XML string returned
         :type  str_val:  str_ref
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1200,7 +1200,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                      1 - Yes
         :rtype:      int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1263,7 +1263,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                      1 - Yes
         :rtype:      int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1286,7 +1286,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       1 - Yes
         :rtype:       int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1309,7 +1309,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       1 - Yes
         :rtype:       int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1336,7 +1336,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                             1 - Yes
         :rtype:             int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1357,7 +1357,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                      1 - Yes
         :rtype:      int
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1392,7 +1392,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                      1 - Yes
         :rtype:      int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1429,7 +1429,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       1 - success: `GXIPJ <geosoft.gxapi.GXIPJ>` set using input values.
         :rtype:       int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1453,7 +1453,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:    :ref:`IPJ_TYPE`
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1478,7 +1478,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       for each coordinate system.
         :rtype:       int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1509,7 +1509,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  type:  int
         :type  name:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1527,7 +1527,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         
         :rtype:      bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1550,7 +1550,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       1 - Yes
         :rtype:       int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1573,7 +1573,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                       1 - Yes
         :rtype:       int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1600,7 +1600,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                             1 - Yes
         :rtype:             int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1620,7 +1620,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:    :ref:`IPJ_WARP`
         :rtype:      int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1716,7 +1716,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  str2:  str
         :type  str3:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1738,7 +1738,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:     Parameter setting, `rDUMMY <geosoft.gxapi.rDUMMY>` if dot used
         :rtype:       float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1762,7 +1762,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:    Azimuth (degrees CW) of geographic north from grid north at a location.
         :rtype:      float
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1789,7 +1789,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:        Scale factor m/unit
         :rtype:          float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1809,7 +1809,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         
         :type  bf:   GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1828,7 +1828,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param file:  Name of file to export to
         :type  file:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1847,7 +1847,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param file:  Name of file to export to
         :type  file:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1866,7 +1866,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param file:  Name of file to export to
         :type  file:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1939,7 +1939,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  sy:       float
         :type  str_val:  float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1981,7 +1981,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  rotate:   int
         :type  flags:    int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2025,7 +2025,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  sy:       float
         :type  str_val:  float
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2053,7 +2053,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  yvv:      GXVV
         :type  log_z:    int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2075,7 +2075,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param depth:  View Y value for Depth = 0.0.
         :type  depth:  float
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2124,7 +2124,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  str4:  str
         :type  str5:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2280,7 +2280,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  parm:        int
         :type  parm_value:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2330,7 +2330,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  azimuth:  float
         :type  swing:    float
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2483,7 +2483,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param str_val:  XML string to set
         :type  str_val:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2502,7 +2502,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param str_val:  Binary as string
         :type  str_val:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2521,7 +2521,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param str_val:  Binary as string returned
         :type  str_val:  str_ref
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2570,7 +2570,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  v32:  float_ref
         :type  v33:  float_ref
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2619,7 +2619,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  v32:  float
         :type  v33:  float
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2649,7 +2649,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  dy:          float_ref
         :type  rot:         float_ref
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2674,7 +2674,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:          :ref:`IPJ_ORIENT`
         :rtype:            int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2694,7 +2694,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :returns:    :ref:`IPJ_ORIENT`
         :rtype:      int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2711,7 +2711,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         Add as favourite coordinate system to Settings.
         
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2729,7 +2729,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         
         :rtype:      int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2749,7 +2749,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  index:  int
         :rtype:        GXIPJ
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2768,7 +2768,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param index:  Index of item.
         :type  index:  int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2787,7 +2787,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :param wkt:  WKT PROJ format projection string
         :type  wkt:  str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2811,7 +2811,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         :type  ipj2:     GXIPJ
         :type  message:  str_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2836,7 +2836,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         Clear a projection except for units
         
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2866,7 +2866,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                            This does not compare LDT information in the `GXIPJ <geosoft.gxapi.GXIPJ>`, use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for a full comparison.
         :rtype:       int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2893,7 +2893,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                            This does not compare LDT information in the `GXIPJ <geosoft.gxapi.GXIPJ>`, use `compare_datums <geosoft.gxapi.GXIPJ.compare_datums>` for a full comparison.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -2915,7 +2915,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
                      1 - Yes
         :rtype:      int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

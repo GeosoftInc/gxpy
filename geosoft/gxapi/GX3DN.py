@@ -108,7 +108,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :type  declination:  float_ref
         :type  inclination:  float_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -131,7 +131,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :type  y:     float_ref
         :type  z:     float_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -151,7 +151,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :returns:     Axis Color
         :rtype:       int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -170,7 +170,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :param font:  Font name
         :type  font:  str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -190,7 +190,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :returns:     Background Color value
         :rtype:       int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -217,7 +217,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :type  label_y:  str_ref
         :type  label_z:  str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -237,7 +237,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :returns:     Shading On/Off
         :rtype:       int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -367,7 +367,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :type  y:     float
         :type  z:     float
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -393,7 +393,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
         :param shading:  0: Off, 1:  On.
         :type  shading:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

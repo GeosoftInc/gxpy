@@ -69,7 +69,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :returns:               `GXGEOSTRING <geosoft.gxapi.GXGEOSTRING>` Object
         :rtype:                 GXGEOSTRING
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -90,7 +90,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :param ipj:        `GXIPJ <geosoft.gxapi.GXIPJ>` in which to place the Geostring coordinate system
         :type  ipj:        GXIPJ
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -109,7 +109,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` to fill
         :type  lst:        GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -130,7 +130,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` to fill
         :type  lst:        GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -151,7 +151,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :param lst:        `GXLST <geosoft.gxapi.GXLST>` to fill
         :type  lst:        GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -172,7 +172,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :type  guid:       str
         :type  lst:        GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -193,7 +193,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :type  guid:       str
         :type  lst:        GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -216,7 +216,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :type  section_guid:  str
         :type  lst:           GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -261,7 +261,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :type  line_pitch:      float_ref
         :type  line_color:      int_ref
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -304,7 +304,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :type  c:               float_ref
         :type  d:               float_ref
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -333,7 +333,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
         :type  vert_v_vy:     GXVV
         :type  vert_v_vz:     GXVV
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

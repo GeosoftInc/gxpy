@@ -60,7 +60,7 @@ class GXWA(gxapi_cy.WrapWA):
         :param str_val:  String to write
         :type  str_val:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -84,7 +84,7 @@ class GXWA(gxapi_cy.WrapWA):
         :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
         :rtype:         GXWA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -112,7 +112,7 @@ class GXWA(gxapi_cy.WrapWA):
         :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
         :rtype:         GXWA
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -143,7 +143,7 @@ class GXWA(gxapi_cy.WrapWA):
         :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
         :rtype:         GXWA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -173,7 +173,7 @@ class GXWA(gxapi_cy.WrapWA):
         :returns:       `GXWA <geosoft.gxapi.GXWA>` Handle
         :rtype:         GXWA
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -198,7 +198,7 @@ class GXWA(gxapi_cy.WrapWA):
         Forces a new line in the `GXWA <geosoft.gxapi.GXWA>` object.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

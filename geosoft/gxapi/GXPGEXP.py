@@ -66,7 +66,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
         :type  pg:     GXPG
         :type  var:    str
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -86,7 +86,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
         :returns:    `GXPGEXP <geosoft.gxapi.GXPGEXP>` Object
         :rtype:      GXPGEXP
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -109,7 +109,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
         :type  formula:  str
         :type  unused:   int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

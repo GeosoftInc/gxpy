@@ -82,7 +82,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         :returns:          `GXHTTP <geosoft.gxapi.GXHTTP>` Object
         :rtype:            GXHTTP
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -128,7 +128,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         :type  bf:       GXBF
         :type  dynamic:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -154,7 +154,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         :type  bf:       GXBF
         :type  dynamic:  int
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -182,7 +182,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         :type  bf:      GXBF
         :type  ret_bf:  GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -211,7 +211,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         :type  method:  str
         :type  bf:      GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -238,7 +238,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         :type  username:  str
         :type  password:  str
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

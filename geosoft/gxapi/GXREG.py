@@ -62,7 +62,7 @@ class GXREG(gxapi_cy.WrapREG):
         Clears all the parameters in a `GXREG <geosoft.gxapi.GXREG>` object
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -81,7 +81,7 @@ class GXREG(gxapi_cy.WrapREG):
         :param srce:  Source
         :type  srce:  GXREG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -103,7 +103,7 @@ class GXREG(gxapi_cy.WrapREG):
         :returns:              `GXREG <geosoft.gxapi.GXREG>` Object
         :rtype:                GXREG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -125,7 +125,7 @@ class GXREG(gxapi_cy.WrapREG):
         :returns:    `GXREG <geosoft.gxapi.GXREG>` Object
         :rtype:      GXREG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -146,7 +146,7 @@ class GXREG(gxapi_cy.WrapREG):
         :param parm:  XML file name
         :type  parm:  str
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -167,7 +167,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  parm:  str
         :type  data:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -188,7 +188,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  parm:  str
         :type  data:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -234,7 +234,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  parm:  str
         :type  data:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -275,7 +275,7 @@ class GXREG(gxapi_cy.WrapREG):
         :param ini:  INI file name
         :type  ini:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -298,7 +298,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  parm:  str
         :type  data:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -319,7 +319,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  srce:  GXREG
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -338,7 +338,7 @@ class GXREG(gxapi_cy.WrapREG):
         :param ini:  INI file name
         :type  ini:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -362,7 +362,7 @@ class GXREG(gxapi_cy.WrapREG):
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` to serialize `GXREG <geosoft.gxapi.GXREG>` into
         :type  bf:   GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -383,7 +383,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  parm:  str
         :type  data:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -411,7 +411,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  parm:  str
         :type  data:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -432,7 +432,7 @@ class GXREG(gxapi_cy.WrapREG):
         :type  parm:  str
         :type  p3:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

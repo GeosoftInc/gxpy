@@ -66,7 +66,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :returns:     `GXSTK <geosoft.gxapi.GXSTK>`, fail if error
         :rtype:       GXSTK
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -97,7 +97,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :type  prof_ch_vv:           GXVV
         :type  prof_ch__un_used_vv:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -120,7 +120,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :returns:    `GXMSTK <geosoft.gxapi.GXMSTK>`, aborts if creation fails
         :rtype:      GXMSTK
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -145,7 +145,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :type  line:  int
         :type  map:   GXMAP
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -164,7 +164,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :param direction:  Y-axis direction: 0 - normal, 1 - inverted
         :type  direction:  int
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -187,7 +187,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :type  index:    int_ref
         :type  vv_rtd:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -217,7 +217,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :returns:     x     - `GXSTK <geosoft.gxapi.GXSTK>` Object handle
         :rtype:       GXSTK
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -236,7 +236,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :param num:   Index to `GXSTK <geosoft.gxapi.GXSTK>` to delete (0 is first one)
         :type  num:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -265,7 +265,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :type  x_ch:     str_ref
         :type  y_ch:     str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -292,7 +292,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :returns:     The number of `GXSTK <geosoft.gxapi.GXSTK>` objects in a `GXMSTK <geosoft.gxapi.GXMSTK>` object
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -311,7 +311,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :param ra:    `GXRA <geosoft.gxapi.GXRA>` handle to an INI file
         :type  ra:    GXRA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -330,7 +330,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         :param wa:    `GXWA <geosoft.gxapi.GXWA>` handle to an INI file
         :type  wa:    GXWA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

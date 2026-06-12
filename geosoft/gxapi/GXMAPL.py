@@ -71,7 +71,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         :returns:         `GXMAPL <geosoft.gxapi.GXMAPL>`, aborts if creation fails
         :rtype:           GXMAPL
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -102,7 +102,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         :returns:         `GXMAPL <geosoft.gxapi.GXMAPL>`, aborts if creation fails
         :rtype:           GXMAPL
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -126,7 +126,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         
         :type  map:   GXMAP
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -147,7 +147,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         :type  var:   str
         :type  repl:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

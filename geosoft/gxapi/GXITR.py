@@ -84,7 +84,7 @@ class GXITR(gxapi_cy.WrapITR):
         :param name:  Name to set
         :type  name:  str
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -103,7 +103,7 @@ class GXITR(gxapi_cy.WrapITR):
         :param name:  Name returned
         :type  name:  str_ref
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -122,7 +122,7 @@ class GXITR(gxapi_cy.WrapITR):
         :param brt:  -1.0 - black; 0.0 no change; 1.0 white
         :type  brt:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -169,7 +169,7 @@ class GXITR(gxapi_cy.WrapITR):
         :param it_rs:  `GXITR <geosoft.gxapi.GXITR>` Source
         :type  it_rs:  GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -189,7 +189,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    `GXITR <geosoft.gxapi.GXITR>` object
         :rtype:      GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -211,7 +211,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:     `GXITR <geosoft.gxapi.GXITR>` object
         :rtype:       GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -238,7 +238,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:        `GXITR <geosoft.gxapi.GXITR>` object
         :rtype:          GXITR
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -270,7 +270,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:     `GXITR <geosoft.gxapi.GXITR>` object
         :rtype:       GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -292,7 +292,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    `GXITR <geosoft.gxapi.GXITR>` object
         :rtype:      GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -343,7 +343,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  st:       GXST
         :type  contour:  float
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -371,7 +371,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  min:  float_ref
         :type  max:  float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -398,7 +398,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    `GXREG <geosoft.gxapi.GXREG>` object
         :rtype:      GXREG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -419,7 +419,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  zone:   int
         :type  color:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -442,7 +442,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  zone:   int
         :type  color:  int_ref
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -467,7 +467,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    :ref:`MVIEW_COLOR`
         :rtype:      int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -495,7 +495,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:            Returns 1 if shading is enabled and defined, 0 otherwise
         :rtype:              int
 
-        .. versionadded:: 2025.1
+        .. versionadded:: 2025.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -520,7 +520,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  scale:        float
         :type  origin:       str
 
-        .. versionadded:: 2025.1
+        .. versionadded:: 2025.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -540,7 +540,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    The number of zones.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -560,7 +560,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    :ref:`ITR_ZONE_MODEL`
         :rtype:      int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -584,7 +584,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  model:       int_ref
         :type  parameters:  GXVV
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -612,7 +612,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  model:       int
         :type  parameters:  GXVV
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -644,7 +644,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  max:      float
         :type  contour:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -686,7 +686,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  max:      float
         :type  contour:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -732,7 +732,7 @@ class GXITR(gxapi_cy.WrapITR):
         :param pow:  :ref:`ITR_POWER`
         :type  pow:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -752,7 +752,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    The brightness setting of the `GXITR <geosoft.gxapi.GXITR>`
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -780,7 +780,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    The contrast setting of the `GXITR <geosoft.gxapi.GXITR>`
         :rtype:      float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -806,7 +806,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    The contour setting of the `GXITR <geosoft.gxapi.GXITR>`
         :rtype:      float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -832,7 +832,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:     The value of the specified zone.
         :rtype:       float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -891,7 +891,7 @@ class GXITR(gxapi_cy.WrapITR):
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` to serialize to
         :type  bf:   GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -914,7 +914,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  name:  str
         :type  itr:   GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -937,7 +937,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  brt:  float
         :type  con:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -985,7 +985,7 @@ class GXITR(gxapi_cy.WrapITR):
         :returns:    One of `ITR_ZONE_EQUALAREA <geosoft.gxapi.ITR_ZONE_EQUALAREA>`, `ITR_ZONE_LINEAR <geosoft.gxapi.ITR_ZONE_LINEAR>`, `ITR_ZONE_NORMAL <geosoft.gxapi.ITR_ZONE_NORMAL>` or `ITR_ZONE_LOGLINEAR <geosoft.gxapi.ITR_ZONE_LOGLINEAR>`
         :rtype:      int
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1006,7 +1006,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  min:  float
         :type  max:  float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1025,7 +1025,7 @@ class GXITR(gxapi_cy.WrapITR):
         :param zones:  Number of zones to set `GXITR <geosoft.gxapi.GXITR>` to.
         :type  zones:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1046,7 +1046,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  zone:   int
         :type  color:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1073,7 +1073,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  zone:   int
         :type  color:  int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1100,7 +1100,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  zone:    int
         :type  active:  int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1122,7 +1122,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  zone:  int
         :rtype:       int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1145,7 +1145,7 @@ class GXITR(gxapi_cy.WrapITR):
         :type  zone:   int
         :type  value:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

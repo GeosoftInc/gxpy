@@ -65,7 +65,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  amp:     float
         :type  option:  int
 
-        .. versionadded:: 9.9
+        .. versionadded:: 9.9.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -86,7 +86,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  thick:  float
         :type  dens:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -105,7 +105,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :param strength:  Total magnetic field strength
         :type  strength:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -131,7 +131,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  hlen:          float
         :type  pass_defined:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -154,7 +154,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  degree:       float
         :type  filter_type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -175,7 +175,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  clen:         float
         :type  filter_type:  int
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -194,7 +194,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :param dist:  Distance to continue; positive = downwards negative = upwards
         :type  dist:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -219,7 +219,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  degree:  float
         :type  type:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -245,7 +245,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :returns:       `GXFFT <geosoft.gxapi.GXFFT>` Object
         :rtype:         GXFFT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -307,7 +307,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :returns:       `GXFFT <geosoft.gxapi.GXFFT>` Object
         :rtype:         GXFFT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -367,7 +367,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  dev:   float
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -388,7 +388,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  gv_vr:  GXVV
         :type  gv_vi:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -407,7 +407,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :param order:  Order of differentiation (default = 1)
         :type  order:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -428,7 +428,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  wlen:     float
         :type  fid_int:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -466,7 +466,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  gvv:    GXVV
         :type  gv_vm:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -485,7 +485,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :param wlen:  Cutoff wavelength (meters)
         :type  wlen:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -510,7 +510,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  incp:  float
         :type  dir:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -530,7 +530,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :returns:    Nyquist frequency (wavenumbers/sample unit).
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -550,7 +550,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :returns:    Original sample increment.
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -570,7 +570,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :returns:    Wave number increment
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -591,7 +591,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  gv_vr:  GXVV
         :type  gv_vi:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -613,7 +613,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :param gvv:  Output power spectrum `GXVV <geosoft.gxapi.GXVV>`
         :type  gvv:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -632,7 +632,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :param order:  Order of differentiation (default = 1)
         :type  order:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -649,7 +649,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         Vertical integration
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -670,7 +670,7 @@ class GXFFT(gxapi_cy.WrapFFT):
         :type  gvv:       GXVV
         :type  out_file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

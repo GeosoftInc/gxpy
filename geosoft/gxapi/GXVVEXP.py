@@ -64,7 +64,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
         :type  vv:     GXVV
         :type  var:    str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -84,7 +84,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
         :returns:    `GXVVEXP <geosoft.gxapi.GXVVEXP>` Object
         :rtype:      GXVVEXP
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -107,7 +107,7 @@ class GXVVEXP(gxapi_cy.WrapVVEXP):
         :type  formula:  str
         :type  unused:   int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

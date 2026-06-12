@@ -64,7 +64,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
                                     1 - Yes
         :rtype:                     int
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -87,7 +87,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
                                   1 - Yes
         :rtype:                   int
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -112,7 +112,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
         :type  mview:               GXMVIEW
         :type  new_group_name:      str
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -135,7 +135,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
         :type  query:             int
         :type  lst:               GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -158,7 +158,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
         :type  variable_name:     str
         :type  lst:               GXLST
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -187,7 +187,7 @@ class GXVULCAN(gxapi_cy.WrapVULCAN):
         :type  remove_default_values:  bool
         :type  rock_code_filename:     str
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

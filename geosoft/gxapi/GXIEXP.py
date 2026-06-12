@@ -64,7 +64,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
         :type  img:   GXIMG
         :type  var:   str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -84,7 +84,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
         :returns:    `GXIEXP <geosoft.gxapi.GXIEXP>` Object
         :rtype:      GXIEXP
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -107,7 +107,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
         :type  formula:  str
         :type  unused:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

@@ -64,7 +64,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         Append the current item and data to an old `GXSHP <geosoft.gxapi.GXSHP>` object.
         
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -92,7 +92,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:     `GXSHP <geosoft.gxapi.GXSHP>` object
         :rtype:       GXSHP
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -134,7 +134,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:      Index of the new field
         :rtype:        int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -161,7 +161,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:      Index of the new field
         :rtype:        int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -188,7 +188,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:      Index of the new field
         :rtype:        int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -213,7 +213,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:      The index, -1 if not found.
         :rtype:        int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -233,7 +233,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:    The max ID number.
         :rtype:      int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -253,7 +253,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:    The field number.
         :rtype:      int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -273,7 +273,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:    The record number.
         :rtype:      int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -293,7 +293,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:    The `GXSHP <geosoft.gxapi.GXSHP>` object's geometry type (:ref:`SHP_GEOM_TYPE`)
         :rtype:      int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -315,7 +315,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :returns:     `GXSHP <geosoft.gxapi.GXSHP>` object
         :rtype:       GXSHP
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -336,7 +336,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -361,7 +361,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  vv_y:  GXVV
         :type  vv_z:  GXVV
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -384,7 +384,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  index:  int
         :type  val:    int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -405,7 +405,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :param ipj:  Input `GXIPJ <geosoft.gxapi.GXIPJ>`
         :type  ipj:  GXIPJ
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -433,7 +433,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  x:    float
         :type  y:    float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -458,7 +458,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  y:    float
         :type  z:    float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -483,7 +483,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  vv_y:       GXVV
         :type  inclusive:  bool
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -510,7 +510,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  vv_z:       GXVV
         :type  inclusive:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -533,7 +533,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  index:  int
         :type  val:    float
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -556,7 +556,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         :type  index:    int
         :type  str_val:  str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -575,7 +575,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         Output the current item and data.
         
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

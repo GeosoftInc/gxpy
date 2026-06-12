@@ -58,7 +58,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         Clear/remove all polygons from the `GXDMPPLY <geosoft.gxapi.GXDMPPLY>`.
         
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -77,7 +77,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :param source:  Source
         :type  source:  GXDMPPLY
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -97,7 +97,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :returns:    DMPLY Object
         :rtype:      GXDMPPLY
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -120,7 +120,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  p:       int
         :type  az:      float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -153,7 +153,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  w:       float_ref
         :type  h:       float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -174,7 +174,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  p:       int
         :type  vv:      GXVV
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -215,7 +215,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  y3:      float_ref
         :type  z3:      float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -246,7 +246,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  vv_y:    GXVV
         :type  vv_z:    GXVV
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -269,7 +269,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  p:       int
         :type  az:      float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -300,7 +300,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  y:       float_ref
         :type  z:       float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -320,7 +320,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :returns:       Number of joining lines
         :rtype:         int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -340,7 +340,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :returns:       Number of polygons
         :rtype:         int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -365,7 +365,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :returns:       Number of vertices in a polygon
         :rtype:         int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -387,7 +387,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :param file:    Name of the file to load
         :type  file:    str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -414,7 +414,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  y:       float
         :type  z:       float
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -449,7 +449,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  vv_y:    GXVV
         :type  vv_z:    GXVV
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -493,7 +493,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  vv_y3:   GXVV
         :type  vv_z3:   GXVV
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -517,7 +517,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :param file:    Name of the file to save to
         :type  file:    str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -542,7 +542,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
         :type  vv_y:    GXVV
         :type  vv_z:    GXVV
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

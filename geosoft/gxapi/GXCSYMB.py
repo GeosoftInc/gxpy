@@ -63,7 +63,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param angle:  Symbol angle
         :type  angle:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -82,7 +82,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param base:   Symbol Base
         :type  base:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -102,7 +102,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param att:    :ref:`CSYMB_COLOR`
         :type  att:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -125,7 +125,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param fixed:  TRUE  = Fixed symbol sizing FALSE = Proportionate sizing
         :type  fixed:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -144,7 +144,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param number:  Symbol number (0x1-0x1ffff)
         :type  number:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -170,7 +170,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param scale:  Symbol scale (> 0.0)
         :type  scale:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -193,7 +193,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :type  vv_y:   GXVV
         :type  vv_z:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -215,7 +215,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :returns:    `GXCSYMB <geosoft.gxapi.GXCSYMB>` handle
         :rtype:      GXCSYMB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -236,7 +236,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param itr:    `GXITR <geosoft.gxapi.GXITR>` object
         :type  itr:    GXITR
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -261,7 +261,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :type  weight:    int
         :type  italic:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -282,7 +282,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :type  col:    int
         :type  att:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -305,7 +305,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
         :param st:     `GXST <geosoft.gxapi.GXST>` object
         :type  st:     GXST
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

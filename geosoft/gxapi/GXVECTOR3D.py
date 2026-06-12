@@ -62,7 +62,7 @@ class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
         :param itr:        `GXITR <geosoft.gxapi.GXITR>` object
         :type  itr:        GXITR
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -81,7 +81,7 @@ class GXVECTOR3D(gxapi_cy.WrapVECTOR3D):
         :param itr:        `GXITR <geosoft.gxapi.GXITR>` object
         :type  itr:        GXITR
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

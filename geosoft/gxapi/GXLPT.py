@@ -63,7 +63,7 @@ class GXLPT(gxapi_cy.WrapLPT):
         :returns:    `GXLPT <geosoft.gxapi.GXLPT>` Object
         :rtype:      GXLPT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -84,7 +84,7 @@ class GXLPT(gxapi_cy.WrapLPT):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` Handle
         :type  lst:  GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -129,7 +129,7 @@ class GXLPT(gxapi_cy.WrapLPT):
         :param source:  Source `GXLPT <geosoft.gxapi.GXLPT>` to Copy from
         :type  source:  GXLPT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -152,7 +152,7 @@ class GXLPT(gxapi_cy.WrapLPT):
         :returns:    x - Number of patterns in the `GXLPT <geosoft.gxapi.GXLPT>`.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

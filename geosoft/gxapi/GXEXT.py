@@ -70,7 +70,7 @@ class GXEXT(gxapi_cy.WrapEXT):
         :type  ymax:  float_ref
         :type  ipj:   GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

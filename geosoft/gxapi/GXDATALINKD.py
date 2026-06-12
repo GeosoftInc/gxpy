@@ -63,7 +63,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :returns:             `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` handle, terminates if creation fails
         :rtype:               GXDATALINKD
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -91,7 +91,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :returns:               `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` handle, terminates if creation fails
         :rtype:                 GXDATALINKD
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -117,7 +117,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :returns:             `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` handle, terminates if creation fails
         :rtype:               GXDATALINKD
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -141,7 +141,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :returns:             `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` handle, terminates if creation fails
         :rtype:               GXDATALINKD
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -167,7 +167,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :returns:             `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` handle, terminates if creation fails
         :rtype:               GXDATALINKD
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -191,7 +191,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :returns:      `GXDATALINKD <geosoft.gxapi.GXDATALINKD>` handle, terminates if creation fails
         :rtype:        GXDATALINKD
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -218,7 +218,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :type  min_y:      float_ref
         :type  max_y:      float_ref
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -237,7 +237,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
         :param ipj:        `GXIPJ <geosoft.gxapi.GXIPJ>` object to set the projection to
         :type  ipj:        GXIPJ
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

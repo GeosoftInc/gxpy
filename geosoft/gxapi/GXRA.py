@@ -65,7 +65,7 @@ class GXRA(gxapi_cy.WrapRA):
         :returns:     `GXRA <geosoft.gxapi.GXRA>` Object
         :rtype:       GXRA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -89,7 +89,7 @@ class GXRA(gxapi_cy.WrapRA):
         :returns:     `GXRA <geosoft.gxapi.GXRA>` Object
         :rtype:       GXRA
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -124,7 +124,7 @@ class GXRA(gxapi_cy.WrapRA):
                          1 - End of file
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -144,7 +144,7 @@ class GXRA(gxapi_cy.WrapRA):
         :returns:    # of lines in the `GXRA <geosoft.gxapi.GXRA>`.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -164,7 +164,7 @@ class GXRA(gxapi_cy.WrapRA):
         :returns:    The current read line location.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -189,7 +189,7 @@ class GXRA(gxapi_cy.WrapRA):
                       1 if outside range, line pointer will not be moved.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

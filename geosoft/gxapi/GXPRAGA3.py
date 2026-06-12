@@ -65,7 +65,7 @@ class GXPRAGA3(gxapi_cy.WrapPRAGA3):
         :returns:    1 - OK, 2 - Cancel
         :rtype:      int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

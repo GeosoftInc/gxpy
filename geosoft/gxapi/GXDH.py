@@ -120,7 +120,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill with channel code values.
         :type  lst:  GXLST
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -146,7 +146,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  assay:  str
         :type  lst:    GXLST
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -184,7 +184,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_y:       GXVV
         :type  vv_z:       GXVV
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -217,7 +217,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  dip:      str
         :type  dip_dir:  str
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -247,7 +247,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  selected_holes:  int
         :type  vv:              GXVV
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -272,7 +272,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  selected_holes:  int
         :type  vv:              GXVV
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -296,7 +296,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:          Channel data type
         :rtype:            int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -329,7 +329,7 @@ class GXDH(gxapi_cy.WrapDH):
                       0 if no intersection found
         :rtype:       int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -357,7 +357,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  assay_db_index:  int_ref
         :type  chan:            str_ref
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -397,7 +397,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:     1 if an intersection is found, 0 if not.
         :rtype:       int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -435,7 +435,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  reg:                 GXREG
         :type  retain_grid_files:   int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -463,7 +463,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill with channel code values.
         :type  lst:  GXLST
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -489,7 +489,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  assay:  str
         :type  lst:    GXLST
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -521,7 +521,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_z:        GXVV
         :type  blank_dist:  float
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -547,7 +547,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill with channel code values.
         :type  lst:  GXLST
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -573,7 +573,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  assay:  str
         :type  lst:    GXLST
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -605,7 +605,7 @@ class GXDH(gxapi_cy.WrapDH):
                           1 - if Yes
         :rtype:           int
 
-        .. versionadded:: 2025.2
+        .. versionadded:: 2025.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -846,7 +846,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  assay_db:  int
         :type  lst:       GXLST
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -888,7 +888,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param flag:  Turn on (TRUE) or off (FALSE)
         :type  flag:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -972,7 +972,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param hole:  Hole index
         :type  hole:  int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1001,7 +1001,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  z_min:  float_ref
         :type  z_max:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1039,7 +1039,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  db:   GXDB
         :type  lst:  GXLST
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1072,7 +1072,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    `GXDH <geosoft.gxapi.GXDH>` Object
         :rtype:      GXDH
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1140,7 +1140,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    `GXDH <geosoft.gxapi.GXDH>` Object
         :rtype:      GXDH
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1164,7 +1164,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  file:  str
         :type  proj:  str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1217,7 +1217,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  file:  str
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1244,7 +1244,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  feat_class:  str_ref
         :type  overwrite:   int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1314,7 +1314,7 @@ class GXDH(gxapi_cy.WrapDH):
         Flush all selections to database selection engine.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1352,7 +1352,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param gvv:  `GXVV <geosoft.gxapi.GXVV>` of type -`STR_FILE <geosoft.gxapi.STR_FILE>`
         :type  gvv:  GXVV
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1402,7 +1402,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  l:   float_ref
         :type  w:   float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1426,7 +1426,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:      Hole Symbol
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1453,7 +1453,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_z:  GXVV
         :type  vv_d:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1482,7 +1482,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_d:  GXVV
         :type  thin:  bool
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1515,7 +1515,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_l:  GXVV
         :type  thin:  bool
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1568,7 +1568,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_z:             GXVV
         :type  vv_d:             GXVV
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1601,7 +1601,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_survey_depth:  GXVV
         :type  top_ref:          int
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1663,7 +1663,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_d:             GXVV
         :type  vv_l:             GXVV
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1771,7 +1771,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    `GXREG <geosoft.gxapi.GXREG>` Object
         :rtype:      GXREG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1790,7 +1790,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param vv:  Returned hole indices (must be type INT)
         :type  vv:  GXVV
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1811,7 +1811,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  lst:   GXLST
         :type  type:  int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1833,7 +1833,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` handle
         :type  lst:  GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1874,7 +1874,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:     x  - Hole index
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2027,7 +2027,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - Not found
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2069,7 +2069,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  name:  str
         :type  data:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2117,7 +2117,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  north:    float
         :type  id:       str_ref
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2144,7 +2144,7 @@ class GXDH(gxapi_cy.WrapDH):
                           1: Template retrieved and written to a file.
         :rtype:           int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2212,7 +2212,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  file:       str_ref
         :type  table:      str_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2258,7 +2258,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  table:      str_ref
         :type  lst:        GXLST
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2300,7 +2300,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  units:        str_ref
         :type  conv_factor:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2318,7 +2318,7 @@ class GXDH(gxapi_cy.WrapDH):
         
         :rtype:      bool
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2338,7 +2338,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  db:  str_ref
         :rtype:      bool
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2358,7 +2358,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    x  - Number of holes
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2383,7 +2383,7 @@ class GXDH(gxapi_cy.WrapDH):
                          -1 - User Cancelled
         :rtype:          int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2460,7 +2460,7 @@ class GXDH(gxapi_cy.WrapDH):
                                -1 - User Cancelled
         :rtype:                int
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2485,7 +2485,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2513,7 +2513,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2540,7 +2540,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2592,7 +2592,7 @@ class GXDH(gxapi_cy.WrapDH):
                            -1 - User Cancelled
         :rtype:            int
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2644,7 +2644,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2694,7 +2694,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2758,7 +2758,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2843,7 +2843,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2868,7 +2868,7 @@ class GXDH(gxapi_cy.WrapDH):
                       -1 - User Cancelled
         :rtype:       int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2904,7 +2904,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  type:     int
         :type  log:      str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -2977,7 +2977,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    The number of selected holes
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -3003,7 +3003,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:          The number of holes found and checked.
         :rtype:            int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3029,7 +3029,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    The number of holes found and checked.
         :rtype:      int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3058,7 +3058,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:          The number of holes found and checked.
         :rtype:            int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3084,7 +3084,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    The number of holes found and checked.
         :rtype:      int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3132,7 +3132,7 @@ class GXDH(gxapi_cy.WrapDH):
                        -1 - User Cancelled
         :rtype:        int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -3156,7 +3156,7 @@ class GXDH(gxapi_cy.WrapDH):
                       2 - Survey table unchanged; there was more than one row in the table, and values were different
         :rtype:       int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3181,7 +3181,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  db:   GXDB
         :type  dir:  str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3206,7 +3206,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  ini:   str
         :type  type:  int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -3225,7 +3225,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param file:  File Name
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -3282,7 +3282,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:    `GXDH <geosoft.gxapi.GXDH>` Object
         :rtype:      GXDH
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -3303,7 +3303,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  job:   str
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -3349,7 +3349,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  mview:  GXMVIEW
         :type  job:    str
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3374,7 +3374,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  mview:  GXMVIEW
         :type  job:    str
 
-        .. versionadded:: 9.1
+        .. versionadded:: 9.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -3637,7 +3637,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  db:  GXDB
         :type  wa:  GXWA
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3661,7 +3661,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  job:        str
         :type  plot_type:  int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3692,7 +3692,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  plot_type:  int
         :type  view:       str
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3890,7 +3890,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_z:      GXVV
         :type  vv_d:      GXVV
 
-        .. versionadded:: 2025.1
+        .. versionadded:: 2025.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -3945,7 +3945,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_z:              GXVV
         :type  vv_d:              GXVV
 
-        .. versionadded:: 2026.1
+        .. versionadded:: 2026.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4049,7 +4049,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv_z:      GXVV
         :type  vv_d:      GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4077,7 +4077,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  db:   GXDB
         :type  dir:  str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4104,7 +4104,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  job:   str
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4123,7 +4123,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param file:  File Name
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4144,7 +4144,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  xmm:  float_ref
         :type  ymm:  float_ref
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4165,7 +4165,7 @@ class GXDH(gxapi_cy.WrapDH):
         Select all the holes in a Drill hole project.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4186,7 +4186,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  gvv:  GXVV
         :type  sel:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4212,7 +4212,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  sel:   int
         :type  mode:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4234,7 +4234,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param pply:  Polygon object
         :type  pply:  GXPLY
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4262,7 +4262,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  inside:    int
         :type  new_mode:  int
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4301,7 +4301,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param ipj:  Crooked Section `GXIPJ <geosoft.gxapi.GXIPJ>`
         :type  ipj:  GXIPJ
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4322,7 +4322,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param cur_view:  View name
         :type  cur_view:  str
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4347,7 +4347,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  name:  str
         :type  data:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4397,7 +4397,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param map:  `GXIPJ <geosoft.gxapi.GXIPJ>` Handle
         :type  map:  GXMAP
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4444,7 +4444,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  vv:      GXVV
         :type  append:  int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4467,7 +4467,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  templ:     str
         :type  imp_type:  int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4498,7 +4498,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  templSource:       str
         :type  imp_type:          int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -4542,7 +4542,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  min_internal_dilution_grade:   float
         :type  grade_for_missing_assays:      float
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4593,7 +4593,7 @@ class GXDH(gxapi_cy.WrapDH):
         Unselect all the holes in a Drill hole project.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4612,7 +4612,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` handle
         :type  lst:  GXLST
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4629,7 +4629,7 @@ class GXDH(gxapi_cy.WrapDH):
         Update all collar table information.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4648,7 +4648,7 @@ class GXDH(gxapi_cy.WrapDH):
         :param hole:  Hole index
         :type  hole:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4697,7 +4697,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  input_geosurface_or_grid:  str
         :type  hole_selection:            int
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4708,30 +4708,24 @@ class GXDH(gxapi_cy.WrapDH):
 
 
     @classmethod
-    def get_mx_deposit_rights_info(cls, has_rights, base_url, api_version_prefix, api_key, user_key, database_id):
+    def get_mx_deposit_rights_info(cls, base_url, api_version_prefix, access_token):
         """
         
         Get MX Deposit Service API information via Geosoft ID rights.
         
-        :param has_rights:          Does Geosoft ID have rights to access MX Deposit?
         :param base_url:            Base URL
         :param api_version_prefix:  API Version Prefix
-        :param api_key:             API Key
-        :param user_key:            User Key
-        :param database_id:         Database ID
-        :type  has_rights:          bool_ref
+        :param access_token:        Bearer Token
         :type  base_url:            str_ref
         :type  api_version_prefix:  str_ref
-        :type  api_key:             str_ref
-        :type  user_key:            str_ref
-        :type  database_id:         str_ref
+        :type  access_token:        str_ref
 
-        .. versionadded:: 9.6
+        .. versionadded:: 2026.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
         
-        has_rights.value, base_url.value, api_version_prefix.value, api_key.value, user_key.value, database_id.value = gxapi_cy.WrapDH._get_mx_deposit_rights_info(GXContext._get_tls_geo(), has_rights.value, base_url.value.encode(), api_version_prefix.value.encode(), api_key.value.encode(), user_key.value.encode(), database_id.value.encode())
+        base_url.value, api_version_prefix.value, access_token.value = gxapi_cy.WrapDH._get_mx_deposit_rights_info(GXContext._get_tls_geo(), base_url.value.encode(), api_version_prefix.value.encode(), access_token.value.encode())
         
 
 
@@ -4752,7 +4746,7 @@ class GXDH(gxapi_cy.WrapDH):
         :returns:              -1 if no type is found, otherwise > 0
         :rtype:                int
 
-        .. versionadded:: 2025.1
+        .. versionadded:: 2025.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -4773,7 +4767,7 @@ class GXDH(gxapi_cy.WrapDH):
         :type  select_type:  str
         :type  select_id:    str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

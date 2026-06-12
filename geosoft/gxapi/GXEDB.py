@@ -87,7 +87,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param formula:  Formula ("<NameOfCurrentChannel>=<SomeExpression>;")
         :type  formula:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -109,7 +109,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:    `GXEDB <geosoft.gxapi.GXEDB>` Object
         :rtype:      GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -131,7 +131,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:    `GXEDB <geosoft.gxapi.GXEDB>` Object
         :rtype:      GXEDB
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -157,7 +157,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                   the user is not prompted for a database, and 0 is returned.
         :rtype:      GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -176,7 +176,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         Delete Line 0.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -201,7 +201,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param unload_flag:  :ref:`EDB_REMOVE`
         :type  unload_flag:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -230,7 +230,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      `NULLSYMB <geosoft.gxapi.NULLSYMB>` if the mark is not in a channel.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -253,7 +253,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      `NULLSYMB <geosoft.gxapi.NULLSYMB>` if no line displayed.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -276,7 +276,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  start:  int_ref
         :type  num:    int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -301,7 +301,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  y:    float_ref
         :type  z:    float_ref
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -326,7 +326,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  incr:   float_ref
         :type  num:    int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -349,7 +349,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      `NULLSYMB <geosoft.gxapi.NULLSYMB>` if no line displayed.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -372,7 +372,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      `NULLSYMB <geosoft.gxapi.NULLSYMB>` if no line displayed.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -447,7 +447,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  max_x:      float_ref
         :type  ph_chan_x:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -476,7 +476,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  max_y:   float_ref
         :type  scl:     int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -499,7 +499,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  d1:   float_ref
         :type  d2:   float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -526,7 +526,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  d3:   float_ref
         :type  d4:   float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -547,7 +547,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param vv:   Split `GXVV <geosoft.gxapi.GXVV>` (REAL) (profile window heights / entire profile window height)
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -579,7 +579,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  grid:      int_ref
         :type  interval:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -604,7 +604,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  x:       int_ref
         :type  y:       int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -625,7 +625,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param col:  Channel column number, 0 is first -1 for first column without data
         :type  col:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -646,7 +646,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param elem:  Element number
         :type  elem:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -667,7 +667,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param line_symb:  Line symbol to goto to
         :type  line_symb:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -694,7 +694,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  incr:   float
         :type  count:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -719,7 +719,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      Terminates GX if there was an error.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -741,6 +741,39 @@ class GXEDB(gxapi_cy.WrapEDB):
 
 
 
+    def get_multi_chans(self, vv):
+        """
+        
+        Get a list of the all multiple selected channels.
+        
+        :param vv:   `GXVV <geosoft.gxapi.GXVV>` (INT) in which to place the list.
+        :type  vv:   GXVV
+
+        :returns:    Number of symbols in the list.
+                     Terminates GX if there was an error.
+        :rtype:      int
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Limitations:** May not be available while executing a command line program.
+
+        **Note:** The `GXVV <geosoft.gxapi.GXVV>` elements must be INT.
+
+        Multiple selected channel lists
+
+        .. seealso::
+
+            `get_multi_chans <geosoft.gxapi.GXEDB.get_multi_chans>`
+        """
+        
+        ret_val = self._get_multi_chans(vv)
+        return ret_val
+
+
+
+
     def channels(self):
         """
         
@@ -750,7 +783,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:    x - number of displayed channels
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -775,7 +808,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      Terminates GX if there was an error.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -809,7 +842,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      Terminates GX if there was an error.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -846,7 +879,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                             Terminates GX if there was an error.
         :rtype:             int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -884,7 +917,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                       `iDUMMY <geosoft.gxapi.iDUMMY>` of channel not loaded
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -916,7 +949,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      -1 - Not available
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -937,7 +970,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param str_val:  Where to put the name
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -961,7 +994,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param val:  String returned here
         :type  val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -982,7 +1015,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param str_val:  Where to put the name
         :type  str_val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1011,7 +1044,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                        1 - if data is not currently marked.
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1038,7 +1071,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  line:  str_ref
         :type  fid:   str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1071,7 +1104,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                       The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1098,7 +1131,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                       1 if failed, or if entire database is marked.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1132,7 +1165,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                       1 if failed, or if entire database is marked.
         :rtype:       int
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1160,7 +1193,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param name:  Name returned
         :type  name:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1188,7 +1221,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:       Data Value (See notes)
         :rtype:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1210,7 +1243,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:    :ref:`EDB_WINDOW_STATE`
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1230,7 +1263,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         
         :rtype:      bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1250,7 +1283,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         
         :rtype:      bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1272,7 +1305,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  name:  str
         :rtype:       bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1297,7 +1330,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                         FALSE if window is closed
         :rtype:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1320,7 +1353,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         
         :rtype:      bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1351,7 +1384,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  state:        int_ref
         :type  is_floating:  int_ref
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1382,7 +1415,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  state:        int
         :type  is_floating:  int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1408,7 +1441,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:      Profile number in window (see `get_profile_range_y <geosoft.gxapi.GXEDB.get_profile_range_y>`), -1 for error
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1434,7 +1467,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:     Index of first profile window in which it is loaded, -1 if not loaded in any profile window
         :rtype:       int
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1460,7 +1493,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:       :ref:`EDB_YAXIS_DIRECTION`
         :rtype:         int
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1484,7 +1517,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:       Number of profiles in a window
         :rtype:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1561,7 +1594,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                       database in the list.
         :rtype:       GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1594,7 +1627,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                       database in the list if multiple files were provided.
         :rtype:       GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1616,7 +1649,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         Load all channels into current database
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1637,7 +1670,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param chan:  Channel name
         :type  chan:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1664,7 +1697,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:     Handle to the current edited database.
         :rtype:       GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1696,7 +1729,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:         Handle to current edited database.
         :rtype:           GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1727,7 +1760,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:     New `GXEDB <geosoft.gxapi.GXEDB>` handle.
         :rtype:       GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1753,7 +1786,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:    Handle to database associated with edited database.
         :rtype:      GXDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1772,7 +1805,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         Makes this `GXEDB <geosoft.gxapi.GXEDB>` object the current active object to the user.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1795,7 +1828,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  window:  int
         :type  prof:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1820,7 +1853,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      DUMMY - No Selected Fiducial
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1848,7 +1881,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:       Real profile parameter
         :rtype:         float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1871,7 +1904,7 @@ class GXEDB(gxapi_cy.WrapEDB):
                      (spreadsheet window height + entire profile window height))
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1892,7 +1925,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param chan:  Channel name
         :type  chan:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1914,7 +1947,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         Recreate channels with makers.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1937,7 +1970,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param line:  Line name
         :type  line:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1958,7 +1991,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param str_val:  Line name
         :type  str_val:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1981,7 +2014,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  start:  float
         :type  end:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2008,7 +2041,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  parm:    int
         :type  value:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2035,7 +2068,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  parm:    int
         :type  value:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2060,7 +2093,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  max_x:  float
         :type  x_ch:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2089,7 +2122,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  max_y:   float
         :type  scl:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2113,7 +2146,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param window:  Profile window number (0 to `MAX_PROF_WND <geosoft.gxapi.MAX_PROF_WND>`-1, see `profile_open <geosoft.gxapi.GXEDB.profile_open>`)
         :type  window:  int
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2136,7 +2169,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  d1:   float
         :type  d2:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2163,7 +2196,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  d3:   float
         :type  d4:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2184,7 +2217,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param vv:   Split `GXVV <geosoft.gxapi.GXVV>` (REAL) (relative sizes of each profile window)
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2212,7 +2245,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param d:    Split d (0.0 <= d <= 1.0).
         :type  d:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2236,7 +2269,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param state:  :ref:`EDB_WINDOW_STATE`
         :type  state:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2259,7 +2292,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  window:  int
         :type  symb:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2282,7 +2315,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param st:   `GXST <geosoft.gxapi.GXST>` handle to update
         :type  st:   GXST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2305,7 +2338,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param name:  Name of database to unload
         :type  name:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2327,7 +2360,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         Unloads all opened databases
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2346,7 +2379,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         Unload all channels into current database
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2367,7 +2400,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param chan:  Channel name
         :type  chan:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2391,7 +2424,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :param name:  Name of database to unload
         :type  name:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2416,7 +2449,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  name:    str
         :type  prompt:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2441,7 +2474,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         This method unlocks the Edited Database.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2468,7 +2501,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  db_file:  str
         :type  window:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2491,7 +2524,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  db_file:  str
         :type  window:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2518,7 +2551,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  password:  str
         :type  window:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2543,7 +2576,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  edb:      GXEDB
         :type  window:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2572,7 +2605,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :returns:     Handle to current edited database
         :rtype:       GXEDB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2596,7 +2629,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  line_group:  int
         :type  bf:          GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2627,7 +2660,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  line_group:  int
         :type  bf:          GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2662,7 +2695,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  x_max:  int
         :type  y_max:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2697,7 +2730,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  max_x:  int_ref
         :type  max_y:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -2728,7 +2761,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         :type  chan_to_move:        str
         :type  chan_to_move_after:  str
 
-        .. versionadded:: 2023.1
+        .. versionadded:: 2023.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

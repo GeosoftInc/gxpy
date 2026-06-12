@@ -73,7 +73,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
         :type  meta:   GXMETA
         :type  voxel:  str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -96,7 +96,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
         :type  file:  str
         :type  lst:   GXLST
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

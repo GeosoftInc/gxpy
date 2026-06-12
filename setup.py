@@ -1,4 +1,4 @@
-﻿#  Copyright (c) 2025 Bentley Systems, Incorporated. All rights reserved.
+﻿#  Copyright (c) 2026 Bentley Systems, Incorporated. All rights reserved.
 # coding = utf-8
 
 import json
@@ -34,10 +34,7 @@ if 'bdist_wheel' in sys.argv:
     for arg in sys.argv:
         if arg.startswith('--python-tag='):
             pythontag = arg[13:]
-            if pythontag == "cp39":
-                shutil.copyfile('gxapi_cy.cp39-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
-                shutil.copyfile('gxapi_cy_extend.cp39-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
-            elif pythontag == "cp310":
+            if pythontag == "cp310":
                 shutil.copyfile('gxapi_cy.cp310-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
                 shutil.copyfile('gxapi_cy_extend.cp310-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
             elif pythontag == "cp311":
@@ -49,14 +46,14 @@ if 'bdist_wheel' in sys.argv:
             elif pythontag == "cp313":
                 shutil.copyfile('gxapi_cy.cp313-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
                 shutil.copyfile('gxapi_cy_extend.cp313-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
+            elif pythontag == "cp314":
+                shutil.copyfile('gxapi_cy.cp314-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
+                shutil.copyfile('gxapi_cy_extend.cp314-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
             break
 else:
     # Copy the version we are building for
     py_ver_major_minor = sys.version_info[:2]
-    if py_ver_major_minor == (3, 9):
-        shutil.copyfile('gxapi_cy.cp39-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
-        shutil.copyfile('gxapi_cy_extend.cp39-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
-    elif py_ver_major_minor == (3, 10):
+    if py_ver_major_minor == (3, 10):
         shutil.copyfile('gxapi_cy.cp310-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
         shutil.copyfile('gxapi_cy_extend.cp310-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
     elif py_ver_major_minor == (3, 11):
@@ -68,6 +65,9 @@ else:
     elif py_ver_major_minor == (3, 13):
         shutil.copyfile('gxapi_cy.cp313-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
         shutil.copyfile('gxapi_cy_extend.cp313-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
+    elif py_ver_major_minor == (3, 14):
+        shutil.copyfile('gxapi_cy.cp314-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
+        shutil.copyfile('gxapi_cy_extend.cp314-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
 packages=[
     'geosoft',
     'geosoft.gxapi',
@@ -94,10 +94,10 @@ install_requires=[
 if sys.version_info >= (3, 12):
     install_requires.append('setuptools>=75.8.0')
     
-if sys.version_info[:2] == (3, 9):
-    install_requires.append('numpy>=2.0.0')
+if sys.version_info[:2] == (3, 10):
+   install_requires.append('numpy>=2.2.6')
 else:
-    install_requires.append('numpy>=2.2.1')
+   install_requires.append('numpy>=2.4.0')
     
 setup(
     name='geosoft',

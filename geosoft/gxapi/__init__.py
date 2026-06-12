@@ -502,7 +502,7 @@ DB_COORDPAIR_Y = 2
 # Class name max size
 
 #: Db group class size
-DB_GROUP_CLASS_SIZE = 16
+DB_GROUP_CLASS_SIZE = 256
 
 #
 # DB_INFO constants
@@ -975,6 +975,8 @@ FORMAT_GEOGRAPHIC_1 = 10
 FORMAT_GEOGRAPHIC_2 = 11
 #: GeoGraph (DEGMMmmmm or DEGMM.mmmm or DEG.MM.mmmm)  (mmmm: decimal minute)
 FORMAT_GEOGRAPHIC_3 = 12
+#: Hexadecimal number (ffffd8fe)
+FORMAT_HEXADECIMAL = 13
 
 #
 # GS_TYPES constants
@@ -3905,6 +3907,8 @@ SYS_RUN_TYPE_DOS = 1
 SYS_RUN_TYPE_EXE = 0
 #: Windows applications that do not require a console window.
 SYS_RUN_TYPE_WINDOWS = 2
+#: Run directly from command line (ie. notepad.exe 'file.txt')
+SYS_RUN_TYPE_CMD_LINE = 4
 
 #
 # SYS_RUN_WIN constants
@@ -5274,6 +5278,10 @@ DU_MERGE_APPEND = 0
 DU_MODFID_INSERT = 0
 #: Will delete the range of fids.
 DU_MODFID_DELETE = 1
+#: Will delete the range of fids. 
+#: If the deletion occurs at the start of the data, 
+#: the fid start is adjusted.
+DU_MODFID_DELETE_ADJUST_FIDSTART = 3
 #: Is like INSERT, except that it is only used to
 #: add fids to the start or end of the existing data.  The
 #: data is not moved with repect to the current fid locations.
@@ -6307,6 +6315,8 @@ FILE_FILTER_3DSURVEY = 133
 FILE_FILTER_ARGIS_LYRX = 134
 #: ArcGIS Stylx files  ``*.stylx``  LOCAL
 FILE_FILTER_ARGIS_STYLX = 135
+#: Medusa calibration files  ``*.mcf``  LOCAL
+FILE_FILTER_MCF = 136
 
 #
 # FILE_FORM constants

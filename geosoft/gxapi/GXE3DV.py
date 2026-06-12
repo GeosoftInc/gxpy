@@ -62,7 +62,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
         :returns:      `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
         :rtype:        GXMVIEW
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -82,7 +82,7 @@ class GXE3DV(gxapi_cy.WrapE3DV):
         :returns:      `GXMVIEW <geosoft.gxapi.GXMVIEW>` object
         :rtype:        GXMVIEW
 
-        .. versionadded:: 9.3
+        .. versionadded:: 9.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

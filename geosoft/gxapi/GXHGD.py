@@ -67,7 +67,7 @@ class GXHGD(gxapi_cy.WrapHGD):
         :returns:     `GXHGD <geosoft.gxapi.GXHGD>` handle, terminates if creation fails
         :rtype:       GXHGD
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -88,7 +88,7 @@ class GXHGD(gxapi_cy.WrapHGD):
         :param name:  Name of grids (each layers adds _Number to the name)
         :type  name:  str
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -107,7 +107,7 @@ class GXHGD(gxapi_cy.WrapHGD):
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to save `GXHGD <geosoft.gxapi.GXHGD>`'s meta to
         :type  meta:  GXMETA
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -131,7 +131,7 @@ class GXHGD(gxapi_cy.WrapHGD):
         :returns:     `GXHGD <geosoft.gxapi.GXHGD>` Object
         :rtype:       GXHGD
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -150,7 +150,7 @@ class GXHGD(gxapi_cy.WrapHGD):
         :param meta:  `GXMETA <geosoft.gxapi.GXMETA>` object to add to `GXHGD <geosoft.gxapi.GXHGD>`'s meta
         :type  meta:  GXMETA
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

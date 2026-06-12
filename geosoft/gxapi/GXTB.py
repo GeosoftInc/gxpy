@@ -64,7 +64,7 @@ class GXTB(gxapi_cy.WrapTB):
         :param mode:  :ref:`TB_SEARCH`
         :type  mode:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -108,7 +108,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:     `GXTB <geosoft.gxapi.GXTB>` Object
         :rtype:       GXTB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -134,7 +134,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:    `GXTB <geosoft.gxapi.GXTB>` Object
         :rtype:      GXTB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -162,7 +162,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:    `GXTB <geosoft.gxapi.GXTB>` Object
         :rtype:      GXTB
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -186,7 +186,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:     The handle to the field (must be present)
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -209,7 +209,7 @@ class GXTB(gxapi_cy.WrapTB):
         :type  col:  int
         :type  val:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -275,7 +275,7 @@ class GXTB(gxapi_cy.WrapTB):
                       -1 if not found.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -321,7 +321,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:    Value
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -341,7 +341,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:    Number of columns
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -361,7 +361,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:    Number of rows
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -382,7 +382,7 @@ class GXTB(gxapi_cy.WrapTB):
         :type  db:    GXDB
         :type  line:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -408,7 +408,7 @@ class GXTB(gxapi_cy.WrapTB):
         :returns:    Value
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -428,7 +428,7 @@ class GXTB(gxapi_cy.WrapTB):
         :param name:  Name of File to save table into
         :type  name:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -449,7 +449,7 @@ class GXTB(gxapi_cy.WrapTB):
         :type  db:    GXDB
         :type  line:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -472,7 +472,7 @@ class GXTB(gxapi_cy.WrapTB):
         :param name:  Name of File to save table into
         :type  name:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -495,7 +495,7 @@ class GXTB(gxapi_cy.WrapTB):
         :type  col:  int
         :type  val:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -532,7 +532,7 @@ class GXTB(gxapi_cy.WrapTB):
         :type  col:  int
         :type  val:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -569,7 +569,7 @@ class GXTB(gxapi_cy.WrapTB):
         :type  col:  int
         :type  val:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -599,7 +599,7 @@ class GXTB(gxapi_cy.WrapTB):
         :param col:  Index of data Column to sort table by
         :type  col:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

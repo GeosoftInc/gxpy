@@ -70,7 +70,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:    `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
         :rtype:      GXDBWRITE
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -93,7 +93,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:    `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
         :rtype:      GXDBWRITE
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -116,7 +116,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:    `GXDBWRITE <geosoft.gxapi.GXDBWRITE>` object
         :rtype:      GXDBWRITE
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -140,7 +140,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        Channel index. Use for getting the correct `GXVV <geosoft.gxapi.GXVV>` or `GXVA <geosoft.gxapi.GXVA>` object.
         :rtype:          int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -164,7 +164,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        `GXDB <geosoft.gxapi.GXDB>` handle
         :rtype:          GXDB
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -186,7 +186,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:          GXVV
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -211,7 +211,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        `GXVA <geosoft.gxapi.GXVA>` handle
         :rtype:          GXVA
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -235,7 +235,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:          GXVV
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -258,7 +258,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:          GXVV
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -281,7 +281,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        `GXVV <geosoft.gxapi.GXVV>` handle
         :rtype:          GXVV
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -307,7 +307,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :returns:        The number of columns (array size) for a channel
         :rtype:          int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -334,7 +334,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :param line:     Line
         :type  line:     int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -353,7 +353,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         Commit remaining data to the database.
         
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -372,7 +372,7 @@ class GXDBWRITE(gxapi_cy.WrapDBWRITE):
         :param ra:       `GXRA <geosoft.gxapi.GXRA>` handle to text file to import.
         :type  ra:       GXRA
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

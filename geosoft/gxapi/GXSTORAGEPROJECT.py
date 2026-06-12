@@ -60,7 +60,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
         :param name:  Project File Name
         :type  name:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -77,7 +77,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
         Close the project storage.
         
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -96,7 +96,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
         :param name:  Dataset File Name
         :type  name:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

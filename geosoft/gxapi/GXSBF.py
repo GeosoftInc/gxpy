@@ -71,7 +71,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         :returns:       `GXSBF <geosoft.gxapi.GXSBF>` object, terminates if fails.
         :rtype:         GXSBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -116,7 +116,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         :param dir:  Dir/Storage Name
         :type  dir:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -135,7 +135,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         :param file:  File Name
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -159,7 +159,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         :returns:    `GXSBF <geosoft.gxapi.GXSBF>` Object
         :rtype:      GXSBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -181,7 +181,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         :returns:    `GXSBF <geosoft.gxapi.GXSBF>` Object
         :rtype:      GXSBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -201,7 +201,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         :returns:    `GXSBF <geosoft.gxapi.GXSBF>` Object
         :rtype:      GXSBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -224,7 +224,7 @@ class GXSBF(gxapi_cy.WrapSBF):
                      1 - Exists
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -247,7 +247,7 @@ class GXSBF(gxapi_cy.WrapSBF):
                       1 - Exists
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -272,7 +272,7 @@ class GXSBF(gxapi_cy.WrapSBF):
         :type  file_save:  str
         :type  p5:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

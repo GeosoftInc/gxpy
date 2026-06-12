@@ -64,7 +64,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :param model:  :ref:`AGG_MODEL`
         :type  model:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -83,7 +83,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :param brt:  -1.0 - black; 0.0 no change; 1.0 white
         :type  brt:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -107,7 +107,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :returns:    `GXAGG <geosoft.gxapi.GXAGG>` object
         :rtype:      GXAGG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -158,7 +158,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :type  layer:  int
         :type  itr:    GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -187,7 +187,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :returns:      `GXST <geosoft.gxapi.GXST>` object
         :rtype:        GXST
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -264,7 +264,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :returns:    The number of layers in an aggregate.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -289,7 +289,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :type  color:  str
         :type  cont:   float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -353,7 +353,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :type  dec:    float
         :type  scl:    float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -378,7 +378,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -413,7 +413,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         :type  layer:  int
         :type  itr:    GXITR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

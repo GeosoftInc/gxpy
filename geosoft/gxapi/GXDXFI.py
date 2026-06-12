@@ -63,7 +63,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
         :returns:     `GXDXFI <geosoft.gxapi.GXDXFI>` Object
         :rtype:       GXDXFI
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -114,7 +114,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
         :type  pb_one_color:  int
         :type  color:         int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -171,7 +171,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
         :type  min_z:  float_ref
         :type  max_z:  float_ref
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -209,7 +209,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
         :type  max_pen:   int
         :type  pb_black:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -313,7 +313,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
         :type  max_x:  float_ref
         :type  max_y:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -333,7 +333,7 @@ class GXDXFI(gxapi_cy.WrapDXFI):
         :param ipj:   `GXIPJ <geosoft.gxapi.GXIPJ>` to place in the view
         :type  ipj:   GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

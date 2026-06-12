@@ -65,7 +65,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :param source:  Source `GXTIN <geosoft.gxapi.GXTIN>`
         :type  source:  GXTIN
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -91,7 +91,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :returns:     `GXTIN <geosoft.gxapi.GXTIN>` Object
         :rtype:       GXTIN
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -117,7 +117,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :returns:    `GXTIN <geosoft.gxapi.GXTIN>` Object
         :rtype:      GXTIN
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -161,7 +161,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :param ply:  `GXPLY <geosoft.gxapi.GXPLY>` object
         :type  ply:  GXPLY
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -206,7 +206,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :type  vv_index:  GXVV
         :type  vv_num:    GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -236,7 +236,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :param vv:   `GXVV <geosoft.gxapi.GXVV>` of type GS_D2LINE (returned)
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -259,7 +259,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :type  vvy:  GXVV
         :type  vvz:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -285,7 +285,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :type  tri_vv_pt2:  GXVV
         :type  tri_vv_pt3:  GXVV
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -316,7 +316,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :type  x2:     float_ref
         :type  y2:     float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -335,7 +335,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :param vv:   `GXVV <geosoft.gxapi.GXVV>` of GS_D2LINE type (create with type -32)
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -355,7 +355,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :returns:    Returns 1 if Z values are defined in the `GXTIN <geosoft.gxapi.GXTIN>`
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -381,7 +381,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :returns:    The index of the triangle containing X, Y.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -418,7 +418,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :returns:    The number of nodes in the `GXTIN <geosoft.gxapi.GXTIN>`
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -441,7 +441,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :type  vvy:  GXVV
         :type  vvz:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -473,7 +473,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :returns:    The number of triangles in the `GXTIN <geosoft.gxapi.GXTIN>`
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -528,7 +528,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :type  vvy:  GXVV
         :type  vvz:  GXVV
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -562,7 +562,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :type  x_max:  float_ref
         :type  y_max:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -586,7 +586,7 @@ class GXTIN(gxapi_cy.WrapTIN):
         :param bf:   `GXBF <geosoft.gxapi.GXBF>` in which to write `GXTIN <geosoft.gxapi.GXTIN>`
         :type  bf:   GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

@@ -68,7 +68,7 @@ class GXUNC(gxapi_cy.WrapUNC):
         :type  ch:  int
         :rtype:      bool
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -92,7 +92,7 @@ class GXUNC(gxapi_cy.WrapUNC):
         :type  number:   int
         :rtype:          bool
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -113,7 +113,7 @@ class GXUNC(gxapi_cy.WrapUNC):
         :type  ch:       int
         :type  str_val:  str_ref
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -139,7 +139,7 @@ class GXUNC(gxapi_cy.WrapUNC):
         :type  face:     str
         :type  geofont:  bool
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -73,7 +73,7 @@ class GXPG(gxapi_cy.WrapPG):
         :param pgs:  Source `GXPG <geosoft.gxapi.GXPG>` object
         :type  pgs:  GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -104,7 +104,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  ny:       int
         :type  nx:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -132,7 +132,7 @@ class GXPG(gxapi_cy.WrapPG):
         :returns:     `GXPG <geosoft.gxapi.GXPG>` Object
         :rtype:       GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -153,7 +153,7 @@ class GXPG(gxapi_cy.WrapPG):
         :returns:    `GXPG <geosoft.gxapi.GXPG>` Object
         :rtype:      GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -174,7 +174,7 @@ class GXPG(gxapi_cy.WrapPG):
         Sets the Entire pager to dummy.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -194,7 +194,7 @@ class GXPG(gxapi_cy.WrapPG):
         :returns:    :ref:`GS_TYPES`
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -214,7 +214,7 @@ class GXPG(gxapi_cy.WrapPG):
         :returns:    # of columns.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -234,7 +234,7 @@ class GXPG(gxapi_cy.WrapPG):
         :returns:    # of rows.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -254,7 +254,7 @@ class GXPG(gxapi_cy.WrapPG):
         :returns:    # of rows.
         :rtype:      int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -275,7 +275,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  min:  float_ref
         :type  max:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -297,7 +297,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  row:  int
         :rtype:      float
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -322,7 +322,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  row:    int
         :type  value:  float
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -349,7 +349,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:    int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -374,7 +374,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:    int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -395,7 +395,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n_row:  int
         :type  n_col:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -413,7 +413,7 @@ class GXPG(gxapi_cy.WrapPG):
         
         :type  bf:  GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -459,7 +459,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:    int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -484,7 +484,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:    int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -525,7 +525,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n_row:    int
         :type  n_col:    int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -555,7 +555,7 @@ class GXPG(gxapi_cy.WrapPG):
         :returns:      `GXPG <geosoft.gxapi.GXPG>` Object
         :rtype:        GXPG
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -582,7 +582,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:      int
         :type  vv:     GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -609,7 +609,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:      int
         :type  vv:     GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -636,7 +636,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:    int
         :type  vv:   GXVV
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -659,7 +659,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n_row:    int
         :type  n_col:    int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -686,7 +686,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:      int
         :type  vv:     GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -713,7 +713,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:      int
         :type  vv:     GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -740,7 +740,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  n:    int
         :type  vv:   GXVV
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -773,7 +773,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  rev_y:  int
         :type  rev_z:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -802,7 +802,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  rev_z:  int
         :type  dummy:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -833,7 +833,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  rev_y:  int
         :type  rev_z:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -893,7 +893,7 @@ class GXPG(gxapi_cy.WrapPG):
         :type  rev_z:  int
         :type  dummy:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -67,7 +67,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :returns:     `GXSURFACEITEM <geosoft.gxapi.GXSURFACEITEM>` Object
         :rtype:       GXSURFACEITEM
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -92,7 +92,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :param guid:         GUID
         :type  guid:         str_ref
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -127,7 +127,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  secondary_source_name:     str
         :type  secondary_source_measure:  float
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -168,7 +168,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  secondary_source_measure:   float
         :type  secondary_source_measure2:  float
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -205,7 +205,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  secondary_source_name:     str_ref
         :type  secondary_source_measure:  float_ref
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -242,7 +242,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  secondary_source_measure:   float_ref
         :type  secondary_source_measure2:  float_ref
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -265,7 +265,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  transparency:  float
         :type  render_mode:   int
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -292,7 +292,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  transparency:  float_ref
         :type  render_mode:   int_ref
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -316,7 +316,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :returns:            Number of components in the surface item.
         :rtype:              int
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -348,7 +348,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :returns:            The index of the component added.
         :rtype:              int
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -379,7 +379,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  tri_vv_pt2:   GXVV
         :type  tri_vv_pt3:   GXVV
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -408,7 +408,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  max_y:        float_ref
         :type  max_z:        float_ref
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -437,7 +437,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  volume:                      float_ref
         :type  volume_confidence_interval:  float_ref
 
-        .. versionadded:: 8.4
+        .. versionadded:: 8.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -462,7 +462,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  volume:                      float_ref
         :type  volume_confidence_interval:  float_ref
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -483,7 +483,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  vertices:     int_ref
         :type  triangles:    int_ref
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -514,7 +514,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
         :type  invalid:        int_ref
         :type  intersectiona:  int_ref
 
-        .. versionadded:: 8.5
+        .. versionadded:: 8.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

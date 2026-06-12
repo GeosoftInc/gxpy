@@ -98,7 +98,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         :type  descr:  str
         :type  color:  int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -120,7 +120,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         :returns:    `GXTPAT <geosoft.gxapi.GXTPAT>` object
         :rtype:      GXTPAT
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -144,7 +144,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         :returns:     The code index, -1 if not found
         :rtype:       int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -171,7 +171,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         :type  descr:  str_ref
         :type  color:  int_ref
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -194,7 +194,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         :returns:     Number of `GXTPAT <geosoft.gxapi.GXTPAT>` items.
         :rtype:       int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -213,7 +213,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         :param file:  Thematic Pattern file name
         :type  file:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -262,7 +262,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         :type  field:      int
         :type  vv_values:  GXVV
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

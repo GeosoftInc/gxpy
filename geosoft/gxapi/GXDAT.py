@@ -78,7 +78,7 @@ class GXDAT(gxapi_cy.WrapDAT):
         :returns:     `GXDAT <geosoft.gxapi.GXDAT>` Object
         :rtype:       GXDAT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -102,7 +102,7 @@ class GXDAT(gxapi_cy.WrapDAT):
         :returns:     `GXDAT <geosoft.gxapi.GXDAT>` Object
         :rtype:       GXDAT
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -164,7 +164,7 @@ class GXDAT(gxapi_cy.WrapDAT):
         :type  max_z:          float_ref
         :type  num_non_dummy:  int_ref
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

@@ -69,7 +69,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :returns:        `GXDAT <geosoft.gxapi.GXDAT>`, terminates if creation fails
         :rtype:          GXDAT
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -97,7 +97,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :returns:        `GXDAT <geosoft.gxapi.GXDAT>`, terminates if creation fails
         :rtype:          GXDAT
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -117,7 +117,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :returns:    `GXARCDB <geosoft.gxapi.GXARCDB>` Handle, `ARCDB_NULL <geosoft.gxapi.ARCDB_NULL>` if no table selected
         :rtype:      GXARCDB
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -140,7 +140,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :type  temp:   str
         :type  line:   str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -163,7 +163,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         
         :type  lst:    GXLST
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -188,7 +188,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :type  unknown:  int
         :rtype:          GXARCDB
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -207,7 +207,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :param ipj:    `GXIPJ <geosoft.gxapi.GXIPJ>` to fill in
         :type  ipj:    GXIPJ
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -234,7 +234,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
                        1 - Field Exists
         :rtype:        int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -254,7 +254,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :returns:      IUnknown pointer
         :rtype:        int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -278,7 +278,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :returns:      0-OK 1-Cancel
         :rtype:        int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -300,7 +300,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :returns:           Handle to the table (Terminate on Error)
         :rtype:             GXARCDB
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -320,7 +320,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
         :returns:    Handle to the table
         :rtype:      GXARCDB
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

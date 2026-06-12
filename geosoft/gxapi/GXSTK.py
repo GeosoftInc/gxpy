@@ -81,7 +81,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  yvv_lev:    GXVV
         :type  yvv_cmp:    GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -148,7 +148,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  min_tick:       int_ref
         :type  xy:             int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -180,7 +180,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  fid_text_size:   float_ref
         :type  fid_text_color:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -244,7 +244,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  bottom:    float_ref
         :type  height:    float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -285,7 +285,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  color:   str_ref
         :type  grid12:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -327,7 +327,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  bound:       int_ref
         :type  xy:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -377,7 +377,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  text_clr:     str_ref
         :type  prof_va_num:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -473,7 +473,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  text_size:   float_ref
         :type  text_clr:    str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -516,7 +516,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  color:          str_ref
         :type  xy:             int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -540,7 +540,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  flag:  int
         :type  part:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -624,7 +624,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  min_tick:       int
         :type  xy:             int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -656,7 +656,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  fid_text_size:   float
         :type  fid_text_color:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -697,7 +697,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  bottom:    float
         :type  height:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -738,7 +738,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  color:   str
         :type  grid12:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -780,7 +780,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  bound:       int
         :type  xy:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -804,7 +804,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :param line:  Line symb
         :type  line:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -851,7 +851,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  text_clr:     str
         :type  prof_va_num:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -947,7 +947,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  text_size:   float
         :type  text_clr:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -990,7 +990,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  color:          str
         :type  xy:             int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1026,7 +1026,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  yvv_lev:    int
         :type  yvv_cmp:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1077,7 +1077,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         :type  error_channel:  str
         :type  elements_csv:   str
 
-        .. versionadded:: 2022.2
+        .. versionadded:: 2022.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

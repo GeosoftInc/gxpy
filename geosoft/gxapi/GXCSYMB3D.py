@@ -68,7 +68,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :returns:       `GXCSYMB3D <geosoft.gxapi.GXCSYMB3D>` handle
         :rtype:         GXCSYMB3D
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -99,7 +99,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :type  vv_y:     GXVV
         :type  vv_z:     GXVV
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -118,7 +118,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param vv_data:  `GXVV <geosoft.gxapi.GXVV>` for colour data values.
         :type  vv_data:  GXVV
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -140,7 +140,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param vv_data:  `GXVV <geosoft.gxapi.GXVV>` for size data values.
         :type  vv_data:  GXVV
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -166,7 +166,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :type  vv_y:     GXVV
         :type  vv_z:     GXVV
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -185,7 +185,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param vv_data:  `GXVV <geosoft.gxapi.GXVV>` for colour data values.
         :type  vv_data:  GXVV
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -204,7 +204,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param vv_data:  `GXVV <geosoft.gxapi.GXVV>` for size data values.
         :type  vv_data:  GXVV
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -223,7 +223,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param st:       `GXST <geosoft.gxapi.GXST>` Handle
         :type  st:       GXST
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -245,7 +245,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param st:       `GXST <geosoft.gxapi.GXST>` Handle
         :type  st:       GXST
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -271,7 +271,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param colour:   colour to use for the fixed colour
         :type  colour:   int
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -289,7 +289,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         
         :rtype:          int
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -307,7 +307,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         
         :rtype:          int
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -326,7 +326,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param itr:      `GXITR <geosoft.gxapi.GXITR>` object
         :type  itr:      GXITR
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -347,7 +347,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param itr:      `GXITR <geosoft.gxapi.GXITR>` object
         :type  itr:      GXITR
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -373,7 +373,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param symbol:   :ref:`CSYMB3D_SYMBOL`
         :type  symbol:   int
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -392,7 +392,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :param size:     Symbol size (> 0.0)
         :type  size:     float
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -415,7 +415,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :type  log_scaling:  int
         :type  log_minimum:  float
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -444,7 +444,7 @@ class GXCSYMB3D(gxapi_cy.WrapCSYMB3D):
         :type  log_scaling:  int
         :type  log_minimum:  float
 
-        .. versionadded:: 2024.1
+        .. versionadded:: 2024.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

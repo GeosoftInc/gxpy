@@ -86,7 +86,7 @@ class GXTC(gxapi_cy.WrapTC):
         :returns:          `GXTC <geosoft.gxapi.GXTC>` Object
         :rtype:            GXTC
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -128,7 +128,7 @@ class GXTC(gxapi_cy.WrapTC):
         :returns:            `GXTC <geosoft.gxapi.GXTC>` Object
         :rtype:              GXTC
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -172,7 +172,7 @@ class GXTC(gxapi_cy.WrapTC):
         :returns:            `GXTC <geosoft.gxapi.GXTC>` Object
         :rtype:              GXTC
 
-        .. versionadded:: 9.9
+        .. versionadded:: 9.9.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -195,7 +195,7 @@ class GXTC(gxapi_cy.WrapTC):
         :type  im_gi:  GXIMG
         :type  im_go:  GXIMG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -226,7 +226,7 @@ class GXTC(gxapi_cy.WrapTC):
         :type  im_gcor:   GXIMG
         :type  dens_t:    float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -259,7 +259,7 @@ class GXTC(gxapi_cy.WrapTC):
         :type  im_gcor:    GXIMG
         :type  dens_t:     float
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -290,7 +290,7 @@ class GXTC(gxapi_cy.WrapTC):
         :type  p7:     float
         :type  p8:     int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

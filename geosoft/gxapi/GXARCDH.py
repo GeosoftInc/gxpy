@@ -59,7 +59,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
         Closes the current `GXDH <geosoft.gxapi.GXDH>` project in the Target extension
         
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -80,7 +80,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
         :type  path:     str
         :type  project:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -99,7 +99,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
         :param string_file_gdb:  File Geodatabase
         :type  string_file_gdb:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -240,7 +240,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
         :type  fill_color:        int_ref
         :type  edge_color:        int_ref
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

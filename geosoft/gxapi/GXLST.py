@@ -65,7 +65,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  name:  str
         :type  val:   str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -86,7 +86,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  name:  str
         :type  symb:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -113,7 +113,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  name:  str
         :type  val:   str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -134,7 +134,7 @@ class GXLST(gxapi_cy.WrapLST):
         :param lst2:  List to append to the above `GXLST <geosoft.gxapi.GXLST>`.
         :type  lst2:  GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -200,7 +200,7 @@ class GXLST(gxapi_cy.WrapLST):
         Clear a list object.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -243,7 +243,7 @@ class GXLST(gxapi_cy.WrapLST):
         :param source:  Source List to Copy from
         :type  source:  GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -266,7 +266,7 @@ class GXLST(gxapi_cy.WrapLST):
         :returns:      Handle to the List Object.
         :rtype:        GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -287,7 +287,7 @@ class GXLST(gxapi_cy.WrapLST):
         :returns:    `GXLST <geosoft.gxapi.GXLST>` object
         :rtype:      GXLST
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -307,7 +307,7 @@ class GXLST(gxapi_cy.WrapLST):
         :param item:  Item Number to Delete
         :type  item:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -332,7 +332,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  lst2:  GXLST
         :type  vv:    GXVV
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -363,7 +363,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  item:  int
         :type  buff:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -388,7 +388,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  name:  str_ref
         :type  symb:  int_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -441,7 +441,7 @@ class GXLST(gxapi_cy.WrapLST):
                       -1 - Not Found
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -555,7 +555,7 @@ class GXLST(gxapi_cy.WrapLST):
         :returns:    x - Number of items in the list.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -578,7 +578,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  name_field:   str
         :type  value_field:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -602,7 +602,7 @@ class GXLST(gxapi_cy.WrapLST):
         :param file:  Name of the file
         :type  file:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -638,7 +638,7 @@ class GXLST(gxapi_cy.WrapLST):
         :param res:  Name of the Resource
         :type  res:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -681,7 +681,7 @@ class GXLST(gxapi_cy.WrapLST):
         :param file:  Name of the file
         :type  file:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -744,7 +744,7 @@ class GXLST(gxapi_cy.WrapLST):
         
         :type  bf:   GXBF
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -790,7 +790,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  type:  int
         :type  ord:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -819,7 +819,7 @@ class GXLST(gxapi_cy.WrapLST):
                       1 - Error
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -847,7 +847,7 @@ class GXLST(gxapi_cy.WrapLST):
                       1 - Error
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -871,7 +871,7 @@ class GXLST(gxapi_cy.WrapLST):
         :type  name:  str
         :type  reg:   GXREG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

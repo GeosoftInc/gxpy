@@ -107,7 +107,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  vv_i:  GXVV
         :type  vv_o:  GXVV
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -142,7 +142,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  det_limit:  float
         :type  vv_o:       GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -335,7 +335,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  min_y:    float_ref
         :type  max_y:    float_ref
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -364,7 +364,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  ini:    str
         :type  gvv:    GXVV
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -413,7 +413,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  vv_fids:            GXVV
         :type  vv_fidi:            GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -456,7 +456,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  trans:      int_ref
         :type  lda:        float_ref
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -494,7 +494,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  oxide:       bool_ref
         :rtype:             bool
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1315,7 +1315,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  vv_fidi:   GXVV
         :type  vv_dummy:  GXVV
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1468,7 +1468,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  min_y:    float_ref
         :type  max_y:    float_ref
 
-        .. versionadded:: 8.3
+        .. versionadded:: 8.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1802,7 +1802,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  class_vv:    GXVV
         :type  indices_vv:  GXVV
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1832,7 +1832,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  p4:  int
         :type  p5:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1874,7 +1874,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  p8:  int
         :type  p9:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2036,7 +2036,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  p28:  int
         :type  p29:  str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -2191,7 +2191,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         :type  p23:  float
         :type  p24:  str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """

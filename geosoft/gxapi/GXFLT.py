@@ -63,7 +63,7 @@ class GXFLT(gxapi_cy.WrapFLT):
         :returns:      `GXFLT <geosoft.gxapi.GXFLT>` Object
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -92,7 +92,7 @@ class GXFLT(gxapi_cy.WrapFLT):
         :returns:     `GXFLT <geosoft.gxapi.GXFLT>` Object
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

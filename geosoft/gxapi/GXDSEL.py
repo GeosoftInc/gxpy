@@ -246,7 +246,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         :type  width:   int
         :type  height:  int
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -265,7 +265,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
         :param value:  TRUE (1) if we want as a document
         :type  value:  int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

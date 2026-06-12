@@ -65,7 +65,7 @@ class GXTR(gxapi_cy.WrapTR):
         :returns:      `GXTR <geosoft.gxapi.GXTR>` Object
         :rtype:        GXTR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -86,7 +86,7 @@ class GXTR(gxapi_cy.WrapTR):
         :param t_rs:  Source Trend Object to Copy
         :type  t_rs:  GXTR
 
-        .. versionadded:: 8.1
+        .. versionadded:: 8.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

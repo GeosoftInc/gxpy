@@ -64,7 +64,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
         :returns:     `GXMVIEW <geosoft.gxapi.GXMVIEW>`, aborts on failure
         :rtype:       GXMVIEW
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -99,7 +99,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
         :type  new_view:         str_ref
         :type  problem_files:    str_ref
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -126,7 +126,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
         :returns:          `GX3DV <geosoft.gxapi.GX3DV>` Object
         :rtype:            GX3DV
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -148,7 +148,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
         :returns:          `GX3DV <geosoft.gxapi.GX3DV>` Object
         :rtype:            GX3DV
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -170,7 +170,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
         :returns:    `GX3DV <geosoft.gxapi.GX3DV>` Object
         :rtype:      GX3DV
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -191,7 +191,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
         :type  crc:   int_ref
         :type  file:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

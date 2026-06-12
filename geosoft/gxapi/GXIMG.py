@@ -92,7 +92,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  grid_in:   str
         :type  grid_out:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -119,7 +119,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param im_go:  Target `GXIMG <geosoft.gxapi.GXIMG>`
         :type  im_go:  GXIMG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -175,7 +175,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:     `GXIMG <geosoft.gxapi.GXIMG>` object
         :rtype:       GXIMG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -240,7 +240,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:       `GXIMG <geosoft.gxapi.GXIMG>` object
         :rtype:         GXIMG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -266,7 +266,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:     `GXIMG <geosoft.gxapi.GXIMG>` object
         :rtype:       GXIMG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -290,7 +290,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param ipj:  Projection to apply
         :type  ipj:  GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -314,7 +314,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  ipj:        GXIPJ
         :type  cell_size:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -383,7 +383,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  max_x:  float_ref
         :type  max_y:  float_ref
 
-        .. versionadded:: 9.7
+        .. versionadded:: 9.7.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -434,7 +434,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  yo:   float_ref
         :type  rot:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -453,7 +453,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param ipj:  Projection of the grid
         :type  ipj:  GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -491,7 +491,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param pg:   `GXPG <geosoft.gxapi.GXPG>` object to hold pager of the grid
         :type  pg:   GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -516,7 +516,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  ipj:   GXIPJ
         :type  cell:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -540,7 +540,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param tr:   Trend information from the grid
         :type  tr:   GXTR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -582,7 +582,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:    Element type
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -645,7 +645,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  file:  str
         :rtype:       bool
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -687,7 +687,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:    # of elements in the optimal KX direction
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -708,7 +708,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  ipj:   GXIPJ
         :type  cell:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -755,7 +755,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:    # of vectors in the optimal KX direction
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -775,7 +775,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:    # of X elements.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -795,7 +795,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:    # of Y elements.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -840,7 +840,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:    -1 by columns, 1 by rows, 0 rows and columns are equally efficient.
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -884,7 +884,7 @@ class GXIMG(gxapi_cy.WrapIMG):
                   1 - User wishes to plot grids as color-shaded grids
         :rtype:      int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -923,7 +923,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         access time.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -942,7 +942,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param kx:   KX -1 by column 1 by row
         :type  kx:   int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -973,7 +973,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  ne:   int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -997,7 +997,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  ny:   int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1021,7 +1021,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  nx:   int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1040,7 +1040,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param grid:  Grid name
         :type  grid:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1067,7 +1067,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  max_y:  float
         :type  asp:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1094,7 +1094,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  decimals:  int
         :type  title:     str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1144,7 +1144,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  query:  int
         :rtype:        float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1173,7 +1173,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:    Grid value
         :rtype:      float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1219,7 +1219,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  query:  int
         :type  value:  float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1243,7 +1243,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param path:  Shadow grid path name returned
         :type  path:  str_ref
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1262,7 +1262,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param path:  Grid path for the shadow grid
         :type  path:  str
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1283,7 +1283,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         Mark the grid as unchanged so it will not output lineage
         
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1310,7 +1310,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  yo:   float
         :type  rot:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1332,7 +1332,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param ipj:  Projection
         :type  ipj:  GXIPJ
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1373,7 +1373,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param pg:   Pager object to copy into the pager of the grid
         :type  pg:   GXPG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1392,7 +1392,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param tr:   Trend information to set for the grid
         :type  tr:   GXTR
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1411,7 +1411,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param grid:  Grid name
         :type  grid:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1436,7 +1436,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  ne:   int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1460,7 +1460,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  ny:   int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1484,7 +1484,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  nx:   int
         :type  vv:   GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1505,7 +1505,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  name:   str
         :type  value:  float
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1527,7 +1527,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:     Parameter value, `rDUMMY <geosoft.gxapi.rDUMMY>` if not found.
         :rtype:       float
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1549,7 +1549,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         
         :rtype:      int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1576,7 +1576,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :type  yVV:    GXVV
         :type  type:   int_ref
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1602,7 +1602,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:     index of the added fault
         :rtype:       int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1623,7 +1623,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :param index:  Fault index (0 to N-1)
         :type  index:  int
 
-        .. versionadded:: 9.10
+        .. versionadded:: 9.10.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1654,7 +1654,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         :returns:      x - Number of pixels different
         :rtype:        int
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

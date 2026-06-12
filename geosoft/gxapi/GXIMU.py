@@ -95,7 +95,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :returns:        CRC value
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -119,7 +119,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :returns:        CRC value
         :rtype:          int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -149,7 +149,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :returns:            CRC value
         :rtype:              int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -182,7 +182,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :returns:            CRC value
         :rtype:              int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -210,7 +210,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  dec_y:  int
         :type  out:    str
 
-        .. versionadded:: 2023.0
+        .. versionadded:: 2023.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -238,7 +238,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  crc:   int_ref
         :type  file:  str
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -261,7 +261,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  crc:   int_ref
         :type  file:  str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -284,7 +284,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  crc:   int_ref
         :type  file:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -307,7 +307,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  crc:   int_ref
         :type  file:  str
 
-        .. versionadded:: 6.0
+        .. versionadded:: 6.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -358,7 +358,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  vv_y:  GXVV
         :type  vv_z:  GXVV
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -388,7 +388,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  m2:    float
         :type  imgo:  GXIMG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -418,7 +418,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  max_gain:           float
         :type  remove_background:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -451,7 +451,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  sizing:      int
         :type  olap:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -477,7 +477,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  vv_x:  GXVV
         :type  vv_y:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -533,7 +533,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  x:      int
         :type  y:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -561,7 +561,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  p_ex:     float
         :type  t_ex:     int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -600,7 +600,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  width:     int
         :type  npass:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -639,7 +639,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  file:     str
         :type  vv:       GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -671,7 +671,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  y_orig:  float
         :type  rot:     float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -698,7 +698,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  pply:     GXPLY
         :type  mode:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -732,7 +732,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  v_vy:  GXVV
         :type  v_vz:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -760,7 +760,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  ply:      GXPLY
         :type  refresh:  int
 
-        .. versionadded:: 5.1
+        .. versionadded:: 5.1.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -832,7 +832,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  min_y:                 float
         :type  max_y:                 float
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -865,7 +865,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  n_x:                   int
         :type  n_y:                   int
 
-        .. versionadded:: 7.3
+        .. versionadded:: 7.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -888,7 +888,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  in_grd:   str
         :type  out_grd:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -915,7 +915,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  dec:      float_ref
         :type  scl:      float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -945,7 +945,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  dec:     float_ref
         :type  scl:     float_ref
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1015,7 +1015,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  base:    float_ref
         :type  mult:    float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1060,7 +1060,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  mult:    float_ref
         :type  comp:    float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1095,7 +1095,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  mean:    float_ref
         :type  stddev:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1105,6 +1105,44 @@ class GXIMU(gxapi_cy.WrapIMU):
         """
         
         items.value, dums.value, min.value, max.value, mean.value, stddev.value = gxapi_cy.WrapIMU._grid_stat_ext(GXContext._get_tls_geo(), grid.encode(), force, items.value, dums.value, min.value, max.value, mean.value, stddev.value)
+        
+
+
+
+    @classmethod
+    def grid_stat_ext64(cls, grid, force, items, dums, min, max, mean, stddev):
+        """
+        
+        Reports statistics of a grid's elements (64-bit counts for large grids).
+        
+        :param grid:    Name of the grid to get stats from
+        :param force:   :ref:`IMU_STAT_FORCED`
+        :param items:   Number of valid elements in grid
+        :param dums:    Number of dummies in grid
+        :param min:     Minimum grid value
+        :param max:     Maximum grid value
+        :param mean:    Grid mean
+        :param stddev:  Grid standard deviation
+        :type  grid:    str
+        :type  force:   int
+        :type  items:   9_ref
+        :type  dums:    9_ref
+        :type  min:     float_ref
+        :type  max:     float_ref
+        :type  mean:    float_ref
+        :type  stddev:  float_ref
+
+        .. versionadded:: 2026.1.0
+
+        **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
+
+        **Note:** Use instead of `grid_stat_ext <geosoft.gxapi.GXIMU.grid_stat_ext>` for grids exceeding ~2.1 billion cells
+        (i.e. where the product of X and Y dimensions exceeds 2,147,483,647).
+        If the :ref:`IMU_STAT_FORCED` value is set, the statistics will be recalculated.
+        Statistics are returned in the parameter set.
+        """
+        
+        items.value, dums.value, min.value, max.value, mean.value, stddev.value = gxapi_cy.WrapIMU._grid_stat_ext64(GXContext._get_tls_geo(), grid.encode(), force, items.value, dums.value, min.value, max.value, mean.value, stddev.value)
         
 
 
@@ -1126,7 +1164,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  cx:           float_ref
         :type  cy:           float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1157,7 +1195,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  yo:        float_ref
         :type  vm:        GXVM
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1181,7 +1219,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :returns:    Standard deviation of grid slopes
         :rtype:      float
 
-        .. versionadded:: 8.2
+        .. versionadded:: 8.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1233,7 +1271,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  weighting:  float
         :type  width:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1291,7 +1329,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  reg:    int
         :type  scale:  float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1326,7 +1364,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  vm:         GXVM
         :type  num_coefs:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1367,7 +1405,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  grid:  str
         :type  tcon:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1396,7 +1434,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  updown:    int
         :type  distance:  float
 
-        .. versionadded:: 9.9
+        .. versionadded:: 9.9.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1417,7 +1455,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  im_gi:  GXIMG
         :type  im_go:  GXIMG
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -1447,7 +1485,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  vol_b:  float_ref
         :type  diff:   float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1499,7 +1537,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  dec:    int
         :type  mdf:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1534,7 +1572,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  zmax:  float
         :type  clip:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1569,7 +1607,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  dec_y:  int
         :type  lab:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1595,7 +1633,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :returns:     :ref:`GS_TYPES`
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -1713,7 +1751,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  prec:  float
         :type  v_vz:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1878,7 +1916,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  samsep:  float
         :type  vv_z:    GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1906,7 +1944,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  vv_y:  GXVV
         :type  vv_z:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -1972,7 +2010,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  max_lat:  float_ref
         :type  max_lon:  float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -2039,7 +2077,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  img:  GXIMG
         :type  ply:  GXPLY
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -2076,7 +2114,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         :type  extend:   int
         :type  iter:     int
 
-        .. versionadded:: 7.2
+        .. versionadded:: 7.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

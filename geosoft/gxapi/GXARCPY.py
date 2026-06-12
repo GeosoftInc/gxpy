@@ -61,7 +61,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
         :param message:  Message
         :type  message:  str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -80,7 +80,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
         :param message:  Message
         :type  message:  str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -99,7 +99,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
         :param message:  Message
         :type  message:  str
 
-        .. versionadded:: 9.6
+        .. versionadded:: 9.6.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

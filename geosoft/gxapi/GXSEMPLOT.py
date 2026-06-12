@@ -70,7 +70,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  mineral:     str
         :type  mode:        int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -95,7 +95,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:    GXDB
         :type  line:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -122,7 +122,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:       GXDB
         :type  mask_ch:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -141,7 +141,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :param db:  Database handle
         :type  db:  GXDB
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -168,7 +168,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  map:         GXMAP
         :type  view:        str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -194,7 +194,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:     GXDB
         :type  templ:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -222,7 +222,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:     GXDB
         :type  templ:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -270,7 +270,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  z_oxide:    str
         :type  extension:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -304,7 +304,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  mineral_ch:  str
         :type  mineral:     str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -337,7 +337,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  mineral:       str
         :type  export_extra:  int
 
-        .. versionadded:: 7.1
+        .. versionadded:: 7.1.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -356,7 +356,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` to fill.
         :type  lst:  GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -390,7 +390,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  mineral:     str
         :type  pos:         int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -418,7 +418,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  group:  int
         :type  lst:    GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -441,7 +441,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  mineral_ch:  str
         :type  lst:         GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -465,7 +465,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:   GXDB
         :type  lst:  GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -484,7 +484,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
         :type  lst:  GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -503,7 +503,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :param lst:  `GXLST <geosoft.gxapi.GXLST>` object
         :type  lst:  GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -524,7 +524,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:   GXDB
         :type  lst:  GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -555,7 +555,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
                       0 if it fails.
         :rtype:       int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -580,7 +580,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
                       0 if it fails.
         :rtype:       int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -629,7 +629,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
                              new filter by that name will be created.
         :rtype:             int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -650,7 +650,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:          GXDB
         :type  mineral_ch:  str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -678,7 +678,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  temp:     str
         :type  anomaly:  str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -702,7 +702,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  connection:  str_ref
         :type  temp:        str_ref
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -731,7 +731,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  flight:  int
         :type  date:    float
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -770,7 +770,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  name:  str
         :type  temp:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -789,7 +789,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :param db:  Database handle
         :type  db:  GXDB
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -817,7 +817,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
                        Terminates if error.
         :rtype:        int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -873,7 +873,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  min_ch:  int
         :type  res_ch:  int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -902,7 +902,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  filter:  str
         :type  model:   str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -927,7 +927,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  type:   int
         :type  model:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -961,7 +961,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  extension:  int
         :type  type:       int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -995,7 +995,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  map_mode:    int
         :type  plot_symb:   int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1035,7 +1035,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  y_max:      float
         :type  symb_size:  float
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1089,7 +1089,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  fill_col:    int
         :type  legend:      int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1118,7 +1118,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  map:         GXMAP
         :type  view:        str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1148,7 +1148,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:     GXDB
         :type  mview:  GXMVIEW
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1173,7 +1173,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:       GXDB
         :type  mask_ch:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1192,7 +1192,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :param db:  Database handle
         :type  db:  GXDB
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1229,7 +1229,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  pply:        GXPLY
         :type  mode:        int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1250,7 +1250,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:   GXDB
         :type  lst:  GXLST
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1286,7 +1286,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :param db:  Database handle
         :type  db:  GXDB
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1313,7 +1313,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  ch:   int
         :type  itr:  GXITR
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1342,7 +1342,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  selected:    int
         :type  val:         int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1365,7 +1365,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  group:    int
         :type  anomaly:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1386,7 +1386,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  lst:   GXLST
         :type  type:  int
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -1408,7 +1408,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Tile currently maximimized windows.
         
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -1429,7 +1429,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         :type  db:          GXDB
         :type  mineral_ch:  str
 
-        .. versionadded:: 6.2
+        .. versionadded:: 6.2.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 

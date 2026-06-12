@@ -62,7 +62,7 @@ class GXMPLY(gxapi_cy.WrapMPLY):
         :returns:    `GXMPLY <geosoft.gxapi.GXMPLY>` Handle
         :rtype:      GXMPLY
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

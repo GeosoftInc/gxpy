@@ -63,7 +63,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:     `GXMESH <geosoft.gxapi.GXMESH>` handle, terminates if creation fails
         :rtype:       GXMESH
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -87,7 +87,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:             `GXMESH <geosoft.gxapi.GXMESH>` handle, terminates if creation fails
         :rtype:               GXMESH
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -109,7 +109,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:          Patch ID of the inserted patch
         :rtype:            int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -130,7 +130,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :type  mesh_name:  str
         :type  patch_id:   int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -154,7 +154,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:          TRUE if patch exists
         :rtype:            bool
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -176,7 +176,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:          The number of patches added to the mesh
         :rtype:            int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -206,7 +206,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:          Returns the vertex index of the added vertex
         :rtype:            int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -230,7 +230,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:          Returns the number of vertices in a patch
         :rtype:            int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -260,7 +260,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:          Returns the face index of the added face
         :rtype:            int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -284,7 +284,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:          Returns the number of faces in a patch
         :rtype:            int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -316,7 +316,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:             Returns the number of faces in a patch
         :rtype:               int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -343,7 +343,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :type  vert_v_vy:  GXVV
         :type  vert_v_vz:  GXVV
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -370,7 +370,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :type  face_v_2:   GXVV
         :type  face_v_3:   GXVV
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -395,7 +395,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :type  data_type:       int
         :type  attribute_type:  int
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -424,7 +424,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :type  patch_id:        int
         :type  vv:              GXVV
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -453,7 +453,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :type  patch_id:        int
         :type  vv:              GXVV
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -479,7 +479,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         :returns:                    `GXMESH <geosoft.gxapi.GXMESH>` handle, terminates if creation fails
         :rtype:                      GXMESH
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -496,7 +496,7 @@ class GXMESH(gxapi_cy.WrapMESH):
         Saves Mesh to the Project Cache and Geosurface file
         
 
-        .. versionadded:: 9.5
+        .. versionadded:: 9.5.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

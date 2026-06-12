@@ -60,7 +60,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         Commit any changes to a `GXMXD <geosoft.gxapi.GXMXD>`.
         
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -83,7 +83,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         :returns:     `GXMXD <geosoft.gxapi.GXMXD>` Object
         :rtype:       GXMXD
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -102,7 +102,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         :param mxd:  `GXMXD <geosoft.gxapi.GXMXD>` file name
         :type  mxd:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -122,7 +122,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         Discard all changes made to the `GXMXD <geosoft.gxapi.GXMXD>`.
         
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -144,7 +144,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         :type  map:             str
         :type  focus_map_only:  bool
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -165,7 +165,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         :type  mxd:  str
         :type  map:  str
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -185,7 +185,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         :param mxdHandle:  `GXMXD <geosoft.gxapi.GXMXD>` file name
         :type  mxdHandle:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -204,7 +204,7 @@ class GXMXD(gxapi_cy.WrapMXD):
         :param mxd:  `GXMXD <geosoft.gxapi.GXMXD>` file name
         :type  mxd:  str
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """

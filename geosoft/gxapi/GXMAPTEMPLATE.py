@@ -62,7 +62,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :param tmp:          Returned temporary map template file name
         :type  tmp:          str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -84,7 +84,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :param tmp:          Temporary map template file name
         :type  tmp:          str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -110,7 +110,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         Commit any changes to the map template to disk
         
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -136,7 +136,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :returns:     `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>` Object
         :rtype:       GXMAPTEMPLATE
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -159,7 +159,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         Discard all changes made to the map template and reload from disk.
         
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -178,7 +178,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :param name:         Returned map template file name
         :type  name:         str_ref
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -203,7 +203,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :type  map:          str
         :type  group:        str
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -224,7 +224,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         Refresh the map template with any newly saved items
         
 
-        .. versionadded:: 7.0
+        .. versionadded:: 7.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -252,7 +252,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :type  right:        int
         :type  top:          int
 
-        .. versionadded:: 6.3
+        .. versionadded:: 6.3.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
@@ -279,7 +279,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :type  right:        int_ref
         :type  top:          int_ref
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -314,7 +314,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         :type  plot_width:        float_ref
         :type  plot_height:       float_ref
 
-        .. versionadded:: 2023.2
+        .. versionadded:: 2023.2.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

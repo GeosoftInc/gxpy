@@ -63,7 +63,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :returns:     The number of layers (often just one).
         :rtype:       int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -85,7 +85,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :returns:     :ref:`DCOL_TYPE`
         :rtype:       int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -110,7 +110,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :type  itr:         GXITR
         :type  layer_name:  str_ref
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -133,7 +133,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :type  index:  int
         :type  itr:    GXITR
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -158,7 +158,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :type  itr:        GXITR
         :type  redrawMap:  int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -187,7 +187,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
                                1 - Cancel
         :rtype:                int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -219,7 +219,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
                                1 - Cancel
         :rtype:                int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -247,7 +247,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
                        1 - Cancel
         :rtype:        int
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -274,7 +274,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :returns:      `GXST <geosoft.gxapi.GXST>` object
         :rtype:        GXST
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -302,7 +302,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :returns:      `GXVV <geosoft.gxapi.GXVV>` object
         :rtype:        GXVV
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -323,7 +323,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :param index:  Index of layer
         :type  index:  int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -346,7 +346,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
                       BRIGHTNESS_ALL_AND_LAYERS - Set brightness either for the object as a whole or by layer
         :rtype:       int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -374,7 +374,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :type  layerSelection:  int
         :type  layer:           int
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -398,7 +398,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :type  layer:           int
         :rtype:                 float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -419,7 +419,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :param transparency:  Transparency value (1.0 - Opaque, 0.0 - Transparent)
         :type  transparency:  float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -439,7 +439,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         
         :rtype:       float
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -458,7 +458,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         Reset the AGG back to its initial state. Same as cancelling out of the colour tool and restarting; all layers are reset.
         
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -479,7 +479,7 @@ class GXDCOL(gxapi_cy.WrapDCOL):
         :param apply_changes:  Apply changes to map.
         :type  apply_changes:  bool
 
-        .. versionadded:: 2021.2
+        .. versionadded:: 2021.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

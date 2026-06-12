@@ -99,7 +99,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         
         :rtype:               bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -120,7 +120,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :param enable:        Enables/disables drag-and-drop
         :type  enable:        bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -146,7 +146,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:    `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object
         :rtype:      GXEMAPTEMPLATE
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -168,7 +168,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:    `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object
         :rtype:      GXEMAPTEMPLATE
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -194,7 +194,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                   the user is not prompted for a map, and 0 is returned.
         :rtype:      GXEMAPTEMPLATE
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -223,7 +223,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                       The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -244,7 +244,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :param name:          Name returned
         :type  name:          str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -267,7 +267,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                   1 - current map
         :rtype:      int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -296,7 +296,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                        1 - No Map Found
         :rtype:        int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -316,7 +316,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         
         :rtype:               bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -340,7 +340,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:     1 if map is loaded, 0 otherwise.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -371,7 +371,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  state:         int_ref
         :type  is_floating:   int_ref
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -402,7 +402,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  state:         int
         :type  is_floating:   int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -422,7 +422,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         
         :rtype:               bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -446,7 +446,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:     `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object to edited map.
         :rtype:       GXEMAPTEMPLATE
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -479,7 +479,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                       database in the list if multiple files were provided.
         :rtype:       GXEMAPTEMPLATE
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -504,7 +504,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:             `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>` Object to map associated with edited map.
         :rtype:               GXMAPTEMPLATE
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -523,7 +523,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         Makes this `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` object the current active object to the user.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -544,7 +544,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :param name:  Name of the map to unload
         :type  name:  str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -566,7 +566,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         Unloads all opened maps
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -589,7 +589,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  name:    str
         :type  prompt:  bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -611,7 +611,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         This method unlocks the Edited map.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -648,7 +648,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                               1 if user cancelled.
         :rtype:               int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -684,7 +684,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                               1 if user cancelled.
         :rtype:               int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -716,7 +716,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                               1 if user cancelled.
         :rtype:               int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -752,7 +752,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                               1 if user cancelled.
         :rtype:               int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -784,7 +784,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
                               1 if user cancelled.
         :rtype:               int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -812,7 +812,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:             Returns ``True`` if the item is a view
         :rtype:               bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -835,7 +835,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :param item:          item name
         :type  item:          str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -868,7 +868,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  max_x:         float_ref
         :type  max_y:         float_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -906,7 +906,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  grid_green:    int_ref
         :type  grid_blue:     int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -931,7 +931,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:             :ref:`EMAPTEMPLATE_WINDOW_STATE`
         :rtype:               int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -958,7 +958,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  max_x:         float
         :type  max_y:         float
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -996,7 +996,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  grid_green:    int
         :type  grid_blue:     int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1020,7 +1020,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :param state:         :ref:`EMAPTEMPLATE_WINDOW_STATE`
         :type  state:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1052,7 +1052,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  max_x:         int
         :type  max_y:         int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1087,7 +1087,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :type  max_x:         int_ref
         :type  max_y:         int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -1123,7 +1123,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         :returns:     `GXEMAPTEMPLATE <geosoft.gxapi.GXEMAPTEMPLATE>` Object
         :rtype:       GXEMAPTEMPLATE
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

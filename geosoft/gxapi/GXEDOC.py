@@ -70,7 +70,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :returns:     Handle to the newly created edited model.
         :rtype:       GXEDOC
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
 
@@ -103,7 +103,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :returns:     `GXEDOC <geosoft.gxapi.GXEDOC>` Object
         :rtype:       GXEDOC
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -127,7 +127,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :returns:     `GXEDOC <geosoft.gxapi.GXEDOC>` Object
         :rtype:       GXEDOC
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -155,7 +155,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
                       the user is not prompted for a document, and 0 is returned.
         :rtype:       GXEDOC
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -186,7 +186,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
                       The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -207,7 +207,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :param name:  Name returned
         :type  name:  str_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -229,7 +229,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :returns:     :ref:`EDOC_WINDOW_STATE`
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -251,7 +251,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  type:  int
         :rtype:       bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -277,7 +277,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :returns:     1 if document is loaded, 0 otherwise.
         :rtype:       int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -308,7 +308,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  state:        int_ref
         :type  is_floating:  int_ref
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -339,7 +339,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  state:        int
         :type  is_floating:  int
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -359,7 +359,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         
         :rtype:       bool
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -386,7 +386,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
                       document in the list.
         :rtype:       GXEDOC
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -419,7 +419,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
                       document in the list.
         :rtype:       GXEDOC
 
-        .. versionadded:: 9.0
+        .. versionadded:: 9.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -441,7 +441,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         Makes this `GXEDOC <geosoft.gxapi.GXEDOC>` object the current active object to the user.
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -462,7 +462,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :param state:  :ref:`EDOC_WINDOW_STATE`
         :type  state:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -485,7 +485,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  file:  str
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -504,7 +504,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         Syncronize the Metadata of a document
         
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -527,7 +527,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  name:  str
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -551,7 +551,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :param type:  :ref:`EDOC_TYPE`
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -574,7 +574,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  name:  str
         :type  type:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -601,7 +601,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  verify:  int
         :type  type:    int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -637,7 +637,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  max_x:  int_ref
         :type  max_y:  int_ref
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -673,7 +673,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  max_x:  int
         :type  max_y:  int
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -702,7 +702,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         :type  output:  str
         :rtype:         bool
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -723,7 +723,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         Save the managed document.
         
 
-        .. versionadded:: 2022.1
+        .. versionadded:: 2022.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 

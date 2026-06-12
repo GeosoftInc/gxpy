@@ -79,7 +79,7 @@ class GXLL2(gxapi_cy.WrapLL2):
         :returns:        `GXLL2 <geosoft.gxapi.GXLL2>` Object
         :rtype:          GXLL2
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -104,7 +104,7 @@ class GXLL2(gxapi_cy.WrapLL2):
         :param name:    Named resource
         :type  name:    str
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 
@@ -131,7 +131,7 @@ class GXLL2(gxapi_cy.WrapLL2):
         :type  lon_vv:  GXVV
         :type  lat_vv:  GXVV
 
-        .. versionadded:: 5.0
+        .. versionadded:: 5.0.0
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
 

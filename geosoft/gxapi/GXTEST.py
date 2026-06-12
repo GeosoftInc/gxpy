@@ -80,7 +80,7 @@ class GXTEST(gxapi_cy.WrapTEST):
         :returns:    0 - Not available, 1 - Available
         :rtype:      int
 
-        .. versionadded:: 6.4
+        .. versionadded:: 6.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -119,7 +119,7 @@ class GXTEST(gxapi_cy.WrapTEST):
         :type  funcs:  str
         :type  log:    str
 
-        .. versionadded:: 6.1
+        .. versionadded:: 6.1.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -140,7 +140,7 @@ class GXTEST(gxapi_cy.WrapTEST):
         :type  cl:   str
         :type  log:  str
 
-        .. versionadded:: 9.2
+        .. versionadded:: 9.2.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """

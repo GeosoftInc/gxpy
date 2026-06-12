@@ -63,7 +63,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  x:  float
         :type  y:  float
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -82,7 +82,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :param file:  File Name
         :type  file:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -107,7 +107,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  layer_name:      str
         :type  output_file:     str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -126,7 +126,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :param output_file:  Output file name
         :type  output_file:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -149,7 +149,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  layer:  str_ref
         :type  map:    str_ref
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -172,7 +172,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  layer:         str_ref
         :type  map:           str_ref
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -192,7 +192,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         
         :rtype:      int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -222,7 +222,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
                            -1 - Canceled
         :rtype:            int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -263,7 +263,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
                            -1 - Canceled
         :rtype:            int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -296,7 +296,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :returns:                0- OK, 1 - Error, -1 - Cancel
         :rtype:                  int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -320,7 +320,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :returns:        0- OK, 1 - Error, -1 - Cancel
         :rtype:          int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -339,7 +339,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :param file:  File Name
         :type  file:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -370,7 +370,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  activate:   bool
         :type  prefix:     bool
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -404,7 +404,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  layer:  str
         :type  all:    int
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -423,7 +423,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :param file:  File Name
         :type  file:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -445,7 +445,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :param file:  File Name
         :type  file:  str
 
-        .. versionadded:: 9.4
+        .. versionadded:: 9.4.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -471,7 +471,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  layer_prefix:  str
         :type  layer_suffix:  str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -500,7 +500,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  shp:   str
         :type  lst:   GXLST
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
 
@@ -528,7 +528,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  x:  float_ref
         :type  y:  float_ref
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
@@ -551,7 +551,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         :type  dataframe_name:  str
         :type  layer_name:      str
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
@@ -568,7 +568,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         Shows the selected layers in ArcMap in a 3D view
         
 
-        .. versionadded:: 8.0
+        .. versionadded:: 8.0.0
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
